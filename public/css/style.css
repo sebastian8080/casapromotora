@@ -1,0 +1,257 @@
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+ 
+/*MARGIN LEFT DEL NAVBAR EMPEZANDO DESDE 'NOSOTROS'*/
+  #navbarNav{
+    padding-left: 45%;
+  }
+
+  /*DIV QUE ENCIERRA AL CARROUSEL, EL TEXTO DENTRO DEL CARROUSEL Y EL BOTON*/
+  .div-carousel{
+    position: relative;
+  }
+
+  /*TEXTO QUE ESTA DENTRO DEL CARROUSEL*/
+  .texto-carousel{
+    position: absolute;
+    color: #ffffff;
+    z-index: 10;
+    font-size: 3vw;
+  }
+
+  /*BOTON DEL CAROUSEL 'VER PROPIEDADES'*/
+  #btn-carousel{
+    font-size: 1.5vw;
+  }
+
+  /*CAMBIAR DESPACIO EL COLOR DEL NAVBAR AL SCROLLEAR*/
+  .navbar-dark, .navbar-light{
+      transition: all 0.5s;
+  }
+
+  /*DARLE COLOR MEDIO GRIS A LA SEGUNDA FILA*/
+  .second-row{
+      background-color: #f5f0f0;
+  }
+
+  #second-row{
+    margin-left: 25%;
+    margin-right: 25%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+
+  #linea_pequeña{
+    width: 40px;
+    height: 2px;
+    color: red;
+    font-weight: bold;
+  }
+
+  /*TEXTO DE TITULOS DE VILLAS DEPARTAMENTOS Y SUITES*/
+  .texto-imagenes{
+    color: #ffffff;
+    -webkit-text-stroke: 1px rgb(162, 157, 157);
+    font-size: 3vw;
+    text-align: center;
+    font-size: 3vw;
+  }
+
+  /*IMAGENES DE VILLAS DEPARTAMENTOS Y SUITES*/
+  .fila-imagenes{
+    width: 100%;
+    height: 110%;
+    padding-bottom: 20%;
+  }
+
+  /*ESTAS DOS CLASES SON PARA EL LINK DE LA FILA 3*/
+  .link-row3:hover {
+    font-size:20px;
+    color:#100;
+  }
+
+  /*HACER EL LINK DE LA FILA 3 DE COLOR NEGRO*/
+  .link-row3{
+    color: #100;
+  }
+
+  /*PARA EL EFECTO EN LAS IMAGENES DE VILLAS DEPARTAMENTOS Y SUITES*/
+  .hover-zoomin a {
+    display: block;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hover-zoomin img {
+    width: 100%;
+    height: auto;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .hover-zoomin:hover img {
+    opacity: 0.5;
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+
+  /*ESTILO PARA EL FOOTER EN GENERAL*/
+
+  #footer {
+    background: #404040;
+    padding: 0 0 30px 0;
+    color: #fff;
+    font-size: 14px
+}
+
+#footer .footer-top {
+    background: black;
+    border-top: 1px solid #474747;
+    border-bottom: 1px solid #474747;
+    padding: 60px 0 30px 0
+}
+
+#footer .footer-top .footer-info {
+    margin-bottom: 30px
+}
+
+#footer .footer-top .footer-info h3 {
+    font-size: 18px;
+    margin: 0 0 20px 0;
+    padding: 2px 0 2px 0;
+    line-height: 1;
+    font-weight: 700
+}
+
+#footer .footer-top .footer-info p {
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 0;
+    font-family: "Raleway", sans-serif;
+    color: #fff
+}
+
+#footer .footer-top .social-links a {
+    font-size: 18px;
+    display: inline-block;
+    background: #545454;
+    color: #fff;
+    line-height: 1;
+    padding: 8px 0;
+    margin-right: 4px;
+    border-radius: 50%;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    transition: 0.3s
+}
+
+#footer .footer-top .social-links a:hover {
+    background: #e96b56;
+    color: #fff;
+    text-decoration: none
+}
+
+#footer .footer-top h4 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 12px
+}
+
+#footer .footer-top .footer-links {
+    margin-bottom: 30px
+}
+
+#footer .footer-top .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+
+#footer .footer-top .footer-links ul i {
+    padding-right: 2px;
+    color: #ec7f6d;
+    font-size: 18px;
+    line-height: 1
+}
+
+#footer .footer-top .footer-links ul li {
+    padding: 10px 0;
+    display: flex;
+    align-items: center
+}
+
+#footer .footer-top .footer-links ul li:first-child {
+    padding-top: 0
+}
+
+#footer .footer-top .footer-links ul a {
+    color: #fff;
+    transition: 0.3s;
+    display: inline-block;
+    line-height: 1
+}
+
+#footer .footer-top .footer-links ul a:hover {
+    color: #e96b56
+}
+
+#footer .footer-top .footer-contact {
+    margin-bottom: 30px
+}
+
+#footer .footer-top .footer-contact p {
+    line-height: 26px
+}
+
+#footer .copyright {
+    text-align: center;
+    padding-top: 30px
+}
+
+#footer .credits {
+    padding-top: 10px;
+    text-align: center;
+    font-size: 13px;
+    color: #fff
+}
+
+/*ESTILO DE LA FILA 6 DE LA FOTO DE CREDITO*/
+#row6{
+  padding-top: 20%;
+  padding-left: 25%;
+}
+
+#text-row6{
+  font-size: 3vw;
+}
+
+#btn-row6{
+  font-size: 1.5vw;
+}
+
+/*ESTILO DE LA CARD DE CONTACTO*/
+#title-row7, #text1-row7, #text2-row7{
+  color: #918f8f;
+  margin: 5%;
+} 
+
+#card-form{
+  background-color: #e2e0e0;
+}
+
+#form{
+  background-color: #f8f6f6;
+}
