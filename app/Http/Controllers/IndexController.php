@@ -7,8 +7,8 @@ use Illuminate\Support\Facades\DB;
 class IndexController extends Controller
 {
     public function redirectToHome(){
-        $projects = DB::table('projects')->get();
-        return view('pages.home', compact('projects'));
+        // $projects = DB::table('projects')->get();
+        return view('pages.home');
     }
 
     public function redirectToAbout(){

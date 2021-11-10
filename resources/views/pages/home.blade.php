@@ -78,16 +78,31 @@
           <div class="carrusel m-4">
             <div id="carouselExampleControls2" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-inner">
-                @forelse ($projects as $project)
-                <div class="carousel-item @if ($loop->index==0) active @endif">
-                  <img src="img/home/{{ $project->url_image }}" class="d-block w-100" alt="...">
+                {{-- @forelse ($projects as $project) --}}
+                          {{-- @if ($loop->index==0)  @endif--}}
+                <div class="carousel-item active">
+                  <img src="img/home/01.jpg" class="d-block w-100" alt="...">
                   <div class="carousel-caption d-none d-md-block">
-                    <h5>{{ $project->project_name }}</h5>
-                    <p>{{ $project->description_project}}</p>
+                    <h5>First Project</h5>
+                    <p>Description First Project</p>
                   </div>
                 </div>
-                @empty
-                @endforelse
+                <div class="carousel-item">
+                  <img src="img/home/6b578015c6ddf83596b9ebc724bd576d.jpg" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Second Project</h5>
+                    <p>Description Second Project</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="img/home/e68756b224c6a89424742d207a87e30e.jpg" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Third Project</h5>
+                    <p>Description Third Project</p>
+                  </div>
+                </div>
+                {{-- @empty
+                @endforelse --}}
               </div>
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
