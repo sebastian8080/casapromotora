@@ -56,8 +56,8 @@
 
       <div data-aos="slide-up" class="second-row position-relative ">
           <p id="second-row" class="text-justify">
-            <b>Lorem ipsum dolor</b> sit amet consectetur adipisicing elit. Corporis ipsam pariatur nulla possimus commodi at. Veritatis, ex. Beatae vel explicabo fugit earum, amet mollitia cum eligendi laboriosam, quis, saepe magnam?
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima consequatur fugit porro quasi officia quisquam, incidunt veritatis beatae tempora dolorem aliquid quam nihil asperiores ipsum exercitationem, necessitatibus, ratione distinctio dicta.
+            <b>CASA CREDITO</b> es una empresa Promotora de Proyectos Inmobiliarios en Ecuador. Desarrollamos Soluciones Inmobiliarias Integrales en Vivienda,
+            Comercio, Oficinas, Servicios y Hospitalidad, que se diferencian por la calidad e innovación percibida por el cliente, convirtiendo lo excepcional en un estilo de vida.
           </p>
           <hr id="linea_pequeña" class="position-absolute bottom-0 start-50 translate-middle-x">
           
