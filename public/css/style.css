@@ -309,4 +309,9 @@ h1{
   #img-logo{
     width: 50px;
   }
+
+  #itemMenu{
+    background: #aeaaaa;
+    padding-left: 10px;
+  }
 }
