@@ -31,7 +31,7 @@
                             Hagasé una auto-evaluación financiera. Antes de comprar es importante analizar su situación financiera. Lo más importante es determinar
                             nuestros ingresos y el capital que tenemos disponible como cuota inicial (downpayment). 
                         </p>
-                        <a href="#" class="btn btn-danger">Leer más</a>
+                        <a href="{{ route('blogs.blog') }}" class="btn btn-danger">Leer más</a>
                     </div>
                 </div>
 
@@ -45,7 +45,7 @@
                         <p class="card-text text-justify">
                             Pensar demasiado las cosas. Es importante analizar bien el mercado y tener paciencia, pero tampoco es recomendable esperar demasiado.
                         </p>
-                        <a href="#" class="btn btn-danger">Leer más</a>
+                        <a href="{{ route('blogs.blog') }}" class="btn btn-danger">Leer más</a>
                     </div>
                 </div>
             </div>
