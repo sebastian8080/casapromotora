@@ -31,9 +31,9 @@
       </div>
 
       <hr data-aos="flip-up" class="mt-5" style="width: 20%; margin-left: 40%">
-      <div class="row mb-5" data-aos="flip-up">
-        <div class="text-center" style="padding-left: 20%; padding-right: 20%">
-          <h1 class="mt-5 titles-page-about fw-bold">Nuestra Historia</h1>
+      <div class="row mb-1" data-aos="flip-up">
+        <div class="text-center" style="padding-left: 10%; padding-right: 10%">
+          <h1 class="mt-1 titles-page-about fw-bold">Nuestra Historia</h1>
           <p class="m-4">
             Casa Crédito Inmobiliaria fue fundada en el 2007 por iniciativa del señor Homero Serrano, 
             como respuesta a una creciente necesidad de la comunidad ecuatoriana por realizar su sueño de vivienda propia.
@@ -67,7 +67,7 @@
 
       <hr data-aos="flip-right" style="width: 40%; margin-left: 55%">
 
-      <div class="row mb-5" data-aos="flip-right">
+      <div class="row mb-4" data-aos="flip-right">
         <div class="col-sm-6">
           <img class="img-fluid mt-5 rounded mb-1" style="width: 100%; height: 70%; padding-left: 10%" src="https://assets.entrepreneur.com/content/3x2/2000/20190412172923-vision.jpeg" alt="">
         </div>
@@ -86,7 +86,7 @@
 
       <div class="container">
         <div class="row" data-aos="flip-down">
-          <div class="text-center mt-4 mb-5 rounded" style="background: #f4f4f4">
+          <div class="text-center mt-2 mb-5 rounded" style="background: #f4f4f4">
             <h1 class="mt-5 titles-page-about fw-bold">Organización</h1>
             <p class="text-justify mb-5" style="padding-left: 20%; padding-right: 20%">
               CasaCredito es una inmobiliaria especializada en la atención a sus clientes con vocación de servicio y comprometida en brindarles asesoría para llevar a 

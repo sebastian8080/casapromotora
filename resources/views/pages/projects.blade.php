@@ -8,17 +8,18 @@
 
 @section('content')
 
-    <div>
+    <div class="position-relative">
         <video style="top: 0; left:0; width: 100%; height: 100%; opacity:1; filter: brightness(60%)" muted autoplay lood>
             <source src="video/Recursos Vídeos de fondo Edificios.mp4" type="video/mp4">
         </video>
+        <div class="position-absolute top-50 start-50 translate-middle text-white">
+            <h1 class="text-center" style="font-size: 5vw;">Proyectos</h1>
+            <h4 class="text-center" style="font-size: 2.5vw;">Aqui te mostramos nuestros proyectos <br> más innovadores</h4>
+        </div>
     </div>
 
-    {{-- mt-5 pt-5 --}}
-    <div class="position-absolute top-50 start-50 translate-middle text-white">
-        <h1 class="text-center display-1 fw-bold">Proyectos</h1>
-        <h4 class="text-center">Aqui te mostramos nuestros proyectos más innovadores</h4>
-    </div>
+    
+
     <hr data-aos="fade-up" style="color: rgb(166, 177, 176);  width: 20%; margin-left: 40%">
     <div class="row mt-1 pt-1">
         <div class="col-sm-6" data-aos="fade-up">
@@ -37,7 +38,7 @@
     </div>
     <hr data-aos="fade-up" style="color: rgb(166, 177, 176); width: 20%; margin-left: 40%">
     <div class="row">
-        <div class="col-sm-6" data-aos="fade-up" style="margin-top: 20%; padding-left: 5%"> 
+        <div class="col-sm-6 mb-3" data-aos="fade-up" style="margin-top: 10%; padding-left: 5%"> 
             <h1 class="fw-bold" style="color: #ffffff; -webkit-text-stroke: 1px rgb(162, 157, 157);">Proyecto Dos</h1>
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum magni nulla voluptatum quo perspiciatis eligendi aut tempore 
@@ -48,7 +49,7 @@
             </div>
         </div>
         <div class="col-sm-6" data-aos="fade-up">
-            <img class="img-fluid rounded" style="height: 80%; width: 90%; float:right" src="https://i.pinimg.com/736x/89/67/f3/8967f3e1c1750f741836c456030ce6ca.jpg" alt="">
+            <img class="img-fluid rounded" style="height: 70%; width: 90%; float:right" src="https://i.pinimg.com/736x/89/67/f3/8967f3e1c1750f741836c456030ce6ca.jpg" alt="">
         </div>
     </div>
 @endsection

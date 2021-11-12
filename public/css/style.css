@@ -38,13 +38,6 @@ html, body {
       background-color: #f4f4f4;
   }
 
-  #second-row{
-    margin-left: 25%;
-    margin-right: 25%;
-    padding-top: 5%;
-    padding-bottom: 5%;
-  }
-
   #linea_pequeña{
     width: 40px;
     height: 2px;
@@ -56,7 +49,6 @@ html, body {
   .texto-imagenes{
     color: #ffffff;
     -webkit-text-stroke: 1px rgb(162, 157, 157);
-    font-size: 3vw;
     text-align: center;
   }
 
@@ -64,18 +56,18 @@ html, body {
   .fila-imagenes{
     width: 100%;
     height: 110%;
-    padding-bottom: 20%;
+    padding-bottom: 10%;
   }
 
   /*ESTAS DOS CLASES SON PARA EL LINK DE LA FILA 3*/
   .link-row3:hover {
-    font-size:35px;
+    font-size:160%;
     color: #100;
   }
 
   /*HACER EL LINK DE LA FILA 3 DE COLOR NEGRO*/
   .link-row3{
-    font-size: 30px;
+    font-size: 140%;
     color: #100;
   }
 
@@ -246,7 +238,6 @@ html, body {
 /*ESTILO DE LA CARD DE CONTACTO*/
 #title-row7, #text1-row7, #text2-row7{
   color: #918f8f;
-  margin: 5%;
 } 
 
 #card-form{
@@ -305,4 +296,17 @@ body{
 }
 h1{
    font-family: 'proxima_nova_rgbold', Helvetica, Arial, sans-serif;
+}
+
+/*OCULTAR DIV DE LINKS QUITO GUAYAQUIL CUENCA MANTA*/
+@media only screen and (max-width: 580px){
+  #links{
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 580px){
+  #img-logo{
+    width: 50px;
+  }
 }

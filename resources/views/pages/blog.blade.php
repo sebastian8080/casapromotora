@@ -54,7 +54,7 @@
         <div class="row mt-5">
             <h4>TEMAS RELACIONADOS</h4>
             <div class="col-sm-4">
-                <div class="card" style="width: 18rem;">
+                <div class="card mb-2" style="width: 18rem;">
                     <img src="https://revistaconstruir.com/wp-content/uploads/2019/10/edificio.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">Card title</h5>
@@ -64,7 +64,7 @@
                 </div>
             </div>
             <div class="col-sm-4">
-                <div class="card" style="width: 18rem;">
+                <div class="card mb-2" style="width: 18rem;">
                     <img src="https://revistaconstruir.com/wp-content/uploads/2019/10/edificio.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">Card title</h5>
@@ -74,7 +74,7 @@
                 </div>
             </div>
             <div class="col-sm-4">
-                <div class="card" style="width: 18rem;">
+                <div class="card mb-2" style="width: 18rem;">
                     <img src="https://revistaconstruir.com/wp-content/uploads/2019/10/edificio.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">Card title</h5>
@@ -85,7 +85,7 @@
             </div>
         </div>
 
-        <div class="row mt-5">
+        <div class="row mt-4">
             <div class="col-sm-4">
                 <h4 class="fw-bold">DEJA UN COMENTARIO</h4>
                 <form>

@@ -5,3 +5,7 @@ img{
 img:hover{
     opacity: 1;
 }
+
+#title{
+    font-size: 3vw;
+}
