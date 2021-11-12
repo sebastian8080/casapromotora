@@ -1,40 +1,34 @@
 @extends('layouts.plantilla')
 
 @section('title', 'Casa Credito')
+
+@section('content-head')
+    <style>
+      .link:hover{
+      border-bottom: 1px solid;
+      font-size: 40px;
+      }
+    </style>
+@endsection
     
 @section('content')
     
-    <div class="div-carousel">
+    <div class="div-carousel position-relative">
       <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="1" aria-label="Slide 2"></button>
           <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-        <div class="carousel-inner position-relative">
+        <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="https://i2.wp.com/moovemag.com/wp-content/uploads/2020/12/inversion-inmobiliaria.jpg?fit=700%2C459&ssl=1&resize=1280%2C720" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-md-block position-absolute top-50 start-50 translate-middle mt-4">
-              <h2>Proyectos</h2>
-              <p>Some representative placeholder content for the first slide.</p>
-              <a class="btn btn-outline-light" href="{{ route('pages.projects') }}">Ver proyectos</a>
-            </div>
+            <img style="filter: brightness(60%)" src="img/home/img1-home.jpg" class="d-block w-100" alt="img1">
           </div>
           <div class="carousel-item">
-            <img src="https://www.100plandenegocios.com/wp-content/uploads/2021/07/negocio-inmobiliaria.png" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-md-block position-absolute top-50 start-50 translate-middle mt-4">
-              <h2>Nuestros socios</h2>
-              <p>Some representative placeholder content for the first slide.</p>
-              <a class="btn btn-outline-light" href="{{ route('pages.partners') }}">Ver socios</a>
-            </div>
+            <img style="filter: brightness(60%)" src="img/home/img2-home.jpg" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="https://www.america-retail.com/static//2020/12/PropTech-el-futuro-del-mercado-inmobiliario-digital-723x400-1.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-md-block position-absolute top-50 start-50 translate-middle mt-4">
-              <h2>Contactanos</h2>
-              <p>Some representative placeholder content for the first slide.</p>
-              <a class="btn btn-outline-light" href="{{ route('pages.contact')}} ">Contactar</a>
-            </div>
+            <img style="filter: brightness(60%)" src="img/home/img3-home.jpg" class="d-block w-100" alt="...">
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
@@ -46,15 +40,24 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-
-      {{-- <h1 class="texto-carousel top-50 start-50 translate-middle text-center">ENCUENTRA EL LUGAR IDEAL PARA VIVIR
-        <br>
-        <button id="btn-carousel" class="btn btn-outline-light">Ver propiedades</button>
-      </h1> --}}
-      
     </div>
 
-      <div data-aos="slide-up" class="second-row position-relative ">
+    <div class="row position-absolute top-50 start-50 translate-middle" style="z-index: 1; padding-bottom: 10%">
+      <div class="col-sm-3">
+        <h4><a href="#" class="text-white link" style="text-decoration: none; margin-left: 20px">QUITO</a></h4>
+      </div>
+      <div class="col-sm-3">
+        <h4><a href="#" class="text-white link" style="text-decoration: none; margin-right: 500px">GUAYAQUIL</a> </h4>
+      </div>
+      <div class="col-sm-3">
+        <h4><a href="#" class="text-white link" style="text-decoration: none; margin-left: 40px">CUENCA</a></h4>
+      </div>
+      <div class="col-sm-3">
+        <h4><a href="#" class="text-white link" style="text-decoration: none; margin-left: 30px">MANTA</a></h4>
+      </div>
+    </div>
+
+      <div data-aos="slide-up" class="second-row position-relative">
           <p id="second-row" class="text-justify">
             <b>CASA CREDITO</b> es una empresa Promotora de Proyectos Inmobiliarios en Ecuador. Desarrollamos Soluciones Inmobiliarias Integrales en Vivienda,
             Comercio, Oficinas, Servicios y Hospitalidad, que se diferencian por la calidad e innovación percibida por el cliente, convirtiendo lo excepcional en un estilo de vida.
@@ -69,7 +72,7 @@
             <h2 class="fw-bold">Proyectos en Venta</h2>
             <p>Conoce cada uno de los proyectos que tenemos y conoce la nueva experiencia en proyectos inmobiliarios</p>
             <br>
-            <a class="link-row3" href="{{ route('pages.projects') }}">Ver todos los proyectos ></a>
+            <a class="link-row3" style="text-decoration: none" href="{{ route('pages.projects') }}">Ver todos los proyectos ></a>
           </div>
         </div>
 
@@ -219,4 +222,8 @@
           </div>
         </div>
 
+@endsection
+
+@section('section-scripts')
+  <script src="{{ URL::asset('js/homepage.js'); }}"></script>
 @endsection

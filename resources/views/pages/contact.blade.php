@@ -9,7 +9,7 @@
 @section('content')
 
     <div>
-        <video style="top: 0; left: 0; width: 100%; height: 100%; opacity: 0.9" muted autoplay loop>
+        <video style="top: 0; left: 0; width: 100%; height: 100%; opacity: 1; filter: brightness(60%)" muted autoplay loop>
             <source src="video/Videos de naturaleza (Colección) Videos sin copyright.mp4" type="video/mp4">
         </video>
     </div>
@@ -99,10 +99,14 @@
                 
                     <!-- Submit button -->
                     <div class="d-grid gap-2 col-6 mx-auto">
-                        <button type="submit" class="btn btn-outline-danger btn-block btn-lg mb-5">Enviar</button>
+                        <button type="submit" class="btn btn-outline-secondary btn-block btn-lg mb-5">Enviar</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+@endsection
+
+@section('section-scripts')
+    <script src="{{ URL::asset('js/homepage.js') }}"></script>
 @endsection

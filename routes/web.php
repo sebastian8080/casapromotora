@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -24,6 +25,9 @@ Route::get('/contacto', [IndexController::class, 'redirectToContact'])->name('pa
 Route::get('/socios', [IndexController::class, 'redirectToPartners'])->name('pages.partners');
 Route::get('/proyectos', [IndexController::class, 'redirectToProjects'])->name('pages.projects');
 Route::get('/noticias', [IndexController::class, 'redirectToNews'])->name('pages.news');
+
+//Route para proyecto especifico
+Route::get('/proyectos/proyecto-1', [ProjectController::class, 'redirectToProject1'])->name('projects.project1');
 
 
 Auth::routes(['register' => false]);

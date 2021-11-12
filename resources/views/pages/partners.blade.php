@@ -1,6 +1,6 @@
 @extends('layouts.plantilla')
 
-@section('title', 'Patrocinadores')
+@section('title', 'Nuestros Socios')
 
 @section('content-head')
     <link rel="stylesheet" href="{{URL::asset('css/secondary-pages.css'); }}">
@@ -27,36 +27,36 @@
     <div class="row mb-5 pb-5 text-secondary" style="margin-left: 8%; margin-right: 10%">
         <div class="col-sm-3">
             <div class="card" style="width: 18rem;">
-                <img src="img/partners/banco_pichincha.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Banco Pichincha</h5>
+                <img src="img/partners/dolmen.jpg" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title">DOLMEN</h5>
                   <a href="#" class="btn btn-outline-secondary mt-4">Contactar</a>
                 </div>
             </div>
         </div>
         <div class="col-sm-3">
             <div class="card" style="width: 18rem;">
-                <img src="img/partners/mutualista_azuay.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Mutualista Azuay</h5>
+                <img src="img/partners/pronobis.jpg" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title">PRONOBIS</h5>
                   <a href="#" class="btn btn-outline-secondary mt-4">Contactar</a>
                 </div>
             </div>
         </div>
         <div class="col-sm-3">
             <div class="card" style="width: 18rem;">
-                <img src="img/partners/banco_guayaquil.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Banco Guayaquil</h5>
+                <img src="img/partners/grupovasquez.jpg" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title">GRUPO VASQUEZ</h5>
                   <a href="#" class="btn btn-outline-secondary mt-4">Contactar</a>
                 </div>
             </div>
         </div>
         <div class="col-sm-3">
             <div class="card" style="width: 18rem;">
-                <img src="img/partners/mutualista_pichincha.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Mutualista Pichincha</h5>
+                <img src="img/partners/cooperativa.jpeg" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title">COOPERATIVA LOS RIOS</h5>
                   <a href="#" class="btn btn-outline-secondary mt-4">Contactar</a>
                 </div>
             </div>
