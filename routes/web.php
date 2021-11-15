@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\PartnersController;
 use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -32,6 +33,9 @@ Route::get('/proyectos/proyecto-1', [ProjectController::class, 'redirectToProjec
 
 //Ruta para mostrar un blog en especifico
 Route::get('noticias/blog', [BlogController::class, 'redirectToBlog'])->name('blogs.blog');
+
+//RUTA PARA MOSTRAR LA PAGINA PARTNERS -> ARQUITECTOS
+Route::get('socios/arquitectos', [PartnersController::class, 'redirectToArchitects'])->name('socios.arquitectos');
 
 Auth::routes(['register' => false]);
 

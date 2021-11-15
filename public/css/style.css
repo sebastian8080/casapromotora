@@ -298,14 +298,8 @@ h1{
    font-family: 'proxima_nova_rgbold', Helvetica, Arial, sans-serif;
 }
 
-/*OCULTAR DIV DE LINKS QUITO GUAYAQUIL CUENCA MANTA*/
 @media only screen and (max-width: 580px){
-  #links{
-    margin: 0;
-  }
-}
 
-@media only screen and (max-width: 580px){
   #img-logo{
     width: 50px;
   }
@@ -314,4 +308,5 @@ h1{
     background: #aeaaaa;
     padding-left: 10px;
   }
+
 }

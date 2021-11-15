@@ -10,7 +10,7 @@
 
     <div class="position-relative">
         <video style="top: 0; left: 0; width: 100%; height: 100%; opacity: 1; filter: brightness(60%)" muted autoplay loop>
-            <source src="video/Videos de naturaleza (Colección) Videos sin copyright.mp4" type="video/mp4">
+            <source src="video/contact.mp4" type="video/mp4">
         </video>
         <div class="position-absolute top-50 start-50 translate-middle text-white text-center">
             <h1 class="fw-bold" style="font-size: 4vw;">Atendemos tus necesidades</h1>

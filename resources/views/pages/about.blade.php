@@ -8,7 +8,7 @@
 
 @section('content')
 
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    {{-- <div id="carouselExampleControls" class="carousel slide position-relative" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img style="filter: brightness(60%)" src="img/about/about-slider-1.jpg" class="d-block w-100" alt="...">
@@ -28,12 +28,26 @@
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
+        <div class="position-absolute top-50 start-50 translate-middle text-white text-center">
+          <h1 style="font-size: 3vw;">Conoce más sobre nuestra empresa</h1>
+        </div>
+      </div> --}}
+
+      <div class="position-relative">
+        <video style="top: 0; left:0; width: 100%; height: 100%; opacity:1; filter: brightness(60%)" muted autoplay loop>
+          <source src="video/about-us.mp4" type="video/mp4" />
+        </video>
+        <div class="position-absolute top-50 start-50 translate-middle text-white text-center">
+          <h1 style="font-size: 4vw;">Conoce más sobre nuestra empresa</h1>
+        </div>
       </div>
 
+      <div class="container">
       <hr data-aos="flip-up" class="mt-5" style="width: 20%; margin-left: 40%">
       <div class="row mb-1" data-aos="flip-up">
         <div class="text-center" style="padding-left: 10%; padding-right: 10%">
-          <h1 class="mt-1 titles-page-about fw-bold">Nuestra Historia</h1>
+          <img class="img-fluid rounded" style="width: 65%" src="img/about/about-slider-1.jpg" alt="IMAGEN CASA CREDITO">
+          <h1 class="mt-2 titles-page-about fw-bold">Nuestra Historia</h1>
           <p class="m-4">
             Casa Crédito Inmobiliaria fue fundada en el 2007 por iniciativa del señor Homero Serrano, 
             como respuesta a una creciente necesidad de la comunidad ecuatoriana por realizar su sueño de vivienda propia.
@@ -95,6 +109,7 @@
           </div>
         </div>
       </div>
+    </div>
 
     
 @endsection

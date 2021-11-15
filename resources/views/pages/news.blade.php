@@ -8,7 +8,7 @@
 
 @section('content')
     <div>
-        <img style="width: 100%" src="https://www.elmueble.com/medio/2018/12/18/salon-en-blanco-con-techo-de-vigas-de-madera-y-dos-sofas-enfrentados_9862685e_1280x650.jpg" class="img-fluid" alt="...">
+        <img style="width: 100%; filter: brightness(60%)" src="https://www.elmueble.com/medio/2018/12/18/salon-en-blanco-con-techo-de-vigas-de-madera-y-dos-sofas-enfrentados_9862685e_1280x650.jpg" class="img-fluid" alt="...">
     </div>
 
     <div data-aos="flip-up" class="row p-5 m-5 rounded" style="background: #f4f4f4">
@@ -48,15 +48,28 @@
                         <a href="{{ route('blogs.blog') }}" class="btn btn-danger">Leer más</a>
                     </div>
                 </div>
+
+                <!--PAGINATION-->
+                <nav aria-label="Page navigation example" style="float: right">
+                    <ul class="pagination">
+                      <li class="page-item">
+                        <a class="page-link text-secondary" href="#" aria-label="Previous">
+                          <span aria-hidden="true">&laquo;</span>
+                        </a>
+                      </li>
+                      <li class="page-item"><a class="page-link text-secondary" href="#">1</a></li>
+                      <li class="page-item"><a class="page-link text-secondary" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link text-secondary" href="#">3</a></li>
+                      <li class="page-item">
+                        <a class="page-link text-secondary" href="#" aria-label="Next">
+                          <span aria-hidden="true">&raquo;</span>
+                        </a>
+                      </li>
+                    </ul>
+                </nav>
             </div>
             <div class="col-sm-4" data-aos="fade-up" style="padding-left: 5%;">
-                <h4 class="fw-bold">CATEGORIAS</h4>
-                <div class="text-danger">
-                    <a href="#" style="text-decoration: none; color: red">Todas las categorías</a><br>
-                    <a href="#" style="text-decoration: none; color: red">Architecture & tecnología</a><br>
-                    <a href="#" style="text-decoration: none; color: red">Agentes</a><br>
-                    <a href="#" style="text-decoration: none; color: red">Nuevos proyectos</a>
-                </div>
+                @include('layouts.sidebar-news')
             </div>
         </div>
     </div>
