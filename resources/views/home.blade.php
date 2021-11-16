@@ -17,5 +17,5 @@
 
 @section('js')
     <script>console.log('Hi!');</script>
-@endsection
+@stop
 
