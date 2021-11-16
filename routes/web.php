@@ -37,6 +37,8 @@ Route::get('noticias/blog', [BlogController::class, 'redirectToBlog'])->name('bl
 //RUTA PARA MOSTRAR LA PAGINA PARTNERS -> ARQUITECTOS
 Route::get('socios/arquitectos', [PartnersController::class, 'redirectToArchitects'])->name('socios.arquitectos');
 
-Auth::routes(['register' => false]);
+Auth::routes([
+    'register' => false
+]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

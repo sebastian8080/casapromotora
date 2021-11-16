@@ -47,7 +47,7 @@
               </li>
               <li class="nav-item">
                           {{-- {{ route('login')}} --}}
-                <a id="menu-item6" class="nav-link text-white rounded" href="#">LOGIN</a>
+                <a id="menu-item6" class="nav-link text-white rounded" href="{{ route('login') }}">LOGIN</a>
               </li>
             </ul>
           </div>
