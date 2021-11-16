@@ -5,6 +5,7 @@ window.addEventListener('scroll', function (e) {
   var menuItem3 = document.querySelector('#menu-item3');
   var menuItem4 = document.querySelector('#menu-item4');
   var menuItem5 = document.querySelector('#menu-item5');
+  var menuItem6 = document.querySelector('#menu-item6');
 
   if (document.documentElement.scrollTop || document.body.scrollTop > window.innerHeight) {
           nav.classList.add('navbar-light');
@@ -16,6 +17,7 @@ window.addEventListener('scroll', function (e) {
           menuItem3.classList.remove('text-white');
           menuItem4.classList.remove('text-white');
           menuItem5.classList.remove('text-white');
+          menuItem6.classList.remove('text-white');
       } else { 
           nav.classList.add('navbar-dark');
           nav.classList.remove('navbar-light');
@@ -26,5 +28,6 @@ window.addEventListener('scroll', function (e) {
           menuItem3.classList.add('text-white');
           menuItem4.classList.add('text-white');
           menuItem5.classList.add('text-white');
+          menuItem6.classList.add('text-white');
       }
 });
