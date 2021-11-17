@@ -30,9 +30,6 @@
               <li class="nav-item">
                 <a id="menu-item2" class="nav-link text-white rounded" href="{{ route('pages.projects') }}">PROYECTOS</a>
               </li>
-              <li class="nav-item">
-                <a id="menu-item3" class="nav-link text-white rounded" href="{{ route('pages.news') }}">NOTICIAS</a>
-              </li>
               <li class="nav-item dropdown">
                 <a id="menu-item4" class="nav-link dropdown-toggle text-white rounded" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   PARTNERS
@@ -43,11 +40,16 @@
                 </ul>
               </li>
               <li class="nav-item">
+                <a id="menu-item3" class="nav-link text-white rounded" href="{{ route('pages.news') }}">BLOG</a>
+              </li>
+              <li class="nav-item">
                 <a id="menu-item5" class="nav-link text-white rounded" href="{{ route('pages.contact') }}">CONTACTANOS</a>
               </li>
               <li class="nav-item">
                           {{-- {{ route('login')}} --}}
-                <a id="menu-item6" class="nav-link text-white rounded" href="{{ route('login') }}">LOGIN</a>
+                <a id="menu-item6" class="nav-link text-white rounded" href="{{ route('login') }}">
+                  <i class="fas fa-user"></i>
+                </a>
               </li>
             </ul>
           </div>
