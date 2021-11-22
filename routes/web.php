@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 
 // ['register' => false]
 
-Auth::routes(['register' => false]);
+Auth::routes();
 
 //RUTA PARA EL DASHBOARD ADMIN
 Route::prefix('admin')->group(function(){
@@ -53,4 +53,4 @@ Route::get('/proyectos/proyecto-1', function(){return view('pages.project');})->
 Route::get('/noticias/blog', function(){return view('pages.blog');})->name('blogs.blog');
 
 //RUTA PARA MOSTRAR LA PAGINA PARTNERS -> ARQUITECTOS
-Route::get('/socios/arquitectos', function(){return view('pages.construye');})->name('socios.construye');
+Route::get('/socios/construye', function(){return view('pages.construye');})->name('socios.construye');
