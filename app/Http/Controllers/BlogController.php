@@ -6,7 +6,38 @@ use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
-    public function redirectToBlog(){
-        return view('pages.blog');
+    public function index()
+    {
+        return view('admin.blog.index');
+    }
+
+    public function create()
+    {
+        //
+    }
+
+    public function store(Request $request)
+    {
+        //
+    }
+
+    public function show($id)
+    {
+        //
+    }
+
+    public function edit($id)
+    {
+        //
+    }
+
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    public function destroy($id)
+    {
+        //
     }
 }

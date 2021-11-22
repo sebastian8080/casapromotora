@@ -38,7 +38,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        // $this->middleware('guest'); Esto le comente para que me deje ver la vista y añadir un nuevo usuario como admin
     }
 
     /**

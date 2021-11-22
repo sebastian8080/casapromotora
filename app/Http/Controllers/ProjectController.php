@@ -6,7 +6,40 @@ use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
-    public function redirectToProject1(){
-        return view('pages.project');
+    
+    public function index()
+    {
+        return view('admin.projects.index');
+    }
+ 
+    public function create()
+    {
+        //
+    }
+
+    public function store(Request $request)
+    {
+        //
+    }
+
+    public function show($id)
+    {
+        //
+    }
+
+    public function edit($id)
+    {
+        //
+    }
+
+
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    public function destroy($id)
+    {
+        //
     }
 }

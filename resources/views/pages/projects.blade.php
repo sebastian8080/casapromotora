@@ -24,7 +24,7 @@
         <hr data-aos="fade-up" style="color: rgb(166, 177, 176);  width: 20%; margin-left: 40%">
         <div class="row mt-1 pt-1">
             <div class="col-sm-6" data-aos="fade-up">
-                <img class="img-fluid rounded" style="width: 90%;" src="https://revistaconstruir.com/wp-content/uploads/2019/10/edificio.jpg" alt="">
+                <img class="img-fluid rounded" style="width: 90%; height: 70%;" src="https://i.pinimg.com/736x/89/67/f3/8967f3e1c1750f741836c456030ce6ca.jpg" alt="">
             </div>
             <div class="col-sm-6" data-aos="fade-up" style="margin-top:15%; padding-right: 5%">
                 <h1 class="fw-bold pt-1" style="color: #ffffff; -webkit-text-stroke: 1px rgb(162, 157, 157);">Proyecto Uno</h1>

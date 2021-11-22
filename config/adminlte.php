@@ -85,8 +85,8 @@ return [
 
     'layout_topnav' => null,
     'layout_boxed' => null,
-    'layout_fixed_sidebar' => null,
-    'layout_fixed_navbar' => null,
+    'layout_fixed_sidebar' => true,
+    'layout_fixed_navbar' => true,
     'layout_fixed_footer' => null,
     'layout_dark_mode' => null,
 
@@ -188,7 +188,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => 'admin',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -245,7 +245,8 @@ return [
         [
             'text' => 'Usuarios',
             'icon' => 'fas fa-users',
-            'url' => '#'
+            'route' => 'admin.users.index',
+            'can' => 'admin.home'
         ],
         [
             'text' => 'blog',
@@ -255,24 +256,26 @@ return [
         [
             'text' => 'Proyectos',
             'icon' => 'fas fa-project-diagram',
-            'url' => '#'
+            'route' => 'admin.projects.index',
+            'can' => 'admin.projects.index'
         ],
         [
             'text' => 'Blog',
             'icon' => 'fas fa-newspaper',
-            'url' => '#'
+            'route' => 'admin.blog.index',
+            'can' => 'admin.blog.index'
         ],
-        //CABECERA DE LA SIGUIENTE SECCION
-        ['header' => 'account_settings'],
         [
             'text' => 'Perfil',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-user',
+            'can' => 'admin.home'
         ],
         [
             'text' => 'Cambiar Contraseña',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
+            'can' => 'admin.home'
         ],
         // [
         //     'text'    => 'multilevel',

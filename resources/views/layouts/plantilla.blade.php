@@ -36,7 +36,7 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="{{ route('pages.partners') }}">Entidades Financieras</a></li>
-                  <li><a class="dropdown-item" href="{{ route('socios.arquitectos') }}">Construye</a></li>
+                  <li><a class="dropdown-item" href="{{ route('socios.construye') }}">Construye</a></li>
                 </ul>
               </li>
               <li class="nav-item">

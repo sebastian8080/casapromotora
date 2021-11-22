@@ -3,39 +3,111 @@
 @section('title', 'Proyecto 1')
 
 @section('content-head')
-    <link rel="stylesheet" href="{{ URL::asset('css/project.css') }}">
+    <style>
+      img:hover{
+        transform: scale(1.1);
+      }
+    </style>
 @endsection
 
 @section('content')
 
-    <div class="row mt-5 pt-5">
-        <div class="col-sm-4">
-            <h1 class="fw-bold display-3" style="color: #ffffff; -webkit-text-stroke: 1px rgb(162, 157, 157); margin-left: 15%">PROYECTO 1</h1>
-            <h5 style="margin-left: 15%">Encargado</h5>
+  <div class="container mt-5 pt-5">
+    <div class="row">
+      <div class="col-sm-6 col-6">
+        <img class="img-fluid rounded" src="https://acl.com.ec/wp-content/uploads/2021/06/LA-LEY-DE-PROPIEDAD-HORIZONTAL.jpeg" alt="">
+      </div>
+      <div class="col-sm-6 col-6">
+        <div class="row mb-3">
+          <div class="col-sm-6 col-6">
+            <img class="img-fluid rounded" src="https://acl.com.ec/wp-content/uploads/2021/06/LA-LEY-DE-PROPIEDAD-HORIZONTAL.jpeg" alt="">
+          </div>
+          <div class="col-sm-6 col-6">
+            <img class="img-fluid rounded" src="https://acl.com.ec/wp-content/uploads/2021/06/LA-LEY-DE-PROPIEDAD-HORIZONTAL.jpeg" alt="">
+          </div>
         </div>
+        <div class="row">
+          <div class="col-sm-6 col-6">
+            <img class="img-fluid rounded" src="https://acl.com.ec/wp-content/uploads/2021/06/LA-LEY-DE-PROPIEDAD-HORIZONTAL.jpeg" alt="">
+          </div>
+          <div class="col-sm-6 col-6">
+            <img class="img-fluid rounded" src="https://acl.com.ec/wp-content/uploads/2021/06/LA-LEY-DE-PROPIEDAD-HORIZONTAL.jpeg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-5">
         <div class="col-sm-8">
-            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img class="img-fluid rounded" src="https://puertasasturmex.com/wp-content/uploads/2020/12/edificios-1.jpeg" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img class="img-fluid rounded" src="https://www.wallpapertip.com/wmimgs/81-811158_beautiful-building-of-the-world-hd.jpg" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img class="img-fluid rounded" src="https://www.1zoom.me/big2/81/236160-svetik.jpg" class="d-block w-100" alt="...">
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <h2>Direccion del proyecto o la casa</h2>
+            </div>
+            <div class="col-sm-6">
+                <p class="h1 text-danger float-end">$ 100.000</p>
+            </div>
+          </div>
+
+          <div class="row mt-5">
+            <div class="col-sm-3 col-6">
+              <i class="fas fa-bed fa-3x"></i><p>3 habitaciones</p>
+            </div>
+            <div class="col-sm-3 col-6">
+              <i class="fas fa-bath fa-3x"></i><p>1 baño</p>
+            </div>
+            <div class="col-sm-3 col-6">
+              <i class="fas fa-expand-arrows-alt fa-3x"></i><p>60 m2</p>
+            </div>
+            <div class="col-sm-3 col-6">
+              <i class="fas fa-parking fa-3x"></i><p>1 parquedero</p>
+            </div>
+          </div>
+
+          <div class="row mt-5">
+            <h4>Descripcion del proyecto</h4>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo aliquam delectus doloremque excepturi quia tempora eius laborum. 
+              Praesentium minima aperiam ex, ab asperiores perferendis excepturi aut aliquam similique optio consequuntur!
+            </p>
+          </div>
+        </div>
+
+        <div class="col-sm-1"></div>
+
+
+        <div class="col-sm-3 rounded mb-5" style="background: #f4f4f4">
+
+          <h3 class="mt-3 text-center fw-bold">Deseo saber más</h3>
+
+          <form class="mt-3">
+            <div class="form-outline mb-4">
+              <input type="text" id="nombre" class="form-control" />
+              <label class="form-label" for="nombre">Nombre</label>
+            </div>
+        
+            <div class="form-outline mb-4">
+              <input type="email" id="email" class="form-control" />
+              <label class="form-label" for="email">Correo electrónico</label>
+            </div>
+
+            <div class="form-outline mb-4">
+              <input type="number" id="telefono" class="form-control" />
+              <label class="form-label" for="telefono">Teléfono</label>
+            </div>
+          
+            <div class="form-outline mb-4">
+              <textarea class="form-control" id="mensaje" rows="4">Me interesa saber más sobre este proyecto</textarea>
+              <label class="form-label" for="mensaje">Mensaje</label>
+            </div>
+          
+            <button type="submit" class="btn btn-outline-secondary btn-block mb-4 float-end">Enviar</button>
+          </form>
         </div>
     </div>
+  </div>
     
+@endsection
+
+@section('section-scripts')
+    <script src="{{ asset('js/partners.js') }}"></script>
 @endsection

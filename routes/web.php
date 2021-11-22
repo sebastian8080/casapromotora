@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IndexController;
@@ -20,6 +20,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// ['register' => false]
+
+Auth::routes(['register' => false]);
+
+//RUTA PARA EL DASHBOARD ADMIN
+Route::prefix('admin')->group(function(){
+    Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('admin.home');
+
+    //RUTA PARA LOS USUARIOS EN EL ADMIN DASHBOARD
+    Route::resource('/users', UserController::class)->only(['index',  'edit', 'update'])->names('admin.users');
+
+    Route::resource('/projects', ProjectController::class)->names('admin.projects');
+
+    Route::resource('/blog', BlogController::class)->names('admin.blog');
+});
+
+//RUTAS PARA LA PAGINA NORMAL
+
 Route::get('/', [IndexController::class, 'redirectToHome'])->name('pages.home');
 
 Route::get('/sobre-nosotros', [IndexController::class, 'redirectToAbout'])->name('pages.about');
@@ -28,17 +46,11 @@ Route::get('/socios', [IndexController::class, 'redirectToPartners'])->name('pag
 Route::get('/proyectos', [IndexController::class, 'redirectToProjects'])->name('pages.projects');
 Route::get('/noticias', [IndexController::class, 'redirectToNews'])->name('pages.news');
 
-//Route para proyecto especifico
-Route::get('/proyectos/proyecto-1', [ProjectController::class, 'redirectToProject1'])->name('projects.project1');
+//Route para proyecto especifico - PRUEBA
+Route::get('/proyectos/proyecto-1', function(){return view('pages.project');})->name('projects.project1');
 
-//Ruta para mostrar un blog en especifico
-Route::get('noticias/blog', [BlogController::class, 'redirectToBlog'])->name('blogs.blog');
+//Ruta para mostrar un blog en especifico - PRUEBA
+Route::get('/noticias/blog', function(){return view('pages.blog');})->name('blogs.blog');
 
 //RUTA PARA MOSTRAR LA PAGINA PARTNERS -> ARQUITECTOS
-Route::get('socios/arquitectos', [PartnersController::class, 'redirectToArchitects'])->name('socios.arquitectos');
-
-Auth::routes([
-    'register' => false
-]);
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/socios/arquitectos', function(){return view('pages.construye');})->name('socios.construye');
