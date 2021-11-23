@@ -2,11 +2,9 @@ html, body {
   max-width: 100%;
   overflow-x: hidden;
 }
-
  
 /*MARGIN LEFT DEL NAVBAR EMPEZANDO DESDE 'NOSOTROS'*/
   #navbarNav{
-    padding-left: 45%;
     color: #ffffff;
   }
 
@@ -310,7 +308,6 @@ h1{
     background: #aeaaaa;
     padding-left: 10px;
   }
-
 }
 
 .img-familia-creditos{

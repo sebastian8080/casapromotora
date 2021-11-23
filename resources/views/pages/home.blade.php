@@ -1,12 +1,20 @@
 @extends('layouts.plantilla')
 
-@section('title', 'Casa Credito')
+@section('title', 'Inicio')
 
 @section('content-head')
     <style>
       .link:hover{
         border-bottom: 1px solid;
         font-size: 40px;
+      }
+
+      @media only screen and (max-width: 580px){
+      
+        .link{
+          margin-left: 40%;
+        }
+
       }
     </style>
 @endsection
@@ -45,13 +53,13 @@
 
     <div id="links" class="row position-absolute top-50 start-50 translate-middle pt-4" style="z-index: 1;">
       <div class="col-sm-3">
-        <h4 style="font-size: 2.5vw"><a href="#" class="text-white link" style="text-decoration: none;">QUITO</a></h4>
+        <h4 style="font-size: 2.5vw"><a href="#" class="text-white link" style="text-decoration: none; margin-left: -30%">QUITO</a></h4>
       </div>
       <div class="col-sm-3">
-        <h4 style="font-size: 2.5vw"><a href="#" class="text-white link" style="text-decoration: none;">GUAYAQUIL</a> </h4>
+        <h4 style="font-size: 2.5vw"><a href="#" class="text-white link" style="text-decoration: none; margin-left: -25%">GUAYAQUIL</a> </h4>
       </div>
       <div class="col-sm-3">
-        <h4 style="font-size: 2.5vw"><a href="#" class="text-white link" style="text-decoration: none; margin-left: 40%">CUENCA</a></h4>
+        <h4 style="font-size: 2.5vw"><a href="#" class="text-white link" style="text-decoration: none; margin-left: 25%">CUENCA</a></h4>
       </div>
       <div class="col-sm-3">
         <h4 style="font-size: 2.5vw"><a href="#" class="text-white link" style="text-decoration: none; margin-left: 45%">MANTA</a></h4>

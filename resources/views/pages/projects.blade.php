@@ -20,24 +20,23 @@
 
     
     <div class="container">
-
-        <hr data-aos="fade-up" style="color: rgb(166, 177, 176);  width: 20%; margin-left: 40%">
-        <div class="row mt-1 pt-1">
-            <div class="col-sm-6" data-aos="fade-up">
+        <hr data-aos="fade-up" style="color: rgb(166, 177, 176);  width: 20%; margin-left: 40%" class="mt-5 mb-5">
+        <div class="row mt-1 pt-1" data-aos="fade-up">
+            <div class="col-sm-6" style="margin-bottom: -15%">
                 <img class="img-fluid rounded" style="width: 90%; height: 70%;" src="https://i.pinimg.com/736x/89/67/f3/8967f3e1c1750f741836c456030ce6ca.jpg" alt="">
             </div>
-            <div class="col-sm-6" data-aos="fade-up" style="margin-top:15%; padding-right: 5%">
+            <div class="col-sm-6" style="margin-top:15%; padding-right: 5%">
                 <h1 class="fw-bold pt-1" style="color: #ffffff; -webkit-text-stroke: 1px rgb(162, 157, 157);">Proyecto Uno</h1>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum magni nulla voluptatum quo perspiciatis eligendi aut tempore 
                     soluta voluptatem expedita maiores sed placeat, assumenda molestiae nam, necessitatibus facere harum accusantium?
                 </p>
-                <div class="d-grid gap-2 col-6 mx-auto pb-3">
+                <div class="d-grid gap-2 col-6 mx-auto">
                     <a class="btn btn-outline-secondary" href="{{ route('projects.project1') }}">Ver proyecto</a>
                 </div>
             </div>
         </div>
-        <hr data-aos="fade-up" style="color: rgb(166, 177, 176); width: 20%; margin-left: 40%">
+        <hr data-aos="fade-up" style="color: rgb(166, 177, 176); width: 20%; margin-left: 40%" class="mb-5">
         <div class="row">
             <div class="col-sm-6 mb-3" data-aos="fade-up" style="margin-top: 10%; padding-left: 5%"> 
                 <h1 class="fw-bold" style="color: #ffffff; -webkit-text-stroke: 1px rgb(162, 157, 157);">Proyecto Dos</h1>

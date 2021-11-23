@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>@yield('title')</title>
+    <title>Casa Credito Promotora - @yield('title')</title>
 
     @yield('content-head')
 
@@ -22,8 +22,8 @@
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon bg-secondary rounded" style="opacity: .5"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul id="itemMenu" class="navbar-nav rounded">
+          <div class="collapse navbar-collapse">
+            <ul id="itemMenu" class="navbar-nav rounded ms-auto">
               <li class="nav-item">
                 <a id="menu-item1" class="nav-link text-white rounded" aria-current="page" href="{{ route('pages.about') }}">NOSOTROS</a>
               </li>
@@ -46,10 +46,7 @@
                 <a id="menu-item5" class="nav-link text-white rounded" href="{{ route('pages.contact') }}">CONTACTANOS</a>
               </li>
               <li class="nav-item">
-                          {{-- {{ route('login')}} --}}
-                <a id="menu-item6" class="nav-link text-white rounded" href="{{ route('login') }}">
-                  <i class="fas fa-user"></i>
-                </a>
+                <a id="menu-item6" class="nav-link text-white rounded" href="{{ route('login') }}">LOGIN</a>
               </li>
             </ul>
           </div>
