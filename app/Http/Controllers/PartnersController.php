@@ -6,7 +6,5 @@ use Illuminate\Http\Request;
 
 class PartnersController extends Controller
 {
-    public function redirectToArchitects(){
-        return view('pages.construye');
-    }
+   
 }
