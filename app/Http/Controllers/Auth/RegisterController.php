@@ -42,7 +42,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        //  $this->middleware('guest');
+        //$this->middleware('auth');
     }
 
     /**
@@ -87,6 +87,6 @@ class RegisterController extends Controller
 
         return $request->wantsJson()
                     ? new JsonResponse([], 201)
-                    : redirect('/admin/users');
+                    : redirect('/admin/users')->with('info', 'Usuario registrado');
     }
 }

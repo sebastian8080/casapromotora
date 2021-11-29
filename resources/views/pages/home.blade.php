@@ -10,11 +10,9 @@
       }
 
       @media only screen and (max-width: 580px){
-      
         .link{
           margin-left: 40%;
         }
-
       }
     </style>
 @endsection

@@ -27,7 +27,7 @@ class IndexController extends Controller
         return view('pages.projects');
     }
 
-    public function redirectToNews(){
+    public function redirectToBlog(){
         return view('pages.news');
     }
 }

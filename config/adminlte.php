@@ -238,7 +238,7 @@ return [
 
         // Sidebar items:
         [
-            'text' => 'Pagina Oficial',
+            'text' => 'Casa Credito Promotora',
             'route' => 'pages.home',
             'icon' => 'fas fa-fw fa-home'
         ],
@@ -249,9 +249,10 @@ return [
             'can' => 'admin.home'
         ],
         [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog', //Esto puede servir para no mostrar algunas opciones a usuarios normales
+            'text' => 'Roles',
+            'icon' => 'fas fa-user-tag',
+            'route' => 'admin.roles.index',
+            'can' => 'admin.roles.index'
         ],
         [
             'text' => 'Proyectos',

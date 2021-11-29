@@ -8,7 +8,7 @@
 
     @yield('content-head')
 
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
     <!--EFECTOS DE APARECIMIENTO-->
@@ -18,11 +18,11 @@
   <!--NAVBAR-->
     <nav id="menu" class="navbar navbar-expand-lg fixed-top navbar-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="{{ route('pages.home') }}"><img id="img-logo" src="{{ URL::asset('casacredito-logo.png'); }}" alt=""></a>
+          <a class="navbar-brand" href="{{ route('pages.home') }}"><img id="img-logo" src="{{ URL::asset('casacredito-logo.png'); }}" alt="Logo Casa Credito Promotora"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon bg-secondary rounded" style="opacity: .5"></span>
+            <span class="navbar-toggler-icon bg-secondary rounded" style="opacity: 0.5"></span>
           </button>
-          <div class="collapse navbar-collapse">
+          <div class="collapse navbar-collapse" id="navbarNav">
             <ul id="itemMenu" class="navbar-nav rounded ms-auto">
               <li class="nav-item">
                 <a id="menu-item1" class="nav-link text-white rounded" aria-current="page" href="{{ route('pages.about') }}">NOSOTROS</a>
