@@ -30,6 +30,7 @@ Route::get('/contacto', [IndexController::class, 'redirectToContact'])->name('pa
 Route::get('/socios', [IndexController::class, 'redirectToPartners'])->name('pages.partners');
 Route::get('/proyectos', [IndexController::class, 'redirectToProjects'])->name('pages.projects');
 Route::get('/blog', [IndexController::class, 'redirectToBlog'])->name('pages.news');
+Route::get('/nuestro-equipo', function () {return view('pages.equipo');})->name('pages.equipo');
 
 //Route para proyecto especifico - PRUEBA
 Route::get('/proyectos/proyecto-1', function(){return view('pages.project');})->name('projects.project1');

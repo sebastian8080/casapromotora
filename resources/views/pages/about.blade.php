@@ -7,32 +7,6 @@
 @endsection
 
 @section('content')
-
-    {{-- <div id="carouselExampleControls" class="carousel slide position-relative" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img style="filter: brightness(60%)" src="img/about/about-slider-1.jpg" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img style="filter: brightness(60%)" src="img/about/about-slider-2.jpg" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img style="filter: brightness(60%)" src="img/about/about-slider-3.jpg" class="d-block w-100" alt="...">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-        <div class="position-absolute top-50 start-50 translate-middle text-white text-center">
-          <h1 style="font-size: 3vw;">Conoce más sobre nuestra empresa</h1>
-        </div>
-      </div> --}}
-
       <div class="position-relative">
         <video style="top: 0; left:0; width: 100%; height: 100%; opacity:1; filter: brightness(60%)" muted autoplay loop>
           <source src="video/about-us.mp4" type="video/mp4" />
