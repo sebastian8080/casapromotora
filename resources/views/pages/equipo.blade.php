@@ -3,7 +3,7 @@
 @section('title', 'Nuestro Equipo')
 
 @section('content-head')
-    
+
 @endsection
 
 @section('content')
@@ -18,11 +18,11 @@
     </div>
 
     <div class="container mt-5">
-        <div class="row mb-5">
+        <div class="row mb-3">
             <div class="col-sm-6">
                 <img class="img-fluid rounded mx-auto d-block" style="filter: brightness(80%)" src="img/team/ISA FINAL-01.jpg" width="70%" alt="Equipo de trabajo - Casa Credito Promotora">
             </div>
-            <div class="col-sm-6 d-flex align-items-center">
+            <div class="col-sm-6 d-flex align-items-center mt-2">
                 <p class="text-justify h5">
                     <i>
                         "La <b>responsabilidad</b> social empieza en una compañia competitiva y fuerte. Solo una empresa en buen estado puede mejorar y enriquecer
@@ -34,7 +34,7 @@
 
         <hr>
 
-        <div class="row mb-5 mt-5">
+        <div class="row mb-5 mt-3">
             <div class="col-sm-6  d-flex align-items-center">
                 <p class="text-justify h5">
                     <i>
