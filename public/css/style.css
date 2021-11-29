@@ -46,7 +46,7 @@ html, body {
   /*TEXTO DE TITULOS DE VILLAS DEPARTAMENTOS Y SUITES*/
   .texto-imagenes{
     color: #ffffff;
-    -webkit-text-stroke: 1px rgb(162, 157, 157);
+    -webkit-text-stroke: 1px rgb(128, 129, 135);
     text-align: center;
   }
 
@@ -249,7 +249,7 @@ html, body {
 /*PONER LOS TITULOS DE LA PAGINA NOSOTROS EN COLOR BLANCO*/
 .titles-page-about{
   color: #ffffff;
-  -webkit-text-stroke: 1px rgb(162, 157, 157);
+  -webkit-text-stroke: 1px rgb(128, 129, 135);
 }
 
 /*PONER LOS BOTONES DE LA NAVBAR DE DIFERENTE COLOR CUANDO SE PASE EL MOUSE*/

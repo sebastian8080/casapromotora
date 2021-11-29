@@ -3,7 +3,61 @@
 @section('title', 'Sobre Nosotros')
 
 @section('content-head')
-    <link rel="stylesheet" href="{{URL::asset('css/secondary-pages.css'); }}">
+    <style>
+  .flip-container {
+  background-color: transparent;
+  width: 100%;
+  height: 400px;
+  perspective: 1000px; 
+}
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+.flip-container:hover .card {
+  transform: rotateY(180deg);
+}
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3vw;
+}
+.front {
+  background-color: #f4f4f4;
+  color: #000;
+}
+.back {
+  background-color: #808187;
+  color: white;
+  transform: rotateY(180deg);
+}
+.text-description{
+  font-size: 1.3vw;
+}
+
+@media only screen and (max-width: 580px){
+  .text-description{
+    font-size: 4vw;
+  }
+
+  .flip-container{
+    height: 250px;
+  }
+
+  .titles-page-about{
+    font-size: 6vw;
+  }
+}
+    </style>
 @endsection
 
 @section('content')
@@ -16,73 +70,94 @@
         </div>
       </div>
 
+      <hr data-aos="flip-up" class="mt-4 mb-4" style="width: 40%; margin-left: 30%">
+
       <div class="container">
-      <hr data-aos="flip-up" class="mt-5" style="width: 20%; margin-left: 40%">
-      <div class="row mb-1" data-aos="flip-up">
+      <div class="row" data-aos="flip-up">
         <div class="text-center" style="padding-left: 10%; padding-right: 10%">
-          <img class="img-fluid rounded" style="width: 65%" src="img/about/about-slider-1.jpg" alt="IMAGEN CASA CREDITO">
+          <img class="img-fluid rounded" style="width: 80%" src="img/about/about-slider-1.jpg" alt="IMAGEN CASA CREDITO">
           <h1 class="mt-2 titles-page-about fw-bold">Nuestra Historia</h1>
-          <p class="m-4">
+          <p>
             Casa Crédito Inmobiliaria fue fundada en el 2007 por iniciativa del señor Homero Serrano, 
             como respuesta a una creciente necesidad de la comunidad ecuatoriana por realizar su sueño de vivienda propia.
-          </p>
-          <p class="m-4">
             Nos hemos dado a conocer por brindar los mejores servicios en Gestión Inmobiliaria, Gestión  Financiera y Asistencia Legal, 
             adquiriendo una vasta experiencia asesorando a miles de familias en su inversión, dando soluciones con agilidad y creatividad comercial; 
             Con un trato exclusivo y personalizado aportamos una dinámica basada en nuevas ideas.
-          </p>
-          <p class="m-4">
             Contamos con diferentes filtros y estándares de calidad para dar las mejores opciones, alcanzando una posición reflejada en la acogida y 
             confianza de nuestros clientes que valoran el profesionalismo y nos eligen a la hora de decidir su inversión inmobiliaria.
           </p>
         </div>
       </div>
 
-      <hr data-aos="flip-left" style="width: 40%; margin-left: 5%">
+      <hr data-aos="flip-up" class="mt-3 mb-4" style="width: 40%; margin-left: 29%">
 
-      <div class="row" data-aos="flip-left">
-        <div class="col-sm-6 text-justify rounded" style="background: #f4f4f4">
-          <h1 class="mt-5 pt-5 text-center titles-page-about fw-bold">Mision</h1>
-          <p class="m-5">
-            Desde su creación, Casa Crédito Inmobiliaria tiene como misión asesorar a sus clientes en inversiones inmobiliarias, 
-            todo dentro de un marco de transparencia, compromiso e integridad, protegiendo los intereses de nuestros clientes.
-          </p>
+      <div class="row" data-aos="flip-up">
+        <div class="col-sm-6 text-justify rounded">
+          <div class="flip-container">
+            <div class="card">
+              <div class="front">
+                <p class="titles-page-about fw-bold">MISION</p>
+              </div>
+              <div class="back">
+                <p class="text-description m-2">
+                  Desde su creación, Casa Crédito Inmobiliaria tiene como misión asesorar a sus clientes en inversiones inmobiliarias, 
+                  todo dentro de un marco de transparencia, compromiso e integridad, protegiendo los intereses de nuestros clientes.
+                </p>
+              </div>
+            </div>
+          </div> 
         </div>
-        <div class="col-sm-6">
-          <img class="img-fluid rounded mt-5 mb-5" style="width: 90%" src="https://cdn.bizneo.com/blog/wp-content/uploads/2020/07/Formacio%CC%81n-de-equipos-de-trabajo-Etapas-y-Claves-810x455.jpg" alt="">
-        </div>
-      </div>
-
-      <hr data-aos="flip-right" style="width: 40%; margin-left: 55%">
-
-      <div class="row mb-4" data-aos="flip-right">
-        <div class="col-sm-6">
-          <img class="img-fluid mt-5 rounded mb-1" style="width: 100%; height: 70%; padding-left: 10%" src="https://assets.entrepreneur.com/content/3x2/2000/20190412172923-vision.jpeg" alt="">
-        </div>
-        <div class="col-sm-6 text-justify rounded" style="background: #f4f4f4">
-          <h1 class="mt-5 pt-4 text-center titles-page-about fw-bold">Vision</h1>
-          <p class="m-5">
-            Nuestra visión es lograr un posicionamiento como una empresa líder en el sector inmobiliario de toda Latinoamérica y Estados Unidos. 
-            Basados en la atención de manera prioritaria a las necesidades de financiamiento de propiedades de nuestros clientes, y, 
-            a favor del desarrollo de toda la comunidad latina, Casa Crédito Inmobiliaria se propone como meta 2018 crear nuevas alianzas que faciliten 
-            la concreción de negocios, consolidando e incrementando las actividades financieras para que más familias realicen el sueño de su vivienda propia!
-          </p>
+        <div class="col-sm-6 d-flex align-items-center">
+          <img class="img-fluid rounded" style="width: 100%; height: 80%" src="https://cdn.bizneo.com/blog/wp-content/uploads/2020/07/Formacio%CC%81n-de-equipos-de-trabajo-Etapas-y-Claves-810x455.jpg" alt="">
         </div>
       </div>
 
-      <hr data-aos="flip-down" style="width: 20%; margin-left: 40%">
+      <hr data-aos="flip-up" class="mt-4 mb-4" style="width: 40%; margin-left: 30%">
 
-      <div class="container">
-        <div class="row" data-aos="flip-down">
-          <div class="text-center mt-2 mb-5 rounded" style="background: #f4f4f4">
-            <h1 class="mt-5 titles-page-about fw-bold">Organización</h1>
-            <p class="text-justify mb-5" style="padding-left: 20%; padding-right: 20%">
-              CasaCredito es una inmobiliaria especializada en la atención a sus clientes con vocación de servicio y comprometida en brindarles asesoría para llevar a 
-              cabo la negociación más importante de su vida.
-            </p>
+      <div class="row" data-aos="flip-up">
+        <div class="col-sm-6 d-flex align-items-center">
+          <img class="img-fluid rounded" style="width: 100%; height: 80%;" src="https://assets.entrepreneur.com/content/3x2/2000/20190412172923-vision.jpeg" alt="">
+        </div>
+        <div class="col-sm-6 text-justify rounded">
+          <div class="flip-container">
+            <div class="card">
+              <div class="front">
+                <p class="titles-page-about fw-bold">VISION</p>
+              </div>
+              <div class="back">
+                <p class="text-description m-2">
+                  Nuestra visión es lograr un posicionamiento como una empresa líder en el sector inmobiliario de toda Latinoamérica y Estados Unidos. 
+                  Basados en la atención de manera prioritaria a las necesidades de financiamiento de propiedades de nuestros clientes, y, 
+                  a favor del desarrollo de toda la comunidad latina, Casa Crédito Inmobiliaria se propone como meta 2018 crear nuevas alianzas que faciliten 
+                  la concreción de negocios, consolidando e incrementando las actividades financieras para que más familias realicen el sueño de su vivienda propia!
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
+      <hr data-aos="flip-up" class="mt-4 mb-3" style="width: 40%; margin-left: 30%">
+
+      <div class="container">
+        <div class="row" data-aos="flip-up">
+          <div class="text-center mt-2 mb-5 rounded">
+            <div class="flip-container">
+              <div class="card">
+                <div class="front">
+                  <p class="titles-page-about fw-bold">ORGANIZACION</p>
+                </div>
+                <div class="back">
+                  <p class="text-description m-3">
+                    CasaCredito es una inmobiliaria especializada en la atención a sus clientes con vocación de servicio y comprometida en brindarles asesoría para llevar a 
+                    cabo la negociación más importante de su vida.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>  
     </div>
 
     
