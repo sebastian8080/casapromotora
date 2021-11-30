@@ -108,7 +108,7 @@
           </div> 
         </div>
         <div class="col-sm-6 d-flex align-items-center">
-          <img class="img-fluid rounded" style="width: 100%; height: 80%" src="https://cdn.bizneo.com/blog/wp-content/uploads/2020/07/Formacio%CC%81n-de-equipos-de-trabajo-Etapas-y-Claves-810x455.jpg" alt="">
+          <img class="img-fluid rounded" style="width: 100%; height: 80%" src="img/about/mision.jpg" alt="">
         </div>
       </div>
 
@@ -116,7 +116,7 @@
 
       <div class="row" data-aos="flip-up">
         <div class="col-sm-6 d-flex align-items-center">
-          <img class="img-fluid rounded" style="width: 100%; height: 80%;" src="https://assets.entrepreneur.com/content/3x2/2000/20190412172923-vision.jpeg" alt="">
+          <img class="img-fluid rounded" style="width: 100%; height: 80%;" src="img/about/vision.jpg" alt="">
         </div>
         <div class="col-sm-6 text-justify rounded">
           <div class="flip-container">
@@ -148,10 +148,14 @@
                   <p class="titles-page-about fw-bold">ORGANIZACION</p>
                 </div>
                 <div class="back">
-                  <p class="text-description m-3">
+                  <p class="text-description m-2">
                     CasaCredito es una inmobiliaria especializada en la atención a sus clientes con vocación de servicio y comprometida en brindarles asesoría para llevar a 
                     cabo la negociación más importante de su vida.
                   </p>
+                  <br>
+                  <div>
+                    <img src="img/about/organizacion.jpg" alt="Tres personas sentadas" style="width: 70%" class="img-fluid">
+                  </div>
                 </div>
               </div>
             </div>
