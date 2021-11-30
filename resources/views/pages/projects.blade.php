@@ -13,21 +13,21 @@
             <source src="video/projects.mp4" type="video/mp4">
         </video>
         <div class="position-absolute top-50 start-50 translate-middle text-white">
-            <h1 class="text-center" style="font-size: 5vw;">Proyectos</h1>
+            <h1 class="text-center" style="font-size: 5vw;">Propiedades</h1>
             <h4 class="text-center" style="font-size: 2.5vw;">Aqui te mostramos nuestros proyectos <br> más innovadores</h4>
         </div>
     </div>
 
     
     <div class="container">
-        <hr data-aos="fade-up" style="color: rgb(166, 177, 176);  width: 20%; margin-left: 40%" class="mt-3 mb-3">
+        <hr data-aos="fade-up" style="color: rgb(166, 177, 176);  width: 20%; margin-left: 40%" class="mt-5 mb-5">
         <div class="row mt-1 pt-1" data-aos="fade-up">
-            <div class="col-sm-6" style="margin-bottom: -17%">
-                <img class="img-fluid rounded mx-auto d-block" style="width: 90%; height: 70%;" src="https://i.pinimg.com/736x/89/67/f3/8967f3e1c1750f741836c456030ce6ca.jpg" alt="">
+            <div class="col-sm-6">
+                <img class="img-fluid rounded mx-auto d-block" style="width: 100%; height: 100%;" src="img/projects/adra/CAR_9625.jpg" alt="Proyecto Adra">
             </div>
             <div class="col-sm-6 d-flex align-items-center">
                 <div>
-                    <h1 class="fw-bold pt-1" style="color: #ffffff; -webkit-text-stroke: 1px rgb(162, 157, 157);">Proyecto Uno</h1>
+                    <h1 class="fw-bold pt-1" style="color: #ffffff; -webkit-text-stroke: 1px rgb(162, 157, 157);">ADRA</h1>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum magni nulla voluptatum quo perspiciatis eligendi aut tempore 
                         soluta voluptatem expedita maiores sed placeat, assumenda molestiae nam, necessitatibus facere harum accusantium?
@@ -39,11 +39,12 @@
             </div>
         </div>
 
-        <hr data-aos="fade-up" style="color: rgb(166, 177, 176); width: 20%; margin-left: 40%" class="mb-5">
-        <div class="row" data-aos="fade-up">
+        <hr data-aos="fade-up" style="color: rgb(166, 177, 176); width: 20%; margin-left: 40%" class="mt-5 mb-5">
+
+        <div class="row mb-3" data-aos="fade-up">
             <div class="col-sm-6 mb-3 d-flex align-items-center"> 
                 <div class="pb-5 mb-1">
-                    <h1 class="fw-bold" style="color: #ffffff; -webkit-text-stroke: 1px rgb(162, 157, 157);">Proyecto Dos</h1>
+                    <h1 class="fw-bold" style="color: #ffffff; -webkit-text-stroke: 1px rgb(162, 157, 157);">FUTURA NARANCAY</h1>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum magni nulla voluptatum quo perspiciatis eligendi aut tempore 
                         soluta voluptatem expedita maiores sed placeat, assumenda molestiae nam, necessitatibus facere harum accusantium?
@@ -53,8 +54,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 mb-n5 pb-n5" style="margin-bottom: -7%">
-                <img class="img-fluid rounded mx-auto d-block" style="width: 90%; height: 70%;" src="https://i.pinimg.com/736x/89/67/f3/8967f3e1c1750f741836c456030ce6ca.jpg" alt="">
+            <div class="col-sm-6 mb-n5 pb-n5" style="">
+                <img class="img-fluid rounded mx-auto d-block" style="width: 100%; height: 100%;" src="img/projects/futuranarancay/Renders FUTURA NARANCAY (1).jpeg" alt="">
             </div>
         </div>
     </div>

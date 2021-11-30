@@ -32,7 +32,7 @@
             </div>
         </div>
 
-        <hr>
+        <hr class="mt-5 mb-5">
 
         <div class="row mb-5 mt-3">
             <div class="col-sm-6  d-flex align-items-center">

@@ -32,7 +32,7 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a id="menu-item2" class="nav-link text-white rounded" href="{{ route('pages.projects') }}">PROYECTOS</a>
+                <a id="menu-item2" class="nav-link text-white rounded" href="{{ route('pages.projects') }}">PROPIEDADES</a>
               </li>
               <li class="nav-item dropdown">
                 <a id="menu-item4" class="nav-link dropdown-toggle text-white rounded" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

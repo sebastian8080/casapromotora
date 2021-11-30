@@ -298,18 +298,12 @@ h1{
 
 
 /*CAMBIAR ASPECTO DEL MENU DROPDOWN CUANDO SE ESTA NAVEGANDO DESDE EL CELULAR*/
-@media only screen and (max-width: 580px){
-
+@media screen and (max-width: 990px){
   #img-logo{
     width: 50px;
   }
-
   #itemMenu{
     background: #aeaaaa;
     padding-left: 10px;
   }
-}
-
-.img-familia-creditos{
-  background-image: url("{{ url('img/home/FAMILIA-CREDITOS.jpg') }}");
 }
