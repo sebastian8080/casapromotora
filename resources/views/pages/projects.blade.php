@@ -42,7 +42,7 @@
         <hr data-aos="fade-up" style="color: rgb(166, 177, 176); width: 20%; margin-left: 40%" class="mb-3">
         <div class="row" data-aos="fade-up">
             <div class="col-sm-6 mb-3 d-flex align-items-center"> 
-                <div>
+                <div class="mb-5">
                     <h1 class="fw-bold" style="color: #ffffff; -webkit-text-stroke: 1px rgb(162, 157, 157);">Proyecto Dos</h1>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum magni nulla voluptatum quo perspiciatis eligendi aut tempore 
@@ -53,7 +53,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6" style="margin-bottom: -19%">
+            <div class="col-sm-6" style="margin-bottom: -11%">
                 <img class="img-fluid rounded mx-auto d-block" style="width: 90%; height: 70%;" src="https://i.pinimg.com/736x/89/67/f3/8967f3e1c1750f741836c456030ce6ca.jpg" alt="">
             </div>
         </div>
