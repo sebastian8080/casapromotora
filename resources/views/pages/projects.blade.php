@@ -58,6 +58,25 @@
                 <img class="img-fluid rounded mx-auto d-block" style="width: 100%; height: 100%;" src="img/projects/futuranarancay/Renders FUTURA NARANCAY (1).jpeg" alt="">
             </div>
         </div>
+
+        <hr data-aos="fade-up" style="color: rgb(166, 177, 176);  width: 20%; margin-left: 40%" class="mt-5 mb-5">
+        <div class="row mt-1 pt-1" data-aos="fade-up">
+            <div class="col-sm-6">
+                <img class="img-fluid rounded mx-auto d-block" style="width: 100%; height: 100%;" src="img/projects/toscana/DSC_3735.jpg" alt="Proyecto Adra">
+            </div>
+            <div class="col-sm-6 d-flex align-items-center">
+                <div>
+                    <h1 class="fw-bold pt-1" style="color: #ffffff; -webkit-text-stroke: 1px rgb(162, 157, 157);">TOSCANA</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum magni nulla voluptatum quo perspiciatis eligendi aut tempore 
+                        soluta voluptatem expedita maiores sed placeat, assumenda molestiae nam, necessitatibus facere harum accusantium?
+                    </p>
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <a class="btn btn-outline-secondary" href="{{ route('projects.project1') }}">Ver proyecto</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 @endsection
 
