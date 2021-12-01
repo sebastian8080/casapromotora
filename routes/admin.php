@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\RoleController;
 use Illuminate\Support\Facades\Route;
@@ -14,7 +15,7 @@ Route::prefix('admin')->middleware('auth')->group(function(){
 
     Route::resource('/projects', ProjectController::class)->middleware('can:admin.projects.index')->names('admin.projects');
 
-    Route::resource('/posts', BlogController::class)->middleware('can:admin.blog.index')->names('admin.blog');
+    Route::resource('/posts', PostController::class)->middleware('can:admin.blog.index')->names('admin.blog');
 
     Route::resource('/roles', RoleController::class)->middleware('can:admin.roles.index')->names('admin.roles');
 });
