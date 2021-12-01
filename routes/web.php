@@ -28,7 +28,7 @@ Route::get('/', [IndexController::class, 'redirectToHome'])->name('pages.home');
 Route::get('/sobre-nosotros', [IndexController::class, 'redirectToAbout'])->name('pages.about');
 Route::get('/contacto', [IndexController::class, 'redirectToContact'])->name('pages.contact');
 Route::get('/socios', [IndexController::class, 'redirectToPartners'])->name('pages.partners');
-Route::get('/proyectos', [IndexController::class, 'redirectToProjects'])->name('pages.projects');
+Route::get('/propiedades', [IndexController::class, 'redirectToProjects'])->name('pages.projects');
 Route::get('/blog', [IndexController::class, 'redirectToBlog'])->name('pages.news');
 Route::get('/nuestro-equipo', function () {return view('pages.equipo');})->name('pages.equipo');
 

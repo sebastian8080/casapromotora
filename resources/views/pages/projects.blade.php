@@ -23,7 +23,7 @@
         <hr data-aos="fade-up" style="color: rgb(166, 177, 176);  width: 20%; margin-left: 40%" class="mt-5 mb-5">
         <div class="row mt-1 pt-1" data-aos="fade-up">
             <div class="col-sm-6">
-                <img class="img-fluid rounded mx-auto d-block" style="width: 100%; height: 100%;" src="img/projects/adra/CAR_9625.jpg" alt="Proyecto Adra">
+                <img class="img-fluid rounded mx-auto d-block" style="width: 100%; height: 100%;" src="img/projects/adra/1.jpg" alt="Proyecto Adra">
             </div>
             <div class="col-sm-6 d-flex align-items-center">
                 <div>
@@ -55,14 +55,14 @@
                 </div>
             </div>
             <div class="col-sm-6 mb-n5 pb-n5" style="">
-                <img class="img-fluid rounded mx-auto d-block" style="width: 100%; height: 100%;" src="img/projects/futuranarancay/Renders FUTURA NARANCAY (1).jpeg" alt="">
+                <img class="img-fluid rounded mx-auto d-block" style="width: 100%; height: 100%;" src="img/projects/futuranarancay/1.jpeg" alt="Futura Narancay">
             </div>
         </div>
 
         <hr data-aos="fade-up" style="color: rgb(166, 177, 176);  width: 20%; margin-left: 40%" class="mt-5 mb-5">
         <div class="row mt-1 pt-1" data-aos="fade-up">
             <div class="col-sm-6">
-                <img class="img-fluid rounded mx-auto d-block" style="width: 100%; height: 100%;" src="img/projects/toscana/DSC_3735.jpg" alt="Proyecto Adra">
+                <img class="img-fluid rounded mx-auto d-block" style="width: 100%; height: 100%;" src="img/projects/toscana/1.jpg" alt="Proyecto Toscana">
             </div>
             <div class="col-sm-6 d-flex align-items-center">
                 <div>

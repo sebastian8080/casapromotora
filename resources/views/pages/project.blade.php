@@ -144,7 +144,7 @@
 <div class="row">
   <div class="col-sm-6 col-6">
     <div class="column">
-      <img class="img-fluid" src="{{url('img/projects/adra/CAR_9555.jpg')}}" onclick="openModal();currentSlide(1)" class="hover-shadow">
+      <img class="img-fluid" src="{{url('img/projects/adra/1.jpg')}}" onclick="openModal();currentSlide(1)" class="hover-shadow">
     </div>
   </div>
 
@@ -152,12 +152,12 @@
     <div class="row">
       <div class="col-sm-6 col-6">
         <div class="column">
-          <img class="img-fluid" src="{{url('img/projects/adra/CAR_9574.jpg')}}" onclick="openModal();currentSlide(2)" class="hover-shadow">
+          <img class="img-fluid" src="{{url('img/projects/adra/2.jpg')}}" onclick="openModal();currentSlide(2)" class="hover-shadow">
         </div>
       </div>
       <div class="col-sm-6 col-6">
         <div class="column">
-          <img class="img-fluid" src="{{url('img/projects/adra/CAR_9596.jpg')}}" onclick="openModal();currentSlide(3)" class="hover-shadow">
+          <img class="img-fluid" src="{{url('img/projects/adra/3.jpg')}}" onclick="openModal();currentSlide(3)" class="hover-shadow">
         </div>
       </div>
     </div>
@@ -165,12 +165,12 @@
     <div class="row mt-3">
       <div class="col-sm-6 col-6">
         <div class="column">
-          <img class="img-fluid" src="{{url('img/projects/adra/CAR_9601.jpg')}}" onclick="openModal();currentSlide(4)" class="hover-shadow">
+          <img class="img-fluid" src="{{url('img/projects/adra/4.jpg')}}" onclick="openModal();currentSlide(4)" class="hover-shadow">
         </div>
       </div>
       <div class="col-sm-6 col-6">
         <div class="column">
-          <img class="img-fluid" src="{{url('img/projects/adra/CAR_9608.jpg')}}" onclick="openModal();currentSlide(5)" class="hover-shadow">
+          <img class="img-fluid" src="{{url('img/projects/adra/5.jpg')}}" onclick="openModal();currentSlide(5)" class="hover-shadow">
         </div>
       </div>
     </div>
@@ -184,27 +184,27 @@
 
     <div class="mySlides">
       <div class="numbertext">1 / 5</div>
-      <img class="img-fluid" src="{{url('img/projects/adra/CAR_9555.jpg')}}" style="width:100%">
+      <img class="img-fluid" src="{{url('img/projects/adra/1.jpg')}}" style="width:100%">
     </div>
 
     <div class="mySlides">
       <div class="numbertext">2 / 5</div>
-      <img class="img-fluid" src="{{url('img/projects/adra/CAR_9574.jpg')}}" style="width:100%">
+      <img class="img-fluid" src="{{url('img/projects/adra/2.jpg')}}" style="width:100%">
     </div>
 
     <div class="mySlides">
       <div class="numbertext">3 / 5</div>
-      <img class="img-fluid" src="{{url('img/projects/adra/CAR_9596.jpg')}}" style="width:100%">
+      <img class="img-fluid" src="{{url('img/projects/adra/3.jpg')}}" style="width:100%">
     </div>
 
     <div class="mySlides">
       <div class="numbertext">4 / 5</div>
-      <img class="img-fluid" src="{{url('img/projects/adra/CAR_9601.jpg')}}" style="width:100%">
+      <img class="img-fluid" src="{{url('img/projects/adra/4.jpg')}}" style="width:100%">
     </div>
 
     <div class="mySlides">
       <div class="numbertext">5 / 5</div>
-      <img class="img-fluid" src="{{url('img/projects/adra/CAR_9608.jpg')}}" style="width:100%">
+      <img class="img-fluid" src="{{url('img/projects/adra/5.jpg')}}" style="width:100%">
     </div>
 
     <!-- Next/previous controls -->
@@ -219,23 +219,23 @@
     <div class="row">
     <!-- Thumbnail image controls -->
       <div class="column col-sm-3 col-6">
-        <img class="demo" style="width: 100%" src="{{url('img/projects/adra/CAR_9555.jpg')}}" onclick="currentSlide(1)" alt="Nature"></a>
+        <img class="demo" style="width: 100%" src="{{url('img/projects/adra/1.jpg')}}" onclick="currentSlide(1)" alt="Proyecto Adra">
       </div>
 
       <div class="column col-sm-3 col-6">
-        <img class="demo" style="width: 100%" src="{{url('img/projects/adra/CAR_9574.jpg')}}" onclick="currentSlide(2)" alt="Snow">
+        <img class="demo" style="width: 100%" src="{{url('img/projects/adra/2.jpg')}}" onclick="currentSlide(2)" alt="Proyecto Adra">
       </div>
 
       <div class="column col-sm-3 col-6">
-        <img class="demo" style="width: 100%" src="{{url('img/projects/adra/CAR_9596.jpg')}}" onclick="currentSlide(3)" alt="Mountains">
+        <img class="demo" style="width: 100%" src="{{url('img/projects/adra/3.jpg')}}" onclick="currentSlide(3)" alt="Proyecto Adra">
       </div>
 
       <div class="column col-sm-3 col-6">
-        <img class="demo" style="width: 100%" src="{{url('img/projects/adra/CAR_9601.jpg')}}" onclick="currentSlide(4)" alt="Lights">
+        <img class="demo" style="width: 100%" src="{{url('img/projects/adra/4.jpg')}}" onclick="currentSlide(4)" alt="Proyecto Adra">
       </div>
 
       <div class="column col-sm-3 col-6">
-        <img class="demo" style="width: 100%" src="{{url('img/projects/adra/CAR_9608.jpg')}}" onclick="currentSlide(5)" alt="Lights">
+        <img class="demo" style="width: 100%" src="{{url('img/projects/adra/5.jpg')}}" onclick="currentSlide(5)" alt="Proyecto Adra">
       </div>
     </div>
 
