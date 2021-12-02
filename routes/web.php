@@ -4,7 +4,9 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ProjectController;
+use App\Mail\ContactanosMailable;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,3 +41,7 @@ Route::get('/noticias/blog', function(){return view('pages.blog');})->name('blog
 
 //RUTA PARA MOSTRAR LA PAGINA PARTNERS -> ARQUITECTOS
 Route::get('/socios/construye', function(){return view('pages.construye');})->name('socios.construye');
+
+
+//RUTA PARA ENVIAR EMAIL PRUEBA
+Route::post('/contactanos', [IndexController::class, "store"])->name('contactanos.store');
