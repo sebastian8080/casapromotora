@@ -42,4 +42,23 @@ class ProjectController extends Controller
     {
         //
     }
+
+    public function viewProject(String $nombreProyecto){
+        if($nombreProyecto == "Adra"){
+            $name_folder = "adra";
+            $num_imagenes = 15;
+            $extension = "jpg";
+            return view('pages.project', compact('nombreProyecto', 'name_folder', 'num_imagenes', 'extension'));
+        } else if($nombreProyecto == "Futura Narancay"){
+            $name_folder = "futuranarancay";
+            $num_imagenes = 7;
+            $extension = "jpeg";
+            return view('pages.project', compact('nombreProyecto', 'name_folder', 'num_imagenes', 'extension'));
+        } else if($nombreProyecto = "Toscana"){
+            $name_folder = "toscana";
+            $num_imagenes = 19;
+            $extension = "jpg";
+            return view('pages.project', compact('nombreProyecto', 'name_folder', 'num_imagenes', 'extension'));
+        }
+    }
 }

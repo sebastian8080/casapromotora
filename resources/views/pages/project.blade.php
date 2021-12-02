@@ -86,6 +86,7 @@
         border-radius: 0 3px 3px 0;
         user-select: none;
         -webkit-user-select: none;
+        vertical-align: middle;
       }
 
       /* Position the "next button" to the right */
@@ -139,25 +140,24 @@
 @section('content')
 
   <div class="container mt-5 pt-5">
-
      <!-- Images used to open the lightbox -->
-<div class="row">
-  <div class="col-sm-6 col-6">
-    <div class="column">
-      <img class="img-fluid" src="{{url('img/projects/adra/1.jpg')}}" onclick="openModal();currentSlide(1)" class="hover-shadow">
+  <div class="row">
+    <div class="col-sm-6 col-6">
+      <div class="column">
+        <img class="img-fluid" src="{{url('img/projects/'.$name_folder.'/1.'.$extension)}}" onclick="openModal();currentSlide(1)" class="hover-shadow">
+      </div>
     </div>
-  </div>
 
   <div class="col-sm-6 col-6">
     <div class="row">
       <div class="col-sm-6 col-6">
         <div class="column">
-          <img class="img-fluid" src="{{url('img/projects/adra/2.jpg')}}" onclick="openModal();currentSlide(2)" class="hover-shadow">
+          <img width="100%" class="img-fluid" src="{{url('img/projects/'.$name_folder.'/2.'.$extension)}}" onclick="openModal();currentSlide(2)" class="hover-shadow">
         </div>
       </div>
       <div class="col-sm-6 col-6">
         <div class="column">
-          <img class="img-fluid" src="{{url('img/projects/adra/3.jpg')}}" onclick="openModal();currentSlide(3)" class="hover-shadow">
+          <img class="img-fluid" src="{{url('img/projects/'.$name_folder.'/3.'.$extension)}}" onclick="openModal();currentSlide(3)" class="hover-shadow">
         </div>
       </div>
     </div>
@@ -165,12 +165,12 @@
     <div class="row mt-3">
       <div class="col-sm-6 col-6">
         <div class="column">
-          <img class="img-fluid" src="{{url('img/projects/adra/4.jpg')}}" onclick="openModal();currentSlide(4)" class="hover-shadow">
+          <img class="img-fluid" src="{{url('img/projects/'.$name_folder.'/4.'.$extension)}}" onclick="openModal();currentSlide(4)" class="hover-shadow">
         </div>
       </div>
       <div class="col-sm-6 col-6">
         <div class="column">
-          <img class="img-fluid" src="{{url('img/projects/adra/5.jpg')}}" onclick="openModal();currentSlide(5)" class="hover-shadow">
+          <img class="img-fluid" src="{{url('img/projects/'.$name_folder.'/5.'.$extension)}}" onclick="openModal();currentSlide(5)" class="hover-shadow">
         </div>
       </div>
     </div>
@@ -182,30 +182,12 @@
   <span class="close cursor" onclick="closeModal()">&times;</span>
   <div class="modal-content">
 
+    @for($i = 1; $i <= $num_imagenes; $i++)
     <div class="mySlides">
-      <div class="numbertext">1 / 5</div>
-      <img class="img-fluid" src="{{url('img/projects/adra/1.jpg')}}" style="width:100%">
+      <div class="numbertext">{{$i}} / {{$num_imagenes}}</div>
+      <img class="img-fluid" src="{{url('img/projects/'.$name_folder.'/'.$i.'.'.$extension)}}" style="width:100%">
     </div>
-
-    <div class="mySlides">
-      <div class="numbertext">2 / 5</div>
-      <img class="img-fluid" src="{{url('img/projects/adra/2.jpg')}}" style="width:100%">
-    </div>
-
-    <div class="mySlides">
-      <div class="numbertext">3 / 5</div>
-      <img class="img-fluid" src="{{url('img/projects/adra/3.jpg')}}" style="width:100%">
-    </div>
-
-    <div class="mySlides">
-      <div class="numbertext">4 / 5</div>
-      <img class="img-fluid" src="{{url('img/projects/adra/4.jpg')}}" style="width:100%">
-    </div>
-
-    <div class="mySlides">
-      <div class="numbertext">5 / 5</div>
-      <img class="img-fluid" src="{{url('img/projects/adra/5.jpg')}}" style="width:100%">
-    </div>
+    @endfor
 
     <!-- Next/previous controls -->
     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -218,25 +200,11 @@
 
     <div class="row">
     <!-- Thumbnail image controls -->
+      @for($i = 1; $i <= $num_imagenes; $i++)
       <div class="column col-sm-3 col-6">
-        <img class="demo" style="width: 100%" src="{{url('img/projects/adra/1.jpg')}}" onclick="currentSlide(1)" alt="Proyecto Adra">
+        <img class="demo" style="width: 100%" src="{{url('img/projects/'.$name_folder.'/'.$i.'.'.$extension)}}" onclick="currentSlide({{$i}})" alt="Proyecto {{$nombreProyecto}}">
       </div>
-
-      <div class="column col-sm-3 col-6">
-        <img class="demo" style="width: 100%" src="{{url('img/projects/adra/2.jpg')}}" onclick="currentSlide(2)" alt="Proyecto Adra">
-      </div>
-
-      <div class="column col-sm-3 col-6">
-        <img class="demo" style="width: 100%" src="{{url('img/projects/adra/3.jpg')}}" onclick="currentSlide(3)" alt="Proyecto Adra">
-      </div>
-
-      <div class="column col-sm-3 col-6">
-        <img class="demo" style="width: 100%" src="{{url('img/projects/adra/4.jpg')}}" onclick="currentSlide(4)" alt="Proyecto Adra">
-      </div>
-
-      <div class="column col-sm-3 col-6">
-        <img class="demo" style="width: 100%" src="{{url('img/projects/adra/5.jpg')}}" onclick="currentSlide(5)" alt="Proyecto Adra">
-      </div>
+      @endfor
     </div>
 
 
@@ -245,43 +213,11 @@
 
     <!--MODAL PARA VISUALIZAR LAS IMAGENES-->
 
-    {{-- <div class="gallery-container row">
-      <div class="gallery-card col-sm-6">
-        <a href="{{ url('img/projects/adra/CAR_9555.jpg') }}" data-lightbox="roadtrip"><img class="img-fluid" src="{{ url('img/projects/adra/CAR_9555.jpg') }}" alt=""></a>
-      </div>
-    </div> --}}
-
-    <!---->
-
-    {{-- <div class="row">
-      <div class="col-sm-6 col-6">
-        <img class="img-fluid rounded" src="https://acl.com.ec/wp-content/uploads/2021/06/LA-LEY-DE-PROPIEDAD-HORIZONTAL.jpeg" alt="">
-      </div>
-      <div class="col-sm-6 col-6">
-        <div class="row mb-3">
-          <div class="col-sm-6 col-6">
-            <img class="img-fluid rounded" src="https://acl.com.ec/wp-content/uploads/2021/06/LA-LEY-DE-PROPIEDAD-HORIZONTAL.jpeg" alt="">
-          </div>
-          <div class="col-sm-6 col-6">
-            <img class="img-fluid rounded" src="https://acl.com.ec/wp-content/uploads/2021/06/LA-LEY-DE-PROPIEDAD-HORIZONTAL.jpeg" alt="">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-6 col-6">
-            <img class="img-fluid rounded" src="https://acl.com.ec/wp-content/uploads/2021/06/LA-LEY-DE-PROPIEDAD-HORIZONTAL.jpeg" alt="">
-          </div>
-          <div class="col-sm-6 col-6">
-            <img class="img-fluid rounded" src="https://acl.com.ec/wp-content/uploads/2021/06/LA-LEY-DE-PROPIEDAD-HORIZONTAL.jpeg" alt="">
-          </div>
-        </div>
-      </div>
-    </div> --}}
-
     <div class="row mt-5">
         <div class="col-sm-8">
           <div class="row">
             <div class="col-sm-6">
-              <h2>Direccion del proyecto o la casa</h2>
+              <h2>Proyecto {{ $nombreProyecto }}</h2>
             </div>
             <div class="col-sm-6">
                 <p class="h1 text-danger float-end">$ 100.000</p>
@@ -336,7 +272,7 @@
             </div>
           
             <div class="form-outline mb-4">
-              <textarea class="form-control" id="mensaje" rows="4">Me interesa saber más sobre este proyecto</textarea>
+              <textarea class="form-control" id="mensaje" rows="4">Me interesa saber más sobre el proyecto {{ $nombreProyecto }}</textarea>
               <label class="form-label" for="mensaje">Mensaje</label>
             </div>
           
@@ -371,6 +307,7 @@
       
       // Thumbnail image controls
       function currentSlide(n) {
+        console.log(n);
         showSlides(slideIndex = n);
       }
       

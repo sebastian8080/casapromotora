@@ -33,7 +33,7 @@
                         soluta voluptatem expedita maiores sed placeat, assumenda molestiae nam, necessitatibus facere harum accusantium?
                     </p>
                     <div class="d-grid gap-2 col-6 mx-auto">
-                        <a class="btn btn-outline-secondary" href="{{ route('projects.project1') }}">Ver proyecto</a>
+                        <a class="btn btn-outline-secondary" href="{{ route('projects.viewProject', 'Adra') }}">Ver proyecto</a>
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                         soluta voluptatem expedita maiores sed placeat, assumenda molestiae nam, necessitatibus facere harum accusantium?
                     </p>
                     <div class="d-grid gap-2 col-6 mx-auto">
-                        <a class="btn btn-outline-secondary" href="{{ route('projects.project1') }}">Ver proyecto</a>
+                        <a class="btn btn-outline-secondary" href="{{route('projects.viewProject', 'Futura Narancay')}}">Ver proyecto</a>
                     </div>
                 </div>
             </div>
@@ -72,7 +72,7 @@
                         soluta voluptatem expedita maiores sed placeat, assumenda molestiae nam, necessitatibus facere harum accusantium?
                     </p>
                     <div class="d-grid gap-2 col-6 mx-auto">
-                        <a class="btn btn-outline-secondary" href="{{ route('projects.project1') }}">Ver proyecto</a>
+                        <a class="btn btn-outline-secondary" href="{{ route('projects.viewProject', 'Toscana') }}">Ver proyecto</a>
                     </div>
                 </div>
             </div>

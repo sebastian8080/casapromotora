@@ -32,8 +32,7 @@ Route::get('/propiedades', [IndexController::class, 'redirectToProjects'])->name
 Route::get('/blog', [IndexController::class, 'redirectToBlog'])->name('pages.news');
 Route::get('/nuestro-equipo', function () {return view('pages.equipo');})->name('pages.equipo');
 
-//Route para proyecto especifico - PRUEBA
-Route::get('/proyectos/proyecto-1', function(){return view('pages.project');})->name('projects.project1');
+Route::get('/propiedades/{nombreProyecto}', [ProjectController::class, 'viewProject'])->name('projects.viewProject');
 
 //Ruta para mostrar un blog en especifico - PRUEBA
 Route::get('/noticias/blog', function(){return view('pages.blog');})->name('blogs.blog');
