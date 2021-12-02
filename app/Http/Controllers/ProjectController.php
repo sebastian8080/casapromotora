@@ -44,21 +44,43 @@ class ProjectController extends Controller
     }
 
     public function viewProject(String $nombreProyecto){
-        if($nombreProyecto == "Adra"){
-            $name_folder = "adra";
-            $num_imagenes = 15;
-            $extension = "jpg";
-            return view('pages.project', compact('nombreProyecto', 'name_folder', 'num_imagenes', 'extension'));
-        } else if($nombreProyecto == "Futura Narancay"){
-            $name_folder = "futuranarancay";
-            $num_imagenes = 7;
-            $extension = "jpeg";
-            return view('pages.project', compact('nombreProyecto', 'name_folder', 'num_imagenes', 'extension'));
-        } else if($nombreProyecto = "Toscana"){
-            $name_folder = "toscana";
-            $num_imagenes = 19;
-            $extension = "jpg";
-            return view('pages.project', compact('nombreProyecto', 'name_folder', 'num_imagenes', 'extension'));
+        switch ($nombreProyecto) {
+            case 'Adra':
+                $data['name_folder'] = 'adra';
+                $data['num_imagenes'] = 15;
+                $data['extension'] = 'jpg';
+                $data['nombreProyecto'] = $nombreProyecto;
+                $data['precio'] = '125.000';
+                $data['num_habitaciones'] = 5;
+                $data['num_baños'] = 2;
+                $data['metros_cuadrados'] = 60;
+                $data['parqueadero'] = 1;
+                break;
+            
+            case 'Futura Narancay':
+                $data['name_folder'] = 'futuranarancay';
+                $data['num_imagenes'] = 7;
+                $data['extension'] = 'jpeg';
+                $data['nombreProyecto'] = $nombreProyecto;
+                $data['precio'] = '130.000';
+                $data['num_habitaciones'] = 6;
+                $data['num_baños'] = 3;
+                $data['metros_cuadrados'] = 80;
+                $data['parqueadero'] = 1;
+                break;
+
+            case 'Toscana':
+                $data['name_folder'] = 'toscana';
+                $data['num_imagenes'] = 19;
+                $data['extension'] = 'jpg';
+                $data['nombreProyecto'] = $nombreProyecto;
+                $data['precio'] = '100.000';
+                $data['num_habitaciones'] = 4;
+                $data['num_baños'] = 1;
+                $data['metros_cuadrados'] = 50;
+                $data['parqueadero'] = 1;
+                break;
         }
+        return view('pages.project', $data);
     }
 }

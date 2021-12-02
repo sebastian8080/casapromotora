@@ -6,6 +6,7 @@
     <style>
       img:hover{
         transform: scale(1.1);
+        -webkit-transition: transform 1s ease-out;
       }
 
       .row > .column {
@@ -86,7 +87,6 @@
         border-radius: 0 3px 3px 0;
         user-select: none;
         -webkit-user-select: none;
-        vertical-align: middle;
       }
 
       /* Position the "next button" to the right */
@@ -220,22 +220,22 @@
               <h2>Proyecto {{ $nombreProyecto }}</h2>
             </div>
             <div class="col-sm-6">
-                <p class="h1 text-danger float-end">$ 100.000</p>
+                <p class="h1 text-danger float-end">{{ $precio }}</p>
             </div>
           </div>
 
           <div class="row mt-5">
             <div class="col-sm-3 col-6">
-              <i class="fas fa-bed fa-2x" style="color: gray"></i><p>3 habitaciones</p>
+              <i class="fas fa-bed fa-2x" style="color: gray"></i><p>{{$num_habitaciones}} habitación/es</p>
             </div>
             <div class="col-sm-3 col-6">
-              <i class="fas fa-bath fa-2x" style="color: gray"></i><p>1 baño</p>
+              <i class="fas fa-bath fa-2x" style="color: gray"></i><p>{{$num_baños}} baño/s</p>
             </div>
             <div class="col-sm-3 col-6">
-              <i class="fas fa-expand-arrows-alt fa-2x" style="color: gray"></i><p>60 m2</p>
+              <i class="fas fa-expand-arrows-alt fa-2x" style="color: gray"></i><p>{{ $metros_cuadrados }} m2</p>
             </div>
             <div class="col-sm-3 col-6">
-              <i class="fas fa-parking fa-2x" style="color: gray"></i><p>1 parquedero</p>
+              <i class="fas fa-parking fa-2x" style="color: gray"></i><p>{{ $parqueadero }} parqueadero/s</p>
             </div>
           </div>
 
