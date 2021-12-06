@@ -30,32 +30,32 @@
         display: none;
         position: fixed;
         z-index: 1;
-        padding-top: 30px;
+        padding-top: 120px;
         left: 0;
         top: 0;
         width: 100%;
         height: 100%;
         overflow: auto;
-        background-color: black;
+        background-color: rgba(0, 0, 0, 0.523);
       }
 
       /* Modal Content */
       .modal-content {
         position: relative;
-        background-color: #fefefe;
+        background-color: #d8717100;
         margin: auto;
         padding: 0;
-        width: 90%;
-        max-width: 60%;
+        width: 70%;
+        max-width: 65%;
       }
 
       /* The Close Button */
       .close {
         color: white;
         position: absolute;
-        top: 10px;
-        right: 25px;
-        font-size: 35px;
+        top: 100px;
+        right: 15px;
+        font-size: 50px;
         font-weight: bold;
       }
 
@@ -76,7 +76,7 @@
       .next {
         cursor: pointer;
         position: absolute;
-        top: 35%;
+        top: 50%;
         width: auto;
         padding: 16px;
         margin-top: -50px;
@@ -98,7 +98,7 @@
       /* On hover, add a black background color with a little bit see-through */
       .prev:hover,
       .next:hover {
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: rgba(0, 0, 0, 0.612);
       }
 
       /* Number text (1/3 etc) */
@@ -113,7 +113,7 @@
       /* Caption text */
       .caption-container {
         text-align: center;
-        background-color: black;
+        background-color: rgba(128, 126, 126, 0.19);
         padding: 2px 16px;
         color: white;
       }
@@ -132,7 +132,13 @@
       }
 
       .hover-shadow:hover {
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.074), 0 6px 20px 0 rgba(0, 0, 0, 0.109);
+      }
+
+      @media screen and(max-width: 580px){
+        .modal-content{
+          max-width: 70%;
+        }
       }
     </style>
 @endsection
@@ -140,37 +146,40 @@
 @section('content')
 
   <div class="container mt-5 pt-5">
-     <!-- Images used to open the lightbox -->
-  <div class="row">
-    <div class="col-sm-6 col-6">
-      <div class="column">
-        <img class="img-fluid" src="{{url('img/projects/'.$name_folder.'/1.'.$extension)}}" onclick="openModal();currentSlide(1)" class="hover-shadow">
-      </div>
-    </div>
 
-  <div class="col-sm-6 col-6">
+    <div style="background-color: #e2e0e0; padding: 50px">
+     <!-- Images used to open the lightbox -->
     <div class="row">
       <div class="col-sm-6 col-6">
         <div class="column">
-          <img width="100%" class="img-fluid" src="{{url('img/projects/'.$name_folder.'/2.'.$extension)}}" onclick="openModal();currentSlide(2)" class="hover-shadow">
+          <img class="img-fluid" src="{{url('img/projects/'.$name_folder.'/1.'.$extension)}}" onclick="openModal();currentSlide(1)" class="hover-shadow">
         </div>
       </div>
-      <div class="col-sm-6 col-6">
-        <div class="column">
-          <img class="img-fluid" src="{{url('img/projects/'.$name_folder.'/3.'.$extension)}}" onclick="openModal();currentSlide(3)" class="hover-shadow">
-        </div>
-      </div>
-    </div>
 
-    <div class="row mt-3">
-      <div class="col-sm-6 col-6">
-        <div class="column">
-          <img class="img-fluid" src="{{url('img/projects/'.$name_folder.'/4.'.$extension)}}" onclick="openModal();currentSlide(4)" class="hover-shadow">
+    <div class="col-sm-6 col-6">
+      <div class="row">
+        <div class="col-sm-6 col-6">
+          <div class="column">
+            <img width="100%" class="img-fluid" src="{{url('img/projects/'.$name_folder.'/2.'.$extension)}}" onclick="openModal();currentSlide(2)" class="hover-shadow">
+          </div>
+        </div>
+        <div class="col-sm-6 col-6">
+          <div class="column">
+            <img class="img-fluid" src="{{url('img/projects/'.$name_folder.'/3.'.$extension)}}" onclick="openModal();currentSlide(3)" class="hover-shadow">
+          </div>
         </div>
       </div>
-      <div class="col-sm-6 col-6">
-        <div class="column">
-          <img class="img-fluid" src="{{url('img/projects/'.$name_folder.'/5.'.$extension)}}" onclick="openModal();currentSlide(5)" class="hover-shadow">
+
+      <div class="row mt-3">
+        <div class="col-sm-6 col-6">
+          <div class="column">
+            <img class="img-fluid" src="{{url('img/projects/'.$name_folder.'/4.'.$extension)}}" onclick="openModal();currentSlide(4)" class="hover-shadow">
+          </div>
+        </div>
+        <div class="col-sm-6 col-6">
+          <div class="column">
+            <img class="img-fluid" src="{{url('img/projects/'.$name_folder.'/5.'.$extension)}}" onclick="openModal();currentSlide(5)" class="hover-shadow">
+          </div>
         </div>
       </div>
     </div>
@@ -200,31 +209,37 @@
 
     <div class="row">
     <!-- Thumbnail image controls -->
-      @for($i = 1; $i <= $num_imagenes; $i++)
+      {{-- @for($i = 1; $i <= $num_imagenes; $i++)
       <div class="column col-sm-3 col-6">
         <img class="demo" style="width: 100%" src="{{url('img/projects/'.$name_folder.'/'.$i.'.'.$extension)}}" onclick="currentSlide({{$i}})" alt="Proyecto {{$nombreProyecto}}">
       </div>
-      @endfor
+      @endfor --}}
     </div>
 
 
   </div>
 </div> 
 
-    <!--MODAL PARA VISUALIZAR LAS IMAGENES-->
-
     <div class="row mt-5">
         <div class="col-sm-8">
           <div class="row">
             <div class="col-sm-6">
-              <h2>Proyecto {{ $nombreProyecto }}</h2>
+              <h1 class="text-muted">PROYECTO {{ Str::upper($nombreProyecto) }}</h1>
             </div>
             <div class="col-sm-6">
-                <p class="h1 text-danger float-end">{{ $precio }}</p>
+                <p class="h1 text-danger float-end">${{ $precio }}</p>
             </div>
           </div>
 
-          <div class="row mt-5">
+          @if ($alicuota != null)
+            <div class="row">
+              <div class="col-sm-12">
+                <p class="h3 float-end">Alicuota <b>${{ $alicuota}}</b></p>
+              </div>
+            </div>
+          @endif
+
+          <div class="row mt-5 text-center">
             <div class="col-sm-3 col-6">
               <i class="fas fa-bed fa-2x" style="color: gray"></i><p>{{$num_habitaciones}} habitación/es</p>
             </div>
@@ -238,6 +253,21 @@
               <i class="fas fa-parking fa-2x" style="color: gray"></i><p>{{ $parqueadero }} parqueadero/s</p>
             </div>
           </div>
+
+          <hr>
+          @if ($contains_area)
+            <div class="row text-center">
+              <div class="col-sm-6">
+                <p class="h4 mt-5"><i class="fas fa-compress-arrows-alt m-1" style="color: rgb(247, 80, 80)"></i>Área Interior <b>{{ $area_interior }}</b></p>
+                <p class="h4 mt-5"><i class="fas fa-tree m-1" style="color: rgb(247, 80, 80)"></i> Área Verde <b>{{ $area_verde }}</b></p>
+              </div>
+              <div class="col-sm-6">
+                <p class="h4 mt-5"><i class="fas fa-arrows-alt" style="color: rgb(247, 80, 80)"></i>  Área Parqueo <b>{{ $area_parqueo }}</b></p>
+                <p class="h4 mt-5"><i class="fas fa-warehouse" style="color: rgb(247, 80, 80)"></i></i> Área Bodega <b>{{ $area_bodega }}</b></p>
+              </div>
+              <p class="h3 mt-5"><i class="fas fa-building" style="color: rgb(247, 80, 80)"></i> ÁREA TOTAL <b>{{ $area_total }}</b></p>
+            </div>              
+          @endif
 
           <div class="row mt-5">
             <h4>Descripcion del proyecto</h4>

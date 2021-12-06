@@ -6,13 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Casa Credito Promotora - @yield('title')</title>
 
-    @yield('content-head')
-
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
+
     <!--EFECTOS DE APARECIMIENTO-->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    @yield('content-head')
 </head>
 <body>
   <!--NAVBAR-->
@@ -32,15 +33,28 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a id="menu-item2" class="nav-link text-white rounded" href="{{ route('pages.projects') }}">PROPIEDADES</a>
+                <a id="menu-item2" class="nav-link text-white rounded" href="{{ route('pages.projects') }}">PROYECTOS</a>
               </li>
               <li class="nav-item dropdown">
                 <a id="menu-item4" class="nav-link dropdown-toggle text-white rounded" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   PARTNERS
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="{{ route('pages.partners') }}">Entidades Financieras</a></li>
-                  <li><a class="dropdown-item" href="{{ route('socios.construye') }}">Construye</a></li>
+                  <li>
+                    <a class="dropdown-item text-dark">Entidades financieras</a>
+                    <ul class="dropdown-menu dropdown-submenu">
+                      <li><a class="dropdown-item" href="{{ route('pages.partners') }}"><b>Los Rios</b></a></li>
+                      <li><a class="dropdown-item" href="#"><b>Corpu Corp</b></a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-dark">Construye</a>
+                    <ul class="dropdown-menu dropdown-submenu">
+                      <li><a class="dropdown-item" href="#"><b>Dolmen</b></a></li>
+                    </ul>
+                  </li>
+                    {{-- <li><a class="dropdown-item" href="{{ route('pages.partners') }}">Entidades Financieras</a></li>
+                    <li><a class="dropdown-item" href="{{ route('socios.construye') }}">Construye</a></li> --}}
                 </ul>
               </li>
               <li class="nav-item">

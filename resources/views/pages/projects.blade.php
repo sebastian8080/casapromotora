@@ -8,12 +8,12 @@
 
 @section('content')
 
-    <div class="position-relative">
-        <video style="top: 0; left:0; width: 100%; height: 100%; opacity:1; filter: brightness(60%)" muted autoplay loop>
+    <div class="position-relative" style="width: 100%;">
+        <video style="top: 0; left:0; width: 100%; opacity:1; filter: brightness(60%)" muted autoplay loop>
             <source src="video/projects.mp4" type="video/mp4">
         </video>
         <div class="position-absolute top-50 start-50 translate-middle text-white">
-            <h1 class="text-center" style="font-size: 5vw;">Propiedades</h1>
+            <h1 class="text-center" style="font-size: 5vw;">Proyectos</h1>
             <h4 class="text-center" style="font-size: 2.5vw;">Aqui te mostramos nuestros proyectos <br> más innovadores</h4>
         </div>
     </div>
@@ -22,15 +22,18 @@
     <div class="container">
         <hr data-aos="fade-up" style="color: rgb(166, 177, 176);  width: 20%; margin-left: 40%" class="mt-5 mb-5">
         <div class="row mt-1 pt-1" data-aos="fade-up">
-            <div class="col-sm-6">
+            <div class="col-sm-6 position-relative">
                 <img class="img-fluid rounded mx-auto d-block" style="width: 100%; height: 100%;" src="img/projects/adra/1.jpg" alt="Proyecto Adra">
+                <div class="position-absolute top-0 start-0">
+                    <img class="rounded" style="width: 45%; margin-left: 10px;" src="img/projects/adra/LOGO1 20.jpg" alt="Logo Proyecto Adra">
+                </div>
             </div>
             <div class="col-sm-6 d-flex align-items-center">
                 <div>
-                    <h1 class="fw-bold pt-1" style="color: #ffffff; -webkit-text-stroke: 1px rgb(162, 157, 157);">ADRA</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum magni nulla voluptatum quo perspiciatis eligendi aut tempore 
-                        soluta voluptatem expedita maiores sed placeat, assumenda molestiae nam, necessitatibus facere harum accusantium?
+                    <h1 class="fw-bold pt-1" style="color: #ffffff; -webkit-text-stroke: 1px rgb(162, 157, 157);"> ADRA</h1>
+                    <i class="fas fa-map-marker-alt mx-1" style="color: gray"></i><b>Cuenca - Sector Edificio Vista Linda</b>
+                    <p class="mt-3">
+                        Departamentos de lujo listos para entregar en una vista insuperable
                     </p>
                     <div class="d-grid gap-2 col-6 mx-auto">
                         <a class="btn btn-outline-secondary" href="{{ route('projects.viewProject', 'Adra') }}">Ver proyecto</a>

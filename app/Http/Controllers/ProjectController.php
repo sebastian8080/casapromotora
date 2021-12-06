@@ -50,7 +50,14 @@ class ProjectController extends Controller
                 $data['num_imagenes'] = 15;
                 $data['extension'] = 'jpg';
                 $data['nombreProyecto'] = $nombreProyecto;
-                $data['precio'] = '125.000';
+                $data['precio'] = '245.000';
+                $data['alicuota'] = '237.00';
+                $data['contains_area'] = true;
+                $data['area_interior'] = "143.42 M2";
+                $data['area_verde'] = "51.74 M2";
+                $data['area_parqueo'] = "26.50 M2";
+                $data['area_bodega'] = "4.51 M2";
+                $data['area_total'] = "226.17 M2";
                 $data['num_habitaciones'] = 5;
                 $data['num_baños'] = 2;
                 $data['metros_cuadrados'] = 60;
@@ -63,6 +70,8 @@ class ProjectController extends Controller
                 $data['extension'] = 'jpeg';
                 $data['nombreProyecto'] = $nombreProyecto;
                 $data['precio'] = '130.000';
+                $data['alicuota'] = null;
+                $data['contains_area'] = false;
                 $data['num_habitaciones'] = 6;
                 $data['num_baños'] = 3;
                 $data['metros_cuadrados'] = 80;
@@ -75,6 +84,8 @@ class ProjectController extends Controller
                 $data['extension'] = 'jpg';
                 $data['nombreProyecto'] = $nombreProyecto;
                 $data['precio'] = '100.000';
+                $data['alicuota'] = '237.00';
+                $data['contains_area'] = false;
                 $data['num_habitaciones'] = 4;
                 $data['num_baños'] = 1;
                 $data['metros_cuadrados'] = 50;
