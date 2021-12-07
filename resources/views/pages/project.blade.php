@@ -152,7 +152,7 @@
     <div class="row">
       <div class="col-sm-6 col-6">
         <div class="column">
-          <img class="img-fluid" src="{{url('img/projects/'.$name_folder.'/1.'.$extension)}}" onclick="openModal();currentSlide(1)" class="hover-shadow">
+          <img class="img-fluid rounded" src="{{url('img/projects/'.$name_folder.'/1.'.$extension)}}" onclick="openModal();currentSlide(1)" class="hover-shadow">
         </div>
       </div>
 
@@ -160,12 +160,12 @@
       <div class="row">
         <div class="col-sm-6 col-6">
           <div class="column">
-            <img width="100%" class="img-fluid" src="{{url('img/projects/'.$name_folder.'/2.'.$extension)}}" onclick="openModal();currentSlide(2)" class="hover-shadow">
+            <img width="100%" class="img-fluid rounded" src="{{url('img/projects/'.$name_folder.'/2.'.$extension)}}" onclick="openModal();currentSlide(2)" class="hover-shadow">
           </div>
         </div>
         <div class="col-sm-6 col-6">
           <div class="column">
-            <img class="img-fluid" src="{{url('img/projects/'.$name_folder.'/3.'.$extension)}}" onclick="openModal();currentSlide(3)" class="hover-shadow">
+            <img class="img-fluid rounded" src="{{url('img/projects/'.$name_folder.'/3.'.$extension)}}" onclick="openModal();currentSlide(3)" class="hover-shadow">
           </div>
         </div>
       </div>
@@ -173,12 +173,12 @@
       <div class="row mt-3">
         <div class="col-sm-6 col-6">
           <div class="column">
-            <img class="img-fluid" src="{{url('img/projects/'.$name_folder.'/4.'.$extension)}}" onclick="openModal();currentSlide(4)" class="hover-shadow">
+            <img class="img-fluid rounded" src="{{url('img/projects/'.$name_folder.'/4.'.$extension)}}" onclick="openModal();currentSlide(4)" class="hover-shadow">
           </div>
         </div>
         <div class="col-sm-6 col-6">
           <div class="column">
-            <img class="img-fluid" src="{{url('img/projects/'.$name_folder.'/5.'.$extension)}}" onclick="openModal();currentSlide(5)" class="hover-shadow">
+            <img class="img-fluid rounded" src="{{url('img/projects/'.$name_folder.'/5.'.$extension)}}" onclick="openModal();currentSlide(5)" class="hover-shadow">
           </div>
         </div>
       </div>
@@ -226,56 +226,71 @@
             <div class="col-sm-6">
               <h1 class="text-muted">PROYECTO {{ Str::upper($nombreProyecto) }}</h1>
             </div>
+            <div class="col-sm-6"></div>
+          </div>
+
+          <div class="row text-center">
+            @foreach ($departamentos as $depar)
             <div class="col-sm-6">
-                <p class="h1 text-danger float-end">${{ $precio }}</p>
+              @php
+                  
+              @endphp
+              <h3>Departamento {{ $depar['num_departamento']}}</h3>
+            </div>
+            @endforeach
+            {{-- <div class="col-sm-6">
+              <h3>Departamento</h3>
+            </div> --}}
+          </div>
+
+          <hr>
+          <div class="row">
+            <div class="col-sm-6">
+              <h1>Departamento 1</h1>
+            </div>
+            <div class="col-sm-6">
+              <p class="h1 text-danger float-end">${{ $departamentos['0']['precio'] }}</p>
             </div>
           </div>
 
-          @if ($alicuota != null)
+          @if ($departamentos['0']['alicuota'] != null)
             <div class="row">
               <div class="col-sm-12">
-                <p class="h3 float-end">Alicuota <b>${{ $alicuota}}</b></p>
+                <p class="h3 float-end">Alicuota <b>${{ $departamentos['0']['alicuota'] }}</b></p>
               </div>
             </div>
           @endif
+          
 
           <div class="row mt-5 text-center">
             <div class="col-sm-3 col-6">
-              <i class="fas fa-bed fa-2x" style="color: gray"></i><p>{{$num_habitaciones}} habitación/es</p>
+              <i class="fas fa-bed fa-2x" style="color: gray"></i><p>{{$departamentos['0']['num_habitaciones']}} habitaciones</p>
             </div>
             <div class="col-sm-3 col-6">
-              <i class="fas fa-bath fa-2x" style="color: gray"></i><p>{{$num_baños}} baño/s</p>
+              <i class="fas fa-bath fa-2x" style="color: gray"></i><p>{{$departamentos['0']['num_baños']}} baños</p>
             </div>
             <div class="col-sm-3 col-6">
-              <i class="fas fa-expand-arrows-alt fa-2x" style="color: gray"></i><p>{{ $metros_cuadrados }} m2</p>
+              <i class="fas fa-expand-arrows-alt fa-2x" style="color: gray"></i><p>{{ $departamentos['0']['area_total'] }} m2</p>
             </div>
             <div class="col-sm-3 col-6">
-              <i class="fas fa-parking fa-2x" style="color: gray"></i><p>{{ $parqueadero }} parqueadero/s</p>
+              <i class="fas fa-parking fa-2x" style="color: gray"></i><p>{{ $departamentos['0']['parqueadero'] }} parqueaderos</p>
             </div>
           </div>
 
           <hr>
-          @if ($contains_area)
+          @if ($departamentos['0']['contains_area'])
             <div class="row text-center">
               <div class="col-sm-6">
-                <p class="h4 mt-5"><i class="fas fa-compress-arrows-alt m-1" style="color: rgb(247, 80, 80)"></i>Área Interior <b>{{ $area_interior }}</b></p>
-                <p class="h4 mt-5"><i class="fas fa-tree m-1" style="color: rgb(247, 80, 80)"></i> Área Verde <b>{{ $area_verde }}</b></p>
+                <p class="h4 mt-5"><i class="fas fa-compress-arrows-alt m-1" style="color: rgb(247, 80, 80)"></i>Área Interior <b>{{ $departamentos['0']['area_interior'] }}</b></p>
+                <p class="h4 mt-5"><i class="fas fa-tree m-1" style="color: rgb(247, 80, 80)"></i> Área Verde <b>{{ $departamentos['0']['area_verde'] }}</b></p>
               </div>
               <div class="col-sm-6">
-                <p class="h4 mt-5"><i class="fas fa-arrows-alt" style="color: rgb(247, 80, 80)"></i>  Área Parqueo <b>{{ $area_parqueo }}</b></p>
-                <p class="h4 mt-5"><i class="fas fa-warehouse" style="color: rgb(247, 80, 80)"></i></i> Área Bodega <b>{{ $area_bodega }}</b></p>
+                <p class="h4 mt-5"><i class="fas fa-arrows-alt" style="color: rgb(247, 80, 80)"></i>  Área Parqueo <b>{{ $departamentos['0']['area_parqueo'] }}</b></p>
+                <p class="h4 mt-5"><i class="fas fa-warehouse" style="color: rgb(247, 80, 80)"></i></i> Área Bodega <b>{{ $departamentos['0']['area_bodega'] }}</b></p>
               </div>
-              <p class="h3 mt-5"><i class="fas fa-building" style="color: rgb(247, 80, 80)"></i> ÁREA TOTAL <b>{{ $area_total }}</b></p>
+              <p class="h3 mt-5"><i class="fas fa-building" style="color: rgb(247, 80, 80)"></i> ÁREA TOTAL <b>{{ $departamentos['0']['area_total'] }}</b></p>
             </div>              
           @endif
-
-          <div class="row mt-5">
-            <h4>Descripcion del proyecto</h4>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo aliquam delectus doloremque excepturi quia tempora eius laborum. 
-              Praesentium minima aperiam ex, ab asperiores perferendis excepturi aut aliquam similique optio consequuntur!
-            </p>
-          </div>
         </div>
 
         <div class="col-sm-1"></div>
@@ -357,6 +372,10 @@
         slides[slideIndex-1].style.display = "block";
         dots[slideIndex-1].className += " active";
         captionText.innerHTML = dots[slideIndex-1].alt;
+      }
+
+      function changeDepartment(num_department){
+        console.log(num_department);
       }
       </script>
 @endsection

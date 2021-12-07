@@ -1,8 +1,8 @@
-img{
-    opacity: 0.6;
+.img-project{
+    opacity: 0.8;
 }
 
-img:hover{
+.img-project:hover{
     opacity: 1;
 }
 

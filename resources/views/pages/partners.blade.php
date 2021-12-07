@@ -32,7 +32,7 @@
         <div class="row" style="width: 100%; height: 50vw">
             <div class="col-sm-6 text-center" style="margin-top: 15%">
                 <img style="width: 35%" class="img-fluid" src="img/partners/LOGO LOS RIOS.png" alt="Casa Credito">
-                <h2 class="fw-bold" style="font-size: 3vw;">Tu casa más cerca <br> de lo que piensas</h2>
+                <h2 class="fw-bold" style="font-size: 3vw; color: rgb(43, 147, 166)">Tu casa más cerca <br> de lo que piensas</h2>
                 <p class="text-white" style="font-size:2.5vw;">¡Hazlo agilmente con un crédito hipotecario!</p>
             </div>
             <div class="col-sm-6"></div>
