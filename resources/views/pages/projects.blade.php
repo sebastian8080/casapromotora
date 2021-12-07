@@ -32,7 +32,21 @@
                 <div>
                     <h1 class="fw-bold pt-1" style="color: #ffffff; -webkit-text-stroke: 1px rgb(162, 157, 157);"> ADRA</h1>
                     <i class="fas fa-map-marker-alt mx-1" style="color: gray"></i><b>Cuenca - Sector Edificio Vista Linda</b>
-                    <p class="mt-3">
+                    <div class="row mt-4">
+                        <div class="col-sm-4 d-flex">
+                            <i class="fas fa-expand-arrows-alt" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
+                            <p>97 a 226 M2</p>
+                        </div>
+                        <div class="col-sm-4 d-flex">
+                            <i class="fas fa-bed" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
+                            <p>1 a 3 dormitorios</p>
+                        </div>
+                        <div class="col-sm-4 d-flex">
+                            <i class="fas fa-tree" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
+                            <p>Áreas Verdes</p>
+                        </div>
+                    </div>
+                    <p class="mt-1">
                         Departamentos de lujo listos para entregar en una vista insuperable
                     </p>
                     <div class="d-grid gap-2 col-6 mx-auto">
@@ -45,19 +59,33 @@
         <hr data-aos="fade-up" style="color: rgb(166, 177, 176); width: 20%; margin-left: 40%" class="mt-5 mb-5">
 
         <div class="row mb-3" data-aos="fade-up">
-            <div class="col-sm-6 mb-3 d-flex align-items-center"> 
+            <div class="col-sm-6 mb-3 d-flex align-items-center mt-5"> 
                 <div class="pb-5 mb-1">
                     <h1 class="fw-bold" style="color: #ffffff; -webkit-text-stroke: 1px rgb(162, 157, 157);">FUTURA NARANCAY</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum magni nulla voluptatum quo perspiciatis eligendi aut tempore 
-                        soluta voluptatem expedita maiores sed placeat, assumenda molestiae nam, necessitatibus facere harum accusantium?
+                    <i class="fas fa-map-marker-alt mx-1" style="color: gray"></i><b>Cuenca - Narancay</b>
+                    <div class="row mt-4">
+                        <div class="col-sm-4 d-flex">
+                            <i class="fas fa-expand-arrows-alt" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
+                            <p>84 a 247 M2</p>
+                        </div>
+                        <div class="col-sm-4 d-flex">
+                            <i class="fas fa-bed" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
+                            <p>1 a 3 dormitorios</p>
+                        </div>
+                        <div class="col-sm-4 d-flex">
+                            <i class="fas fa-tree" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
+                            <p>Áreas Verdes</p>
+                        </div>
+                    </div>
+                    <p class="mt-1">
+                        Departamentos con una experiencia única en diseño y comodidad
                     </p>
                     <div class="d-grid gap-2 col-6 mx-auto">
                         <a class="btn btn-outline-secondary" href="{{route('projects.viewProject', 'Futura Narancay')}}">Ver proyecto</a>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 mb-n5 pb-n5" style="">
+            <div class="col-sm-6 mb-n5 pb-n5">
                 <img class="img-fluid rounded mx-auto d-block" style="width: 100%; height: 100%;" src="img/projects/futuranarancay/1.jpeg" alt="Futura Narancay">
             </div>
         </div>
@@ -70,9 +98,23 @@
             <div class="col-sm-6 d-flex align-items-center">
                 <div>
                     <h1 class="fw-bold pt-1" style="color: #ffffff; -webkit-text-stroke: 1px rgb(162, 157, 157);">TOSCANA</h1>
+                    <i class="fas fa-map-marker-alt mx-1" style="color: gray"></i><b>Cuenca - Challuabamba</b>
+                    <div class="row mt-4">
+                        <div class="col-sm-4 d-flex">
+                            <i class="fas fa-expand-arrows-alt" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
+                            <p>160 a 182 M2</p>
+                        </div>
+                        <div class="col-sm-4 d-flex">
+                            <i class="fas fa-bed" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
+                            <p>1 a 3 dormitorios</p>
+                        </div>
+                        <div class="col-sm-4 d-flex">
+                            <i class="fas fa-tree" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
+                            <p>Áreas Verdes</p>
+                        </div>
+                    </div>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum magni nulla voluptatum quo perspiciatis eligendi aut tempore 
-                        soluta voluptatem expedita maiores sed placeat, assumenda molestiae nam, necessitatibus facere harum accusantium?
+                        La mejor experiencia en condominios con acabados modernos
                     </p>
                     <div class="d-grid gap-2 col-6 mx-auto">
                         <a class="btn btn-outline-secondary" href="{{ route('projects.viewProject', 'Toscana') }}">Ver proyecto</a>
