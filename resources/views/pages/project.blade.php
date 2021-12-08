@@ -232,15 +232,9 @@
           <div class="row text-center">
             @foreach ($departamentos as $depar)
             <div class="col-sm-6">
-              @php
-                  
-              @endphp
-              <h3>Departamento {{ $depar['num_departamento']}}</h3>
+              <h3 onclick="@php($numero = $depar['num_departamento'])">Departamento {{ $depar['num_departamento']}}</h3>
             </div>
             @endforeach
-            {{-- <div class="col-sm-6">
-              <h3>Departamento</h3>
-            </div> --}}
           </div>
 
           <hr>
@@ -249,7 +243,7 @@
               <h1>Departamento 1</h1>
             </div>
             <div class="col-sm-6">
-              <p class="h1 text-danger float-end">${{ $departamentos['0']['precio'] }}</p>
+              <p class="h1 text-danger float-end">${{ $departamentos[$numero]['precio'] }}</p>
             </div>
           </div>
 
@@ -376,6 +370,7 @@
 
       function changeDepartment(num_department){
         console.log(num_department);
+        var num = {!! json_encode($depar['num_departamento']) !!};
       }
       </script>
 @endsection

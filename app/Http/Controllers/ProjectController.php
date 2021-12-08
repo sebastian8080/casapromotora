@@ -125,4 +125,8 @@ class ProjectController extends Controller
         }
         return view('pages.project', $data);
     }
+
+    public function changeDepartment($nombreProyecto, $num_departamento){
+        return view('pages.project', $num_departamento);
+    }
 }

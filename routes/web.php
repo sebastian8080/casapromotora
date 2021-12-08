@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\PartnersController;
 use App\Http\Controllers\ProjectController;
 use App\Mail\ContactanosMailable;
 use Illuminate\Support\Facades\Auth;
@@ -35,12 +36,14 @@ Route::get('/blog', [IndexController::class, 'redirectToBlog'])->name('pages.new
 Route::get('/nuestro-equipo', function () {return view('pages.equipo');})->name('pages.equipo');
 
 Route::get('/proyectos/{nombreProyecto}', [ProjectController::class, 'viewProject'])->name('projects.viewProject');
+Route::get('/proyectos/{nombreProyecto}/{departamento}', [ProjectController::class, 'changeDepartment'])->name('changeDepartment');
 
 //Ruta para mostrar un blog en especifico - PRUEBA
 Route::get('/noticias/blog', function(){return view('pages.blog');})->name('blogs.blog');
 
 //RUTA PARA MOSTRAR LA PAGINA PARTNERS -> ARQUITECTOS
 Route::get('/socios/construye', function(){return view('pages.construye');})->name('socios.construye');
+Route::get('/socios/dolmen/catalogo', [PartnersController::class, 'index'])->name('socios.dolmen.catalogo');
 
 
 //RUTA PARA ENVIAR EMAIL PRUEBA

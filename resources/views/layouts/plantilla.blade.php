@@ -50,7 +50,7 @@
                   <li>
                     <a class="dropdown-item text-dark">Construye</a>
                     <ul class="dropdown-menu dropdown-submenu">
-                      <li><a class="dropdown-item" href="#"><b>Dolmen</b></a></li>
+                      <li><a class="dropdown-item" href="{{ route('socios.construye')}}"><b>Dolmen</b></a></li>
                     </ul>
                   </li>
                     {{-- <li><a class="dropdown-item" href="{{ route('pages.partners') }}">Entidades Financieras</a></li>
