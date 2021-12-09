@@ -39,24 +39,22 @@
                 <a id="menu-item4" class="nav-link dropdown-toggle text-white rounded" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   PARTNERS
                 </a>
-                <ul class="dropdown-menu multi-level">
-                  <li class="dropdown-submenu">
-                    <a class="dropdown-toggle text-dark" data-bs-toggle="dropdown">Entidades financieras</a>
-                    <ul class="dropdown-menu">
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li>
+                    <a class="dropdown-item text-dark">Entidades financieras</a>
+                    <ul class="dropdown-menu dropdown-submenu">
                       <li><a class="dropdown-item" href="{{ route('pages.partners') }}"><b>Los Rios</b></a></li>
                       <li><a class="dropdown-item" href="#"><b>Corpu Corp</b></a></li>
                     </ul>
                   </li>
-                  <li class="dropdown-submenu">
-                    <a class="dropdown-toggle text-dark">Construye</a>
-                    <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item text-dark">Construye</a>
+                    <ul class="dropdown-menu dropdown-submenu">
                       <li><a class="dropdown-item" href="{{ route('socios.dolmen')}}"><b>Dolmen</b></a></li>
                       <li><a class="dropdown-item" href="{{ route('socios.dolmen.catalogo')}}"><b>Catálogo</b></a></li>
                       <li><a class="dropdown-item" href="{{ route('socios.construye')}}"><b>Construcción</b></a></li>
                     </ul>
                   </li>
-                    {{-- <li><a class="dropdown-item" href="{{ route('pages.partners') }}">Entidades Financieras</a></li>
-                    <li><a class="dropdown-item" href="{{ route('socios.construye') }}">Construye</a></li> --}}
                 </ul>
               </li>
               <li class="nav-item">
