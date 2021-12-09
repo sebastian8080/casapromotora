@@ -41,14 +41,14 @@
                 </a>
                 <ul class="dropdown-menu multi-level">
                   <li class="dropdown-submenu">
-                    <a class="dropdown-toggle dropdown-item text-dark" data-bs-toggle="dropdown">Entidades financieras</a>
+                    <a class="dropdown-toggle text-dark" data-bs-toggle="dropdown">Entidades financieras</a>
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="{{ route('pages.partners') }}"><b>Los Rios</b></a></li>
                       <li><a class="dropdown-item" href="#"><b>Corpu Corp</b></a></li>
                     </ul>
                   </li>
                   <li class="dropdown-submenu">
-                    <a class="dropdown-toggle dropdown-item text-dark">Construye</a>
+                    <a class="dropdown-toggle text-dark">Construye</a>
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="{{ route('socios.dolmen')}}"><b>Dolmen</b></a></li>
                       <li><a class="dropdown-item" href="{{ route('socios.dolmen.catalogo')}}"><b>Catálogo</b></a></li>
