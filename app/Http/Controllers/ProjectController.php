@@ -100,13 +100,36 @@ class ProjectController extends Controller
                 $data['num_imagenes'] = 7;
                 $data['extension'] = 'jpeg';
                 $data['nombreProyecto'] = $nombreProyecto;
-                $data['precio'] = '130.000';
-                $data['alicuota'] = null;
-                $data['contains_area'] = false;
-                $data['num_habitaciones'] = 6;
-                $data['num_baños'] = 3;
-                $data['metros_cuadrados'] = 80;
-                $data['parqueadero'] = 1;
+                $data['departamentos'] = [
+                    [
+                        'num_departamento' => 1,
+                        'precio' => '245.000',
+                        'alicuota' => '237.00',
+                        'contains_area' => true,
+                        'area_interior' => 54.77,
+                        'area_verde' => 43.51,
+                        'area_parqueo' => 12.5,
+                        'area_bodega' => 4.31,
+                        'area_total' => 115.09,
+                        'num_habitaciones' => 3,
+                        'num_baños' => 4,
+                        'parqueadero' => 2
+                    ],
+                    [
+                        'num_departamento' => 2,
+                        'precio' => '99,000',
+                        'alicuota' => '116.00',
+                        'contains_area' => true,
+                        'area_interior' => 70.13,
+                        'area_verde' => 9.59,
+                        'area_parqueo' => 13.25,
+                        'area_bodega' => 4.48,
+                        'area_total' => 97.45,
+                        'num_habitaciones' => 1,
+                        'num_baños' => 3,
+                        'parqueadero' => 1
+                    ]
+                ];
                 break;
 
             case 'Toscana':
@@ -114,13 +137,36 @@ class ProjectController extends Controller
                 $data['num_imagenes'] = 19;
                 $data['extension'] = 'jpg';
                 $data['nombreProyecto'] = $nombreProyecto;
-                $data['precio'] = '100.000';
-                $data['alicuota'] = '237.00';
-                $data['contains_area'] = false;
-                $data['num_habitaciones'] = 4;
-                $data['num_baños'] = 1;
-                $data['metros_cuadrados'] = 50;
-                $data['parqueadero'] = 1;
+                $data['departamentos'] = [
+                    [
+                        'num_departamento' => 1,
+                        'precio' => '245.000',
+                        'alicuota' => '237.00',
+                        'contains_area' => true,
+                        'area_interior' => 54.77,
+                        'area_verde' => 43.51,
+                        'area_parqueo' => 12.5,
+                        'area_bodega' => 4.31,
+                        'area_total' => 115.09,
+                        'num_habitaciones' => 3,
+                        'num_baños' => 4,
+                        'parqueadero' => 2
+                    ],
+                    [
+                        'num_departamento' => 2,
+                        'precio' => '99,000',
+                        'alicuota' => '116.00',
+                        'contains_area' => true,
+                        'area_interior' => 70.13,
+                        'area_verde' => 9.59,
+                        'area_parqueo' => 13.25,
+                        'area_bodega' => 4.48,
+                        'area_total' => 97.45,
+                        'num_habitaciones' => 1,
+                        'num_baños' => 3,
+                        'parqueadero' => 1
+                    ]
+                ];
                 break;
         }
         return view('pages.project', $data);

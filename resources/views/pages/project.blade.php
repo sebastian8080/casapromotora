@@ -223,19 +223,19 @@
     <div class="row mt-5">
         <div class="col-sm-8">
           <div class="row">
-            <div class="col-sm-6">
-              <h1 class="text-muted">PROYECTO {{ Str::upper($nombreProyecto) }}</h1>
+            <div class="col-sm-8">
+              <h1 class="text-muted">{{ Str::upper($nombreProyecto) }}</h1>
             </div>
-            <div class="col-sm-6"></div>
+            <div class="col-sm-4"></div>
           </div>
 
-          <div class="row text-center">
+          {{-- <div class="row text-center">
             @foreach ($departamentos as $depar)
             <div class="col-sm-6">
               <h3 onclick="@php($numero = $depar['num_departamento'])">Departamento {{ $depar['num_departamento']}}</h3>
             </div>
             @endforeach
-          </div>
+          </div> --}}
 
           <hr>
           <div class="row">
@@ -243,7 +243,7 @@
               <h1>Departamento 1</h1>
             </div>
             <div class="col-sm-6">
-              <p class="h1 text-danger float-end">${{ $departamentos[$numero]['precio'] }}</p>
+              <p class="h1 text-danger float-end">${{ $departamentos['0']['precio'] }}</p>
             </div>
           </div>
 
@@ -368,9 +368,5 @@
         captionText.innerHTML = dots[slideIndex-1].alt;
       }
 
-      function changeDepartment(num_department){
-        console.log(num_department);
-        var num = {!! json_encode($depar['num_departamento']) !!};
-      }
       </script>
 @endsection
