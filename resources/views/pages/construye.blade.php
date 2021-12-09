@@ -197,7 +197,7 @@
                 <p style="font-size: 20px">Garantizamos la durabilidad de construcciones</p>
             </div>
             <div class="col-sm-3 d-flex align-items-center justify-content-center">
-                <a style="background-color: rgb(207, 176, 111); color: #ffffff" class="btn rounded-pill" href="#">VER MATERIALES</a>
+                <a style="background-color: rgb(207, 176, 111); color: #ffffff" class="btn rounded-pill" href="{{ route('socios.dolmen.catalogo') }}">VER MATERIALES</a>
             </div>
             <div class="col-sm-2"></div>
         </div>
