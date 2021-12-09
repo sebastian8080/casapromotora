@@ -38,6 +38,40 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
         }
+
+        .col_auxiliar{
+            display: none;
+        }
+
+        .col_encima_de_imagen{
+            display: blockl
+        }
+
+        .row_construccion{
+            display: flex;
+        }
+
+        .row_construccion_auxiliar{
+            display: none;
+        }
+
+        @media screen and (max-width: 778px){
+            .col_encima_de_imagen{
+                display: none;
+            }
+
+            .col_auxiliar{
+                display: block;
+            }
+
+            .row_construccion{
+                display: none;
+            }
+
+            .row_construccion_auxiliar{
+                display: inline;
+            }
+        }
     </style>
 @endsection
 
@@ -45,7 +79,7 @@
 @section('content')
 
     <div class="header position-relative">
-        <div class="row" style="width: 100%; height: 50vw">
+        <div class="row col_encima_de_imagen" style="width: 100%; height: 50vw">
             <div class="col-sm-6 col-12"></div>
             <div class="col-sm-6 col-12 mt-5 position-absolute top-0 end-0">
                 <div style="margin-left: 18%">
@@ -58,6 +92,17 @@
             </div>
         </div>
     </div>
+
+    <div class="col-sm-6 col-12 mt-5 col_auxiliar">
+        <div class="text-center">
+            <h2 class="fw-bold title" style="font-size: 30px; color: rgb(207, 176, 111)">CASA CREDITO</h2>
+            <h1 id="texto">CONSTRUYE</h1>
+            <p style="color: rgb(166, 124, 82)"><img style="width: 35px; margin-left: 10px;" class="img-fluid" src="{{ asset("img/partners/ICONOS BANNER-26.png")}}" alt="">Experiencia en proyectos</p>
+            <p style="color: rgb(166, 124, 82)"><img style="width: 35px; margin-left: 10px;" class="img-fluid" src="{{ asset("img/partners/ICONOS BANNER-27.png")}}" alt="">Asesoria para creditos</p>
+            <p style="color: rgb(166, 124, 82)"><img style="width: 35px; margin-left: 10px;" class="img-fluid" src="{{ asset("img/partners/ICONOS BANNER-28.png")}}" alt="">Diseños acorde a sus necesidades</p>
+        </div>
+    </div>
+
 
     <div class="container">
         <div class="row mb-5">
@@ -76,11 +121,11 @@
     </div>
 
     <div class="row position-relative">
-        <div class="">
+        <div>
             <img class="img-fluid" src="{{ asset('img/partners/CONSTRUYE.jpg') }}" alt="">
             <div class="position-absolute top-0 start-50 translate-middle-x" style="margin-top: 5%">
-                <h2 class="text-center" style="color: rgb(128, 128, 128)">PROCESO DE CONSTRUCCIÓN</h2>
-                <div class="row mt-5 text-center">
+                <h2 class="text-center" style="color: rgb(128, 128, 128);">PROCESO DE CONSTRUCCIÓN</h2>
+                <div class="row mt-5 text-center row_construccion">
                     <div class="col-sm-4">
                         <img src="{{ asset('img/partners/ICONOS CONSTRUYE-16.png') }}" alt="">
                         <h2 class="fw-bold mt-4" style="color: rgb(207, 176, 111)">01</h2>
@@ -101,6 +146,24 @@
         </div>
     </div>
 
+    <div class="row mt-5 text-center row_construccion_auxiliar">
+        <div class="col-sm-4">
+            <img src="{{ asset('img/partners/ICONOS CONSTRUYE-16.png') }}" alt="">
+            <h2 class="fw-bold mt-4" style="color: rgb(207, 176, 111)">01</h2>
+            <p style="color: rgb(166, 124, 82)">PROYECTO & PLANIFICACION</p>
+        </div>
+        <div class="col-sm-4">
+            <img src="{{ asset('img/partners/ICONOS CONSTRUYE-17.png') }}" alt="">
+            <h2 class="fw-bold mt-4" style="color: rgb(207, 176, 111)">02</h2>
+            <p style="color: rgb(166, 124, 82)">DISEÑO Y ESTRUCTURA</p>
+        </div>
+        <div class="col-sm-4">
+            <img src="{{ asset('img/partners/ICONOS CONSTRUYE-18.png') }}" alt="">
+            <h2 class="fw-bold mt-4" style="color: rgb(207, 176, 111)">03</h2>
+            <p style="color: rgb(166, 124, 82)">IMPLEMENTACION Y DESARROLLO</p>
+        </div>
+    </div>
+
     <div class="row text-center" style="background-color: rgb(128, 128, 128);">
         <div class="col-sm-2"></div>
         <div class="col-sm-5 mt-5 mb-4" style="color: #ffffff">
@@ -109,7 +172,7 @@
         </div>
         <div class="col-sm-3 d-flex align-items-center justify-content-center">
             <div>
-                <button style="background-color: rgb(207, 176, 111)" class="btn text-white rounded-pill">CONTÁCTANOS</button>
+                <button style="background-color: rgb(207, 176, 111)" class="btn text-white rounded-pill mb-3">CONTÁCTANOS</button>
             </div>
         </div>
         <div class="col-sm-2"></div>
