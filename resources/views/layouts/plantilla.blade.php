@@ -19,7 +19,7 @@
   <!--NAVBAR-->
     <nav id="menu" class="navbar navbar-expand-lg fixed-top navbar-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="{{ route('pages.home') }}"><img id="img-logo" width="15%" class="img-fluid" src="{{ URL::asset('logo-recortado.png'); }}" alt="Logo Casa Credito Promotora"></a>
+          <a class="navbar-brand" href="{{ route('pages.home') }}"><img id="img-logo" width="15%" class="img-fluid" src="{{ URL::asset('logo 2-05.png'); }}" alt="Logo Casa Credito Promotora"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon bg-secondary rounded" style="opacity: 0.5"></span>
           </button>
@@ -39,17 +39,17 @@
                 <a id="menu-item4" class="nav-link dropdown-toggle text-white rounded" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   PARTNERS
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li>
-                    <a class="dropdown-item text-dark">Entidades financieras</a>
-                    <ul class="dropdown-menu dropdown-submenu">
+                <ul class="dropdown-menu multi-level">
+                  <li class="dropdown-submenu">
+                    <a class="dropdown-toggle dropdown-item text-dark" data-bs-toggle="dropdown">Entidades financieras</a>
+                    <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="{{ route('pages.partners') }}"><b>Los Rios</b></a></li>
                       <li><a class="dropdown-item" href="#"><b>Corpu Corp</b></a></li>
                     </ul>
                   </li>
-                  <li>
-                    <a class="dropdown-item text-dark">Construye</a>
-                    <ul class="dropdown-menu dropdown-submenu">
+                  <li class="dropdown-submenu">
+                    <a class="dropdown-toggle dropdown-item text-dark">Construye</a>
+                    <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="{{ route('socios.dolmen')}}"><b>Dolmen</b></a></li>
                       <li><a class="dropdown-item" href="{{ route('socios.dolmen.catalogo')}}"><b>Catálogo</b></a></li>
                       <li><a class="dropdown-item" href="{{ route('socios.construye')}}"><b>Construcción</b></a></li>
