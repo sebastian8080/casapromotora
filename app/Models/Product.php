@@ -16,4 +16,8 @@ class Product extends Model
         'unidad_tipo', 'unidad_x_cantidad', 'm2_x_cantidad',
         'kg_x_unidad', 'unidad_x_pallet', 'pvp_m2', 'url_image'
     ];
+
+    public function categoria(){
+        return $this->belongsTo(Categoria::class,'codigo_categoria','codigo_categoria');
+    }
 }

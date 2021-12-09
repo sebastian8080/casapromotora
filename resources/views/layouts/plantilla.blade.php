@@ -19,7 +19,7 @@
   <!--NAVBAR-->
     <nav id="menu" class="navbar navbar-expand-lg fixed-top navbar-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="{{ route('pages.home') }}"><img id="img-logo" src="{{ URL::asset('casacredito-logo.png'); }}" alt="Logo Casa Credito Promotora"></a>
+          <a class="navbar-brand" href="{{ route('pages.home') }}"><img id="img-logo" width="15%" class="img-fluid" src="{{ URL::asset('logo-recortado.png'); }}" alt="Logo Casa Credito Promotora"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon bg-secondary rounded" style="opacity: 0.5"></span>
           </button>
@@ -50,8 +50,9 @@
                   <li>
                     <a class="dropdown-item text-dark">Construye</a>
                     <ul class="dropdown-menu dropdown-submenu">
-                      <li><a class="dropdown-item" href="{{ route('socios.construye')}}"><b>Materiales</b></a></li>
                       <li><a class="dropdown-item" href="{{ route('socios.dolmen')}}"><b>Dolmen</b></a></li>
+                      <li><a class="dropdown-item" href="{{ route('socios.dolmen.catalogo')}}"><b>Catálogo</b></a></li>
+                      <li><a class="dropdown-item" href="{{ route('socios.construye')}}"><b>Construcción</b></a></li>
                     </ul>
                   </li>
                     {{-- <li><a class="dropdown-item" href="{{ route('pages.partners') }}">Entidades Financieras</a></li>

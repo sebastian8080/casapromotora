@@ -125,7 +125,7 @@
                 <img src="img/partners/dolmen.jpg" class="card-img-top" alt="Partner Dolmen">
                 <div class="card-body text-center">
                   <h6 class="card-title">DOLMEN</h6>
-                  <a href="#" class="btn btn-outline-secondary">Contactar</a>
+                  <a href="{{ route('socios.dolmen') }}" class="btn btn-outline-secondary">Contactar</a>
                 </div>
             </div>
         </div>
@@ -143,7 +143,7 @@
                 <img src="img/partners/grupovasquez.jpg" class="card-img-top" alt="Partner Grupo Vasquez">
                 <div class="card-body text-center">
                   <h6 class="card-title">GRUPO VASQUEZ</h6>
-                  <a href="#" class="btn btn-outline-secondary">Contactar</a>
+                  <a href="{{ route('pages.projects') }}" class="btn btn-outline-secondary">Contactar</a>
                 </div>
             </div>
         </div>
@@ -152,7 +152,7 @@
                 <img src="img/partners/COOP-LOS-RIOS.jpg" class="card-img-top" alt="Partner Cooperativa Los Rios">
                 <div class="card-body text-center">
                   <h6 class="card-title">COOPERATIVA LOS RIOS</h6>
-                  <a href="#" class="btn btn-outline-secondary">Contactar</a>
+                  <a href="{{ route('pages.partners') }}" class="btn btn-outline-secondary">Contactar</a>
                 </div>
             </div>
         </div>
