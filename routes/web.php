@@ -44,7 +44,8 @@ Route::get('/noticias/blog', function(){return view('pages.blog');})->name('blog
 //RUTA PARA MOSTRAR LA PAGINA PARTNERS -> ARQUITECTOS
 Route::get('/socios/construye', function(){return view('pages.construye');})->name('socios.construye');
 Route::get('/socios/dolmen/catalogo', [PartnersController::class, 'index'])->name('socios.dolmen.catalogo');
-
+Route::get('/socios/dolmen', [PartnersController::class, 'indexDolmen'])->name('socios.dolmen');
+Route::get('/socios/dolmen/{categoria}', [PartnersController::class, 'showCategory'])->name('socios.dolmen.categoria');
 
 //RUTA PARA ENVIAR EMAIL PRUEBA
 Route::post('/contactanos', [IndexController::class, "store"])->name('contactanos.store');

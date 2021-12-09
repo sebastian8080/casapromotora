@@ -109,7 +109,7 @@
         </div>
         <div class="col-sm-3 d-flex align-items-center justify-content-center">
             <div>
-                <button style="color: rgb(207, 176, 111)" class="btn text-white rounded-pill">CONTÁCTANOS</button>
+                <button style="background-color: rgb(207, 176, 111)" class="btn text-white rounded-pill">CONTÁCTANOS</button>
             </div>
         </div>
         <div class="col-sm-2"></div>
