@@ -4,16 +4,7 @@
 
 @section('content-head')
     <style>
-      .link:hover{
-        border-bottom: 1px solid;
-        font-size: 40px;
-      }
-
-      @media only screen and (max-width: 580px){
-        .link{
-          margin-left: 40%;
-        }
-      }
+      
     </style>
 @endsection
     
@@ -94,24 +85,24 @@
                 {{-- @forelse ($projects as $project) --}}
                           {{-- @if ($loop->index==0)  @endif--}}
                 <div class="carousel-item active">
-                  <img src="img/home/01.jpg" class="d-block w-100" alt="...">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>First Project</h5>
-                    <p>Description First Project</p>
+                  <img src="{{ asset('img/projects/adra/1.jpg') }}" class="d-block w-100 img-fluid" alt="...">
+                  <div class="carousel-caption d-md-block">
+                    <a style="text-decoration: none" href="{{ route('projects.viewProject', 'Adra') }}"><h3 class="texto-imagenes">ADRA</h3></a>
+                    <p>Departamentos de lujo con una vista insuperable</p>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img src="img/home/6b578015c6ddf83596b9ebc724bd576d.jpg" class="d-block w-100" alt="...">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Second Project</h5>
-                    <p>Description Second Project</p>
+                  <img style="width: 100%" src="{{ asset('img/projects/futuranarancay/1.jpeg') }}" class="d-block w-100 img-fluid" alt="...">
+                  <div class="carousel-caption d-md-block">
+                    <a style="text-decoration: none" href="{{ route('projects.viewProject', 'Futura Narancay') }}"><h3 class="texto-imagenes">FUTURA NARANCAY</h3></a>
+                    <p>Departamentos con una  experiencia única en diseñoy comodidad</p>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img src="img/home/e68756b224c6a89424742d207a87e30e.jpg" class="d-block w-100" alt="...">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Third Project</h5>
-                    <p>Description Third Project</p>
+                  <img src="{{ asset('img/projects/toscana/1.jpg') }}" class="d-block w-100 img-fluid" alt="...">
+                  <div class="carousel-caption d-md-block">
+                    <a style="text-decoration: none" href="{{ route('projects.viewProject', 'Toscana') }}"><h3 class="texto-imagenes">TOSCANA</h3></a>
+                    <p>Condominios con acabados modernos</p>
                   </div>
                 </div>
                 {{-- @empty

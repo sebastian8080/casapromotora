@@ -59,13 +59,13 @@ html, body {
 
   /*ESTAS DOS CLASES SON PARA EL LINK DE LA FILA 3*/
   .link-row3:hover {
-    font-size:160%;
+    font-size:150%;
     color: #100;
   }
 
   /*HACER EL LINK DE LA FILA 3 DE COLOR NEGRO*/
   .link-row3{
-    font-size: 140%;
+    font-size: 130%;
     color: #100;
   }
 
@@ -299,6 +299,9 @@ h1{
 @media screen and (max-width: 990px){
   #img-logo{width: 50px;}
   #itemMenu{background: #aeaaaa;padding-left: 10px;}
+  .col-sm-6 > .carrusel > .carousel > .carousel-inner > .carousel-item >.carousel-caption h5, .col-sm-6 > .carrusel > .carousel > .carousel-inner > .carousel-item >.carousel-caption p{
+    font-size: 10px;
+  }
   }
 
 /*START ESTILOS DE BANNER HOME QUITO GUAYAQUIL CUENCA MANTA*/
@@ -321,6 +324,10 @@ h1{
   #links{
     margin-left: 20px;
   }
+}
+
+.col-sm-6 > .carrusel > .carousel > .carousel-inner > .carousel-item > img{
+  filter: brightness(80%);
 }
 
 /*END ESTILOS DE BANNER HOME QUITO GUAYAQUIL CUENCA MANTA*/
