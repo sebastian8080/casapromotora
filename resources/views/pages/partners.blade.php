@@ -162,5 +162,5 @@
 @endsection
 
 @section('section-scripts')
-    <script src="{{ asset('js/partners.js') }}"></script>
+    <script src="{{ asset('js/homepage.js') }}"></script>
 @endsection

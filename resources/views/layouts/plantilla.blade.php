@@ -12,6 +12,7 @@
 
     <!--EFECTOS DE APARECIMIENTO-->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="{{ asset('scss/style.scss') }}">
 
     @yield('content-head')
 </head>
@@ -36,20 +37,20 @@
                 <a id="menu-item2" class="nav-link text-white rounded" href="{{ route('pages.projects') }}">PROYECTOS</a>
               </li>
               <li class="nav-item dropdown">
-                <a id="menu-item4" class="nav-link dropdown-toggle text-white rounded" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a id="menu-item4" class="nav-link dropdown-toggle text-white rounded" id="navbarDropdown" role="button" data-bs-auto-close="outside" data-bs-toggle="dropdown" aria-expanded="false">
                   PARTNERS
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li>
-                    <a class="dropdown-item text-dark">Entidades financieras</a>
-                    <ul class="dropdown-menu dropdown-submenu">
+                <ul class="dropdown-menu shadow" aria-labelledby="navbarDropdown">
+                  <li class="dropend">
+                    <a class="dropdown-item dropdown-toggle text-dark" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Entidades financieras</a>
+                    <ul class="dropdown-menu shadow">
                       <li><a class="dropdown-item" href="{{ route('pages.partners') }}"><b>Los Rios</b></a></li>
                       <li><a class="dropdown-item" href="#"><b>Corpu Corp</b></a></li>
                     </ul>
                   </li>
-                  <li>
-                    <a class="dropdown-item text-dark">Construye</a>
-                    <ul class="dropdown-menu dropdown-submenu">
+                  <li class="dropend">
+                    <a class="dropdown-item dropdown-toggle text-dark" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Construye</a>
+                    <ul class="dropdown-menu shadow">
                       <li><a class="dropdown-item" href="{{ route('socios.dolmen')}}"><b>Dolmen</b></a></li>
                       <li><a class="dropdown-item" href="{{ route('socios.dolmen.catalogo')}}"><b>Catálogo</b></a></li>
                       <li><a class="dropdown-item" href="{{ route('socios.construye')}}"><b>Construcción</b></a></li>
@@ -136,6 +137,15 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init();
+    </script>
+
+    <script>
+      document.addEventListener('click',function(e){
+  // Hamburger menu
+      if(e.target.classList.contains('hamburger-toggle')){
+        e.target.children[0].classList.toggle('active');
+      }
+    })
     </script>
 </body>
 </html>

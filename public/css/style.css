@@ -363,6 +363,7 @@ h1{
 }
 /*END estilos para el dropdown multinivel de partners*/
 
+
 /*CAMBIAR ASPECTO DEL MENU DROPDOWN CUANDO SE ESTA NAVEGANDO DESDE EL CELULAR*/
 
 /* @media (min-width: 992px){
@@ -400,4 +401,22 @@ h1{
     background: #aeaaaa;
     padding-left: 10px;
   }
+
+  .dropdown-menu .dropdown-submenu {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: -7px;
+  }
+  .dropdown-menu .dropdown-submenu-left {
+    right: 50%;
+    /* left: auto; */
+  }
+
+  .dropdown-menu > li:active > .dropdown-submenu {
+    display: block;
+  }
+
 }
+
+

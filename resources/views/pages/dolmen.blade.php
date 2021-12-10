@@ -7,11 +7,10 @@
         .header{
            background-image: url("{{ asset('img/partners/BANNER-PAGINA-DOLMEN.jpg') }}");
            width: 100%;
-           height: 40vw;
+           height: 50vw;
            background-size: cover;
            background-repeat: no-repeat;
             background-attachment: fixed;
-           margin-top: 70px;
         }
 
         #texto{
@@ -37,7 +36,7 @@
             <div style="margin-left: 20%; margin-top: 13%">
                 <h1 class="text-white" style="font-size: 4vw">CONSTRUÍMOS</h1>
                 <h1 id="texto">CON CALIDAD</h1>
-                <a style="text-decoration: none; color: rgb(207, 176, 111); font-size: 2vw" href="{{route('socios.dolmen.catalogo')}}">Ver catálogo de productos <i class="fas fa-long-arrow-alt-right"></i></a>
+                <a style="text-decoration: none; color: rgb(207, 176, 111); font-size: 3vw" href="{{route('socios.dolmen.catalogo')}}">Ver catálogo de productos <i class="fas fa-long-arrow-alt-right"></i></a>
             </div>
         </div>
     </div>
@@ -155,5 +154,5 @@
 @endsection
 
 @section('section-scripts')
-    <script src="{{ asset('js/partners.js') }}"></script>
+    <script src="{{ asset('js/homepage.js') }}"></script>
 @endsection
