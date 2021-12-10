@@ -36,6 +36,7 @@ Route::get('/blog', [IndexController::class, 'redirectToBlog'])->name('pages.new
 Route::get('/nuestro-equipo', function () {return view('pages.equipo');})->name('pages.equipo');
 
 Route::get('/proyectos/{nombreProyecto}/{num_department?}', [ProjectController::class, 'viewProject'])->name('projects.viewProject');
+Route::post('/proyectos-interest', [ProjectController::class, 'sendEmail'])->name("sendEmail.projects");
 // Route::get('/proyectos/{nombreProyecto}/{departamento}', [ProjectController::class, 'changeDepartment'])->name('changeDepartment');
 
 //Ruta para mostrar un blog en especifico - PRUEBA

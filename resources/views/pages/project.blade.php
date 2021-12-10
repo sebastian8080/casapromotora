@@ -358,24 +358,25 @@
 
           <h3 class="mt-3 text-center fw-bold">Deseo saber más</h3>
 
-          <form class="mt-3">
+          <form class="mt-3" action="{{ route('sendEmail.projects') }}" method="POST">
+            @csrf
             <div class="form-outline mb-4">
-              <input type="text" id="nombre" class="form-control" />
-              <label class="form-label" for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" class="form-control" autocomplete="off" required/>
+              <label class="form-label" for="nombre">Nombre y Apellido</label>
             </div>
         
             <div class="form-outline mb-4">
-              <input type="email" id="email" class="form-control" />
+              <input type="email" id="email" name="email" class="form-control" autocomplete="off" required />
               <label class="form-label" for="email">Correo electrónico</label>
             </div>
 
             <div class="form-outline mb-4">
-              <input type="number" id="telefono" class="form-control" />
+              <input type="number" id="telefono" name="telefono" class="form-control" autocomplete="off" required/>
               <label class="form-label" for="telefono">Teléfono</label>
             </div>
           
             <div class="form-outline mb-4">
-              <textarea class="form-control" id="mensaje" rows="4">Me interesa saber más sobre el proyecto {{ $data['nombreProyecto'] }}</textarea>
+              <textarea class="form-control" name="mensaje" id="mensaje" rows="4" autocomplete="off" required>Me interesa saber más sobre el proyecto {{ $data['nombreProyecto'] }}</textarea>
               <label class="form-label" for="mensaje">Mensaje</label>
             </div>
           

@@ -369,4 +369,24 @@ class ProjectController extends Controller
         }
         return view('pages.project', compact('data', 'num_department'));
     }
+
+    public function sendEmail(Request $request){
+        $subject = "Proyectos - Casa Credito Promotora";
+        $message = "<br><strong>Interesado en Proyectos</strong>
+            <br>Nombre: " . strip_tags($request->nombre) ."
+            <br>Telefono: " . strip_tags($request->telefono) ."
+            <br>Email: " . strip_tags($request->email) ."
+            <br>Mensaje: " . strip_tags($request->mensaje) ."
+        ";
+
+        $header = "From: <proyectos@ccpromotora.com>" . "\r\n" .
+            "MIME-Version: 1.0" . "\r\n" .
+            "Content-Type:text/html;charset=UTF-8" . "\r\n";
+
+        mail("sebas25211@hotmail.com", $subject, $message, $header);
+
+        return "Se envio el correo con exito";
+        
+    }
+
 }
