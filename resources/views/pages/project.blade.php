@@ -135,7 +135,12 @@
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.074), 0 6px 20px 0 rgba(0, 0, 0, 0.109);
       }
 
-      @media screen and(max-width: 580px){
+      .imgs-header{
+          background-color: #e2e0e0; 
+          padding: 10px;
+        }
+
+      @media screen and (max-width: 580px){
         .modal-content{
           max-width: 70%;
         }
@@ -147,16 +152,16 @@
 
   <div class="container mt-5 pt-5">
 
-    <div style="background-color: #e2e0e0; padding: 50px">
+    <div class="imgs-header">
      <!-- Images used to open the lightbox -->
-    <div class="row">
-      <div class="col-sm-6 col-6">
+    <div class="row mb-3">
+      <div class="col-sm-6 col-12 mt-3">
         <div class="column">
           <img class="img-fluid rounded" src="{{url('img/projects/'.$name_folder.'/1.'.$extension)}}" onclick="openModal();currentSlide(1)" class="hover-shadow">
         </div>
       </div>
 
-    <div class="col-sm-6 col-6">
+    <div class="col-sm-6 col-12 mt-3">
       <div class="row">
         <div class="col-sm-6 col-6">
           <div class="column">
@@ -228,15 +233,6 @@
             </div>
             <div class="col-sm-4"></div>
           </div>
-
-          {{-- <div class="row text-center">
-            @foreach ($departamentos as $depar)
-            <div class="col-sm-6">
-              <h3 onclick="@php($numero = $depar['num_departamento'])">Departamento {{ $depar['num_departamento']}}</h3>
-            </div>
-            @endforeach
-          </div> --}}
-
           <hr>
           <div class="row">
             <div class="col-sm-6">
