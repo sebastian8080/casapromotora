@@ -65,8 +65,6 @@
     </div>
   </div>
 
-    
-
     <div class="row mt-3" data-aos="slide-up">
       <div class="col-sm-3"></div>
       <div class="col-sm-6 second-row rounded">
@@ -189,7 +187,6 @@
       </div>
 
       <div data-aos="fade-up-right" class="row position-relative">
-          {{-- <img src="https://www.cuerpomente.com/medio/2019/11/04/familia_db408d1a_1200x630.jpg" class="img-fluid" alt=""> --}}
           <img src="img/home/FAMILIA-CREDITOS - copia.jpg" class="img-fluid" alt="Imagen de una familia">
           <div id="row6" class="position-absolute">
             <h1 id="text-row6" class="text-light">¡Lo que siempre <br>has querido!</h1>

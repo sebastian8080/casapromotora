@@ -296,127 +296,33 @@ h1{
    font-family: 'proxima_nova_rgbold', Helvetica, Arial, sans-serif;
 }
 
-/* .dropdown-submenu {
-  position: relative;
-}
-
-.dropdown-submenu>.dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-top: -6px;
-  margin-left: -1px;
-  -webkit-border-radius: 0 6px 6px 6px;
-  -moz-border-radius: 0 6px 6px;
-  border-radius: 0 6px 6px 6px;
-}
-
-.dropdown-submenu:hover>.dropdown-menu {
-  display: block;
-}
-
-.dropdown-submenu>a:after {
-  display: block;
-  content: " ";
-  float: right;
-  width: 0;
-  height: 0;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 5px 0 5px 5px;
-  border-left-color: #ccc;
-  margin-top: 5px;
-  margin-right: -10px;
-}
-
-.dropdown-submenu:hover>a:after {
-  border-left-color: #fff;
-}
-
-.dropdown-submenu.pull-left {
-  float: none;
-}
-
-.dropdown-submenu.pull-left>.dropdown-menu {
-  left: -100%;
-  margin-left: 10px;
-  -webkit-border-radius: 6px 0 6px 6px;
-  -moz-border-radius: 6px 0 6px 6px;
-  border-radius: 6px 0 6px 6px;
-} */
-
-/*Estilos para el dropdown multinivel de partners*/
-.dropdown-menu li {
-  position: relative;
-}
-.dropdown-menu .dropdown-submenu {
-  display: none;
-  position: absolute;
-  left: 100%;
-  top: -7px;
-}
-.dropdown-menu .dropdown-submenu-left {
-  right: 100%;
-  left: auto;
-}
-.dropdown-menu > li:hover > .dropdown-submenu {
-  display: block;
-}
-/*END estilos para el dropdown multinivel de partners*/
-
-
-/*CAMBIAR ASPECTO DEL MENU DROPDOWN CUANDO SE ESTA NAVEGANDO DESDE EL CELULAR*/
-
-/* @media (min-width: 992px){
-	.dropdown-menu .dropdown-toggle:after{
-		border-top: .3em solid transparent;
-	    border-right: 0;
-	    border-bottom: .3em solid transparent;
-	    border-left: .3em solid;
-	}
-	.dropdown-menu .dropdown-menu{
-		margin-left:0; margin-right: 0;
-	}
-	.dropdown-menu li{
-		position: relative;
-	}
-	.nav-item .submenu{ 
-		display: none;
-		position: absolute;
-		left:100%; top:-7px;
-	}
-	.nav-item .submenu-left{ 
-		right:100%; left:auto;
-	}
-	.dropdown-menu > li:hover{ background-color: #f1f1f1 }
-	.dropdown-menu > li:hover > .submenu{
-		display: block;
-	}
-} */
 @media screen and (max-width: 990px){
-  #img-logo{
-    width: 50px;
+  #img-logo{width: 50px;}
+  #itemMenu{background: #aeaaaa;padding-left: 10px;}
   }
 
-  #itemMenu{
-    background: #aeaaaa;
-    padding-left: 10px;
+/*START ESTILOS DE BANNER HOME QUITO GUAYAQUIL CUENCA MANTA*/
+  .link:hover{
+    border-bottom: 1px solid;
+    font-size: 40px;
   }
 
-  .dropdown-menu .dropdown-submenu {
-    display: none;
-    position: absolute;
-    left: 50%;
-    top: -7px;
-  }
-  .dropdown-menu .dropdown-submenu-left {
-    right: 50%;
-    /* left: auto; */
+  @media only screen and (max-width: 580px){
+    .link{
+      font-size: 3.5vw;
+    }
   }
 
-  .dropdown-menu > li:active > .dropdown-submenu {
-    display: block;
+  #links{
+    display: flex;
   }
 
+  @media screen and (max-width: 576px){
+  #links{
+    margin-left: 20px;
+  }
 }
+
+/*END ESTILOS DE BANNER HOME QUITO GUAYAQUIL CUENCA MANTA*/
 
 
