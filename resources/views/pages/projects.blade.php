@@ -33,7 +33,7 @@
             </div>
             <div class="col-sm-6 d-flex align-items-center">
                 <div>
-                    <h1 class="fw-bold pt-1" style="color: #ffffff; -webkit-text-stroke: 1px rgb(162, 157, 157);"> ADRA</h1>
+                    <h1 class="fw-bold pt-1" style="color: #ffffff; -webkit-text-stroke: 1px rgb(162, 157, 157);">ADRA</h1>
                     <i class="fas fa-map-marker-alt mx-1" style="color: gray"></i><b>Cuenca - Sector Edificio Vista Linda</b>
                     <div class="row mt-4">
                         <div class="col-sm-4 d-flex">
@@ -100,7 +100,7 @@
         </div>
 
         <hr data-aos="fade-up" style="color: rgb(166, 177, 176);  width: 20%; margin-left: 40%" class="mt-5 mb-5">
-        <div class="row mt-1 pt-1" data-aos="fade-up">
+        <div class="row mt-1 pt-1 mb-4" data-aos="fade-up">
             <div class="col-sm-6 position-relative">
                 <img class="img-fluid rounded mx-auto d-block img-project" style="width: 100%; height: 100%;" src="{{ asset('img/projects/toscana/1.jpg') }}" alt="Proyecto Toscana">
                 <div class="position-absolute top-0 end-0 border rounded-pill" style="margin-right: 25px; margin-top: 10px; font-size: 15px; background-color: rgb(219, 219, 224); padding-right: 5px; padding-left:10px; box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">

@@ -35,8 +35,8 @@ Route::get('/proyectos', [IndexController::class, 'redirectToProjects'])->name('
 Route::get('/blog', [IndexController::class, 'redirectToBlog'])->name('pages.news');
 Route::get('/nuestro-equipo', function () {return view('pages.equipo');})->name('pages.equipo');
 
-Route::get('/proyectos/{nombreProyecto}', [ProjectController::class, 'viewProject'])->name('projects.viewProject');
-Route::get('/proyectos/{nombreProyecto}/{departamento}', [ProjectController::class, 'changeDepartment'])->name('changeDepartment');
+Route::get('/proyectos/{nombreProyecto}/{num_department?}', [ProjectController::class, 'viewProject'])->name('projects.viewProject');
+// Route::get('/proyectos/{nombreProyecto}/{departamento}', [ProjectController::class, 'changeDepartment'])->name('changeDepartment');
 
 //Ruta para mostrar un blog en especifico - PRUEBA
 Route::get('/noticias/blog', function(){return view('pages.blog');})->name('blogs.blog');

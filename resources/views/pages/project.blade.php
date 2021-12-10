@@ -4,7 +4,7 @@
 
 @section('content-head')
     <style>
-      img:hover{
+      .imgs-header > .row > .col-sm-6 .column > img:hover{
         transform: scale(1.1);
         -webkit-transition: transform 1s ease-out;
       }
@@ -145,6 +145,10 @@
           max-width: 70%;
         }
       }
+
+      .div-departments:hover{
+        background-color: #e2e0e0;
+      }
     </style>
 @endsection
 
@@ -157,7 +161,7 @@
     <div class="row mb-3">
       <div class="col-sm-6 col-12 mt-3">
         <div class="column">
-          <img class="img-fluid rounded" src="{{url('img/projects/'.$name_folder.'/1.'.$extension)}}" onclick="openModal();currentSlide(1)" class="hover-shadow">
+          <img class="img-fluid rounded" src="{{url('img/projects/'.$data['name_folder'].'/1.'.$data['extension'])}}" onclick="openModal();currentSlide(1)" class="hover-shadow">
         </div>
       </div>
 
@@ -165,12 +169,12 @@
       <div class="row">
         <div class="col-sm-6 col-6">
           <div class="column">
-            <img width="100%" class="img-fluid rounded" src="{{url('img/projects/'.$name_folder.'/2.'.$extension)}}" onclick="openModal();currentSlide(2)" class="hover-shadow">
+            <img width="100%" class="img-fluid rounded" src="{{url('img/projects/'.$data['name_folder'].'/2.'.$data['extension'])}}" onclick="openModal();currentSlide(2)" class="hover-shadow">
           </div>
         </div>
         <div class="col-sm-6 col-6">
           <div class="column">
-            <img class="img-fluid rounded" src="{{url('img/projects/'.$name_folder.'/3.'.$extension)}}" onclick="openModal();currentSlide(3)" class="hover-shadow">
+            <img class="img-fluid rounded" src="{{url('img/projects/'.$data['name_folder'].'/3.'.$data['extension'])}}" onclick="openModal();currentSlide(3)" class="hover-shadow">
           </div>
         </div>
       </div>
@@ -178,12 +182,12 @@
       <div class="row mt-3">
         <div class="col-sm-6 col-6">
           <div class="column">
-            <img class="img-fluid rounded" src="{{url('img/projects/'.$name_folder.'/4.'.$extension)}}" onclick="openModal();currentSlide(4)" class="hover-shadow">
+            <img class="img-fluid rounded" src="{{url('img/projects/'.$data['name_folder'].'/4.'.$data['extension'])}}" onclick="openModal();currentSlide(4)" class="hover-shadow">
           </div>
         </div>
         <div class="col-sm-6 col-6">
           <div class="column">
-            <img class="img-fluid rounded" src="{{url('img/projects/'.$name_folder.'/5.'.$extension)}}" onclick="openModal();currentSlide(5)" class="hover-shadow">
+            <img class="img-fluid rounded" src="{{url('img/projects/'.$data['name_folder'].'/5.'.$data['extension'])}}" onclick="openModal();currentSlide(5)" class="hover-shadow">
           </div>
         </div>
       </div>
@@ -196,10 +200,10 @@
   <span class="close cursor" onclick="closeModal()">&times;</span>
   <div class="modal-content">
 
-    @for($i = 1; $i <= $num_imagenes; $i++)
+    @for($i = 1; $i <= $data['num_imagenes']; $i++)
     <div class="mySlides">
-      <div class="numbertext">{{$i}} / {{$num_imagenes}}</div>
-      <img class="img-fluid" src="{{url('img/projects/'.$name_folder.'/'.$i.'.'.$extension)}}" style="width:100%">
+      <div class="numbertext">{{$i}} / {{$data['num_imagenes']}}</div>
+      <img class="img-fluid" src="{{url('img/projects/'.$data['name_folder'].'/'.$i.'.'.$data['extension'])}}" style="width:100%">
     </div>
     @endfor
 
@@ -229,59 +233,123 @@
         <div class="col-sm-8">
           <div class="row">
             <div class="col-sm-8">
-              <h1 class="text-muted">{{ Str::upper($nombreProyecto) }}</h1>
+              <h1 class="text-muted">{{ Str::upper($data['nombreProyecto']) }}</h1>
             </div>
             <div class="col-sm-4"></div>
           </div>
-          <hr>
-          <div class="row">
-            <div class="col-sm-6">
-              <h1>Departamento 1</h1>
-            </div>
-            <div class="col-sm-6">
-              <p class="h1 text-danger float-end">${{ $departamentos['0']['precio'] }}</p>
-            </div>
-          </div>
 
-          @if ($departamentos['0']['alicuota'] != null)
+          <div data-aos="slide-up">
+            <hr>
             <div class="row">
-              <div class="col-sm-12">
-                <p class="h3 float-end">Alicuota <b>${{ $departamentos['0']['alicuota'] }}</b></p>
+              @foreach ($data['departamentos'] as $departamento)
+                  <div class="col text-center div-departments rounded">
+                    <a class="active" style="text-decoration: none; color: black" href="{{ route('projects.viewProject', ['nombreProyecto' => $data['nombreProyecto'], 'num_department' => $departamento['num_departamento']] )}}"><i class="far fa-building mt-3"></i><h5>{{ $data['tipo'] }} {{ $departamento['num_departamento']}}</h5></a>
+                  </div>
+              @endforeach
+            </div>
+          </div>
+
+          <div data-aos="slide-up">
+            <hr>
+            <div class="row">
+              <div class="col-sm-6">
+                <h1>{{ $data['tipo'] }} {{ $num_department}}</h1>
+              </div>
+              <div class="col-sm-6">
+                <p class="h1 text-danger float-end">${{ $data['departamentos'][$num_department]['precio'] }}</p>
               </div>
             </div>
-          @endif
-          
+            @if ($data['departamentos']['1']['alicuota'] != null)
+              <div class="row">
+                <div class="col-sm-12">
+                  <p class="h3 float-end">Alicuota <b>${{ $data['departamentos'][$num_department]['alicuota'] }}</b></p>
+                </div>
+              </div>
+            @endif
+            <div class="row mt-5 text-center">
+              <div class="col-sm-3 col-6">
+                <i class="fas fa-bed fa-2x" style="color: gray"></i><p>{{$data['departamentos'][$num_department]['num_habitaciones']}} habitaciones</p>
+              </div>
+              <div class="col-sm-3 col-6">
+                <i class="fas fa-bath fa-2x" style="color: gray"></i><p>{{$data['departamentos'][$num_department]['num_baños']}} baños</p>
+              </div>
+              <div class="col-sm-3 col-6">
+                <i class="fas fa-expand-arrows-alt fa-2x" style="color: gray"></i><p>{{ $data['departamentos'][$num_department]['area_total'] }} m2</p>
+              </div>
+              <div class="col-sm-3 col-6">
+                <i class="fas fa-parking fa-2x" style="color: gray"></i><p>{{ $data['departamentos'][$num_department]['parqueadero'] }} parqueaderos</p>
+              </div>
+            </div>
+          </div>
 
-          <div class="row mt-5 text-center">
-            <div class="col-sm-3 col-6">
-              <i class="fas fa-bed fa-2x" style="color: gray"></i><p>{{$departamentos['0']['num_habitaciones']}} habitaciones</p>
-            </div>
-            <div class="col-sm-3 col-6">
-              <i class="fas fa-bath fa-2x" style="color: gray"></i><p>{{$departamentos['0']['num_baños']}} baños</p>
-            </div>
-            <div class="col-sm-3 col-6">
-              <i class="fas fa-expand-arrows-alt fa-2x" style="color: gray"></i><p>{{ $departamentos['0']['area_total'] }} m2</p>
-            </div>
-            <div class="col-sm-3 col-6">
-              <i class="fas fa-parking fa-2x" style="color: gray"></i><p>{{ $departamentos['0']['parqueadero'] }} parqueaderos</p>
+          <div data-aos="slide-up">
+            <hr>
+            @if ($data['departamentos'][$num_department]['contains_area'])
+              <div class="row text-center">
+                @if ($data['departamentos'][$num_department]['area_interior'] != null)
+                  <div class="col">
+                    <p class="h5 mt-5"><i class="fas fa-compress-arrows-alt m-1" style="color: rgb(206, 168, 87)"></i> Área Interior <b>{{ $data['departamentos'][$num_department]['area_interior'] }} m2</b></p>
+                  </div>
+                @endif
+
+                @if ($data['departamentos'][$num_department]['area_verde'] != null)
+                <div class="col">
+                  <p class="h5 mt-5"><i class="fas fa-tree m-1" style="color: rgb(24, 198, 59)"></i> Área Verde <b>{{ $data['departamentos'][$num_department]['area_verde'] }} m2</b></p>
+                </div>
+                @endif
+                @if ($data['departamentos'][$num_department]['area_parqueo'] != null)
+                <div class="col">
+                  <p class="h5 mt-5"><i class="fas fa-arrows-alt" style="color: rgb(155, 139, 139)"></i>  Área Parqueo <b>{{ $data['departamentos'][$num_department]['area_parqueo'] }} m2</b></p>
+                </div>
+                @endif
+                @if ($data['departamentos'][$num_department]['area_bodega'] != null)
+                <div class="col">
+                  <p class="h5 mt-5"><i class="fas fa-warehouse" style="color: rgb(128, 73, 21)"></i> Área Bodega <b>{{ $data['departamentos'][$num_department]['area_bodega'] }} m2</b></p>
+                </div>
+                @endif
+                @if ($data['departamentos'][$num_department]['area_terraza'] != null)
+                <div class="col">
+                  <p class="h5 mt-5"><i class="fas fa-expand-alt" style="color: rgb(50, 187, 167)"></i> Área Terraza <b>{{ $data['departamentos'][$num_department]['area_terraza'] }} m2</b></p>
+                </div>
+                @endif
+              </div>  
+              <div class="row text-center">
+                @if ($data['departamentos'][$num_department]['area_total'] != null)
+                <div class="col">
+                  <p class="h4 mt-5"><i class="fas fa-building" style="color: rgb(202, 62, 62)"></i> ÁREA TOTAL <b>{{ $data['departamentos'][$num_department]['area_total'] }} m2</b></p>
+                </div>
+                @endif  
+              </div>            
+            @endif
+          </div>
+
+          <div data-aos="slide-up">
+            <hr>
+            <!--DIV MAPA DEL DEPARTAMENTO PLANO-->
+            <div class="row d-flex align-items-center justify-content-center text-center">
+              <h2 class="mt-4">Mapa del {{ $data['tipo'] }} </h2>
+              <img class="img-fluid" style="width: 50%" src="{{ asset('img/projects/'.$data['name_folder'].'/'.$data['departamentos'][$num_department]['img_plano']) }}" alt="Mapa del departamento">
             </div>
           </div>
 
           <hr>
-          @if ($departamentos['0']['contains_area'])
-            <div class="row text-center">
-              <div class="col-sm-6">
-                <p class="h4 mt-5"><i class="fas fa-compress-arrows-alt m-1" style="color: rgb(247, 80, 80)"></i>Área Interior <b>{{ $departamentos['0']['area_interior'] }}</b></p>
-                <p class="h4 mt-5"><i class="fas fa-tree m-1" style="color: rgb(247, 80, 80)"></i> Área Verde <b>{{ $departamentos['0']['area_verde'] }}</b></p>
-              </div>
-              <div class="col-sm-6">
-                <p class="h4 mt-5"><i class="fas fa-arrows-alt" style="color: rgb(247, 80, 80)"></i>  Área Parqueo <b>{{ $departamentos['0']['area_parqueo'] }}</b></p>
-                <p class="h4 mt-5"><i class="fas fa-warehouse" style="color: rgb(247, 80, 80)"></i></i> Área Bodega <b>{{ $departamentos['0']['area_bodega'] }}</b></p>
-              </div>
-              <p class="h3 mt-5"><i class="fas fa-building" style="color: rgb(247, 80, 80)"></i> ÁREA TOTAL <b>{{ $departamentos['0']['area_total'] }}</b></p>
-            </div>              
+          <!--DIV IFRAME DE GOOGLE MAPS DEL LUGAR-->
+          @if ($data['url_google_maps'] != null)
+            <div class="text-center">
+              <h2>Ubicación</h2>
+              <iframe 
+                src="{{ $data['url_google_maps']}}" 
+                width="300" 
+                height="300" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy"
+                >
+              </iframe>
+            </div>
           @endif
         </div>
+
 
         <div class="col-sm-1"></div>
 
@@ -307,7 +375,7 @@
             </div>
           
             <div class="form-outline mb-4">
-              <textarea class="form-control" id="mensaje" rows="4">Me interesa saber más sobre el proyecto {{ $nombreProyecto }}</textarea>
+              <textarea class="form-control" id="mensaje" rows="4">Me interesa saber más sobre el proyecto {{ $data['nombreProyecto'] }}</textarea>
               <label class="form-label" for="mensaje">Mensaje</label>
             </div>
           
