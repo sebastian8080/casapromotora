@@ -44,9 +44,9 @@
             <div class="col-sm-3">
                 <h3>CATEGORÍA</h3>
                 <ul>
-                    <a style="text-decoration: none; color:rgb(128, 128, 128)" href=""><li>TODOS LOS PRODUCTOS</li></a>
+                    <a style="text-decoration: none; color:rgb(128, 128, 128)" href="{{ route('socios.dolmen.catalogo') }}"><li>TODOS LOS PRODUCTOS</li></a>
                     @foreach ($categorias as $categoria)
-                    <a style="text-decoration: none; color: rgb(128, 128, 128)" href=""><li>{{ $categoria->nombre_categoria }}</li></a>
+                    <a style="text-decoration: none; color: rgb(128, 128, 128)" href="{{ route('socios.dolmen.categoria', $categoria->codigo_categoria) }}"><li>{{ $categoria->nombre_categoria }}</li></a>
                     @endforeach
                 </ul>
             </div>
@@ -55,7 +55,7 @@
                     @foreach ($products as $product)
                     <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-3">
                         <div class="card h-100 position-relative">
-                            <img src="https://www.maquinariacarran.cl/wp-content/uploads/2020/12/LADRILLOS-1_INTERIOR-BLOG-1300x785px.jpg" class="card-img-top" alt="...">
+                            <img src="{{ asset('img/partners/products/'.$product->url_image) }}" class="card-img-top" alt="...">
                             <div class="position-absolute">
                                 <button class="btn rounded-circle border mb-1" style="background-color: #f1ededc9"><i class="fas fa-eye"></i></button>
                                 <br>

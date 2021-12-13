@@ -33,7 +33,7 @@
 @stop
 
 @section('js')
-    <script>console.log('Hi!');</script>
+    
 @stop
 {{-- @section('content')
 <div class="container">

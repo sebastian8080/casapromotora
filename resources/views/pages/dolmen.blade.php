@@ -46,7 +46,7 @@
         <div class="row mx-5">
             @foreach ($categorias as $categoria)
             <div class="col-sm-2 text-center">
-                <a href="#"><img class="img-fluid" src="../img/partners/{{$categoria->url_image}}" alt=""></a>
+                <a href="{{ route('socios.dolmen.categoria', $categoria->codigo_categoria ) }}"><img class="img-fluid" src="../img/partners/{{$categoria->url_image}}" alt=""></a>
                 <p style="color: rgb(128, 128, 128)">{{ $categoria->nombre_categoria}}</p>
             </div>
             @endforeach
@@ -57,29 +57,29 @@
     <div style="background-color: #e2e0e0">
         <div class="row text-center mt-5 pt-5" style="margin-left: 20%; margin-right: 20%">
             <div class="col-sm-4">
-                <img style="width: 50%" class="img-fluid" src="{{ asset('img/partners/ICONOS-08.png') }}" alt="">
+                <img style="width: 30%" class="img-fluid" src="{{ asset('img/partners/ICONOS-08.png') }}" alt="">
                 <h6>SISMORRESISTENTES</h6>
             </div>
             <div class="col-sm-4">
-                <img style="width: 50%" class="img-fluid" src="{{ asset('img/partners/ICONOS-07.png') }}" alt="">
+                <img style="width: 30%" class="img-fluid" src="{{ asset('img/partners/ICONOS-07.png') }}" alt="">
                 <h6>ACÚSTICOS</h6>
             </div>
             <div class="col-sm-4">
-                <img style="width: 50%" class="img-fluid" src="{{ asset('img/partners/ICONOS-06.png') }}" alt="">
+                <img style="width: 30%" class="img-fluid" src="{{ asset('img/partners/ICONOS-06.png') }}" alt="">
                 <h6>ECOLÓGICOS</h6>
             </div>
         </div>
         <div class="row text-center mt-5 pb-5" style="margin-left: 20%; margin-right: 20%">
             <div class="col-sm-4">
-                <img style="width: 50%" class="img-fluid" src="{{ asset('img/partners/ICONOS-11.png') }}" alt="">
+                <img style="width: 30%" class="img-fluid" src="{{ asset('img/partners/ICONOS-11.png') }}" alt="">
                 <h6>TÉRMICOS</h6>
             </div>
             <div class="col-sm-4">
-                <img style="width: 50%" class="img-fluid" src="{{ asset('img/partners/ICONOS-10.png') }}" alt="">
+                <img style="width: 30%" class="img-fluid" src="{{ asset('img/partners/ICONOS-10.png') }}" alt="">
                 <h6>NO INFLAMABLES</h6>
             </div>
             <div class="col-sm-4">
-                <img style="width: 50%" class="img-fluid" src="{{ asset('img/partners/ICONOS-09.png') }}" alt="">
+                <img style="width: 30%" class="img-fluid" src="{{ asset('img/partners/ICONOS-09.png') }}" alt="">
                 <h6>IMPERMEABLES</h6>
             </div>
         </div>

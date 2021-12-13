@@ -3,9 +3,7 @@
 @section('title', 'Inicio')
 
 @section('content-head')
-    <style>
-      
-    </style>
+ 
 @endsection
     
 @section('content')
