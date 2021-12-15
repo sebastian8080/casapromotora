@@ -18,7 +18,7 @@
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img style="filter: brightness(60%)" src="img/home/img1-home.jpg" class="d-block w-100" alt="img1">
+            <img style="filter: brightness(60%)" src="{{ asset('img/home/img1-home.webp') }}" class="d-block w-100" alt="img1">
           </div>
           <div class="carousel-item">
             <img style="filter: brightness(60%)" src="img/home/img2-home.jpg" class="d-block w-100" alt="...">
