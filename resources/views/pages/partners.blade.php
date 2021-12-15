@@ -7,7 +7,7 @@
         .header{
            background-image: 
            linear-gradient(to left, rgba(73, 87, 110, 0), rgb(31, 54, 91)),
-           url("{{ asset('img/partners/BANNER-LOS-RIOS.jpg') }}");
+           url("{{ asset('img/partners/BANNER-LOS-RIOS.avif') }}");
            width: 100%;
            height: 50vw;
            background-size: cover;

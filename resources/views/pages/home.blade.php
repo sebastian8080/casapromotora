@@ -18,13 +18,13 @@
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img style="filter: brightness(60%)" src="img/home/img1-home.jpg" class="d-block w-100" alt="img1">
+            <img style="filter: brightness(60%)" src="img/home/img1-home.avif" class="d-block w-100" alt="img1">
           </div>
           <div class="carousel-item">
-            <img style="filter: brightness(60%)" src="img/home/img2-home.jpg" class="d-block w-100" alt="...">
+            <img style="filter: brightness(60%)" src="img/home/img2-home.avif" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img style="filter: brightness(60%)" src="img/home/img3-home.jpg" class="d-block w-100" alt="...">
+            <img style="filter: brightness(60%)" src="img/home/img3-home.avif" class="d-block w-100" alt="...">
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
@@ -66,6 +66,8 @@
       <div class="col-sm-3"></div>
     </div>
 
+    <!--EMPIEZA CONTAINER-->
+    <div class="container">
       <div data-aos="fade-up-left" class="row">
         <div class="col-sm-6"> 
           <div class="mt-5 pt-5" style="margin-left: 5%">
@@ -83,21 +85,21 @@
                 {{-- @forelse ($projects as $project) --}}
                           {{-- @if ($loop->index==0)  @endif--}}
                 <div class="carousel-item active">
-                  <img src="{{ asset('img/projects/adra/1.jpg') }}" class="d-block w-100 img-fluid" alt="...">
+                  <img src="{{ asset('img/projects/adra/1.avif') }}" class="d-block w-100 img-fluid" alt="Proyecto Adra Casa Credito Promotora">
                   <div class="carousel-caption d-md-block">
                     <a style="text-decoration: none" href="{{ route('projects.viewProject', 'Adra') }}"><h3 class="texto-imagenes">ADRA</h3></a>
                     <p>Departamentos de lujo con una vista insuperable</p>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img style="width: 100%" src="{{ asset('img/projects/futuranarancay/1.jpeg') }}" class="d-block w-100 img-fluid" alt="...">
+                  <img style="width: 100%" src="{{ asset('img/projects/futuranarancay/1.avif') }}" class="d-block w-100 img-fluid" alt="...">
                   <div class="carousel-caption d-md-block">
                     <a style="text-decoration: none" href="{{ route('projects.viewProject', 'Futura Narancay') }}"><h3 class="texto-imagenes">FUTURA NARANCAY</h3></a>
-                    <p>Departamentos con una  experiencia única en diseñoy comodidad</p>
+                    <p>Departamentos con una  experiencia única en diseño y comodidad</p>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img src="{{ asset('img/projects/toscana/1.jpg') }}" class="d-block w-100 img-fluid" alt="...">
+                  <img src="{{ asset('img/projects/toscana/1.avif') }}" class="d-block w-100 img-fluid" alt="...">
                   <div class="carousel-caption d-md-block">
                     <a style="text-decoration: none" href="{{ route('projects.viewProject', 'Toscana') }}"><h3 class="texto-imagenes">TOSCANA</h3></a>
                     <p>Condominios con acabados modernos</p>
@@ -119,28 +121,28 @@
         </div>
       </div>
 
-      <div data-aos="fade-down" class="row">
-        <div class="col-sm-4 hover-zoomin">
-          <h1 class="fw-bold texto-imagenes">VILLAS</h1>
-          <a href="#">
-            <img class="fila-imagenes" src="https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/270955089.jpg?k=0ff923c4d7ef12ce13b44cc582d44ac8ac4d424ef6871d492e96301d5b27211b&o=" alt="">
-          </a>
-        </div>
+        <div data-aos="fade-down" class="row">
+          <div class="col-sm-4 hover-zoomin">
+            <h1 class="fw-bold texto-imagenes">VILLAS</h1>
+            <a href="#">
+              <img class="fila-imagenes" src="{{ asset('img/home/villas.avif') }}" alt="">
+            </a>
+          </div>
 
-        <div class="col-sm-4 hover-zoomin">
-          <h1 class="fw-bold texto-imagenes">DEPARTAMENTOS</h1>
-          <a href="#">
-            <img class="fila-imagenes" src="https://media-cdn.tripadvisor.com/media/vr-splice-j/0a/9a/35/22.jpg" alt="">
-          </a>
-        </div>
+          <div class="col-sm-4 hover-zoomin">
+            <h1 class="fw-bold texto-imagenes">DEPARTAMENTOS</h1>
+            <a href="#">
+              <img class="fila-imagenes" src="{{ asset('img/home/departamentos.avif') }}" alt="">
+            </a>
+          </div>
 
-        <div class="col-sm-4 hover-zoomin">
-          <h1 class="fw-bold texto-imagenes">SUITES</h1>
-          <a href="#">
-            <img class="fila-imagenes" src="https://images.adsttc.com/media/images/5a8e/392f/f197/cc42/b800/05bc/large_jpg/Maleku_3.jpg?1519270174" alt="">
-          </a>
+          <div class="col-sm-4 hover-zoomin">
+            <h1 class="fw-bold texto-imagenes">SUITES</h1>
+            <a href="#">
+              <img class="fila-imagenes" src="{{ asset('img/home/suites.avif') }}" alt="">
+            </a>
+          </div>
         </div>
-      </div>
 
       <div data-aos="fade-left" class="text-center">
         <div class="position-relative">
@@ -176,13 +178,15 @@
       </div>
 
       <div data-aos="fade-up-right" class="row position-relative">
-          <img src="img/home/FAMILIA-CREDITOS - copia.jpg" class="img-fluid" alt="Imagen de una familia">
+          <img src="img/home/FAMILIA-CREDITOS-copia.avif" class="img-fluid" alt="Imagen de una familia">
           <div id="row6" class="position-absolute">
             <h1 id="text-row6" class="text-light">¡Lo que siempre <br>has querido!</h1>
             <button id="btn-row6" class="btn btn-danger">Solicite un credito ></button>
           </div>
         </div>
       </div>
+
+    </div>
 
       @include('pages.partials.formhome')
 

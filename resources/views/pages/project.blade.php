@@ -1,6 +1,6 @@
 @extends('layouts.plantilla')
 
-@section('title', 'Proyecto 1')
+@section('title', 'Proyecto ' . $data['nombreProyecto'])
 
 @section('content-head')
     <style>
@@ -136,7 +136,7 @@
       }
 
       .imgs-header{
-          background-color: #e2e0e0; 
+          /* background-color: #e2e0e0;  */
           padding: 10px;
         }
 
@@ -154,14 +154,14 @@
 
 @section('content')
 
-  <div class="container mt-5 pt-5">
+  {{-- <div class="container mt-5 pt-5"> --}}
 
-    <div class="imgs-header">
+    <div class="imgs-header mt-5">
      <!-- Images used to open the lightbox -->
     <div class="row mb-3">
       <div class="col-sm-6 col-12 mt-3">
         <div class="column">
-          <img class="img-fluid rounded" src="{{url('img/projects/'.$data['name_folder'].'/1.'.$data['extension'])}}" onclick="openModal();currentSlide(1)" class="hover-shadow">
+          <img class="img-fluid rounded" src="{{url('img/projects/'.$data['name_folder'].'/1.avif')}}" onclick="openModal();currentSlide(1)" class="hover-shadow">
         </div>
       </div>
 
@@ -201,10 +201,10 @@
   <div class="modal-content">
 
     @for($i = 1; $i <= $data['num_imagenes']; $i++)
-    <div class="mySlides">
-      <div class="numbertext">{{$i}} / {{$data['num_imagenes']}}</div>
-      <img class="img-fluid" src="{{url('img/projects/'.$data['name_folder'].'/'.$i.'.'.$data['extension'])}}" style="width:100%">
-    </div>
+      <div class="mySlides">
+        <div class="numbertext">{{$i}} / {{$data['num_imagenes']}}</div>
+        <img class="img-fluid" src="{{url('img/projects/'.$data['name_folder'].'/'.$i.'.'.$data['extension'])}}" style="width:100%">
+      </div>
     @endfor
 
     <!-- Next/previous controls -->
@@ -226,9 +226,10 @@
     </div>
 
 
-  </div>
+  </div> 
 </div> 
 
+  <div class="container">
     <div class="row mt-5">
         <div class="col-sm-8">
           <div class="row">

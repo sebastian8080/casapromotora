@@ -48,7 +48,7 @@ class ProjectController extends Controller
             case 'Adra':
                 $data['name_folder'] = 'adra';
                 $data['num_imagenes'] = 15;
-                $data['extension'] = 'jpg';
+                $data['extension'] = 'avif';
                 $data['nombreProyecto'] = $nombreProyecto;
                 $data['url_google_maps'] = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.769145174731!2d-79.02401558541044!3d-2.9206024395227703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91cd22811a43422d%3A0x6730f8941aab3416!2sEdificio%20Vista%20Linda!5e0!3m2!1ses-419!2sec!4v1639168164971!5m2!1ses-419!2sec";
                 $data['tipo'] = "Departamento";
@@ -91,7 +91,7 @@ class ProjectController extends Controller
             case 'Futura Narancay':
                 $data['name_folder'] = 'futuranarancay';
                 $data['num_imagenes'] = 7;
-                $data['extension'] = 'jpeg';
+                $data['extension'] = 'avif';
                 $data['nombreProyecto'] = $nombreProyecto;
                 $data['url_google_maps'] = "";
                 $data['tipo'] = "Departamento";
@@ -247,7 +247,7 @@ class ProjectController extends Controller
             case 'Toscana':
                 $data['name_folder'] = 'toscana';
                 $data['num_imagenes'] = 19;
-                $data['extension'] = 'jpg';
+                $data['extension'] = 'avif';
                 $data['nombreProyecto'] = $nombreProyecto;
                 $data['url_google_maps'] = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.8697943762786!2d-78.91906308539137!3d-2.8539337979211687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91cd111f42fcd239%3A0xb174d31ae8dedce8!2sCondominio%20La%20Toscana%20Challuabamba!5e0!3m2!1ses-419!2sec!4v1639172454879!5m2!1ses-419!2sec";
                 $data['tipo'] = "Condominio";
