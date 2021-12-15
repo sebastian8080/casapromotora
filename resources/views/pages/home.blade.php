@@ -92,7 +92,7 @@
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img style="width: 100%" src="{{ asset('img/projects/futuranarancay/1.jpg') }}" class="d-block w-100 img-fluid" alt="...">
+                  <img style="width: 100%" src="{{ asset('img/projects/futuranarancay/1.jpeg') }}" class="d-block w-100 img-fluid" alt="...">
                   <div class="carousel-caption d-md-block">
                     <a style="text-decoration: none" href="{{ route('projects.viewProject', 'Futura Narancay') }}"><h3 class="texto-imagenes">FUTURA NARANCAY</h3></a>
                     <p>Departamentos con una  experiencia única en diseño y comodidad</p>
@@ -178,7 +178,7 @@
       </div>
 
       <div data-aos="fade-up-right" class="row position-relative">
-          <img src="img/home/FAMILIA-CREDITOS-copia.jpg" class="img-fluid" alt="Imagen de una familia">
+          <img src="{{ asset('img/home/FAMILIA-CREDITOS - copia.jpg') }}" class="img-fluid" alt="Imagen de una familia">
           <div id="row6" class="position-absolute">
             <h1 id="text-row6" class="text-light">¡Lo que siempre <br>has querido!</h1>
             <button id="btn-row6" class="btn btn-danger">Solicite un credito ></button>
