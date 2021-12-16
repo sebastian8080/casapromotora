@@ -161,7 +161,7 @@
     <div class="row mb-3">
       <div class="col-sm-6 col-12 mt-3">
         <div class="column">
-          <img class="img-fluid rounded" src="{{url('img/projects/'.$data['name_folder'].'/1.avif')}}" onclick="openModal();currentSlide(1)" class="hover-shadow">
+          <img class="img-fluid rounded" src="{{url('img/projects/'.$data['name_folder'].'/1.webp')}}" onclick="openModal();currentSlide(1)" class="hover-shadow">
         </div>
       </div>
 

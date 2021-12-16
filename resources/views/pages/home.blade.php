@@ -99,7 +99,7 @@
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img id="imgBanner3" src="{{ asset('img/projects/toscana/1.webp') }}" class="d-block img-fluid" width="100%" alt="...">
+                  <img id="imgBanner3" src="{{ asset('img/projects/toscana/1.jpg') }}" class="d-block img-fluid" width="100%" alt="...">
                   <div class="carousel-caption d-md-block">
                     <a style="text-decoration: none" href="{{ route('projects.viewProject', 'Toscana') }}"><h3 class="texto-imagenes">TOSCANA</h3></a>
                     <p>Condominios con acabados modernos</p>
