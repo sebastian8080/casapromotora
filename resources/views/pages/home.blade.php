@@ -85,21 +85,21 @@
                 {{-- @forelse ($projects as $project) --}}
                           {{-- @if ($loop->index==0)  @endif--}}
                 <div class="carousel-item active">
-                  <img src="{{ asset('img/projects/adra/1.webp') }}" class="d-block img-fluid" width="100%" alt="Proyecto Adra Casa Credito Promotora">
+                  <img id="imgBanner1" src="{{ asset('img/projects/adra/1.webp') }}" class="d-block img-fluid" width="100%" alt="Proyecto Adra Casa Credito Promotora">
                   <div class="carousel-caption d-md-block">
                     <a style="text-decoration: none" href="{{ route('projects.viewProject', 'Adra') }}"><h3 class="texto-imagenes">ADRA</h3></a>
                     <p>Departamentos de lujo con una vista insuperable</p>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img style="width: 100%" src="{{ asset('img/projects/futuranarancay/1.webp') }}" class="d-block img-fluid" width="100%" alt="Proyecto Futura Narancay Casa Credito Promotora">
+                  <img id="imgBanner2" style="width: 100%" src="{{ asset('img/projects/futuranarancay/1.webp') }}" class="d-block img-fluid" width="100%" alt="Proyecto Futura Narancay Casa Credito Promotora">
                   <div class="carousel-caption d-md-block">
                     <a style="text-decoration: none" href="{{ route('projects.viewProject', 'Futura Narancay') }}"><h3 class="texto-imagenes">FUTURA NARANCAY</h3></a>
                     <p>Departamentos con una  experiencia única en diseño y comodidad</p>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img src="{{ asset('img/projects/toscana/1.webp') }}" class="d-block img-fluid" width="100%" alt="...">
+                  <img id="imgBanner3" src="{{ asset('img/projects/toscana/1.webp') }}" class="d-block img-fluid" width="100%" alt="...">
                   <div class="carousel-caption d-md-block">
                     <a style="text-decoration: none" href="{{ route('projects.viewProject', 'Toscana') }}"><h3 class="texto-imagenes">TOSCANA</h3></a>
                     <p>Condominios con acabados modernos</p>

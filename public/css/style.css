@@ -312,6 +312,11 @@ h1{
     .link{
       font-size: 3.5vw;
     }
+
+    #imgBanner1, #imgBanner2, #imgBanner3{
+      width: 250px;
+      height: 150px;
+    }
   }
 
   #links{
