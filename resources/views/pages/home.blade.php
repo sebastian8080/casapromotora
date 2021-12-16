@@ -21,10 +21,10 @@
             <img style="filter: brightness(60%)" src="{{ asset('img/home/img1-home.webp') }}" class="d-block w-100" alt="img1">
           </div>
           <div class="carousel-item">
-            <img style="filter: brightness(60%)" src="img/home/img2-home.jpg" class="d-block w-100" alt="...">
+            <img style="filter: brightness(60%)" src="img/home/img2-home.webp" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img style="filter: brightness(60%)" src="img/home/img3-home.jpg" class="d-block w-100" alt="...">
+            <img style="filter: brightness(60%)" src="img/home/img3-home.webp" class="d-block w-100" alt="...">
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
@@ -125,21 +125,21 @@
           <div class="col-sm-4 hover-zoomin">
             <h1 class="fw-bold texto-imagenes">VILLAS</h1>
             <a href="#">
-              <img class="fila-imagenes" src="{{ asset('img/home/villas.jpg') }}" alt="">
+              <img class="fila-imagenes" src="{{ asset('img/home/villas.webp') }}" alt="">
             </a>
           </div>
 
           <div class="col-sm-4 hover-zoomin">
             <h1 class="fw-bold texto-imagenes">DEPARTAMENTOS</h1>
             <a href="#">
-              <img class="fila-imagenes" src="{{ asset('img/home/departamentos.jpg') }}" alt="">
+              <img class="fila-imagenes" src="{{ asset('img/home/departamentos.webp') }}" alt="">
             </a>
           </div>
 
           <div class="col-sm-4 hover-zoomin">
             <h1 class="fw-bold texto-imagenes">SUITES</h1>
             <a href="#">
-              <img class="fila-imagenes" src="{{ asset('img/home/suites.jpg') }}" alt="">
+              <img class="fila-imagenes" src="{{ asset('img/home/suites.webp') }}" alt="">
             </a>
           </div>
         </div>
@@ -178,7 +178,7 @@
       </div>
 
       <div data-aos="fade-up-right" class="row position-relative">
-          <img src="{{ asset('img/home/FAMILIA-CREDITOS - copia.jpg') }}" class="img-fluid" alt="Imagen de una familia">
+          <img src="{{ asset('img/home/FAMILIA-CREDITOS - copia.webp') }}" class="img-fluid" alt="Imagen de una familia">
           <div id="row6" class="position-absolute">
             <h1 id="text-row6" class="text-light">¡Lo que siempre <br>has querido!</h1>
             <button id="btn-row6" class="btn btn-danger">Solicite un credito ></button>
