@@ -75,7 +75,7 @@
       <div class="container">
       <div class="row" data-aos="flip-up">
         <div class="text-center" style="padding-left: 10%; padding-right: 10%">
-          <img class="img-fluid rounded" style="width: 80%" src="{{ asset('img/about/about-slider-1.avif') }}" alt="Casa Credito Promotora">
+          <img class="img-fluid rounded" style="width: 80%" src="{{ asset('img/about/about-slider-1.webp') }}" alt="Casa Credito Promotora">
           <h1 class="mt-2 titles-page-about fw-bold">Nuestra Historia</h1>
           <p>
             Casa Crédito Inmobiliaria fue fundada en el 2007 por iniciativa del señor Homero Serrano, 
@@ -108,7 +108,7 @@
           </div> 
         </div>
         <div class="col-sm-6 d-flex align-items-center">
-          <img class="img-fluid rounded" style="width: 100%; height: 80%" src="{{ asset('img/about/mision.avif') }}" alt="Mision Casa Credito Promotora">
+          <img class="img-fluid rounded" style="width: 100%; height: 80%" src="{{ asset('img/about/mision.webp') }}" alt="Mision Casa Credito Promotora">
         </div>
       </div>
 
@@ -116,7 +116,7 @@
 
       <div class="row" data-aos="flip-up">
         <div class="col-sm-6 d-flex align-items-center">
-          <img class="img-fluid rounded" style="width: 100%; height: 80%;" src="{{ asset('img/about/vision.avif') }}" alt="Vision Casa Credito Promotora">
+          <img class="img-fluid rounded" style="width: 100%; height: 80%;" src="{{ asset('img/about/vision.webp') }}" alt="Vision Casa Credito Promotora">
         </div>
         <div class="col-sm-6 text-justify rounded">
           <div class="flip-container">
@@ -154,7 +154,7 @@
                   </p>
                   <br>
                   <div>
-                    <img src="{{ asset('img/about/organizacion.avif') }}" alt="Organizacion Casa Credito Promotora" style="width: 70%" class="img-fluid">
+                    <img src="{{ asset('img/about/organizacion.webp') }}" alt="Organizacion Casa Credito Promotora" style="width: 70%" class="img-fluid">
                   </div>
                 </div>
               </div>
