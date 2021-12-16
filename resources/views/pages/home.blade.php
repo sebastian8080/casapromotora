@@ -18,13 +18,13 @@
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img style="filter: brightness(60%)" src="{{ asset('img/home/img1-home.webp') }}" class="d-block w-100" alt="img1">
+            <img style="filter: brightness(60%);" src="{{ asset('img/home/img1-home.webp') }}" class="d-block" width="100%" height="100%" alt="img1">
           </div>
           <div class="carousel-item">
-            <img style="filter: brightness(60%)" src="img/home/img2-home.webp" class="d-block w-100" alt="...">
+            <img style="filter: brightness(60%)" src="img/home/img2-home.webp" class="d-block"  width="100%" height="100%" alt="...">
           </div>
           <div class="carousel-item">
-            <img style="filter: brightness(60%)" src="img/home/img3-home.webp" class="d-block w-100" alt="...">
+            <img style="filter: brightness(60%)" src="img/home/img3-home.webp" class="d-block"  width="100%" height="100%" alt="...">
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
@@ -85,21 +85,21 @@
                 {{-- @forelse ($projects as $project) --}}
                           {{-- @if ($loop->index==0)  @endif--}}
                 <div class="carousel-item active">
-                  <img src="{{ asset('img/projects/adra/1.jpg') }}" class="d-block w-100 img-fluid" alt="Proyecto Adra Casa Credito Promotora">
+                  <img src="{{ asset('img/projects/adra/1.webp') }}" class="d-block img-fluid" width="100%" alt="Proyecto Adra Casa Credito Promotora">
                   <div class="carousel-caption d-md-block">
                     <a style="text-decoration: none" href="{{ route('projects.viewProject', 'Adra') }}"><h3 class="texto-imagenes">ADRA</h3></a>
                     <p>Departamentos de lujo con una vista insuperable</p>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img style="width: 100%" src="{{ asset('img/projects/futuranarancay/1.jpeg') }}" class="d-block w-100 img-fluid" alt="...">
+                  <img style="width: 100%" src="{{ asset('img/projects/futuranarancay/1.webp') }}" class="d-block img-fluid" width="100%" alt="Proyecto Futura Narancay Casa Credito Promotora">
                   <div class="carousel-caption d-md-block">
                     <a style="text-decoration: none" href="{{ route('projects.viewProject', 'Futura Narancay') }}"><h3 class="texto-imagenes">FUTURA NARANCAY</h3></a>
                     <p>Departamentos con una  experiencia única en diseño y comodidad</p>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img src="{{ asset('img/projects/toscana/1.jpg') }}" class="d-block w-100 img-fluid" alt="...">
+                  <img src="{{ asset('img/projects/toscana/1.webp') }}" class="d-block img-fluid" width="100%" alt="...">
                   <div class="carousel-caption d-md-block">
                     <a style="text-decoration: none" href="{{ route('projects.viewProject', 'Toscana') }}"><h3 class="texto-imagenes">TOSCANA</h3></a>
                     <p>Condominios con acabados modernos</p>
@@ -125,21 +125,21 @@
           <div class="col-sm-4 hover-zoomin">
             <h1 class="fw-bold texto-imagenes">VILLAS</h1>
             <a href="#">
-              <img class="fila-imagenes" src="{{ asset('img/home/villas.webp') }}" alt="">
+              <img class="fila-imagenes" src="{{ asset('img/home/villas.webp') }}" width="100%" alt="Villas - Casa Credito Promotora">
             </a>
           </div>
 
           <div class="col-sm-4 hover-zoomin">
             <h1 class="fw-bold texto-imagenes">DEPARTAMENTOS</h1>
             <a href="#">
-              <img class="fila-imagenes" src="{{ asset('img/home/departamentos.webp') }}" alt="">
+              <img class="fila-imagenes" src="{{ asset('img/home/departamentos.webp') }}" width="100%" alt="Departamentos - Casa Credito Promotora">
             </a>
           </div>
 
           <div class="col-sm-4 hover-zoomin">
             <h1 class="fw-bold texto-imagenes">SUITES</h1>
             <a href="#">
-              <img class="fila-imagenes" src="{{ asset('img/home/suites.webp') }}" alt="">
+              <img class="fila-imagenes" src="{{ asset('img/home/suites.webp') }}" width="100%" alt="Suites - Casa Credito Promotora">
             </a>
           </div>
         </div>
@@ -178,7 +178,7 @@
       </div>
 
       <div data-aos="fade-up-right" class="row position-relative">
-          <img src="{{ asset('img/home/FAMILIA-CREDITOS - copia.webp') }}" class="img-fluid" alt="Imagen de una familia">
+          <img src="{{ asset('img/home/FAMILIA-CREDITOS - copia.webp') }}" width="100%" class="img-fluid" alt="Creditos - Casa Credito Promotora">
           <div id="row6" class="position-absolute">
             <h1 id="text-row6" class="text-light">¡Lo que siempre <br>has querido!</h1>
             <button id="btn-row6" class="btn btn-danger">Solicite un credito ></button>
