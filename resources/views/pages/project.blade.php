@@ -4,6 +4,10 @@
 
 @section('content-head')
     <style>
+      body{
+        color: rgb(45, 67, 71)
+      }
+
       .imgs-header > .row > .col-sm-6 .column > img:hover{
         transform: scale(1.1);
         -webkit-transition: transform 1s ease-out;
@@ -146,17 +150,100 @@
         }
       }
 
-      .div-departments:hover{
-        background-color: #e2e0e0;
+      .inputs input, .inputs textarea{
+        font-size: 13px;
       }
+
+      .inputs #btnLlamar{
+        background-color: rgb(224, 81, 78);
+        text-decoration: none;
+        color: #ffffff;
+      }
+
+      .inputs #btnWhatsapp{
+        background-color: rgb(107, 191, 163);
+        text-decoration: none;
+        color: #ffffff;
+      }
+
+      #iconwpp{
+        color: #ffffff;
+      }
+
+      .formEmail{
+        background-color: rgb(244, 247, 248);
+      }
+
+      #textoCondicionesEmail{
+        font-size: 13px;
+        margin-top: 10px;
+      }
+
+      .row .card-project h4{
+        color: rgb(224, 81, 78);
+        font-weight: bold;
+      }
+
+      .row .card-project h5{
+        font-weight: bold;
+      }
+
+      .row i{
+        color: gray;
+      }
+
+      .row .col-sm-2 button{
+        position: absolute;
+        right: 0;
+        bottom: 10px;
+        background-color: rgb(224, 81, 78);
+        color: #ffffff;
+      }
+      .row > .col-sm-6 > h5{
+        font-weight: bold;
+      }
+
+      .row > .col-sm-6 > h5, .row > .col-sm-6 > p, .row > .col > ul > li{
+        margin: 2px;
+        font-size: 15px;
+      }
+
+      .card-body{
+        background-color: rgb(239, 250, 253);
+      }
+
+      .card-body .card-title{
+        font-size: 15px;
+        font-weight: bold;
+        margin-bottom: 10%;
+      }
+
+      .card-body .card-text{
+        font-size: 14px;
+        margin: 0;
+      }
+
+      .card > .position-absolute > p{
+        font-size: 13px;
+        margin-top: 5px;
+        margin-left: 5px;
+        padding: 5px;
+        border-radius: 90px;
+        background-color: rgb(8, 8, 49);
+        color: #ffffff;
+      }
+
     </style>
 @endsection
 
 @section('content')
 
-  {{-- <div class="container mt-5 pt-5"> --}}
+  <div class="container pt-5 mt-3">
+    <h1>DEPARTAMENTOS ADRA</h1>
+    <p>Ubicacion: Azuay > Cuenca > Sector Yanuncay - Universidad de Cuenca</p>
+  </div>
 
-    <div class="imgs-header mt-5">
+    <div class="imgs-header mt-3">
      <!-- Images used to open the lightbox -->
     <div class="row mb-3">
       <div class="col-sm-6 col-12 mt-3">
@@ -215,177 +302,256 @@
     <div class="caption-container">
       <p id="caption"></p>
     </div>
-
-    <div class="row">
-    <!-- Thumbnail image controls -->
-      {{-- @for($i = 1; $i <= $num_imagenes; $i++)
-      <div class="column col-sm-3 col-6">
-        <img class="demo" style="width: 100%" src="{{url('img/projects/'.$name_folder.'/'.$i.'.'.$extension)}}" onclick="currentSlide({{$i}})" alt="Proyecto {{$nombreProyecto}}">
-      </div>
-      @endfor --}}
-    </div>
-
-
   </div> 
 </div> 
 
-  <div class="container">
-    <div class="row mt-5">
-        <div class="col-sm-8">
-          <div class="row">
-            <div class="col-sm-8">
-              <h1 class="text-muted">{{ Str::upper($data['nombreProyecto']) }}</h1>
+<!--CONTENIDO-->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="row">
+        <p>¡Departamentos con la mejor vista a la ciudad!</p>
+      </div>
+      <div class="row">
+        <p>
+          El espacio perfecto para vivir!. Te ofrecemos 5 exclusivos departamentos para tu elección. Ubicación referencial: al Sur
+          de la ciudad de Cuenca, disponen de una excelente y privilegiada vista a la ciudad debido a que se encuentra situada cerca
+          del mirador de Turi
+        </p>
+      </div>
+      <div class="row">
+        <div class="card-project">
+          <h5>DEPARTAMENTO 1</h5>
+          <h4>$245.000</h4>
+        </div>
+        <!--SECOND CARD-->
+        <div class="row">
+          <div class="col-sm-5">
+            <div class="mb-3">
+              <i class="fas fa-expand-arrows-alt d-inline"></i>
+              <p class="d-inline">Area Total 226.17m2</p>
             </div>
-            <div class="col-sm-4"></div>
-          </div>
-
-          <div data-aos="slide-up">
-            <hr>
-            <div class="row">
-              @foreach ($data['departamentos'] as $departamento)
-                  <div class="col text-center div-departments rounded">
-                    <a class="active" style="text-decoration: none; color: black" href="{{ route('projects.viewProject', ['nombreProyecto' => $data['nombreProyecto'], 'num_department' => $departamento['num_departamento']] )}}"><i class="far fa-building mt-3"></i><h5>{{ $data['tipo'] }} {{ $departamento['num_departamento']}}</h5></a>
-                  </div>
-              @endforeach
+            <div class="mb-3">
+              <i class="fas fa-ruler-vertical d-inline"></i>
+              <p class="d-inline">Area Interior 143.42m2</p>
             </div>
-          </div>
-
-          <div data-aos="slide-up">
-            <hr>
-            <div class="row">
-              <div class="col-sm-6">
-                <h1>{{ $data['tipo'] }} {{ $num_department}}</h1>
-              </div>
-              <div class="col-sm-6">
-                <p class="h1 text-danger float-end">${{ $data['departamentos'][$num_department]['precio'] }}</p>
-              </div>
-            </div>
-            @if ($data['departamentos']['1']['alicuota'] != null)
-              <div class="row">
-                <div class="col-sm-12">
-                  <p class="h3 float-end">Alicuota <b>${{ $data['departamentos'][$num_department]['alicuota'] }}</b></p>
-                </div>
-              </div>
-            @endif
-            <div class="row mt-5 text-center">
-              <div class="col-sm-3 col-6">
-                <i class="fas fa-bed fa-2x" style="color: gray"></i><p>{{$data['departamentos'][$num_department]['num_habitaciones']}} habitaciones</p>
-              </div>
-              <div class="col-sm-3 col-6">
-                <i class="fas fa-bath fa-2x" style="color: gray"></i><p>{{$data['departamentos'][$num_department]['num_baños']}} baños</p>
-              </div>
-              <div class="col-sm-3 col-6">
-                <i class="fas fa-expand-arrows-alt fa-2x" style="color: gray"></i><p>{{ $data['departamentos'][$num_department]['area_total'] }} m2</p>
-              </div>
-              <div class="col-sm-3 col-6">
-                <i class="fas fa-parking fa-2x" style="color: gray"></i><p>{{ $data['departamentos'][$num_department]['parqueadero'] }} parqueaderos</p>
-              </div>
+            <div class="mb-3">
+              <i class="fas fa-car d-inline"></i>
+              <p class="d-inline">2 Parqueaderos</p>
             </div>
           </div>
-
-          <div data-aos="slide-up">
-            <hr>
-            @if ($data['departamentos'][$num_department]['contains_area'])
-              <div class="row text-center">
-                @if ($data['departamentos'][$num_department]['area_interior'] != null)
-                  <div class="col">
-                    <p class="h5 mt-5"><i class="fas fa-compress-arrows-alt m-1" style="color: rgb(206, 168, 87)"></i> Área Interior <b>{{ $data['departamentos'][$num_department]['area_interior'] }} m2</b></p>
-                  </div>
-                @endif
-
-                @if ($data['departamentos'][$num_department]['area_verde'] != null)
-                <div class="col">
-                  <p class="h5 mt-5"><i class="fas fa-tree m-1" style="color: rgb(24, 198, 59)"></i> Área Verde <b>{{ $data['departamentos'][$num_department]['area_verde'] }} m2</b></p>
-                </div>
-                @endif
-                @if ($data['departamentos'][$num_department]['area_parqueo'] != null)
-                <div class="col">
-                  <p class="h5 mt-5"><i class="fas fa-arrows-alt" style="color: rgb(155, 139, 139)"></i>  Área Parqueo <b>{{ $data['departamentos'][$num_department]['area_parqueo'] }} m2</b></p>
-                </div>
-                @endif
-                @if ($data['departamentos'][$num_department]['area_bodega'] != null)
-                <div class="col">
-                  <p class="h5 mt-5"><i class="fas fa-warehouse" style="color: rgb(128, 73, 21)"></i> Área Bodega <b>{{ $data['departamentos'][$num_department]['area_bodega'] }} m2</b></p>
-                </div>
-                @endif
-                @if ($data['departamentos'][$num_department]['area_terraza'] != null)
-                <div class="col">
-                  <p class="h5 mt-5"><i class="fas fa-expand-alt" style="color: rgb(50, 187, 167)"></i> Área Terraza <b>{{ $data['departamentos'][$num_department]['area_terraza'] }} m2</b></p>
-                </div>
-                @endif
-              </div>  
-              <div class="row text-center">
-                @if ($data['departamentos'][$num_department]['area_total'] != null)
-                <div class="col">
-                  <p class="h4 mt-5"><i class="fas fa-building" style="color: rgb(202, 62, 62)"></i> ÁREA TOTAL <b>{{ $data['departamentos'][$num_department]['area_total'] }} m2</b></p>
-                </div>
-                @endif  
-              </div>            
-            @endif
-          </div>
-
-          <div data-aos="slide-up">
-            <hr>
-            <!--DIV MAPA DEL DEPARTAMENTO PLANO-->
-            <div class="row d-flex align-items-center justify-content-center text-center">
-              <h2 class="mt-4">Mapa del {{ $data['tipo'] }} </h2>
-              <img class="img-fluid" style="width: 50%" src="{{ asset('img/projects/'.$data['name_folder'].'/'.$data['departamentos'][$num_department]['img_plano']) }}" alt="Mapa del departamento">
+          <div class="col-sm-5">
+            <div class="mb-3">
+              <i class="fas fa-bed d-inline"></i>
+              <p class="d-inline">3 habitaciones</p>
+            </div>
+            <div class="mb-3">
+              <i class="fas fa-bath d-inline"></i>
+              <p class="d-inline">4 baños</p>
             </div>
           </div>
-
+          <div class="col-sm-2" style="position: relative">
+            <button class="btn btn-warning rounded">Ver planos ></button>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <!--SECOND CARD-->
+      <div class="row">
+        <div class="card-project">
+          <h5>DEPARTAMENTO 2</h5>
+          <h4>$245.000</h4>
+        </div>
+        <div class="row">
+          <div class="col-sm-5">
+            <div class="mb-3">
+              <i class="fas fa-expand-arrows-alt d-inline"></i>
+              <p class="d-inline">Area Total 226.17m2</p>
+            </div>
+            <div class="mb-3">
+              <i class="fas fa-ruler-vertical d-inline"></i>
+              <p class="d-inline">Area Interior 143.42m2</p>
+            </div>
+            <div class="mb-3">
+              <i class="fas fa-car d-inline"></i>
+              <p class="d-inline">2 Parqueaderos</p>
+            </div>
+          </div>
+          <div class="col-sm-5">
+            <div class="mb-3">
+              <i class="fas fa-bed d-inline"></i>
+              <p class="d-inline">3 habitaciones</p>
+            </div>
+            <div class="mb-3">
+              <i class="fas fa-bath d-inline"></i>
+              <p class="d-inline">4 baños</p>
+            </div>
+          </div>
+          <div class="col-sm-2" style="position: relative">
+            <button class="btn btn-warning rounded">Ver planos ></button>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div class="row">
+        <h4>Características</h4>
+        <div class="col-sm-6">
+          <h5>Generales</h5>
+          <p>Jardin(es)</p>
+          <p>Acabados de lujo</p>
+          <p>Ascensor(es): 2</p>
+          <p>Seguridad</p>
+        </div>
+        <div class="col-sm-6">
+          <h5>Servicios</h5>
+          <p>Video vigilancia</p>
+          <p>Seguridad contra incendios</p>
+          <p>Planta de emergencia</p>
+          <p>Gimnasio</p>
+        </div>
+      </div> 
+    </div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-3">
+      <h5>SEPARE SU DEPARTAMENTO</h5>
+      <h3> CON $5.000</h3>
+      <div class="formEmail rounded">
+        <div style="padding-top: 20px; padding-left: 15px; padding-right: 15px; padding-bottom: 15px">
+          <p class="fw-bold">QUIERO MAS INFORMACION</p>
           <hr>
-          <!--DIV IFRAME DE GOOGLE MAPS DEL LUGAR-->
-          @if ($data['url_google_maps'] != null)
-            <div class="text-center">
-              <h2>Ubicación</h2>
-              <iframe 
-                src="{{ $data['url_google_maps']}}" 
-                width="300" 
-                height="300" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy"
-                >
-              </iframe>
+          <p>Contáctanos y recibe la mejor asesoría</p>
+          <form class="inputs">
+            <div class="mb-3 d-flex">
+              <input type="text" class="form-control" id="nombre" placeholder="Nombre y Apellido">
+              <input type="number" class="form-control" id="telefono" placeholder="Teléfono">
             </div>
-          @endif
-        </div>
-
-
-        <div class="col-sm-1"></div>
-
-
-        <div class="col-sm-3 rounded mb-5" style="background: #f4f4f4">
-
-          <h3 class="mt-3 text-center fw-bold">Deseo saber más</h3>
-
-          <form class="mt-3" action="{{ route('sendEmail.projects') }}" method="POST">
-            @csrf
-            <div class="form-outline mb-4">
-              <input type="text" id="nombre" name="nombre" class="form-control" autocomplete="off" required/>
-              <label class="form-label" for="nombre">Nombre y Apellido</label>
+            <div class="mb-3">
+              <input type="email" class="form-control" id="email" placeholder="Email">
             </div>
-        
-            <div class="form-outline mb-4">
-              <input type="email" id="email" name="email" class="form-control" autocomplete="off" required />
-              <label class="form-label" for="email">Correo electrónico</label>
+            <div class="mb-3">
+              <textarea class="form-control" name="mensaje" id="mensaje" rows="4">Hola, me interesa este inmueble y quiero que me contacten. Gracias</textarea>
             </div>
-
-            <div class="form-outline mb-4">
-              <input type="number" id="telefono" name="telefono" class="form-control" autocomplete="off" required/>
-              <label class="form-label" for="telefono">Teléfono</label>
+            <div class="d-grid gap-2">
+              <a id="btnLlamar" class="btn" href="">Llamar</a>
+              <a id="btnWhatsapp" class="btn" href="">Contactar por Whatsapp <i id="iconwpp" class="fab fa-whatsapp"></i></a>
             </div>
-          
-            <div class="form-outline mb-4">
-              <textarea class="form-control" name="mensaje" id="mensaje" rows="4" autocomplete="off" required>Me interesa saber más sobre el proyecto {{ $data['nombreProyecto'] }}</textarea>
-              <label class="form-label" for="mensaje">Mensaje</label>
-            </div>
-          
-            <button type="submit" class="btn btn-outline-secondary btn-block mb-4 float-end">Enviar</button>
           </form>
+          <p id="textoCondicionesEmail">Al enviar estás aceptando los términos de Uso y la Política de privacidad</p>
         </div>
+      </div>
     </div>
   </div>
+  <div>
+    <div class="row mt-5">
+      <h4>Areas Comunales</h4>
+      <div class="col">
+        <ul>
+          <li>Salon de uso multiple</li>
+          <li>Lobby y Recepción</li>
+        </ul>
+      </div>
+      <div class="col">
+        <ul>
+          <li>Jardines Comunales</li>
+          <li>Sala Comunal</li>
+        </ul>
+      </div>
+      <div class="col">
+        <ul>
+          <li>Gameroom</li>
+          <li>Balcones Comunales</li>
+        </ul>
+      </div>  
+    </div>
+    <div class="mt-5">
+      <h4>UBICACION</h4>
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.6373817651033!2d-79.02524648539115!3d-2.9201979978730823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91cd22811a43422d%3A0x6730f8941aab3416!2sEdificio%20Vista%20Linda!5e0!3m2!1ses!2sec!4v1640116580170!5m2!1ses!2sec" 
+        width="100%" 
+        height="300" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy"></iframe>
+    </div>
+    <div class="row mt-3" style="background-color: gray; width: 100; height: 100px">
+    
+    </div>
+    <div class="row mt-5 mb-3">
+      <h4>PROYECTOS SIMILARES</h4>
+      <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+        <div class="card mb-2 position-relative" style="width: 17rem;">
+          <img class="img-fluid" style="height: 180px" src="{{ asset('/img/projects/adra/1.webp') }}" class="card-img-top" alt="Proyecto Adra - Casa Credito Promotora">
+          <div class="position-absolute">
+            <p>Venta</p>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">USD 79.850</h5>
+            <p class="card-text fw-bold">Calle Diego de Tapia</p>
+            <p class="card-text text-muted">Cuenca, Azuay</p>
+            <div class="row mt-3">
+              <div class="col-sm-6 d-flex align-items-center">
+                <i class="fas fa-building"></i>
+                <p>Venta</p>
+              </div>
+              <div class="col-sm-6 d-flex align-items-center">
+                <i class="fas fa-calendar-week"></i>
+                <p>Inmediata</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+        <div class="card mb-2 position-relative" style="width: 17rem;">
+          <img class="img-fluid" style="height: 180px" src="{{ asset('/img/projects/futuranarancay/1.webp') }}" class="card-img-top" alt="Proyecto Futura Narancay - Casa Credito Promotora">
+          <div class="position-absolute">
+            <p>En planos</p>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">USD 79.850</h5>
+            <p class="card-text fw-bold">Calle Diego de Tapia</p>
+            <p class="card-text text-muted">Cuenca, Azuay</p>
+            <div class="row mt-3">
+              <div class="col-sm-6 d-flex align-items-center">
+                <i class="fas fa-building"></i>
+                <p>Venta</p>
+              </div>
+              <div class="col-sm-6 d-flex align-items-center">
+                <i class="fas fa-calendar-week"></i>
+                <p>Inmediata</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+        <div class="card mb-2 position-relative" style="width: 17rem;">
+          <img class="img-fluid" style="height: 180px" src="{{ asset('/img/projects/toscana/1.webp') }}" class="card-img-top" alt="Proyecto Toscana - Casa Credito Promotora">
+          <div class="position-absolute">
+            <p>Construcción</p>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">USD 79.850</h5>
+            <p class="card-text fw-bold">Calle Diego de Tapia</p>
+            <p class="card-text text-muted">Cuenca, Azuay</p>
+            <div class="row mt-3">
+              <div class="col-sm-6 d-flex align-items-center">
+                <i class="fas fa-building"></i>
+                <p>Venta</p>
+              </div>
+              <div class="col-sm-6 d-flex align-items-center">
+                <i class="fas fa-calendar-week"></i>
+                <p>Inmediata</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
     
 @endsection
 
