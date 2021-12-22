@@ -50,8 +50,18 @@ class ProjectController extends Controller
                 $data['num_imagenes'] = 15;
                 $data['extension'] = 'webp';
                 $data['nombreProyecto'] = $nombreProyecto;
-                $data['url_google_maps'] = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.769145174731!2d-79.02401558541044!3d-2.9206024395227703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91cd22811a43422d%3A0x6730f8941aab3416!2sEdificio%20Vista%20Linda!5e0!3m2!1ses-419!2sec!4v1639168164971!5m2!1ses-419!2sec";
+                $data['ciudad'] = 'Cuenca';
+                $data['canton'] = 'Azuay';
+                $data['sector'] = 'Sector Edificio Vista Linda';
+                $data['descripcion'] = '
+                    ¡Departamentos con la mejor vista a la ciudad!
+                    <br><br>
+                    El espacio perfecto para vivir!. Te ofrecemos 5 exclusivos departamentos para tu elección. Ubicación referencial: al Sur de la ciudad de Cuenca,
+                    disponen de una excelente y privilegiada vista a la ciudad debido a que se encuentra situada cerca del mirador de Turi.
+                ';
                 $data['tipo'] = "Departamento";
+                $data['estado'] = "En construccion";
+                $data['url_google_maps'] = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.769145174731!2d-79.02401558541044!3d-2.9206024395227703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91cd22811a43422d%3A0x6730f8941aab3416!2sEdificio%20Vista%20Linda!5e0!3m2!1ses-419!2sec!4v1639168164971!5m2!1ses-419!2sec";
                 $data['departamentos'] = [
                     1 => [
                         'num_departamento' => 1,
@@ -93,8 +103,18 @@ class ProjectController extends Controller
                 $data['num_imagenes'] = 7;
                 $data['extension'] = 'webp';
                 $data['nombreProyecto'] = $nombreProyecto;
-                $data['url_google_maps'] = "";
+                $data['ciudad'] = 'Cuenca';
+                $data['canton'] = 'Azuay';
+                $data['sector'] = 'Narancay';
+                $data['descripcion'] = '
+                    ¡Departamentos con una experiencia única en diseño y comodidad junto al rio!
+                    <br><br>
+                    ¿Estás buscando un lugar de confort para vivir?. Los departamentos de Futura Narancay son para ti, con su diseño modernista y elegante
+                    disfrutaras cada momento con tu familia. Su ubicación hacen de estos departamentos un lugar agradable.  
+                ';
                 $data['tipo'] = "Departamento";
+                $data['estado'] = "En construccion";
+                $data['url_google_maps'] = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2236.278514156379!2d-79.041292522027!3d-2.9319987681087474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91cd226785f84007%3A0x998e392aba494da1!2sFederico%20Chopin!5e0!3m2!1ses!2sec!4v1640213435123!5m2!1ses!2sec";
                 $data['departamentos'] = [
                     1 => [
                         'num_departamento' => 1,
@@ -249,8 +269,18 @@ class ProjectController extends Controller
                 $data['num_imagenes'] = 19;
                 $data['extension'] = 'webp';
                 $data['nombreProyecto'] = $nombreProyecto;
-                $data['url_google_maps'] = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.8697943762786!2d-78.91906308539137!3d-2.8539337979211687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91cd111f42fcd239%3A0xb174d31ae8dedce8!2sCondominio%20La%20Toscana%20Challuabamba!5e0!3m2!1ses-419!2sec!4v1639172454879!5m2!1ses-419!2sec";
+                $data['ciudad'] = 'Cuenca';
+                $data['canton'] = 'Azuay';
+                $data['sector'] = 'Challuabamba';
+                $data['descripcion'] = '
+                    ¡La mejor experciencia en condominios con acabados modernos!
+                    <br><br>
+                    Un lugar ideal para vivir, con un ambiente acogedor y cálido a la hora de escribir recuerdos inolvidables con toda tu familia. Su ubicación se situa
+                    al norte de la ciudad en Chaullabamba. 
+                ';
                 $data['tipo'] = "Condominio";
+                $data['estado'] = "En construccion";
+                $data['url_google_maps'] = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.8697943762786!2d-78.91906308539137!3d-2.8539337979211687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91cd111f42fcd239%3A0xb174d31ae8dedce8!2sCondominio%20La%20Toscana%20Challuabamba!5e0!3m2!1ses-419!2sec!4v1639172454879!5m2!1ses-419!2sec";
                 $data['departamentos'] = [
                     1 => [
                         'num_departamento' => 1,

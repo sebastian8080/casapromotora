@@ -30,7 +30,7 @@
       }
 
       /* The Modal (background) */
-      .modal {
+      #myModal {
         display: none;
         position: fixed;
         z-index: 1;
@@ -44,7 +44,7 @@
       }
 
       /* Modal Content */
-      .modal-content {
+      #modal-content {
         position: relative;
         background-color: #d8717100;
         margin: auto;
@@ -145,7 +145,7 @@
         }
 
       @media screen and (max-width: 580px){
-        .modal-content{
+        #modal-content{
           max-width: 70%;
         }
       }
@@ -208,8 +208,8 @@
         font-size: 15px;
       }
 
-      .card-body{
-        background-color: rgb(239, 250, 253);
+      #cardSimilarProject{
+        border: solid 1px lightblue;
       }
 
       .card-body .card-title{
@@ -233,14 +233,27 @@
         color: #ffffff;
       }
 
+      .headerForm{
+        color: #999;
+        font-weight: bold;
+      }
+
+      .headerForm h5{
+        font-size: 20px;
+        margin: 0%;
+      }
+      .headerForm h3{
+        font-size: 35px;
+      }
+
     </style>
 @endsection
 
 @section('content')
 
   <div class="container pt-5 mt-3">
-    <h1>DEPARTAMENTOS ADRA</h1>
-    <p>Ubicacion: Azuay > Cuenca > Sector Yanuncay - Universidad de Cuenca</p>
+    <h1> {{ Str::upper($data['tipo'] . "S " . $data['nombreProyecto']) }}</h1>
+    <p>Ubicación: {{ $data['ciudad'] }} > {{ $data['canton'] }} > {{ $data['sector'] }}</p>
   </div>
 
     <div class="imgs-header mt-3">
@@ -285,7 +298,7 @@
 <!-- The Modal/Lightbox -->
 <div id="myModal" class="modal">
   <span class="close cursor" onclick="closeModal()">&times;</span>
-  <div class="modal-content">
+  <div id="modal-content" class="modal-content">
 
     @for($i = 1; $i <= $data['num_imagenes']; $i++)
       <div class="mySlides">
@@ -310,89 +323,74 @@
   <div class="row">
     <div class="col-sm-8">
       <div class="row">
-        <p>¡Departamentos con la mejor vista a la ciudad!</p>
-      </div>
-      <div class="row">
         <p>
-          El espacio perfecto para vivir!. Te ofrecemos 5 exclusivos departamentos para tu elección. Ubicación referencial: al Sur
-          de la ciudad de Cuenca, disponen de una excelente y privilegiada vista a la ciudad debido a que se encuentra situada cerca
-          del mirador de Turi
+          {!! $data['descripcion'] !!}
         </p>
       </div>
-      <div class="row">
-        <div class="card-project">
-          <h5>DEPARTAMENTO 1</h5>
-          <h4>$245.000</h4>
-        </div>
-        <!--SECOND CARD-->
+      @foreach ($data['departamentos'] as $departamento)
         <div class="row">
-          <div class="col-sm-5">
-            <div class="mb-3">
-              <i class="fas fa-expand-arrows-alt d-inline"></i>
-              <p class="d-inline">Area Total 226.17m2</p>
+          <div class="card-project">
+            <h5>{{ Str::upper($data['tipo']) . " " . $departamento['num_departamento']}}</h5>
+            <h4>${{ $departamento['precio'] }}</h4>
+          </div>
+          <div class="row">
+            <div class="col-sm-5">
+              <div class="mb-3">
+                <i class="fas fa-expand-arrows-alt d-inline"></i>
+                <p class="d-inline">Area Total {{ $departamento['area_total'] }} m<sup>2</sup></p>
+              </div>
+              <div class="mb-3">
+                <i class="fas fa-ruler-vertical d-inline"></i>
+                <p class="d-inline">Area Interior {{ $departamento['area_interior']}} m<sup>2</sup></p>
+              </div>
+              <div class="mb-3">
+                <i class="fas fa-car d-inline"></i>
+                <p class="d-inline">{{ $departamento['parqueadero'] }} Parqueadero(s)</p>
+              </div>
             </div>
-            <div class="mb-3">
-              <i class="fas fa-ruler-vertical d-inline"></i>
-              <p class="d-inline">Area Interior 143.42m2</p>
+            <div class="col-sm-5">
+              <div class="mb-3">
+                <i class="fas fa-bed d-inline"></i>
+                <p class="d-inline">{{ $departamento['num_habitaciones'] }} habitaciones</p>
+              </div>
+              <div class="mb-3">
+                <i class="fas fa-bath d-inline"></i>
+                <p class="d-inline">{{ $departamento['num_baños']}} baños</p>
+              </div>
             </div>
-            <div class="mb-3">
-              <i class="fas fa-car d-inline"></i>
-              <p class="d-inline">2 Parqueaderos</p>
+            <div class="col-sm-2" style="position: relative">
+              <button type="button" class="btn btn-warning rounded" data-bs-toggle="modal" data-bs-target="#modalPlanos">Ver planos ></button>
             </div>
           </div>
-          <div class="col-sm-5">
-            <div class="mb-3">
-              <i class="fas fa-bed d-inline"></i>
-              <p class="d-inline">3 habitaciones</p>
+          {{ $departamento['img_plano'] }}
+          <hr>
+        </div>
+
+        <div class="modal" id="modalPlanos">
+          <div class="modal-dialog">
+            <div class="modal-content">
+      
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title">{{ Str::upper($data['tipo'] . "S " . $data['nombreProyecto']) }}</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+      
+              <!-- Modal body -->
+              <div class="modal-body">
+                <img class="img-fluid" src="{{ asset('img/projects/'.$data['name_folder'].'/'.$departamento['img_plano'] )}}" alt="">
+              </div>
+      
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+              </div>
+      
             </div>
-            <div class="mb-3">
-              <i class="fas fa-bath d-inline"></i>
-              <p class="d-inline">4 baños</p>
-            </div>
-          </div>
-          <div class="col-sm-2" style="position: relative">
-            <button class="btn btn-warning rounded">Ver planos ></button>
           </div>
         </div>
-        <hr>
-      </div>
-      <!--SECOND CARD-->
-      <div class="row">
-        <div class="card-project">
-          <h5>DEPARTAMENTO 2</h5>
-          <h4>$245.000</h4>
-        </div>
-        <div class="row">
-          <div class="col-sm-5">
-            <div class="mb-3">
-              <i class="fas fa-expand-arrows-alt d-inline"></i>
-              <p class="d-inline">Area Total 226.17m2</p>
-            </div>
-            <div class="mb-3">
-              <i class="fas fa-ruler-vertical d-inline"></i>
-              <p class="d-inline">Area Interior 143.42m2</p>
-            </div>
-            <div class="mb-3">
-              <i class="fas fa-car d-inline"></i>
-              <p class="d-inline">2 Parqueaderos</p>
-            </div>
-          </div>
-          <div class="col-sm-5">
-            <div class="mb-3">
-              <i class="fas fa-bed d-inline"></i>
-              <p class="d-inline">3 habitaciones</p>
-            </div>
-            <div class="mb-3">
-              <i class="fas fa-bath d-inline"></i>
-              <p class="d-inline">4 baños</p>
-            </div>
-          </div>
-          <div class="col-sm-2" style="position: relative">
-            <button class="btn btn-warning rounded">Ver planos ></button>
-          </div>
-        </div>
-        <hr>
-      </div>
+          
+      @endforeach
       <div class="row">
         <h4>Características</h4>
         <div class="col-sm-6">
@@ -413,8 +411,10 @@
     </div>
     <div class="col-sm-1"></div>
     <div class="col-sm-3">
-      <h5>SEPARE SU DEPARTAMENTO</h5>
-      <h3> CON $5.000</h3>
+      <div class="headerForm">
+        <h5>SEPARE SU DEPARTAMENTO</h5>
+        <h3> CON $5.000</h3>
+      </div>
       <div class="formEmail rounded">
         <div style="padding-top: 20px; padding-left: 15px; padding-right: 15px; padding-bottom: 15px">
           <p class="fw-bold">QUIERO MAS INFORMACION</p>
@@ -466,7 +466,7 @@
     <div class="mt-5">
       <h4>UBICACION</h4>
       <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.6373817651033!2d-79.02524648539115!3d-2.9201979978730823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91cd22811a43422d%3A0x6730f8941aab3416!2sEdificio%20Vista%20Linda!5e0!3m2!1ses!2sec!4v1640116580170!5m2!1ses!2sec" 
+        src="{{ $data['url_google_maps']}}" 
         width="100%" 
         height="300" 
         style="border:0;" 
@@ -479,37 +479,41 @@
     <div class="row mt-5 mb-3">
       <h4>PROYECTOS SIMILARES</h4>
       <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-        <div class="card mb-2 position-relative" style="width: 17rem;">
-          <img class="img-fluid" style="height: 180px" src="{{ asset('/img/projects/adra/1.webp') }}" class="card-img-top" alt="Proyecto Adra - Casa Credito Promotora">
-          <div class="position-absolute">
-            <p>Venta</p>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">USD 79.850</h5>
-            <p class="card-text fw-bold">Calle Diego de Tapia</p>
-            <p class="card-text text-muted">Cuenca, Azuay</p>
-            <div class="row mt-3">
-              <div class="col-sm-6 d-flex align-items-center">
-                <i class="fas fa-building"></i>
-                <p>Venta</p>
-              </div>
-              <div class="col-sm-6 d-flex align-items-center">
-                <i class="fas fa-calendar-week"></i>
-                <p>Inmediata</p>
+        <div id="cardSimilarProject" class="card mb-2 position-relative" style="width: 17rem;">
+            <a style="text-decoration: none" href="{{ route('projects.viewProject', 'Adra') }}">
+              <img class="img-fluid" style="height: 180px" src="{{ asset('/img/projects/adra/1.webp') }}" class="card-img-top" alt="Proyecto Adra - Casa Credito Promotora">
+            </a>
+              <div class="position-absolute">
+              <p>Venta</p>
+            </div>
+            <div class="card-body bg-light">
+              <h5 class="card-title">Desde USD 99.000</h5>
+              <p class="card-text fw-bold">Sector Edificio Vista Linda</p>
+              <p class="card-text text-muted">Cuenca, Azuay</p>
+              <div class="row mt-3">
+                <div class="col-sm-6 d-flex align-items-center">
+                  <i class="fas fa-building"></i>
+                  <p>Venta</p>
+                </div>
+                <div class="col-sm-6 d-flex align-items-center">
+                  <i class="fas fa-calendar-week"></i>
+                  <p>Inmediata</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
       </div>
       <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-        <div class="card mb-2 position-relative" style="width: 17rem;">
-          <img class="img-fluid" style="height: 180px" src="{{ asset('/img/projects/futuranarancay/1.webp') }}" class="card-img-top" alt="Proyecto Futura Narancay - Casa Credito Promotora">
+        <div id="cardSimilarProject" class="card mb-2 position-relative" style="width: 17rem;">
+          <a style="text-decoration: none" href="{{ route('projects.viewProject', 'Futura Narancay') }}">
+            <img class="img-fluid" style="height: 180px" src="{{ asset('/img/projects/futuranarancay/1.webp') }}" class="card-img-top" alt="Proyecto Futura Narancay - Casa Credito Promotora">
+          </a>
           <div class="position-absolute">
             <p>En planos</p>
           </div>
-          <div class="card-body">
-            <h5 class="card-title">USD 79.850</h5>
-            <p class="card-text fw-bold">Calle Diego de Tapia</p>
+          <div class="card-body bg-light">
+            <h5 class="card-title">Desde USD 78.000</h5>
+            <p class="card-text fw-bold">Narancay</p>
             <p class="card-text text-muted">Cuenca, Azuay</p>
             <div class="row mt-3">
               <div class="col-sm-6 d-flex align-items-center">
@@ -525,14 +529,16 @@
         </div>
       </div>
       <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-        <div class="card mb-2 position-relative" style="width: 17rem;">
-          <img class="img-fluid" style="height: 180px" src="{{ asset('/img/projects/toscana/1.webp') }}" class="card-img-top" alt="Proyecto Toscana - Casa Credito Promotora">
+        <div id="cardSimilarProject" class="card mb-2 position-relative" style="width: 17rem;">
+          <a style="text-decoration: none" href="{{ route('projects.viewProject', 'Toscana') }}">
+            <img class="img-fluid" style="height: 180px" src="{{ asset('/img/projects/toscana/1.webp') }}" class="card-img-top" alt="Proyecto Toscana - Casa Credito Promotora">
+          </a>
           <div class="position-absolute">
             <p>Construcción</p>
           </div>
-          <div class="card-body">
-            <h5 class="card-title">USD 79.850</h5>
-            <p class="card-text fw-bold">Calle Diego de Tapia</p>
+          <div class="card-body bg-light">
+            <h5 class="card-title">Desde USD 150.000</h5>
+            <p class="card-text fw-bold">Challuabamba</p>
             <p class="card-text text-muted">Cuenca, Azuay</p>
             <div class="row mt-3">
               <div class="col-sm-6 d-flex align-items-center">
