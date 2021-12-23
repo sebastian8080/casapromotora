@@ -8,10 +8,10 @@
         color: rgb(45, 67, 71)
       }
 
-      .imgs-header > .row > .col-sm-6 .column > img:hover{
+      /* .imgs-header > .row > .col-sm-6 .column > img:hover{
         transform: scale(1.1);
         -webkit-transition: transform 1s ease-out;
-      }
+      } */
 
       .row > .column {
         padding: 0 8px;
@@ -144,9 +144,13 @@
           padding: 10px;
         }
 
-      @media screen and (max-width: 580px){
+      @media screen and (max-width: 720px){
         #modal-content{
           max-width: 70%;
+        }
+
+        #btnVerMasFotos{
+          font-size: 10px;
         }
       }
 
@@ -245,7 +249,6 @@
       .headerForm h3{
         font-size: 35px;
       }
-
     </style>
 @endsection
 
@@ -261,7 +264,7 @@
     <div class="row mb-3">
       <div class="col-sm-6 col-12 mt-3">
         <div class="column">
-          <img class="img-fluid rounded" src="{{url('img/projects/'.$data['name_folder'].'/1.webp')}}" onclick="openModal();currentSlide(1)" class="hover-shadow">
+          <img class="img-fluid rounded" src="{{url('img/projects/'.$data['name_folder'].'/1.webp')}}" class="hover-shadow">
         </div>
       </div>
 
@@ -269,12 +272,12 @@
       <div class="row">
         <div class="col-sm-6 col-6">
           <div class="column">
-            <img width="100%" class="img-fluid rounded" src="{{url('img/projects/'.$data['name_folder'].'/2.'.$data['extension'])}}" onclick="openModal();currentSlide(2)" class="hover-shadow">
+            <img width="100%" class="img-fluid rounded" src="{{url('img/projects/'.$data['name_folder'].'/2.'.$data['extension'])}}" class="hover-shadow">
           </div>
         </div>
         <div class="col-sm-6 col-6">
           <div class="column">
-            <img class="img-fluid rounded" src="{{url('img/projects/'.$data['name_folder'].'/3.'.$data['extension'])}}" onclick="openModal();currentSlide(3)" class="hover-shadow">
+            <img class="img-fluid rounded" src="{{url('img/projects/'.$data['name_folder'].'/3.'.$data['extension'])}}" class="hover-shadow">
           </div>
         </div>
       </div>
@@ -282,12 +285,15 @@
       <div class="row mt-3">
         <div class="col-sm-6 col-6">
           <div class="column">
-            <img class="img-fluid rounded" src="{{url('img/projects/'.$data['name_folder'].'/4.'.$data['extension'])}}" onclick="openModal();currentSlide(4)" class="hover-shadow">
+            <img class="img-fluid rounded" src="{{url('img/projects/'.$data['name_folder'].'/4.'.$data['extension'])}}" class="hover-shadow">
           </div>
         </div>
         <div class="col-sm-6 col-6">
-          <div class="column">
-            <img class="img-fluid rounded" src="{{url('img/projects/'.$data['name_folder'].'/5.'.$data['extension'])}}" onclick="openModal();currentSlide(5)" class="hover-shadow">
+          <div class="column position-relative">
+            <img class="img-fluid rounded" style="filter: brightness(50%)" src="{{url('img/projects/'.$data['name_folder'].'/5.'.$data['extension'])}}" onclick="openModal();currentSlide(5)" class="hover-shadow">
+            <div class="position-absolute top-50 start-50 translate-middle">
+              <button id="btnVerMasFotos" type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#modalImages">Ver más fotos</button>
+            </div>
           </div>
         </div>
       </div>
@@ -295,8 +301,41 @@
   </div>
 </div>
 
+<div class="modal" id="modalImages">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            @for ($i = 1; $i <= $data['num_imagenes']; $i++)
+              <div class="carousel-item @if($i == 1) active @endif">
+                <img src="{{url('img/projects/'.$data['name_folder'].'/'.$i.'.'.$data['extension'])}}" class="d-block w-100" alt="...">
+              </div>
+            @endfor
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- The Modal/Lightbox -->
-<div id="myModal" class="modal">
+{{-- <div id="myModal" class="modal">
   <span class="close cursor" onclick="closeModal()">&times;</span>
   <div id="modal-content" class="modal-content">
 
@@ -316,7 +355,7 @@
       <p id="caption"></p>
     </div>
   </div> 
-</div> 
+</div>  --}}
 
 <!--CONTENIDO-->
 <div class="container">
@@ -362,7 +401,6 @@
               <button type="button" class="btn btn-warning rounded" data-bs-toggle="modal" data-bs-target="#modalPlanos">Ver planos ></button>
             </div>
           </div>
-          {{ $departamento['img_plano'] }}
           <hr>
         </div>
 
@@ -380,12 +418,6 @@
               <div class="modal-body">
                 <img class="img-fluid" src="{{ asset('img/projects/'.$data['name_folder'].'/'.$departamento['img_plano'] )}}" alt="">
               </div>
-      
-              <!-- Modal footer -->
-              <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-              </div>
-      
             </div>
           </div>
         </div>
@@ -395,17 +427,15 @@
         <h4>Características</h4>
         <div class="col-sm-6">
           <h5>Generales</h5>
-          <p>Jardin(es)</p>
-          <p>Acabados de lujo</p>
-          <p>Ascensor(es): 2</p>
-          <p>Seguridad</p>
+          @foreach ($data['caracteristicas']['generales'] as $general)
+            <p>{{ $general }}</p>  
+          @endforeach
         </div>
         <div class="col-sm-6">
           <h5>Servicios</h5>
-          <p>Video vigilancia</p>
-          <p>Seguridad contra incendios</p>
-          <p>Planta de emergencia</p>
-          <p>Gimnasio</p>
+          @foreach ($data['caracteristicas']['servicios'] as $services)
+            <p>{{ $services }}</p>
+          @endforeach
         </div>
       </div> 
     </div>
@@ -415,7 +445,7 @@
         <h5>SEPARE SU DEPARTAMENTO</h5>
         <h3> CON $5.000</h3>
       </div>
-      <div class="formEmail rounded">
+      <div class="formEmail rounded" id="myHeader">
         <div style="padding-top: 20px; padding-left: 15px; padding-right: 15px; padding-bottom: 15px">
           <p class="fw-bold">QUIERO MAS INFORMACION</p>
           <hr>
@@ -487,6 +517,7 @@
               <p>Venta</p>
             </div>
             <div class="card-body bg-light">
+              <h4>ADRA</h4>
               <h5 class="card-title">Desde USD 99.000</h5>
               <p class="card-text fw-bold">Sector Edificio Vista Linda</p>
               <p class="card-text text-muted">Cuenca, Azuay</p>
@@ -512,6 +543,7 @@
             <p>En planos</p>
           </div>
           <div class="card-body bg-light">
+            <h4>FUTURA NARANCAY</h4>
             <h5 class="card-title">Desde USD 78.000</h5>
             <p class="card-text fw-bold">Narancay</p>
             <p class="card-text text-muted">Cuenca, Azuay</p>
@@ -537,6 +569,7 @@
             <p>Construcción</p>
           </div>
           <div class="card-body bg-light">
+            <h4>TOSCANA</h4>
             <h5 class="card-title">Desde USD 150.000</h5>
             <p class="card-text fw-bold">Challuabamba</p>
             <p class="card-text text-muted">Cuenca, Azuay</p>
@@ -566,12 +599,12 @@
     <script>
       // Open the Modal
       function openModal() {
-        document.getElementById("myModal").style.display = "block";
+        document.getElementById("modalImages").style.display = "block";
       }
       
       // Close the Modal
       function closeModal() {
-        document.getElementById("myModal").style.display = "none";
+        document.getElementById("modalImages").style.display = "none";
       }
       
       var slideIndex = 1;
@@ -605,6 +638,5 @@
         dots[slideIndex-1].className += " active";
         captionText.innerHTML = dots[slideIndex-1].alt;
       }
-
       </script>
 @endsection
