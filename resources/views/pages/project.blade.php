@@ -8,11 +8,6 @@
         color: rgb(45, 67, 71)
       }
 
-      /* .imgs-header > .row > .col-sm-6 .column > img:hover{
-        transform: scale(1.1);
-        -webkit-transition: transform 1s ease-out;
-      } */
-
       .row > .column {
         padding: 0 8px;
       }
@@ -27,99 +22,6 @@
       .column {
         float: left;
         width: 100%;
-      }
-
-      /* The Modal (background) */
-      #myModal {
-        display: none;
-        position: fixed;
-        z-index: 1;
-        padding-top: 120px;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0, 0, 0, 0.523);
-      }
-
-      /* Modal Content */
-      #modal-content {
-        position: relative;
-        background-color: #d8717100;
-        margin: auto;
-        padding: 0;
-        width: 70%;
-        max-width: 65%;
-      }
-
-      /* The Close Button */
-      .close {
-        color: white;
-        position: absolute;
-        top: 100px;
-        right: 15px;
-        font-size: 50px;
-        font-weight: bold;
-      }
-
-      .close:hover,
-      .close:focus {
-        color: #999;
-        text-decoration: none;
-        cursor: pointer;
-      }
-
-      /* Hide the slides by default */
-      .mySlides {
-        display: none;
-      }
-
-      /* Next & previous buttons */
-      .prev,
-      .next {
-        cursor: pointer;
-        position: absolute;
-        top: 50%;
-        width: auto;
-        padding: 16px;
-        margin-top: -50px;
-        color: white;
-        font-weight: bold;
-        font-size: 20px;
-        transition: 0.6s ease;
-        border-radius: 0 3px 3px 0;
-        user-select: none;
-        -webkit-user-select: none;
-      }
-
-      /* Position the "next button" to the right */
-      .next {
-        right: 0;
-        border-radius: 3px 0 0 3px;
-      }
-
-      /* On hover, add a black background color with a little bit see-through */
-      .prev:hover,
-      .next:hover {
-        background-color: rgba(0, 0, 0, 0.612);
-      }
-
-      /* Number text (1/3 etc) */
-      .numbertext {
-        color: #f2f2f2;
-        font-size: 12px;
-        padding: 8px 12px;
-        position: absolute;
-        top: 0;
-      }
-
-      /* Caption text */
-      .caption-container {
-        text-align: center;
-        background-color: rgba(128, 126, 126, 0.19);
-        padding: 2px 16px;
-        color: white;
       }
 
       img.demo {
@@ -145,10 +47,6 @@
         }
 
       @media screen and (max-width: 720px){
-        #modal-content{
-          max-width: 70%;
-        }
-
         #btnVerMasFotos{
           font-size: 10px;
         }
@@ -334,29 +232,6 @@
   </div>
 </div>
 
-<!-- The Modal/Lightbox -->
-{{-- <div id="myModal" class="modal">
-  <span class="close cursor" onclick="closeModal()">&times;</span>
-  <div id="modal-content" class="modal-content">
-
-    @for($i = 1; $i <= $data['num_imagenes']; $i++)
-      <div class="mySlides">
-        <div class="numbertext">{{$i}} / {{$data['num_imagenes']}}</div>
-        <img class="img-fluid" src="{{url('img/projects/'.$data['name_folder'].'/'.$i.'.'.$data['extension'])}}" style="width:100%">
-      </div>
-    @endfor
-
-    <!-- Next/previous controls -->
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-    <!-- Caption text -->
-    <div class="caption-container">
-      <p id="caption"></p>
-    </div>
-  </div> 
-</div>  --}}
-
 <!--CONTENIDO-->
 <div class="container">
   <div class="row">
@@ -398,7 +273,7 @@
               </div>
             </div>
             <div class="col-sm-2" style="position: relative">
-              <button type="button" class="btn btn-warning rounded" data-bs-toggle="modal" data-bs-target="#modalPlanos">Ver planos ></button>
+              <button type="button" class="btn btn-warning rounded" data-bs-toggle="modal" data-bs-target="#modalPlanos" onclick="setSrcImage('@php echo $departamento['img_plano'] @endphp', '@php echo $data['name_folder'] @endphp')">Ver planos ></button>
             </div>
           </div>
           <hr>
@@ -416,7 +291,7 @@
       
               <!-- Modal body -->
               <div class="modal-body">
-                <img class="img-fluid" src="{{ asset('img/projects/'.$data['name_folder'].'/'.$departamento['img_plano'] )}}" alt="">
+                <img id="imgPlanos" class="img-fluid" src="" alt="">
               </div>
             </div>
           </div>
@@ -607,36 +482,10 @@
         document.getElementById("modalImages").style.display = "none";
       }
       
-      var slideIndex = 1;
-      showSlides(slideIndex);
-      
-      // Next/previous controls
-      function plusSlides(n) {
-        showSlides(slideIndex += n);
-      }
-      
-      // Thumbnail image controls
-      function currentSlide(n) {
-        console.log(n);
-        showSlides(slideIndex = n);
-      }
-      
-      function showSlides(n) {
-        var i;
-        var slides = document.getElementsByClassName("mySlides");
-        var dots = document.getElementsByClassName("demo");
-        var captionText = document.getElementById("caption");
-        if (n > slides.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = slides.length}
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex-1].style.display = "block";
-        dots[slideIndex-1].className += " active";
-        captionText.innerHTML = dots[slideIndex-1].alt;
+      function setSrcImage(ruta, carpeta){
+        var imagenPlano = document.getElementById('imgPlanos');
+        console.log(ruta);
+        imagenPlano.src = "../img/projects/"+carpeta+"/"+ruta;
       }
       </script>
 @endsection
