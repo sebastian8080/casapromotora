@@ -11,19 +11,19 @@
         @csrf
         <div class="mb-3">
           <label for="nombre" class="form-label">Nombre</label>
-          <input type="text" class="form-control" id="nombre" name="nombre">
+          <input type="text" class="form-control" id="nombre" name="nombre" required>
         </div>
         <div class="mb-3">
           <label for="telefono_celular" class="form-label">Telefono / Celular</label>
-          <input type="number" class="form-control" id="telefono_celular" name="telefono_celular">
+          <input type="number" class="form-control" id="telefono_celular" name="telefono_celular" required>
         </div>
         <div class="mb-3">
           <label for="correo" class="form-label">Correo electronico</label>
-          <input type="email" class="form-control" id="correo" aria-describedby="emailHelp" name="correo">
+          <input type="email" class="form-control" id="correo" aria-describedby="emailHelp" name="correo" required>
         </div>
         <div class="mb-3">
           <label for="mensaje" class="form-label">Mensaje</label>
-          <input type="text" class="form-control" id="mensaje" name="mensaje">
+          <input type="text" class="form-control" id="mensaje" name="mensaje" required>
         </div>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
           <button type="submit" class="btn btn-danger me-md-2 rounded-pill">Enviar mensaje</button>

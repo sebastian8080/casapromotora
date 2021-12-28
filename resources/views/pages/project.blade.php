@@ -378,7 +378,7 @@
         allowfullscreen="" 
         loading="lazy"></iframe>
     </div>
-    <div class="row mt-3" style="background-color: gray; width: 100; height: 100px">
+    {{-- <div class="row mt-3" style="background-color: gray; width: 100; height: 100px"> --}}
     
     </div>
     <div class="row mt-5 mb-3">

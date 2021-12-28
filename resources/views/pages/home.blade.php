@@ -181,14 +181,71 @@
           <img src="{{ asset('img/home/FAMILIA-CREDITOS - copia.webp') }}" width="100%" class="img-fluid" alt="Creditos - Casa Credito Promotora">
           <div id="row6" class="position-absolute">
             <h1 id="text-row6" class="text-light">¡Lo que siempre <br>has querido!</h1>
-            <button id="btn-row6" class="btn btn-danger">Solicite un credito ></button>
+            <button id="btn-row6" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Solicite un credito ></button>
           </div>
-        </div>
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header bg-danger">
+                  <h5 class="modal-title text-white fw-bold" id="exampleModalLabel">RELLENE EL FORMULARIO Y NOS PONDREMOS EN CONTACTO</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form class="p-4" action="{{ route('send.mail.credito') }}" method="POST">
+                    @csrf
+                    <div class="row">
+                      <div class="col-12 col-sm-6">
+                        <div class="mb-2">
+                          <label for="cedula" class="form-label">Cédula</label>
+                          <input type="text" class="form-control" id="cedula" name="cedula" required>
+                        </div>
+                        <div class="mb-2">
+                          <label for="nombre" class="form-label">Nombre y Apellido</label>
+                          <input type="text" class="form-control" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="mb-2">
+                          <label for="telefono_celular" class="form-label">Teléfono / Celular</label>
+                          <input type="number" class="form-control" id="telefono_celular" name="telefono_celular" required>
+                        </div>
+                        <div class="mb-2">
+                          <label for="correo" class="form-label">Correo electrónico</label>
+                          <input type="email" class="form-control" id="correo" aria-describedby="emailHelp" name="correo" required>
+                        </div>
+                      </div>
+                      <div class="col-12 col-sm-6 border-start">
+                        <div class="mb-3">
+                          <label for="mensaje" class="form-label">Mensaje</label>
+                          <textarea type="text" class="form-control" id="mensaje" rows="3" name="mensaje" required></textarea>
+                        </div>
+                        <div class="mb-2" style="margin-top:1.3rem;">
+                          <label for="monto" class="form-label">Monto $</label>
+                          <input type="number" class="form-control" id="monto" name="monto" required>
+                        </div>
+                        <div class="mb-2">
+                          <label for="tipo_credito" class="form-label">Tipo de crédito</label>
+                          <select name="tipo_credito" id="tipo_credito" class="form-select form-control" required>
+                            <option>Seleccione</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                          </select>
+                        </div>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                          <button type="submit" class="btn btn-danger me-md-2 rounded-pill">Enviar mensaje</button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
       </div>
-
     </div>
 
+  </div>
+
       @include('pages.partials.formhome')
+    
 
 @endsection
 

@@ -36,8 +36,33 @@ class IndexController extends Controller
 
     public function store(Request $request){
         $correo = new ContactanosMailable($request->all());
-        Mail::to('sebas25211@hotmail.com')->send($correo);
+        $envio = Mail::to('sebas25211@hotmail.com')->send($correo);
     
-        return "Mensaje enviado";
+        return "Mensaje enviado " . $envio;
+    }
+
+    public function sendMailCredito(Request $request){
+        $to = "sebas31051999@gmail.com";
+        $subject = "Solicitud de Crédito - Casa Credito Promotora";
+        $message = "<br><strong>Lead Créditos</strong>
+            <br>Cédula:" . strip_tags($request->cedula) ."
+            <br>Nombre: " . strip_tags($request->nombre) ."
+            <br>Teléfono: " . strip_tags($request->telefono_celular) ."
+            <br>Email: " . strip_tags($request->correo) ."
+            <br>Mensaje: " . strip_tags($request->mensaje) ."
+            <br>Monto: $ " . strip_tags($request->monto) ."
+            <br>Tipo de crédito: " . strip_tags($request->tipo_credito) ."
+        ";
+
+        $header = "From: <admin@casacreditopromotora.com>" . "\r\n" .
+                "MIME-Version: 1.0" . "\r\n" .
+                "Content-Type:text/html;charset=UTF-8" . "\r\n";
+
+        if(mail("sebas25211@hotmail.com", "Subject prueba", "Message prueba", $header)){
+            return "Correo enviado con exito";
+        } else {
+            return "Error al enviar correo";
+        }
+        
     }
 }
