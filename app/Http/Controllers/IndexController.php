@@ -42,7 +42,7 @@ class IndexController extends Controller
     }
 
     public function sendMailCredito(Request $request){
-        $to = "sebas31051999@gmail.com";
+        $to = "sebas25211@hotmail.com";
         $subject = "Solicitud de Crédito - Casa Credito Promotora";
         $message = "<br><strong>Lead Créditos</strong>
             <br>Cédula:" . strip_tags($request->cedula) ."
@@ -58,7 +58,7 @@ class IndexController extends Controller
                 "MIME-Version: 1.0" . "\r\n" .
                 "Content-Type:text/html;charset=UTF-8" . "\r\n";
 
-        if(mail("sebas25211@hotmail.com", "Subject prueba", "Message prueba", $header)){
+        if(mail($to, $subject, $message, $header)){
             return "Correo enviado con exito";
         } else {
             return "Error al enviar correo";
