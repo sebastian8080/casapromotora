@@ -36,7 +36,7 @@ Route::get('/blog', [IndexController::class, 'redirectToBlog'])->name('pages.new
 Route::get('/nuestro-equipo', function () {return view('pages.equipo');})->name('pages.equipo');
 
 Route::get('/proyectos/{nombreProyecto}/{num_department?}', [ProjectController::class, 'viewProject'])->name('projects.viewProject');
-Route::post('/proyectos-interest', [ProjectController::class, 'sendEmail'])->name("sendEmail.projects");
+Route::post('/proyectos-interest/{nombreProyecto}', [ProjectController::class, 'sendEmail'])->name("sendEmail.projects");
 // Route::get('/proyectos/{nombreProyecto}/{departamento}', [ProjectController::class, 'changeDepartment'])->name('changeDepartment');
 
 //Ruta para mostrar un blog en especifico - PRUEBA
@@ -44,8 +44,9 @@ Route::get('/noticias/blog', function(){return view('pages.blog');})->name('blog
 
 //RUTA PARA MOSTRAR LA PAGINA PARTNERS -> ARQUITECTOS
 Route::get('/socios/construye', function(){return view('pages.construye');})->name('socios.construye');
-Route::get('/socios/dolmen/catalogo', [PartnersController::class, 'index'])->name('socios.dolmen.catalogo');
 Route::get('/socios/dolmen', [PartnersController::class, 'indexDolmen'])->name('socios.dolmen');
+Route::get('/socios/dolmen/catalogo', [PartnersController::class, 'index'])->name('socios.dolmen.catalogo');
+Route::get('/socios/dolmen/catalogo/1', function(){ return view('pages.product');});
 Route::get('/socios/dolmen/{categoria}', [PartnersController::class, 'showCategory'])->name('socios.dolmen.categoria');
 
 //RUTA PARA ENVIAR EMAIL PRUEBA

@@ -56,7 +56,7 @@
         font-size: 13px;
       }
 
-      .inputs #btnLlamar{
+      .inputs #btnEnviar{
         background-color: rgb(224, 81, 78);
         text-decoration: none;
         color: #ffffff;
@@ -325,19 +325,20 @@
           <p class="fw-bold">QUIERO MAS INFORMACION</p>
           <hr>
           <p>Contáctanos y recibe la mejor asesoría</p>
-          <form class="inputs">
+          <form class="inputs" action="{{ route('sendEmail.projects', [$data['nombreProyecto']]) }}" method="POST">
+            @csrf
             <div class="mb-3 d-flex">
-              <input type="text" class="form-control" id="nombre" placeholder="Nombre y Apellido">
-              <input type="number" class="form-control" id="telefono" placeholder="Teléfono">
+              <input type="text" class="form-control" id="nombre" placeholder="Nombre y Apellido" required>
+              <input type="number" class="form-control" id="telefono" placeholder="Teléfono" required>
             </div>
             <div class="mb-3">
-              <input type="email" class="form-control" id="email" placeholder="Email">
+              <input type="email" class="form-control" id="email" placeholder="Email" required>
             </div>
             <div class="mb-3">
               <textarea class="form-control" name="mensaje" id="mensaje" rows="4">Hola, me interesa este inmueble y quiero que me contacten. Gracias</textarea>
             </div>
             <div class="d-grid gap-2">
-              <a id="btnLlamar" class="btn" href="">Llamar</a>
+              <button id="btnEnviar" type="submit" class="btn">Enviar</button>
               <a id="btnWhatsapp" class="btn" href="">Contactar por Whatsapp <i id="iconwpp" class="fab fa-whatsapp"></i></a>
             </div>
           </form>
@@ -378,7 +379,6 @@
         allowfullscreen="" 
         loading="lazy"></iframe>
     </div>
-    {{-- <div class="row mt-3" style="background-color: gray; width: 100; height: 100px"> --}}
     
     </div>
     <div class="row mt-5 mb-3">
