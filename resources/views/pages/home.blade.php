@@ -221,8 +221,9 @@
                           <label for="tipo_credito" class="form-label">Tipo de crédito</label>
                           <select name="tipo_credito" id="tipo_credito" class="form-control" required>
                             <option value="">Seleccione</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
+                            <option value="Inmobiliario">Inmobiliario</option>
+                            <option value="Vivienda">Vivienda</option>
+                            <option value="Productivo">Productivo</option>
                           </select>
                         </div>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
