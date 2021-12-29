@@ -328,11 +328,11 @@
           <form class="inputs" action="{{ route('sendEmail.projects', [$data['nombreProyecto']]) }}" method="POST">
             @csrf
             <div class="mb-3 d-flex">
-              <input type="text" class="form-control" id="nombre" placeholder="Nombre y Apellido" required>
-              <input type="number" class="form-control" id="telefono" placeholder="Teléfono" required>
+              <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre y Apellido" required>
+              <input type="number" class="form-control" id="telefono" name="telefono" placeholder="Teléfono" required>
             </div>
             <div class="mb-3">
-              <input type="email" class="form-control" id="email" placeholder="Email" required>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
             </div>
             <div class="mb-3">
               <textarea class="form-control" name="mensaje" id="mensaje" rows="4">Hola, me interesa este inmueble y quiero que me contacten. Gracias</textarea>
