@@ -219,8 +219,8 @@
                         </div>
                         <div class="mb-2">
                           <label for="tipo_credito" class="form-label">Tipo de crédito</label>
-                          <select name="tipo_credito" id="tipo_credito" class="form-select form-control" required>
-                            <option>Seleccione</option>
+                          <select name="tipo_credito" id="tipo_credito" class="form-control" required>
+                            <option value="">Seleccione</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                           </select>
@@ -237,10 +237,33 @@
           </div>
       </div>
     </div>
-
   </div>
 
-      @include('pages.partials.formhome')
+  @include('pages.partials.formhome')
+
+  @if (session('report'))
+    @php
+     echo "
+          <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
+          <script>
+              swal('Se ha enviado el correo', 'Nos pondremos en contacto lo antes posible!', 'success');
+          </script>
+          ";    
+    @endphp
+  @endif
+
+  @if (session('validGeneral'))
+    @php
+   echo "
+        <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
+        <script>
+            swal('Información enviada con éxito', 'Nos pondremos en contacto lo antes posible!', 'success');
+        </script>
+        ";    
+    @endphp
+  @endif
+
+  
     
 
 @endsection

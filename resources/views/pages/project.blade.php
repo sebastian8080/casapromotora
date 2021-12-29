@@ -206,6 +206,7 @@
 
       <!-- Modal Header -->
       <div class="modal-header">
+        <h1>{{ $data['nombreProyecto']}}</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
 
