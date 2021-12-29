@@ -456,7 +456,7 @@ class ProjectController extends Controller
             "MIME-Version: 1.0" . "\r\n" .
             "Content-Type:text/html;charset=UTF-8" . "\r\n";
 
-        mail("sebas25211@hotmail.com", $subject, $message, $header);
+        mail("info@casacredito.com,hserrano@casacredito.com", $subject, $message, $header);
         
         $request->session()->flash('report', 'Se ha enviado el correo');
 

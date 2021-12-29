@@ -82,8 +82,6 @@
           <div class="carrusel m-4">
             <div id="carouselExampleControls2" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-inner">
-                {{-- @forelse ($projects as $project) --}}
-                          {{-- @if ($loop->index==0)  @endif--}}
                 <div class="carousel-item active">
                   <img id="imgBanner1" src="{{ asset('img/projects/adra/1.webp') }}" class="d-block img-fluid" width="100%" alt="Proyecto Adra Casa Credito Promotora">
                   <div class="carousel-caption d-md-block">
@@ -99,14 +97,12 @@
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img id="imgBanner3" src="{{ asset('img/projects/toscana/1.jpg') }}" class="d-block img-fluid" width="100%" alt="...">
+                  <img id="imgBanner3" src="{{ asset('img/projects/toscana/1.webp') }}" class="d-block img-fluid" width="100%" alt="...">
                   <div class="carousel-caption d-md-block">
                     <a style="text-decoration: none" href="{{ route('projects.viewProject', 'Toscana') }}"><h3 class="texto-imagenes">TOSCANA</h3></a>
                     <p>Condominios con acabados modernos</p>
                   </div>
                 </div>
-                {{-- @empty
-                @endforelse --}}
               </div>
               <button id="btn-left-home-carousel" class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
