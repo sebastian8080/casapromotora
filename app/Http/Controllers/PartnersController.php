@@ -35,5 +35,10 @@ class PartnersController extends Controller
         $products = Product::where('codigo_categoria', $codigo_categoria)->get();
         return view('pages.products', compact('categorias', 'products'));
     }
+
+    public function showProduct($codigo){
+        $product = Product::where('codigo', $codigo)->first();        
+        return view('pages.product', compact('product'));
+    }
    
 }

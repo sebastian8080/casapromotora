@@ -46,7 +46,7 @@ Route::get('/noticias/blog', function(){return view('pages.blog');})->name('blog
 Route::get('/socios/construye', function(){return view('pages.construye');})->name('socios.construye');
 Route::get('/socios/dolmen', [PartnersController::class, 'indexDolmen'])->name('socios.dolmen');
 Route::get('/socios/dolmen/catalogo', [PartnersController::class, 'index'])->name('socios.dolmen.catalogo');
-Route::get('/socios/dolmen/catalogo/1', function(){ return view('pages.product');});
+Route::get('/socios/dolmen/catalogo/{codigo}', [PartnersController::class, 'showProduct'])->name('socios.dolmen.producto');
 Route::get('/socios/dolmen/{categoria}', [PartnersController::class, 'showCategory'])->name('socios.dolmen.categoria');
 
 //RUTA PARA ENVIAR EMAIL PRUEBA

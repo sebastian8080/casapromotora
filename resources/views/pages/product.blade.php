@@ -10,21 +10,17 @@
             <div class="col-sm-2"></div>
             <div class="col-sm-1">
                 @for ($i = 0; $i < 2; $i++)
-                    <img class="img-fluid" src="https://dolmen.com.ec/wp-content/uploads/2021/05/bloque_rayado.png" alt="">
+                    <img class="img-fluid" src="{{ asset('img/partners/products/'.$product->url_image) }}" alt="">
                 @endfor
             </div>
             <div class="col-sm-3">
                 <div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <img src="https://dolmen.com.ec/wp-content/uploads/2021/05/bloque_rayado.png" class="d-block w-100" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="https://dolmen.com.ec/wp-content/uploads/2021/05/bloque_rayado.png" class="d-block w-100" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="https://dolmen.com.ec/wp-content/uploads/2021/05/bloque_rayado.png" class="d-block w-100" alt="...">
-                      </div>
+                        @for ($i = 1; $i < 3; $i++)
+                            <div class="carousel-item @if($i == 1) active @endif">
+                                <img class="img-fluid" src="{{url('img/partners/products/'.$product->url_image)}}" class="d-block w-100" alt="...">
+                            </div>
+                        @endfor
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -37,9 +33,9 @@
                   </div>
             </div>
             <div class="col-sm-4">
-                <h2>Titulo</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui nobis tempore minima odio, doloremque cumque rerum placeat repellat recusandae nesciunt tenetur aut velit, cum ut iure magnam labore blanditiis ullam.</p>
-                <p>Precio</p>
+                <h2>{{ $product->descripcion}}</h2>
+                <p>TIPO: {{ $product->unidad_tipo}}</p>
+                <p>PVP: {{ $product->pvp}}</p>
                 <div class="row">
                     <div class="col-sm-5">
                         <div class="input-group">

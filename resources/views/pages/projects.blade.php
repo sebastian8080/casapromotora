@@ -28,29 +28,39 @@
                     <i class="fas fa-building" style="margin-right: 5px;"></i><label>Departamentos</label>
                 </div>
             </div>
-            <div class="col-sm-6 d-flex align-items-center">
-                <div>
+            <div class="col-sm-6 d-flex align-items-center justify-content-center">
+                <div style="background-color: rgb(249, 249, 249); padding: 20px; width: 100%;">
                     <h1 class="fw-bold pt-1" style="color: #ffffff; -webkit-text-stroke: 1px rgb(162, 157, 157);">ADRA</h1>
-                    <i class="fas fa-map-marker-alt mx-1" style="color: gray"></i><b>Cuenca - Sector Edificio Vista Linda</b>
+                    <h3 style="font-weight: bold">DEPARTAMENTOS</h3>
+                    <i class="fas fa-map-marker-alt mx-1" style="color: red"></i><b>Cuenca - Sector Edificio Vista Linda</b>
                     <div class="row mt-4">
-                        <div class="col-sm-4 d-flex">
-                            <i class="fas fa-expand-arrows-alt" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
-                            <p>97 a 226 M2</p>
+                        <div class="col-sm-6">
+                            <div class="d-flex">
+                                <i class="fas fa-expand-arrows-alt" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
+                                <p>Área total: 97,45 a 226,17 m<sup>2</sup></p>
+                            </div>
+                            <div class="d-flex">
+                                <i class="fas fa-ruler-vertical" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
+                                <p>Área interior: 70,13 a 143,42 m<sup>2</sup></p>
+                            </div>
+                            <div class="d-flex">
+                                <i class="fas fa-car" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
+                                <p>Parqueaderos: 1 a 2 </p>
+                            </div>
                         </div>
-                        <div class="col-sm-4 d-flex">
-                            <i class="fas fa-bed" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
-                            <p>1 a 3 dormitorios</p>
-                        </div>
-                        <div class="col-sm-4 d-flex">
-                            <i class="fas fa-tree" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
-                            <p>Áreas Verdes</p>
+                        <div class="col-sm-6">
+                            <div class="d-flex">
+                                <i class="fas fa-bed" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
+                                <p>1 a 3 dormitorios</p>
+                            </div>
+                            <div class="d-flex">
+                                <i class="fas fa-tree" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
+                                <p>Áreas Verdes</p>
+                            </div>
                         </div>
                     </div>
-                    <p class="mt-1">
-                        Departamentos de lujo listos para entregar en una vista insuperable
-                    </p>
-                    <div class="d-grid gap-2 col-6 mx-auto">
-                        <a class="btn btn-outline-secondary" href="{{ route('projects.viewProject', 'Adra') }}">Ver proyecto</a>
+                    <div>
+                        <a class="btn btn-outline-danger" href="{{ route('projects.viewProject', 'Adra') }}">Ver proyecto <i class="fas fa-chevron-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -59,29 +69,39 @@
         <hr data-aos="fade-up" style="color: rgb(166, 177, 176); width: 20%; margin-left: 40%" class="mt-5 mb-5">
 
         <div class="row mb-3" data-aos="fade-up">
-            <div class="col-sm-6 mb-3 d-flex align-items-center mt-5"> 
-                <div class="pb-5 mb-1">
+            <div class="col-sm-6 mb-3 mt-5"> 
+                <div class="pb-5 mb-1 float-end" style="background-color: rgb(249, 249, 249); padding: 25px; width: 100%;">
                     <h1 class="fw-bold" style="color: #ffffff; -webkit-text-stroke: 1px rgb(162, 157, 157);">FUTURA NARANCAY</h1>
-                    <i class="fas fa-map-marker-alt mx-1" style="color: gray"></i><b>Cuenca - Narancay</b>
+                    <h3 style="font-weight: bold">DEPARTAMENTOS</h3>
+                    <i class="fas fa-map-marker-alt mx-1" style="color: red"></i><b>Cuenca - Narancay</b>
                     <div class="row mt-4">
-                        <div class="col-sm-4 d-flex">
-                            <i class="fas fa-expand-arrows-alt" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
-                            <p>84 a 247 M2</p>
+                        <div class="col-sm-6">
+                            <div class="d-flex">
+                                <i class="fas fa-expand-arrows-alt" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
+                                <p>Área total: 81,72 a 221,8 m<sup>2</sup></p>
+                            </div>
+                            <div class="d-flex">
+                                <i class="fas fa-ruler-vertical" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
+                                <p>Área interior: 54,77 a 101,31 m<sup>2</sup></p>
+                            </div>
+                            <div class="d-flex">
+                                <i class="fas fa-car" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
+                                <p>Parqueaderos: 1</p>
+                            </div>
                         </div>
-                        <div class="col-sm-4 d-flex">
-                            <i class="fas fa-bed" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
-                            <p>1 a 3 dormitorios</p>
-                        </div>
-                        <div class="col-sm-4 d-flex">
-                            <i class="fas fa-tree" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
-                            <p>Áreas Verdes</p>
+                        <div class="col-sm-6">
+                            <div class="d-flex">
+                                <i class="fas fa-bed" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
+                                <p>1 a 3 dormitorios</p>
+                            </div>
+                            <div class="d-flex">
+                                <i class="fas fa-tree" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
+                                <p>Áreas Verdes</p>
+                            </div>
                         </div>
                     </div>
-                    <p class="mt-1">
-                        Departamentos con una experiencia única en diseño y comodidad
-                    </p>
-                    <div class="d-grid gap-2 col-6 mx-auto">
-                        <a class="btn btn-outline-secondary" href="{{route('projects.viewProject', 'Futura Narancay')}}">Ver proyecto</a>
+                    <div>
+                        <a class="btn btn-outline-danger" href="{{route('projects.viewProject', 'Futura Narancay')}}">Ver proyecto <i class="fas fa-chevron-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -101,29 +121,39 @@
                     <i class="fas fa-home" style="margin-right: 5px;"></i><label>Condominios</label>
                 </div>
             </div>
-            <div class="col-sm-6 d-flex align-items-center">
-                <div>
+            <div class="col-sm-6 d-flex align-items-center justify-content-center">
+                <div style="background-color: rgb(249, 249, 249); padding: 25px; width: 100%">
                     <h1 class="fw-bold pt-1" style="color: #ffffff; -webkit-text-stroke: 1px rgb(162, 157, 157);">TOSCANA</h1>
-                    <i class="fas fa-map-marker-alt mx-1" style="color: gray"></i><b>Cuenca - Challuabamba</b>
+                    <h3 style="font-weight: bold">CONDOMINIOS</h3>
+                    <i class="fas fa-map-marker-alt mx-1" style="color: red"></i><b>Cuenca - Challuabamba</b>
                     <div class="row mt-4">
-                        <div class="col-sm-4 d-flex">
-                            <i class="fas fa-expand-arrows-alt" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
-                            <p>160 a 182 M2</p>
+                        <div class="col-sm-6">
+                            <div class="d-flex">
+                                <i class="fas fa-expand-arrows-alt" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
+                                <p>Área total: 153,27 a 164,57 m<sup>2</sup></p>
+                            </div>
+                            <div class="d-flex">
+                                <i class="fas fa-ruler-vertical" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
+                                <p>Área interior: 77,37 a 83,09 m<sup>2</sup></p>
+                            </div>
+                            <div class="d-flex">
+                                <i class="fas fa-car" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
+                                <p>Parqueaderos: 1</p>
+                            </div>
                         </div>
-                        <div class="col-sm-4 d-flex">
-                            <i class="fas fa-bed" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
-                            <p>1 a 3 dormitorios</p>
-                        </div>
-                        <div class="col-sm-4 d-flex">
-                            <i class="fas fa-tree" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
-                            <p>Áreas Verdes</p>
+                        <div class="col-sm-6">
+                            <div class="d-flex">
+                                <i class="fas fa-bed" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
+                                <p>1 a 3 dormitorios</p>
+                            </div>
+                            <div class="d-flex">
+                                <i class="fas fa-tree" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
+                                <p>Áreas Verdes</p>
+                            </div>
                         </div>
                     </div>
-                    <p class="mt-1">
-                        La mejor experiencia en condominios con acabados modernos
-                    </p>
-                    <div class="d-grid gap-2 col-6 mx-auto">
-                        <a class="btn btn-outline-secondary" href="{{ route('projects.viewProject', 'Toscana') }}">Ver proyecto</a>
+                    <div>
+                        <a class="btn btn-outline-danger" href="{{ route('projects.viewProject', 'Toscana') }}">Ver proyecto <i class="fas fa-chevron-right"></i></a>
                     </div>
                 </div>
             </div>
