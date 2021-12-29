@@ -3,6 +3,7 @@
 @section('title', 'Proyecto ' . $data['nombreProyecto'])
 
 @section('content-head')
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <style>
       body{
         color: rgb(45, 67, 71)
@@ -325,14 +326,14 @@
           <p class="fw-bold">QUIERO MAS INFORMACION</p>
           <hr>
           <p>Contáctanos y recibe la mejor asesoría</p>
-          <form class="inputs" action="{{ route('sendEmail.projects', [$data['nombreProyecto']]) }}" method="POST">
+          <form id="form" class="inputs" action="{{ route('sendEmail.projects', [$data['nombreProyecto']]) }}" method="POST">
             @csrf
             <div class="mb-3 d-flex">
-              <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre y Apellido" required>
-              <input type="number" class="form-control" id="telefono" name="telefono" placeholder="Teléfono" required>
+              <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre y Apellido" autocomplete="off" required>
+              <input type="number" class="form-control" id="telefono" name="telefono" placeholder="Teléfono" autocomplete="off" required>
             </div>
             <div class="mb-3">
-              <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Email" autocomplete="off" required>
             </div>
             <div class="mb-3">
               <textarea class="form-control" name="mensaje" id="mensaje" rows="4">Hola, me interesa este inmueble y quiero que me contacten. Gracias</textarea>
@@ -465,12 +466,24 @@
   </div>
 </div>
 
+@if (session('report'))
+  @php
+     echo "
+          <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
+          <script>
+              swal('Se ha enviado el correo', 'Nos pondremos en contacto lo antes posible!', 'success');
+          </script>
+          ";    
+  @endphp
+@endif
+
+
   
     
 @endsection
 
 @section('section-scripts')
-    <script src="{{ asset('js/partners.js') }}"></script>
+<script src="{{ asset('js/partners.js') }}"></script>
     <script>
       // Open the Modal
       function openModal() {
