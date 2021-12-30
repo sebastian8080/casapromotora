@@ -155,7 +155,7 @@
 
   <div class="container pt-5 mt-3">
     <h1> {{ Str::upper($data['tipo'] . "S " . $data['nombreProyecto']) }}</h1>
-    <p>Ubicación: {{ $data['ciudad'] }} > {{ $data['canton'] }} > {{ $data['sector'] }}</p>
+    <h5><i class="fas fa-map-marker-alt mx-1" style="color: red"></i><b> Ubicación:</b> {{ $data['ciudad'] }} > {{ $data['canton'] }} > {{ $data['sector'] }}</h5>
   </div>
 
     <div class="imgs-header mt-3">
@@ -320,7 +320,7 @@
     <div class="col-sm-3">
       <div class="headerForm">
         <h5>SEPARE SU DEPARTAMENTO</h5>
-        <h3> CON $5.000</h3>
+        <h3> CON ${{ $data['monto_reserva']}}</h3>
       </div>
       <div class="formEmail rounded" id="myHeader">
         <div style="padding-top: 20px; padding-left: 15px; padding-right: 15px; padding-bottom: 15px">

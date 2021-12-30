@@ -62,6 +62,7 @@ class ProjectController extends Controller
                     disponen de una excelente y privilegiada vista a la ciudad debido a que se encuentra situada cerca del mirador de Turi.
                 ';
                 $data['tipo'] = "Departamento";
+                $data['monto_reserva'] = "2.500";
                 $data['caracteristicas'] = [
                     'generales' => [
                         'Jardin(es)',
@@ -76,7 +77,6 @@ class ProjectController extends Controller
                     ],
                 ];
                 $data['estado'] = "En construccion";
-                $data['saldo_reserva'] = 5.000;
                 $data['url_google_maps'] = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.769145174731!2d-79.02401558541044!3d-2.9206024395227703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91cd22811a43422d%3A0x6730f8941aab3416!2sEdificio%20Vista%20Linda!5e0!3m2!1ses-419!2sec!4v1639168164971!5m2!1ses-419!2sec";
                 $data['departamentos'] = [
                     1 => [
@@ -129,6 +129,7 @@ class ProjectController extends Controller
                     disfrutaras cada momento con tu familia. Su ubicación hacen de estos departamentos un lugar agradable.  
                 ';
                 $data['tipo'] = "Departamento";
+                $data['monto_reserva'] = "2.000";
                 $data['caracteristicas'] = [
                     'generales' => [
                         'Jardin(es)',
@@ -305,9 +306,10 @@ class ProjectController extends Controller
                     ¡La mejor experciencia en condominios con acabados modernos!
                     <br><br>
                     Un lugar ideal para vivir, con un ambiente acogedor y cálido a la hora de escribir recuerdos inolvidables con toda tu familia. Su ubicación se situa
-                    al norte de la ciudad en Chaullabamba. 
+                    al norte de la ciudad en Challuabamba. 
                 ';
                 $data['tipo'] = "Condominio";
+                $data['monto_reserva'] = "2.500";
                 $data['caracteristicas'] = [
                     'generales' => [
                         'Jardin(es)',
@@ -338,7 +340,7 @@ class ProjectController extends Controller
                         'num_habitaciones' => 3,
                         'num_baños' => 3,
                         'parqueadero' => 1,
-                        'img_plano' => 'plano_condominio1.jpg'
+                        'img_plano' => 'plano_condominio1.webp'
                     ],
                     2 => [
                         'num_departamento' => 2,
@@ -354,7 +356,7 @@ class ProjectController extends Controller
                         'num_habitaciones' => 3,
                         'num_baños' => 3,
                         'parqueadero' => 1,
-                        'img_plano' => 'plano_condominio2.jpg'
+                        'img_plano' => 'plano_condominio2.webp'
                     ],
                     3 => [
                         'num_departamento' => 3,
@@ -370,7 +372,7 @@ class ProjectController extends Controller
                         'num_habitaciones' => 3,
                         'num_baños' => 3,
                         'parqueadero' => 1,
-                        'img_plano' => 'plano_condominio3.jpg'
+                        'img_plano' => 'plano_condominio3.webp'
                     ],
                     4 => [
                         'num_departamento' => 4,
@@ -386,7 +388,7 @@ class ProjectController extends Controller
                         'num_habitaciones' => 3,
                         'num_baños' => 3,
                         'parqueadero' => 1,
-                        'img_plano' => 'plano_condominio4.jpg'
+                        'img_plano' => 'plano_condominio4.webp'
                     ],
                     5 => [
                         'num_departamento' => 5,
@@ -402,7 +404,7 @@ class ProjectController extends Controller
                         'num_habitaciones' => 3,
                         'num_baños' => 3,
                         'parqueadero' => 1,
-                        'img_plano' => 'plano_condominio5.jpg'
+                        'img_plano' => 'plano_condominio5.webp'
                     ],
                     6 => [
                         'num_departamento' => 6,
@@ -418,7 +420,7 @@ class ProjectController extends Controller
                         'num_habitaciones' => 3,
                         'num_baños' => 3,
                         'parqueadero' => 1,
-                        'img_plano' => 'plano_condominio6.jpg'
+                        'img_plano' => 'plano_condominio6.webp'
                     ],
                     7 => [
                         'num_departamento' => 7,
@@ -434,7 +436,7 @@ class ProjectController extends Controller
                         'num_habitaciones' => 3,
                         'num_baños' => 3,
                         'parqueadero' => 1,
-                        'img_plano' => 'plano_condominio7.jpg'
+                        'img_plano' => 'plano_condominio7.webp'
                     ]
                 ];
                 break;
