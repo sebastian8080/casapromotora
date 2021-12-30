@@ -159,7 +159,7 @@ class ProjectController extends Controller
                         'num_habitaciones' => 1,
                         'num_baños' => 1,
                         'parqueadero' => 1,
-                        'img_plano' => 'plano_departamento1.jpg'
+                        'img_plano' => 'plano_departamento1.webp'
                     ],
                     2 => [
                         'num_departamento' => 2,
@@ -175,7 +175,7 @@ class ProjectController extends Controller
                         'num_habitaciones' => 2,
                         'num_baños' => 2,
                         'parqueadero' => 1,
-                        'img_plano' => 'plano_departamento2.jpg'
+                        'img_plano' => 'plano_departamento2.webp'
                     ],
                     3 => [
                         'num_departamento' => 3,
@@ -191,7 +191,7 @@ class ProjectController extends Controller
                         'num_habitaciones' => 2,
                         'num_baños' => 2,
                         'parqueadero' => 1,
-                        'img_plano' => 'plano_departamento3.jpg'
+                        'img_plano' => 'plano_departamento3.webp'
                     ],
                     4 => [
                         'num_departamento' => 4,
@@ -207,7 +207,7 @@ class ProjectController extends Controller
                         'num_habitaciones' => 3,
                         'num_baños' => 2,
                         'parqueadero' => 1,
-                        'img_plano' => 'plano_departamento4.jpg'
+                        'img_plano' => 'plano_departamento4.webp'
                     ],
                     5 => [
                         'num_departamento' => 5,
@@ -223,7 +223,7 @@ class ProjectController extends Controller
                         'num_habitaciones' => 3,
                         'num_baños' => 2,
                         'parqueadero' => 1,
-                        'img_plano' => 'plano_departamento5.jpg'
+                        'img_plano' => 'plano_departamento5.webp'
                     ],
                     6 => [
                         'num_departamento' => 6,
@@ -239,7 +239,7 @@ class ProjectController extends Controller
                         'num_habitaciones' => 3,
                         'num_baños' => 3,
                         'parqueadero' => 1,
-                        'img_plano' => 'plano_departamento6.jpg'
+                        'img_plano' => 'plano_departamento6.webp'
                     ],
                     7 => [
                         'num_departamento' => 7,
@@ -255,7 +255,7 @@ class ProjectController extends Controller
                         'num_habitaciones' => 3,
                         'num_baños' => 2,
                         'parqueadero' => 1,
-                        'img_plano' => 'plano_departamento7.jpg'
+                        'img_plano' => 'plano_departamento7.webp'
                     ],
                     8 => [
                         'num_departamento' => 8,
@@ -271,7 +271,7 @@ class ProjectController extends Controller
                         'num_habitaciones' => 3,
                         'num_baños' => 2,
                         'parqueadero' => 1,
-                        'img_plano' => 'plano_departamento8.jpg'
+                        'img_plano' => 'plano_departamento8.webp'
                     ],
                     9 => [
                         'num_departamento' => 9,
@@ -287,7 +287,7 @@ class ProjectController extends Controller
                         'num_habitaciones' => 3,
                         'num_baños' => 2,
                         'parqueadero' => 1,
-                        'img_plano' => 'plano_departamento9.jpg'
+                        'img_plano' => 'plano_departamento9.webp'
                     ]
 
                 ];
