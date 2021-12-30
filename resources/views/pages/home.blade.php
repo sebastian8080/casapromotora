@@ -3,7 +3,7 @@
 @section('title', 'Inicio')
 
 @section('content-head')
- 
+<meta name="google-site-verification" content="Y-9EP4y_a2rT6CR0jEqKRGpf7EhQ9yJ2jiUSz1BVs60" />
 @endsection
     
 @section('content')
