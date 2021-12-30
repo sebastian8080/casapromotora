@@ -22,13 +22,13 @@
     <div class="container">
         <hr data-aos="fade-up" style="color: rgb(166, 177, 176);  width: 20%; margin-left: 40%" class="mt-5 mb-5">
         <div class="row mt-1 pt-1" data-aos="fade-up">
-            <div class="col-sm-6 position-relative">
-                <img class="img-fluid rounded mx-auto d-block img-project" style="width: 100%; height: 100%;" src="{{ asset('img/projects/adra/1.webp') }}" alt="Proyecto Adra">
+            <div class="col-sm-12 col-md-12 col-lg-6 position-relative">
+                <img class="img-fluid rounded mx-auto d-block img-project" src="{{ asset('img/projects/adra/1.webp') }}" alt="Proyecto Adra">
                 <div class="position-absolute top-0 end-0 border" style="margin-right: 0px; margin-top: 20px; font-size: 15px; background-color: rgb(219, 219, 224); padding-right: 5px; padding-left:10px; box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
                     <i class="fas fa-building" style="margin-right: 5px; color:gray"></i><label style="color: gray; font-size:12px; padding-right: 40px;">EN VENTA</label>
                 </div>
             </div>
-            <div class="col-sm-6 d-flex align-items-center justify-content-center">
+            <div class="col-sm-12 col-md-12 col-lg-6 d-flex align-items-center justify-content-center">
                 <div style="background-color: rgb(249, 249, 249); padding: 20px; width: 100%;">
                     <h1 class="fw-bold pt-1" style="color: #ffffff; -webkit-text-stroke: 1px rgb(162, 157, 157);">ADRA</h1>
                     <h3 style="font-weight: bold;">DEPARTAMENTOS</h3>
@@ -69,7 +69,7 @@
         <hr data-aos="fade-up" style="color: rgb(166, 177, 176); width: 20%; margin-left: 40%" class="mt-5 mb-5">
 
         <div class="row mb-3" data-aos="fade-up">
-            <div class="col-sm-6 mb-3 mt-5"> 
+            <div id="row-col6-futnar" class="col-sm-12 col-md-12 col-lg-6 mb-3 mt-4"> 
                 <div class="pb-5 mb-1" style="background-color: rgb(249, 249, 249); padding: 25px; width: 100%;">
                     <h1 class="fw-bold" style="color: #ffffff; -webkit-text-stroke: 1px rgb(162, 157, 157);">FUTURA NARANCAY</h1>
                     <h3 style="font-weight: bold">DEPARTAMENTOS</h3>
@@ -105,8 +105,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 mb-n5 pb-n5 position-relative">
-                <img class="img-fluid rounded mx-auto d-block img-project" style="width: 100%; height: 100%;" src="{{ asset('img/projects/futuranarancay/1.webp') }}" alt="Futura Narancay">
+            <div class="col-sm-12 col-md-12 col-lg-6 mb-n5 pb-n5 position-relative">
+                <img class="img-fluid rounded mx-auto d-block img-project" src="{{ asset('img/projects/futuranarancay/1.webp') }}" alt="Futura Narancay">
                 <div class="position-absolute top-0 end-0 border" style="margin-right: 0px; margin-top: 20px; font-size: 15px; background-color: rgb(219, 219, 224); padding-right: 5px; padding-left:10px; box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
                     <i class="fas fa-building" style="margin-right: 5px; color: gray"></i><label style="color: gray; font-size:12px; padding-right: 40px;">DESARROLLO</label>
                 </div>
@@ -115,13 +115,13 @@
 
         <hr data-aos="fade-up" style="color: rgb(166, 177, 176);  width: 20%; margin-left: 40%" class="mt-5 mb-5">
         <div class="row mt-1 pt-1 mb-4" data-aos="fade-up">
-            <div class="col-sm-6 position-relative">
-                <img class="img-fluid rounded mx-auto d-block img-project" style="width: 100%; height: 100%;" src="{{ asset('img/projects/toscana/1.webp') }}" alt="Proyecto Toscana">
+            <div class="col-sm-12 col-md-12 col-lg-6 position-relative">
+                <img class="img-fluid rounded mx-auto d-block img-project" src="{{ asset('img/projects/toscana/1.webp') }}" alt="Proyecto Toscana">
                 <div class="position-absolute top-0 end-0 border" style="margin-right: 0px; margin-top: 20px; font-size: 15px; background-color: rgb(219, 219, 224); padding-right: 5px; padding-left:10px; box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
                     <i class="fas fa-building" style="margin-right: 5px; color: gray"></i><label style="color: gray; font-size:12px; padding-right: 40px;">CONSTRUCCION</label>
                 </div>
             </div>
-            <div class="col-sm-6 d-flex align-items-center justify-content-center">
+            <div class="col-sm-12 col-md-12 col-lg-6 d-flex align-items-center justify-content-center">
                 <div style="background-color: rgb(249, 249, 249); padding: 25px; width: 100%">
                     <h1 class="fw-bold pt-1" style="color: #ffffff; -webkit-text-stroke: 1px rgb(162, 157, 157);">TOSCANA</h1>
                     <h3 style="font-weight: bold">CONDOMINIOS</h3>
