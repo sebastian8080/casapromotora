@@ -38,21 +38,22 @@
                 </iframe>
             </div>
             <div class="col-sm-7 mt-3">
-                <form>
+                <form action="{{ route('send.mail.contact') }}" method="POST">
+                    @csrf
                     <h3 class="mb-4">Mis Datos</h3>
                     <!-- Name input -->
                     <div class="form-outline mb-4">
-                    <input type="text" class="form-control" placeholder="Nombre*" />
+                    <input type="text" name="nombre" class="form-control" placeholder="Nombre y Apellido*" autocomplete="off" required/>
                     </div>
                 
                     <!-- Email input -->
                     <div class="row">
                         <div class="col form-outline mb-4">
-                        <input type="text" class="form-control" placeholder="Teléfono*"/>
+                        <input type="text" name="telefono" class="form-control" placeholder="Teléfono*" autocomplete="off" required/>
                         </div>
 
                         <div class="col form-outline mb-4">
-                            <input type="email" class="form-control" placeholder="Email*"/>
+                            <input type="email" name="email" class="form-control" placeholder="Email*" autocomplete="off" required/>
                         </div>
                     </div>
 
@@ -60,15 +61,16 @@
 
                     <div class="row">
                         <div class="col">
-                            <select class="form-select mb-4" aria-label="Default select example">
-                                <option selected>Elija</option>
-                                <option value="1">Proyecto1</option>
-                                <option value="2">Proyecto2</option>
+                            <select class="form-control mb-4" name="interes" required>
+                                <option value="">Elija</option>
+                                <option value="DEPARTAMENTOS ADRA">Departamentos Adra</option>
+                                <option value="DEPARTAMENTOS FUTURA NARANCAY">Departamentos Futura Narancay</option>
+                                <option value="CONDOMINIOS TOSCANA">Condominios Toscana</option>
                             </select>
                         </div>
                         <div class="col">
-                            <select class="form-select mb-4" aria-label="Default select example">
-                                <option selected>Operación</option>
+                            <select class="form-control mb-4" name="operacion" required>
+                                <option value="">Operación</option>
                                 <option value="1">Venta</option>
                                 <option value="2">Alquiler</option>
                             </select>
@@ -76,34 +78,45 @@
                     </div>
                 
                     <div class="form-outline mb-4">
-                        <input type="number" class="form-control" placeholder="Precio máximo"/>
+                        <input type="number" class="form-control" name="preciomaximo" placeholder="Precio máximo" required>
                     </div>
                     <div class="row">
                         <div class="col">
                             <div class="form-outline mb-4">
-                                <input type="text" class="form-control" placeholder="Población"/>
+                                <input type="text" class="form-control" name="ciudad" placeholder="Ciudad" required>
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-outline mb-4">
-                                <input type="text" class="form-control" placeholder="Zona"/>
+                                <input type="text" class="form-control" name="zona" placeholder="Zona" required>
                             </div>
                         </div>
                     </div>
 
                     <!-- Message input -->
                     <div class="form-outline mb-4">
-                        <textarea class="form-control" rows="5" placeholder="Mensaje*"></textarea>
+                        <textarea class="form-control" rows="5" placeholder="Mensaje*" name="mensaje" required></textarea>
                     </div>
                 
                     <!-- Submit button -->
                     <div class="d-grid gap-2 col-6 mx-auto">
-                        <button type="submit" class="btn btn-outline-secondary btn-block btn-lg mb-5">Enviar</button>
+                        <button type="submit" class="btn btn-outline-danger btn-block btn-lg mb-5">Enviar</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+
+    @if (session('validContact'))
+        @php
+            echo "
+                <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
+                <script>
+                    swal('Se ha enviado su información', 'Nos comunicaremos lo más pronto posible!', 'success');
+                </script>
+                ";    
+        @endphp
+    @endif
 @endsection
 
 @section('section-scripts')

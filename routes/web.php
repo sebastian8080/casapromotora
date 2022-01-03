@@ -52,3 +52,4 @@ Route::get('/socios/dolmen/{categoria}', [PartnersController::class, 'showCatego
 //RUTA PARA ENVIAR EMAIL PRUEBA
 Route::post('/contactanos', [IndexController::class, "store"])->name('contactanos.store');
 Route::post('/solicitud-credito', [IndexController::class, "sendMailCredito"])->name('send.mail.credito');
+Route::post('/contacto-general', [IndexController::class, "sendMailContact"])->name('send.mail.contact');

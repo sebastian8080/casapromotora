@@ -42,7 +42,7 @@ class IndexController extends Controller
             <br>Mensaje: " . strip_tags($request->mensaje) ."
         ";
 
-        $header = "From: <admin@casacreditopromotora.com>" . "\r\n" .
+        $header = "From: <info@casacreditopromotora.com>" . "\r\n" .
                 "MIME-Version: 1.0" . "\r\n" .
                 "Content-Type:text/html;charset=UTF-8" . "\r\n";
 
@@ -66,13 +66,39 @@ class IndexController extends Controller
             <br>Tipo de crédito: " . strip_tags($request->tipo_credito) ."
         ";
 
-        $header = "From: <admin@casacreditopromotora.com>" . "\r\n" .
+        $header = "From: <info@casacreditopromotora.com>" . "\r\n" .
                 "MIME-Version: 1.0" . "\r\n" .
                 "Content-Type:text/html;charset=UTF-8" . "\r\n";
 
         mail($to, $subject, $message, $header);
         
         $request->session()->flash('report', 'Se ha enviado el correo');
+
+        return back();
+    }
+
+    public function sendMailContact(Request $request){
+        $to = "sebas31051999@gmail.com";
+        $subject = "Información de contacto - Casa Crédito Promotora";
+        $message = "<br><strong>Información de contacto</strong>
+        <br>Nombre: " . strip_tags($request->nombre) ."
+        <br>Teléfono: " . strip_tags($request->telefono) ."
+        <br>Email: " . strip_tags($request->email) . "
+        <br>Interes: " . strip_tags($request->interes) . "
+        <br>Operación: " . strip_tags($request->operacion) ."
+        <br>Precio máximo: " . strip_tags($request->preciomaximo) ."
+        <br>Población: " . strip_tags($request->ciudad) ."
+        <br>Zona: " . strip_tags($request->zona) ."
+        <br>Mensaje " . strip_tags($request->mensaje) ."
+        ";
+
+        $header = "From: <info@casacreditopromotora.com>" . "\r\n" .
+                "MIME-Version: 1.0" . "\r\n" .
+                "Content-Type:text/html;charset=UTF-8" . "\r\n";
+
+        mail($to, $subject, $message, $header);
+
+        $request->session()->flash('validContact', 'Se ha enviado el correo');
 
         return back();
     }
