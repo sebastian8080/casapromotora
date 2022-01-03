@@ -126,6 +126,8 @@
           </section>
         </footer>
 
+        <a href="https://api.whatsapp.com/send?phone=++593964085651&text=Deseo%20saber%20m%C3%A1s%20informaci%C3%B3n%20de%20los%20proyectos" class="whatsapp" target="_blank"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
+
     
     @yield('section-scripts')
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

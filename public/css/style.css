@@ -333,6 +333,24 @@ h1{
   filter: brightness(80%);
 }
 
+.whatsapp {
+  position:fixed;
+  width:60px;
+  height:60px;
+  bottom:20px;
+  right:20px;
+  background-color:#25d366;
+  color:#FFF;
+  border-radius:50px;
+  text-align:center;
+  font-size:30px;
+  z-index:100;
+}
+
+.whatsapp-icon {
+  margin-top:13px;
+}
+
 /*END ESTILOS DE BANNER HOME QUITO GUAYAQUIL CUENCA MANTA*/
 
 
