@@ -445,20 +445,22 @@ class ProjectController extends Controller
     }
 
     public function sendEmail(Request $request, $nombreProyecto){
+        $to = "info@casacredito.com,hserrano@casacredito.com";
         $subject = "Proyectos - Casa Credito Promotora";
-        $message = "<br><strong>Interesado en Proyectos</strong>
+        $message = "<br><strong>Lead Proyectos</strong>
             <br>Nombre: " . strip_tags($request->nombre) ."
             <br>Telefono: " . strip_tags($request->telefono) ."
             <br>Email: " . strip_tags($request->email) ."
             <br>Mensaje: " . strip_tags($request->mensaje) ."
             <br>Proyecto: " . strip_tags($nombreProyecto) . "
+            <div style='display:flex'><img width='60' height='35' src='http://casacreditopromotora.com/logo-recortado.png' /><h3>Casa Crédito Promotora</h3></div>
         ";
 
         $header = "From: <proyectos@ccpromotora.com>" . "\r\n" .
             "MIME-Version: 1.0" . "\r\n" .
             "Content-Type:text/html;charset=UTF-8" . "\r\n";
 
-        mail("info@casacredito.com,hserrano@casacredito.com", $subject, $message, $header);
+        mail($to, $subject, $message, $header);
         
         $request->session()->flash('report', 'Se ha enviado el correo');
 

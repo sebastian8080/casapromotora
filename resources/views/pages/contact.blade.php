@@ -78,17 +78,17 @@
                     </div>
                 
                     <div class="form-outline mb-4">
-                        <input type="number" class="form-control" name="preciomaximo" placeholder="Precio máximo" required>
+                        <input type="number" class="form-control" name="preciomaximo" placeholder="Precio máximo" autocomplete="off" required>
                     </div>
                     <div class="row">
                         <div class="col">
                             <div class="form-outline mb-4">
-                                <input type="text" class="form-control" name="ciudad" placeholder="Ciudad" required>
+                                <input type="text" class="form-control" name="ciudad" placeholder="Ciudad" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-outline mb-4">
-                                <input type="text" class="form-control" name="zona" placeholder="Zona" required>
+                                <input type="text" class="form-control" name="zona" placeholder="Zona" autocomplete="off" required>
                             </div>
                         </div>
                     </div>

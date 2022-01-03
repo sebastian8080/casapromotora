@@ -40,7 +40,8 @@ class IndexController extends Controller
             <br>Teléfono: " . strip_tags($request->telefono_celular) ."
             <br>Email: " . strip_tags($request->correo) ."
             <br>Mensaje: " . strip_tags($request->mensaje) ."
-        ";
+            <div style='display:flex'><img width='60' height='35' src='http://casacreditopromotora.com/logo-recortado.png' /><h3>Casa Crédito Promotora</h3></div>
+            ";
 
         $header = "From: <info@casacreditopromotora.com>" . "\r\n" .
                 "MIME-Version: 1.0" . "\r\n" .
@@ -64,7 +65,8 @@ class IndexController extends Controller
             <br>Mensaje: " . strip_tags($request->mensaje) ."
             <br>Monto: $ " . strip_tags($request->monto) ."
             <br>Tipo de crédito: " . strip_tags($request->tipo_credito) ."
-        ";
+            <div style='display:flex'><img width='60' height='35' src='http://casacreditopromotora.com/logo-recortado.png' /><h3>Casa Crédito Promotora</h3></div>
+            ";
 
         $header = "From: <info@casacreditopromotora.com>" . "\r\n" .
                 "MIME-Version: 1.0" . "\r\n" .
@@ -78,7 +80,7 @@ class IndexController extends Controller
     }
 
     public function sendMailContact(Request $request){
-        $to = "sebas31051999@gmail.com";
+        $to = "info@casacredito.com,hserrano@casacredito.com";
         $subject = "Información de contacto - Casa Crédito Promotora";
         $message = "<br><strong>Información de contacto</strong>
         <br>Nombre: " . strip_tags($request->nombre) ."
@@ -90,7 +92,7 @@ class IndexController extends Controller
         <br>Población: " . strip_tags($request->ciudad) ."
         <br>Zona: " . strip_tags($request->zona) ."
         <br>Mensaje " . strip_tags($request->mensaje) ."
-        <div><img src='http://casacreditopromotora.com/logo-recortado.png' /><h3>Casa Crédito Promotora</h3></div>
+        <div style='display:flex'><img width='60' height='35' src='http://casacreditopromotora.com/logo-recortado.png' /><h3>Casa Crédito Promotora</h3></div>
         ";
 
         $header = "From: <info@casacreditopromotora.com>" . "\r\n" .
