@@ -71,8 +71,8 @@
                         <div class="col">
                             <select class="form-control mb-4" name="operacion" required>
                                 <option value="">Operación</option>
-                                <option value="1">Venta</option>
-                                <option value="2">Alquiler</option>
+                                <option value="Venta">Venta</option>
+                                <option value="Alquiler">Alquiler</option>
                             </select>
                         </div>
                     </div>

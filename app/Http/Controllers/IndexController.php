@@ -90,6 +90,7 @@ class IndexController extends Controller
         <br>Población: " . strip_tags($request->ciudad) ."
         <br>Zona: " . strip_tags($request->zona) ."
         <br>Mensaje " . strip_tags($request->mensaje) ."
+        <div><img src='http://casacreditopromotora.com/logo-recortado.png' /><h3>Casa Crédito Promotora</h3></div>
         ";
 
         $header = "From: <info@casacreditopromotora.com>" . "\r\n" .
