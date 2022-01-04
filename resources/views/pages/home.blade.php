@@ -90,14 +90,14 @@
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img id="imgBanner2" style="width: 100%;" src="{{ asset('img/projects/futuranarancay/1.webp') }}" class="d-block img-fluid" alt="Departamentos Futura Narancay - Cuenca Casa Credito Promotora">
+                  <img id="imgBanner2" style="width: 100%; height: 100%" src="{{ asset('img/projects/futuranarancay/1.webp') }}" class="d-block img-fluid" alt="Departamentos Futura Narancay - Cuenca Casa Credito Promotora">
                   <div class="carousel-caption d-md-block">
                     <a style="text-decoration: none" href="{{ route('projects.viewProject', 'Futura Narancay') }}"><h3 class="texto-imagenes">FUTURA NARANCAY</h3></a>
                     <p>Departamentos con una  experiencia única en diseño y comodidad</p>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img id="imgBanner3" style="width: 100%" src="{{ asset('img/projects/toscana/1.webp') }}" class="d-block img-fluid" alt="Condominios Toscana - Cuenca">
+                  <img id="imgBanner3" style="width: 100%; height: 100%" src="{{ asset('img/projects/toscana/1.webp') }}" class="d-block img-fluid" alt="Condominios Toscana - Cuenca">
                   <div class="carousel-caption d-md-block">
                     <a style="text-decoration: none" href="{{ route('projects.viewProject', 'Toscana') }}"><h3 class="texto-imagenes">TOSCANA</h3></a>
                     <p>Condominios con acabados modernos</p>
