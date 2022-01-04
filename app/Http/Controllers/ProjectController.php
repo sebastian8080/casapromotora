@@ -58,7 +58,7 @@ class ProjectController extends Controller
                 $data['descripcion'] = '
                     ¡Departamentos con la mejor vista a la ciudad!
                     <br><br>
-                    El espacio perfecto para vivir!. Te ofrecemos 5 exclusivos departamentos para tu elección. Ubicación referencial: al Sur de la ciudad de Cuenca,
+                    El espacio perfecto para vivir!. Te ofrecemos exclusivos departamentos para tu elección. Ubicación referencial: al Sur de la ciudad de Cuenca,
                     disponen de una excelente y privilegiada vista a la ciudad debido a que se encuentra situada cerca del mirador de Turi.
                 ';
                 $data['tipo'] = "Departamento";
@@ -67,7 +67,6 @@ class ProjectController extends Controller
                     'generales' => [
                         'Jardin(es)',
                         'Acabados de lujo',
-                        'Ascensor',
                         'Seguridad'
                     ],
                     'servicios' => [

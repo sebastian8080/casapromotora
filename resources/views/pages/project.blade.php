@@ -155,7 +155,7 @@
 
   <div class="container pt-5 mt-3">
     <h1> {{ Str::upper($data['tipo'] . "S " . $data['nombreProyecto']) }}</h1>
-    <h5><i class="fas fa-map-marker-alt mx-1" style="color: red"></i><b> Ubicación:</b> {{ $data['ciudad'] }} > {{ $data['canton'] }} > {{ $data['sector'] }}</h5>
+    <h5><i class="fas fa-map-marker-alt mx-1" style="color: red"></i><b> Ubicación:</b> {{ $data['canton'] }} > {{ $data['ciudad'] }} > {{ $data['sector'] }}</h5>
   </div>
 
     <div class="imgs-header mt-3">
@@ -341,7 +341,7 @@
             </div>
             <div class="d-grid gap-2">
               <button id="btnEnviar" type="submit" class="btn">Enviar</button>
-              <a id="btnWhatsapp" class="btn" href="">Contactar por Whatsapp <i id="iconwpp" class="fab fa-whatsapp"></i></a>
+              <a id="btnWhatsapp" target="_blank" class="btn" href="https://api.whatsapp.com/send?phone=+593964085651&text=Me%20gustaria%20conocer%20los%20{{Str::lower($data['tipo'])}}s%20del%20conjunto%20residencial%20{{$data['nombreProyecto']}}">Contactar por Whatsapp <i id="iconwpp" class="fab fa-whatsapp"></i></a>
             </div>
           </form>
           <p id="textoCondicionesEmail">Al enviar estás aceptando los términos de Uso y la Política de privacidad</p>
@@ -417,7 +417,7 @@
             <img class="img-fluid" style="height: 180px" src="{{ asset('/img/projects/futuranarancay/1.webp') }}" class="card-img-top" alt="Proyecto Futura Narancay - Casa Credito Promotora">
           </a>
           <div class="position-absolute">
-            <p>En planos</p>
+            <p>Venta</p>
           </div>
           <div class="card-body bg-light">
             <h4>FUTURA NARANCAY</h4>
@@ -443,7 +443,7 @@
             <img class="img-fluid" style="height: 180px" src="{{ asset('/img/projects/toscana/1.webp') }}" class="card-img-top" alt="Proyecto Toscana - Casa Credito Promotora">
           </a>
           <div class="position-absolute">
-            <p>Construcción</p>
+            <p>Venta</p>
           </div>
           <div class="card-body bg-light">
             <h4>TOSCANA</h4>
