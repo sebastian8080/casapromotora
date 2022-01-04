@@ -83,14 +83,14 @@
             <div id="carouselExampleControls2" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img id="imgBanner1" style="100%" src="{{ asset('img/projects/adra/1.webp') }}" class="d-block img-fluid" alt="Departamentos Adra - Cuenca Casa Credito Promotora">
+                  <img id="imgBanner1" style="width:100%; height: 100%" src="{{ asset('img/projects/adra/1.webp') }}" class="d-block img-fluid" alt="Departamentos Adra - Cuenca Casa Credito Promotora">
                   <div class="carousel-caption d-md-block">
                     <a style="text-decoration: none" href="{{ route('projects.viewProject', 'Adra') }}"><h3 class="texto-imagenes">ADRA</h3></a>
                     <p>Departamentos de lujo con una vista insuperable</p>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img id="imgBanner2" style="width: 100%" src="{{ asset('img/projects/futuranarancay/1.webp') }}" class="d-block img-fluid" alt="Departamentos Futura Narancay - Cuenca Casa Credito Promotora">
+                  <img id="imgBanner2" style="width: 100%;" src="{{ asset('img/projects/futuranarancay/1.webp') }}" class="d-block img-fluid" alt="Departamentos Futura Narancay - Cuenca Casa Credito Promotora">
                   <div class="carousel-caption d-md-block">
                     <a style="text-decoration: none" href="{{ route('projects.viewProject', 'Futura Narancay') }}"><h3 class="texto-imagenes">FUTURA NARANCAY</h3></a>
                     <p>Departamentos con una  experiencia única en diseño y comodidad</p>
