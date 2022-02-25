@@ -21,8 +21,10 @@
 
     RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
     RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
-    
-    
+
+    RewriteCond %{HTTP_HOST} ^http\.(.*)$ [NC]
+    RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+     
     # Redirect if index.php is in the URL
     RewriteRule ^index.php/(.+) /$1 [R=301,L]
 
