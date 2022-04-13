@@ -16,6 +16,7 @@
 <meta property="product:availability" content="in stock">
 <meta property="product:price:amount" content="@if($data['nombreProyecto'] === "Adra") {{$data['departamentos'][2]['precio']}} @elseif($data['nombreProyecto'] === "Futura Narancay") {{$data['departamentos'][1]['precio']}} @elseif($data['nombreProyecto'] === "Toscana") {{$data['departamentos'][7]['precio']}} @endif">
 <meta property="product:retailer_item_id" content="{{ strtoupper(substr($data['nombreProyecto'], 0, 3)) }}-001">
+<meta property="product:price:currency" content="USD">
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <style>
