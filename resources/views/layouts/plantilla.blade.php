@@ -35,6 +35,8 @@
     {{-- Facebook Verification --}}
     <meta name="facebook-domain-verification" content="jp22ipj62vxlwvbhwunsdns2r0tjh2" />
 
+    <meta name="google-site-verification" content="Y-9EP4y_a2rT6CR0jEqKRGpf7EhQ9yJ2jiUSz1BVs60" />
+
     @yield('content-head')
 </head>
 <body>
