@@ -3,7 +3,7 @@
 @section('title', 'Inicio')
 
 @section('content-head')
-<meta name="google-site-verification" content="Y-9EP4y_a2rT6CR0jEqKRGpf7EhQ9yJ2jiUSz1BVs60" />
+  
 @endsection
     
 @section('content')
@@ -40,16 +40,16 @@
 
     <div id="links" class="row position-absolute top-50 start-50 translate-middle pt-4" style="z-index: 1;">
       <div class="col-sm-3">
-        <h4 style="font-size: 2.5vw"><a href="#" class="text-white link" style="text-decoration: none; margin-left: -30%">QUITO</a></h4>
+        <h4 style="font-size: 2.5vw"><p class="text-white link" style="text-decoration: none; margin-left: -30%">QUITO</p></h4>
       </div>
       <div class="col-sm-3">
-        <h4 style="font-size: 2.5vw"><a href="#" class="text-white link" style="text-decoration: none; margin-left: -25%">GUAYAQUIL</a> </h4>
+        <h4 style="font-size: 2.5vw"><p class="text-white link" style="text-decoration: none; margin-left: -25%">GUAYAQUIL</p> </h4>
       </div>
       <div class="col-sm-3">
-        <h4 style="font-size: 2.5vw"><a href="#" class="text-white link" style="text-decoration: none; margin-left: 25%">CUENCA</a></h4>
+        <h4 style="font-size: 2.5vw"><a href="{{ route('pages.projects') }}" class="text-white link" style="text-decoration: none; margin-left: 25%">CUENCA</a></h4>
       </div>
       <div class="col-sm-3">
-        <h4 style="font-size: 2.5vw"><a href="#" class="text-white link" style="text-decoration: none; margin-left: 45%">MANTA</a></h4>
+        <h4 style="font-size: 2.5vw"><p class="text-white link" style="text-decoration: none; margin-left: 45%">MANTA</p></h4>
       </div>
     </div>
   </div>
