@@ -302,7 +302,7 @@ class ProjectController extends Controller
                 $data['canton'] = 'Azuay';
                 $data['sector'] = 'Challuabamba';
                 $data['descripcion'] = '
-                    ¡La mejor experciencia en condominios con acabados modernos!
+                    ¡La mejor experiencia en condominios con acabados modernos!
                     <br><br>
                     Un lugar ideal para vivir, con un ambiente acogedor y cálido a la hora de escribir recuerdos inolvidables con toda tu familia. Su ubicación se situa
                     al norte de la ciudad en Challuabamba. 
