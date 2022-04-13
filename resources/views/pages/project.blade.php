@@ -13,6 +13,8 @@
 <meta property="og:description" content="{!! $data['descripcion'] !!}">
 <meta property="og:image" content="{{url('img/projects/'.$data['name_folder'].'/1.webp')}}">
 
+<meta property="product:availability" content="in stock">
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <style>
       body{
