@@ -4,7 +4,7 @@
 
 @section('content-head')
 
-<meta property="og:title" content="{{ $data['tipo'] $date['nombreProyecto']}}">
+<meta property="og:title" content="{{ $data['tipo'] $data['nombreProyecto']}}">
 <meta property="og:description" content="{{ $data['descripcion']}}">
 <meta property="og:image" content="{{url('img/projects/'.$data['name_folder'].'/1.webp')}}">
 
