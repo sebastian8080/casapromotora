@@ -1,10 +1,15 @@
 @extends('layouts.plantilla')
 
-@section('title', 'Proyecto ' . $data['nombreProyecto'])
+@section('title', $data['tipo']."s " . $data['nombreProyecto'])
 
 @section('content-head')
 
-<meta property="og:title" content="{{ $data['tipo']}} {{ $data['nombreProyecto'] }}">
+<meta name="title" content="Casa Crédito Promotora - {{ $data['tipo'] }}s {{ $data['nombreProyecto']}}">
+<meta name="description" content="{!! $data['descripcion'] !!}">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://casacreditopromotora.com/proyectos/{{$data['nombreProyecto']}}">
+<meta property="og:title" content="Casa Crédito Promotora - {{ $data['tipo']}}s {{ $data['nombreProyecto'] }}">
 <meta property="og:description" content="{!! $data['descripcion'] !!}">
 <meta property="og:image" content="{{url('img/projects/'.$data['name_folder'].'/1.webp')}}">
 
