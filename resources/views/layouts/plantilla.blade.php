@@ -32,6 +32,9 @@
       /></noscript>
     <!-- End Meta Pixel Code -->
 
+    {{-- Facebook Verification --}}
+    <meta name="facebook-domain-verification" content="jp22ipj62vxlwvbhwunsdns2r0tjh2" />
+
     @yield('content-head')
 </head>
 <body>
