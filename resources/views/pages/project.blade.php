@@ -357,7 +357,7 @@
             </div>
             <div class="d-grid gap-2">
               <button id="btnEnviar" type="submit" class="btn">Enviar</button>
-              <a id="btnWhatsapp" target="_blank" class="btn" href="https://api.whatsapp.com/send?phone=+593964085651&text=Me%20gustaria%20conocer%20los%20{{Str::lower($data['tipo'])}}s%20del%20conjunto%20residencial%20{{$data['nombreProyecto']}}">Contactar por Whatsapp <i id="iconwpp" class="fab fa-whatsapp"></i></a>
+              <a id="btnWhatsapp" target="_blank" class="btn" href="https://api.whatsapp.com/send?phone=+593983849073&text=Me%20gustaria%20conocer%20los%20{{Str::lower($data['tipo'])}}s%20del%20conjunto%20residencial%20{{$data['nombreProyecto']}}">Contactar por Whatsapp <i id="iconwpp" class="fab fa-whatsapp"></i></a>
             </div>
           </form>
           <p id="textoCondicionesEmail">Al enviar estás aceptando los términos de Uso y la Política de privacidad</p>
