@@ -263,7 +263,7 @@ html, body {
 }
 
 #btn-row6{
-  font-size: 1.5vw;
+  font-size: 25px;
 }
 
 /*ESTILO DE LA CARD DE CONTACTO*/
@@ -285,6 +285,11 @@ html, body {
   -webkit-text-stroke: 1px rgb(128, 129, 135);
 }
 
+#menu-item1, #menu-item2, #menu-item3, #menu-item4, #menu-item5, #menu-item6, .dropdown-menu{
+  font-size: 13px;
+  border-radius: 0px !important;
+}
+
 /*PONER LOS BOTONES DE LA NAVBAR DE DIFERENTE COLOR CUANDO SE PASE EL MOUSE*/
 #menu-item1:hover, #menu-item2:hover, #menu-item3:hover, #menu-item4:hover, #menu-item5:hover, #menu-item6:hover{
   background: #918f8f;
@@ -304,8 +309,8 @@ h1{
 
 /*START ESTILOS DE BANNER HOME QUITO GUAYAQUIL CUENCA MANTA*/
   .link:hover{
-    border-bottom: 1px solid;
-    font-size: 40px;
+    /* border-bottom: 1px solid;
+    font-size: 40px; */
   }
 
   @media only screen and (max-width: 580px){
@@ -316,6 +321,9 @@ h1{
     #imgBanner1, #imgBanner2, #imgBanner3{
       width: 250px;
       height: 150px;
+    }
+    #dropdown-submenu{
+      margin: 0px !important;
     }
   }
 
@@ -351,6 +359,25 @@ h1{
   margin-top:13px;
 }
 
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+.fa-solid{color:#e90029!important;}
+.dropdown:hover #dropdown-menu{display: block;}
+.dropdown:hover .dropdown-menu{transition: ease-in-out 3s !important;}
+.dropend:hover #dropdown-submenu{display: block;}
+@keyframes slide-up {
+  from {
+    transform: translateY(30%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+#dropdown-menu, #dropdown-submenu{animation: slide-up 500ms;border-radius: 0px !important;}
 /*END ESTILOS DE BANNER HOME QUITO GUAYAQUIL CUENCA MANTA*/
 
 

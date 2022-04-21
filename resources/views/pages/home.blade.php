@@ -7,55 +7,56 @@
 @endsection
     
 @section('content')
-    
-  <div class="position-relative">
-    <div class="div-carousel">
-      <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-        <div id="carousel-indicators" class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img style="filter: brightness(60%);" src="{{ asset('img/home/img1-home.webp') }}" class="d-block" width="100%" height="100%" alt="img1">
-          </div>
-          <div class="carousel-item">
-            <img style="filter: brightness(60%)" src="img/home/img2-home.webp" class="d-block"  width="100%" height="100%" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img style="filter: brightness(60%)" src="img/home/img3-home.webp" class="d-block"  width="100%" height="100%" alt="...">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-    </div>
 
-    <div id="links" class="row position-absolute top-50 start-50 translate-middle pt-4" style="z-index: 1;">
-      <div class="col-sm-3">
-        <h4 style="font-size: 2.5vw"><p class="text-white link" style="text-decoration: none; margin-left: -30%">QUITO</p></h4>
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" style="position: relative; justify-content: center; display: flex">
+  <div class="carousel-inner">
+      <div class="carousel-item active position-relative"  style="background:rgba(2, 2, 2, 0.5);">
+        <img src="{{ asset('img/home/SLIDER-NUEVO-01-min.webp') }}" class="d-block w-100" alt="..." style="height: 550px; object-fit: cover; object-position: left center; filter: brightness(60%)">
+        <div class="position-absolute top-50 translate-middle-y text-white" style="margin-left: 20%">
+          <h1>TU PROPIEDAD, <br> Y TU FUTURO <br> NUESTRA EXPERIENCIA</h1>
+          <p>¡ENCUENTRA EL PROYECTO IDEAL!</p>
+        </div>
       </div>
-      <div class="col-sm-3">
-        <h4 style="font-size: 2.5vw"><p class="text-white link" style="text-decoration: none; margin-left: -25%">GUAYAQUIL</p> </h4>
+      <div class="carousel-item position-relative"  style="background:rgba(2, 2, 2, 0.5);">
+        <img src="{{ asset('img/home/img2-home.webp') }}" class="d-block w-100" alt="..." style="height: 550px;object-fit: cover; object-position: left center; filter: brightness(60%)">
+        <div class="position-absolute top-50 translate-middle-y text-white" style="margin-left: 20%">
+          <h1>TU PROPIEDAD, <br> Y TU FUTURO <br> NUESTRA EXPERIENCIA</h1>
+          <p>¡ENCUENTRA EL PROYECTO IDEAL!</p>
+        </div>
       </div>
-      <div class="col-sm-3">
-        <h4 style="font-size: 2.5vw"><a href="{{ route('pages.projects') }}" class="text-white link" style="text-decoration: none; margin-left: 25%">CUENCA</a></h4>
+      <div class="carousel-item position-relative"  style="background:rgba(2, 2, 2, 0.5);">
+        <img src="{{ asset('img/home/img3-home.webp') }}" class="d-block w-100" alt="..." style="height: 550px;object-fit: cover; object-position: left center; filter: brightness(60%)">
+        <div class="position-absolute top-50 translate-middle-y text-white" style="margin-left: 20%">
+          <h1>TU PROPIEDAD, <br> Y TU FUTURO <br> NUESTRA EXPERIENCIA</h1>
+          <p>¡ENCUENTRA EL PROYECTO IDEAL!</p>
+        </div>
       </div>
-      <div class="col-sm-3">
-        <h4 style="font-size: 2.5vw"><p class="text-white link" style="text-decoration: none; margin-left: 45%">MANTA</p></h4>
-      </div>
+  </div>
+  <div class="d-flex justify-content-center" style="position: absolute; bottom: 0px; margin-bottom: -45px;">
+    <div style="background-color: black; color: #ffffff; display: flex; padding: 30px; align-items: center">
+      <h5 style="margin-right: 10px">¿Cuánto Vale Mi Propiedad?</h5>
+      <button class="btn btn-outline-danger" style="margin-top: -10px; border-radius: 0px">SOLICITAR UN AVALÚO</button>
     </div>
   </div>
+  {{-- <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  </a> --}}
+</div>
 
-    <div class="row mt-3" data-aos="slide-up">
-      <div class="col-sm-3"></div>
+    <div class="row mt-5 pt-5 mb-5" style="margin-left: 5%; margin-right: 5%">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-3">
+        <h1 style="font-size: 35px">¿CÓMO PODEMOS AYUDARTE?</h1>
+      </div>
+      <div class="col-sm-5 text-muted">
+        <b>CASA CREDITO</b> es una empresa Promotora de Proyectos Inmobiliarios en Ecuador. Desarrollamos Soluciones Inmobiliarias Integrales en Vivienda,
+          Comercio, Oficinas, Servicios y Hospitalidad, que se diferencian por la calidad e innovación percibida por el cliente, convirtiendo lo excepcional en un estilo de vida.
+      </div>
+      <div class="col-sm-2"></div>
+      {{-- <div class="col-sm-3"></div>
       <div class="col-sm-6 second-row rounded">
         <p class="text-justify m-5">
           <b>CASA CREDITO</b> es una empresa Promotora de Proyectos Inmobiliarios en Ecuador. Desarrollamos Soluciones Inmobiliarias Integrales en Vivienda,
@@ -63,7 +64,7 @@
         </p>
         <hr id="linea_pequeña" class="position-absolute bottom-0 start-50 translate-middle-x">
       </div>
-      <div class="col-sm-3"></div>
+      <div class="col-sm-3"></div> --}}
     </div>
 
     <!--EMPIEZA CONTAINER-->

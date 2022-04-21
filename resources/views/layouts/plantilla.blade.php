@@ -7,6 +7,9 @@
     <title>Casa Credito Promotora - @yield('title')</title>
 
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
 
@@ -50,8 +53,8 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul id="itemMenu" class="navbar-nav rounded ms-auto">
               <li class="nav-item dropdown">
-                <a id="menu-item1" class="nav-link dropdown-toggle text-white rounded" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page" href="">NOSOTROS</a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a id="menu-item1" class="nav-link dropdown-toggle text-white rounded" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page" href="">NOSOTROS <i class="fa-solid fa-plus"></i></a>
+                <ul id="dropdown-menu" class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="{{ route('pages.about') }}">Nuestra Empresa</a></li>
                   <li><a class="dropdown-item" href="{{ route('pages.equipo') }}">Equipo</a></li>
                 </ul>
@@ -60,20 +63,18 @@
                 <a id="menu-item2" class="nav-link text-white rounded" href="{{ route('pages.projects') }}">PROYECTOS</a>
               </li>
               <li class="nav-item dropdown">
-                <a id="menu-item4" class="nav-link dropdown-toggle text-white rounded" id="navbarDropdown" role="button" data-bs-auto-close="outside" data-bs-toggle="dropdown" aria-expanded="false">
-                  PARTNERS
-                </a>
-                <ul class="dropdown-menu shadow" aria-labelledby="navbarDropdown">
+                <a id="menu-item4" class="nav-link dropdown-toggle text-white rounded" id="navbarDropdown" role="button" data-bs-auto-close="outside" data-bs-toggle="dropdown" aria-expanded="false">PARTNERS <i class="fa-solid fa-plus"></i></a>
+                <ul id="dropdown-menu" class="dropdown-menu shadow" aria-labelledby="navbarDropdown">
                   <li class="dropend">
-                    <a class="dropdown-item dropdown-toggle text-dark" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Entidades financieras</a>
-                    <ul class="dropdown-menu shadow">
+                    <a class="dropdown-item dropdown-toggle text-dark" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Entidades financieras <i class="fa-solid fa-angle-right"></i></a>
+                    <ul id="dropdown-submenu" class="dropdown-menu shadow" style="margin-left: 165px; margin-top: -37px">
                       <li><a class="dropdown-item" href="{{ route('pages.partners') }}"><b>Los Rios</b></a></li>
                       <li><a class="dropdown-item" href="#"><b>Corpu Corp</b></a></li>
                     </ul>
                   </li>
                   <li class="dropend">
-                    <a class="dropdown-item dropdown-toggle text-dark" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Construye</a>
-                    <ul class="dropdown-menu shadow">
+                    <a class="dropdown-item dropdown-toggle text-dark" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Construye <i class="fa-solid fa-angle-right"></i></a>
+                    <ul id="dropdown-submenu" class="dropdown-menu shadow" style="margin-left: 165px; margin-top: -37px">
                       <li><a class="dropdown-item" href="{{ route('socios.dolmen')}}"><b>Dolmen</b></a></li>
                       <li><a class="dropdown-item" href="{{ route('socios.dolmen.catalogo')}}"><b>Catálogo</b></a></li>
                       <li><a class="dropdown-item" href="{{ route('socios.construye')}}"><b>Construcción</b></a></li>
@@ -149,8 +150,9 @@
           </section>
         </footer>
 
-        <a href="https://api.whatsapp.com/send?phone=+593983849073&text=Deseo%20saber%20m%C3%A1s%20informaci%C3%B3n%20" class="whatsapp" target="_blank"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
+        <a style="color: #ffffff" href="https://api.whatsapp.com/send?phone=+593983849073&text=Deseo saber más información sobre los proyectos de Casa Crédito Promotora" class="whatsapp" target="_blank"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
 
+        {{-- 593983849073 --}}
     
     @yield('section-scripts')
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
