@@ -5,6 +5,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\PartnersController;
 use App\Http\Controllers\ProjectController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
@@ -54,6 +55,10 @@ Route::post('/solicitud-credito', [IndexController::class, "sendMailCredito"])->
 Route::post('/contacto-general', [IndexController::class, "sendMailContact"])->name('send.mail.contact');
 Route::post('/informacion-credito/Los Rios', [PartnersController::class, "sendEmail"])->name('send.email.rios');
 
+//liberar cache
+Route::get('/ruta/escondida/cacheclear', function(){
+    Artisan::call('cache:clear');
+});
 
 //fetch cities
 Route::get('/getcities/{idState}', [IndexController::class, 'getCities'])->name('web.getcities');
