@@ -249,6 +249,8 @@
           <h5 class="modal-title text-white" id="exampleModalLabel">SOLICITE UN AVALÚO</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <form action="{{ route('send.solicitud.avaluo')}}" method="POST">
+          @csrf
         <div class="modal-body">
           <div class="form-group">
             <label for="name">Nombre y Apellido:</label>
@@ -270,7 +272,7 @@
               $types = DB::connection('mysql2')->table('listing_types')->get();
           @endphp
           <div class="form-group mt-2">
-            <select name="type" id="type" class="form-select">
+            <select name="type" id="type" class="form-select" required>
               <option value="">Tipo de propiedad</option>
               @foreach ($types as $type)
                   <option value="{{ $type->type_title}}">{{ $type->type_title}}</option>
@@ -297,8 +299,9 @@
           </div>
         </div>
         <div class="modal-footer justify-content-center">
-          <button type="button" class="btn" style="background-color: #91232d; color: #ffffff">Enviar</button>
+          <button type="submit" class="btn" style="background-color: #91232d; color: #ffffff">Enviar</button>
         </div>
+      </form>
       </div>
     </div>
   </div>
@@ -343,8 +346,6 @@
     let id = selState.options[selState.selectedIndex].dataset.id;
     const response = await fetch("{{url('getcities')}}/"+id );
     const cities = await response.json();
-
-    console.log(cities);
     
     var opt = document.createElement('option');
           opt.appendChild( document.createTextNode('Seleccione Ciudad') );

@@ -54,11 +54,7 @@ Route::post('/contactanos', [IndexController::class, "store"])->name('contactano
 Route::post('/solicitud-credito', [IndexController::class, "sendMailCredito"])->name('send.mail.credito');
 Route::post('/contacto-general', [IndexController::class, "sendMailContact"])->name('send.mail.contact');
 Route::post('/informacion-credito/Los Rios', [PartnersController::class, "sendEmail"])->name('send.email.rios');
-
-//liberar cache
-Route::get('/ruta/escondida/cacheclear', function(){
-    Artisan::call('cache:clear');
-});
+Route::post('/solicitud-avaluo', [IndexController::class, 'sendSolicitudAvaluo'])->name('send.solicitud.avaluo');
 
 //fetch cities
 Route::get('/getcities/{idState}', [IndexController::class, 'getCities'])->name('web.getcities');

@@ -107,6 +107,32 @@ class IndexController extends Controller
         return back();
     }
 
+    public function sendSolicitudAvaluo(Request $request){
+        $to = "info@casacredito.com,hserrano@casacredito.com"; //info@casacredito.com,hserrano@casacredito.com
+        $subject = "Lead - Casa Crédito Promotora | " . substr(date(now()), 0, 10);
+        $message = "<br><strong>Información de contacto</strong>
+        <br>Nombre: " . strip_tags($request->name) ."
+        <br>Teléfono: " . strip_tags($request->phone) ."
+        <br>Email: " . strip_tags($request->email) . "
+        <br>Comentario: " . strip_tags($request->comentario) ."
+        <br>Interes: " . " Solicitud de avalúo " . "
+        <br>Tipo de propiedad: " . strip_tags($request->type) ."
+        <br>Provincia: " . strip_tags($request->state) ."
+        <br>Ciudad: " . strip_tags($request->city) ."
+        <br>Fuente: " . " Website Casa Crédito Promotora" ."
+        ";
+
+        $header = "From: <info@casacreditopromotora.com>" . "\r\n" .
+                "MIME-Version: 1.0" . "\r\n" .
+                "Content-Type:text/html;charset=UTF-8" . "\r\n";
+
+        mail($to, $subject, $message, $header);
+
+        $request->session()->flash('report', 'Se ha enviado el correo');
+
+        return back();
+    }
+
     public function getCities($id){
         $cities = DB::connection('mysql2')->table('info_cities')->where('state_id',$id)->get(); 
         return response()->json($cities);   
