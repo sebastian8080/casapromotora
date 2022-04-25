@@ -35,7 +35,7 @@
   <div class="d-flex justify-content-center" style="position: absolute; bottom: 0px; margin-bottom: -45px;">
     <div style="background-color: black; color: #ffffff; display: flex; padding: 30px; align-items: center">
       <h5 style="margin-right: 10px">¿Cuánto Vale Mi Propiedad?</h5>
-      <button class="btn btn-outline-danger" style="margin-top: -10px; border-radius: 0px">SOLICITAR UN AVALÚO</button>
+      <button type="button" data-bs-toggle="modal" data-bs-target="#modalAvaluo" class="btn btn-outline-danger" style="margin-top: -10px; border-radius: 0px">SOLICITAR UN AVALÚO</button>
     </div>
   </div>
   {{-- <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-bs-slide="prev">
@@ -240,6 +240,68 @@
       </div>
     </div>
   </div>
+  
+  {{-- modal para solicitar avaluo --}}
+  <div class="modal fade" id="modalAvaluo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: #91232d">
+          <h5 class="modal-title text-white" id="exampleModalLabel">SOLICITE UN AVALÚO</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="name">Nombre y Apellido:</label>
+            <input type="text" name="name" id="name" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Teléfono:</label>
+            <input type="number" name="phone" id="phone" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Correo electrónico:</label>
+            <input type="email" name="email" id="email" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="comentario">Comentario:</label>
+            <textarea name="comentario" id="comentario" rows="2" class="form-control"></textarea>
+          </div>
+          @php
+              $types = DB::connection('mysql2')->table('listing_types')->get();
+          @endphp
+          <div class="form-group mt-2">
+            <select name="type" id="type" class="form-select">
+              <option value="">Tipo de propiedad</option>
+              @foreach ($types as $type)
+                  <option value="{{ $type->type_title}}">{{ $type->type_title}}</option>
+              @endforeach
+            </select>
+          </div>
+          @php
+              $states = DB::connection('mysql2')->table('info_states')->where('country_id', 63)->get();
+          @endphp
+          <div class="d-flex">
+            <div class="form-group mt-2" style="width: 100%; margin-right: 1px">
+              <select name="state" id="state" class="form-control" required>
+                <option value="">Seleccione provincia</option>
+                @foreach ($states as $state)
+                    <option value="{{$state->name}}" data-id={{$state->id}}>{{ $state->name}}</option>
+                @endforeach
+              </select>
+            </div>
+            <div class="form-gropu mt-2" style="width: 100%">
+              <select name="city" id="city" class="form-control" required>
+                <option value="">Seleccione ciudad</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer justify-content-center">
+          <button type="button" class="btn" style="background-color: #91232d; color: #ffffff">Enviar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   @include('pages.partials.formhome')
 
@@ -272,4 +334,28 @@
 
 @section('section-scripts')
   <script src="{{ URL::asset('js/homepage.js'); }}"></script>
+  <script>
+    const selState = document.getElementById('state');
+    const selCity = document.getElementById('city');
+
+    selState.addEventListener("change", async function() {
+      selCity.options.length = 0;
+    let id = selState.options[selState.selectedIndex].dataset.id;
+    const response = await fetch("{{url('getcities')}}/"+id );
+    const cities = await response.json();
+
+    console.log(cities);
+    
+    var opt = document.createElement('option');
+          opt.appendChild( document.createTextNode('Seleccione Ciudad') );
+          opt.value = '';
+          selCity.appendChild(opt);
+    cities.forEach(city => {
+          var opt = document.createElement('option');
+          opt.appendChild( document.createTextNode(city.name) );
+          opt.value = city.name;
+          selCity.appendChild(opt);
+    });
+  });
+  </script>
 @endsection

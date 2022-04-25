@@ -5,7 +5,6 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\PartnersController;
 use App\Http\Controllers\ProjectController;
-use App\Mail\ContactanosMailable;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
@@ -53,3 +52,8 @@ Route::get('/socios/dolmen/{categoria}', [PartnersController::class, 'showCatego
 Route::post('/contactanos', [IndexController::class, "store"])->name('contactanos.store');
 Route::post('/solicitud-credito', [IndexController::class, "sendMailCredito"])->name('send.mail.credito');
 Route::post('/contacto-general', [IndexController::class, "sendMailContact"])->name('send.mail.contact');
+Route::post('/informacion-credito/Los Rios', [PartnersController::class, "sendEmail"])->name('send.email.rios');
+
+
+//fetch cities
+Route::get('/getcities/{idState}', [IndexController::class, 'getCities'])->name('web.getcities');

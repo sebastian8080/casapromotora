@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class IndexController extends Controller
 {
@@ -104,5 +105,10 @@ class IndexController extends Controller
         $request->session()->flash('validContact', 'Se ha enviado el correo');
 
         return back();
+    }
+
+    public function getCities($id){
+        $cities = DB::connection('mysql2')->table('info_cities')->where('state_id',$id)->get(); 
+        return response()->json($cities);   
     }
 }
