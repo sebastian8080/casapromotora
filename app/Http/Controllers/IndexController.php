@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Http;
 
 class IndexController extends Controller
 {
@@ -56,7 +57,13 @@ class IndexController extends Controller
     }
 
     public function sendMailCredito(Request $request){
-        $to = "info@casacredito.com,hserrano@casacredito.com";
+
+        $response = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
+            'secret' => '6LdteCQjAAAAAHYC5-RLr5PvdHRI2ounwwUvnzxs',
+            'response' => $request->input('g-recaptcha-response')
+        ])->object();
+
+        $to = "info@casacredito.com";
         $subject = "Solicitud de Crédito - Casa Credito Promotora";
         $message = "<br><strong>Lead Créditos</strong>
             <br>Cédula:" . strip_tags($request->cedula) ."
@@ -73,7 +80,11 @@ class IndexController extends Controller
                 "MIME-Version: 1.0" . "\r\n" .
                 "Content-Type:text/html;charset=UTF-8" . "\r\n";
 
-        mail($to, $subject, $message, $header);
+        if($response->success && $response->score >= 0.7){
+            mail($to, $subject, $message, $header);
+        } else {
+            mail('sebas31051999@gmail.com', 'BOT LEAD CREDITOS PROMOTORA '.strip_tags($request->nombre), $message, $header);
+        }
         
         $request->session()->flash('report', 'Se ha enviado el correo');
 

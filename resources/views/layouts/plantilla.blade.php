@@ -40,6 +40,8 @@
 
     <meta name="google-site-verification" content="Y-9EP4y_a2rT6CR0jEqKRGpf7EhQ9yJ2jiUSz1BVs60" />
 
+    <script src="https://www.google.com/recaptcha/api.js?render=6LdteCQjAAAAABUiBdqPc7yMNEO4zFyAflmMhE_-"></script>
+
     @yield('content-head')
 </head>
 <body>
@@ -172,7 +174,24 @@
       if(e.target.classList.contains('hamburger-toggle')){
         e.target.children[0].classList.toggle('active');
       }
-    })
+    });
+
+    document.addEventListener('submit', function(e){
+      e.preventDefault();
+        grecaptcha.ready(function() {
+          grecaptcha.execute('6LdteCQjAAAAABUiBdqPc7yMNEO4zFyAflmMhE_-', {action: 'submit'}).then(function(token) {
+            let form = e.target;
+            let input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = 'g-recaptcha-response';
+            input.value = token;
+
+            form.appendChild(input);
+
+            form.submit();
+          });
+        });
+    });
     </script>
 </body>
 </html>
