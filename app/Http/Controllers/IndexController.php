@@ -63,7 +63,9 @@ class IndexController extends Controller
             'response' => $request->input('g-recaptcha-response')
         ])->object();
 
-        $to = "info@casacredito.com";
+        return $response;
+
+        $to = "sebas31051999@gmail.com"; //info@casacredito.com
         $subject = "Solicitud de Crédito - Casa Credito Promotora";
         $message = "<br><strong>Lead Créditos</strong>
             <br>Cédula:" . strip_tags($request->cedula) ."
