@@ -158,6 +158,114 @@
                 </div>
             </div>
         </div>
+        @if(isset($listingsprojects))
+        @php $count=0; @endphp
+            @foreach ($listingsprojects as $listingproject)
+            @php $count++; @endphp
+                <hr data-aos="fade-up" style="color: rgb(166, 177, 176);  width: 20%; margin-left: 40%" class="mt-5 mb-5">
+                <div class="row mt-1 pt-1 mb-4" data-aos="fade-up">
+                    @if(($count%2)==0)
+                    <div class="col-sm-12 col-md-12 col-lg-6 position-relative">
+                        <img class="img-fluid rounded mx-auto d-block img-project" src="http://localhost/acasaweb-master/public/uploads/listing/{{strtok($listingproject->images, '|')}}" alt="{{$listingproject->listing_title}}-img">
+                        <div class="position-absolute top-0 end-0 border" style="margin-right: 0px; margin-top: 20px; font-size: 15px; background-color: rgb(219, 219, 224); padding-right: 5px; padding-left:10px; box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
+                            <i class="fas fa-building" style="margin-right: 5px; color: gray"></i><label style="color: gray; font-size:12px; padding-right: 40px;">{{strtoupper($listingproject->listingtypestatus)}}</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6 d-flex align-items-center justify-content-center">
+                        <div style="background-color: rgb(249, 249, 249); padding: 25px; width: 100%">
+                            <h2 class="fw-bold pt-1" style="color: #ffffff; -webkit-text-stroke: 0.2px rgb(162, 157, 157);">{{$listingproject->listing_title}} - {{$listingproject->product_code}}</h2>
+                            <h3 style="font-weight: bold">{{strtoupper($listingproject->listingtype)}}</h3>
+                            <i class="fas fa-map-marker-alt mx-1" style="color: red"></i><b>@if(str_contains($listingproject->address, ",")) {{$listingproject->address}} @else {{$listingproject->state.", ".$listingproject->city.", ".$listingproject->address}} @endif</b>
+                            <div class="row mt-4">
+                                <div class="col-sm-6">
+                                    <div class="d-flex">
+                                        <i class="fas fa-expand-arrows-alt" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
+                                        <p>Área total: {{$listingproject->land_area}} m<sup>2</sup></p>
+                                    </div>
+                                    <div class="d-flex">
+                                        <i class="fas fa-ruler-vertical" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
+                                        <p style="margin-left: 6px">Área interior: {{$listingproject->construction_area}} m<sup>2</sup></p>
+                                    </div>
+                                    @if(isset($listingproject->garage) && $listingproject->garage > 0)
+                                    <div class="d-flex">
+                                        <i class="fas fa-car" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
+                                        <p>Parqueaderos: {{$listingproject->garage}}</p>
+                                    </div>
+                                    @endif
+                                </div>
+                                <div class="col-sm-6">
+                                    @if(isset($listingproject->bedroom) && $listingproject->bedroom > 0)
+                                    <div class="d-flex">
+                                        <i class="fas fa-bed" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
+                                        <p>{{$listingproject->bedroom}} dormitorio(s)</p>
+                                    </div>
+                                    @endif
+                                    @if(isset($listingproject->bathroom) && $listingproject->bathroom >0)
+                                    <div class="d-flex">
+                                        <i class="fas fa-tree" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
+                                        <p>{{$listingproject->bathroom}} baños</p>
+                                    </div>
+                                    @endif
+                                </div>
+                            </div>
+                            <div>
+                                <a class="btn btn-outline-danger" href="{{ route('projects.viewProject', 'Toscana') }}">Ver proyecto <i class="fas fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    @else
+                    <div class="col-sm-12 col-md-12 col-lg-6 d-flex align-items-center justify-content-center">
+                        <div style="background-color: rgb(249, 249, 249); padding: 25px; width: 100%">
+                            <h2 class="fw-bold pt-1" style="color: #ffffff; -webkit-text-stroke: 0.2px rgb(162, 157, 157);">{{$listingproject->listing_title}} - {{$listingproject->product_code}}</h2>
+                            <h3 style="font-weight: bold">{{strtoupper($listingproject->listingtype)}}</h3>
+                            <i class="fas fa-map-marker-alt mx-1" style="color: red"></i><b>@if(str_contains($listingproject->address, ",")) {{$listingproject->address}} @else {{$listingproject->state.", ".$listingproject->city.", ".$listingproject->address}} @endif</b>
+                            <div class="row mt-4">
+                                <div class="col-sm-6">
+                                    <div class="d-flex">
+                                        <i class="fas fa-expand-arrows-alt" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
+                                        <p>Área total: {{$listingproject->land_area}} m<sup>2</sup></p>
+                                    </div>
+                                    <div class="d-flex">
+                                        <i class="fas fa-ruler-vertical" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
+                                        <p style="margin-left: 6px">Área interior: {{$listingproject->construction_area}} m<sup>2</sup></p>
+                                    </div>
+                                    @if(isset($listingproject->garage) && $listingproject->garage > 0)
+                                    <div class="d-flex">
+                                        <i class="fas fa-car" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
+                                        <p>Parqueaderos: {{$listingproject->garage}}</p>
+                                    </div>
+                                    @endif
+                                </div>
+                                <div class="col-sm-6">
+                                    @if(isset($listingproject->bedroom) && $listingproject->bedroom > 0)
+                                    <div class="d-flex">
+                                        <i class="fas fa-bed" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
+                                        <p>{{$listingproject->bedroom}} dormitorio(s)</p>
+                                    </div>
+                                    @endif
+                                    @if(isset($listingproject->bathroom) && $listingproject->bathroom >0)
+                                    <div class="d-flex">
+                                        <i class="fas fa-tree" style="margin-top: 3px; margin-right: 4px; color: gray"></i>
+                                        <p>{{$listingproject->bathroom}} baños</p>
+                                    </div>
+                                    @endif
+                                </div>
+                            </div>
+                            <div>
+                                <a class="btn btn-outline-danger" href="{{ route('projects.viewProject', 'Toscana') }}">Ver proyecto <i class="fas fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6 position-relative float-right">
+                        <img class="img-fluid rounded mx-auto d-block img-project" src="http://localhost/acasaweb-master/public/uploads/listing/{{strtok($listingproject->images, '|')}}" alt="{{$listingproject->listing_title}}-img">
+                        <div class="position-absolute top-0 end-0 border" style="margin-right: 0px; margin-top: 20px; font-size: 15px; background-color: rgb(219, 219, 224); padding-right: 5px; padding-left:10px; box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
+                            <i class="fas fa-building" style="margin-right: 5px; color: gray"></i><label style="color: gray; font-size:12px; padding-right: 40px;">{{strtoupper($listingproject->listingtypestatus)}}</label>
+                        </div>
+                    </div>
+                    @endif
+                </div>
+            @endforeach
+        @endif
     </div>
 @endsection
 

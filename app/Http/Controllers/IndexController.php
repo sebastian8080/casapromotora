@@ -25,7 +25,10 @@ class IndexController extends Controller
     }
 
     public function redirectToProjects(){
-        return view('pages.projects');
+        $baseurl = "http://localhost/acasaweb-master/public/api/projects";
+        $listingsprojects = Http::withHeaders(['api-key' => 'Cc2022*@Notify'])->get($baseurl);
+        $listingsprojects = json_decode($listingsprojects);
+        return view('pages.projects', compact('listingsprojects'));
     }
 
     public function redirectToBlog(){
