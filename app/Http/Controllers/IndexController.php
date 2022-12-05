@@ -25,7 +25,7 @@ class IndexController extends Controller
     }
 
     public function redirectToProjects(){
-        $baseurl = "http://localhost/acasaweb-master/public/api/projects";
+        $baseurl = "https://casacredito.com/api/projects";
         $listingsprojects = Http::withHeaders(['api-key' => 'Cc2022*@Notify'])->get($baseurl);
         $listingsprojects = json_decode($listingsprojects);
         return view('pages.projects', compact('listingsprojects'));
