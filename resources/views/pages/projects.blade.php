@@ -166,7 +166,7 @@
                 <div class="row mt-1 pt-1 mb-4" data-aos="fade-up">
                     @if(($count%2)==0)
                     <div class="col-sm-12 col-md-12 col-lg-6 position-relative">
-                        <img class="img-fluid rounded mx-auto d-block img-project" src="https://casacredito.com/uploads/listing/{{strtok($listingproject->images, '|')}}" alt="{{$listingproject->listing_title}}-img">
+                        <img class="img-fluid rounded mx-auto d-block img-project" src="https://casacredito.com/uploads/listing/600/{{strtok($listingproject->images, '|')}}" alt="{{$listingproject->listing_title}}-img">
                         <div class="position-absolute top-0 end-0 border" style="margin-right: 0px; margin-top: 20px; font-size: 15px; background-color: rgb(219, 219, 224); padding-right: 5px; padding-left:10px; box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
                             <i class="fas fa-building" style="margin-right: 5px; color: gray"></i><label style="color: gray; font-size:12px; padding-right: 40px;">{{strtoupper($listingproject->listingtypestatus)}}</label>
                         </div>
@@ -257,7 +257,7 @@
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-12 col-lg-6 position-relative float-right">
-                        <img class="img-fluid rounded mx-auto d-block img-project" src="https://casacredito.com/uploads/listing/{{strtok($listingproject->images, '|')}}" alt="{{$listingproject->listing_title}}-img">
+                        <img class="img-fluid rounded mx-auto d-block img-project" src="https://casacredito.com/uploads/listing/600/{{strtok($listingproject->images, '|')}}" alt="{{$listingproject->listing_title}}-img">
                         <div class="position-absolute top-0 end-0 border" style="margin-right: 0px; margin-top: 20px; font-size: 15px; background-color: rgb(219, 219, 224); padding-right: 5px; padding-left:10px; box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
                             <i class="fas fa-building" style="margin-right: 5px; color: gray"></i><label style="color: gray; font-size:12px; padding-right: 40px;">{{strtoupper($listingproject->listingtypestatus)}}</label>
                         </div>
