@@ -7,10 +7,10 @@
 <meta name="description" content="@if(isset($data)){!! $data['descripcion'] !!} @else {{$listing->listing_description}} @endif">
 
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://casacreditopromotora.com/proyectos/@if(isset($data)){{$data['nombreProyecto']}}@else{{$listing->listing_title}}@endif">
+<meta property="og:url" content="@if(isset($data))https://casacreditopromotora.com/proyectos/{{$data['nombreProyecto']}}@else https://casacreditopromotora.com/proyectos-nuevos/{{$listing->slug}}@endif">
 <meta property="og:title" content="Casa Crédito Promotora - @if(isset($data)) {{ $data['tipo']}}s {{ $data['nombreProyecto'] }} @else {{$listing->listing_title}} @endif">
 <meta property="og:description" content="@if(isset($data)){!! $data['descripcion'] !!} @else {{$listing->listing_description}} @endif">
-<meta property="og:image" content="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/1.webp')}}@else{{$listing->listing_title}}@endif">
+<meta property="og:image" content="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/1.webp')}}@else https://casacredito.com/uploads/listing/600/{{strtok($listing->images, '|')}}@endif">
 
 {{-- <meta property="product:availability" content="in stock">
 <meta property="product:price:amount" content="@if($data['nombreProyecto'] === "Adra") {{$data['departamentos'][2]['precio']}} @elseif($data['nombreProyecto'] === "Futura Narancay") {{$data['departamentos'][1]['precio']}} @elseif($data['nombreProyecto'] === "Toscana") {{$data['departamentos'][7]['precio']}} @endif">
@@ -137,8 +137,13 @@
 @endsection
 
 @php
-    $images = explode("|", $listing->images);
-    $images = array_combine(range(1, count($images)), $images);
+    if(isset($listing)){
+      $images = explode("|", $listing->images);
+      $images = array_combine(range(1, count($images)), $images);
+      $count_images = count($images);
+    } else {
+      $count_images = $data['num_imagenes'];
+    }
 @endphp
 
 @section('content')
@@ -161,12 +166,12 @@
       <div class="row">
         <div class="col-sm-6 col-6">
           <div class="column">
-            <img width="100%" class="img-fluid rounded" src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/1.webp')}} @else https://casacredito.com/uploads/listing/{{$images[2]}}@endif" class="hover-shadow">
+            <img width="100%" class="img-fluid rounded" src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/2.webp')}} @else https://casacredito.com/uploads/listing/{{$images[2]}}@endif" class="hover-shadow">
           </div>
         </div>
         <div class="col-sm-6 col-6">
           <div class="column">
-            <img class="img-fluid rounded" src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/1.webp')}} @else https://casacredito.com/uploads/listing/{{$images[3]}}@endif" class="hover-shadow">
+            <img class="img-fluid rounded" src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/3.webp')}} @else https://casacredito.com/uploads/listing/{{$images[3]}}@endif" class="hover-shadow">
           </div>
         </div>
       </div>
@@ -174,12 +179,12 @@
       <div class="row mt-3">
         <div class="col-sm-6 col-6">
           <div class="column">
-            <img class="img-fluid rounded" src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/1.webp')}} @else https://casacredito.com/uploads/listing/{{$images[4]}}@endif" class="hover-shadow">
+            <img class="img-fluid rounded" src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/4.webp')}} @else https://casacredito.com/uploads/listing/{{$images[4]}}@endif" class="hover-shadow">
           </div>
         </div>
         <div class="col-sm-6 col-6">
           <div class="column position-relative">
-            <img class="img-fluid rounded" style="filter: brightness(50%)" src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/1.webp')}} @else https://casacredito.com/uploads/listing/{{$images[5]}}@endif" onclick="openModal();currentSlide(5)" class="hover-shadow">
+            <img class="img-fluid rounded" style="filter: brightness(50%)" src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/5.webp')}} @else https://casacredito.com/uploads/listing/{{$images[5]}}@endif" onclick="openModal();currentSlide(5)" class="hover-shadow">
             <div class="position-absolute top-50 start-50 translate-middle">
               <button id="btnVerMasFotos" type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#modalImages">Ver más fotos</button>
             </div>
@@ -201,11 +206,11 @@
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             {{-- @for ($i = 1; $i <= $data['num_imagenes']; $i++) --}}
-            @for ($i = 1; $i <= count($images); $i++)
+            @for ($i = 1; $i <= $count_images; $i++)
               <div class="carousel-item @if($i == 1) active @endif position-relative">
                 <img src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/'.$i.'.'.$data['extension'])}}@else https://casacredito.com/uploads/listing/{{$images[$i]}}@endif" class="d-block w-100" alt="...">
                 <div class="position-absolute bg-danger text-light rounded-pill px-2" style="top: 8px; left: 5px">
-                  {{$i}}/{{count($images)}}
+                  {{$i}}/{{$count_images}}
                 </div>
               </div>
             @endfor
@@ -330,17 +335,17 @@
             <p><i class="fas fa-arrow-down"></i> Fondo: {{$listing->Fund}} m</p>
           </div>
         @endif
-        @if($listing->bedroom > 0)
+        @if(isset($listing) && $listing->bedroom > 0)
           <div class="col-sm-6">
             <p><i class="fas fa-bed"></i> Habitaciones: {{$listing->bedroom}}</p>
           </div>
         @endif
-        @if($listing->bathroom > 0)
+        @if(isset($listing) && $listing->bathroom > 0)
           <div class="col-sm-6">
             <p><i class="fas fa-bath"></i> Baños: {{$listing->bathroom}}</p>
           </div>
         @endif
-        @if($listing->garage > 0)
+        @if(isset($listing) && $listing->garage > 0)
           <div class="col-sm-6">
             <p><i class="fas fa-parking"></i> Parqueadero: {{$listing->garage}}</p>
           </div>

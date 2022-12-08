@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Http;
 
 class IndexController extends Controller
 {
-    public $baseurl = "http://localhost/acasaweb-master/public/api";
+    public $baseurl = "https://casacredito.com/api";
     public $header = ['api-key' => 'Cc2022*@Notify'];
 
     public function redirectToHome(){
