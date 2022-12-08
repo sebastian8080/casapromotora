@@ -173,7 +173,7 @@
                     </div>
                     <div class="col-sm-12 col-md-12 col-lg-6 d-flex align-items-center justify-content-center">
                         <div style="background-color: rgb(249, 249, 249); padding: 25px; width: 100%">
-                            <h2 class="fw-bold pt-1" style="color: #ffffff; -webkit-text-stroke: 1px rgb(162, 157, 157);">{{$listingproject->listing_title}} - {{$listingproject->product_code}}</h2>
+                            <h2 class="fw-bold pt-1" style="color: #ffffff; -webkit-text-stroke: 0.5px rgb(162, 157, 157);">{{$listingproject->listing_title}} - {{$listingproject->product_code}}</h2>
                             <h3 style="font-weight: bold">{{strtoupper($listingproject->listingtype)}}</h3>
                             <i class="fas fa-map-marker-alt mx-1" style="color: red"></i><b>@if(str_contains($listingproject->address, ",")) {{$listingproject->address}} @else {{$listingproject->state.", ".$listingproject->city.", ".$listingproject->address}} @endif</b>
                             <div class="row mt-4">
@@ -209,14 +209,14 @@
                                 </div>
                             </div>
                             <div>
-                                <a class="btn btn-outline-danger" href="{{ route('projects.viewProject', 'Toscana') }}">Ver proyecto <i class="fas fa-chevron-right"></i></a>
+                                <a class="btn btn-outline-danger" href="{{ route('web.project.show', $listingproject->slug) }}">Ver proyecto <i class="fas fa-chevron-right"></i></a>
                             </div>
                         </div>
                     </div>
                     @else
                     <div class="col-sm-12 col-md-12 col-lg-6 d-flex align-items-center justify-content-center">
                         <div style="background-color: rgb(249, 249, 249); padding: 25px; width: 100%">
-                            <h2 class="fw-bold pt-1" style="color: #ffffff; -webkit-text-stroke: 0.2px rgb(162, 157, 157);">{{$listingproject->listing_title}} - {{$listingproject->product_code}}</h2>
+                            <h2 class="fw-bold pt-1" style="color: #ffffff; -webkit-text-stroke: 0.5px rgb(162, 157, 157);">{{$listingproject->listing_title}} - {{$listingproject->product_code}}</h2>
                             <h3 style="font-weight: bold">{{strtoupper($listingproject->listingtype)}}</h3>
                             <i class="fas fa-map-marker-alt mx-1" style="color: red"></i><b>@if(str_contains($listingproject->address, ",")) {{$listingproject->address}} @else {{$listingproject->state.", ".$listingproject->city.", ".$listingproject->address}} @endif</b>
                             <div class="row mt-4">
@@ -252,7 +252,7 @@
                                 </div>
                             </div>
                             <div>
-                                <a class="btn btn-outline-danger" href="{{ route('projects.viewProject', 'Toscana') }}">Ver proyecto <i class="fas fa-chevron-right"></i></a>
+                                <a class="btn btn-outline-danger" href="{{ route('web.project.show', $listingproject->slug) }}">Ver proyecto <i class="fas fa-chevron-right"></i></a>
                             </div>
                         </div>
                     </div>

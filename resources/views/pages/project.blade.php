@@ -1,67 +1,35 @@
 @extends('layouts.plantilla')
-
-@section('title', $data['tipo']."s " . $data['nombreProyecto'])
+@if(isset($data)) @section('title', $data['tipo']."s " . $data['nombreProyecto']) @else @section('title', $listing->listing_title) @endif
 
 @section('content-head')
 
-<meta name="title" content="Casa Crédito Promotora - {{ $data['tipo'] }}s {{ $data['nombreProyecto']}}">
-<meta name="description" content="{!! $data['descripcion'] !!}">
+<meta name="title" content="Casa Crédito Promotora - @if(isset($data)) {{ $data['tipo'] }}s {{ $data['nombreProyecto']}} @else {{$listing->listing_title}} @endif">
+<meta name="description" content="@if(isset($data)){!! $data['descripcion'] !!} @else {{$listing->listing_description}} @endif">
 
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://casacreditopromotora.com/proyectos/{{$data['nombreProyecto']}}">
-<meta property="og:title" content="Casa Crédito Promotora - {{ $data['tipo']}}s {{ $data['nombreProyecto'] }}">
-<meta property="og:description" content="{!! $data['descripcion'] !!}">
-<meta property="og:image" content="{{url('img/projects/'.$data['name_folder'].'/1.webp')}}">
+<meta property="og:url" content="https://casacreditopromotora.com/proyectos/@if(isset($data)){{$data['nombreProyecto']}}@else{{$listing->listing_title}}@endif">
+<meta property="og:title" content="Casa Crédito Promotora - @if(isset($data)) {{ $data['tipo']}}s {{ $data['nombreProyecto'] }} @else {{$listing->listing_title}} @endif">
+<meta property="og:description" content="@if(isset($data)){!! $data['descripcion'] !!} @else {{$listing->listing_description}} @endif">
+<meta property="og:image" content="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/1.webp')}}@else{{$listing->listing_title}}@endif">
 
-<meta property="product:availability" content="in stock">
+{{-- <meta property="product:availability" content="in stock">
 <meta property="product:price:amount" content="@if($data['nombreProyecto'] === "Adra") {{$data['departamentos'][2]['precio']}} @elseif($data['nombreProyecto'] === "Futura Narancay") {{$data['departamentos'][1]['precio']}} @elseif($data['nombreProyecto'] === "Toscana") {{$data['departamentos'][7]['precio']}} @endif">
 <meta property="product:retailer_item_id" content="{{ strtoupper(substr($data['nombreProyecto'], 0, 3)) }}-001">
-<meta property="product:price:currency" content="USD">
+<meta property="product:price:currency" content="USD"> --}}
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <style>
-      body{
-        color: rgb(45, 67, 71)
-      }
-
-      .row > .column {
-        padding: 0 8px;
-      }
-
-      .row:after {
-        content: "";
-        display: table;
-        clear: both;
-      }
-
+      body{color: rgb(45, 67, 71)}
+      .row > .column {padding: 0 8px;}
+      .row:after {content: "";display: table;clear: both;}
       /* Create four equal columns that floats next to eachother */
-      .column {
-        float: left;
-        width: 100%;
-      }
-
-      img.demo {
-        opacity: 0.6;
-      }
-
+      .column {float: left;width: 100%;}
+      img.demo {opacity: 0.6;}
       .active,
-      .demo:hover {
-        opacity: 1;
-      }
-
-      img.hover-shadow {
-        transition: 0.3s;
-      }
-
-      .hover-shadow:hover {
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.074), 0 6px 20px 0 rgba(0, 0, 0, 0.109);
-      }
-
-      .imgs-header{
-          /* background-color: #e2e0e0;  */
-          padding: 10px;
-        }
-
+      .demo:hover {opacity: 1;}
+      img.hover-shadow {transition: 0.3s;}
+      .hover-shadow:hover {box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.074), 0 6px 20px 0 rgba(0, 0, 0, 0.109);}
+      .imgs-header{/* background-color: #e2e0e0;  */padding: 10px;}
       @media screen and (max-width: 720px){
         #btnVerMasFotos{
           font-size: 10px;
@@ -91,6 +59,7 @@
       .formEmail{
         background-color: rgb(244, 247, 248);
         position: sticky;
+        top: 0;
       }
 
       #textoCondicionesEmail{
@@ -167,11 +136,16 @@
     </style>
 @endsection
 
+@php
+    $images = explode("|", $listing->images);
+    $images = array_combine(range(1, count($images)), $images);
+@endphp
+
 @section('content')
 
   <div class="container pt-5 mt-3">
-    <h1> {{ Str::upper($data['tipo'] . "S " . $data['nombreProyecto']) }}</h1>
-    <h5><i class="fas fa-map-marker-alt mx-1" style="color: red"></i><b> Ubicación:</b> {{ $data['canton'] }} > {{ $data['ciudad'] }} > {{ $data['sector'] }}</h5>
+    <h1>@if(isset($data)) {{ Str::upper($data['tipo'] . "S " . $data['nombreProyecto']) }} @else {{$listing->listing_title}} @endif</h1>
+    <h5><i class="fas fa-map-marker-alt mx-1" style="color: red"></i><b> Ubicación:</b> @if(isset($data)) {{ $data['canton'] }} > {{ $data['ciudad'] }} > {{ $data['sector'] }} @else {{$listing->address}} @endif</h5>
   </div>
 
     <div class="imgs-header mt-3">
@@ -179,7 +153,7 @@
     <div class="row mb-3">
       <div class="col-sm-6 col-12 mt-3">
         <div class="column">
-          <img class="img-fluid rounded" src="{{url('img/projects/'.$data['name_folder'].'/1.webp')}}" class="hover-shadow">
+          <img class="img-fluid rounded" src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/1.webp')}} @else https://casacredito.com/uploads/listing/{{$images[1]}}@endif" class="hover-shadow">
         </div>
       </div>
 
@@ -187,12 +161,12 @@
       <div class="row">
         <div class="col-sm-6 col-6">
           <div class="column">
-            <img width="100%" class="img-fluid rounded" src="{{url('img/projects/'.$data['name_folder'].'/2.'.$data['extension'])}}" class="hover-shadow">
+            <img width="100%" class="img-fluid rounded" src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/1.webp')}} @else https://casacredito.com/uploads/listing/{{$images[2]}}@endif" class="hover-shadow">
           </div>
         </div>
         <div class="col-sm-6 col-6">
           <div class="column">
-            <img class="img-fluid rounded" src="{{url('img/projects/'.$data['name_folder'].'/3.'.$data['extension'])}}" class="hover-shadow">
+            <img class="img-fluid rounded" src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/1.webp')}} @else https://casacredito.com/uploads/listing/{{$images[3]}}@endif" class="hover-shadow">
           </div>
         </div>
       </div>
@@ -200,12 +174,12 @@
       <div class="row mt-3">
         <div class="col-sm-6 col-6">
           <div class="column">
-            <img class="img-fluid rounded" src="{{url('img/projects/'.$data['name_folder'].'/4.'.$data['extension'])}}" class="hover-shadow">
+            <img class="img-fluid rounded" src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/1.webp')}} @else https://casacredito.com/uploads/listing/{{$images[4]}}@endif" class="hover-shadow">
           </div>
         </div>
         <div class="col-sm-6 col-6">
           <div class="column position-relative">
-            <img class="img-fluid rounded" style="filter: brightness(50%)" src="{{url('img/projects/'.$data['name_folder'].'/5.'.$data['extension'])}}" onclick="openModal();currentSlide(5)" class="hover-shadow">
+            <img class="img-fluid rounded" style="filter: brightness(50%)" src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/1.webp')}} @else https://casacredito.com/uploads/listing/{{$images[5]}}@endif" onclick="openModal();currentSlide(5)" class="hover-shadow">
             <div class="position-absolute top-50 start-50 translate-middle">
               <button id="btnVerMasFotos" type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#modalImages">Ver más fotos</button>
             </div>
@@ -219,20 +193,20 @@
 <div class="modal" id="modalImages">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-
-      <!-- Modal Header -->
       <div class="modal-header">
-        <h1>{{ $data['nombreProyecto']}}</h1>
+        <p>@if(isset($data)){{ $data['nombreProyecto']}}@else{{$listing->listing_title}}@endif</p>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
-
-      <!-- Modal body -->
       <div class="modal-body">
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
-            @for ($i = 1; $i <= $data['num_imagenes']; $i++)
-              <div class="carousel-item @if($i == 1) active @endif">
-                <img src="{{url('img/projects/'.$data['name_folder'].'/'.$i.'.'.$data['extension'])}}" class="d-block w-100" alt="...">
+            {{-- @for ($i = 1; $i <= $data['num_imagenes']; $i++) --}}
+            @for ($i = 1; $i <= count($images); $i++)
+              <div class="carousel-item @if($i == 1) active @endif position-relative">
+                <img src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/'.$i.'.'.$data['extension'])}}@else https://casacredito.com/uploads/listing/{{$images[$i]}}@endif" class="d-block w-100" alt="...">
+                <div class="position-absolute bg-danger text-light rounded-pill px-2" style="top: 8px; left: 5px">
+                  {{$i}}/{{count($images)}}
+                </div>
               </div>
             @endfor
           </div>
@@ -256,10 +230,11 @@
     <div class="col-sm-8">
       <div class="row">
         <p>
-          {!! $data['descripcion'] !!}
+          @if(isset($data)){!! $data['descripcion'] !!} @else {!!$listing->listing_description!!} @endif
         </p>
       </div>
-      @foreach ($data['departamentos'] as $departamento)
+      @if(isset($data))
+        @foreach ($data['departamentos'] as $departamento)
         <div class="row">
           <div class="card-project">
             <h5>{{ Str::upper($data['tipo']) . " " . $departamento['num_departamento']}}</h5>
@@ -315,35 +290,80 @@
           </div>
         </div>
           
-      @endforeach
+        @endforeach
+      @endif
       <div class="row">
         <h4>Características</h4>
+        @if(isset($data))
         <div class="col-sm-6">
           <h5>Generales</h5>
-          @foreach ($data['caracteristicas']['generales'] as $general)
-            <p>{{ $general }}</p>  
-          @endforeach
-        </div>
+            @foreach ($data['caracteristicas']['generales'] as $general)
+              <p>{{ $general }}</p>  
+            @endforeach
+          </div>
+        @endif
+        @if(isset($data))
         <div class="col-sm-6">
           <h5>Servicios</h5>
-          @foreach ($data['caracteristicas']['servicios'] as $services)
-            <p>{{ $services }}</p>
-          @endforeach
-        </div>
+            @foreach ($data['caracteristicas']['servicios'] as $services)
+              <p>{{ $services }}</p>
+            @endforeach
+          </div>
+        @endif
+        @if(isset($listing->construction_area))
+          <div class="col-sm-6">
+            <p><i class="fas fa-expand-arrows-alt"></i> Área de Construcción: {{$listing->construction_area}} m<sup>2</sup></p>
+          </div>
+        @endif
+        @if(isset($listing->land_area))
+          <div class="col-sm-6">
+            <p><i class="fas fa-compress-arrows-alt"></i> Área de Terreno: {{$listing->land_area}} m<sup>2</sup></p>
+          </div>
+        @endif
+        @if(isset($listing->Front))
+          <div class="col-sm-6">
+            <p><i class="fas fa-arrow-up"></i> Frente: {{$listing->Front}} m</p>
+          </div>
+        @endif
+        @if(isset($listing->Fund))
+          <div class="col-sm-6">
+            <p><i class="fas fa-arrow-down"></i> Fondo: {{$listing->Fund}} m</p>
+          </div>
+        @endif
+        @if($listing->bedroom > 0)
+          <div class="col-sm-6">
+            <p><i class="fas fa-bed"></i> Habitaciones: {{$listing->bedroom}}</p>
+          </div>
+        @endif
+        @if($listing->bathroom > 0)
+          <div class="col-sm-6">
+            <p><i class="fas fa-bath"></i> Baños: {{$listing->bathroom}}</p>
+          </div>
+        @endif
+        @if($listing->garage > 0)
+          <div class="col-sm-6">
+            <p><i class="fas fa-parking"></i> Parqueadero: {{$listing->garage}}</p>
+          </div>
+        @endif
       </div> 
     </div>
     <div class="col-sm-1"></div>
     <div class="col-sm-3">
       <div class="headerForm">
-        <h5>SEPARE SU DEPARTAMENTO</h5>
-        <h3> CON ${{ $data['monto_reserva']}}</h3>
+        @if(isset($data))
+          <h5>SEPARE SU DEPARTAMENTO</h5>
+          <h3>${{ $data['monto_reserva']}}</h3>
+        @else
+          <h5>PRECIO</h5>
+          <h3>${{number_format($listing->property_price)}}</h3>
+          @endif
       </div>
       <div class="formEmail rounded" id="myHeader">
-        <div style="padding-top: 20px; padding-left: 15px; padding-right: 15px; padding-bottom: 15px">
+        <div style="padding-top: 20px; padding-left: 15px; padding-right: 15px; padding-bottom: 15px;">
           <p class="fw-bold">QUIERO MAS INFORMACION</p>
           <hr>
           <p>Contáctanos y recibe la mejor asesoría</p>
-          <form id="form" class="inputs" action="{{ route('sendEmail.projects', [$data['nombreProyecto']]) }}" method="POST">
+          <form id="form" class="inputs" action="@if(isset($data)){{ route('sendEmail.projects', [$data['nombreProyecto']]) }} @else {{route('sendEmail.projects', $listing->product_code)}} @endif" method="POST">
             @csrf
             <div class="mb-3 d-flex">
               <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre y Apellido" autocomplete="off" required>
@@ -357,7 +377,8 @@
             </div>
             <div class="d-grid gap-2">
               <button id="btnEnviar" type="submit" class="btn">Enviar</button>
-              <a id="btnWhatsapp" target="_blank" class="btn" href="https://api.whatsapp.com/send?phone=+593983849073&text=Me%20gustaria%20conocer%20los%20{{Str::lower($data['tipo'])}}s%20del%20conjunto%20residencial%20{{$data['nombreProyecto']}}">Contactar por Whatsapp <i id="iconwpp" class="fab fa-whatsapp"></i></a>
+              {{-- <a id="btnWhatsapp" target="_blank" class="btn" href="https://api.whatsapp.com/send?phone=+593983849073&text=Me%20gustaria%20conocer%20los%20{{Str::lower($data['tipo'])}}s%20del%20conjunto%20residencial%20{{$data['nombreProyecto']}}">Contactar por Whatsapp <i id="iconwpp" class="fab fa-whatsapp"></i></a> --}}
+              <a id="btnWhatsapp" target="_blank" class="btn" href="https://api.whatsapp.com/send?phone=+593983849073">Contactar por Whatsapp <i id="iconwpp" class="fab fa-whatsapp"></i></a>
             </div>
           </form>
           <p id="textoCondicionesEmail">Al enviar estás aceptando los términos de Uso y la Política de privacidad</p>
@@ -366,37 +387,41 @@
     </div>
   </div>
   <div>
-    <div class="row mt-5">
-      <h4>Areas Comunales</h4>
-      <div class="col">
-        <ul>
-          <li>Salon de uso multiple</li>
-          <li>Lobby y Recepción</li>
-        </ul>
+    @if(isset($data))
+      <div class="row mt-5">
+        <h4>Areas Comunales</h4>
+        <div class="col">
+          <ul>
+            <li>Salon de uso multiple</li>
+            <li>Lobby y Recepción</li>
+          </ul>
+        </div>
+        <div class="col">
+          <ul>
+            <li>Jardines Comunales</li>
+            <li>Sala Comunal</li>
+          </ul>
+        </div>
+        <div class="col">
+          <ul>
+            <li>Gameroom</li>
+            <li>Balcones Comunales</li>
+          </ul>
+        </div>  
       </div>
-      <div class="col">
-        <ul>
-          <li>Jardines Comunales</li>
-          <li>Sala Comunal</li>
-        </ul>
-      </div>
-      <div class="col">
-        <ul>
-          <li>Gameroom</li>
-          <li>Balcones Comunales</li>
-        </ul>
-      </div>  
-    </div>
+    @endif
+    @if(isset($data))
     <div class="mt-5">
       <h4>UBICACION</h4>
-      <iframe 
+        <iframe 
         src="{{ $data['url_google_maps']}}" 
         width="100%" 
         height="300" 
         style="border:0;" 
         allowfullscreen="" 
         loading="lazy"></iframe>
-    </div>
+      </div>
+    @endif
     
     </div>
     <div class="row mt-5 mb-3">

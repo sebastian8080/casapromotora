@@ -36,6 +36,7 @@ Route::get('/blog', [IndexController::class, 'redirectToBlog'])->name('pages.new
 Route::get('/nuestro-equipo', function () {return view('pages.equipo');})->name('pages.equipo');
 
 Route::get('/proyectos/{nombreProyecto}/{num_department?}', [ProjectController::class, 'viewProject'])->name('projects.viewProject');
+Route::get('/proyectos-nuevos/{slug}', [IndexController::class, 'showproject'])->name('web.project.show');
 Route::post('/proyectos-interest/{nombreProyecto}', [ProjectController::class, 'sendEmail'])->name("sendEmail.projects");
 // Route::get('/proyectos/{nombreProyecto}/{departamento}', [ProjectController::class, 'changeDepartment'])->name('changeDepartment');
 
