@@ -158,7 +158,7 @@
     <div class="row mb-3">
       <div class="col-sm-6 col-12 mt-3">
         <div class="column">
-          <img class="img-fluid rounded" src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/1.webp')}} @else https://casacredito.com/uploads/listing/{{$images[1]}}@endif" class="hover-shadow">
+          <img class="img-fluid rounded" src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/1.webp')}} @else https://casacredito.com/uploads/listing/600/{{$images[1]}}@endif" class="hover-shadow">
         </div>
       </div>
 
@@ -166,12 +166,12 @@
       <div class="row">
         <div class="col-sm-6 col-6">
           <div class="column">
-            <img width="100%" class="img-fluid rounded" src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/2.webp')}} @else https://casacredito.com/uploads/listing/{{$images[2]}}@endif" class="hover-shadow">
+            <img width="100%" class="img-fluid rounded" src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/2.webp')}} @else https://casacredito.com/uploads/listing/600/{{$images[2]}}@endif" class="hover-shadow">
           </div>
         </div>
         <div class="col-sm-6 col-6">
           <div class="column">
-            <img class="img-fluid rounded" src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/3.webp')}} @else https://casacredito.com/uploads/listing/{{$images[3]}}@endif" class="hover-shadow">
+            <img class="img-fluid rounded" src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/3.webp')}} @else https://casacredito.com/uploads/listing/600/{{$images[3]}}@endif" class="hover-shadow">
           </div>
         </div>
       </div>
@@ -179,12 +179,12 @@
       <div class="row mt-3">
         <div class="col-sm-6 col-6">
           <div class="column">
-            <img class="img-fluid rounded" src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/4.webp')}} @else https://casacredito.com/uploads/listing/{{$images[4]}}@endif" class="hover-shadow">
+            <img class="img-fluid rounded" src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/4.webp')}} @else https://casacredito.com/uploads/listing/600/{{$images[4]}}@endif" class="hover-shadow">
           </div>
         </div>
         <div class="col-sm-6 col-6">
           <div class="column position-relative">
-            <img class="img-fluid rounded" style="filter: brightness(50%)" src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/5.webp')}} @else https://casacredito.com/uploads/listing/{{$images[5]}}@endif" onclick="openModal();currentSlide(5)" class="hover-shadow">
+            <img class="img-fluid rounded" style="filter: brightness(50%)" src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/5.webp')}} @else https://casacredito.com/uploads/listing/600/{{$images[5]}}@endif" onclick="openModal();currentSlide(5)" class="hover-shadow">
             <div class="position-absolute top-50 start-50 translate-middle">
               <button id="btnVerMasFotos" type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#modalImages">Ver más fotos</button>
             </div>
@@ -208,7 +208,7 @@
             {{-- @for ($i = 1; $i <= $data['num_imagenes']; $i++) --}}
             @for ($i = 1; $i <= $count_images; $i++)
               <div class="carousel-item @if($i == 1) active @endif position-relative">
-                <img src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/'.$i.'.'.$data['extension'])}}@else https://casacredito.com/uploads/listing/{{$images[$i]}}@endif" class="d-block w-100" alt="...">
+                <img src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/'.$i.'.'.$data['extension'])}}@else https://casacredito.com/uploads/listing/600/{{$images[$i]}}@endif" class="d-block w-100" alt="...">
                 <div class="position-absolute bg-danger text-light rounded-pill px-2" style="top: 8px; left: 5px">
                   {{$i}}/{{$count_images}}
                 </div>
