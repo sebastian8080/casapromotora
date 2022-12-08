@@ -39,6 +39,7 @@ class IndexController extends Controller
     public function showproject($slug){
         $listing = Http::withHeaders($this->header)->get($this->baseurl."/project/".$slug);
         $listing = json_decode($listing, false);
+        return $listing;
         return view('pages.project', compact('listing'));
     }
 
