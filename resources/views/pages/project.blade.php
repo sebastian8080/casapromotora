@@ -158,7 +158,7 @@
     <div class="row mb-3">
       <div class="col-sm-6 col-12 mt-3">
         <div class="column">
-          <img class="img-fluid rounded" src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/1.webp')}} @else https://casacredito.com/uploads/listing/600/{{$images[1]}}@endif" class="hover-shadow">
+          <img class="img-fluid w-100 h-100 rounded" src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/1.webp')}} @else https://casacredito.com/uploads/listing/600/{{$images[1]}}@endif" class="hover-shadow">
         </div>
       </div>
 
