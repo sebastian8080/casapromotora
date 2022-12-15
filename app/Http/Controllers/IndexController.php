@@ -77,16 +77,16 @@ class IndexController extends Controller
             'response' => $request->input('g-recaptcha-response')
         ])->object();
 
-        $to = "info@casacredito.com"; //info@casacredito.com
+        $to = "sebas31051999@gmail.com"; //info@casacredito.com
         $subject = "Solicitud de Crédito - Casa Credito Promotora";
         $message = "<br><strong>Lead Créditos</strong>
-            <br>Cédula:" . strip_tags($request->cedula) ."
-            <br>Nombre: " . strip_tags($request->nombre) ."
-            <br>Teléfono: " . strip_tags($request->telefono_celular) ."
-            <br>Email: " . strip_tags($request->correo) ."
-            <br>Mensaje: " . strip_tags($request->mensaje) ."
-            <br>Monto: $ " . strip_tags($request->monto) ."
-            <br>Tipo de crédito: " . strip_tags($request->tipo_credito) ."
+            <br><b>Cédula:</b>" . strip_tags($request->cedula) ."
+            <br><b>Nombre:</b> " . strip_tags($request->nombre) ." ". strip_tags($request->apellido) ."
+            <br><b>Teléfono:</b> " . strip_tags($request->telefono_celular) ."
+            <br><b>Email:</b> " . strip_tags($request->correo) ."
+            <br><b>Mensaje:</b> " . strip_tags($request->mensaje) ."
+            <br><b>Monto:</b> $" . strip_tags($request->monto) ."
+            <br><b>Tipo de crédito:</b> " . strip_tags($request->tipo_credito) ."
             <div style='display:flex'><img width='60' height='35' src='http://casacreditopromotora.com/logo-recortado.png' /><h3>Casa Crédito Promotora</h3></div>
             ";
 

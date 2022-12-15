@@ -262,9 +262,9 @@ html, body {
   font-size: 3vw;
 }
 
-#btn-row6{
-  font-size: 25px;
-}
+#btn-row6{font-size: 25px;}
+.formcredit{padding: 1rem;}
+@media screen and (max-width: 780px){#btn-row6{font-size: 15px;}.formcredit{padding: 0rem;}}
 
 /*ESTILO DE LA CARD DE CONTACTO*/
 #title-row7, #text1-row7, #text2-row7{
