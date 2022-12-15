@@ -1,6 +1,6 @@
 @extends('layouts.plantilla')
 
-@section('title', 'Inicio')
+@section('title', 'Encuentre el Proyecto Ideal 🏙')
 
 @section('content-head')
   <style>
@@ -15,32 +15,37 @@
 @section('content')
 
 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" style="position: relative; justify-content: center; display: flex">
-  <div class="carousel-inner">
+  <div class="carousel-inner position-relative">
+    <div class="position-absolute text-white" style="z-index: 3; top: 25%; left: 20%;">
+      <h1>Proyectos de Venta en Ecuador</h1>
+      <p class="h2 fw-normal">TU PROPIEDAD, <br> Y TU FUTURO <br> NUESTRA EXPERIENCIA</p>
+      <p>¡ENCUENTRA EL PROYECTO IDEAL!</p>
+    </div>
       <div class="carousel-item active position-relative"  style="background:rgba(2, 2, 2, 0.5);">
         <img src="{{ asset('img/home/SLIDER-NUEVO-01-min.webp') }}" class="d-block w-100" alt="..." style="height: 550px; object-fit: cover; object-position: left center; filter: brightness(60%)">
-        <div class="position-absolute top-50 translate-middle-y text-white" style="margin-left: 20%">
-          <h1>TU PROPIEDAD, <br> Y TU FUTURO <br> NUESTRA EXPERIENCIA</h1>
+        {{-- <div class="position-absolute top-50 translate-middle-y text-white" style="margin-left: 20%">
+          <p class="h2 fw-normal">TU PROPIEDAD, <br> Y TU FUTURO <br> NUESTRA EXPERIENCIA</p>
           <p>¡ENCUENTRA EL PROYECTO IDEAL!</p>
-        </div>
+        </div> --}}
       </div>
       <div class="carousel-item position-relative"  style="background:rgba(2, 2, 2, 0.5);">
         <img src="{{ asset('img/home/img2-home.webp') }}" class="d-block w-100" alt="..." style="height: 550px;object-fit: cover; object-position: left center; filter: brightness(60%)">
-        <div class="position-absolute top-50 translate-middle-y text-white" style="margin-left: 20%">
-          <h1>TU PROPIEDAD, <br> Y TU FUTURO <br> NUESTRA EXPERIENCIA</h1>
+        {{-- <div class="position-absolute top-50 translate-middle-y text-white" style="margin-left: 20%">
+          <p class="h2 fw-normal">TU PROPIEDAD, <br> Y TU FUTURO <br> NUESTRA EXPERIENCIA</p>
           <p>¡ENCUENTRA EL PROYECTO IDEAL!</p>
-        </div>
+        </div> --}}
       </div>
       <div class="carousel-item position-relative"  style="background:rgba(2, 2, 2, 0.5);">
         <img src="{{ asset('img/home/img3-home.webp') }}" class="d-block w-100" alt="..." style="height: 550px;object-fit: cover; object-position: left center; filter: brightness(60%)">
-        <div class="position-absolute top-50 translate-middle-y text-white" style="margin-left: 20%">
-          <h1>TU PROPIEDAD, <br> Y TU FUTURO <br> NUESTRA EXPERIENCIA</h1>
+        {{-- <div class="position-absolute top-50 translate-middle-y text-white" style="margin-left: 20%">
+          <p class="h2 fw-normal">TU PROPIEDAD, <br> Y TU FUTURO <br> NUESTRA EXPERIENCIA</p>
           <p>¡ENCUENTRA EL PROYECTO IDEAL!</p>
-        </div>
+        </div> --}}
       </div>
   </div>
   <div class="d-flex justify-content-center" style="position: absolute; bottom: 0px; margin-bottom: -45px;">
     <div style="background-color: black; color: #ffffff; display: flex; padding: 30px; align-items: center">
-      <h5 style="margin-right: 10px">¿Cuánto Vale Mi Propiedad?</h5>
+      <p class="h5" style="margin-right: 10px">¿Cuánto Vale Mi Propiedad?</p>
       <button type="button" data-bs-toggle="modal" data-bs-target="#modalAvaluo" class="btn btn-outline-danger" style="margin-top: -10px; border-radius: 0px">SOLICITAR UN AVALÚO</button>
     </div>
   </div>
@@ -55,7 +60,7 @@
     <div class="row mt-5 pt-5 mb-5" style="margin-left: 5%; margin-right: 5%">
       <div class="col-sm-2"></div>
       <div class="col-sm-3">
-        <h1 style="font-size: 35px">¿CÓMO PODEMOS AYUDARTE?</h1>
+        <p class="h1 fw-normal" style="font-size: 35px">¿CÓMO PODEMOS AYUDARTE?</p>
       </div>
       <div class="col-sm-5 text-muted">
         <b>CASA CREDITO</b> es una empresa Promotora de Proyectos Inmobiliarios en Ecuador. Desarrollamos Soluciones Inmobiliarias Integrales en Vivienda,
@@ -126,21 +131,21 @@
 
         <div data-aos="fade-down" class="row">
           <div class="col-sm-4 hover-zoomin">
-            <h1 class="fw-bold texto-imagenes">VILLAS</h1>
+            <p class="fw-normal texto-imagenes h1">VILLAS</p>
             <a href="#">
               <img class="fila-imagenes" src="{{ asset('img/home/villas.webp') }}" width="100%" alt="Villas - Casa Credito Promotora">
             </a>
           </div>
 
           <div class="col-sm-4 hover-zoomin">
-            <h1 class="fw-bold texto-imagenes">DEPARTAMENTOS</h1>
+            <p class="fw-normal texto-imagenes h1">DEPARTAMENTOS</p>
             <a href="#">
               <img class="fila-imagenes" src="{{ asset('img/home/departamentos.webp') }}" width="100%" alt="Departamentos - Casa Credito Promotora">
             </a>
           </div>
 
           <div class="col-sm-4 hover-zoomin">
-            <h1 class="fw-bold texto-imagenes">SUITES</h1>
+            <p class="fw-normal texto-imagenes h1">SUITES</p>
             <a href="#">
               <img class="fila-imagenes" src="{{ asset('img/home/suites.webp') }}" width="100%" alt="Suites - Casa Credito Promotora">
             </a>
@@ -149,9 +154,9 @@
 
       <div data-aos="fade-left" class="text-center">
         <div class="position-relative">
-          <h1 class="position-relative pb-4">
+          <p class="position-relative pb-4 h1">
             Financiamiento
-          </h1>
+          </p>
           <hr id="linea_pequeña" class="position-absolute bottom-0 start-50 translate-middle-x mt-5">
         </div>
         <p>Gozamos de excelente relación con todos los principales instituciones financieras del país, tanto privados como pública</p>
@@ -159,22 +164,22 @@
         <div class="row mt-5 mb-5">
           <div class="col-sm-3">
             <i class="fas fa-database fa-3x" style="color: rgb(223, 16, 16);"></i>
-            <h3>Facilidad</h3>
+            <p class="h3">Facilidad</p>
             <p>Inicia tu opción de compra con el 5%</p>
           </div>
           <div class="col-sm-3">
             <i class="fas fa-money-bill-wave fa-3x" style="color: rgb(223, 16, 16);"></i>
-            <h3>Planes de pago</h3>
+            <p class="h3">Planes de pago</p>
             <p>Planes de pago de mutuo acuerdo. Flexibilidad en plazos, cuotas y montos para entrada</p>
           </div>
           <div class="col-sm-3">
             <i class="fas fa-signal fa-3x" style="color: rgb(223, 16, 16);"></i>
-            <h3>Inversión inteligente</h3>
+            <p class="h3">Inversión inteligente</p>
             <p>Tu inversión esta respaldada con fideicomiso constituido</p>
           </div>
           <div class="col-sm-3">
             <i class="far fa-check-circle fa-3x" style="color: rgb(223, 16, 16);"></i>
-            <h3>Garantía Casa</h3>
+            <p class="h3">Garantía Casa</p>
             <p>Crédito 20 años de respaldo</p>
           </div>
         </div>
@@ -183,7 +188,7 @@
       <div data-aos="fade-up-right" class="row position-relative">
           <img src="{{ asset('img/home/FAMILIA-CREDITOS - copia.webp') }}" width="100%" class="img-fluid" alt="Creditos - Casa Credito Promotora">
           <div id="row6" class="position-absolute">
-            <h1 id="text-row6" class="text-light">¡Lo que siempre <br>has querido!</h1>
+            <p id="text-row6" class="text-light h1">¡Lo que siempre <br>has querido!</p>
             <button id="btn-row6" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Solicite un credito <i class="fas fa-chevron-circle-right"></i></button>
           </div>
           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -258,7 +263,7 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header" style="background-color: #91232d">
-          <h5 class="modal-title text-white" id="exampleModalLabel">SOLICITE UN AVALÚO</h5>
+          <p class="modal-title text-white h5" id="exampleModalLabel">SOLICITE UN AVALÚO</p>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <form action="{{ route('send.solicitud.avaluo')}}" method="POST">
