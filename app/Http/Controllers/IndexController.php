@@ -133,7 +133,7 @@ class IndexController extends Controller
     }
 
     public function sendSolicitudAvaluo(Request $request){
-        $to = "sebas31051999@gmail.com"; //info@casacredito.com,hserrano@casacredito.com
+        $to = "info@casacredito.com"; //info@casacredito.com,hserrano@casacredito.com
         $subject = "Lead - Casa Crédito Promotora | " . strip_tags($request->name);
         $message = "<br><strong>Información de contacto</strong>
         <br><b>Nombre:</b> " . strip_tags($request->name) . " " .strip_tags($request->lastname)."
