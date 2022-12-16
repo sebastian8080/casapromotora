@@ -43,10 +43,14 @@
         </div> --}}
       </div>
   </div>
-  <div class="d-flex justify-content-center" style="position: absolute; bottom: 0px; margin-bottom: -45px;">
-    <div style="background-color: black; color: #ffffff; display: flex; padding: 30px; align-items: center">
-      <p class="h5" style="margin-right: 10px">¿Cuánto Vale Mi Propiedad?</p>
-      <button type="button" data-bs-toggle="modal" data-bs-target="#modalAvaluo" class="btn btn-outline-danger" style="margin-top: -10px; border-radius: 0px">SOLICITAR UN AVALÚO</button>
+  <div class="d-flex justify-content-center text-center" style="position: absolute; bottom: 0px; margin-bottom: -45px;">
+    <div class="row" style="background-color: black; color: #ffffff; padding: 30px; align-items: center">
+      <div class="col-sm-6 col-12">
+        <p class="h5 pt-1" style="margin-right: 10px">¿Cuánto Vale Mi Propiedad?</p>
+      </div>
+      <div class="col-sm-6 col-12">
+        <button type="button" data-bs-toggle="modal" data-bs-target="#modalAvaluo" class="btn btn-outline-danger mt-1" style="margin-top: -10px; border-radius: 0px">SOLICITAR UN AVALÚO</button>
+      </div>
     </div>
   </div>
   {{-- <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-bs-slide="prev">
@@ -263,34 +267,41 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header" style="background-color: #91232d">
-          <p class="modal-title text-white h5" id="exampleModalLabel">SOLICITE UN AVALÚO</p>
+          <p class="modal-title text-white h6" id="exampleModalLabel">Complete el formulario con su información y un asesor se contactará con usted</p>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <form action="{{ route('send.solicitud.avaluo')}}" method="POST">
           @csrf
         <div class="modal-body">
-          <div class="form-group">
-            <label for="name">Nombre y Apellido:</label>
-            <input type="text" name="name" id="name" class="form-control" required>
+          <div class="form-group d-flex">
+            <div class="w-100 me-1">
+              <label for="name" class="text-muted font-size-xs">Nombre:</label>
+              <input type="text" name="name" id="name" class="form-control" required>
+            </div>
+            <div class="w-100 ms-1">
+              <label for="name" class="text-muted font-size-xs">Apellido:</label>
+              <input type="text" name="lastname" id="lastname" class="form-control" required>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="phone">Teléfono:</label>
+          <div class="form-group mt-2">
+            <label for="phone" class="text-muted font-size-xs">Teléfono:</label>
             <input type="number" name="phone" id="phone" class="form-control" required>
           </div>
-          <div class="form-group">
-            <label for="email">Correo electrónico:</label>
+          <div class="form-group mt-2">
+            <label for="email" class="text-muted font-size-xs">Correo electrónico:</label>
             <input type="email" name="email" id="email" class="form-control" required>
           </div>
-          <div class="form-group">
-            <label for="comentario">Comentario:</label>
+          <div class="form-group mt-2">
+            <label for="comentario" class="text-muted font-size-xs">Comentario:</label>
             <textarea name="comentario" id="comentario" rows="2" class="form-control"></textarea>
           </div>
           @php
               $types = DB::connection('mysql2')->table('listing_types')->get();
           @endphp
           <div class="form-group mt-2">
+            <label for="type" class="text-muted font-size-xs">Tipo de Propiedad</label>
             <select name="type" id="type" class="form-select" required>
-              <option value="">Tipo de propiedad</option>
+              <option value="">Seleccione</option>
               @foreach ($types as $type)
                   <option value="{{ $type->type_title}}">{{ $type->type_title}}</option>
               @endforeach
@@ -300,23 +311,25 @@
               $states = DB::connection('mysql2')->table('info_states')->where('country_id', 63)->get();
           @endphp
           <div class="d-flex">
-            <div class="form-group mt-2" style="width: 100%; margin-right: 1px">
-              <select name="state" id="state" class="form-control" required>
-                <option value="">Seleccione provincia</option>
+            <div class="form-group mt-2 w-100 me-1">
+              <label class="text-muted font-size-xs" for="state">Provincia</label>
+              <select name="state" id="state" class="form-select" required>
+                <option value="">Seleccione</option>
                 @foreach ($states as $state)
                     <option value="{{$state->name}}" data-id={{$state->id}}>{{ $state->name}}</option>
                 @endforeach
               </select>
             </div>
-            <div class="form-gropu mt-2" style="width: 100%">
-              <select name="city" id="city" class="form-control" required>
-                <option value="">Seleccione ciudad</option>
+            <div class="form-gropu mt-2 w-100 ms-1" >
+              <label for="city" class="text-muted font-size-xs">Ciudad</label>
+              <select name="city" id="city" class="form-select" required>
+                <option value="">Seleccione</option>
               </select>
             </div>
           </div>
         </div>
         <div class="modal-footer justify-content-center">
-          <button type="submit" class="btn" style="background-color: #91232d; color: #ffffff">Enviar</button>
+          <button type="submit" class="btn" style="background-color: #91232d; color: #ffffff">Solicitar mi avalúo</button>
         </div>
       </form>
       </div>

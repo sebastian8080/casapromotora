@@ -133,21 +133,21 @@ class IndexController extends Controller
     }
 
     public function sendSolicitudAvaluo(Request $request){
-        $to = "info@casacredito.com,hserrano@casacredito.com"; //info@casacredito.com,hserrano@casacredito.com
-        $subject = "Lead - Casa Crédito Promotora | " . substr(date(now()), 0, 10);
+        $to = "sebas31051999@gmail.com"; //info@casacredito.com,hserrano@casacredito.com
+        $subject = "Lead - Casa Crédito Promotora | " . strip_tags($request->name);
         $message = "<br><strong>Información de contacto</strong>
-        <br>Nombre: " . strip_tags($request->name) ."
-        <br>Teléfono: " . strip_tags($request->phone) ."
-        <br>Email: " . strip_tags($request->email) . "
-        <br>Comentario: " . strip_tags($request->comentario) ."
-        <br>Interes: " . " Solicitud de avalúo " . "
-        <br>Tipo de propiedad: " . strip_tags($request->type) ."
-        <br>Provincia: " . strip_tags($request->state) ."
-        <br>Ciudad: " . strip_tags($request->city) ."
-        <br>Fuente: " . " Website Casa Crédito Promotora" ."
+        <br><b>Nombre:</b> " . strip_tags($request->name) . " " .strip_tags($request->lastname)."
+        <br><b>Teléfono:</b> " . strip_tags($request->phone) ."
+        <br><b>Email:</b> " . strip_tags($request->email) . "
+        <br><b>Comentario:</b> " . strip_tags($request->comentario) ."
+        <br><b>Interes:</b> " . " Solicitud de avalúo " . "
+        <br><b>Tipo de propiedad:</b> " . strip_tags($request->type) ."
+        <br><b>Provincia:</b> " . strip_tags($request->state) ."
+        <br><b>Ciudad:</b> " . strip_tags($request->city) ."
+        <br><b>Fuente:</b> " . " Website Casa Crédito Promotora" ."
         ";
 
-        $header = "From: <info@casacreditopromotora.com>" . "\r\n" .
+        $header = "From: <lead_avaluo@casacreditopromotora.com>" . "\r\n" .
                 "MIME-Version: 1.0" . "\r\n" .
                 "Content-Type:text/html;charset=UTF-8" . "\r\n";
 
