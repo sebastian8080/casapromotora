@@ -19,7 +19,7 @@
 
             {!! Form::model($role, ['route' => ['admin.roles.update', $role], 'method' => 'put']) !!}
                 @include('admin.roles.partials.form')
-                {!! Form::submit('Actualizar Rol', ['class' => 'btn btn-primary']) !!}
+                {!! Form::submit('Actualizar Rol', ['class' => 'btn btn-danger rounded-0']) !!}
             {!! Form::close() !!}
         </div>
     </div>

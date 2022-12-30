@@ -127,7 +127,7 @@ return [
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-dark-primary elevation-4',
+    'classes_sidebar' => 'sidebar-dark-danger elevation-4',
     'classes_sidebar_nav' => '',
     'classes_topnav' => 'navbar-light navbar-light',
     'classes_topnav_nav' => 'navbar-expand',
@@ -238,8 +238,8 @@ return [
 
         // Sidebar items:
         [
-            'text' => 'Casa Credito Promotora',
-            'route' => 'pages.home',
+            'text' => 'Dashboard',
+            'url'  => 'admin',
             'icon' => 'fas fa-fw fa-home'
         ],
         [

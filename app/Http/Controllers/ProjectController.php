@@ -2,8 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Project;
+use App\Models\Project\Category;
+use App\Models\Project\Property;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Str;
+use Intervention\Image\Facades\Image;
 
 class ProjectController extends Controller
 {
@@ -12,17 +18,68 @@ class ProjectController extends Controller
     
     public function index()
     {
-        return view('admin.projects.index');
+        $projects = Category::all();
+        return view('admin.projects.index', compact('projects'));
     }
  
     public function create()
     {
-        //
+        $categories = Category::select('category_id', 'project_name')->get();
+        $states = DB::connection('mysql2')->table('info_states')->where('country_id', 63)->get();
+        return view('admin.projects.create', compact('categories', 'states'));
     }
 
     public function store(Request $request)
     {
-        //
+       
+        //programando funcionalidad de la imagen
+        $uploads=[];
+        if($request->hasFile('images')){
+            foreach ($request->file('images') as $image) {
+                $namefile = "img-" . Str::slug($request->project_name) . "-" . uniqid() . "." . $image->getClientOriginalExtension();
+        
+                $ruta = public_path() . "/uploads/projects/" . $namefile;
+                $ruta2 = public_path() . "/uploads/projects/900/" . $namefile;
+                $ruta3 = public_path() . "/uploads/projects/600/" . $namefile;
+                $ruta4 = public_path() . "/uploads/projects/300/" . $namefile;
+        
+                // Image::make($request->file('images'))->save($ruta);
+                // $img2 = Image::make($request->file('images'));
+                // $img3 = Image::make($request->file('images'));
+                // $img4 = Image::make($request->file('images'));
+
+                Image::make($image)->save($ruta);
+                $img2 = Image::make($image);
+                $img3 = Image::make($image);
+                $img4 = Image::make($image);
+        
+                $img2->fit(1200, 900, function($constraint){$constraint->upsize();$constraint->aspectRatio();})->save($ruta2, 72);
+                $img3->fit(900, 600, function($constraint){$constraint->upsize();$constraint->aspectRatio();})->save($ruta3, 72);
+                $img4->fit(600, 400, function($constraint){$constraint->upsize();$constraint->aspectRatio();})->save($ruta4, 72);
+
+                $uploads[] = $namefile;
+            }
+        }
+
+        $category = new Category($request->all());
+        
+        if(count($uploads) > 0){
+            $save_uploads = implode('|', $uploads);
+            $category->images = $save_uploads;
+        }
+        
+
+        $property_last_code = Category::select('project_code')->latest()->first();
+        if($property_last_code) $code = $property_last_code->project_code + 1; else $code = 1000;
+
+        $category->project_code = $code;
+        $category->slug = Str::slug($category->project_name." ".$category->project_code);
+        $category->save();
+
+        if($category) $message = ['status' => 'Se creo la categoria con exito']; 
+        else $message = ['status' => 'Hubo en error al crear la categoria, intentelo de nuevo'];
+
+        return redirect()->route('admin.projects.create')->with($message);
     }
 
     public function show($id)
@@ -30,20 +87,128 @@ class ProjectController extends Controller
         //
     }
 
-    public function edit($id)
+    public function edit($category_id)
     {
-        //
+        $project_category = Category::where('category_id', $category_id)->first();
+        $categories = Category::select('category_id', 'project_name')->get();
+        $states = DB::connection('mysql2')->table('info_states')->where('country_id', 63)->get();
+        return view('admin.projects.create', compact('project_category', 'categories', 'states'));
     }
 
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $category_id)
     {
-        //
+        $project_category = Category::where('category_id', $category_id)->first();
+
+        if(is_array($request->updatedImages)) $request->merge(['imagesn' => implode("|", $request->updatedImages)]); 
+        else $request->merge(['imagesn' => '']);
+
+        $uploads=[];
+        if($request->hasFile('images')){
+            foreach ($request->file('images') as $image) {
+                $namefile = "img-" . Str::slug($request->project_name) . "-" . uniqid() . "." . $image->getClientOriginalExtension();
+        
+                $ruta = public_path() . "/uploads/projects/" . $namefile;
+                $ruta2 = public_path() . "/uploads/projects/900/" . $namefile;
+                $ruta3 = public_path() . "/uploads/projects/600/" . $namefile;
+                $ruta4 = public_path() . "/uploads/projects/300/" . $namefile;
+        
+                // Image::make($request->file('images'))->save($ruta);
+                // $img2 = Image::make($request->file('images'));
+                // $img3 = Image::make($request->file('images'));
+                // $img4 = Image::make($request->file('images'));
+
+                Image::make($image)->save($ruta);
+                $img2 = Image::make($image);
+                $img3 = Image::make($image);
+                $img4 = Image::make($image);
+        
+                $img2->fit(1200, 900, function($constraint){$constraint->upsize();$constraint->aspectRatio();})->save($ruta2, 72);
+                $img3->fit(900, 600, function($constraint){$constraint->upsize();$constraint->aspectRatio();})->save($ruta3, 72);
+                $img4->fit(600, 400, function($constraint){$constraint->upsize();$constraint->aspectRatio();})->save($ruta4, 72);
+
+                $uploads[] = $namefile;
+            }
+        }
+
+        if(count($uploads)>0 || strlen($request->imagesn)>2){
+            $save_uploads = implode("|", $uploads);
+            if(strlen($request->imagesn)>2){
+                $project_category->update(['images'  =>  $request->imagesn.'|'.$save_uploads]);
+            }else{
+                $project_category->update(['images'  => $save_uploads   ]);
+            }    
+        }
+
+        $project_category->save();
+
+        return "Se actualizo las imagenes";
     }
 
     public function destroy($id)
     {
         //
+    }
+
+    //funciones para las propiedades especificas que pertenecen a una categoria
+    public function storeproperty(Request $request){
+
+        $project_category = Category::select('project_code')->where('category_id', $request->category_id)->first();
+        $code_category = $project_category->project_code;
+        
+        $last_property = Property::select('property_code')->where('category_id', 'LIKE', '%'.$request->category_id.'%')->latest()->first();
+        if($last_property) {
+            $lastnumber = substr($last_property->property_code, -1);
+            $lastnumber = $lastnumber + 1;
+            $property_code = $code_category."_".$lastnumber; 
+        } else {
+            $property_code = $code_category."_1";
+        }
+
+        $property = new Property($request->all());
+        $property->property_code = $property_code;
+        $property->slug = Str::slug($property->title." ".str_replace('_', ' ', $property->property_code));
+        $property->save();
+
+        //return $property;
+        if($property) $message = ['status' => 'Se creo la propiedad <b>'.$property->property_code.'</b> con éxito'];
+        else $message = ['status' => 'Hubo un error al crear la propiedad. Intentelo nuevamente'];
+
+        $property = Property::where('property_code', $property->property_code)->first();
+
+        return redirect()->route('admin.edit.property', $property->property_id)->with($message);
+    }
+
+    public function listpropertiesbyproject($category_id){
+        $properties_project = Property::where('category_id', $category_id)->get();
+        $project_category = Category::where('category_id', $category_id)->first();
+        return view('admin.projects.listprop', compact('properties_project', 'project_category'));
+    }
+
+    public function editpropertybyproject($property_id){
+        $property = Property::where('property_id', $property_id)->first();
+        $categories = Category::select('category_id', 'project_name')->get();
+        $states = DB::connection('mysql2')->table('info_states')->where('country_id', 63)->get();
+        $project_category = Category::where('category_id', $property->category_id)->first();
+        return view('admin.projects.create', compact('categories', 'states', 'property', 'project_category'));
+    }
+
+    public function updatepropertybyproject(Request $request, $property_id){
+
+        $property = Property::where('property_id', $property_id)->first();
+
+        $property->category_id = $request->category_id;
+        $property->title = $request->title;
+        $property->total_area = $request->total_area;
+        $property->indoor_area = $request->indoor_area;
+        $property->price = $request->price;
+        $property->bedrooms = $request->bedrooms;
+        $property->bathrooms = $request->bathrooms;
+        $property->garage = $request->garage;
+
+        $property->save();
+
+        return redirect()->route('admin.edit.property', $property->property_id)->with('status', 'Se actualizo la propiedad <b>'.$property->property_code.'</b> correctamente');
     }
 
     public function viewProject(String $nombreProyecto, int $num_department = 1){

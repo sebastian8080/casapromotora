@@ -3,7 +3,10 @@
 @section('title', 'CCPromotora - Roles')
 
 @section('content_header')
-    <a class="btn btn-info float-right" href="{{ route('admin.roles.create') }}">Nuevo Rol</a>
+    <style>
+        .tr-body:hover{box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;}
+    </style>
+    <a class="btn btn-danger float-right rounded-0" href="{{ route('admin.roles.create') }}">Nuevo Rol</a>
     <h1>Roles</h1>
 @stop
 
@@ -27,19 +30,19 @@
                 </thead>
                 <tbody>
                     @foreach ($roles as $rol)
-                        <tr>
+                        <tr class="tr-body">
                             <td>{{ $rol->name }}</td>
                             <td>{{ $rol->created_at }}</td>
                             <td width="10px">
-                                <a href="{{ route('admin.roles.edit', $rol) }}" class="btn btn-sm btn-primary">Editar</a>
+                                <a href="{{ route('admin.roles.edit', $rol) }}" class="btn btn-sm btn-danger rounded-0">Editar</a>
                             </td>
-                            <td width="10px">
+                            {{-- <td width="10px">
                                 <form action="{{ route('admin.roles.destroy', $rol) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
                                 </form>
-                            </td>
+                            </td> --}}
                         </tr>
                     @endforeach
                 </tbody>

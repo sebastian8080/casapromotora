@@ -8,22 +8,24 @@
 
 @section('content')
 
-    @if (session('info'))
-        <div class="alert alert-success">
-            {{ session('info') }}
-        </div>
-    @endif
+    @if (session('info'))<div class="alert alert-success">{{ session('info') }}</div>@endif
+    @if(session('usercreated')) <div class="alert alert-success">{{session('usercreated')}}</div>@endif
 
     <div class="row mb-5">
         <div class="col-sm-8">
-            <input class="form-control" type="text" placeholder="Ingrese el nombre o correo de un usuario">
+            <form action="{{route('admin.users.index')}}" method="GET">
+                <div class="d-flex">
+                    <input class="form-control mr-1 rounded-0 shadow-sm" name="q" type="text" placeholder="Ingrese el nombre de un usuario">
+                    <button class="btn btn-danger rounded-0 shadow-sm" type="submit">Buscar</button>
+                </div>
+            </form>
         </div>
         <div class="col-sm-4">
-            <a class="btn btn-info float-right" href="{{ route('register') }}">Registrar nuevo usuario</a>
+            <a class="btn btn-danger float-right rounded-0 shadow-sm" href="{{ route('admin.users.create') }}">Registrar nuevo usuario</a>
         </div> 
     </div>
 
-    <div class="card">
+    <div class="card rounded-0">
         <div class="card-body">
             <table class="table table-striped">
                 <thead>
@@ -41,13 +43,13 @@
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->created_at }}</td>
                         <td width="10px">
-                            <a class="btn btn-sm btn-primary" href="{{route('admin.users.edit', $user)}}">Editar</a>
+                            <a class="btn btn-sm btn-danger rounded-0" href="{{route('admin.users.edit', $user)}}">Editar</a>
                         </td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
-            {{ $users->links()}}
+            {{ $users->links()}}    
         </div>
     </div>
 @stop

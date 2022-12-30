@@ -10,9 +10,13 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('admin')->middleware('auth')->group(function(){
     Route::get('/', [HomeController::class, 'index'])->name('admin.home');
 
-    Route::resource('/users', UserController::class)->only(['index',  'edit', 'update'])->middleware('can:admin.users.index')->names('admin.users');
+    Route::resource('/users', UserController::class)->only(['index', 'create', 'store',  'edit', 'update'])->middleware('can:admin.users.index')->names('admin.users');
 
     Route::resource('/projects', ProjectController::class)->middleware('can:admin.projects.index')->names('admin.projects');
+    Route::post('/projects/createproperty', [ProjectController::class, 'storeproperty'])->middleware('can:admin.projects.index')->name('admin.store.property');
+    Route::get('projects/listproperties/{category_id}', [ProjectController::class, 'listpropertiesbyproject'])->middleware('can:admin.projects.index')->name('admin.list.property');
+    Route::get('projects/editproperty/{property_id}', [ProjectController::class, 'editpropertybyproject'])->middleware('can:admin.projects.index')->name('admin.edit.property');
+    Route::put('projects/updateproperty/{property_id}', [ProjectController::class, 'updatepropertybyproject'])->middleware('can:admin.projects.index')->name('admin.update.property');
 
     Route::resource('/posts', PostController::class)->middleware('can:admin.blog.index')->names('admin.blog');
 
