@@ -78,6 +78,9 @@ class ProjectController extends Controller
         $category->project_code = $code;
         $category->slug = Str::slug($category->project_name." ".$category->project_code);
         $category->benefits = implode(',', $request->benefits);
+        $category->services = implode(',', $request->services);
+        $category->communal_areas = implode(',', $request->communal_areas);
+        
         $category->save();
 
         if($category) $message = ['status' => 'Se creo la categoria con exito']; 
