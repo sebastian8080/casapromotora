@@ -29,8 +29,8 @@
             <div class="float-right">
                 @if(isset($project_category->category_id))
                 <a class="btn btn-danger rounded-0" href="{{route('admin.list.property', $project_category->category_id)}}">Propiedades <span class="badge bg-white">{{$total_properties}}</span></a>
-                @endif
                 <a class="btn btn-danger rounded-0 text-white" href="{{route('admin.create.property', $project_category->category_id)}}">Crear Propiedad en este Proyecto</a>
+                @endif
             </div>
         </div>
         <br><br>
