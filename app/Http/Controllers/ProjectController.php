@@ -24,9 +24,12 @@ class ProjectController extends Controller
  
     public function create()
     {
+        $benefits = DB::table('proj_benefits')->get();
+        $services = DB::table('proj_services')->get();
+        $communal_areas = DB::table('proj_communal_areas')->get();
         $categories = Category::select('category_id', 'project_name')->get();
         $states = DB::connection('mysql2')->table('info_states')->where('country_id', 63)->get();
-        return view('admin.projects.create', compact('categories', 'states'));
+        return view('admin.projects.create', compact('categories', 'states', 'benefits', 'services', 'communal_areas'));
     }
 
     public function store(Request $request)
