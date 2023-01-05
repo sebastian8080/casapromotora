@@ -41,7 +41,8 @@
                     <td>{{$project->type}}</td>
                     <td>{{$project->state . ", " . $project->city . ", " . $project->address}}</td>
                     <td>
-                        <a href="{{route('admin.projects.edit', $project->category_id)}}">Editar</a>
+                        <a class="btn btn-sm btn-danger rounded-0 mr-1" href="{{route('admin.projects.edit', $project->category_id)}}">Editar</a>
+                        <a class="btn btn-sm btn-danger rounded-0 ml-1" href="{{route('admin.list.property', $project->category_id)}}">Ver propiedades</a>
                     </td>
                 </tr>
                 @endforeach

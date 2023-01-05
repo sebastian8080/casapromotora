@@ -12,10 +12,15 @@
 @section('content')
     <div class="container pt-4">
         <div class="mb-4">
-            <h3>Listado de Propiedades</h3>
-            <p class="h5">
-                Esta visualizando las propiedades que contiene el proyecto <b class="text-danger">{{$project_category->project_name}} </b> con código <b class="text-danger"> {{$project_category->project_code}}</b>
-            </p>
+            <div>
+                <h3>Listado de Propiedades</h3>
+                <p class="h5">
+                    Esta visualizando las propiedades que contiene el proyecto <b class="text-danger">{{$project_category->project_name}} </b> con código <b class="text-danger"> {{$project_category->project_code}}</b>
+                </p>
+            </div>
+            <div class="float-right mb-3">
+                <a class="btn btn-danger rounded-0" href="{{route('admin.create.property', $project_category->category_id)}}">Crear Propiedad</a>
+            </div>
         </div>
         <table class="table bg-white py-5">
             <thead>

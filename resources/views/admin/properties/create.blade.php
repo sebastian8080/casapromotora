@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Admin Promotora - Crear Proyecto')
+@section('title', 'Admin Promotora - Crear Propiedad')
 
 @section('content_header')
     <style>
@@ -18,9 +18,9 @@
 
     <div class="text-center">
         @if(isset($property->property_id))
-        <h1>Editar Proyecto</h1>
+        <h1>Editando Propiedad <b class="text-danger">{{$property->property_code}}</b></h1>
         @else
-        <h1>Crear Nuevo Proyecto</h1>
+        <h1>Creando Nueva Propiedad en el Proyecto</h1>
         @endif
     </div>
 @endsection
@@ -35,15 +35,15 @@
         @csrf
         <div class="row border shadow-sm p-3 rounded-0 bg-white">
             <div class="form-group w-100">
-                {!! Form::label('category', 'Categoría') !!}
+                {!! Form::label('category', 'Categoría en donde se encuentra la propiedad') !!}
                 <div class="d-flex">
                     <select name="category_id" id="category" class="form-control w-50 mr-1 rounded-0">
                         <option value="">Seleccione</option>
                         @foreach ($categories as $category)
-                            <option class="option-hover" value="{{$category->category_id}}" @if(isset($property->property_id) && $property->category_id == $category->category_id) selected @endif>{{$category->project_name}}</option>
+                            <option class="option-hover" value="{{$category->category_id}}" @if((isset($property->property_id) && $property->category_id == $category->category_id) || (isset($category_id) && $category->category_id == $category_id)) selected @endif>{{$category->project_name}}</option>
                         @endforeach
                     </select>
-                    <button type="button" class="btn btn-danger rounded-0" data-toggle="modal" data-target="#modaladdcategory">Crear Nuevo Proyecto</button>
+                    <a class="btn btn-danger rounded-0 float-end" href="{{route('admin.projects.create')}}">Crear Nuevo Proyecto</a>
                 </div>
             </div>
             @if(isset($project_category))

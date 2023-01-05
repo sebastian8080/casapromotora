@@ -5,6 +5,8 @@
 @section('content_header')
     <style>
         .form-control:focus {border-color: #FF0000;box-shadow: inset 0 0.5px 0.5px rgba(0, 0, 0, 0.075), 0 0 4px rgba(255, 0, 0, 0.6);}
+        input[type=checkbox]{accent-color: #DC3545; width: 18px; height: 18px}
+        .tags{top: -16px; left: 10px;}
     </style>
     
     @if(session('status'))
@@ -21,6 +23,16 @@
 @section('content')
     <div class="container pb-5">
         <div>
+            <div class="float-left">
+                <a href="{{route('admin.projects.index')}}"><i class="fas fa-angle-left"></i> Volver al listado</a>
+            </div>
+            <div class="float-right">
+                <a class="btn btn-danger rounded-0" href="{{route('admin.list.property', $project_category->category_id)}}">Propiedades <span class="badge bg-white">{{$total_properties}}</span></a>
+                <a class="btn btn-danger rounded-0 text-white" href="{{route('admin.create.property', $project_category->category_id)}}">Crear Propiedad en este Proyecto</a>
+            </div>
+        </div>
+        <br><br>
+        <div>
             @if (isset($project_category->category_id))
                 {!! Form::model($project_category, ['route' => ['admin.projects.update', $project_category->category_id], 'method' => 'PUT', 'class' => 'w-100', 'enctype' => 'multipart/form-data']) !!}
             @else
@@ -36,18 +48,18 @@
                     <div>
                         <div class="form-group d-flex">
                             <div class="w-100 mr-1">
-                                {!! Form::label('project_name', 'Nombre del Proyecto') !!}
+                                {!! Form::label('project_name', 'Nombre del Proyecto', ['class' => 'h5 fw-normal']) !!}
                                 {!! Form::text('project_name', null, ['class' => 'form-control rounded-0', 'required']) !!}
                             </div>
                             <div class="w-100 ml-1">
-                                {!! Form::label('type', 'Tipo') !!}
+                                {!! Form::label('type', 'Tipo', ['class' => 'h5']) !!}
                                 {!! Form::select('type', [null => "Seleccione", "Condominios" => "Condominios", "Departamentos" => "Departamentos"], null, ['class' => 'form-control rounded-0']) !!}
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-sm-4">
-                                    {!! Form::label('state', 'Provincia') !!}
+                                    {!! Form::label('state', 'Provincia', ['class' => 'h5']) !!}
                                     <select name="state" id="state" class="form-control rounded-0">
                                         <option value="">Seleccione</option>
                                         @foreach ($states as $state)
@@ -56,23 +68,62 @@
                                     </select>
                                 </div>
                                 <div class="col-sm-4">
-                                    {!! Form::label('city', 'Ciudad') !!}
+                                    {!! Form::label('city', 'Ciudad', ['class' => 'h5']) !!}
                                     <select name="city" id="city" class="form-control rounded-0">
                                         <option value="">Seleccione</option>
                                     </select>
                                 </div>
                                 <div class="col-sm-4">
-                                    {!! Form::label('address', 'Dirección') !!}
+                                    {!! Form::label('address', 'Dirección', ['class' => 'h5']) !!}
                                     {!! Form::text('address', null, ['class' => 'form-control rounded-0']) !!}
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            {!! Form::label('description', 'Descripcion') !!}
+                            {!! Form::label('description', 'Descripcion', ['class' => 'h5']) !!}
                             {!! Form::textarea('description', null, ['class' => 'form-control rounded-0', 'rows' => 3]) !!}
                         </div>
+                        <div class="form-group border p-4 position-relative mt-4">
+                            {!! Form::label('benefits', 'Beneficios', ['class' => 'h5 position-absolute bg-danger text-white border px-2 py-1 rounded-pill tags']) !!}
+                            <div class="row">
+                                @foreach($benefits as $benefit)
+                                    <div class="col-sm-3 mb-2 mt-2">
+                                        <div class="form-check">
+                                            {!! Form::checkbox('benefits[]', $benefit->name, in_array($benefit->name,explode(",", $project_category->benefits)) ? true : false, ['class' => 'form-check-input', 'type' => 'checkbox', 'id' => 'flexCheckDefault'.$benefit->id]) !!}
+                                            {!! Form::label('benefits', $benefit->name, ['class' => 'form-check-label', 'for' => 'flexCheckDefault'.$benefit->id]) !!}
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                        <div class="form-group border p-4 position-relative mt-4">
+                            {!! Form::label('services', 'Servicios', ['class' => 'h5 position-absolute bg-danger text-white border px-2 py-1 rounded-pill tags']) !!}
+                            <div class="row">
+                                @foreach ($services as $service)
+                                    <div class="col-sm-3 mb-2 mt-2">
+                                        <div class="form-check">
+                                            {!! Form::checkbox('services[]', $service->name, in_array($service->name, explode(",", $project_category->services)) ? true : false, ['class' => 'form-check-input', 'type' => 'checkbox', 'id' => 'checkService'.$service->id]) !!}
+                                            {!! Form::label('services', $service->name, ['class' => 'form-check-label', 'for' => 'checkService'.$service->id]) !!}
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                        <div class="form-group border p-4 position-relative mt-4">
+                            {!! Form::label('communal_areas', 'Áreas Comunales', ['class' => 'h5 position-absolute bg-danger text-white border px-2 py-1 rounded-pill tags']) !!}
+                            <div class="row">
+                                @foreach ($communal_areas as $communal_area)
+                                    <div class="col-sm-3 mb-2 mt-2">
+                                        <div class="form-check">
+                                            {!! Form::checkbox('communal_areas[]', $communal_area->name, in_array($communal_area->name, explode(",", $project_category->communal_areas)) ? true : false, ['class' => 'form-check-input bg-danger', 'type' => 'checkbox', 'id' => 'checkService'.$communal_area->id]) !!}
+                                            {!! Form::label('communal_areas', $communal_area->name, ['class' => 'form-check-label', 'for' => 'checkService'.$communal_area->id]) !!}
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
                         <div class="form-group">
-                            {!! Form::label('images', 'Imagenes') !!}
+                            {!! Form::label('images', 'Imagenes', ['class' => 'h5']) !!}
                             {!! Form::file('images[]', ['class' => 'form-control', 'accept' => '.jpg, .jpeg, .png', 'multiple']) !!}
                         </div>
                     </div>

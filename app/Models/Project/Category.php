@@ -14,6 +14,6 @@ class Category extends Model
     protected $table = "project_category";
 
     protected $fillable = [
-        'category_id', 'project_code', 'type', 'project_name', 'state', 'city', 'address', 'description', 'slug', 'images', 'created_at', 'updated_at'
+        'category_id', 'project_code', 'type', 'project_name', 'state', 'city', 'address', 'description', 'slug', 'images', 'benefits', 'services', 'communal_areas', 'created_at', 'updated_at'
     ];
 }

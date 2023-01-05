@@ -13,7 +13,8 @@ Route::prefix('admin')->middleware('auth')->group(function(){
     Route::resource('/users', UserController::class)->only(['index', 'create', 'store',  'edit', 'update'])->middleware('can:admin.users.index')->names('admin.users');
 
     Route::resource('/projects', ProjectController::class)->middleware('can:admin.projects.index')->names('admin.projects');
-    Route::post('/projects/createproperty', [ProjectController::class, 'storeproperty'])->middleware('can:admin.projects.index')->name('admin.store.property');
+    Route::get('projects/createproperty/{category_id}', [ProjectController::class, 'createproperty'])->middleware('can:admin.projects.index')->name('admin.create.property');
+    Route::post('projects/storeproperty', [ProjectController::class, 'storeproperty'])->middleware('can:admin.projects.index')->name('admin.store.property');
     Route::get('projects/listproperties/{category_id}', [ProjectController::class, 'listpropertiesbyproject'])->middleware('can:admin.projects.index')->name('admin.list.property');
     Route::get('projects/editproperty/{property_id}', [ProjectController::class, 'editpropertybyproject'])->middleware('can:admin.projects.index')->name('admin.edit.property');
     Route::put('projects/updateproperty/{property_id}', [ProjectController::class, 'updatepropertybyproject'])->middleware('can:admin.projects.index')->name('admin.update.property');

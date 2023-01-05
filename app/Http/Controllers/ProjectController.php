@@ -74,6 +74,7 @@ class ProjectController extends Controller
 
         $category->project_code = $code;
         $category->slug = Str::slug($category->project_name." ".$category->project_code);
+        $category->benefits = implode(',', $request->benefits);
         $category->save();
 
         if($category) $message = ['status' => 'Se creo la categoria con exito']; 
@@ -92,7 +93,11 @@ class ProjectController extends Controller
         $project_category = Category::where('category_id', $category_id)->first();
         $categories = Category::select('category_id', 'project_name')->get();
         $states = DB::connection('mysql2')->table('info_states')->where('country_id', 63)->get();
-        return view('admin.projects.create', compact('project_category', 'categories', 'states'));
+        $total_properties = Property::where('category_id', $category_id)->count();
+        $benefits = DB::table('proj_benefits')->get();
+        $services = DB::table('proj_services')->get();
+        $communal_areas = DB::table('proj_communal_areas')->get();
+        return view('admin.projects.create', compact('project_category', 'categories', 'states', 'total_properties', 'benefits', 'services', 'communal_areas'));
     }
 
 
@@ -140,9 +145,13 @@ class ProjectController extends Controller
             }    
         }
 
+        $project_category->benefits = implode(',', $request->benefits);
+        $project_category->services = implode(',', $request->services);
+        $project_category->communal_areas = implode(',', $request->communal_areas);
+
         $project_category->save();
 
-        return "Se actualizo las imagenes";
+        return redirect()->route('admin.projects.edit', $project_category->category_id)->with('status', 'Se actualizo el proyecto ' . $project_category->project_name);
     }
 
     public function destroy($id)
@@ -151,6 +160,13 @@ class ProjectController extends Controller
     }
 
     //funciones para las propiedades especificas que pertenecen a una categoria
+
+    public function createproperty($category_id){
+        $categories = Category::select('category_id', 'project_name')->get();
+        $states = DB::connection('mysql2')->table('info_states')->where('country_id', 63)->get();
+        return view('admin.properties.create', compact('categories', 'states', 'category_id'));
+    }
+
     public function storeproperty(Request $request){
 
         $project_category = Category::select('project_code')->where('category_id', $request->category_id)->first();
@@ -190,7 +206,7 @@ class ProjectController extends Controller
         $categories = Category::select('category_id', 'project_name')->get();
         $states = DB::connection('mysql2')->table('info_states')->where('country_id', 63)->get();
         $project_category = Category::where('category_id', $property->category_id)->first();
-        return view('admin.projects.create', compact('categories', 'states', 'property', 'project_category'));
+        return view('admin.properties.create', compact('categories', 'states', 'property', 'project_category'));
     }
 
     public function updatepropertybyproject(Request $request, $property_id){
