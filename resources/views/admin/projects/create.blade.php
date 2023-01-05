@@ -91,7 +91,7 @@
                                 @foreach($benefits as $benefit)
                                     <div class="col-sm-3 mb-2 mt-2">
                                         <div class="form-check">
-                                            {!! Form::checkbox('benefits[]', $benefit->name, in_array($benefit->name,explode(",", $project_category->benefits)) ? true : false, ['class' => 'form-check-input', 'type' => 'checkbox', 'id' => 'flexCheckDefault'.$benefit->id]) !!}
+                                            {!! Form::checkbox('benefits[]', $benefit->name, isset($project_category->category_id) && in_array($benefit->name,explode(",", $project_category->benefits)) ? true : false, ['class' => 'form-check-input', 'type' => 'checkbox', 'id' => 'flexCheckDefault'.$benefit->id]) !!}
                                             {!! Form::label('benefits', $benefit->name, ['class' => 'form-check-label', 'for' => 'flexCheckDefault'.$benefit->id]) !!}
                                         </div>
                                     </div>
@@ -104,7 +104,7 @@
                                 @foreach ($services as $service)
                                     <div class="col-sm-3 mb-2 mt-2">
                                         <div class="form-check">
-                                            {!! Form::checkbox('services[]', $service->name, in_array($service->name, explode(",", $project_category->services)) ? true : false, ['class' => 'form-check-input', 'type' => 'checkbox', 'id' => 'checkService'.$service->id]) !!}
+                                            {!! Form::checkbox('services[]', $service->name, isset($project_category->category_id) && in_array($service->name, explode(",", $project_category->services)) ? true : false, ['class' => 'form-check-input', 'type' => 'checkbox', 'id' => 'checkService'.$service->id]) !!}
                                             {!! Form::label('services', $service->name, ['class' => 'form-check-label', 'for' => 'checkService'.$service->id]) !!}
                                         </div>
                                     </div>
@@ -117,7 +117,7 @@
                                 @foreach ($communal_areas as $communal_area)
                                     <div class="col-sm-3 mb-2 mt-2">
                                         <div class="form-check">
-                                            {!! Form::checkbox('communal_areas[]', $communal_area->name, in_array($communal_area->name, explode(",", $project_category->communal_areas)) ? true : false, ['class' => 'form-check-input bg-danger', 'type' => 'checkbox', 'id' => 'checkService'.$communal_area->id]) !!}
+                                            {!! Form::checkbox('communal_areas[]', $communal_area->name, isset($project_category->category_id) && in_array($communal_area->name, explode(",", $project_category->communal_areas)) ? true : false, ['class' => 'form-check-input bg-danger', 'type' => 'checkbox', 'id' => 'checkService'.$communal_area->id]) !!}
                                             {!! Form::label('communal_areas', $communal_area->name, ['class' => 'form-check-label', 'for' => 'checkService'.$communal_area->id]) !!}
                                         </div>
                                     </div>
