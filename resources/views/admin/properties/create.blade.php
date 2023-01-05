@@ -27,10 +27,6 @@
 
 @section('content')
     <div class="container">
-        <div class="mt-5 mb-5">
-            <iframe src="https://storage.googleapis.com/vrview/2.0/embed?image=https://casacreditopromotora.com/img/PANO_20230104_185536_0.jpg&is_stereo=true">
-            </iframe>
-        </div>
         @if(isset($property->property_id))
         {!! Form::model($property, ['route' => ['admin.update.property', $property->property_id], 'method' => 'PUT']) !!}
         @else
