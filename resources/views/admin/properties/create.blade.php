@@ -28,14 +28,8 @@
 @section('content')
     <div class="container">
         <div class="mt-5 mb-5">
-            <iframe 
-            width="800"
-            height="450"
-            allowfullscreen
-            frameborder="0"
-            src="//storage.googleapis.com/vrview/index.html?image=//casacreditopromotora.com/img/PANO_20230104_185536_0.jpg&is_stereo=true"
-            frameborder="0">
-          </iframe>
+            <iframe src="https://storage.googleapis.com/vrview/2.0/embed?image=https://casacreditopromotora.com/img/PANO_20230104_185536_0.jpg&is_stereo=true">
+            </iframe>
         </div>
         @if(isset($property->property_id))
         {!! Form::model($property, ['route' => ['admin.update.property', $property->property_id], 'method' => 'PUT']) !!}
