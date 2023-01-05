@@ -135,9 +135,9 @@
                     @php $ii=0; @endphp
                     @foreach (array_filter(explode("|", $project_category->images)) as $img)
                     @php $ii++; @endphp
-                    <div class="col-sm-3 position-relative" id="imageUpload{{$ii}}">
-                        <img class="img-fluid" src="{{asset('/uploads/projects/300/'.$img)}}" alt="">
-                        <button type="button" class="btn btn-sm btn-danger text-white position-absolute rounded-0" style="top: 0; left: 7px" onclick="delImageUpload({{$ii}})">X</button>
+                    <div class="col-sm-3 position-relative mb-3" id="imageUpload{{$ii}}">
+                        <img class="img-fluid border rounded" src="{{asset('/uploads/projects/300/'.$img)}}" alt="">
+                        <button type="button" class="btn btn-sm btn-danger text-white position-absolute rounded" style="top: 0; left: 8px; font-weight: bold" onclick="delImageUpload({{$ii}})">X</button>
                         <input type="hidden" value="{{$img}}" name="updatedImages[]">
                     </div>    
                     @endforeach

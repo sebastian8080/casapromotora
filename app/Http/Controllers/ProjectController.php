@@ -80,13 +80,13 @@ class ProjectController extends Controller
         $category->benefits = implode(',', $request->benefits);
         $category->services = implode(',', $request->services);
         $category->communal_areas = implode(',', $request->communal_areas);
-        
+
         $category->save();
 
-        if($category) $message = ['status' => 'Se creo la categoria con exito']; 
+        if($category) $message = ['status' => 'Se creo el proyecto '.$category->project_name.' con exito']; 
         else $message = ['status' => 'Hubo en error al crear la categoria, intentelo de nuevo'];
 
-        return redirect()->route('admin.projects.create')->with($message);
+        return redirect()->route('admin.projects.edit', $category->category_id)->with($message);
     }
 
     public function show($id)
