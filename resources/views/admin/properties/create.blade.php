@@ -6,20 +6,7 @@
     <style>
         .form-control:focus {border-color: #FF0000;box-shadow: inset 0 0.5px 0.5px rgba(0, 0, 0, 0.075), 0 0 4px rgba(255, 0, 0, 0.6);}
     </style>
-    <script src="https://storage.googleapis.com/vrview/2.0/build/vrview.min.js"></script>
-    <script>
-        window.addEventListener('load', onVrViewLoad);
-    
-        function onVrViewLoad() {
-        // Selector '#vrview' finds element with id 'vrview'.
-        var vrView = new VRView.Player('#vrview', {
-            image: "https://casacreditopromotora.com/img/PANO_20230104_185536_0.jpg",
-            is_stereo: true,
-            width: '100%',
-            height: 300
-        });
-        }
-    </script>
+    {{-- <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script> --}}
     @if(session('status'))
         <div class="alert alert-info alert-dismissible fade show" role="alert">
             {!! session('status') !!}
@@ -40,7 +27,6 @@
 
 @section('content')
     <div class="container">
-        <div id='vrview'></div>
         @if(isset($property->property_id))
         {!! Form::model($property, ['route' => ['admin.update.property', $property->property_id], 'method' => 'PUT']) !!}
         @else
@@ -124,6 +110,13 @@
             </div>
         </div>
         {!! Form::close() !!}
+        {{-- <div class="row">
+            <div class="my-4 col-sm-4" id="wrapper" style="height:200px;width:100%">
+                <a-scene embedded style="height:100%;width:100%">
+                    <a-sky src="{{asset('img/PANO_20230104_185536_0.jpg')}}"></a-sky> 
+                </a-scene>
+            </div> 
+        </div> --}}
     </div>
 
 @endsection
