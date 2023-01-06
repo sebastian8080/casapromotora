@@ -6,7 +6,20 @@
     <style>
         .form-control:focus {border-color: #FF0000;box-shadow: inset 0 0.5px 0.5px rgba(0, 0, 0, 0.075), 0 0 4px rgba(255, 0, 0, 0.6);}
     </style>
+    <script src="https://storage.googleapis.com/vrview/2.0/build/vrview.min.js"></script>
+    <script>
+        window.addEventListener('load', onVrViewLoad);
     
+        function onVrViewLoad() {
+        // Selector '#vrview' finds element with id 'vrview'.
+        var vrView = new VRView.Player('#vrview', {
+            image: "https://casacreditopromotora.com/img/PANO_20230104_185536_0.jpg",
+            is_stereo: true,
+            width: '100%',
+            height: 300
+        });
+        }
+    </script>
     @if(session('status'))
         <div class="alert alert-info alert-dismissible fade show" role="alert">
             {!! session('status') !!}
@@ -27,6 +40,7 @@
 
 @section('content')
     <div class="container">
+        <div id='vrview'></div>
         @if(isset($property->property_id))
         {!! Form::model($property, ['route' => ['admin.update.property', $property->property_id], 'method' => 'PUT']) !!}
         @else
@@ -80,11 +94,11 @@
             <div class="row w-100">
                 <div class="col-sm-4">
                     <i class="fas fa-expand-arrows-alt"></i> {!! Form::label('total_area', 'Area Total', ['class' => 'font-weight-normal']) !!}
-                    {!! Form::number('total_area', null, ['class' => 'form-control rounded-0']) !!}
+                    {!! Form::text('total_area', null, ['class' => 'form-control rounded-0']) !!}
                 </div>
                 <div class="col-sm-4">
                     <i class="fas fa-compress-arrows-alt"></i> {!! Form::label('indoor_area', 'Area Interior', ['class' => 'font-weight-normal']) !!}
-                    {!! Form::number('indoor_area', null, ['class' => 'form-control rounded-0']) !!}
+                    {!! Form::text('indoor_area', null, ['class' => 'form-control rounded-0']) !!}
                 </div>
                 <div class="col-sm-4">
                     <i class="fas fa-money-check-alt"></i> {!! Form::label('price', 'Precio', ['class' => 'font-weight-normal']) !!}
