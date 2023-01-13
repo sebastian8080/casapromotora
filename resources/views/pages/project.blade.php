@@ -1,16 +1,16 @@
 @extends('layouts.plantilla')
-@if(isset($data)) @section('title', $data['tipo']."s " . $data['nombreProyecto']) @else @section('title', $listing->listing_title) @endif
+@if(isset($data)) @section('title', $data['tipo']."s " . $data['nombreProyecto']) @elseif(isset($listing)) @section('title', $listing->listing_title) @elseif(isset($project)) @section('title', $project->project_name) @endif
 
 @section('content-head')
 
-<meta name="title" content="Casa Crédito Promotora - @if(isset($data)) {{ $data['tipo'] }}s {{ $data['nombreProyecto']}} @else {{$listing->listing_title}} @endif">
-<meta name="description" content="@if(isset($data)){!! $data['descripcion'] !!} @else {{$listing->listing_description}} @endif">
+<meta name="title" content="Casa Crédito Promotora - @if(isset($data)) {{ $data['tipo'] }}s {{ $data['nombreProyecto']}} @elseif(isset($listing)) {{$listing->listing_title}} @elseif(isset($project)) @section('title', $project->project_name) @endif">
+<meta name="description" content="@if(isset($data)){!! $data['descripcion'] !!} @elseif(isset($listing)) {{$listing->listing_description}} @elseif(isset($project)) {{$project->description}} @endif">
 
 <meta property="og:type" content="website">
-<meta property="og:url" content="@if(isset($data))https://casacreditopromotora.com/proyectos/{{$data['nombreProyecto']}}@else https://casacreditopromotora.com/proyectos-nuevos/{{$listing->slug}}@endif">
-<meta property="og:title" content="Casa Crédito Promotora - @if(isset($data)) {{ $data['tipo']}}s {{ $data['nombreProyecto'] }} @else {{$listing->listing_title}} @endif">
-<meta property="og:description" content="@if(isset($data)){!! $data['descripcion'] !!} @else {{$listing->listing_description}} @endif">
-<meta property="og:image" content="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/1.webp')}}@else https://casacredito.com/uploads/listing/600/{{strtok($listing->images, '|')}}@endif">
+<meta property="og:url" content="@if(isset($data))https://casacreditopromotora.com/proyectos/{{$data['nombreProyecto']}}@elseif(isset($listing)) https://casacreditopromotora.com/proyectos-nuevos/{{$listing->slug}} @elseif(isset($project)) https://casacreditopromotora.com/proyectos/{{strtolower($project->type)}}/{{$project->slug}} @endif">
+<meta property="og:title" content="Casa Crédito Promotora - @if(isset($data)) {{ $data['tipo']}}s {{ $data['nombreProyecto'] }} @elseif(isset($listing)) {{$listing->listing_title}} @elseif(isset($project)) {{ $project->project_name }} @endif">
+<meta property="og:description" content="@if(isset($data)){!! $data['descripcion'] !!} @elseif(isset($listing)) {{$listing->listing_description}} @elseif(isset($project))  {{ $project->project_name }} @endif">
+<meta property="og:image" content="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/1.webp')}}@elseif(isset($listing)) https://casacredito.com/uploads/listing/600/{{strtok($listing->images, '|')}}@elseif(isset($project)) https://casacreditopromotora.com/uploads/projects/{{strtok($project->images, '|')}} @endif">
 
 {{-- <meta property="product:availability" content="in stock">
 <meta property="product:price:amount" content="@if($data['nombreProyecto'] === "Adra") {{$data['departamentos'][2]['precio']}} @elseif($data['nombreProyecto'] === "Futura Narancay") {{$data['departamentos'][1]['precio']}} @elseif($data['nombreProyecto'] === "Toscana") {{$data['departamentos'][7]['precio']}} @endif">
@@ -141,308 +141,341 @@
       $images = explode("|", $listing->images);
       $images = array_combine(range(1, count($images)), $images);
       $count_images = count($images);
-    } else {
+    } elseif(isset($data)) {
       $count_images = $data['num_imagenes'];
+    } elseif(isset($project)){
+      $images = explode("|", $project->images);
+      $images = array_combine(range(1, count($images)), $images);
+      $count_images = count($images);
     }
 @endphp
 
 @section('content')
 
-  <div class="container pt-5 mt-3">
-    <h1>@if(isset($data)) {{ Str::upper($data['tipo'] . "S " . $data['nombreProyecto']) }} @else {{$listing->listing_title}} @endif</h1>
-    <h5><i class="fas fa-map-marker-alt mx-1" style="color: red"></i><b> Ubicación:</b> @if(isset($data)) {{ $data['canton'] }} > {{ $data['ciudad'] }} > {{ $data['sector'] }} @else {{$listing->address}} @endif</h5>
-  </div>
+  @if(isset($listing) || isset($data))
+    <div class="container pt-5 mt-3">
+      <h1>@if(isset($data)) {{ Str::upper($data['tipo'] . "S " . $data['nombreProyecto']) }} @else {{$listing->listing_title}} @endif</h1>
+      <h5><i class="fas fa-map-marker-alt mx-1" style="color: red"></i><b> Ubicación:</b> @if(isset($data)) {{ $data['canton'] }} > {{ $data['ciudad'] }} > {{ $data['sector'] }} @else {{$listing->address}} @endif</h5>
+    </div>
 
-    <div class="imgs-header mt-3">
-     <!-- Images used to open the lightbox -->
-    <div class="row mb-3">
-      <div class="col-sm-6 col-12 mt-3">
-        <div class="column">
-          <img class="img-fluid w-100 h-100 rounded" src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/1.webp')}} @else https://casacredito.com/uploads/listing/600/{{$images[1]}}@endif" class="hover-shadow">
-        </div>
-      </div>
-
-    <div class="col-sm-6 col-12 mt-3">
+      <div class="imgs-header mt-3">
+      <!-- Images used to open the lightbox -->
       <div class="row">
-        <div class="col-sm-6 col-6">
+        <div class="col-sm-6 col-12 mt-3">
           <div class="column">
-            <img width="100%" class="img-fluid rounded" src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/2.webp')}} @else https://casacredito.com/uploads/listing/600/{{$images[2]}}@endif" class="hover-shadow">
+            <img class="img-fluid w-100 h-100 rounded" src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/1.webp')}} @else https://casacredito.com/uploads/listing/600/{{$images[1]}}@endif" class="hover-shadow">
           </div>
         </div>
-        <div class="col-sm-6 col-6">
-          <div class="column">
-            <img class="img-fluid rounded" src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/3.webp')}} @else https://casacredito.com/uploads/listing/600/{{$images[3]}}@endif" class="hover-shadow">
-          </div>
-        </div>
-      </div>
 
-      <div class="row mt-3">
-        <div class="col-sm-6 col-6">
-          <div class="column">
-            <img class="img-fluid rounded" src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/4.webp')}} @else https://casacredito.com/uploads/listing/600/{{$images[4]}}@endif" class="hover-shadow">
-          </div>
-        </div>
-        <div class="col-sm-6 col-6">
-          <div class="column position-relative">
-            <img class="img-fluid rounded" style="filter: brightness(50%)" src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/5.webp')}} @else https://casacredito.com/uploads/listing/600/{{$images[5]}}@endif" onclick="openModal();currentSlide(5)" class="hover-shadow">
-            <div class="position-absolute top-50 start-50 translate-middle">
-              <button id="btnVerMasFotos" type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#modalImages">Ver más fotos</button>
+      <div class="col-sm-6 col-12 mt-3">
+        <div class="align-items-center">
+          <div class="row align-items-center">
+            <div class="col-sm-6 col-6">
+              <div class="column">
+                <img width="100%" class="img-fluid rounded" src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/2.webp')}} @else https://casacredito.com/uploads/listing/600/{{$images[2]}}@endif" class="hover-shadow">
+              </div>
+            </div>
+            <div class="col-sm-6 col-6">
+              <div class="column">
+                <img class="img-fluid rounded" src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/3.webp')}} @else https://casacredito.com/uploads/listing/600/{{$images[3]}}@endif" class="hover-shadow">
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal" id="modalImages">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <p>@if(isset($data)){{ $data['nombreProyecto']}}@else{{$listing->listing_title}}@endif</p>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            {{-- @for ($i = 1; $i <= $data['num_imagenes']; $i++) --}}
-            @for ($i = 1; $i <= $count_images; $i++)
-              <div class="carousel-item @if($i == 1) active @endif position-relative">
-                <img src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/'.$i.'.'.$data['extension'])}}@else https://casacredito.com/uploads/listing/600/{{$images[$i]}}@endif" class="d-block w-100" alt="...">
-                <div class="position-absolute bg-danger text-light rounded-pill px-2" style="top: 8px; left: 5px">
-                  {{$i}}/{{$count_images}}
+  
+          <div class="row mt-3">
+            <div class="col-sm-6 col-6">
+              <div class="column">
+                <img class="img-fluid rounded" src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/4.webp')}} @else https://casacredito.com/uploads/listing/600/{{$images[4]}}@endif" class="hover-shadow">
+              </div>
+            </div>
+            <div class="col-sm-6 col-6">
+              <div class="column position-relative">
+                <img class="img-fluid rounded" style="filter: brightness(50%)" src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/5.webp')}} @else https://casacredito.com/uploads/listing/600/{{$images[5]}}@endif" onclick="openModal();currentSlide(5)" class="hover-shadow">
+                <div class="position-absolute top-50 start-50 translate-middle">
+                  <button id="btnVerMasFotos" type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#modalImages">Ver más fotos</button>
                 </div>
               </div>
-            @endfor
+            </div>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<!--CONTENIDO-->
-<div class="container">
-  <div class="row">
-    <div class="col-sm-8">
-      <div class="row">
-        <p>
-          @if(isset($data)){!! $data['descripcion'] !!} @else {!!$listing->listing_description!!} @endif
-        </p>
+  <div class="modal" id="modalImages">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p>@if(isset($data)){{ $data['nombreProyecto']}}@else{{$listing->listing_title}}@endif</p>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              {{-- @for ($i = 1; $i <= $data['num_imagenes']; $i++) --}}
+              @for ($i = 1; $i <= $count_images; $i++)
+                <div class="carousel-item @if($i == 1) active @endif position-relative">
+                  <img src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/'.$i.'.'.$data['extension'])}}@else https://casacredito.com/uploads/listing/600/{{$images[$i]}}@endif" class="d-block w-100" alt="...">
+                  <div class="position-absolute bg-danger text-light rounded-pill px-2" style="top: 8px; left: 5px">
+                    {{$i}}/{{$count_images}}
+                  </div>
+                </div>
+              @endfor
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
       </div>
-      @if(isset($data))
-        @foreach ($data['departamentos'] as $departamento)
+    </div>
+  </div>
+
+  <!--CONTENIDO-->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8">
         <div class="row">
-          <div class="card-project">
-            <h5>{{ Str::upper($data['tipo']) . " " . $departamento['num_departamento']}}</h5>
-            <h4>${{ $departamento['precio'] }}</h4>
-          </div>
+          <p>
+            @if(isset($data)){!! $data['descripcion'] !!} @elseif(isset($listing)) {!!$listing->listing_description!!} @elseif(isset($project)) {{$project->description}} @endif
+          </p>
+        </div>
+        @if(isset($data))
+          @foreach ($data['departamentos'] as $departamento)
           <div class="row">
-            <div class="col-sm-5">
-              <div class="mb-3">
-                <i class="fas fa-expand-arrows-alt d-inline"></i>
-                <p class="d-inline">Area Total {{ $departamento['area_total'] }} m<sup>2</sup></p>
+            <div class="card-project">
+              <h5>{{ Str::upper($data['tipo']) . " " . $departamento['num_departamento']}}</h5>
+              <h4>${{ $departamento['precio'] }}</h4>
+            </div>
+            <div class="row">
+              <div class="col-sm-5">
+                <div class="mb-3">
+                  <i class="fas fa-expand-arrows-alt d-inline"></i>
+                  <p class="d-inline">Area Total {{ $departamento['area_total'] }} m<sup>2</sup></p>
+                </div>
+                <div class="mb-3">
+                  <i class="fas fa-ruler-vertical d-inline"></i>
+                  <p class="d-inline">Area Interior {{ $departamento['area_interior']}} m<sup>2</sup></p>
+                </div>
+                <div class="mb-3">
+                  <i class="fas fa-car d-inline"></i>
+                  <p class="d-inline">{{ $departamento['parqueadero'] }} Parqueadero(s)</p>
+                </div>
               </div>
-              <div class="mb-3">
-                <i class="fas fa-ruler-vertical d-inline"></i>
-                <p class="d-inline">Area Interior {{ $departamento['area_interior']}} m<sup>2</sup></p>
+              <div class="col-sm-5">
+                <div class="mb-3">
+                  <i class="fas fa-bed d-inline"></i>
+                  <p class="d-inline">{{ $departamento['num_habitaciones'] }} habitaciones</p>
+                </div>
+                <div class="mb-3">
+                  <i class="fas fa-bath d-inline"></i>
+                  <p class="d-inline">{{ $departamento['num_baños']}} baños</p>
+                </div>
               </div>
-              <div class="mb-3">
-                <i class="fas fa-car d-inline"></i>
-                <p class="d-inline">{{ $departamento['parqueadero'] }} Parqueadero(s)</p>
+              <div class="col-sm-2" style="position: relative">
+                <button type="button" class="btn btn-warning rounded" data-bs-toggle="modal" data-bs-target="#modalPlanos" onclick="setSrcImage('@php echo $departamento['img_plano'] @endphp', '@php echo $data['name_folder'] @endphp')">Ver planos ></button>
               </div>
             </div>
-            <div class="col-sm-5">
-              <div class="mb-3">
-                <i class="fas fa-bed d-inline"></i>
-                <p class="d-inline">{{ $departamento['num_habitaciones'] }} habitaciones</p>
-              </div>
-              <div class="mb-3">
-                <i class="fas fa-bath d-inline"></i>
-                <p class="d-inline">{{ $departamento['num_baños']}} baños</p>
-              </div>
-            </div>
-            <div class="col-sm-2" style="position: relative">
-              <button type="button" class="btn btn-warning rounded" data-bs-toggle="modal" data-bs-target="#modalPlanos" onclick="setSrcImage('@php echo $departamento['img_plano'] @endphp', '@php echo $data['name_folder'] @endphp')">Ver planos ></button>
-            </div>
+            <hr>
           </div>
-          <hr>
-        </div>
 
-        <div class="modal" id="modalPlanos">
-          <div class="modal-dialog">
-            <div class="modal-content">
-      
-              <!-- Modal Header -->
-              <div class="modal-header">
-                <h4 class="modal-title">{{ Str::upper($data['tipo'] . "S " . $data['nombreProyecto']) }}</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-              </div>
-      
-              <!-- Modal body -->
-              <div class="modal-body">
-                <img id="imgPlanos" class="img-fluid" src="" alt="">
+          <div class="modal" id="modalPlanos">
+            <div class="modal-dialog">
+              <div class="modal-content">
+        
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">{{ Str::upper($data['tipo'] . "S " . $data['nombreProyecto']) }}</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+        
+                <!-- Modal body -->
+                <div class="modal-body">
+                  <img id="imgPlanos" class="img-fluid" src="" alt="">
+                </div>
               </div>
             </div>
           </div>
-        </div>
-          
-        @endforeach
-      @endif
-      <div class="row">
-        <h4>Características</h4>
-        @if(isset($data))
-        <div class="col-sm-6">
-          <h5>Generales</h5>
-            @foreach ($data['caracteristicas']['generales'] as $general)
-              <p>{{ $general }}</p>  
-            @endforeach
-          </div>
+            
+          @endforeach
         @endif
-        @if(isset($data))
-        <div class="col-sm-6">
-          <h5>Servicios</h5>
-            @foreach ($data['caracteristicas']['servicios'] as $services)
-              <p>{{ $services }}</p>
-            @endforeach
-          </div>
-        @endif
-        @if(isset($listing->construction_area))
+        <div class="row">
+          <h4>Características</h4>
+          @if(isset($data))
           <div class="col-sm-6">
-            <p><i class="fas fa-expand-arrows-alt"></i> Área de Construcción: {{$listing->construction_area}} m<sup>2</sup></p>
-          </div>
-        @endif
-        @if(isset($listing->land_area))
-          <div class="col-sm-6">
-            <p><i class="fas fa-compress-arrows-alt"></i> Área de Terreno: {{$listing->land_area}} m<sup>2</sup></p>
-          </div>
-        @endif
-        @if(isset($listing->Front))
-          <div class="col-sm-6">
-            <p><i class="fas fa-arrow-up"></i> Frente: {{$listing->Front}} m</p>
-          </div>
-        @endif
-        @if(isset($listing->Fund))
-          <div class="col-sm-6">
-            <p><i class="fas fa-arrow-down"></i> Fondo: {{$listing->Fund}} m</p>
-          </div>
-        @endif
-        @if(isset($listing) && $listing->bedroom > 0)
-          <div class="col-sm-6">
-            <p><i class="fas fa-bed"></i> Habitaciones: {{$listing->bedroom}}</p>
-          </div>
-        @endif
-        @if(isset($listing) && $listing->bathroom > 0)
-          <div class="col-sm-6">
-            <p><i class="fas fa-bath"></i> Baños: {{$listing->bathroom}}</p>
-          </div>
-        @endif
-        @if(isset($listing) && $listing->garage > 0)
-          <div class="col-sm-6">
-            <p><i class="fas fa-parking"></i> Parqueadero: {{$listing->garage}}</p>
-          </div>
-        @endif
-      </div> 
-    </div>
-    <div class="col-sm-1"></div>
-    <div class="col-sm-3">
-      <div class="headerForm">
-        @if(isset($data))
-          <h5>SEPARE SU DEPARTAMENTO</h5>
-          <h3>${{ $data['monto_reserva']}}</h3>
-        @else
-          <h5>PRECIO</h5>
-          <h3>${{number_format($listing->property_price)}}</h3>
+            <h5>Generales</h5>
+              @foreach ($data['caracteristicas']['generales'] as $general)
+                <p>{{ $general }}</p>  
+              @endforeach
+            </div>
           @endif
+          @if(isset($data))
+          <div class="col-sm-6">
+            <h5>Servicios</h5>
+              @foreach ($data['caracteristicas']['servicios'] as $services)
+                <p>{{ $services }}</p>
+              @endforeach
+            </div>
+          @endif
+          @if(isset($listing->construction_area))
+            <div class="col-sm-6">
+              <p><i class="fas fa-expand-arrows-alt"></i> Área de Construcción: {{$listing->construction_area}} m<sup>2</sup></p>
+            </div>
+          @endif
+          @if(isset($listing->land_area))
+            <div class="col-sm-6">
+              <p><i class="fas fa-compress-arrows-alt"></i> Área de Terreno: {{$listing->land_area}} m<sup>2</sup></p>
+            </div>
+          @endif
+          @if(isset($listing->Front))
+            <div class="col-sm-6">
+              <p><i class="fas fa-arrow-up"></i> Frente: {{$listing->Front}} m</p>
+            </div>
+          @endif
+          @if(isset($listing->Fund))
+            <div class="col-sm-6">
+              <p><i class="fas fa-arrow-down"></i> Fondo: {{$listing->Fund}} m</p>
+            </div>
+          @endif
+          @if(isset($listing) && $listing->bedroom > 0)
+            <div class="col-sm-6">
+              <p><i class="fas fa-bed"></i> Habitaciones: {{$listing->bedroom}}</p>
+            </div>
+          @endif
+          @if(isset($listing) && $listing->bathroom > 0)
+            <div class="col-sm-6">
+              <p><i class="fas fa-bath"></i> Baños: {{$listing->bathroom}}</p>
+            </div>
+          @endif
+          @if(isset($listing) && $listing->garage > 0)
+            <div class="col-sm-6">
+              <p><i class="fas fa-parking"></i> Parqueadero: {{$listing->garage}}</p>
+            </div>
+          @endif
+        </div> 
       </div>
-      <div class="formEmail rounded" id="myHeader">
-        <div style="padding-top: 20px; padding-left: 15px; padding-right: 15px; padding-bottom: 15px;">
-          <p class="fw-bold">QUIERO MAS INFORMACION</p>
-          <hr>
-          <p>Contáctanos y recibe la mejor asesoría</p>
-          <form id="form" class="inputs" action="@if(isset($data)){{ route('sendEmail.projects', [$data['nombreProyecto']]) }} @else {{route('sendEmail.projects', $listing->product_code)}} @endif" method="POST">
-            @csrf
-            <div class="mb-3 d-flex">
-              <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre y Apellido" autocomplete="off" required>
-              <input type="number" class="form-control" id="telefono" name="telefono" placeholder="Teléfono" autocomplete="off" required>
-            </div>
-            <div class="mb-3">
-              <input type="email" class="form-control" id="email" name="email" placeholder="Email" autocomplete="off" required>
-            </div>
-            <div class="mb-3">
-              <textarea class="form-control" name="mensaje" id="mensaje" rows="4">Hola, me interesa este inmueble y quiero que me contacten. Gracias</textarea>
-            </div>
-            <div class="d-grid gap-2">
-              <button id="btnEnviar" type="submit" class="btn">Enviar</button>
-              {{-- <a id="btnWhatsapp" target="_blank" class="btn" href="https://api.whatsapp.com/send?phone=+593983849073&text=Me%20gustaria%20conocer%20los%20{{Str::lower($data['tipo'])}}s%20del%20conjunto%20residencial%20{{$data['nombreProyecto']}}">Contactar por Whatsapp <i id="iconwpp" class="fab fa-whatsapp"></i></a> --}}
-              <a id="btnWhatsapp" target="_blank" class="btn" href="https://api.whatsapp.com/send?phone=+593983849073">Contactar por Whatsapp <i id="iconwpp" class="fab fa-whatsapp"></i></a>
-            </div>
-          </form>
-          <p id="textoCondicionesEmail">Al enviar estás aceptando los términos de Uso y la Política de privacidad</p>
+      <div class="col-sm-1"></div>
+      <div class="col-sm-3">
+        <div class="headerForm">
+          @if(isset($data))
+            <h5>SEPARE SU DEPARTAMENTO</h5>
+            <h3>${{ $data['monto_reserva']}}</h3>
+          @else
+            <h5>PRECIO</h5>
+            <h3>${{number_format($listing->property_price)}}</h3>
+            @endif
+        </div>
+        <div class="formEmail rounded" id="myHeader">
+          <div style="padding-top: 20px; padding-left: 15px; padding-right: 15px; padding-bottom: 15px;">
+            <p class="fw-bold">QUIERO MAS INFORMACION</p>
+            <hr>
+            <p>Contáctanos y recibe la mejor asesoría</p>
+            <form id="form" class="inputs" action="@if(isset($data)){{ route('sendEmail.projects', [$data['nombreProyecto']]) }} @else {{route('sendEmail.projects', $listing->product_code)}} @endif" method="POST">
+              @csrf
+              <div class="mb-3 d-flex">
+                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre y Apellido" autocomplete="off" required>
+                <input type="number" class="form-control" id="telefono" name="telefono" placeholder="Teléfono" autocomplete="off" required>
+              </div>
+              <div class="mb-3">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email" autocomplete="off" required>
+              </div>
+              <div class="mb-3">
+                <textarea class="form-control" name="mensaje" id="mensaje" rows="4">Hola, me interesa este inmueble y quiero que me contacten. Gracias</textarea>
+              </div>
+              <div class="d-grid gap-2">
+                <button id="btnEnviar" type="submit" class="btn">Enviar</button>
+                {{-- <a id="btnWhatsapp" target="_blank" class="btn" href="https://api.whatsapp.com/send?phone=+593983849073&text=Me%20gustaria%20conocer%20los%20{{Str::lower($data['tipo'])}}s%20del%20conjunto%20residencial%20{{$data['nombreProyecto']}}">Contactar por Whatsapp <i id="iconwpp" class="fab fa-whatsapp"></i></a> --}}
+                <a id="btnWhatsapp" target="_blank" class="btn" href="https://api.whatsapp.com/send?phone=+593983849073">Contactar por Whatsapp <i id="iconwpp" class="fab fa-whatsapp"></i></a>
+              </div>
+            </form>
+            <p id="textoCondicionesEmail">Al enviar estás aceptando los términos de Uso y la Política de privacidad</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div>
-    @if(isset($data))
-      <div class="row mt-5">
-        <h4>Areas Comunales</h4>
-        <div class="col">
-          <ul>
-            <li>Salon de uso multiple</li>
-            <li>Lobby y Recepción</li>
-          </ul>
+    <div>
+      @if(isset($data))
+        <div class="row mt-5">
+          <h4>Areas Comunales</h4>
+          <div class="col">
+            <ul>
+              <li>Salon de uso multiple</li>
+              <li>Lobby y Recepción</li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul>
+              <li>Jardines Comunales</li>
+              <li>Sala Comunal</li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul>
+              <li>Gameroom</li>
+              <li>Balcones Comunales</li>
+            </ul>
+          </div>  
         </div>
-        <div class="col">
-          <ul>
-            <li>Jardines Comunales</li>
-            <li>Sala Comunal</li>
-          </ul>
+      @endif
+      @if(isset($data))
+      <div class="mt-5">
+        <h4>UBICACION</h4>
+          <iframe 
+          src="{{ $data['url_google_maps']}}" 
+          width="100%" 
+          height="300" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy"></iframe>
         </div>
-        <div class="col">
-          <ul>
-            <li>Gameroom</li>
-            <li>Balcones Comunales</li>
-          </ul>
-        </div>  
+      @endif
+      
       </div>
-    @endif
-    @if(isset($data))
-    <div class="mt-5">
-      <h4>UBICACION</h4>
-        <iframe 
-        src="{{ $data['url_google_maps']}}" 
-        width="100%" 
-        height="300" 
-        style="border:0;" 
-        allowfullscreen="" 
-        loading="lazy"></iframe>
-      </div>
-    @endif
-    
-    </div>
-    <div class="row mt-5 mb-3">
-      <h4>PROYECTOS SIMILARES</h4>
-      <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-        <div id="cardSimilarProject" class="card mb-2 position-relative" style="width: 17rem;">
-            <a style="text-decoration: none" href="{{ route('projects.viewProject', 'Adra') }}">
-              <img class="img-fluid" style="height: 180px" src="{{ asset('/img/projects/adra/1.webp') }}" class="card-img-top" alt="Proyecto Adra - Casa Credito Promotora">
+      <div class="row mt-5 mb-3">
+        <h4>PROYECTOS SIMILARES</h4>
+        <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+          <div id="cardSimilarProject" class="card mb-2 position-relative" style="width: 17rem;">
+              <a style="text-decoration: none" href="{{ route('projects.viewProject', 'Adra') }}">
+                <img class="img-fluid" style="height: 180px" src="{{ asset('/img/projects/adra/1.webp') }}" class="card-img-top" alt="Proyecto Adra - Casa Credito Promotora">
+              </a>
+                <div class="position-absolute">
+                <p>Venta</p>
+              </div>
+              <div class="card-body bg-light">
+                <h4>ADRA</h4>
+                <h5 class="card-title">Desde USD 99.000</h5>
+                <p class="card-text fw-bold">Sector Edificio Vista Linda</p>
+                <p class="card-text text-muted">Cuenca, Azuay</p>
+                <div class="row mt-3">
+                  <div class="col-sm-6 d-flex align-items-center">
+                    <i class="fas fa-building"></i>
+                    <p>Venta</p>
+                  </div>
+                  <div class="col-sm-6 d-flex align-items-center">
+                    <i class="fas fa-calendar-week"></i>
+                    <p>Inmediata</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+          <div id="cardSimilarProject" class="card mb-2 position-relative" style="width: 17rem;">
+            <a style="text-decoration: none" href="{{ route('projects.viewProject', 'Futura Narancay') }}">
+              <img class="img-fluid" style="height: 180px" src="{{ asset('/img/projects/futuranarancay/1.webp') }}" class="card-img-top" alt="Proyecto Futura Narancay - Casa Credito Promotora">
             </a>
-              <div class="position-absolute">
+            <div class="position-absolute">
               <p>Venta</p>
             </div>
             <div class="card-body bg-light">
-              <h4>ADRA</h4>
-              <h5 class="card-title">Desde USD 99.000</h5>
-              <p class="card-text fw-bold">Sector Edificio Vista Linda</p>
+              <h4>FUTURA NARANCAY</h4>
+              <h5 class="card-title">Desde USD 78.000</h5>
+              <p class="card-text fw-bold">Narancay</p>
               <p class="card-text text-muted">Cuenca, Azuay</p>
               <div class="row mt-3">
                 <div class="col-sm-6 d-flex align-items-center">
@@ -456,54 +489,29 @@
               </div>
             </div>
           </div>
-      </div>
-      <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-        <div id="cardSimilarProject" class="card mb-2 position-relative" style="width: 17rem;">
-          <a style="text-decoration: none" href="{{ route('projects.viewProject', 'Futura Narancay') }}">
-            <img class="img-fluid" style="height: 180px" src="{{ asset('/img/projects/futuranarancay/1.webp') }}" class="card-img-top" alt="Proyecto Futura Narancay - Casa Credito Promotora">
-          </a>
-          <div class="position-absolute">
-            <p>Venta</p>
-          </div>
-          <div class="card-body bg-light">
-            <h4>FUTURA NARANCAY</h4>
-            <h5 class="card-title">Desde USD 78.000</h5>
-            <p class="card-text fw-bold">Narancay</p>
-            <p class="card-text text-muted">Cuenca, Azuay</p>
-            <div class="row mt-3">
-              <div class="col-sm-6 d-flex align-items-center">
-                <i class="fas fa-building"></i>
-                <p>Venta</p>
-              </div>
-              <div class="col-sm-6 d-flex align-items-center">
-                <i class="fas fa-calendar-week"></i>
-                <p>Inmediata</p>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-      <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-        <div id="cardSimilarProject" class="card mb-2 position-relative" style="width: 17rem;">
-          <a style="text-decoration: none" href="{{ route('projects.viewProject', 'Toscana') }}">
-            <img class="img-fluid" style="height: 180px" src="{{ asset('/img/projects/toscana/1.webp') }}" class="card-img-top" alt="Proyecto Toscana - Casa Credito Promotora">
-          </a>
-          <div class="position-absolute">
-            <p>Venta</p>
-          </div>
-          <div class="card-body bg-light">
-            <h4>TOSCANA</h4>
-            <h5 class="card-title">Desde USD 150.000</h5>
-            <p class="card-text fw-bold">Challuabamba</p>
-            <p class="card-text text-muted">Cuenca, Azuay</p>
-            <div class="row mt-3">
-              <div class="col-sm-6 d-flex align-items-center">
-                <i class="fas fa-building"></i>
-                <p>Venta</p>
-              </div>
-              <div class="col-sm-6 d-flex align-items-center">
-                <i class="fas fa-calendar-week"></i>
-                <p>Inmediata</p>
+        <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+          <div id="cardSimilarProject" class="card mb-2 position-relative" style="width: 17rem;">
+            <a style="text-decoration: none" href="{{ route('projects.viewProject', 'Toscana') }}">
+              <img class="img-fluid" style="height: 180px" src="{{ asset('/img/projects/toscana/1.webp') }}" class="card-img-top" alt="Proyecto Toscana - Casa Credito Promotora">
+            </a>
+            <div class="position-absolute">
+              <p>Venta</p>
+            </div>
+            <div class="card-body bg-light">
+              <h4>TOSCANA</h4>
+              <h5 class="card-title">Desde USD 150.000</h5>
+              <p class="card-text fw-bold">Challuabamba</p>
+              <p class="card-text text-muted">Cuenca, Azuay</p>
+              <div class="row mt-3">
+                <div class="col-sm-6 d-flex align-items-center">
+                  <i class="fas fa-building"></i>
+                  <p>Venta</p>
+                </div>
+                <div class="col-sm-6 d-flex align-items-center">
+                  <i class="fas fa-calendar-week"></i>
+                  <p>Inmediata</p>
+                </div>
               </div>
             </div>
           </div>
@@ -511,7 +519,330 @@
       </div>
     </div>
   </div>
-</div>
+
+  @elseif(isset($project))
+
+    <div class="container pt-5 mt-3">
+      <h1>@if(isset($project)) {{ $project->type . " " . $project->project_name }} @endif</h1>
+      <h5><i class="fas fa-map-marker-alt mx-1" style="color: red"></i><b> Ubicación:</b> {{$project->state." > ".$project->city." > ".$project->address}}</h5>
+    </div>
+
+      <div class="imgs-header mt-3">
+      <div class="row mb-3">
+        <div class="col-sm-6 col-12 mt-3">
+          <div class="column">
+            <img class="img-fluid w-100 h-100 rounded" src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/1.webp')}} @elseif(isset($listing)) https://casacredito.com/uploads/listing/600/{{$images[1]}} @elseif(isset($project)) {{asset('uploads/projects/900/'.$images[1])}} @endif" class="hover-shadow">
+          </div>
+        </div>
+
+      <div class="col-sm-6 col-12 mt-3 pt-4">
+        <div class="row">
+          <div class="col-sm-6 col-6">
+            <div class="column">
+              <img width="100%" class="img-fluid rounded" src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/2.webp')}} @elseif(isset($listing)) https://casacredito.com/uploads/listing/600/{{$images[2]}} @elseif(isset($project)) {{asset('uploads/projects/600/'.$images[2])}} @endif" class="hover-shadow">
+            </div>
+          </div>
+          <div class="col-sm-6 col-6">
+            <div class="column">
+              <img class="img-fluid rounded" src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/3.webp')}} @elseif(isset($listing)) https://casacredito.com/uploads/listing/600/{{$images[3]}} @elseif(isset($project)) {{asset('uploads/projects/600/'.$images[3])}} @endif" class="hover-shadow">
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col-sm-6 col-6">
+            <div class="column">
+              <img class="img-fluid rounded" src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/4.webp')}} @elseif(isset($listing)) https://casacredito.com/uploads/listing/600/{{$images[4]}} @elseif(isset($project)) {{asset('uploads/projects/600/'.$images[4])}} @endif" class="hover-shadow">
+            </div>
+          </div>
+          <div class="col-sm-6 col-6">
+            <div class="column position-relative">
+              <img class="img-fluid rounded" style="filter: brightness(50%)" src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/5.webp')}} @elseif(isset($listing)) https://casacredito.com/uploads/listing/600/{{$images[5]}} @elseif(isset($project)) {{asset('uploads/projects/600/'.$images[5])}} @endif" onclick="openModal();currentSlide(5)" class="hover-shadow">
+              <div class="position-absolute top-50 start-50 translate-middle">
+                <button id="btnVerMasFotos" type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#modalImages">Ver más fotos</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="modalImages">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p>@if(isset($data)){{ $data['nombreProyecto']}}@elseif(isset($listing)){{$listing->listing_title}}@elseif(isset($project)){{ $project->type . " " . $project->project_name}}@endif</p>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              @for ($i = 1; $i <= $count_images; $i++)
+                <div class="carousel-item @if($i == 1) active @endif position-relative">
+                  <img src="@if(isset($data)){{url('img/projects/'.$data['name_folder'].'/'.$i.'.'.$data['extension'])}}@elseif(isset($listing)) https://casacredito.com/uploads/listing/600/{{$images[$i]}} @elseif(isset($project)) {{asset('uploads/projects/600/'.$images[$i])}} @endif" class="d-block w-100" alt="...">
+                  <div class="position-absolute bg-danger text-light rounded-pill px-2" style="top: 8px; left: 5px">
+                    {{$i}}/{{$count_images}}
+                  </div>
+                </div>
+              @endfor
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8">
+        <div class="row py-4">
+          <p class="lh-lg" style="text-align: justify">
+            @if(isset($data)){!! $data['descripcion'] !!} @elseif(isset($listing)) {!!$listing->listing_description!!} @elseif(isset($project)) {{$project->description}} @endif
+          </p>
+        </div>
+        @if(count($list_properties)>0)
+          @foreach ($list_properties as $propertie)
+          <div class="row border-top border-bottom border-3 border-danger pt-3 mb-5">
+            <div class="card-project">
+              <h5>{{$propertie->title}}</h5>
+              <h4>${{number_format($propertie->price)}}</h4>
+            </div>
+            <div class="row">
+              <div class="col-sm-5">
+                <div class="mb-3">
+                  <i class="fas fa-expand-arrows-alt d-inline text-danger"></i>
+                  <p class="d-inline">Area Total {{ $propertie->total_area }} m<sup>2</sup></p>
+                </div>
+                <div class="mb-3">
+                  <i class="fas fa-ruler-vertical d-inline text-danger"></i>
+                  <p class="d-inline">Area Interior {{ $propertie->indoor_area}} m<sup>2</sup></p>
+                </div>
+                <div class="mb-3">
+                  <i class="fas fa-car d-inline text-danger"></i>
+                  <p class="d-inline">{{ $propertie->garage }} Parqueadero(s)</p>
+                </div>
+              </div>
+              <div class="col-sm-5">
+                <div class="mb-3">
+                  <i class="fas fa-bed d-inline text-danger"></i>
+                  <p class="d-inline">{{ $propertie->bedrooms }} habitaciones</p>
+                </div>
+                <div class="mb-3">
+                  <i class="fas fa-bath d-inline text-danger"></i>
+                  <p class="d-inline">{{ $propertie->bathrooms }} baños</p>
+                </div>
+              </div>
+              {{-- <div class="col-sm-2" style="position: relative">
+                <button type="button" class="btn btn-warning rounded" data-bs-toggle="modal" data-bs-target="#modalPlanos">Ver planos ></button>
+              </div> --}}
+            </div>
+          </div>
+
+          <div class="modal" id="modalPlanos">
+            <div class="modal-dialog">
+              <div class="modal-content">
+        
+                <div class="modal-header">
+                  <h4 class="modal-title">{{ $propertie->title }}</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+        
+                <div class="modal-body">
+                  <img id="imgPlanos" class="img-fluid" src="" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+            
+          @endforeach
+        @endif
+        <div class="border rounded shadow position-relative mt-3 mx-1">
+          <h6 class="position-absolute bg-danger w-auto text-white fw-bold px-4 py-1">Características</h6>
+          <div class="row mt-5">
+            @if(isset($project->benefits))
+            <div class="col-sm-6">
+              <p class="fw-bold ms-3">Generales</p>
+                @foreach (explode(',', $project->benefits) as $benefit)
+                <ul class="mt-3">
+                  <li>{{ $benefit }}</li>  
+                </ul>
+                @endforeach
+              </div>
+            @endif
+            @if(isset($project->services))
+            <div class="col-sm-6">
+              <p class="fw-bold ms-3">Servicios</p>
+                @foreach (explode(',', $project->services) as $service)
+                <ul class="mt-3">
+                  <li>{{ $service }}</li>
+                </ul>
+                @endforeach
+              </div>
+            @endif
+          </div>
+        </div> 
+        <div class="mt-3 mb-3">
+          @if(isset($project->communal_areas))
+            <div class="postion-relative border mx-1 rounded shadow mt-3">
+              <h6 class="mb-3 position-absolute bg-danger text-white w-auto px-4 py-1 fw-bold">Areas Comunales</h6>
+              <div class="row mt-5">
+                @foreach (explode(',', $project->communal_areas) as $communal_area)    
+                <div class="col-sm-4">
+                  <ul>
+                    <li>{{$communal_area}}</li>
+                  </ul>
+                </div>  
+                @endforeach
+              </div>
+            </div>
+          @endif
+          @if(isset($data))
+          <div class="mt-5">
+            <h4>UBICACION</h4>
+              <iframe 
+              src="{{ $data['url_google_maps']}}" 
+              width="100%" 
+              height="300" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy"></iframe>
+            </div>
+          @endif
+          
+          </div>
+      </div>
+      <div class="col-sm-1"></div>
+      <div class="col-sm-3">
+        <div class="headerForm">
+          @if(isset($data))
+            <h5>SEPARE SU DEPARTAMENTO</h5>
+            <h3>${{ $data['monto_reserva']}}</h3>
+          @elseif(isset($listing))
+            <h5>PRECIO</h5>
+            <h3>${{number_format($listing->property_price)}}</h3>
+          @endif
+        </div>
+        <div class="formEmail rounded" id="myHeader">
+          <div class="shadow" style="padding-top: 20px; padding-left: 15px; padding-right: 15px; padding-bottom: 15px;">
+            <p class="fw-bold">QUIERO MAS INFORMACION</p>
+            <hr>
+            <p>Contáctanos y recibe la mejor asesoría</p>
+            <form id="form" class="inputs" action="@if(isset($data)){{ route('sendEmail.projects', [$data['nombreProyecto']]) }} @elseif(isset($listing)) {{route('sendEmail.projects', $listing->product_code)}} @elseif(isset($project)) # @endif" method="POST">
+              @csrf
+              <div class="mb-3 d-flex">
+                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre y Apellido" autocomplete="off" required>
+                <input type="number" class="form-control" id="telefono" name="telefono" placeholder="Teléfono" autocomplete="off" required>
+              </div>
+              <div class="mb-3">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email" autocomplete="off" required>
+              </div>
+              <div class="mb-3">
+                <textarea class="form-control" name="mensaje" id="mensaje" rows="4">Hola, me interesa este inmueble y quiero que me contacten. Gracias</textarea>
+              </div>
+              <div class="d-grid gap-2">
+                <button id="btnEnviar" type="submit" class="btn">Enviar</button>
+                {{-- <a id="btnWhatsapp" target="_blank" class="btn" href="https://api.whatsapp.com/send?phone=+593983849073&text=Me%20gustaria%20conocer%20los%20{{Str::lower($data['tipo'])}}s%20del%20conjunto%20residencial%20{{$data['nombreProyecto']}}">Contactar por Whatsapp <i id="iconwpp" class="fab fa-whatsapp"></i></a> --}}
+                <a id="btnWhatsapp" target="_blank" class="btn" href="https://api.whatsapp.com/send?phone=+593983849073">Contactar por Whatsapp <i id="iconwpp" class="fab fa-whatsapp"></i></a>
+              </div>
+            </form>
+            <p id="textoCondicionesEmail">Al enviar estás aceptando los términos de Uso y la Política de privacidad</p>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="row mt-5 mb-3">
+        <h4>PROYECTOS SIMILARES</h4>
+        <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+          <div id="cardSimilarProject" class="card mb-2 position-relative" style="width: 17rem;">
+              <a style="text-decoration: none" href="{{ route('projects.viewProject', 'Adra') }}">
+                <img class="img-fluid" style="height: 180px" src="{{ asset('/img/projects/adra/1.webp') }}" class="card-img-top" alt="Proyecto Adra - Casa Credito Promotora">
+              </a>
+                <div class="position-absolute">
+                <p>Venta</p>
+              </div>
+              <div class="card-body bg-light">
+                <h4>ADRA</h4>
+                <h5 class="card-title">Desde USD 99.000</h5>
+                <p class="card-text fw-bold">Sector Edificio Vista Linda</p>
+                <p class="card-text text-muted">Cuenca, Azuay</p>
+                <div class="row mt-3">
+                  <div class="col-sm-6 d-flex align-items-center">
+                    <i class="fas fa-building"></i>
+                    <p>Venta</p>
+                  </div>
+                  <div class="col-sm-6 d-flex align-items-center">
+                    <i class="fas fa-calendar-week"></i>
+                    <p>Inmediata</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+          <div id="cardSimilarProject" class="card mb-2 position-relative" style="width: 17rem;">
+            <a style="text-decoration: none" href="{{ route('projects.viewProject', 'Futura Narancay') }}">
+              <img class="img-fluid" style="height: 180px" src="{{ asset('/img/projects/futuranarancay/1.webp') }}" class="card-img-top" alt="Proyecto Futura Narancay - Casa Credito Promotora">
+            </a>
+            <div class="position-absolute">
+              <p>Venta</p>
+            </div>
+            <div class="card-body bg-light">
+              <h4>FUTURA NARANCAY</h4>
+              <h5 class="card-title">Desde USD 78.000</h5>
+              <p class="card-text fw-bold">Narancay</p>
+              <p class="card-text text-muted">Cuenca, Azuay</p>
+              <div class="row mt-3">
+                <div class="col-sm-6 d-flex align-items-center">
+                  <i class="fas fa-building"></i>
+                  <p>Venta</p>
+                </div>
+                <div class="col-sm-6 d-flex align-items-center">
+                  <i class="fas fa-calendar-week"></i>
+                  <p>Inmediata</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+          <div id="cardSimilarProject" class="card mb-2 position-relative" style="width: 17rem;">
+            <a style="text-decoration: none" href="{{ route('projects.viewProject', 'Toscana') }}">
+              <img class="img-fluid" style="height: 180px" src="{{ asset('/img/projects/toscana/1.webp') }}" class="card-img-top" alt="Proyecto Toscana - Casa Credito Promotora">
+            </a>
+            <div class="position-absolute">
+              <p>Venta</p>
+            </div>
+            <div class="card-body bg-light">
+              <h4>TOSCANA</h4>
+              <h5 class="card-title">Desde USD 150.000</h5>
+              <p class="card-text fw-bold">Challuabamba</p>
+              <p class="card-text text-muted">Cuenca, Azuay</p>
+              <div class="row mt-3">
+                <div class="col-sm-6 d-flex align-items-center">
+                  <i class="fas fa-building"></i>
+                  <p>Venta</p>
+                </div>
+                <div class="col-sm-6 d-flex align-items-center">
+                  <i class="fas fa-calendar-week"></i>
+                  <p>Inmediata</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  @endif
 
 @if (session('report'))
   @php

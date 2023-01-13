@@ -8,10 +8,10 @@ use Illuminate\Support\Facades\Http;
 
 class IndexController extends Controller
 {
-    public $baseurl = "https://casacredito.com/api";
+    //public $baseurl = "http://localhost/acasaweb-master/public/api/";
     //http://localhost/acasaweb-master/public/
     //https://casacredito.com/api
-    public $header = ['api-key' => 'Cc2022*@Notify'];
+    //public $header = ['api-key' => 'Cc2022*@Notify'];
 
     public function redirectToHome(){
         return view('pages.home');
@@ -31,15 +31,15 @@ class IndexController extends Controller
 
     public function redirectToProjects(){
         // $baseurl = "https://casacredito.com/api/projects";
-        $listingsprojects = Http::withHeaders($this->header)->get($this->baseurl."/projects");
-        $listingsprojects = json_decode($listingsprojects);
-        return view('pages.projects', compact('listingsprojects'));
+        // $listingsprojects = Http::withHeaders($this->header)->get($this->baseurl."/projects");
+        // $listingsprojects = json_decode($listingsprojects);
+        return view('pages.projects');
     }
 
     public function showproject($slug){
-        $listing = Http::withHeaders($this->header)->get($this->baseurl."/project/".$slug);
-        $listing = json_decode($listing, false);
-        return view('pages.project', compact('listing'));
+        // $listing = Http::withHeaders($this->header)->get($this->baseurl."/project/".$slug);
+        // $listing = json_decode($listing, false);
+        return view('pages.project');
     }
 
     public function redirectToBlog(){

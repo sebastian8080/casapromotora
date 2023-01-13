@@ -60,7 +60,7 @@
                         </div>
                     </div>
                     <div>
-                        <a class="btn btn-outline-danger" href="{{ route('projects.viewProject', 'Adra') }}">Ver proyecto <i class="fas fa-chevron-right"></i></a>
+                        <a class="btn btn-outline-danger" href="{{ route('projects.viewProject', ['condominios', 'adra']) }}">Ver proyecto <i class="fas fa-chevron-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -158,7 +158,7 @@
                 </div>
             </div>
         </div>
-        @if(isset($listingsprojects))
+        {{-- @if(isset($listingsprojects))
         @php $count=0; @endphp
             @foreach ($listingsprojects as $listingproject)
             @php $count++; @endphp
@@ -265,7 +265,7 @@
                     @endif
                 </div>
             @endforeach
-        @endif
+        @endif --}}
     </div>
 @endsection
 
