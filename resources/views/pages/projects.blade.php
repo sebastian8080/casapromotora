@@ -7,6 +7,8 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap');
         .inputs{background-color: #d5d5d5}.labels{font-size: 12px; font-weight: 900}
+        @media only screen and (max-width: 1200px){#tagprojects{font-size: 70px !important}}
+        @media only screen and (max-width: 994px){#tagprojects{font-size: 50px !important; text-align: center;}#titleform{font-size: 40px !important; text-align: center}#title{font-size: 19px !important}}
     </style>
 @endsection
 
@@ -17,8 +19,7 @@
             <source src="video/projects.mp4" type="video/mp4">
         </video>
         <div class="position-absolute top-50 start-50 translate-middle text-white">
-            <h1 class="text-center" style="font-size: 5vw;">Proyectos</h1>
-            <h4 class="text-center" style="font-size: 2.5vw;">Aqui te mostramos nuestros proyectos <br> más innovadores</h4>
+            <h1 id="title" class="text-center" style="font-size: 40px;">Encuentre los mejores proyectos inmobiliarios por estrenar</h1>
         </div>
     </div>
 
@@ -30,7 +31,7 @@
         </div>
         <div class="row mt-5">
             <div class="col-sm-6">
-                <h1 style="color: #ffffff; -webkit-text-stroke: 2px rgb(162, 157, 157); font-size: 90px;font-family: 'Raleway', sans-serif">PROYECTOS</h1>
+                <p id="tagprojects" style="color: #ffffff; -webkit-text-stroke: 2px rgb(162, 157, 157); font-size: 90px;font-family: 'Raleway', sans-serif">PROYECTOS</p>
             </div>
             <div class="col-sm-6">
                 <div class="pt-5 pb-5 text-end" style="padding-left: 15%; padding-right: 15%;background-color: #ebebeb">
@@ -95,7 +96,7 @@
 
         <div class="row mt-5" id="rowforminformation">
             <div class="col-sm-6">
-                <p style="color: transparent; -webkit-text-stroke: 1px rgb(162, 157, 157);font-family: 'Raleway', sans-serif; font-size: 70px">¿Cómo podemos ayudarle?</p>
+                <p id="titleform" style="color: transparent; -webkit-text-stroke: 1px rgb(162, 157, 157);font-family: 'Raleway', sans-serif; font-size: 70px">¿Cómo podemos ayudarle?</p>
                 <hr class="text-danger w-50">
                 <p class="fw-bold"><i>Contáctese con nosotros para más información</i></p>
             </div>
