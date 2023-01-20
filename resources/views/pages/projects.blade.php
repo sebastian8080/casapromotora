@@ -31,7 +31,7 @@
         </div>
         <div class="row mt-5">
             <div class="col-sm-6">
-                <p id="tagprojects" style="color: #ffffff; -webkit-text-stroke: 2px rgb(162, 157, 157); font-size: 90px;font-family: 'Raleway', sans-serif">PROYECTOS</p>
+                <p id="tagprojects" style="color: #ffffff; -webkit-text-stroke: 2px rgb(162, 157, 157); font-size: 80px;font-family: 'Raleway', sans-serif">PROYECTOS</p>
             </div>
             <div class="col-sm-6">
                 <div class="pt-5 pb-5 text-end" style="padding-left: 15%; padding-right: 15%;background-color: #ebebeb">
