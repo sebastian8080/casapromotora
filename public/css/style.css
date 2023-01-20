@@ -300,7 +300,7 @@ h1{
 }
 
 @media screen and (max-width: 990px){
-  #img-logo{width: 50px;}
+  #img-logo{width: 100px;}
   #itemMenu{background: #aeaaaa;padding-left: 10px; color: white;}
   .col-sm-6 > .carrusel > .carousel > .carousel-inner > .carousel-item >.carousel-caption h5, .col-sm-6 > .carrusel > .carousel > .carousel-inner > .carousel-item >.carousel-caption p{
     font-size: 10px;
