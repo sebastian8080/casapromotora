@@ -42,7 +42,7 @@
         <div class="row mt-5 mb-3">
             @foreach ($projects as $project)
                 <div class="col-sm-4">
-                    <a href="{{route('projects.viewProject', [$project->type, $project->slug])}}">
+                    <a href="{{route('projects.viewProject', [strtolower($project->type), $project->slug])}}">
                         <img class="img-fluid" src="{{asset('uploads/projects/900/'.strtok($project->images, "|"))}}" alt="">
                     </a>
                     <div class="text-center mt-4 mb-4">
