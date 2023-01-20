@@ -91,7 +91,7 @@
                 <a id="menu-item5" class="nav-link text-white rounded" href="{{ route('pages.contact') }}">CONTACTANOS</a>
               </li>
               <li class="nav-item">
-                <a id="menu-item6" class="nav-link text-white rounded" href="{{ route('login') }}">LOGIN</a>
+                <a id="menu-item6" class="nav-link text-white rounded" href="{{ route('login') }}">INGRESAR</a>
               </li>
             </ul>
           </div>

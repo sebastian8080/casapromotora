@@ -7,8 +7,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap');
         .inputs{background-color: #d5d5d5}.labels{font-size: 12px; font-weight: 900}
-        @media only screen and (max-width: 1200px){#tagprojects{font-size: 70px !important}}
-        @media only screen and (max-width: 994px){#tagprojects{font-size: 50px !important; text-align: center;}#titleform{font-size: 40px !important; text-align: center}#title{font-size: 19px !important}}
+        @media only screen and (max-width: 994px){#tagprojects{font-size: 40px !important; text-align: center;}#titleform{font-size: 40px !important; text-align: center}#title{font-size: 19px !important}}
     </style>
 @endsection
 
@@ -31,7 +30,7 @@
         </div>
         <div class="row mt-5">
             <div class="col-sm-6">
-                <p id="tagprojects" style="color: #ffffff; -webkit-text-stroke: 2px rgb(162, 157, 157); font-size: 80px;font-family: 'Raleway', sans-serif">PROYECTOS</p>
+                <p id="tagprojects" style="color: #ffffff; -webkit-text-stroke: 2px rgb(162, 157, 157); font-size: 70px; font-family: 'Raleway', sans-serif">PROYECTOS</p>
             </div>
             <div class="col-sm-6">
                 <div class="pt-5 pb-5 text-end" style="padding-left: 15%; padding-right: 15%;background-color: #ebebeb">
