@@ -42,7 +42,9 @@
         <div class="row mt-5 mb-3">
             @foreach ($projects as $project)
                 <div class="col-sm-4">
-                    <img class="img-fluid" src="{{asset('uploads/projects/900/'.strtok($project->images, "|"))}}" alt="">
+                    <a href="{{route('projects.viewProject', [$project->type, $project->slug])}}">
+                        <img class="img-fluid" src="{{asset('uploads/projects/900/'.strtok($project->images, "|"))}}" alt="">
+                    </a>
                     <div class="text-center mt-4 mb-4">
                         <h2 style="color: #ffffff; -webkit-text-stroke: 1px rgb(162, 157, 157);font-family: 'Raleway', sans-serif" class="h1">{{strtoupper($project->project_name)}}</h2>
                         <hr style="height: 1px; color: rgb(255, 0, 0)">

@@ -438,33 +438,35 @@
       </div>
       <div class="row mt-5 mb-3">
         <h4>PROYECTOS SIMILARES</h4>
-        <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-          <div id="cardSimilarProject" class="card mb-2 position-relative" style="width: 17rem;">
-              <a style="text-decoration: none" href="{{ route('projects.viewProject', 'Adra') }}">
-                <img class="img-fluid" style="height: 180px" src="{{ asset('/img/projects/adra/1.webp') }}" class="card-img-top" alt="Proyecto Adra - Casa Credito Promotora">
-              </a>
-                <div class="position-absolute">
-                <p>Venta</p>
-              </div>
-              <div class="card-body bg-light">
-                <h4>ADRA</h4>
-                <h5 class="card-title">Desde USD 99.000</h5>
-                <p class="card-text fw-bold">Sector Edificio Vista Linda</p>
-                <p class="card-text text-muted">Cuenca, Azuay</p>
-                <div class="row mt-3">
-                  <div class="col-sm-6 d-flex align-items-center">
-                    <i class="fas fa-building"></i>
-                    <p>Venta</p>
-                  </div>
-                  <div class="col-sm-6 d-flex align-items-center">
-                    <i class="fas fa-calendar-week"></i>
-                    <p>Inmediata</p>
+        @foreach ($similarprojects as $similarproject)
+          <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+            <div id="cardSimilarProject" class="card mb-2 position-relative" style="width: 17rem;">
+                <a style="text-decoration: none" href="{{ route('projects.viewProject', 'Adra') }}">
+                  <img class="img-fluid" style="height: 180px" src="{{ asset('/img/projects/adra/1.webp') }}" class="card-img-top" alt="Proyecto Adra - Casa Credito Promotora">
+                </a>
+                  <div class="position-absolute">
+                  <p>Venta</p>
+                </div>
+                <div class="card-body bg-light">
+                  <h4>ADRA</h4>
+                  <h5 class="card-title">Desde USD 99.000</h5>
+                  <p class="card-text fw-bold">Sector Edificio Vista Linda</p>
+                  <p class="card-text text-muted">Cuenca, Azuay</p>
+                  <div class="row mt-3">
+                    <div class="col-sm-6 d-flex align-items-center">
+                      <i class="fas fa-building"></i>
+                      <p>Venta</p>
+                    </div>
+                    <div class="col-sm-6 d-flex align-items-center">
+                      <i class="fas fa-calendar-week"></i>
+                      <p>Inmediata</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+          </div>
+        @endforeach
+        <div class="col-12 col-sm-6 col-md-6 col-lg-3" style="display: none">
           <div id="cardSimilarProject" class="card mb-2 position-relative" style="width: 17rem;">
             <a style="text-decoration: none" href="{{ route('projects.viewProject', 'Futura Narancay') }}">
               <img class="img-fluid" style="height: 180px" src="{{ asset('/img/projects/futuranarancay/1.webp') }}" class="card-img-top" alt="Proyecto Futura Narancay - Casa Credito Promotora">
@@ -490,7 +492,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+        <div class="col-12 col-sm-6 col-md-6 col-lg-3 d-none">
           <div id="cardSimilarProject" class="card mb-2 position-relative" style="width: 17rem;">
             <a style="text-decoration: none" href="{{ route('projects.viewProject', 'Toscana') }}">
               <img class="img-fluid" style="height: 180px" src="{{ asset('/img/projects/toscana/1.webp') }}" class="card-img-top" alt="Proyecto Toscana - Casa Credito Promotora">
@@ -761,84 +763,33 @@
     </div>
       <div class="row mt-5 mb-3">
         <h4>PROYECTOS SIMILARES</h4>
-        <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-          <div id="cardSimilarProject" class="card mb-2 position-relative" style="width: 17rem;">
-              <a style="text-decoration: none" href="{{ route('projects.viewProject', 'Adra') }}">
-                <img class="img-fluid" style="height: 180px" src="{{ asset('/img/projects/adra/1.webp') }}" class="card-img-top" alt="Proyecto Adra - Casa Credito Promotora">
-              </a>
-                <div class="position-absolute">
-                <p>Venta</p>
-              </div>
-              <div class="card-body bg-light">
-                <h4>ADRA</h4>
-                <h5 class="card-title">Desde USD 99.000</h5>
-                <p class="card-text fw-bold">Sector Edificio Vista Linda</p>
-                <p class="card-text text-muted">Cuenca, Azuay</p>
-                <div class="row mt-3">
-                  <div class="col-sm-6 d-flex align-items-center">
-                    <i class="fas fa-building"></i>
-                    <p>Venta</p>
-                  </div>
-                  <div class="col-sm-6 d-flex align-items-center">
-                    <i class="fas fa-calendar-week"></i>
-                    <p>Inmediata</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-          <div id="cardSimilarProject" class="card mb-2 position-relative" style="width: 17rem;">
-            <a style="text-decoration: none" href="{{ route('projects.viewProject', 'Futura Narancay') }}">
-              <img class="img-fluid" style="height: 180px" src="{{ asset('/img/projects/futuranarancay/1.webp') }}" class="card-img-top" alt="Proyecto Futura Narancay - Casa Credito Promotora">
-            </a>
-            <div class="position-absolute">
-              <p>Venta</p>
-            </div>
-            <div class="card-body bg-light">
-              <h4>FUTURA NARANCAY</h4>
-              <h5 class="card-title">Desde USD 78.000</h5>
-              <p class="card-text fw-bold">Narancay</p>
-              <p class="card-text text-muted">Cuenca, Azuay</p>
-              <div class="row mt-3">
-                <div class="col-sm-6 d-flex align-items-center">
-                  <i class="fas fa-building"></i>
+        @foreach ($similarprojects as $similarproject)
+          <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+            <div id="cardSimilarProject" class="card mb-2 position-relative" style="width: 17rem;">
+                <a style="text-decoration: none" href="{{ route('projects.viewProject', [strtolower($similarproject->type), $similarproject->slug]) }}">
+                  <img class="img-fluid" style="height: 180px" src="{{ asset('/uploads/projects/300/'.strtok($similarproject->images, "|")) }}" class="card-img-top" alt="{{$similarproject->type . " " . $similarproject->project_name}} - Casa Credito Promotora">
+                </a>
+                  <div class="position-absolute">
                   <p>Venta</p>
                 </div>
-                <div class="col-sm-6 d-flex align-items-center">
-                  <i class="fas fa-calendar-week"></i>
-                  <p>Inmediata</p>
+                <div class="card-body bg-light">
+                  <h4>{{$similarproject->project_name}}</h4>
+                  <p class="card-text fw-bold">Sector {{ $similarproject->address}}</p>
+                  <p class="card-text text-muted">{{$similarproject->state . ", " . $similarproject->city}}</p>
+                  <div class="row mt-3">
+                    <div class="col-sm-6 d-flex align-items-center">
+                      <i class="fas fa-building"></i>
+                      <p style="font-size: 12px">{{$similarproject->type}}</p>
+                    </div>
+                    <div class="col-sm-6 d-flex align-items-center">
+                      <i class="fas fa-calendar-week"></i>
+                      <p style="font-size: 12px">Inmediata</p>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
           </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-          <div id="cardSimilarProject" class="card mb-2 position-relative" style="width: 17rem;">
-            <a style="text-decoration: none" href="{{ route('projects.viewProject', 'Toscana') }}">
-              <img class="img-fluid" style="height: 180px" src="{{ asset('/img/projects/toscana/1.webp') }}" class="card-img-top" alt="Proyecto Toscana - Casa Credito Promotora">
-            </a>
-            <div class="position-absolute">
-              <p>Venta</p>
-            </div>
-            <div class="card-body bg-light">
-              <h4>TOSCANA</h4>
-              <h5 class="card-title">Desde USD 150.000</h5>
-              <p class="card-text fw-bold">Challuabamba</p>
-              <p class="card-text text-muted">Cuenca, Azuay</p>
-              <div class="row mt-3">
-                <div class="col-sm-6 d-flex align-items-center">
-                  <i class="fas fa-building"></i>
-                  <p>Venta</p>
-                </div>
-                <div class="col-sm-6 d-flex align-items-center">
-                  <i class="fas fa-calendar-week"></i>
-                  <p>Inmediata</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        @endforeach
       </div>
     </div>
   </div>

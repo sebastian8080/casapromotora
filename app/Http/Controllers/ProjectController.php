@@ -239,9 +239,10 @@ class ProjectController extends Controller
 
     public function viewProject(String $type, String $slug = null){
         $project = Category::where('slug', 'LIKE', "%$slug%")->first();
+        $similarprojects = Category::all();
         if($project && $type != null && $slug != null) {
             $list_properties = Property::where('category_id', $project->category_id)->get();
-            return view('pages.project', compact('project', 'list_properties'));
+            return view('pages.project', compact('project', 'list_properties', 'similarprojects'));
         } else {
             $nombreProyecto = $type;
             //num_department
