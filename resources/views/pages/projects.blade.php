@@ -4,6 +4,10 @@
 
 @section('content-head')
     <link rel="stylesheet" href="{{asset('css/projects.css'); }}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap');
+        .inputs{background-color: #d5d5d5}.labels{font-size: 12px; font-weight: 900}
+    </style>
 @endsection
 
 @section('content')
@@ -18,8 +22,141 @@
         </div>
     </div>
 
-    
     <div class="container">
+        <div class="row text-center">
+            <div class="mt-4">
+                <a id="btnmoreinformation" href="#rowforminformation" class="btn btn-outline-secondary rounded-0 fw-bold shadow-sm" style="font-size: 14px;">MÁS INFORMACIÓN</a>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-sm-6">
+                <h1 style="color: #ffffff; -webkit-text-stroke: 2px rgb(162, 157, 157); font-size: 90px;font-family: 'Raleway', sans-serif">PROYECTOS</h1>
+            </div>
+            <div class="col-sm-6">
+                <div class="pt-5 pb-5 text-end" style="padding-left: 15%; padding-right: 15%;background-color: #ebebeb">
+                    <p class="text-muted"><i>Contamos con proyectos de arquitectos y diseñadores líderes de Cuenca y de todo el país, los cuáles se han convertido en nuevos puntos destacados del creciente horizonte de la ciudad</i></p>
+                    <button class="btn btn-outline-secondary rounded-0 fw-bold shadow-sm d-none">Ver proyectos</button>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5 mb-3">
+            @foreach ($projects as $project)
+                <div class="col-sm-4">
+                    <img class="img-fluid" src="{{asset('uploads/projects/900/'.strtok($project->images, "|"))}}" alt="">
+                    <div class="text-center mt-4 mb-4">
+                        <h2 style="color: #ffffff; -webkit-text-stroke: 1px rgb(162, 157, 157);font-family: 'Raleway', sans-serif" class="h1">{{strtoupper($project->project_name)}}</h2>
+                        <hr style="height: 1px; color: rgb(255, 0, 0)">
+                        <p class="h4 fw-bold" style="color: rgb(83, 83, 83) !important">{{strtoupper($project->type)}}</p>
+                        <p class="text-danger fw-bold" style="margin-bottom: 5px">UBICACIÓN</p>
+                        <i class="fas fa-map-marker-alt text-muted"></i>
+                        <p class="text-muted"><i>{{$project->city . ", " . $project->address}}</i></p>
+                        <div class="row text-center" style="padding-left: 20%; padding-right: 20%">
+                            <div class="col-sm-4 col-4">
+                                <img width="40px" src="{{asset('img/projects/ascensor.svg')}}" alt="">
+                                <p style="font-size: 12px" class="text-muted">ASCENSOR</p>
+                            </div>
+                            <div class="col-sm-4 col-4">
+                                <img width="40px" src="{{asset('img/projects/planta.svg')}}" alt="">
+                                <p style="font-size: 12px" class="text-muted">JARDINES</p>
+                            </div>
+                            <div class="col-sm-4 col-4">
+                                <img width="40px" src="{{asset('img/projects/seguridad.svg')}}" alt="">
+                                <p style="font-size: 12px" class="text-muted">SEGURIDAD</p>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="{{ route('projects.viewProject', [strtolower($project->type), $project->slug]) }}" class="btn btn-outline-danger rounded-0 fw-bold">VER PROYECTO</a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+
+        <div class="row mt-5 py-4" style="background-color: #f1f1f1">
+            <div class="col-sm-4 d-flex align-items-center">
+                <img class="img-fluid" src="{{asset('img/projects/cuenca_iglesia_cupula.jpg')}}" alt="">
+            </div>
+            <div class="col-sm-8">
+                <div class="mx-5 mt-3">
+                    <p class="h4" style="color: rgb(83, 83, 83) !important"><b style="font-family: 'Raleway', sans-serif;">¿Por qué</b> comprar su casa en</p>
+                    <p style="color: transparent; -webkit-text-stroke: 1px rgb(162, 157, 157);font-family: 'Raleway', sans-serif" class="h1"> CUENCA?</p>
+                    <hr class="text-danger w-50">
+                    <div>
+                        <i class="text-muted" style="font-size: 14px">
+                            <p>Es la tercera ciudad más grande de Ecuador, conocida como el principal centro cultural del país, ganándose el calificativo «Atenas del Ecuador». Dotada de paisajes a los alrededores realmente deslumbrantes.</p>
+                            <p>Cuenca es sinónimo de arquitectura e historia. El legado español es patente en el centro histórico, con edificaciones de baja y uniforme altura. Por suerte, se ha ido respetando este patrón que le da tanta riqueza e identidad a la ciudad.</p>
+                            <p>Muchas empresas e inversores empezaron a apostar su capital en la construcción de vivienda en esta ciudad y a desarrollar muchos otros proyectos de diversa índole como colegios, restaurantes, hospitales y mejores opciones de red, vías y alcantarillado.</p>
+                            <p>En caso de que Cuenca sea la ciudad ideal para usted y esté buscando vivienda, lo invitamos a que se ponga en contacto con Casa Crédito y descubra las opciones inmobiliarias.</p>
+                        </i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5" id="rowforminformation">
+            <div class="col-sm-6">
+                <p style="color: transparent; -webkit-text-stroke: 1px rgb(162, 157, 157);font-family: 'Raleway', sans-serif; font-size: 70px">¿Cómo podemos ayudarle?</p>
+                <hr class="text-danger w-50">
+                <p class="fw-bold"><i>Contáctese con nosotros para más información</i></p>
+            </div>
+            <div class="col-sm-6 d-flex justify-content-center pt-4 pb-4" style="background-color: #f1f1f1">
+                <div>
+                    <div class="form-group d-flex w-100">
+                        <div class="me-1 w-100">
+                            {!! Form::label('name', 'NOMBRE', ['class' => 'text-muted labels']) !!}
+                            {!! Form::text('name', null, ['class' => 'form-control rounded-0 inputs']) !!}
+                        </div>
+                        <div class="ms-1 w-100">
+                            {!! Form::label('lastname', 'APELLIDO', ['class' => 'text-muted labels']) !!}
+                            {!! Form::text('lastname', null, ['class' => 'form-control rounded-0 inputs']) !!}
+                        </div>
+                    </div>
+                    <div class="form-group mt-3">
+                        {!! Form::label('email', 'CORREO ELECTRÓNICO', ['class' => 'text-muted labels']) !!}
+                        {!! Form::email('email', null, ['class' => 'form-control rounded-0 inputs']) !!}
+                    </div>
+                    <div class="form-group mt-3">
+                        {!! Form::label('phone', 'NÚMERO DE TELÉFONO', ['class' => 'text-muted labels']) !!}
+                        {!! Form::number('phone', null, ['class' => 'form-control rounded-0 inputs']) !!}
+                    </div>
+                    <div class="form-group mt-3">
+                        {!! Form::label('type', '¿EN QUÉ TIPO DE UNIDAD ESTÁ INTERESADO?', ['class' => 'text-muted labels']) !!}
+                        {!! Form::select('type', ['' => 'Seleccione', 'ADRA' => 'ADRA', 'FUTURA NARANCAY' => 'FUTURA NARANCAY', 'TOSCANA' => 'TOSCANA'], null, ['class' => 'form-control rounded-0 inputs']) !!}
+                    </div>
+                    <div class="form-group mt-3">
+                        {!! Form::label('city', 'CIUDAD DE RESIDENCIA', ['class' => 'text-muted labels']) !!}
+                        {!! Form::text('city', null, ['class' => 'form-control rounded-0 inputs']) !!}
+                    </div>
+                    <div class="form-group mt-3">
+                        {!! Form::label('comment', 'COMENTARIOS', ['class' => 'text-muted labels']) !!}
+                        {!! Form::textarea('comment', null, ['class' => 'form-control rounded-0 inputs', 'rows' => 2]) !!}
+                    </div>
+                    <div class="form-group mt-3 text-center">
+                        {!! Form::submit('NECESITO MÁS INFORMACIÓN', ['class' => 'btn btn-secondary rounded-0']) !!}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row mt-4">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="{{asset('img/projects/banner-footer-2.jpg')}}" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="{{asset('img/projects/banner-footer.jpg')}}" class="d-block w-100" alt="...">
+              </div>
+            </div>
+          </div>
+    </div>
+    
+    <div class="container d-none">
         <hr data-aos="fade-up" style="color: rgb(166, 177, 176);  width: 20%; margin-left: 40%" class="mt-5 mb-5">
         <div class="row mt-1 pt-1" data-aos="fade-up">
             <div class="col-sm-12 col-md-12 col-lg-6 position-relative">
@@ -271,4 +408,18 @@
 
 @section('section-scripts')
     <script src="{{ URL::asset('js/homepage.js') }}"></script>
+    <script>
+        let btnTramite = document.getElementById('btnmoreinformation');
+        btnTramite.addEventListener('click', clickHandler);
+
+        function clickHandler(e) {
+            e.preventDefault();
+            const href = this.getAttribute("href");
+            const offsetTop = document.querySelector(href).offsetTop;
+            scroll({
+                top: offsetTop - 60,
+                behavior: "smooth"
+            });
+        }
+    </script>
 @endsection

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
+use App\Models\Project\Category;
 
 class IndexController extends Controller
 {
@@ -33,7 +34,8 @@ class IndexController extends Controller
         // $baseurl = "https://casacredito.com/api/projects";
         // $listingsprojects = Http::withHeaders($this->header)->get($this->baseurl."/projects");
         // $listingsprojects = json_decode($listingsprojects);
-        return view('pages.projects');
+        $projects = Category::all();
+        return view('pages.projects', compact('projects'));
     }
 
     public function showproject($slug){
