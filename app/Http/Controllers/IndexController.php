@@ -161,6 +161,29 @@ class IndexController extends Controller
         return back();
     }
 
+    public function sendlead(Request $request){
+
+        $to = "info@casacredito.com";
+        $subject = "Lead - Casa Crédito Promotora | ". $request->name;
+        $message = "<br><strong>Información de contacto</strong>
+            <br><b>Nombre:</b> " . strip_tags($request->name) . " " .strip_tags($request->lastname)."
+            <br><b>Teléfono:</b> " . strip_tags($request->phone) ."
+            <br><b>Email:</b> " . strip_tags($request->email) . "
+            <br><b>Proyecto:</b> " . strip_tags($request->type) ."
+            <br><b>Ciudad:</b> " . strip_tags($request->city) ."
+            <br><b>Mensaje:</b> " . strip_tags($request->comment) . " 
+            <br><b>Fuente:</b> " . " Website Casa Crédito Promotora" . "
+        ";
+
+        $header =   "From: <lead_avaluo@casacreditopromotora.com>" . "\r\n" .
+                    "MIME-Version: 1.0" . "\r\n" .
+                    "Content-Type:text/html;charset=UTF-8" . "\r\n";
+
+        mail($to, $subject, $message, $header);
+
+        return redirect()->back()->with('status', 'Se ha enviado la información');
+    }
+
     public function getCities($id){
         $cities = DB::connection('mysql2')->table('info_cities')->where('state_id',$id)->get(); 
         return response()->json($cities);   

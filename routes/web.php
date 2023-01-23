@@ -61,3 +61,7 @@ Route::post('/solicitud-avaluo', [IndexController::class, 'sendSolicitudAvaluo']
 
 //fetch cities
 Route::get('/getcities/{idState}', [IndexController::class, 'getCities'])->name('web.getcities');
+
+
+//SEND LEADS
+Route::post('/sendlead', [IndexController::class, 'sendlead'])->name('sendlead');

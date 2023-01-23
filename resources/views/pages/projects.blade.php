@@ -8,10 +8,22 @@
         @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap');
         .inputs{background-color: #d5d5d5}.labels{font-size: 12px; font-weight: 900}
         @media only screen and (max-width: 994px){#tagprojects{font-size: 40px !important; text-align: center;}#titleform{font-size: 40px !important; text-align: center}#title{font-size: 19px !important}}
+        .form-control:focus {border-color: #FF0000;box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);}
     </style>
 @endsection
 
 @section('content')
+
+    @if(session('status'))
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        Swal.fire(
+            'Información enviada con éxito',
+            'Un asesor se comunicará con usted lo antes posible',
+            'success'
+        )
+    </script>
+    @endif
 
     <div class="position-relative" style="width: 100%;">
         <video style="top: 0; left:0; width: 100%; opacity:1; filter: brightness(60%)" muted autoplay loop>
@@ -102,41 +114,49 @@
                 <p class="fw-bold"><i>Contáctese con nosotros para más información</i></p>
             </div>
             <div class="col-sm-6 d-flex justify-content-center pt-4 pb-4" style="background-color: #f1f1f1">
+                {!! Form::open(['route' => 'sendlead', 'method' => 'POST']) !!}
+                @csrf
                 <div>
                     <div class="form-group d-flex w-100">
                         <div class="me-1 w-100">
                             {!! Form::label('name', 'NOMBRE', ['class' => 'text-muted labels']) !!}
-                            {!! Form::text('name', null, ['class' => 'form-control rounded-0 inputs']) !!}
+                            {!! Form::text('name', null, ['class' => 'form-control rounded-0 inputs', 'required']) !!}
                         </div>
                         <div class="ms-1 w-100">
                             {!! Form::label('lastname', 'APELLIDO', ['class' => 'text-muted labels']) !!}
-                            {!! Form::text('lastname', null, ['class' => 'form-control rounded-0 inputs']) !!}
+                            {!! Form::text('lastname', null, ['class' => 'form-control rounded-0 inputs', 'required']) !!}
                         </div>
                     </div>
                     <div class="form-group mt-3">
                         {!! Form::label('email', 'CORREO ELECTRÓNICO', ['class' => 'text-muted labels']) !!}
-                        {!! Form::email('email', null, ['class' => 'form-control rounded-0 inputs']) !!}
+                        {!! Form::email('email', null, ['class' => 'form-control rounded-0 inputs', 'required']) !!}
                     </div>
                     <div class="form-group mt-3">
                         {!! Form::label('phone', 'NÚMERO DE TELÉFONO', ['class' => 'text-muted labels']) !!}
-                        {!! Form::number('phone', null, ['class' => 'form-control rounded-0 inputs']) !!}
+                        {!! Form::number('phone', null, ['class' => 'form-control rounded-0 inputs', 'required']) !!}
                     </div>
                     <div class="form-group mt-3">
                         {!! Form::label('type', '¿EN QUÉ TIPO DE UNIDAD ESTÁ INTERESADO?', ['class' => 'text-muted labels']) !!}
-                        {!! Form::select('type', ['' => 'Seleccione', 'ADRA' => 'ADRA', 'FUTURA NARANCAY' => 'FUTURA NARANCAY', 'TOSCANA' => 'TOSCANA'], null, ['class' => 'form-control rounded-0 inputs']) !!}
+                        <select name="type" id="type" class="form-control rounded-0 inputs" required>
+                            <option value="">Seleccione</option>
+                            @foreach ($projects as $project)
+                                <option value="{{$project->type . " " . $project->project_name}}">{{$project->type . " " . $project->project_name}}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="form-group mt-3">
                         {!! Form::label('city', 'CIUDAD DE RESIDENCIA', ['class' => 'text-muted labels']) !!}
-                        {!! Form::text('city', null, ['class' => 'form-control rounded-0 inputs']) !!}
+                        {!! Form::text('city', null, ['class' => 'form-control rounded-0 inputs', 'required']) !!}
                     </div>
                     <div class="form-group mt-3">
                         {!! Form::label('comment', 'COMENTARIOS', ['class' => 'text-muted labels']) !!}
-                        {!! Form::textarea('comment', null, ['class' => 'form-control rounded-0 inputs', 'rows' => 2]) !!}
+                        {!! Form::textarea('comment', null, ['class' => 'form-control rounded-0 inputs', 'rows' => 2, 'placeholder' => 'Ej: Me interesa este proyecto y deseo que me contacten', 'required']) !!}
                     </div>
                     <div class="form-group mt-3 text-center">
                         {!! Form::submit('NECESITO MÁS INFORMACIÓN', ['class' => 'btn btn-secondary rounded-0']) !!}
                     </div>
                 </div>
+                {!! Form::close() !!}
             </div>
         </div>
     </div>
