@@ -137,14 +137,14 @@
           <div class="col-sm-4 hover-zoomin">
             <p class="fw-normal texto-imagenes h1">CONDOMINIOS</p>
             <a href="{{route('projects.viewProject', 'condominios')}}">
-              <img class="fila-imagenes" src="{{ asset('img/home/villas.webp') }}" width="100%" alt="Villas - Casa Credito Promotora">
+              <img class="fila-imagenes" src="{{ asset('img/home/condominios.jpg') }}" width="100%" alt="Villas - Casa Credito Promotora">
             </a>
           </div>
 
           <div class="col-sm-4 hover-zoomin">
             <p class="fw-normal texto-imagenes h1">DEPARTAMENTOS</p>
             <a href="{{route('projects.viewProject', 'departamentos')}}">
-              <img class="fila-imagenes" src="{{ asset('img/home/departamentos.webp') }}" width="100%" alt="Departamentos - Casa Credito Promotora">
+              <img class="fila-imagenes" src="{{ asset('img/home/departments.jpg') }}" width="100%" alt="Departamentos - Casa Credito Promotora">
             </a>
           </div>
 
