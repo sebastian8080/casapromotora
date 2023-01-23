@@ -39,7 +39,7 @@
                 </div>
             </div>
         </div>
-        <div class="row mt-5 mb-3">
+        <div class="row mt-5 mb-3 justify-content-center">
             @foreach ($projects as $project)
                 <div class="col-sm-4">
                     <a href="{{route('projects.viewProject', [strtolower($project->type), $project->slug])}}">
