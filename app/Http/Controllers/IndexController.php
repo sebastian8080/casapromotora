@@ -175,7 +175,7 @@ class IndexController extends Controller
             <br><b>Fuente:</b> " . " Website Casa Crédito Promotora" . "
         ";
 
-        $header =   "From: <lead_avaluo@casacreditopromotora.com>" . "\r\n" .
+        $header =   "From: <lead_proyectos@casacreditopromotora.com>" . "\r\n" .
                     "MIME-Version: 1.0" . "\r\n" .
                     "Content-Type:text/html;charset=UTF-8" . "\r\n";
 
