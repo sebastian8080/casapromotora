@@ -109,7 +109,7 @@
                   <img id="imgBanner2" style="width: 100%; height: 100%" src="{{ asset('img/projects/futuranarancay/1.webp') }}" class="d-block img-fluid" alt="Departamentos Futura Narancay - Cuenca Casa Credito Promotora">
                   <div class="carousel-caption d-md-block">
                     <a style="text-decoration: none" href="{{ route('projects.viewProject', ['departamentos', 'futura-narancay']) }}"><h3 class="texto-imagenes">FUTURA NARANCAY</h3></a>
-                    <p>Departamentos con una  experiencia única en diseño y comodidad</p>
+                    <p>Departamentos con una experiencia única en diseño y comodidad</p>
                   </div>
                 </div>
                 <div class="carousel-item">
@@ -135,15 +135,15 @@
 
         <div data-aos="fade-down" class="row">
           <div class="col-sm-4 hover-zoomin">
-            <p class="fw-normal texto-imagenes h1">VILLAS</p>
-            <a href="#">
+            <p class="fw-normal texto-imagenes h1">CONDOMINIOS</p>
+            <a href="{{route('projects.viewProject', 'condominios')}}">
               <img class="fila-imagenes" src="{{ asset('img/home/villas.webp') }}" width="100%" alt="Villas - Casa Credito Promotora">
             </a>
           </div>
 
           <div class="col-sm-4 hover-zoomin">
             <p class="fw-normal texto-imagenes h1">DEPARTAMENTOS</p>
-            <a href="#">
+            <a href="{{route('projects.viewProject', 'departamentos')}}">
               <img class="fila-imagenes" src="{{ asset('img/home/departamentos.webp') }}" width="100%" alt="Departamentos - Casa Credito Promotora">
             </a>
           </div>

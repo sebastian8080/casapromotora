@@ -238,6 +238,10 @@ class ProjectController extends Controller
     }
 
     public function viewProject(String $type, String $slug = null){
+        if($type != null && $slug == null){
+            $projects = Category::where('type', 'LIKE', "%$type%")->get();
+            return view('pages.projects', compact('projects'));
+        }
         $project = Category::where('slug', 'LIKE', "%$slug%")->first();
         $similarprojects = Category::all();
         if($project && $type != null && $slug != null) {
