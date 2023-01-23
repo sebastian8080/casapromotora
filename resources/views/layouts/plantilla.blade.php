@@ -110,38 +110,39 @@
                 <h3 class="fw-bold">Promotora Casa Crédito</h3>
                 <div>
                     <div class="d-flex">
-                        <div class="bg-danger text-white d-flex justify-content-center align-items-center" style="width: 30px">
+                        <div class="bg-danger text-white d-flex justify-content-center align-items-center" style="width: @mobile 33px @endmobile @desktop 30px @enddesktop">
                             <i class="fas fa-map-marker-alt text-white"></i>
                         </div>
                         <div class="ms-2 pt-2">
-                            <p>Av. Fray Vicente Solano 3-54 y Remigio Tamariz Crespo <br> <b><i>Cuenca - Ecuador</i></b></p>
+                            <a target="_blank" style="text-decoration: none;" class="text-muted" href="https://g.page/r/CRcVix2z3D8lEAE"><p>Av. Fray Vicente Solano 3-54 y Remigio Tamariz Crespo</p></a>
+                            <p class="text-center" @desktop style="margin-top: -10px" @enddesktop><b><i>Cuenca - Ecuador</i></b></p>
                         </div>
                     </div>
                     <div class="d-flex">
                         <div class="bg-danger text-white d-flex justify-content-center align-items-center" style="width: 30px">
                             <i class="fas fa-mobile-android-alt text-white"></i>
                         </div>
-                        <div class="ms-2 pt-2">
-                            <p>098 384 9073</p>
+                        <div class="ms-2 pt-2 @mobile mt-2 @endmobile">
+                            <a class="links-footer text-muted" href="tel:0983849073"><p>098 384 9073</p></a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-sm-6" style="background-color: #f1f1f1">
-              <br>
-              <div class="d-flex justify-content-end mt-4">
-                <div class="me-2 mt-2">
-                  <p>ventas@casacredito.com</p>
+              @desktop <br> @enddesktop
+              <div class="d-flex @mobile flex-row-reverse @endmobile justify-content-end @desktop mt-4 @enddesktop">
+                <div class="me-2 mt-2 @mobile ms-2 @endmobile">
+                  <a class="links-footer text-muted" href="mailto:ventas@casacredito.com"><p class="mt-2">ventas@casacredito.com</p></a>
                 </div>
-                <div class="bg-danger text-white d-flex justify-content-center align-items-center" style="width: 30px; height: 60px; margin-top: -6px">
+                <div class="bg-danger text-white d-flex justify-content-center align-items-center" style="width: 30px; height: 70px; margin-top: -6px">
                   <i class="far fa-envelope text-white"></i>
                 </div>
               </div>
-              <div class="d-flex justify-content-end">
-                <div class="me-2 d-flex align-items-center">
-                  <p>07-288-9355</p>
+              <div class="d-flex @mobile flex-row-reverse @endmobile justify-content-end">
+                <div class="me-2 @mobile ms-2 @endmobile d-flex align-items-center">
+                  <a class="links-footer text-muted" href="tel:072889355"><p class="mt-3">07-288-9355</p></a>
                 </div>
-                <div class="bg-danger text-white d-flex justify-content-center align-items-center" style="width: 30px; height: 60px">
+                <div class="bg-danger text-white d-flex justify-content-center align-items-center" style="width: 30px; height: 70px">
                   <i class="fas fa-phone text-white"></i>
                 </div>
               </div>
