@@ -15,7 +15,7 @@
 
     <div class="position-relative" style="width: 100%;">
         <video style="top: 0; left:0; width: 100%; opacity:1; filter: brightness(60%)" muted autoplay loop>
-            <source src="{{asset('video/projects.mp4')}}" type="video/mp4">
+            <source src="{{asset('video/projectsnew.mp4')}}" type="video/mp4">
         </video>
         <div class="position-absolute top-50 start-50 translate-middle text-white">
             <h1 id="title" class="text-center" style="font-size: 40px;">Encuentre los mejores proyectos inmobiliarios por estrenar</h1>
