@@ -133,7 +133,7 @@
         </div>
       </div>
 
-        <div data-aos="fade-down" class="row">
+        <div data-aos="fade-down" class="row justify-content-center">
           <div class="col-sm-4 hover-zoomin">
             <p class="fw-normal texto-imagenes h1">CONDOMINIOS</p>
             <a href="{{route('projects.viewProject', 'condominios')}}">
@@ -148,12 +148,12 @@
             </a>
           </div>
 
-          <div class="col-sm-4 hover-zoomin">
+          {{-- <div class="col-sm-4 hover-zoomin">
             <p class="fw-normal texto-imagenes h1">SUITES</p>
             <a href="#">
               <img class="fila-imagenes" src="{{ asset('img/home/suites.webp') }}" width="100%" alt="Suites - Casa Credito Promotora">
             </a>
-          </div>
+          </div> --}}
         </div>
 
       <div data-aos="fade-left" class="text-center">
