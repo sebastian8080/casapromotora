@@ -9,6 +9,7 @@
       input[type="number"] {-moz-appearance: textfield;}input[type="number"]:hover,input[type="number"]:focus {-moz-appearance: number-input;}
       /* OTHER */
       input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;margin: 0;}
+      .form-control:focus {border-color: #FF0000;box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);}
   </style>
 @endsection
     
@@ -18,8 +19,8 @@
   <div class="carousel-inner position-relative">
     <div class="position-absolute text-white" style="z-index: 3; top: 25%; left: 20%;">
       <h1>Proyectos de Venta en Ecuador</h1>
-      <p class="h2 fw-normal">TU PROPIEDAD, <br> Y TU FUTURO <br> NUESTRA EXPERIENCIA</p>
-      <p>¡ENCUENTRA EL PROYECTO IDEAL!</p>
+      <p class="h2 fw-normal">SU PROPIEDAD, <br> Y SU FUTURO <br> NUESTRA EXPERIENCIA</p>
+      <p>¡ENCUENTRE EL PROYECTO IDEAL!</p>
     </div>
       <div class="carousel-item active position-relative"  style="background:rgba(2, 2, 2, 0.5);">
         <img src="{{ asset('img/home/SLIDER-NUEVO-01-min.webp') }}" class="d-block w-100" alt="..." style="height: 550px; object-fit: cover; object-position: left center; filter: brightness(60%)">
@@ -64,7 +65,7 @@
     <div class="row mt-5 pt-5 mb-5" style="margin-left: 5%; margin-right: 5%">
       <div class="col-sm-2"></div>
       <div class="col-sm-3">
-        <p class="h1 fw-normal" style="font-size: 35px">¿CÓMO PODEMOS AYUDARTE?</p>
+        <p class="h1 fw-normal" style="font-size: 35px">¿CÓMO PODEMOS AYUDARLE?</p>
       </div>
       <div class="col-sm-5 text-muted">
         <b>CASA CREDITO</b> es una empresa Promotora de Proyectos Inmobiliarios en Ecuador. Desarrollamos Soluciones Inmobiliarias Integrales en Vivienda,
@@ -86,11 +87,11 @@
     <div class="container">
       <div data-aos="fade-up-left" class="row">
         <div class="col-sm-6"> 
-          <div class="mt-5 pt-5" style="margin-left: 5%">
+          <div class="@desktop mt-5 pt-5 @enddesktop @mobile text-center @endmobile" style="margin-left: 5%">
             <h2 class="fw-bold">Proyectos en Venta</h2>
-            <p>Conoce cada uno de los proyectos que tenemos y conoce la nueva experiencia en proyectos inmobiliarios</p>
+            <p>Conozca cada uno de los proyectos que tenemos y la nueva experiencia en proyectos inmobiliarios</p>
             <br>
-            <a class="link-row3" style="text-decoration: none" href="{{ route('pages.projects') }}">Ver todos los proyectos ></a>
+            <a class="btn btn-danger rounded-0 shadow" style="text-decoration: none" href="{{ route('pages.projects') }}">Ver todos los proyectos <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
 
@@ -193,13 +194,13 @@
           <img src="{{ asset('img/home/FAMILIA-CREDITOS - copia.webp') }}" width="100%" class="img-fluid" alt="Creditos - Casa Credito Promotora">
           <div id="row6" class="position-absolute">
             <p id="text-row6" class="text-light h1">¡Lo que siempre <br>has querido!</p>
-            <button id="btn-row6" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Solicite un credito <i class="fas fa-chevron-circle-right"></i></button>
+            <button id="btn-row6" class="btn btn-danger rounded-0 shadow" data-bs-toggle="modal" data-bs-target="#exampleModal">Solicite un credito <i class="fas fa-chevron-circle-right"></i></button>
           </div>
           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
-                <div class="modal-header bg-danger">
-                  <p class="modal-title text-white fw-normal" id="exampleModalLabel">COMPLETE EL FORMULARIO Y NOS PONDREMOS EN CONTACTO</p>
+                <div class="modal-header text-white" style="background-color: #91232d">
+                  <p class="modal-title text-white fw-normal" id="exampleModalLabel">Complete el formulario y nos pondremos en contacto</p>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -209,35 +210,35 @@
                       <div class="col-12 col-sm-6">
                         <div class="mb-2">
                           <label for="cedula" class="form-label text-muted"><i class="fas fa-id-card"></i> Cédula de Identidad</label>
-                          <input type="text" class="form-control" id="cedula" name="cedula" required>
+                          <input type="text" class="form-control rounded-0" id="cedula" name="cedula" required>
                         </div>
                         <div class="mb-2 d-flex">
                           <div class="me-1">
                             <label for="nombre" class="form-label text-muted"><i class="fas fa-user"></i> Nombre</label>
-                            <input type="text" class="form-control" id="nombre" name="nombre" required>
+                            <input type="text" class="form-control rounded-0" id="nombre" name="nombre" required>
                           </div>
                           <div class="ms-1">
                             <label for="apellido" class="form-label text-muted">Apellido</label>
-                            <input type="text" class="form-control" name="apellido" id="apellido" required>
+                            <input type="text" class="form-control rounded-0" name="apellido" id="apellido" required>
                           </div>
                         </div>
                         <div class="mb-2">
                           <label for="telefono_celular" class="form-label text-muted"><i class="fas fa-phone"></i> Teléfono / Celular</label>
-                          <input type="number" class="form-control" id="telefono_celular" name="telefono_celular" required>
+                          <input type="number" class="form-control rounded-0" id="telefono_celular" name="telefono_celular" required>
                         </div>
                         <div class="mb-2">
                           <label for="correo" class="form-label text-muted"><i class="fas fa-envelope"></i> Correo electrónico</label>
-                          <input type="email" class="form-control" id="correo" aria-describedby="emailHelp" name="correo" required>
+                          <input type="email" class="form-control rounded-0" id="correo" aria-describedby="emailHelp" name="correo" required>
                         </div>
                       </div>
                       <div class="col-12 col-sm-6 border-start">
                         <div class="mb-2">
                           <label for="monto" class="form-label text-muted"><i class="fas fa-file-invoice-dollar"></i> Monto</label>
-                          <input type="number" class="form-control" id="monto" name="monto" required>
+                          <input type="number" class="form-control rounded-0" id="monto" name="monto" required>
                         </div>
                         <div class="mb-2">
                           <label for="tipo_credito" class="form-label text-muted"><i class="fas fa-stream"></i> Tipo de Crédito</label>
-                          <select name="tipo_credito" id="tipo_credito" class="form-control" required>
+                          <select name="tipo_credito" id="tipo_credito" class="form-control rounded-0" required>
                             <option value="">Seleccione</option>
                             <option value="Hipotecario">Credito Hipotecario</option>
                             <option value="Consumo">Crédito de Consumo</option>
@@ -246,10 +247,10 @@
                         </div>
                         <div class="mb-3">
                           <label for="mensaje" class="form-label text-muted"><i class="fas fa-comment"></i> Mensaje</label>
-                          <textarea type="text" class="form-control" id="mensaje" rows="3" name="mensaje" required></textarea>
+                          <textarea type="text" class="form-control rounded-0" id="mensaje" rows="3" name="mensaje" required></textarea>
                         </div>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                          <button type="submit" class="btn btn-danger me-md-2 rounded-pill">Enviar mensaje</button>
+                          <button type="submit" class="btn me-md-2 rounded-pill text-white" style="background-color: #91232d">Solicitar mi crédito</button>
                         </div>
                       </div>
                     </div>
@@ -276,31 +277,31 @@
           <div class="form-group d-flex">
             <div class="w-100 me-1">
               <label for="name" class="text-muted font-size-xs">Nombre:</label>
-              <input type="text" name="name" id="name" class="form-control" required>
+              <input type="text" name="name" id="name" class="form-control rounded-0" required>
             </div>
             <div class="w-100 ms-1">
               <label for="name" class="text-muted font-size-xs">Apellido:</label>
-              <input type="text" name="lastname" id="lastname" class="form-control" required>
+              <input type="text" name="lastname" id="lastname" class="form-control rounded-0" required>
             </div>
           </div>
           <div class="form-group mt-2">
             <label for="phone" class="text-muted font-size-xs">Teléfono:</label>
-            <input type="number" name="phone" id="phone" class="form-control" required>
+            <input type="number" name="phone" id="phone" class="form-control rounded-0" required>
           </div>
           <div class="form-group mt-2">
             <label for="email" class="text-muted font-size-xs">Correo electrónico:</label>
-            <input type="email" name="email" id="email" class="form-control" required>
+            <input type="email" name="email" id="email" class="form-control rounded-0" required>
           </div>
           <div class="form-group mt-2">
             <label for="comentario" class="text-muted font-size-xs">Comentario:</label>
-            <textarea name="comentario" id="comentario" rows="2" class="form-control"></textarea>
+            <textarea name="comentario" id="comentario" rows="2" class="form-control rounded-0"></textarea>
           </div>
           @php
               $types = DB::connection('mysql2')->table('listing_types')->get();
           @endphp
           <div class="form-group mt-2">
             <label for="type" class="text-muted font-size-xs">Tipo de Propiedad</label>
-            <select name="type" id="type" class="form-select" required>
+            <select name="type" id="type" class="form-select rounded-0" required>
               <option value="">Seleccione</option>
               @foreach ($types as $type)
                   <option value="{{ $type->type_title}}">{{ $type->type_title}}</option>
@@ -313,7 +314,7 @@
           <div class="d-flex">
             <div class="form-group mt-2 w-100 me-1">
               <label class="text-muted font-size-xs" for="state">Provincia</label>
-              <select name="state" id="state" class="form-select" required>
+              <select name="state" id="state" class="form-select rounded-0" required>
                 <option value="">Seleccione</option>
                 @foreach ($states as $state)
                     <option value="{{$state->name}}" data-id={{$state->id}}>{{ $state->name}}</option>
@@ -322,7 +323,7 @@
             </div>
             <div class="form-gropu mt-2 w-100 ms-1" >
               <label for="city" class="text-muted font-size-xs">Ciudad</label>
-              <select name="city" id="city" class="form-select" required>
+              <select name="city" id="city" class="form-select rounded-0" required>
                 <option value="">Seleccione</option>
               </select>
             </div>

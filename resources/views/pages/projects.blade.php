@@ -152,8 +152,8 @@
                         {!! Form::label('comment', 'COMENTARIOS', ['class' => 'text-muted labels']) !!}
                         {!! Form::textarea('comment', null, ['class' => 'form-control rounded-0 inputs', 'rows' => 2, 'placeholder' => 'Ej: Me interesa este proyecto y deseo que me contacten', 'required']) !!}
                     </div>
-                    <div class="form-group mt-3 text-center">
-                        {!! Form::submit('NECESITO MÁS INFORMACIÓN', ['class' => 'btn btn-secondary rounded-0']) !!}
+                    <div class="form-group mt-4 text-center">
+                        {!! Form::submit('Solicitar información', ['class' => 'btn btn-secondary rounded-0']) !!}
                     </div>
                 </div>
                 {!! Form::close() !!}

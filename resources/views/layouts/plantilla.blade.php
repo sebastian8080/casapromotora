@@ -160,9 +160,9 @@
         </div>
         <div class="bg-danger pt-3 pb-2">
           <div class="d-flex pb-1 justify-content-center text-white">
-            <i class="fab fa-instagram me-1 text-white" style="font-size: 30px"></i>
-            <i class="fab fa-facebook-f ms-1 me-1 text-white" style="font-size: 25px"></i>
-            <i class="fab fa-tiktok ms-1 text-white" style="font-size: 25px"></i>
+            <a target="_blank" href="https://www.instagram.com/casacreditopromotora/"><i class="fab fa-instagram me-1 text-white" style="font-size: 30px"></i></a>
+            <a target="_blank" href="https://www.facebook.com/profile.php?id=100076172175380"></a><i class="fab fa-facebook-f ms-1 me-1 text-white" style="font-size: 25px"></i>
+            <a href="https://www.tiktok.com/@casacredito1"><i class="fab fa-tiktok ms-1 text-white" style="font-size: 25px"></i></a>
           </div>
         </div>
     </div>
