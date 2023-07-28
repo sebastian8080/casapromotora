@@ -44,7 +44,7 @@
         </div> --}}
       </div>
   </div>
-  <div class="d-flex justify-content-center text-center" style="position: absolute; bottom: 0px; margin-bottom: -45px;">
+  {{-- <div class="d-flex justify-content-center text-center" style="position: absolute; bottom: 0px; margin-bottom: -45px;">
     <div class="row" style="background-color: black; color: #ffffff; padding: 30px; align-items: center">
       <div class="col-sm-6 col-12">
         <p class="h5 pt-1" style="margin-right: 10px">¿Cuánto Vale Mi Propiedad?</p>
@@ -53,7 +53,7 @@
         <button type="button" data-bs-toggle="modal" data-bs-target="#modalAvaluo" class="btn btn-outline-danger mt-1" style="margin-top: -10px; border-radius: 0px">SOLICITAR UN AVALÚO</button>
       </div>
     </div>
-  </div>
+  </div> --}}
   {{-- <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
   </a>
