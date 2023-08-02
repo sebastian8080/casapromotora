@@ -87,7 +87,7 @@
         <div class="col-sm-8 text-justify">
           <p class="h3 text-danger">Historia</p>
           <p class="lh-lg" style="text-align: justify">
-            Casa Crédito Inmobiliaria fue fundada en el 2007 por iniciativa del señor Homero Serrano, 
+            Casa Promotora fue fundada en el 2007 por iniciativa del señor Homero Serrano, 
             como respuesta a una creciente necesidad de la comunidad ecuatoriana por realizar su sueño de vivienda propia.
             Nos hemos dado a conocer por brindar los mejores servicios en Gestión Inmobiliaria, Gestión  Financiera y Asistencia Legal, 
             adquiriendo una vasta experiencia asesorando a miles de familias en su inversión, dando soluciones con agilidad y creatividad comercial; 
@@ -104,7 +104,7 @@
         <div class="col-sm-8">
           <p class="h3 text-danger">Mision</p>
           <p class="lh-lg">
-            Desde su creación, Casa Crédito Inmobiliaria tiene como misión asesorar a sus clientes en inversiones inmobiliarias, 
+            Desde su creación, Casa Promotora tiene como misión asesorar a sus clientes en inversiones inmobiliarias, 
             todo dentro de un marco de transparencia, compromiso e integridad, protegiendo los intereses de nuestros clientes.
           </p>
           <img class="img-fluid rounded" src="{{ asset('img/about/mision.webp') }}" alt="Mision Casa Credito Promotora">
@@ -119,7 +119,7 @@
           <p class="lh-lg">
             Nuestra visión es lograr un posicionamiento como una empresa líder en el sector inmobiliario de toda Latinoamérica y Estados Unidos. 
             Basados en la atención de manera prioritaria a las necesidades de financiamiento de propiedades de nuestros clientes, y, 
-            a favor del desarrollo de toda la comunidad latina, Casa Crédito Inmobiliaria se propone como meta 2018 crear nuevas alianzas que faciliten 
+            a favor del desarrollo de toda la comunidad latina, Casa Promotora se propone como meta 2018 crear nuevas alianzas que faciliten 
             la concreción de negocios, consolidando e incrementando las actividades financieras para que más familias realicen el sueño de su vivienda propia!
           </p>
           <img class="img-fluid rounded" src="{{ asset('img/about/vision.webp') }}" alt="Vision Casa Credito Promotora">
