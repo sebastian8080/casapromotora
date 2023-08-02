@@ -15,7 +15,7 @@
 
     <!--EFECTOS DE APARECIMIENTO-->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="{{ asset('scss/style.scss') }}">
+    <link rel="stylesheet" href="{{ asset('scss/style.scss?v=2') }}">
 
     <!-- Meta Pixel Code -->
     <script>
