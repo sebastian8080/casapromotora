@@ -148,23 +148,23 @@
             @csrf
             <div class="row">
               <div class="col mb-4">
-                <input type="text" name="nombre" placeholder="Nombre" class="form-control border-0">
+                <input type="text" name="nombre" placeholder="Nombre" class="form-control border-0" required>
               </div>
               <div class="col mb-4">
-                <input type="text" name="apellido" placeholder="Apellido" class="form-control border-0">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col mb-4">
-                <input type="email" name="correo" placeholder="Correo electrónico" class="form-control border-0">
-              </div>
-              <div class="col mb-4">
-                <input type="number" name="telefono_celular" placeholder="Teléfono" class="form-control border-0">
+                <input type="text" name="apellido" placeholder="Apellido" class="form-control border-0" required>
               </div>
             </div>
             <div class="row">
               <div class="col mb-4">
-                <textarea name="mensaje" rows="4" placeholder="Comentario" class="form-control border-0"></textarea>
+                <input type="email" name="correo" placeholder="Correo electrónico" class="form-control border-0" required>
+              </div>
+              <div class="col mb-4">
+                <input type="number" name="telefono_celular" placeholder="Teléfono" class="form-control border-0" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col mb-4">
+                <textarea name="mensaje" rows="4" placeholder="Comentario" class="form-control border-0" required></textarea>
               </div>
             </div>
             <div class="d-grid gap-2">
