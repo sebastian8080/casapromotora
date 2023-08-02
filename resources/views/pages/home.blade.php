@@ -144,26 +144,27 @@
     <article class="col-12 col-sm-12 col-md-12 col-xl-7 px-5 bg-light py-5">
       <section>
         <div>
-          <form>
+          <form action="{{route('contactanos.store')}}" method="POST">
+            @csrf
             <div class="row">
               <div class="col mb-4">
-                <input type="text" name="name" placeholder="Nombre" class="form-control border-0">
+                <input type="text" name="nombre" placeholder="Nombre" class="form-control border-0">
               </div>
               <div class="col mb-4">
-                <input type="text" name="lastname" placeholder="Apellido" class="form-control border-0">
+                <input type="text" name="apellido" placeholder="Apellido" class="form-control border-0">
               </div>
             </div>
             <div class="row">
               <div class="col mb-4">
-                <input type="email" name="email" placeholder="Correo electrónico" class="form-control border-0">
+                <input type="email" name="correo" placeholder="Correo electrónico" class="form-control border-0">
               </div>
               <div class="col mb-4">
-                <input type="number" name="phone" placeholder="Teléfono" class="form-control border-0">
+                <input type="number" name="telefono_celular" placeholder="Teléfono" class="form-control border-0">
               </div>
             </div>
             <div class="row">
               <div class="col mb-4">
-                <textarea name="message" rows="4" placeholder="Comentario" class="form-control border-0"></textarea>
+                <textarea name="mensaje" rows="4" placeholder="Comentario" class="form-control border-0"></textarea>
               </div>
             </div>
             <div class="d-grid gap-2">
