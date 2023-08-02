@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use App\Models\Project\Category;
+use App\Models\Project;
 
 class IndexController extends Controller
 {
@@ -15,7 +16,9 @@ class IndexController extends Controller
     //public $header = ['api-key' => 'Cc2022*@Notify'];
 
     public function redirectToHome(){
-        return view('pages.home');
+        $departments = Category::where('type', 'Departamentos')->take(3)->get();
+        $condominios = Category::where('type', 'Condominios')->take(3)->get();
+        return view('pages.home', compact('departments', 'condominios'));
     }
 
     public function redirectToAbout(){

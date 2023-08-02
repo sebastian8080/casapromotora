@@ -48,7 +48,7 @@
   <!--NAVBAR-->
     <nav id="menu" class="navbar navbar-expand-lg fixed-top navbar-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="{{ route('pages.home') }}"><img id="img-logo" class="img-fluid" width="120px" height="85px" src="{{ URL::asset('img/logopromotoragris.png'); }}" alt="Logo Casa Credito Promotora"></a>
+          <a class="navbar-brand" href="{{ route('pages.home') }}"><img id="img-logo" class="img-fluid" width="120px" height="85px" src="{{ URL::asset('img/color_promotora.png'); }}" alt="Logo Casa Credito Promotora"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon bg-secondary rounded" style="opacity: 0.5"></span>
           </button>
@@ -102,113 +102,49 @@
 
 
       <!--FOOTER-->
-    <footer class="text-center text-lg-start bg-light text-muted">
-      <div class="container mt-4 pt-4">
-        <div class="row position-relative">
-          <hr class="position-absolute" style="top: 35px">
-            <div class="col-sm-6">
-                <h3 class="fw-bold">Promotora Casa Crédito</h3>
-                <div>
-                    <div class="d-flex">
-                        <div class="bg-danger text-white d-flex justify-content-center align-items-center" style="width: @mobile 33px @endmobile @desktop 30px @enddesktop">
-                            <i class="fas fa-map-marker-alt text-white"></i>
-                        </div>
-                        <div class="ms-2 pt-2">
-                            <a target="_blank" style="text-decoration: none;" class="text-muted" href="https://g.page/r/CRcVix2z3D8lEAE"><p>Av. Fray Vicente Solano 3-54 y Remigio Tamariz Crespo</p></a>
-                            <p class="text-center" @desktop style="margin-top: -10px" @enddesktop><b><i>Cuenca - Ecuador</i></b></p>
-                        </div>
-                    </div>
-                    <div class="d-flex">
-                        <div class="bg-danger text-white d-flex justify-content-center align-items-center" style="width: 30px">
-                            <i class="fas fa-mobile-android-alt text-white"></i>
-                        </div>
-                        <div class="ms-2 pt-2 @mobile mt-2 @endmobile">
-                            <a class="links-footer text-muted" href="tel:0983849073"><p>098 384 9073</p></a>
-                        </div>
-                    </div>
+    <footer>
+      <section class="bg-light">
+        <section class="container px-5 py-5 footer-section">
+          <section class="row px-5">
+            <div class="col-sm-6 d-flex justify-content-center border-left" style="border-right: 1px solid #89062E">
+              <div>
+                <div class="d-flex align-items-center gap-2 mb-4">
+                  <img width="40px" height="40px" src="{{ asset('img/location-icon.png') }}" alt="">
+                  <a class="text-dark" style="text-decoration: none" href="https://goo.gl/maps/qBm7cMPdDJLPTK1g9" target="_blank">
+                    <span style="font-size: 15px;">Av. Fray Vicente Solano y Remigio Tamariz Crespo</span>
+                  </a>
                 </div>
-            </div>
-            <div class="col-sm-6" style="background-color: #f1f1f1">
-              @desktop <br> @enddesktop
-              <div class="d-flex @mobile flex-row-reverse @endmobile justify-content-end @desktop mt-4 @enddesktop">
-                <div class="me-2 mt-2 @mobile ms-2 @endmobile">
-                  <a class="links-footer text-muted" href="mailto:ventas@casacredito.com"><p class="mt-2">ventas@casacredito.com</p></a>
-                </div>
-                <div class="bg-danger text-white d-flex justify-content-center align-items-center" style="width: 30px; height: 70px; margin-top: -6px">
-                  <i class="far fa-envelope text-white"></i>
-                </div>
-              </div>
-              <div class="d-flex @mobile flex-row-reverse @endmobile justify-content-end">
-                <div class="me-2 @mobile ms-2 @endmobile d-flex align-items-center">
-                  <a class="links-footer text-muted" href="tel:072889355"><p class="mt-3">07-288-9355</p></a>
-                </div>
-                <div class="bg-danger text-white d-flex justify-content-center align-items-center" style="width: 30px; height: 70px">
-                  <i class="fas fa-phone text-white"></i>
+                <div class="d-flex align-items-center gap-2 mb-4">
+                  <img width="38px" height="38px" src="{{ asset('img/telefono-icon.png') }}" alt="">
+                  <a href="to:+593983849073" class="text-dark" style="text-decoration: none">
+                    <span>098 384 9073</span>
+                  </a>
                 </div>
               </div>
             </div>
-        </div>
-    </div>
-
-    <div class="row text-center mt-4">
-        <div>
-            <p>
-                Copyright ©2023 Casa Crédito Promotora. All rights reserved.
-                <br>
-                <b>Políticas de Privacidad</b>
-            </p>
-        </div>
-        <div class="bg-danger pt-3 pb-2">
-          <div class="d-flex pb-1 justify-content-center text-white">
-            <a target="_blank" href="https://www.instagram.com/casacreditopromotora/"><i class="fab fa-instagram me-1 text-white" style="font-size: 30px"></i></a>
-            <a target="_blank" href="https://www.facebook.com/profile.php?id=100076172175380"></a><i class="fab fa-facebook-f ms-1 me-1 text-white" style="font-size: 25px"></i>
-            <a href="https://www.tiktok.com/@casacredito1"><i class="fab fa-tiktok ms-1 text-white" style="font-size: 25px"></i></a>
-          </div>
-        </div>
-    </div>
-        {{-- <section class="pt-5">
-          <div class="text-center text-md-start">
-            <div class="row mt-3">
-              <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
-                  <p class="fw-bold">
-                    Promotora Casa Credito
-                  </p>
-                  <p class="fw-bold">
-                    Av. Juan Iñiguez 3-87 y D. Gonzalo Cordero
-                  </p>
-                  <p>
-                    Cuenca - Ecuador
-                  </p>
+            <div class="col-sm-6 d-flex justify-content-center" style="border-left: 1px solid #89062E">
+              <div>
+                <div class="d-flex align-items-center gap-2 mb-4">
+                  <img width="40px" height="40px" src="{{ asset('img/email-icon.png') }}" alt="">
+                  <a href="mailto:info@casacredito.com" class="text-dark" style="text-decoration: none">
+                    <span>info@casacredito.com</span>
+                  </a>
                 </div>
-                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
-                  <div class="col-sm-12 col-md-12 col-lg-12 text-center">
-                    <a target="_blank" style="text-decoration:none; color: gray" href="https://www.facebook.com/Casa-Credito-Promotora-103083175562736/?ref=pages_you_manage">
-                      <svg style="margin-right: 5%" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-                        <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
-                      </svg>
-                    </a>
-                    <a target="_blank" style="text-decoration: none; color: gray" href="https://www.linkedin.com/company/casa-cr%C3%A9dito-inmobiliaria/?viewAsMember=true">
-                      <svg style="margin-right: 5%" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
-                        <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
-                      </svg>
-                    </a>
-                    <a target="_blank" style="text-decoration: none; color: gray" href="https://www.instagram.com/casacreditopromotora/">
-                      <svg style="margin-right: 5%" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-                        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
-                      </svg>  
-                    </a>
-                  </div>
-                </div>
-
-                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                  <p class="fw-bold">ventas@casacreditopromotora.com</p>
-                  <p class="fw-bold">1800 CASACREDITO</p>
-                  <p>WEB BY CASA CREDITO PRO</p>
+                <div class="d-flex align-items-center gap-2 mb-4">
+                  <img width="40px" height="40px" src="{{ asset('img/telefono-inteligente-icon.png') }}" alt="">
+                  <a href="to:072889355" class="text-dark" style="text-decoration: none">
+                    <span>07 288 9355</span>
+                  </a>
                 </div>
               </div>
             </div>
-          </section> --}}
-        </footer>
+          </section>
+        </section>
+      </section>
+      <section class="text-center text-muted my-4">
+        <p>Copyright 2023 Casa Promotora. All rights reserved</p>
+      </section>
+    </footer>
 
         <a style="color: #ffffff" href="https://api.whatsapp.com/send?phone=+593983849073&text=Deseo saber más información sobre los proyectos de Casa Crédito Promotora" class="whatsapp" target="_blank"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
 
