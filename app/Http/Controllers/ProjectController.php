@@ -200,6 +200,7 @@ class ProjectController extends Controller
         }
 
         $project_category->address = $request->address;
+        $project_category->status = $request->status;
 
         $project_category->benefits = implode(',', $request->benefits);
         $project_category->services = implode(',', $request->services);
