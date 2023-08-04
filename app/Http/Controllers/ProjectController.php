@@ -37,6 +37,9 @@ class ProjectController extends Controller
        
         //programando funcionalidad de la imagen
         $uploads=[];
+        // $image_header = "";
+        // $image_top = "";
+
         if($request->hasFile('images')){
             foreach ($request->file('images') as $image) {
                 $namefile = "img-" . Str::slug($request->project_name) . "-" . uniqid() . "." . $image->getClientOriginalExtension();
@@ -64,6 +67,48 @@ class ProjectController extends Controller
             }
         }
 
+    //     if($request->hasFile('img_header')){
+    //             $image = $request->file('img_header');
+    //             $namefile = "img-" . Str::slug($request->project_name) . "-" . uniqid() . "." . $image->getClientOriginalExtension();
+        
+    //             $ruta = public_path() . "/uploads/projects/" . $namefile;
+    //             $ruta2 = public_path() . "/uploads/projects/900/" . $namefile;
+    //             $ruta3 = public_path() . "/uploads/projects/600/" . $namefile;
+    //             $ruta4 = public_path() . "/uploads/projects/300/" . $namefile;
+
+    //             Image::make($image)->save($ruta);
+    //             $img2 = Image::make($image);
+    //             $img3 = Image::make($image);
+    //             $img4 = Image::make($image);
+        
+    //             $img2->fit(1200, 900, function($constraint){$constraint->upsize();$constraint->aspectRatio();})->save($ruta2, 72);
+    //             $img3->fit(900, 600, function($constraint){$constraint->upsize();$constraint->aspectRatio();})->save($ruta3, 72);
+    //             $img4->fit(600, 400, function($constraint){$constraint->upsize();$constraint->aspectRatio();})->save($ruta4, 72);
+
+    //             $image_header = $namefile;
+    //     }
+
+    //     if($request->hasFile('img_top')){
+    //         $image = $request->file('img_top');
+    //         $namefile = "img-" . Str::slug($request->project_name) . "-" . uniqid() . "." . $image->getClientOriginalExtension();
+    
+    //         $ruta = public_path() . "/uploads/projects/" . $namefile;
+    //         $ruta2 = public_path() . "/uploads/projects/900/" . $namefile;
+    //         $ruta3 = public_path() . "/uploads/projects/600/" . $namefile;
+    //         $ruta4 = public_path() . "/uploads/projects/300/" . $namefile;
+
+    //         Image::make($image)->save($ruta);
+    //         $img2 = Image::make($image);
+    //         $img3 = Image::make($image);
+    //         $img4 = Image::make($image);
+    
+    //         $img2->fit(1200, 900, function($constraint){$constraint->upsize();$constraint->aspectRatio();})->save($ruta2, 72);
+    //         $img3->fit(900, 600, function($constraint){$constraint->upsize();$constraint->aspectRatio();})->save($ruta3, 72);
+    //         $img4->fit(600, 400, function($constraint){$constraint->upsize();$constraint->aspectRatio();})->save($ruta4, 72);
+
+    //         $image_top = $namefile;
+    // }
+
         $category = new Category($request->all());
         
         if(count($uploads) > 0){
@@ -80,6 +125,9 @@ class ProjectController extends Controller
         $category->benefits = implode(',', $request->benefits);
         $category->services = implode(',', $request->services);
         $category->communal_areas = implode(',', $request->communal_areas);
+        
+        // $category->img_header = $image_header;
+        // $category->img_top = $image_top;
 
         $category->save();
 
@@ -150,6 +198,8 @@ class ProjectController extends Controller
                 $project_category->update(['images'  => $save_uploads   ]);
             }    
         }
+
+        $project_category->address = $request->address;
 
         $project_category->benefits = implode(',', $request->benefits);
         $project_category->services = implode(',', $request->services);
