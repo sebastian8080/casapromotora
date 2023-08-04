@@ -45,6 +45,7 @@
                 <input type="hidden" id="cityaux" value="@if(isset($project_category->category_id)){{$project_category->city}}@endif" disabled>
                 <div class="modal-header bg-danger text-white">
                 <h5 class="modal-title" id="staticBackdropLabel">@if(isset($project_category->category_id)) Editar @else Nueva @endif Categoria de Proyecto</h5>
+                {!! Form::select('status', [0 => 'DESACTIVADO', 1 => 'ACTIVADO'], null, ['class' => 'form-control w-25']) !!}
                 </div>
                 <div class="modal-body bg-white">
                     <div>
@@ -124,12 +125,60 @@
                                 @endforeach
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group mb-4">
                             {!! Form::label('images', 'Imagenes', ['class' => 'h5']) !!}
                             {!! Form::file('images[]', ['class' => 'form-control', 'accept' => '.jpg, .jpeg, .png', 'multiple']) !!}
                         </div>
+                        <!-- variables new design -->
+                        <section>
+                            <div class="row">
+                                <div class="col-sm-6 mb-4">
+                                    @if(isset($project_category) && $project_category->img_header != null)
+                                    <div>
+                                        <img class="img-fluid" src="{{ asset('/uploads/projects/300/'.$project_category->img_header) }}" alt="">
+                                    </div>
+                                    @endif
+                                    {!! Form::label('img_header', 'Imagen Principal', ['class' => 'h5']) !!}
+                                    {!! Form::file('img_header', ['class' => 'form-control']) !!}
+                                </div>
+                                <div class="col-sm-6 mb-4">
+                                    @if(isset($project_category) && $project_category->img_top != null)
+                                    <div>
+                                        <img class="img-fluid" src="{{ asset('/uploads/projects/300/'.$project_category->img_top) }}" alt="">
+                                    </div>
+                                    @endif
+                                    {!! Form::label('img_top', 'Imagen de Cabecera', ['class' => 'h5']) !!}
+                                    {!! Form::file('img_top', ['class' => 'form-control']) !!}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6 mb-4">
+                                    {!! Form::label('txt_description', 'Descripción Corta', ['class' => 'h5']) !!}
+                                    {!! Form::text('txt_description', null, ['class' => 'form-control']) !!}
+                                </div>
+                                <div class="col-sm-6 mb-4">
+                                    {!! Form::label('txt_inside_img', 'Texto Encima de Imagen', ['class' => 'h5']) !!}
+                                    {!! Form::text('txt_inside_img', null, ['class' => 'form-control']) !!}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 mb-4">
+                                    {!! Form::label('slogan', 'Slogan', ['class' => 'h5']) !!}
+                                    {!! Form::textarea('slogan', null, ['class' => 'form-control', 'rows' => '3']) !!}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    {!! Form::label('url_maps', 'Enlace Dirección en Google Maps', ['class' => 'h5']) !!}
+                                    {!! Form::text('url_maps', null, ['class' => 'form-control']) !!}
+                                </div>
+                            </div>
+                        </section>
+                        <!-- end new design-->
                     </div>
                 </div>
+
+
                 @if(isset($project_category) && $project_category->images != null)
                 <div class="row mx-5 my-3" id="gridImages">
                     @php $ii=0; @endphp

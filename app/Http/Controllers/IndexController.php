@@ -16,8 +16,8 @@ class IndexController extends Controller
     //public $header = ['api-key' => 'Cc2022*@Notify'];
 
     public function redirectToHome(){
-        $departments = Category::where('type', 'Departamentos')->take(3)->get();
-        $condominios = Category::where('type', 'Condominios')->take(3)->get();
+        $departments = Category::where('type', 'Departamentos')->where('status', 1)->take(3)->get();
+        $condominios = Category::where('type', 'Condominios')->where('status', 1)->take(3)->get();
         return view('pages.home', compact('departments', 'condominios'));
     }
 
@@ -37,7 +37,7 @@ class IndexController extends Controller
         // $baseurl = "https://casacredito.com/api/projects";
         // $listingsprojects = Http::withHeaders($this->header)->get($this->baseurl."/projects");
         // $listingsprojects = json_decode($listingsprojects);
-        $projects = Category::all();
+        $projects = Category::where('status', 1)->get();
         return view('pages.projects', compact('projects'));
     }
 
