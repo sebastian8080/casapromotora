@@ -136,7 +136,7 @@
             <a style="text-decoration: none;" class="text-dark" href="mailto:info@casacredito.com">info@casacredito.com</a>
           </p>
           <p>
-            <a style="text-decoration: none;" class="text-dark" href="to:+593983849073">098 384 9073</a>
+            <a style="text-decoration: none;" class="text-dark" href="to:+593989798238">098 979 8238</a>
           </p>
         </div>
       </div>

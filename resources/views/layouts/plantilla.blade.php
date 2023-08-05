@@ -116,8 +116,8 @@
                 </div>
                 <div class="d-flex align-items-center gap-2 mb-4">
                   <img width="38px" height="38px" src="{{ asset('img/telefono-icon.png') }}" alt="">
-                  <a href="to:+593983849073" class="text-dark" style="text-decoration: none">
-                    <span>098 384 9073</span>
+                  <a href="to:+593989798238" class="text-dark" style="text-decoration: none">
+                    <span>098 979 8238</span>
                   </a>
                 </div>
               </div>
@@ -146,7 +146,7 @@
       </section>
     </footer>
 
-        <a style="color: #ffffff" href="https://api.whatsapp.com/send?phone=+593983849073&text=Deseo saber más información sobre los proyectos de Casa Crédito Promotora" class="whatsapp" target="_blank"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
+        <a style="color: #ffffff" href="https://api.whatsapp.com/send?phone=+593989798238&text=Deseo saber más información sobre los proyectos de Casa Crédito Promotora" class="whatsapp" target="_blank"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
 
         {{-- 593983849073 --}}
     
