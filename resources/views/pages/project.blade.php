@@ -696,14 +696,14 @@
           <p>CANTIDAD TOTAL</p>
           <div class="d-flex">
             <span class="d-flex align-items-center bg-light px-3 py-2 border-end rounded-0">$</span>
-            <input type="number" class="form-control border-0 bg-light border-start rounded-0">
+            <input type="number" class="form-control border-0 bg-light border-start rounded-0" value="{{ count($list_properties) > 0 ? $list_properties[0]->price : "" }}" placeholder="Ingrese un monto $" id="mount">
           </div>
         </div>
         <div class="mb-5">
           <p>TASA DE INTERES</p>
           <div class="d-flex">
             <span class="d-flex align-items-center bg-light px-3 py-2 border-end rounded-0">$</span>
-            <input type="number" class="form-control border-0 bg-light border-start rounded-0">
+            <input type="number" class="form-control border-0 bg-light border-start rounded-0" id="interest">
           </div>
         </div>
       </div>
@@ -712,26 +712,26 @@
           <p>ENTRADA</p>
           <div class="d-flex">
             <span class="d-flex align-items-center bg-light px-3 py-2 border-end rounded-0">$</span>
-            <input type="number" class="form-control border-0 bg-light border-start rounded-0">
+            <input type="number" class="form-control border-0 bg-light border-start rounded-0" id="entrance">
           </div>
         </div>
         <div class="mb-5">
           <p>TÉRMINOS DEL PRÉSTAMO (AÑOS)</p>
           <div class="d-flex">
               <span class="d-flex align-items-center bg-light px-3 py-2 border-end rounded-0">$</span>
-              <input type="number" class="form-control border-0 bg-light border-start rounded-0">
+              <input type="number" class="form-control border-0 bg-light border-start rounded-0" id="anios" min="1" max="20">
             </div>
           </div>
         </div>
         <div class="col-sm-4 d-flex align-items-center">
           <div class="w-100">
-            <p>ÍNTERES PRINCIPAL</p>
+            <p>CUOTA MENSUAL</p>
             <div class="d-flex">
               <span class="d-flex align-items-center bg-light px-3 py-2 border-end rounded-0">$</span>
-              <input type="number" class="form-control border-0 bg-light border-start rounded-0">
+              <input type="number" class="form-control border-0 bg-light border-start rounded-0" id="total">
             </div>
             <div class="d-flex justify-content-center mt-2">
-              <button class="btn btn-dark">CALCULAR</button>
+              <button onclick="calcularcredito()" class="btn btn-dark">CALCULAR</button>
             </div>
           </div>
         </div>
@@ -1090,6 +1090,9 @@
 @section('section-scripts')
 <script src="{{ asset('js/partners.js') }}"></script>
     <script>
+      window.addEventListener('load', function(){
+        calcularcredito();
+      });
       // Open the Modal
       function openModal() {
         document.getElementById("modalImages").style.display = "block";
@@ -1104,6 +1107,42 @@
         var imagenPlano = document.getElementById('imgPlanos');
         console.log(ruta);
         imagenPlano.src = "../img/projects/"+carpeta+"/"+ruta;
+      }
+
+      const calcularcredito = () => {
+
+        let mount = document.getElementById('mount');
+        let interest = document.getElementById('interest');
+        let entrance = document.getElementById('entrance');
+        let anios = document.getElementById('anios');
+        let total = document.getElementById('total');
+
+        if(anios.value > 20){alert('Los años no pueden ser mayores a 20'); anios.value = 20; return;}
+        
+        if(mount.value){
+          let pago_anticipado = mount.value * 20 / 100;
+          pago_anticipado = mount.value - pago_anticipado;
+
+          let interes_anual = 8.5 / 100;
+          interest.value ? interes_anual = interest.value / 100 : null;
+
+          let tasa_interes_mensual = interes_anual / 12;
+
+          let tot_anios = 20;
+          anios.value ? tot_anios = anios.value : null;
+          let duracion_mensual_hipoteca = tot_anios * 12;
+          let cuota_mensual = pago_anticipado * (tasa_interes_mensual / (1 - ((1 + tasa_interes_mensual)**(-duracion_mensual_hipoteca))));
+          cuota_mensual = cuota_mensual.toFixed(2);
+
+          entrance.value = pago_anticipado;
+          total.value = cuota_mensual;
+          interest.value = interes_anual * 100;
+          anios.value = tot_anios;
+        } else {
+          return;
+        }
+
+
       }
       </script>
 @endsection
