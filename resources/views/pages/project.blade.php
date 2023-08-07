@@ -1120,8 +1120,8 @@
         if(anios.value > 20){alert('Los años no pueden ser mayores a 20'); anios.value = 20; return;}
         
         if(mount.value){
-          let pago_anticipado = mount.value * 20 / 100;
-          pago_anticipado = mount.value - pago_anticipado;
+          let entrada = mount.value * 20 / 100;
+          let pago_anticipado = mount.value - entrada;
 
           let interes_anual = 8.5 / 100;
           interest.value ? interes_anual = interest.value / 100 : null;
@@ -1134,7 +1134,7 @@
           let cuota_mensual = pago_anticipado * (tasa_interes_mensual / (1 - ((1 + tasa_interes_mensual)**(-duracion_mensual_hipoteca))));
           cuota_mensual = cuota_mensual.toFixed(2);
 
-          entrance.value = pago_anticipado;
+          entrance.value = entrada;
           total.value = cuota_mensual;
           interest.value = interes_anual * 100;
           anios.value = tot_anios;
