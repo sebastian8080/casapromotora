@@ -201,6 +201,7 @@ class ProjectController extends Controller
 
         $project_category->address = $request->address;
         $project_category->status = $request->status;
+        $project_category->url_maps = $request->url_maps;
 
         $project_category->img_header = $request->img_header;
         $project_category->img_top = $request->img_top;
