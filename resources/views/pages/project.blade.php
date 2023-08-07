@@ -550,13 +550,13 @@
               $test2 = explode(" ", $project->txt_inside_img);
               $media2 = count($test2) / 2;
             @endphp
-            <h2 style="-webkit-text-stroke: 1px black; color: white; font-size: 7rem; font-weight: bold; line-height: 5rem; padding-top: 50px; padding-bottom: 50px; padding-left: 50px"> {{ $test2[0] }} <br> <span class="subtitles" style="color: #000000; font-size: 4rem;">{{ $test2[1]}}</span></h2>
+            <h2 style="-webkit-text-stroke: 1px black; color: white; font-size: 7rem; font-weight: bold; line-height: 5rem; padding-top: 50px; padding-bottom: 50px; padding-left: 50px"> @if($test2) {{ $test2[0] }} @else RESORT @endif <br> <span class="subtitles" style="color: #000000; font-size: 4rem;">@if($test2) {{ $test2[1]}} @else EXCLUSIVO @endif</span></h2>
           </div>
         </div>
       </div>
       <div class="col-sm-4">
         <div data-aos="fade-up" class="d-flex align-items-center justify-content-center txt-short-description" style="height: 400px">
-          <p class="h4" style="font-style: italic">{{ $project->txt_description }}</p>
+          <p class="h4" style="font-style: italic">@if($project->txt_description) {{ $project->txt_description }} @else La única forma de vivir en la playa @endif</p>
         </div>
       </div>
     </div>
