@@ -543,14 +543,7 @@
         <img data-aos="fade-up" class="img-top" width="100%" height="500px" src="{{ $project->img_top != null ? asset('uploads/projects/900/'.$project->img_top) : asset('uploads/projects/900/'.$images[2]) }}" alt="">
         <div data-aos="fade-left" class="d-flex justify-content-end txt-inside-image-top" style="margin-top: -150px; margin-right: -200px;">
           <div class="bg-white d-flex align-items-center">
-            @php
-              $test = explode(" ", $project->txt_description);
-              $media = count($test) / 2;
-
-              $test2 = explode(" ", $project->txt_inside_img);
-              $media2 = count($test2) / 2;
-            @endphp
-            <h2 style="-webkit-text-stroke: 1px black; color: white; font-size: 7rem; font-weight: bold; line-height: 5rem; padding-top: 50px; padding-bottom: 50px; padding-left: 50px"> @if($test2) {{ $test2[0] }} @else RESORT @endif <br> <span class="subtitles" style="color: #000000; font-size: 4rem;">@if($test2) {{ $test2[1]}} @else EXCLUSIVO @endif</span></h2>
+            <h2 style="-webkit-text-stroke: 1px black; color: white; font-size: 7rem; font-weight: bold; line-height: 5rem; padding-top: 50px; padding-bottom: 50px; padding-left: 50px">RESORT<br> <span class="subtitles" style="color: #000000; font-size: 4rem;">EXCLUSIVO </span></h2>
           </div>
         </div>
       </div>
