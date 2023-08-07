@@ -602,7 +602,7 @@
   <section class="row my-5">
     <div data-aos="fade-up" class="col-12 col-sm-12 col-md-12 col-xl-3 txt-vertical" style="text-orientation: mixed; writing-mode: vertical-lr; transform: rotate(180deg)">
       <section>
-        <p class="subtitles" style="-webkit-text-stroke: 1px black; color: white; font-size: 5rem; font-weight: bold; width: 900px;">IT'S ALL <span class="subtitles" style="-webkit-text-stroke: 1px black; color: black; font-size: 3rem">YOURS</span></p>
+        <p class="subtitles" style="-webkit-text-stroke: 1px black; color: white; font-size: 5rem; font-weight: bold; width: 900px;">@if($project->project_name == "SEASCAPE") IT'S ALL @else ACABADOS @endif <span class="subtitles" style="-webkit-text-stroke: 1px black; color: black; font-size: 3rem">@if($project->project_name == "SEASCAPE") YOURS @else ELEGANTES @endif</span></p>
       </section>
     </div>
     <div class="col-12 col-sm-12 col-md-12 col-xl-9 d-flex align-items-center justify-content-center">
@@ -738,9 +738,13 @@
       </section>
   </section>
 
-<section class="mt-5">
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1992.3422529348652!2d-79.01088986117757!3d-2.9068842205078607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91cd1911fa24b8a3%3A0x253fdcb31d8b1517!2sCasa%20Cr%C3%A9dito%20Promotora!5e0!3m2!1ses-419!2sec!4v1690924563410!5m2!1ses-419!2sec" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</section>
+@if($project->url_maps != null)
+  {!! $project->url_maps!!}
+@else
+  <section class="mt-5">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1992.3422529348652!2d-79.01088986117757!3d-2.9068842205078607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91cd1911fa24b8a3%3A0x253fdcb31d8b1517!2sCasa%20Cr%C3%A9dito%20Promotora!5e0!3m2!1ses-419!2sec!4v1690924563410!5m2!1ses-419!2sec" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
+@endif
 
 <section class="container my-5" id="contact_form">
   <section class="row">
