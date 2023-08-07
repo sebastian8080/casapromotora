@@ -610,7 +610,7 @@
         <div class="row">
           <div class="col-6 col-sm-4 mb-3">
             <article class="position-relative">
-              <img class="img-fluid" src="{{ asset('uploads/projects/900/'.$images[2]) }}" alt="">
+              <img style="cursor: pointer" onclick="addactive(1)" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" class="img-fluid" src="{{ asset('uploads/projects/900/'.$images[2]) }}" alt="">
               {{-- <div class="position-absolute top-0 start-0 bg-white" style="margin: 0px; padding: 0px">
                 <span class="py-1 px-3">RESTAURANTE DE AUTOR</span>
               </div> --}}
@@ -618,30 +618,30 @@
           </div>
           <div class=" col-6 col-sm-4 mb-3">
             <article>
-              <img class="img-fluid" src="{{ asset('uploads/projects/900/'.$images[3]) }}" alt="">
+              <img style="cursor: pointer" onclick="addactive(2)" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" class="img-fluid" src="{{ asset('uploads/projects/900/'.$images[3]) }}" alt="">
             </article>
           </div>
           <div class=" col-6 col-sm-4 mb-3">
             <article>
-              <img class="img-fluid" src="{{ asset('uploads/projects/900/'.$images[4]) }}" alt="">
+              <img style="cursor: pointer" onclick="addactive(3)" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" class="img-fluid" src="{{ asset('uploads/projects/900/'.$images[4]) }}" alt="">
             </article>
           </div>    
           <div class="col-6 col-sm-4 mb-3">
             <article>
-              <img class="img-fluid" src="{{ asset('uploads/projects/900/'.$images[5]) }}" alt="">
+              <img style="cursor: pointer" onclick="addactive(4)" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" class="img-fluid" src="{{ asset('uploads/projects/900/'.$images[5]) }}" alt="">
             </article>
           </div>
           @if(count($images)>5)
             <div class=" col-6 col-sm-4 mb-3">
               <article>
-                <img class="img-fluid" src="{{ asset('uploads/projects/900/'.$images[6]) }}" alt="">
+                <img style="cursor: pointer" onclick="addactive(5)" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" class="img-fluid" src="{{ asset('uploads/projects/900/'.$images[6]) }}" alt="">
               </article>
             </div>
           @endif
           @if(count($images)>6)
             <div class="col-6 col-sm-4 mb-3">
               <article>
-                <img class="img-fluid" src="{{ asset('uploads/projects/900/'.$images[7]) }}" alt="">
+                <img style="cursor: pointer" onclick="addactive(6)" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" class="img-fluid" src="{{ asset('uploads/projects/900/'.$images[7]) }}" alt="">
               </article>
             </div>
           @endif
@@ -789,6 +789,36 @@
     </div>
   </section>
 </section>
+
+
+<!--modal to view images-->
+<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content bg-transparent border-0">
+      <div class="modal-bg-transparent">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            @php $index = 0; @endphp
+            @foreach ($images as $img)    
+              <div id="img_{{ $index }}" class="carousel-item @if($index == 0) active @endif">
+                <img class="d-block w-100" style="max-height: 90vh !important" data-bs-slide-to="{{ $index }}" src="{{ url('uploads/projects/900', $img) }}" alt="First slide">
+              </div>
+              @php $index++; @endphp
+            @endforeach
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 @if (session('validGeneral'))
   @php
@@ -1141,8 +1171,13 @@
         } else {
           return;
         }
+      }
 
-
+      const addactive = (id) => {
+        let images = document.querySelectorAll('.active');
+        images.forEach(element => { element.classList.remove('active'); });
+        let image = document.getElementById('img_'+id);
+        image.classList.add('active');
       }
       </script>
 @endsection
