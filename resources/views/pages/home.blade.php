@@ -32,7 +32,7 @@
 </section> --}}
 
 <section class="position-relative">
-  <video width="100%" src="{{ asset('video/SEASCAPE-VIDEO.mp4')}}" autoplay loop muted></video>
+  <video width="100%" src="{{ asset('video/home-video.mp4')}}" autoplay loop muted></video>
   <div class="position-absolute bottom-0 start-50 translate-middle-x down-arrow"></div>
 </section>
 
