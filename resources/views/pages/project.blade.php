@@ -549,7 +549,7 @@
       </div>
       <div class="col-sm-4">
         <div data-aos="fade-up" class="d-flex align-items-center justify-content-center txt-short-description" style="height: 400px">
-          <p class="h4" style="font-style: italic">@if($project->txt_description) {{ $project->txt_description }} @else La única forma de vivir en la playa @endif</p>
+          <p class="h4" style="font-style: italic">@if($project->txt_description) {{ $project->txt_description }} @else Espacios de vida renovados para ti @endif</p>
         </div>
       </div>
     </div>
