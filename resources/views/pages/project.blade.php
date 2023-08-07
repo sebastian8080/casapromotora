@@ -587,9 +587,9 @@
                   </div>
                 </div>
               </div>
-              <div class="d-flex justify-content-center mt-4">
+              {{-- <div class="d-flex justify-content-center mt-4">
                 <a href="#" class="btn btn-outline-dark rounded-0">MÁS INFO</a>
-              </div>
+              </div> --}}
             </article>
           </div>
         @endforeach
