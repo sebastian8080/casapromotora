@@ -17,6 +17,7 @@ class Category extends Model
         'category_id', 'project_code', 'type', 'project_name', 'state', 'city', 'address', 'description', 'slug', 'images', 'benefits', 'services', 'communal_areas',
         'img_header', 'img_top', 'txt_description', 'txt_inside_img', 'slogan', 'url_maps',
         'status',
+        'entrance', 'dues', 'bank_credit',
         'created_at', 'updated_at'
     ];
 }

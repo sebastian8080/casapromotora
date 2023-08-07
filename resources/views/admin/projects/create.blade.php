@@ -168,9 +168,23 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-sm-12">
+                                <div class="col-sm-12 mb-4">
                                     {!! Form::label('url_maps', 'Enlace Dirección en Google Maps', ['class' => 'h5']) !!}
-                                    {!! Form::text('url_maps', null, ['class' => 'form-control']) !!}
+                                    {!! Form::text('url_maps', null, ['class' => 'form-control rounded-0']) !!}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4 mb-4">
+                                    {!! Form::label('entrance', 'Entrada', ['class' => 'h5']) !!}
+                                    {!! Form::number('entrance', null, ['class' => 'form-control rounded-0']) !!}
+                                </div>
+                                <div class="col-sm-4 mb-4">
+                                    {!! Form::label('dues', 'Cuotas', ['class' => 'h5']) !!}
+                                    {!! Form::number('dues', null, ['class' => 'form-control rounded-0']) !!}
+                                </div>
+                                <div class="col-sm-4 mb-4">
+                                    {!! Form::label('bank_credit', 'Crédito Bancario', ['class' => 'h5']) !!}
+                                    {!! Form::number('bank_credit', null, ['class' => 'form-control rounded-0']) !!}
                                 </div>
                             </div>
                         </section>

@@ -54,15 +54,18 @@ class IndexController extends Controller
     //info@casacredito.com,hserrano@casacredito.com
 
     public function store(Request $request){
-        $to = "info@casacredito.com";
+        $to = "promotoracasacredito@gmail.com";
         $subject = "Información en General - Casa Credito Promotora";
         $message = "<br><strong>Información general</strong>
             <br>Nombre: " . strip_tags($request->nombre) ."
             <br>Teléfono: " . strip_tags($request->telefono_celular) ."
             <br>Email: " . strip_tags($request->correo) ."
             <br>Mensaje: " . strip_tags($request->mensaje) ."
-            <div style='display:flex'><img width='60' height='35' src='http://casacreditopromotora.com/logo-recortado.png' /><h3>Casa Crédito Promotora</h3></div>
             ";
+
+        if($request->interest) $message .= "<br>Interes: Proyecto " . strip_tags($request->interest );
+        
+        $message .= "<div style='display:flex'><img width='60' height='35' src='http://casacreditopromotora.com/logo-recortado.png' /><h3>Casa Crédito Promotora</h3></div>";
 
         $header = "From: <info@casacreditopromotora.com>" . "\r\n" .
                 "MIME-Version: 1.0" . "\r\n" .

@@ -202,6 +202,15 @@ class ProjectController extends Controller
         $project_category->address = $request->address;
         $project_category->status = $request->status;
 
+        $project_category->img_header = $request->img_header;
+        $project_category->img_top = $request->img_top;
+        $project_category->txt_description = $request->txt_description;
+        $project_category->txt_inside_img = $request->txt_inside_img;
+        
+        $project_category->entrance = $request->entrance;
+        $project_category->dues = $request->dues;
+        $project_category->bank_credit = $request->bank_credit;
+
         $project_category->benefits = implode(',', $request->benefits);
         $project_category->services = implode(',', $request->services);
         $project_category->communal_areas = implode(',', $request->communal_areas);

@@ -133,6 +133,8 @@
       .headerForm h3{
         font-size: 35px;
       }
+      @media screen and (max-width: 1200px){.img-top{ height: auto !important}.txt-inside-image-top{margin-top: 0px !important; margin-right: 0px !important;}.txt-inside-image-top > div {width: 100% !important}.txt-vertical{writing-mode: horizontal-tb !important; transform: rotate(360deg) !important}}
+      @media screen and (max-width: 991px){.txt-inside-image-top > div > h2 {font-size: 4rem !important}.txt-short-description{height: auto !important; padding-bottom: 5rem !important}.container{padding-left: 10px !important; padding-right: 10px !important}.txt-type{font-size: 15px !important}}
     </style>
 @endsection
 
@@ -151,7 +153,6 @@
 @endphp
 
 @section('content')
-
   @if(isset($listing) || isset($data))
     <div class="container pt-5 mt-3">
       <h1>@if(isset($data)) {{ Str::upper($data['tipo'] . "S " . $data['nombreProyecto']) }} @else {{$listing->listing_title}} @endif</h1>
@@ -524,7 +525,289 @@
 
   @elseif(isset($project))
 
-    <div class="container pt-5 mt-3">
+  <section style="height: 800px; margin-top: 50px; background-repeat: no-repeat; background-size: cover; background-position: center; background-image: url('{{ $project->img_header != null ? asset('uploads/projects/900/'.$project->img_header) : asset('uploads/projects/'.$images[1]) }}')">
+    <div class="d-flex justify-content-center align-items-center" style="height: 900px">
+      <div>
+        <h1 class="text-white display-1 fw-bold" style="margin-bottom: 0px">{{ strtoupper($project->project_name) }}</h1>
+        <p class="w-100 text-white fw-bold txt-type" style="text-align: right; margin-top:-10px; font-size: 25px">{{ strtoupper($project->type) }}</p>
+        <div class="mt-5 text-center">
+          <a href="#contact_form" class="btn btn-light fw-bold px-5" style="scroll-behavior: smooth">CONSULTAR</a href="#contact_form">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container px-5 mt-5">
+    <div class="row">
+      <div class="col-sm-8 position-relative">
+        <img data-aos="fade-up" class="img-top" width="100%" height="500px" src="{{ $project->img_top != null ? asset('uploads/projects/900/'.$project->img_top) : asset('uploads/projects/900/'.$images[2]) }}" alt="">
+        <div data-aos="fade-left" class="d-flex justify-content-end txt-inside-image-top" style="margin-top: -150px; margin-right: -200px;">
+          <div class="bg-white d-flex align-items-center">
+            @php
+              $test = explode(" ", $project->txt_description);
+              $media = count($test) / 2;
+
+              $test2 = explode(" ", $project->txt_inside_img);
+              $media2 = count($test2) / 2;
+            @endphp
+            <h2 style="-webkit-text-stroke: 1px black; color: white; font-size: 7rem; font-weight: bold; line-height: 5rem; padding-top: 50px; padding-bottom: 50px; padding-left: 50px"> {{ $test2[0] }} <br> <span class="subtitles" style="color: #000000; font-size: 4rem;">{{ $test2[1]}}</span></h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div data-aos="fade-up" class="d-flex align-items-center justify-content-center txt-short-description" style="height: 400px">
+          <p class="h4" style="font-style: italic">{{ $project->txt_description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="bg-light py-5">
+  <section class="container">
+    <div class="row">
+      @if(count($list_properties)>0)
+        @foreach($list_properties as $propertie)
+          <div data-aos="fade-up" data-aos-duration="2000" class="col-sm-4 mb-5">
+            <article class="text-center">
+              <p class="h5 fw-bold mb-4">{{ strtoupper($propertie->title) }}</p>
+              <div class="row">
+                <div class="col-4 col-sm-4 border-end">
+                  <div class="position-relative">
+                    <img width="50px" src="{{ asset('img/bath-project.png') }}" alt="">
+                  </div>
+                  <div class="mt-3">
+                    <span>{{ $propertie->bathrooms }}</span>
+                  </div>
+                </div>
+                <div class="col-4 col-sm-4 border-end">
+                  <img width="60px" src="{{ asset('img/bed-projects.png') }}" alt="">
+                  <br>
+                  <div class="mt-2">
+                    <span>{{ $propertie->bedrooms }}</span>
+                  </div>
+                </div>
+                <div class="col-4 col-sm-4">
+                  <img width="50px" src="{{ asset('img/garaje-projects.png') }}" alt="">
+                  <br>
+                  <div class="mt-3">
+                    <span>{{ $propertie->garage }}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex justify-content-center mt-4">
+                <a href="#" class="btn btn-outline-dark rounded-0">MÁS INFO</a>
+              </div>
+            </article>
+          </div>
+        @endforeach
+      @endif
+    </div>
+  </section>
+</section>
+
+<section class="container">
+  <section class="row my-5">
+    <div data-aos="fade-up" class="col-12 col-sm-12 col-md-12 col-xl-3 txt-vertical" style="text-orientation: mixed; writing-mode: vertical-lr; transform: rotate(180deg)">
+      <section>
+        <p class="subtitles" style="-webkit-text-stroke: 1px black; color: white; font-size: 5rem; font-weight: bold; width: 900px;">IT'S ALL <span class="subtitles" style="-webkit-text-stroke: 1px black; color: black; font-size: 3rem">YOURS</span></p>
+      </section>
+    </div>
+    <div class="col-12 col-sm-12 col-md-12 col-xl-9 d-flex align-items-center justify-content-center">
+      <div>
+        <div class="row">
+          <div class="col-6 col-sm-4 mb-3">
+            <article class="position-relative">
+              <img class="img-fluid" src="{{ asset('uploads/projects/900/'.$images[2]) }}" alt="">
+              {{-- <div class="position-absolute top-0 start-0 bg-white" style="margin: 0px; padding: 0px">
+                <span class="py-1 px-3">RESTAURANTE DE AUTOR</span>
+              </div> --}}
+            </article>
+          </div>
+          <div class=" col-6 col-sm-4 mb-3">
+            <article>
+              <img class="img-fluid" src="{{ asset('uploads/projects/900/'.$images[3]) }}" alt="">
+            </article>
+          </div>
+          <div class=" col-6 col-sm-4 mb-3">
+            <article>
+              <img class="img-fluid" src="{{ asset('uploads/projects/900/'.$images[4]) }}" alt="">
+            </article>
+          </div>    
+          <div class="col-6 col-sm-4 mb-3">
+            <article>
+              <img class="img-fluid" src="{{ asset('uploads/projects/900/'.$images[5]) }}" alt="">
+            </article>
+          </div>
+          @if(count($images)>5)
+            <div class=" col-6 col-sm-4 mb-3">
+              <article>
+                <img class="img-fluid" src="{{ asset('uploads/projects/900/'.$images[6]) }}" alt="">
+              </article>
+            </div>
+          @endif
+          @if(count($images)>6)
+            <div class="col-6 col-sm-4 mb-3">
+              <article>
+                <img class="img-fluid" src="{{ asset('uploads/projects/900/'.$images[7]) }}" alt="">
+              </article>
+            </div>
+          @endif
+        </div>
+        <div class="row">
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+@if($project->entrance != null || $project->dues != null || $project->bank_credit != null)
+<section class="bg-light py-5">
+  <section class="container my-5">
+    <section class="d-flex justify-content-center">
+      <h2 class="subtitles" style="-webkit-text-stroke: 1px black; color: white; font-size: 5rem; font-weight: bold;">FINANCIAMIENTO</h2>
+    </section>
+    <section class="row">
+      <div class="col-sm-4">
+        <article class="text-center">
+          <span style="-webkit-text-stroke: 1px black; color: black; font-size: 5rem; font-weight: bold;">{{ $project->entrance }}%</span>
+          <br>
+          <span>ENTRADA</span>
+        </article>
+      </div>
+      <div class="col-sm-4">
+        <article class="text-center">
+          <span style="-webkit-text-stroke: 1px black; color: black; font-size: 5rem; font-weight: bold;">{{ $project->dues }}</span>
+          <br>
+          <span>CUOTAS</span>
+        </article>
+      </div>
+      <div class="col-sm-4">
+        <article class="text-center">
+          <span style="-webkit-text-stroke: 1px black; color: black; font-size: 5rem; font-weight: bold;">{{ $project->bank_credit }}%</span>
+          <br>
+          <span>CREDITO BANCARIO</span>
+        </article>
+      </div>
+    </section>
+  </section>
+</section>
+@endif
+
+<section class="container my-5">
+    <section class="d-flex justify-content-center">
+      <h2 class="mb-5">CALCULA TU CRÉDITO</h2>
+    </section>
+    <section class="row">
+      <div class="col-sm-4">
+        <div class="mb-5">
+          <p>CANTIDAD TOTAL</p>
+          <div class="d-flex">
+            <span class="d-flex align-items-center bg-light px-3 py-2 border-end rounded-0">$</span>
+            <input type="number" class="form-control border-0 bg-light border-start rounded-0">
+          </div>
+        </div>
+        <div class="mb-5">
+          <p>TASA DE INTERES</p>
+          <div class="d-flex">
+            <span class="d-flex align-items-center bg-light px-3 py-2 border-end rounded-0">$</span>
+            <input type="number" class="form-control border-0 bg-light border-start rounded-0">
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="mb-5">
+          <p>ENTRADA</p>
+          <div class="d-flex">
+            <span class="d-flex align-items-center bg-light px-3 py-2 border-end rounded-0">$</span>
+            <input type="number" class="form-control border-0 bg-light border-start rounded-0">
+          </div>
+        </div>
+        <div class="mb-5">
+          <p>TÉRMINOS DEL PRÉSTAMO (AÑOS)</p>
+          <div class="d-flex">
+              <span class="d-flex align-items-center bg-light px-3 py-2 border-end rounded-0">$</span>
+              <input type="number" class="form-control border-0 bg-light border-start rounded-0">
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 d-flex align-items-center">
+          <div class="w-100">
+            <p>ÍNTERES PRINCIPAL</p>
+            <div class="d-flex">
+              <span class="d-flex align-items-center bg-light px-3 py-2 border-end rounded-0">$</span>
+              <input type="number" class="form-control border-0 bg-light border-start rounded-0">
+            </div>
+            <div class="d-flex justify-content-center mt-2">
+              <button class="btn btn-dark">CALCULAR</button>
+            </div>
+          </div>
+        </div>
+      </section>
+  </section>
+
+<section class="mt-5">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1992.3422529348652!2d-79.01088986117757!3d-2.9068842205078607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91cd1911fa24b8a3%3A0x253fdcb31d8b1517!2sCasa%20Cr%C3%A9dito%20Promotora!5e0!3m2!1ses-419!2sec!4v1690924563410!5m2!1ses-419!2sec" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</section>
+
+<section class="container my-5" id="contact_form">
+  <section class="row">
+    <div class="col-sm-5">
+      <h2 class="border-bottom border-danger subtitles" style="-webkit-text-stroke: 1px black; color: white; font-size: 5rem; font-weight: bold;">QUIERO MÁS <br> <span class="subtitles" style="color: black; font-size: 4rem">INFORMACIÓN</span></h2>
+      <p style="font-style: italic; font-size: 20px; font-weight: 100">Contáctanos y recibe la mejor asesoría</p>
+    </div>
+    <div class="col-12 col-sm-12 col-md-12 col-xl-7 bg-light py-5 px-5">
+      <section>
+        <div>
+          <form action="{{route('contactanos.store')}}" method="POST">
+            @csrf
+            <div class="row">
+              <div class="col mb-4">
+                <input type="hidden" name="interest" value="{{ $project->project_name }}">
+                <input type="text" name="nombre" placeholder="Nombre" class="form-control border-0" required>
+              </div>
+              <div class="col mb-4">
+                <input type="text" name="apellido" placeholder="Apellido" class="form-control border-0" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col mb-4">
+                <input type="email" name="correo" placeholder="Correo electrónico" class="form-control border-0" required>
+              </div>
+              <div class="col mb-4">
+                <input type="number" name="telefono_celular" placeholder="Teléfono" class="form-control border-0" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col mb-4">
+                <textarea name="mensaje" rows="4" placeholder="Comentario" class="form-control border-0" required></textarea>
+              </div>
+            </div>
+            <div class="d-grid gap-2">
+              <button type="submit" class="btn btn-dark fw-bolder">ENVIAR</button>
+              <a class="btn btn-success" href="https://api.whatsapp.com/send?phone=+593989798238&text=Deseo%20saber%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20proyecto%20{{$project->project_name}}">Contactar por WhatsApp</a>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+  </section>
+</section>
+
+@if (session('validGeneral'))
+  @php
+  echo "
+      <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
+      <script>
+          swal('Información enviada con éxito', 'Nos pondremos en contacto lo antes posible!', 'success');
+      </script>
+      ";    
+  @endphp
+@endif
+
+
+
+
+    {{-- <div class="container pt-5">
       <h1>@if(isset($project)) {{ $project->type . " " . $project->project_name }} @endif</h1>
       <h5><i class="fas fa-map-marker-alt mx-1" style="color: red"></i><b> Ubicación:</b> {{$project->state." > ".$project->city." > ".$project->address}}</h5>
     </div>
@@ -643,9 +926,6 @@
                   <p class="d-inline">{{ $propertie->bathrooms }} baños</p>
                 </div>
               </div>
-              {{-- <div class="col-sm-2" style="position: relative">
-                <button type="button" class="btn btn-warning rounded" data-bs-toggle="modal" data-bs-target="#modalPlanos">Ver planos ></button>
-              </div> --}}
             </div>
           </div>
 
@@ -752,7 +1032,6 @@
               </div>
               <div class="d-grid gap-2">
                 <button id="btnEnviar" type="submit" class="btn">Enviar</button>
-                {{-- <a id="btnWhatsapp" target="_blank" class="btn" href="https://api.whatsapp.com/send?phone=+593983849073&text=Me%20gustaria%20conocer%20los%20{{Str::lower($data['tipo'])}}s%20del%20conjunto%20residencial%20{{$data['nombreProyecto']}}">Contactar por Whatsapp <i id="iconwpp" class="fab fa-whatsapp"></i></a> --}}
                 <a id="btnWhatsapp" target="_blank" class="btn" href="https://api.whatsapp.com/send?phone=+593983849073">Contactar por Whatsapp <i id="iconwpp" class="fab fa-whatsapp"></i></a>
               </div>
             </form>
@@ -792,7 +1071,7 @@
         @endforeach
       </div>
     </div>
-  </div>
+  </div> --}}
   @endif
 
 @if (session('report'))
