@@ -298,16 +298,19 @@ class ProjectController extends Controller
 
     }
 
-    public function viewProject(String $type, String $slug = null){
+    public function viewProject(String $type, String $slug = null, String $property_slug = null){
         if($type != null && $slug == null){
             $projects = Category::where('type', 'LIKE', "%$type%")->get();
             return view('pages.projects', compact('projects'));
         }
         $project = Category::where('slug', 'LIKE', "%$slug%")->first();
         $similarprojects = Category::all();
-        if($project && $type != null && $slug != null) {
+        if($project && $type != null && $slug != null && $property_slug == null) {
             $list_properties = Property::where('category_id', $project->category_id)->get();
             return view('pages.project', compact('project', 'list_properties', 'similarprojects'));
+        } else if($project && $type != null && $slug != null && $property_slug != null){
+            $property = Property::where('slug', 'LIKE', $property_slug)->first();
+            return view('pages.property', compact('property', 'project'));
         } else {
             $nombreProyecto = $type;
             //num_department
