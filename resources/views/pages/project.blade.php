@@ -587,9 +587,9 @@
                   </div>
                 </div>
               </div>
-              {{-- <div class="d-flex justify-content-center mt-4">
-                <a href="#" class="btn btn-outline-dark rounded-0">MÁS INFO</a>
-              </div> --}}
+              <div class="d-flex justify-content-center mt-4">
+                <a href="{{ route('projects.viewProject', [ strtolower($project->type), $project->slug, $propertie->slug]) }}" class="btn btn-outline-dark rounded-0">MÁS INFO</a>
+              </div>
             </article>
           </div>
         @endforeach
@@ -801,7 +801,7 @@
             @php $index = 0; @endphp
             @foreach ($images as $img)    
               <div id="img_{{ $index }}" class="carousel-item @if($index == 0) active @endif">
-                <img class="d-block w-100" style="max-height: 90vh !important" data-bs-slide-to="{{ $index }}" src="{{ url('uploads/projects/900', $img) }}" alt="First slide">
+                <img class="d-block w-100" style="max-height: 90vh !important" data-bs-slide-to="{{ $index }}" src="{{ url('uploads/projects/900', $img) }}" alt="{{ $project->project_name}}- IMG{{$index}}">
               </div>
               @php $index++; @endphp
             @endforeach
