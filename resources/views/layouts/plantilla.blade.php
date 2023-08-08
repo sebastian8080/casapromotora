@@ -132,7 +132,7 @@
                 </div>
                 <div class="d-flex align-items-center gap-2 mb-4">
                   <img width="40px" height="40px" src="{{ asset('img/telefono-inteligente-icon.png') }}" alt="">
-                  <a href="to:072889355" class="text-dark" style="text-decoration: none">
+                  <a href="tel:072889355" class="text-dark" style="text-decoration: none">
                     <span>07 288 9355</span>
                   </a>
                 </div>
