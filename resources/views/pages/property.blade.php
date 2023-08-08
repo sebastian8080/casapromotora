@@ -24,7 +24,7 @@
 @section('content')
     <section class="container d-flex justify-content-center header-section">
         <div class="position-relative">
-            <img class="img-fluid" src="{{ asset('uploads/projects/900/'. $images[0]) }}" alt="{{ $project->project_name }}">
+            <img class="img-fluid" src="{{ asset('uploads/projects/'. $images[0]) }}" alt="{{ $project->project_name }}">
             <section class="d-flex justify-content-end title" style="margin-top: -100px">
                 <div class="bg-white pt-4 px-4" style="line-height: 3.5rem" data-aos="fade-up" data-aos-duration="2000">
                     <p class="subtitles" style="-webkit-text-stroke: 1px black; color: white; font-size: 4rem; font-weight: bold;">{{ $property->title }}</p>
