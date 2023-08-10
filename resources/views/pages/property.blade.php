@@ -116,10 +116,10 @@
                 <h2 class="subtitles" style="-webkit-text-stroke: 1px black; color: white; font-size: 3rem; font-weight: bold; line-height: 5rem;">LA UBICACIÓN <span class="subtitles" style="color: #000000; font-size: 2rem">MÁS EXCLUSIVA DE CUENCA</span></h2>
             @endif
         </div>
-        <div class="mt-5">
-            <h3 style="-webkit-text-stroke: 1px rgb(0, 0, 0); color: rgb(0, 0, 0); font-size: 2rem; font-weight: bold;">A pocos minutos de:</h3>
-        </div>
         @if($project->project_name == "Alison")
+            <div class="mt-5">
+                <h3 style="-webkit-text-stroke: 1px rgb(0, 0, 0); color: rgb(0, 0, 0); font-size: 2rem; font-weight: bold;">A pocos minutos de:</h3>
+            </div>
             <div class="row py-5">
                 <div class="col-6 col-sm-3 d-flex justify-content-center my-2">Supermaxi</div>
                 <div class="col-6 col-sm-3 d-flex justify-content-center my-2">Pádel</div>
