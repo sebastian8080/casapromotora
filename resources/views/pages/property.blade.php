@@ -109,7 +109,12 @@
 
     <section class="container">
         <div class="d-flex justify-content-end items">
-            <h2 class="subtitles" style="-webkit-text-stroke: 1px black; color: white; font-size: 5rem; font-weight: bold; line-height: 5rem; border-bottom: 1px solid red">IT'S ALL <span class="subtitles" style="color: #000000; font-size: 4rem">YOURS</span></h2>
+            @if($project->project_name == "SEASCAPE")
+                <h2 class="subtitles" style="-webkit-text-stroke: 1px black; color: white; font-size: 5rem; font-weight: bold; line-height: 5rem; border-bottom: 1px solid red">IT'S ALL <span class="subtitles" style="color: #000000; font-size: 4rem">YOURS</span></h2>
+            @endif
+            @if($project->project_name == "Alison")
+                <h2 class="subtitles" style="-webkit-text-stroke: 1px black; color: white; font-size: 3rem; font-weight: bold; line-height: 5rem;">LA UBICACIÓN <span class="subtitles" style="color: #000000; font-size: 2rem">MÁS EXCLUSIVA DE CUENCA</span></h2>
+            @endif
         </div>
         <div class="mt-5">
             <h3 style="-webkit-text-stroke: 1px rgb(0, 0, 0); color: rgb(0, 0, 0); font-size: 2rem; font-weight: bold;">A pocos minutos de:</h3>
@@ -125,9 +130,6 @@
                 <div class="col-6 col-sm-3 d-flex justify-content-center my-2">Salón de eventos</div>
                 <div class="col-6 col-sm-3 d-flex justify-content-center my-2">Miradores</div>
                 <div class="col-6 col-sm-3 d-flex justify-content-center my-2">Guarderías</div>
-            </div>
-            <div class="py-5">
-                <h2 class="subtitles" style="-webkit-text-stroke: 1px black; color: white; font-size: 3rem; font-weight: bold; line-height: 5rem;">LA UBICACIÓN <span class="subtitles" style="color: #000000; font-size: 2rem">MÁS EXCLUSIVA DE CUENCA</span></h2>
             </div>
         @endif
     </section>
