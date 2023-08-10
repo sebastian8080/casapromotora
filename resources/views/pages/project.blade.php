@@ -602,7 +602,7 @@
   <section class="row my-5">
     <div data-aos="fade-up" class="col-12 col-sm-12 col-md-12 col-xl-3 txt-vertical" style="text-orientation: mixed; writing-mode: vertical-lr; transform: rotate(180deg)">
       <section>
-        <p class="subtitles" style="-webkit-text-stroke: 1px black; color: white; font-size: 5rem; font-weight: bold; width: 900px;">@if($project->project_name == "SEASCAPE") IT'S ALL @else ACABADOS @endif <span class="subtitles" style="-webkit-text-stroke: 1px black; color: black; font-size: 3rem">@if($project->project_name == "SEASCAPE") YOURS @else ELEGANTES @endif</span></p>
+        <p class="subtitles" style="-webkit-text-stroke: 1px black; color: white; font-size: 5rem; font-weight: bold; width: 100%;">@if($project->project_name == "SEASCAPE") IT'S ALL @else ACABADOS @endif <span class="subtitles" style="color: black; font-size: 3rem">@if($project->project_name == "SEASCAPE") YOURS @else ELEGANTES @endif</span></p>
       </section>
     </div>
     <div class="col-12 col-sm-12 col-md-12 col-xl-9 d-flex align-items-center justify-content-center">
