@@ -157,16 +157,34 @@
                                     {!! Form::text('txt_description', null, ['class' => 'form-control']) !!}
                                 </div>
                                 <div class="col-sm-6 mb-4">
-                                    {!! Form::label('txt_inside_img', 'Texto Encima de Imagen', ['class' => 'h5']) !!}
-                                    {!! Form::text('txt_inside_img', null, ['class' => 'form-control']) !!}
+                                    {!! Form::label('txt_inside_img_first', 'Texto Encima de Imagen', ['class' => 'h5']) !!}
+                                    <div class="d-flex">
+                                        {!! Form::text('txt_inside_img_first', null, ['class' => 'form-control border-right-0 rounded-0']) !!}
+                                        <span class="d-flex align-items-center px-2 font-weight-bold border-top border-bottom" style="font-size: 23px">/</span>
+                                        {!! Form::text('txt_inside_img_second', null, ['class' => 'form-control border-left-0 rounded-0', 'id' => 'txt_inside_img_second']) !!}
+                                    </div>
                                 </div>
                             </div>
+                            <!--preview-->
+                            <div class="bg-light py-3 text-center">
+                                <p style="-webkit-text-stroke: 1px black; color: white; font-size: 3rem; font-weight: bold; width: 100%;"> <span id="first_word">@if($project_category->txt_inside_img_first){{$project_category->txt_inside_img_first}}@endif</span><span id="second_word" style="color: black; font-size: 2rem"> @if($project_category->txt_inside_img_second){{$project_category->txt_inside_img_second}}@endif </span></p>
+                            </div>
+                            <!--end preview-->
                             <div class="row">
                                 <div class="col-sm-12 mb-4">
-                                    {!! Form::label('slogan', 'Slogan', ['class' => 'h5']) !!}
-                                    {!! Form::textarea('slogan', null, ['class' => 'form-control', 'rows' => '3']) !!}
+                                    {!! Form::label('slogan_first', 'Slogan', ['class' => 'h5']) !!}
+                                    <div class="d-flex">
+                                        {!! Form::text('slogan_first', null, ['class' => 'form-control border-right-0 rounded-0']) !!}
+                                        <span class="d-flex align-items-center px-2 font-weight-bold border-top border-bottom" style="font-size: 23px">/</span>
+                                        {!! Form::text('slogan_second', null, ['class' => 'form-control border-left-0 rounded-0', 'id' => 'slogan_second']) !!}
+                                    </div>
                                 </div>
                             </div>
+                            <!--preview slogan-->
+                            <div class="bg-light py-3 text-center">
+                                <p style="-webkit-text-stroke: 1px black; color: white; font-size: 3rem; font-weight: bold; width: 100%;"> <span id="slogan_word_first">@if($project_category->slogan_first){{$project_category->slogan_first}}@endif</span><span id="slogan_word_second" style="color: black; font-size: 2rem"> @if($project_category->slogan_second){{$project_category->slogan_second}}@endif </span></p>
+                            </div>
+                            <!--end preview slogan-->
                             <div class="row">
                                 <div class="col-sm-12 mb-4">
                                     {!! Form::label('url_maps', 'Enlace Dirección en Google Maps', ['class' => 'h5']) !!}
@@ -262,5 +280,34 @@
     if(gridImages){
         new Sortable(gridImages, {swapThreshold:1, animation:150});
     }
+
+    let first_word = document.getElementById('first_word');
+    let second_word = document.getElementById('second_word');
+
+    let txt_inside_img_first = document.getElementById('txt_inside_img_first');
+    let txt_inside_img_second = document.getElementById('txt_inside_img_second');
+
+    txt_inside_img_first.addEventListener('keyup', function(){
+        first_word.innerHTML = txt_inside_img_first.value + " ";
+    });
+
+    txt_inside_img_second.addEventListener('keyup', function(){
+        second_word.innerHTML = txt_inside_img_second.value;
+    });
+
+    let slogan_word_first = document.getElementById('slogan_word_first');
+    let slogan_word_second = document.getElementById('slogan_word_second');
+
+    let slogan_first = document.getElementById('slogan_first');
+    let slogan_second = document.getElementById('slogan_second');
+
+    slogan_first.addEventListener('keyup', function(){
+        slogan_word_first.innerHTML = slogan_first.value + " ";
+    });
+
+    slogan_second.addEventListener('keyup', function(){
+        slogan_word_second.innerHTML = slogan_second.value;
+    });
+
   </script>
 @endsection
