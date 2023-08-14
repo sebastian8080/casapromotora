@@ -206,7 +206,11 @@ class ProjectController extends Controller
         $project_category->img_header = $request->img_header;
         $project_category->img_top = $request->img_top;
         $project_category->txt_description = $request->txt_description;
-        $project_category->txt_inside_img = $request->txt_inside_img;
+        $project_category->txt_inside_img_first = $request->txt_inside_img_first;
+        $project_category->txt_inside_img_second = $request->txt_inside_img_second;
+
+        $project_category->slogan_first = $request->slogan_first;
+        $project_category->slogan_second = $request->slogan_second;
         
         $project_category->entrance = $request->entrance;
         $project_category->dues = $request->dues;
