@@ -28,7 +28,10 @@
             <section class="d-flex justify-content-end title" style="margin-top: -100px">
                 <div class="bg-white pt-4 px-4" style="line-height: 3.5rem" data-aos="fade-up" data-aos-duration="2000">
                     <p class="subtitles" style="-webkit-text-stroke: 1px black; color: white; font-size: 4rem; font-weight: bold;">{{ $property->title }}</p>
-                    <p class="subtitles" style="-webkit-text-stroke: 1px rgb(0, 0, 0); color: rgb(0, 0, 0); font-size: 3rem; font-weight: bold;">@if($project->project_name == "SEASCAPE") DESDE @endif ${{ number_format($property->price) }}</p>
+                    <div class="d-flex gap-1">
+                        @if($project->project_name == "Adra")<p style="font-size: 2rem">Desde</p>@endif
+                        <p class="subtitles" style="-webkit-text-stroke: 1px rgb(0, 0, 0); color: rgb(0, 0, 0); font-size: 3rem; font-weight: bold;"> ${{ number_format($property->price) }}</p>
+                    </div>
                 </div>
             </section>
         </div>
