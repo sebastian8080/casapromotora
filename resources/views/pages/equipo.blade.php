@@ -5,13 +5,13 @@
 @section('content-head')
 <!-- Primary Meta Tags -->
 <meta name="title" content="Casa Promotora - Conozca a Nuestro Equipo" />
-<meta name="description" content="Expertos en bienes raíces para comprar, vender e invertir. Encuentra tu propiedad ideal con nuestro equipo confiable." />
+<meta name="description" content="Expertos en bienes raíces para comprar, vender e invertir. Encuentre su propiedad ideal con nuestro equipo confiable ✅" />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content="{{ Request::url() }}" />
 <meta property="og:title" content="Casa Promotora - Conozca a Nuestro Equipo" />
-<meta property="og:description" content="Expertos en bienes raíces para comprar, vender e invertir. Encuentra tu propiedad ideal con nuestro equipo confiable." />
+<meta property="og:description" content="Expertos en bienes raíces para comprar, vender e invertir. Encuentre su propiedad ideal con nuestro equipo confiable." />
 <meta property="og:image" content="{{ asset('img/about/oficinasnuevas-min.jpg') }}" />
 
 <style>
