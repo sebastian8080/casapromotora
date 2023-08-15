@@ -167,7 +167,7 @@
                             </div>
                             <!--preview-->
                             <div class="bg-light py-3 text-center">
-                                <p style="-webkit-text-stroke: 1px black; color: white; font-size: 3rem; font-weight: bold; width: 100%;"> <span id="first_word">@if($project_category->txt_inside_img_first){{$project_category->txt_inside_img_first}}@endif</span><span id="second_word" style="color: black; font-size: 2rem"> @if($project_category->txt_inside_img_second){{$project_category->txt_inside_img_second}}@endif </span></p>
+                                <p style="-webkit-text-stroke: 1px black; color: white; font-size: 3rem; font-weight: bold; width: 100%;"> <span id="first_word">@if(isset($project_category) && $project_category->txt_inside_img_first){{$project_category->txt_inside_img_first}}@endif</span><span id="second_word" style="color: black; font-size: 2rem"> @if(isset($project_category) && $project_category->txt_inside_img_second){{$project_category->txt_inside_img_second}}@endif </span></p>
                             </div>
                             <!--end preview-->
                             <div class="row">
@@ -182,7 +182,7 @@
                             </div>
                             <!--preview slogan-->
                             <div class="bg-light py-3 text-center">
-                                <p style="-webkit-text-stroke: 1px black; color: white; font-size: 3rem; font-weight: bold; width: 100%;"> <span id="slogan_word_first">@if($project_category->slogan_first){{$project_category->slogan_first}}@endif</span><span id="slogan_word_second" style="color: black; font-size: 2rem"> @if($project_category->slogan_second){{$project_category->slogan_second}}@endif </span></p>
+                                <p style="-webkit-text-stroke: 1px black; color: white; font-size: 3rem; font-weight: bold; width: 100%;"> <span id="slogan_word_first">@if(isset($project_category) && $project_category->slogan_first){{$project_category->slogan_first}}@endif</span><span id="slogan_word_second" style="color: black; font-size: 2rem"> @if(isset($project_category) && $project_category->slogan_second){{$project_category->slogan_second}}@endif </span></p>
                             </div>
                             <!--end preview slogan-->
                             <div class="row">
