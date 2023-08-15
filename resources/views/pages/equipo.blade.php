@@ -28,7 +28,7 @@
 </section>
 
 <section class="container py-4">
-    <div class="mb-4">
+    <div class="mb-5">
         <h2><span style="-webkit-text-stroke: 1px black; color: rgb(0, 0, 0); font-size: 2rem; font-weight: bold; width: 100%; border-bottom: 2px solid red; padding-bottom: 5px">ADMINISTRATIVO</span></h2>
     </div>
     <div class="row">
@@ -45,7 +45,7 @@
     </div>
 
     <div class="row py-5">
-        <div class="mb-4">
+        <div class="mb-5">
             <h2><span style="-webkit-text-stroke: 1px black; color: rgb(0, 0, 0); font-size: 2rem; font-weight: bold; width: 100%; border-bottom: 2px solid red; padding-bottom: 5px">CRÉDITOS</span></h2>
         </div>
         @for ($i = 1; $i < 4; $i++)
@@ -61,7 +61,7 @@
     </div>
 
     <div class="row py-5">
-        <div class="mb-4">
+        <div class="mb-5">
             <h2><span style="-webkit-text-stroke: 1px black; color: rgb(0, 0, 0); font-size: 2rem; font-weight: bold; width: 100%; border-bottom: 2px solid red; padding-bottom: 5px">MARKETING</span></h2>
         </div>
         @for ($i = 1; $i < 4; $i++)
@@ -77,7 +77,7 @@
     </div>
 
     <div class="row py-5">
-        <div class="mb-4">
+        <div class="mb-5">
             <h2><span style="-webkit-text-stroke: 1px black; color: rgb(0, 0, 0); font-size: 2rem; font-weight: bold; width: 100%; border-bottom: 2px solid red; padding-bottom: 5px">SISTEMAS</span></h2>
         </div>
         @for ($i = 1; $i < 3; $i++)
