@@ -3,53 +3,97 @@
 @section('title', 'Nuestro Equipo')
 
 @section('content-head')
-
+<style>
+    @media screen and (max-width: 780px){
+        #title{ margin-top: 100px !important; padding-bottom: 20px !important}
+    }
+</style>
 @endsection
 
 @section('content')
 
-    <div class="position-relative">
-        <video style="top: 0; left:0; width: 100%; height: 100%; opacity:1; filter: brightness(60%)" muted autoplay loop>
-            <source src="video/Equipo.mp4" type="video/mp4">
-        </video>
-        <div class="position-absolute top-50 start-50 translate-middle text-white">
-            <h1 class="text-center" style="font-size: 4vw;">Te presentamos a nuestro equipo de trabajo</h1>
-        </div>
+<section id="title" class="container position-relative" style="margin-top: 140px">
+    <h1 class="subtitles" style="-webkit-text-stroke: 1px black; color: white; font-size: 6rem; font-weight: bold; width: 100%;"> NUESTRO <br><span class="subtitles" style="color: black; font-size: 5rem">EQUIPO</span></h1>
+</section>
+
+<section class="container py-4">
+    <div class="mb-4">
+        <h2><span style="-webkit-text-stroke: 1px black; color: rgb(0, 0, 0); font-size: 2rem; font-weight: bold; width: 100%; border-bottom: 2px solid red; padding-bottom: 5px">ADMINISTRATIVO</span></h2>
+    </div>
+    <div class="row">
+        @for ($i = 1; $i < 3; $i++)
+            <div class="col-sm-4 mb-4" data-aos="fade-up" data-aos-duration="2000">
+                <div class="position-relative">
+                    <img class="img-fluid" src="{{ asset('img/team/administracion'.$i.'.jpg') }}" alt="">
+                    <div class="position-absolute top-0 start-50 translate-middle-x w-75">
+                        <p class="bg-white px-3 py-1 text-center fw-bold">@if($i == 1) ANABEL LOPEZ @elseif($i == 2) DANIELA MERCHAN @endif</p>
+                    </div>
+                </div>
+            </div>
+        @endfor
     </div>
 
-    <div class="container mt-5">
-        <div class="row mb-3">
-            <div class="col-sm-6">
-                <img class="img-fluid rounded mx-auto d-block" style="filter: brightness(80%)" src="img/team/ISA FINAL-01.jpg" width="70%" alt="Equipo de trabajo - Casa Credito Promotora">
-            </div>
-            <div class="col-sm-6 d-flex align-items-center mt-2">
-                <p class="text-justify h5">
-                    <i>
-                        "La <b>responsabilidad</b> social empieza en una compañia competitiva y fuerte. Solo una empresa en buen estado puede mejorar y enriquecer
-                        las vidas de las personas y sus comunidades"
-                    </i> 
-                </p>
-            </div>
+    <div class="row py-5">
+        <div class="mb-4">
+            <h2><span style="-webkit-text-stroke: 1px black; color: rgb(0, 0, 0); font-size: 2rem; font-weight: bold; width: 100%; border-bottom: 2px solid red; padding-bottom: 5px">CRÉDITOS</span></h2>
         </div>
-
-        <hr class="mt-5 mb-5">
-
-        <div class="row mb-5 mt-3">
-            <div class="col-sm-6  d-flex align-items-center">
-                <p class="text-justify h5">
-                    <i>
-                        "Somos lo que hacemos día a día. De modo que la <b>excelencia </b> no es un acto, sino un hábito"
-                    </i>
-                </p>
+        @for ($i = 1; $i < 4; $i++)
+            <div class="col-sm-4 mb-4" data-aos="fade-up" data-aos-duration="2000">
+                <div class="position-relative">
+                    <img class="img-fluid" src="{{ asset('img/team/creditos'.$i.'.jpg') }}" alt="">
+                    <div class="position-absolute top-0 start-50 translate-middle-x w-75">
+                        <p class="bg-white px-3 py-1 text-center fw-bold">@if($i == 1) FERNANDA PARRA @elseif($i == 2) MICHELLE CORDERO @elseif($i == 3) SANDRA VALLADARES @endif</p>
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-6">
-                <img class="img-fluid rounded mx-auto d-block" style="filter: brightness(75%)" src="img/team/DAYANA FINAL-01.jpg" width="70%" alt="Equipo de trabajo - Casa Credito Promotora">
-            </div>
-        </div>
+        @endfor
     </div>
+
+    <div class="row py-5">
+        <div class="mb-4">
+            <h2><span style="-webkit-text-stroke: 1px black; color: rgb(0, 0, 0); font-size: 2rem; font-weight: bold; width: 100%; border-bottom: 2px solid red; padding-bottom: 5px">MARKETING</span></h2>
+        </div>
+        @for ($i = 1; $i < 4; $i++)
+            <div class="col-sm-4 mb-4" data-aos="fade-up" data-aos-duration="2000">
+                <div class="position-relative">
+                    <img class="img-fluid" src="{{ asset('img/team/marketing'.$i.'.jpg') }}" alt="">
+                    <div class="position-absolute top-0 start-50 translate-middle-x w-75">
+                        <p class="bg-white px-3 py-1 text-center fw-bold">@if($i == 1) JIMMY RIERA @elseif($i == 2) FERNANDA GUALPA @elseif($i == 3) ANDRES BARRERA @endif</p>
+                    </div>
+                </div>
+            </div>
+        @endfor
+    </div>
+
+    <div class="row py-5">
+        <div class="mb-4">
+            <h2><span style="-webkit-text-stroke: 1px black; color: rgb(0, 0, 0); font-size: 2rem; font-weight: bold; width: 100%; border-bottom: 2px solid red; padding-bottom: 5px">SISTEMAS</span></h2>
+        </div>
+        @for ($i = 1; $i < 3; $i++)
+            <div class="col-sm-4 mb-4" data-aos="fade-up" data-aos-duration="2000">
+                <div class="position-relative">
+                    <img class="img-fluid" src="{{ asset('img/team/sistemas'.$i.'.jpg') }}" alt="">
+                    <div class="position-absolute top-0 start-50 translate-middle-x w-75">
+                        <p class="bg-white px-3 py-1 text-center fw-bold">@if($i == 1) MIGUEL VARGAS @elseif($i == 2) SEBASTIAN ARMIJOS @endif</p>
+                    </div>
+                </div>
+            </div>
+        @endfor
+    </div>
+</section>
     
 @endsection
 
 @section('section-scripts')
-    <script src="{{ URL::asset('js/homepage.js') }}"></script>
+    <script>
+        let nav = document.getElementById('menu');
+        nav.classList.add('navbar-light');
+        nav.classList.add('bg-light');
+        nav.classList.remove('navbar-dark');
+
+        for (let index = 1; index < 7; index++) {
+            let element = document.querySelector('#menu-item'+index);
+            element.classList.remove('text-white');
+        }
+    </script>
 @endsection
