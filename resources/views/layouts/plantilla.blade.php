@@ -146,7 +146,7 @@
       </section>
     </footer>
 
-        <a style="color: #ffffff" href="https://api.whatsapp.com/send?phone=+593989798238&text=Deseo saber más información sobre los proyectos de Casa Crédito Promotora" class="whatsapp" target="_blank"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
+        <a style="color: #ffffff" href="https://api.whatsapp.com/send?phone=+593989798238&text=Deseo saber más información sobre los proyectos de Casa Promotora" class="whatsapp" target="_blank"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
 
         {{-- 593983849073 --}}
     
