@@ -22,20 +22,19 @@
         <div class="row mt-4">
             <div class="col-sm-5 mt-3">
                 <h3 class="fw-bold mb-4">Contáctanos</h3>
-                <h4>CASA CREDITO</h4>
-                <p>Av. Juan Iñiguez 3-87 y D. Gonzalo Cordero <br> Cuenca-Ecuador</p>
-                <p>+593 987 654 3210</p>
-                <h4>HORARIO</h4>
-                <p>09h00 - 18h00 <br> Lunes a Viernes <br> Sábados y Domingos con cita previa</p>
-                <iframe
-                    class="rounded" 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.6856335361763!2d-79.013945231424!3d-2.9065648790995997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91cd1933cc40a85d%3A0x3f5a0137411fe95e!2sCasa%20Cr%C3%A9dito%20Inmobiliaria!5e0!3m2!1ses!2sec!4v1636560605231!5m2!1ses!2sec"
-                    width="100%" 
-                    height="250" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy">
-                </iframe>
+                <h4>CASA PROMOTORA</h4>
+                <a style="text-decoration: none; color: #000000" href="https://goo.gl/maps/mVF4bGGi6wbFkHqv6">
+                    <p>Remigio Tamariz Crespo y Av. Fray Vicente Solano <br> Cuenca-Ecuador</p>
+                </a>
+                <a style="text-decoration: none; color: #000000" href="tel:+593989798238">
+                    <p>098 979 8238</p>
+                </a>
+                <a style="text-decoration: none; color: #000000" href="mailto:promotoracasacredito@gmail.com">
+                    <p>promotoracasacredito@gmail.com</p>
+                </a>
+                <h4>HORARIO DE ATENCIÓN</h4>
+                <p>Lunes a Viernes <br><span class="fw-bold">09h00 - 18h00</span> <br> <br> Sábados <br> <span class="fw-bold">09h00 - 13h00</span></p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.6887126267766!2d-79.01015192405654!3d-2.9056927395424967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91cd1911fa24b8a3%3A0x253fdcb31d8b1517!2sCasa%20Promotora!5e0!3m2!1ses-419!2sec!4v1692645110115!5m2!1ses-419!2sec" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="col-sm-7 mt-3">
                 <form action="{{ route('send.mail.contact') }}" method="POST">
