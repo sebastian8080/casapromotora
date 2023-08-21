@@ -42,6 +42,18 @@
 
     <script src="https://www.google.com/recaptcha/api.js?render=6LdteCQjAAAAABUiBdqPc7yMNEO4zFyAflmMhE_-"></script>
 
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2HZKLKNFFJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-2HZKLKNFFJ');
+    </script>
+
+
     @yield('content-head')
 </head>
 <body>
