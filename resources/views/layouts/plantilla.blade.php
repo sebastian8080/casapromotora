@@ -136,8 +136,26 @@
                     <span>07 288 9355</span>
                   </a>
                 </div>
+                <div class="d-flex align-items-center gap-2 mb-4">
+                  <div class="mx-2">
+                    <a target="_blank" href="https://www.facebook.com/casapromotora">
+                      <i class="fab fa-facebook fa-2x text-dark"></i>
+                    </a>
+                  </div>
+                  <div class="mx-2">
+                    <a target="_blank" href="https://www.instagram.com/casapromotora/">
+                      <i class="fab fa-instagram fa-2x text-dark"></i>
+                    </a>
+                  </div>
+                  <div class="mx-2">
+                    <a target="_blank" href="https://www.tiktok.com/@casapromotora">
+                      <i class="fab fa-tiktok fa-2x text-dark"></i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
+            
           </section>
         </section>
       </section>
