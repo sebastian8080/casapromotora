@@ -133,7 +133,7 @@
         </div>
         <div class="mt-3" style="font-style: italic; font-size: 18px">
           <p>
-            <a style="text-decoration: none;" class="text-dark" href="mailto:info@casacredito.com">info@casacredito.com</a>
+            <a style="text-decoration: none;" class="text-dark" href="mailto:info@casapromotora.com">info@casapromotora.com</a>
           </p>
           <p>
             <a style="text-decoration: none;" class="text-dark" href="to:+593989798238">098 979 8238</a>
