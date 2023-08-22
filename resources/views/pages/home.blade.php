@@ -84,7 +84,7 @@
   </div>
 </section>
 
-<section class="bg-light">
+<section class="bg-light my-5">
   <div class="container">
     <div class="row py-5 text-center">
       <div class="col-sm-3" data-aos="zoom-in">
@@ -102,23 +102,6 @@
       <div class="col-sm-3" data-aos="zoom-in">
         <i class="far fa-check-circle fa-3x" style="color: rgb(0, 0, 0);"></i>
         <p class="mt-4">GARANTIA CASA</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="container py-5">
-  <div class="position-relative">
-    <img width="100%" src="{{ asset('img/creditos-home-page.jpg') }}" alt="">
-    <div class="position-absolute">
-      <button class="position-absolute btn btn-dark fw-bolder px-5" style="bottom: 20px; left: 30px">CONSULTAR</button>
-    </div>
-    <div class="d-flex flex-row-reverse credit-div" style="margin-top: -100px">
-      <div class="d-inline-flex bg-white px-5 py-3">
-        <div>
-          <p class="subtitles" style="-webkit-text-stroke: 1px black; color: white; font-size: 4rem; font-weight: bold; margin: 0px">SOLICITE SU</p>
-          <p class="subtitles" style="color: #000000; font-size: 3rem; margin: 0px; font-weight: bolder">CRÉDITO</p>
-        </div>
       </div>
     </div>
   </div>
