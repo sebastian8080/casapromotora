@@ -53,6 +53,10 @@
       gtag('config', 'G-2HZKLKNFFJ');
     </script>
 
+    <style>
+      .grecaptcha-badge { visibility: hidden; }
+    </style>
+
 
     @yield('content-head')
 </head>
