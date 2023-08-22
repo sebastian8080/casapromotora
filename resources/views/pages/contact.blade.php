@@ -13,8 +13,7 @@
             <source src="video/contact.mp4" type="video/mp4">
         </video>
         <div class="position-absolute top-50 start-50 translate-middle text-white text-center">
-            <h1 class="fw-bold" style="font-size: 4vw;">Atendemos tus necesidades</h1>
-            <h4 class="fw-bold" style="font-size: 2.5vw;">Contacta con nosotros sin ningún compromiso</h4>
+            <h1 class="fw-bold" style="font-size: 4vw;">Contáctanos para recibir una asesoría</h1>
         </div>
     </div>
 
@@ -29,8 +28,8 @@
                 <a style="text-decoration: none; color: #000000" href="tel:+593989798238">
                     <p>098 979 8238</p>
                 </a>
-                <a style="text-decoration: none; color: #000000" href="mailto:promotoracasacredito@gmail.com">
-                    <p>promotoracasacredito@gmail.com</p>
+                <a style="text-decoration: none; color: #000000" href="mailto:info@casapromotora.com">
+                    <p>info@casapromotora.com</p>
                 </a>
                 <h4>HORARIO DE ATENCIÓN</h4>
                 <p>Lunes a Viernes <br><span class="fw-bold">09h00 - 18h00</span> <br> <br> Sábados <br> <span class="fw-bold">09h00 - 13h00</span></p>

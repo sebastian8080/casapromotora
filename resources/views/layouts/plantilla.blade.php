@@ -138,8 +138,8 @@
               <div>
                 <div class="d-flex align-items-center gap-2 mb-4">
                   <img width="40px" height="40px" src="{{ asset('img/email-icon.png') }}" alt="">
-                  <a href="mailto:promotoracasacredito@gmail.com" class="text-dark" style="text-decoration: none">
-                    <span>promotoracasacredito@gmail.com</span>
+                  <a href="mailto:info@casapromotora.com" class="text-dark" style="text-decoration: none">
+                    <span>info@casapromotora.com</span>
                   </a>
                 </div>
                 <div class="d-flex align-items-center gap-2 mb-4">
