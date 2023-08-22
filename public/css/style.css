@@ -1,39 +1,14 @@
 /*FONT PROXIMA NOVA*/
-@font-face {
-	font-family: 'proxima_nova_rgregular';
-	src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot');
-	src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
-		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.woff') format('woff'),
-		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.ttf') format('truetype'),
-		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.svg#proxima_nova_rgregular') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'proxima_nova_rgbold';
-	src: url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot');
-	src: url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot?#iefix') format('embedded-opentype'),
-		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.woff') format('woff'),
-		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.ttf') format('truetype'),
-		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.svg#proxima_nova_rgbold') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'adelle_rgregular';
-	src: url('https://litmus.com/fonts/Emails/adelle_reg-webfont.eot');
-	src: url('https://litmus.com/fonts/Emails/adelle_reg-webfont.eot?#iefix') format('embedded-opentype'),
-		 url('https://litmus.com/fonts/Emails/adelle_reg-webfont.woff') format('woff'),
-		 url('https://litmus.com/fonts/Emails/adelle_reg-webfont.ttf') format('truetype'),
-		 url('https://litmus.com/fonts/Emails/adelle_reg-webfont.svg#adelle_rgregular') format('svg');
-	font-weight: normal;
-	font-style: normal;
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&family=Urbanist:wght@100;200;300;400;500&display=swap'); */
+@font-face{
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype'),
+       url('/fonts/Montserrat/Montserrat-Italic-VariableFont_wght.ttf') format('truetype');
 }
 html, body {
   max-width: 100%;
   overflow-x: hidden;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
 }
  
 /*MARGIN LEFT DEL NAVBAR EMPEZANDO DESDE 'NOSOTROS'*/
@@ -286,13 +261,14 @@ html, body {
 }
 
 #menu-item1, #menu-item2, #menu-item3, #menu-item4, #menu-item5, #menu-item6, .dropdown-menu{
-  font-size: 13px;
+  font-size: 15px;
   border-radius: 0px !important;
 }
 
 /*PONER LOS BOTONES DE LA NAVBAR DE DIFERENTE COLOR CUANDO SE PASE EL MOUSE*/
 #menu-item1:hover, #menu-item2:hover, #menu-item3:hover, #menu-item4:hover, #menu-item5:hover, #menu-item6:hover{
   background: #918f8f;
+  color: white;
 }
 
 h1{
