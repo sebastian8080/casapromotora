@@ -1,8 +1,19 @@
 @extends('layouts.plantilla')
 
-@section('title', 'Encuentre el Proyecto Ideal 🏙')
+@section('title', 'Encuentre su Proyecto Ideal 🏙')
 
 @section('content-head')
+
+  <meta name="title" content="Casa Promotora - Encuentre su Proyecto Ideal" />
+  <meta name="description" content="Proyectos Inmobiliarios modernos y elegantes para disfrutar de la comodidad con su familia. Consulte para más información ✅ " />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ URL::current() }}" />
+  <meta property="og:title" content="Casa Promotora - Encuentre su Proyecto Ideal" />
+  <meta property="og:description" content="Proyectos Inmobiliarios modernos y elegantes para disfrutar de la comodidad con su familia. Consulte para más información ✅ " />
+  <meta property="og:image" content="{{ asset('img/about/oficinasnuevas-min.jpg') }}" />
+
   <style>
        input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;margin: 0;}
       /* FIREFOX */
