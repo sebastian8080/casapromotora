@@ -50,7 +50,7 @@
 <section class="container my-5">
   <div class="row">
     <div class="col-sm-12 col-12 col-md-12 col-xl-6">
-      <h2 class="subtitles" style="-webkit-text-stroke: 1px black; color: white; font-size: 5rem; font-weight: bold;">PROYECTOS <br> <span class="subtitles" style="color: #000000; font-size: 4rem;">EN VENTA</span></h2>
+      <h1 class="subtitles" style="-webkit-text-stroke: 1px black; color: white; font-size: 5rem; font-weight: bold;">PROYECTOS <br> <span class="subtitles" style="color: #000000; font-size: 4rem;">EN VENTA</span></h1>
       <p style="font-size: 18px">Conozca cada uno de los proyectos que tenemos y la nueva experiencia en proyectos inmobiliarios</p>
       <a class="btn btn-outline-dark rounded-0 border border-danger" style="font-size: 15px; font-weight: bold" href="{{ route('pages.projects') }}">VER TODOS LOS PROYECTOS</a>
     </div>
