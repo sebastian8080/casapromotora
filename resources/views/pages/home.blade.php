@@ -21,31 +21,26 @@
       /* OTHER */
       input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;margin: 0;}
       .form-control:focus {border-color: #FF0000;box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);}
+      #background-video {width: 100vw;height: 730px;object-fit: cover;left: 0;right: 0;top: 0;bottom: 0;z-index: -1;}
+      @media screen and (max-width: 758px){
+        #section-video, #background-video{
+          height: 520px !important;
+        }
+      }
   </style>
 @endsection
     
 @section('content')
-{{-- <section id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" style="position: relative; justify-content: center; display: flex;">
-  <div class="carousel-inner position-relative">
-    <div class="position-absolute text-white text-center" style="z-index: 3; left: 0; right: 0; margin: auto; top: 50%; transform: translateY(-50%);">
-      <h1 style="-webkit-text-stroke: 1px rgb(255, 255, 255); color: rgba(255, 255, 255, 0.118); font-size: 4rem; font-weight: bold;">SU PROPIEDAD, <br> <span>Y SU FUTURO</span> <br> <span >NUESTRA EXPERIENCIA</span></h1>
-    </div>
-      <div class="carousel-item active position-relative"  style="background:rgba(2, 2, 2, 0.5);">
-        <article style="height: 850px; background-repeat: no-repeat; background-size: cover; background-position: center; filter: brightness(60%); background-image: url('{{ asset('img/home/SLIDER-NUEVO-01-min.webp') }}');"></article>
-      </div>
-      <div class="carousel-item position-relative"  style="background:rgba(2, 2, 2, 0.5);">
-        <article style="height: 850px; background-repeat: no-repeat; background-size: cover; background-position: center; filter: brightness(60%); background-image: url('{{ asset('img/home/img2-home.webp') }}');"></article>
-      </div>
-      <div class="carousel-item position-relative"  style="background:rgba(2, 2, 2, 0.5);">
-        <article style="height: 850px; background-repeat: no-repeat; background-size: cover; background-position: center; filter: brightness(60%); background-image: url('{{ asset('img/home/img3-home.webp') }}');"></article>
-      </div>
-  </div>
-</section> --}}
-
-<section class="position-relative">
-  <video width="100%" src="{{ asset('video/home-video.mp4')}}" autoplay loop muted></video>
-  <div class="position-absolute bottom-0 start-50 translate-middle-x down-arrow"></div>
+<section id="section-video" style="height: 730px">
+  <video id="background-video" autoplay loop muted>
+    <source src="{{ asset('video/home-video.mp4')}}" type="video/mp4">
+    </video>
 </section>
+
+{{-- <section class="position-relative">
+  <video style="height: 50rem; width: 100%" src="{{ asset('video/home-video.mp4')}}" autoplay loop muted></video>
+  <div class="position-absolute bottom-0 start-50 translate-middle-x down-arrow"></div>
+</section> --}}
 
 <section class="container my-5">
   <div class="row">
@@ -203,26 +198,4 @@
 
 @section('section-scripts')
   <script src="{{ URL::asset('js/homepage.js'); }}"></script>
-  <script>
-    const selState = document.getElementById('state');
-    const selCity = document.getElementById('city');
-
-    selState.addEventListener("change", async function() {
-      selCity.options.length = 0;
-    let id = selState.options[selState.selectedIndex].dataset.id;
-    const response = await fetch("{{url('getcities')}}/"+id );
-    const cities = await response.json();
-    
-    var opt = document.createElement('option');
-          opt.appendChild( document.createTextNode('Seleccione Ciudad') );
-          opt.value = '';
-          selCity.appendChild(opt);
-    cities.forEach(city => {
-          var opt = document.createElement('option');
-          opt.appendChild( document.createTextNode(city.name) );
-          opt.value = city.name;
-          selCity.appendChild(opt);
-    });
-  });
-  </script>
 @endsection
