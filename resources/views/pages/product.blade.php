@@ -8,12 +8,12 @@
     <div class="container mt-5 pt-5">
         <div class="row">
             <div class="col-sm-2"></div>
-            <div class="col-sm-1">
+            <div class="col-sm-1 col-3">
                 @for ($i = 0; $i < 2; $i++)
                     <img class="img-fluid" src="{{ asset('img/partners/products/'.$product->url_image) }}" alt="">
                 @endfor
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-3 col-9">
                 <div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         @for ($i = 1; $i < 3; $i++)
@@ -31,6 +31,11 @@
                       <span class="visually-hidden">Next</span>
                     </button>
                   </div>
+                    @if($product->data_sheet != null)
+                    <div class="mt-3">
+                        <a href="{{ asset('uploads/products/dolmen/'. $product->data_sheet) }}" target="_blank" class="btn btn-danger rounded-pill shadow-sm">Ver Ficha Técnica</a>
+                    </div>
+                    @endif
             </div>
             <div class="col-sm-4">
                 <h2>{{ $product->descripcion}}</h2>

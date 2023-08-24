@@ -14,7 +14,8 @@ class Product extends Model
     protected $fillable = [
         'codigo', 'codigo_categoria', 'descripcion', 'pvp',
         'unidad_tipo', 'unidad_x_cantidad', 'm2_x_cantidad',
-        'kg_x_unidad', 'unidad_x_pallet', 'pvp_m2', 'url_image'
+        'kg_x_unidad', 'unidad_x_pallet', 'pvp_m2', 'url_image',
+        'data_sheet', 'created_at', 'updated_at'
     ];
 
     public function categoria(){
