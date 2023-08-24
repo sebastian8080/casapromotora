@@ -14,6 +14,8 @@
   <meta property="og:description" content="Proyectos Inmobiliarios modernos y elegantes para disfrutar de la comodidad con su familia. Consulte para más información ✅ " />
   <meta property="og:image" content="{{ asset('img/about/oficinasnuevas-min.jpg') }}" />
 
+  <meta property="keywords" content="proyectos inmobiliarios en cuenca, proyectos inmobiliarios cuenca, proyectos de vivienda en cuenca, inmobiliarias en cuenca ecuador, casas nuevas en venta, casas nuevas en venta cuenca">
+
   <style>
        input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;margin: 0;}
       /* FIREFOX */
