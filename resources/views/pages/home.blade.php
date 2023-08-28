@@ -17,6 +17,8 @@
   <meta name="keywords" content="proyectos inmobiliarios en cuenca, proyectos inmobiliarios cuenca, proyectos de vivienda en cuenca, inmobiliarias en cuenca ecuador, casas nuevas en venta, casas nuevas en venta cuenca">
 
   <style>
+      .text-shadow {
+        text-shadow: 1px 0px 0px black, -1px 0px 0px black, 0px 1px 0px black,  0px -1px 0px black; }
        input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;margin: 0;}
       /* FIREFOX */
       input[type="number"] {-moz-appearance: textfield;}input[type="number"]:hover,input[type="number"]:focus {-moz-appearance: number-input;}
@@ -47,7 +49,7 @@
 <section class="container my-5">
   <div class="row">
     <div class="col-sm-12 col-12 col-md-12 col-xl-6">
-      <h1 class="subtitles" style="-webkit-text-stroke: 1px black; color: white; font-size: 5rem; font-weight: bold;">PROYECTOS <br> <span class="subtitles" style="color: #000000; font-size: 4rem;">EN VENTA</span></h1>
+      <h1 class="subtitles text-shadow" style="color: white; font-size: 5rem; font-weight: bold; font-family: Montserrat">PROYECTOS <br> <span class="subtitles" style="color: #000000; font-size: 4rem;">EN VENTA</span></h1>
       <p style="font-size: 18px">Conozca cada uno de los proyectos que tenemos y la nueva experiencia en proyectos inmobiliarios</p>
       <a class="btn btn-outline-dark rounded-0 border border-danger" style="font-size: 15px; font-weight: bold" href="{{ route('pages.projects') }}">VER TODOS LOS PROYECTOS</a>
     </div>
@@ -55,7 +57,7 @@
 </section>
 
 <section class="container">
-  <h2 class="subtitles" style="-webkit-text-stroke: 1px black; color: white; font-size: 5rem; font-weight: bold; text-align: right">CONDOMINIOS</h2>
+  <h2 class="subtitles text-shadow" style="color: white; font-size: 5rem; font-weight: 700; text-align: right;">CONDOMINIOS</h2>
   <div class="row mt-4 justify-content-end">
     @foreach ($condominios as $condominio)
       <div class="col-12 col-sm-12 col-md-6 col-xl-4" data-aos="fade-right">
@@ -71,7 +73,7 @@
 </section>
 
 <section class="container pt-5">
-  <h2 class="subtitles" style="-webkit-text-stroke: 1px black; color: white; font-size: 5rem; font-weight: bold; text-align: right">DEPARTAMENTOS</h2>
+  <h2 class="subtitles text-shadow" style="color: white; font-size: 5rem; font-weight: bold; text-align: right">DEPARTAMENTOS</h2>
   <div class="row mt-4 justify-content-end">
     @foreach ($departments as $department)
       <div class="col-12 col-sm-12 col-md-6 col-xl-4 mb-4" data-aos="flip-left">
@@ -120,7 +122,7 @@
     <article class="col-12 col-sm-12 col-md-12 col-xl-5 text-center d-flex align-items-center justify-content-center">
       <div>
         <div class="d-inline-flex">
-          <h2 class="pb-3 subtitles" style="-webkit-text-stroke: 1px black; color: white; font-size: 4rem; font-weight: bold;  border-bottom: 1px solid #89062E">INFORMACIÓN <br> <span style="color: #000000;">DE CONTACTO</span></h2>
+          <h2 class="pb-3 subtitles text-shadow" style="color: white; font-size: 4rem; font-weight: bold;  border-bottom: 1px solid #89062E">INFORMACIÓN <br> <span style="color: #000000;">DE CONTACTO</span></h2>
         </div>
         <div class="mt-3" style="font-style: italic; font-size: 18px">
           <p>

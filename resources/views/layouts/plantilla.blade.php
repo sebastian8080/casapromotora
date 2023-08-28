@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="{{ asset('scss/style.scss?v=2') }}">
 
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,900" rel="stylesheet">
+
+
     <!-- Meta Pixel Code -->
     <script>
       !function(f,b,e,v,n,t,s)
