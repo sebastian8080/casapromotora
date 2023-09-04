@@ -135,6 +135,7 @@
       }
       @media screen and (max-width: 1200px){.img-top{ height: auto !important}.txt-inside-image-top{margin-top: 0px !important; margin-right: 0px !important;}.txt-inside-image-top > div {width: 100% !important}.txt-vertical{writing-mode: horizontal-tb !important; transform: rotate(360deg) !important}}
       @media screen and (max-width: 991px){.txt-inside-image-top > div > h2 {font-size: 4rem !important}.txt-short-description{height: auto !important; padding-bottom: 5rem !important}.container{padding-left: 10px !important; padding-right: 10px !important}.txt-type{font-size: 15px !important}}
+      .text-shadow { text-shadow: 1px 0px 0px black, -1px 0px 0px black, 0px 1px 0px black,  0px -1px 0px black; }
     </style>
 @endsection
 
@@ -543,7 +544,7 @@
         <img data-aos="fade-up" class="img-top" width="100%" height="500px" src="{{ $project->img_top != null ? asset('uploads/projects/900/'.$project->img_top) : asset('uploads/projects/900/'.$images[2]) }}" alt="">
         <div data-aos="fade-left" class="d-flex justify-content-end txt-inside-image-top" style="margin-top: -150px; margin-right: -200px;">
           <div class="bg-white d-flex align-items-center">
-            <h2 style="-webkit-text-stroke: 1px black; color: white; font-size: 7rem; font-weight: bold; line-height: 5rem; padding-top: 50px; padding-bottom: 50px; padding-left: 50px">@if($project->txt_inside_img_first){{ $project->txt_inside_img_first}} @else ACABADOS @endif <br> <span class="subtitles" style="color: #000000; font-size: 4rem;">@if($project->txt_inside_img_second) {{ $project->txt_inside_img_second}} @else ELEGANTES @endif</span></h2>
+            <h2 class="text-shadow" style="color: white; font-size: 7rem; font-weight: bold; line-height: 5rem; padding-top: 50px; padding-bottom: 50px; padding-left: 50px">@if($project->txt_inside_img_first){{ $project->txt_inside_img_first}} @else ACABADOS @endif <br> <span class="subtitles" style="color: #000000; font-size: 4rem;">@if($project->txt_inside_img_second) {{ $project->txt_inside_img_second}} @else ELEGANTES @endif</span></h2>
           </div>
         </div>
       </div>
@@ -602,7 +603,7 @@
   <section class="row my-5">
     <div data-aos="fade-up" class="col-12 col-sm-12 col-md-12 col-xl-3 txt-vertical" style="text-orientation: mixed; writing-mode: vertical-lr; transform: rotate(180deg)">
       <section>
-        <p class="subtitles" style="-webkit-text-stroke: 1px black; color: white; font-size: 5rem; font-weight: bold; width: 100%;">@if($project->slogan_first) {{ $project->slogan_first }} @else UN MEJOR @endif <span class="subtitles" style="color: black; font-size: 3rem">@if($project->slogan_second) {{ $project->slogan_second}} @else VIVIR @endif</span></p>
+        <p class="subtitles text-shadow" style="color: white; font-size: 5rem; font-weight: bold; width: 100%;">@if($project->slogan_first) {{ $project->slogan_first }} @else UN MEJOR @endif <span class="subtitles" style="color: black; font-size: 3rem">@if($project->slogan_second) {{ $project->slogan_second}} @else VIVIR @endif</span></p>
       </section>
     </div>
     <div class="col-12 col-sm-12 col-md-12 col-xl-9 d-flex align-items-center justify-content-center">
@@ -657,7 +658,7 @@
 <section class="bg-light py-5">
   <section class="container my-5">
     <section class="d-flex justify-content-center">
-      <h2 class="subtitles" style="-webkit-text-stroke: 1px black; color: white; font-size: 5rem; font-weight: bold;">FINANCIAMIENTO</h2>
+      <h2 class="subtitles text-shadow" style="color: white; font-size: 5rem; font-weight: bold;">FINANCIAMIENTO</h2>
     </section>
     <section class="row">
       <div class="col-sm-4">
@@ -749,7 +750,7 @@
 <section class="container my-5" id="contact_form">
   <section class="row">
     <div class="col-sm-5">
-      <h2 class="border-bottom border-danger subtitles" style="-webkit-text-stroke: 1px black; color: white; font-size: 5rem; font-weight: bold;">QUIERO MÁS <br> <span class="subtitles" style="color: black; font-size: 4rem">INFORMACIÓN</span></h2>
+      <h2 class="border-bottom border-danger subtitles text-shadow" style="color: white; font-size: 5rem; font-weight: bold;">QUIERO MÁS <br> <span class="subtitles" style="color: black; font-size: 4rem">INFORMACIÓN</span></h2>
       <p style="font-style: italic; font-size: 20px; font-weight: 100">Contáctanos y recibe la mejor asesoría</p>
     </div>
     <div class="col-12 col-sm-12 col-md-12 col-xl-7 bg-light py-5 px-5">

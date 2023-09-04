@@ -69,7 +69,7 @@
                 <div class="position-relative">
                     <img class="img-fluid" src="{{ asset('img/team/marketing'.$i.'.jpg') }}" alt="">
                     <div class="position-absolute top-0 start-50 translate-middle-x w-75">
-                        <p class="bg-white px-3 py-1 text-center fw-bold">@if($i == 1) JIMMY RIERA @elseif($i == 2) FERNANDA GUALPA @elseif($i == 3) ANDRES BARRERA @endif</p>
+                        <p class="bg-white px-3 py-1 text-center fw-bold">@if($i == 1) JIMMY RIERA @elseif($i == 2) FERNANDA GUALPA @endif</p>
                     </div>
                 </div>
             </div>

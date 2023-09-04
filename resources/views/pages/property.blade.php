@@ -14,6 +14,7 @@
             }
         }
         .header-section{ margin-top: 80px !important}
+        .text-shadow { text-shadow: 1px 0px 0px black, -1px 0px 0px black, 0px 1px 0px black,  0px -1px 0px black; }
     </style>
 @endsection
 
@@ -27,7 +28,7 @@
             <img class="img-fluid" src="{{ asset('uploads/projects/'. $images[0]) }}" alt="{{ $project->project_name }}">
             <section class="d-flex justify-content-end title" style="margin-top: -100px">
                 <div class="bg-white pt-4 px-4" style="line-height: 3.5rem" data-aos="fade-up" data-aos-duration="2000">
-                    <p class="subtitles" style="-webkit-text-stroke: 1px black; color: white; font-size: 4rem; font-weight: bold;">{{ $property->title }}</p>
+                    <p class="subtitles text-shadow" style="color: white; font-size: 4rem; font-weight: bold;">{{ $property->title }}</p>
                     <div class="d-flex gap-1">
                         @if($project->project_name == "SEASCAPE")<p style="font-size: 2rem">Desde</p>@endif
                         <p class="subtitles" style="-webkit-text-stroke: 1px rgb(0, 0, 0); color: rgb(0, 0, 0); font-size: 3rem; font-weight: bold;"> ${{ number_format($property->price) }}</p>
@@ -140,7 +141,7 @@
     <section class="container my-5" id="contact_form">
         <section class="row">
           <div class="col-sm-5">
-            <h2 class="border-bottom border-danger subtitles" style="-webkit-text-stroke: 1px black; color: white; font-size: 5rem; font-weight: bold;">QUIERO MÁS <br> <span class="subtitles" style="color: black; font-size: 4rem">INFORMACIÓN</span></h2>
+            <h2 class="border-bottom border-danger subtitles text-shadow" style="color: white; font-size: 5rem; font-weight: bold;">QUIERO MÁS <br> <span class="subtitles" style="color: black; font-size: 4rem">INFORMACIÓN</span></h2>
             <p style="font-style: italic; font-size: 20px; font-weight: 100">Contáctanos y recibe la mejor asesoría</p>
           </div>
           <div class="col-12 col-sm-12 col-md-12 col-xl-7 bg-light py-5 px-5">

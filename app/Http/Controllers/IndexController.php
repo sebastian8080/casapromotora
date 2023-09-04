@@ -55,7 +55,7 @@ class IndexController extends Controller
 
     public function store(Request $request){
         $to = "promotoracasacredito@gmail.com";
-        $subject = "Información en General - Casa Credito Promotora";
+        $subject = "Información en General - Casa Promotora";
         $message = "<br><strong>Información general</strong>
             <br>Nombre: " . strip_tags($request->nombre) ."
             <br>Teléfono: " . strip_tags($request->telefono_celular) ."
@@ -67,7 +67,7 @@ class IndexController extends Controller
         
         $message .= "<div style='display:flex'><img width='60' height='35' src='http://casacreditopromotora.com/logo-recortado.png' /><h3>Casa Crédito Promotora</h3></div>";
 
-        $header = "From: <info@casacreditopromotora.com>" . "\r\n" .
+        $header = "From: <info@casapromotora.com>" . "\r\n" .
                 "MIME-Version: 1.0" . "\r\n" .
                 "Content-Type:text/html;charset=UTF-8" . "\r\n";
 
@@ -115,8 +115,8 @@ class IndexController extends Controller
     }
 
     public function sendMailContact(Request $request){
-        $to = "info@casacredito.com";
-        $subject = "Información de contacto - Casa Crédito Promotora";
+        $to = "info@casacredito.com,promotoracasacredito@gmail.com";
+        $subject = "Información de contacto - Casa Promotora";
         $message = "<br><strong>Información de contacto</strong>
         <br>Nombre: " . strip_tags($request->nombre) ."
         <br>Teléfono: " . strip_tags($request->telefono) ."
@@ -130,7 +130,7 @@ class IndexController extends Controller
         <div style='display:flex'><img width='60' height='35' src='http://casacreditopromotora.com/logo-recortado.png' /><h3>Casa Crédito Promotora</h3></div>
         ";
 
-        $header = "From: <info@casacreditopromotora.com>" . "\r\n" .
+        $header = "From: <info@casapromotora.com>" . "\r\n" .
                 "MIME-Version: 1.0" . "\r\n" .
                 "Content-Type:text/html;charset=UTF-8" . "\r\n";
 
@@ -169,7 +169,7 @@ class IndexController extends Controller
 
     public function sendlead(Request $request){
 
-        $to = "info@casacredito.com";
+        $to = "info@casacredito.com,promotoracasacredito@gmail.com";
         $subject = "Lead - Casa Crédito Promotora | ". $request->name;
         $message = "<br><strong>Información de contacto</strong>
             <br><b>Nombre:</b> " . strip_tags($request->name) . " " .strip_tags($request->lastname)."
@@ -181,7 +181,7 @@ class IndexController extends Controller
             <br><b>Fuente:</b> " . " Website Casa Crédito Promotora" . "
         ";
 
-        $header =   "From: <lead_proyectos@casacreditopromotora.com>" . "\r\n" .
+        $header =   "From: <lead_proyectos@casapromotora.com>" . "\r\n" .
                     "MIME-Version: 1.0" . "\r\n" .
                     "Content-Type:text/html;charset=UTF-8" . "\r\n";
 
