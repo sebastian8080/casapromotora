@@ -5,6 +5,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\PartnersController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\LandingController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -65,3 +66,7 @@ Route::get('/getcities/{idState}', [IndexController::class, 'getCities'])->name(
 
 //SEND LEADS
 Route::post('/sendlead', [IndexController::class, 'sendlead'])->name('sendlead');
+
+//landings
+Route::get('/landing/departamentos-en-venta', [LandingController::class, 'index'])->name('landing.index');
+Route::post('/landing/send-lead', [LandingController::class, 'sendlead'])->name('landing.send.lead');
