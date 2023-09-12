@@ -14,7 +14,7 @@
             font-family: 'Montserrat'
         }
     </style>
-    @livewireStyles()
+    <livewire:styles />
 </head>
 <body>
 
@@ -121,7 +121,7 @@
     @endphp
 @endif
 
-@livewireScripts()
+<livewire:scripts />
 <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
 </body>
 </html>
