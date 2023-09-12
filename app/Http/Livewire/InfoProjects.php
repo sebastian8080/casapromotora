@@ -13,8 +13,8 @@ class InfoProjects extends Component
 
     public function mount(){
         if($this->type == "casas") $this->type = "condominios";
-        $this->images = Category::select('images')->where('type', 'LIKE', "%".$this->type."%")->first();
-        $this->project_aux = Category::where('type', 'LIKE', '%'. $this->type . '%')->first();
+        $this->images = Category::select('images')->where('type', 'LIKE', "%".$this->type."%")->where('status', 1)->first();
+        $this->project_aux = Category::where('type', 'LIKE', '%'. $this->type . '%')->where('status', 1)->first();
     }
 
 
