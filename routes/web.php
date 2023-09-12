@@ -68,5 +68,5 @@ Route::get('/getcities/{idState}', [IndexController::class, 'getCities'])->name(
 Route::post('/sendlead', [IndexController::class, 'sendlead'])->name('sendlead');
 
 //landings
-Route::get('/landing/departamentos-en-venta', [LandingController::class, 'index'])->name('landing.index');
+Route::get('/landing/{type}-en-venta', [LandingController::class, 'index'])->name('landing.index');
 Route::post('/landing/send-lead', [LandingController::class, 'sendlead'])->name('landing.send.lead');

@@ -9,10 +9,11 @@ class CarouselProjects extends Component
 {
 
     public $projects;
-    public $type = "Departamentos";
+    public $type;
 
     public function mount(){
-        $this->projects = Category::where('type', 'LIKE', '%departamentos%')->get();
+        if($this->type == "casas") $this->type = "condominios";
+        $this->projects = Category::where('type', 'LIKE', '%'.$this->type.'%')->get();
     }
 
     public function render()

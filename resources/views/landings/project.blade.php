@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Proyecto Adra</title>
+    <title>{{ ucfirst($type) }} en Venta | Casa Promotora</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,900" rel="stylesheet">
     <style>
@@ -58,9 +58,9 @@
           </nav>
     </header>
 
-    <livewire:carousel-projects />
+    <livewire:carousel-projects :type="$type" />
 
-    <livewire:info-projects />
+    <livewire:info-projects :type="$type" />
 
     <footer class="bg-[#F7F7F7] text-center py-5 w-full font-semibold">
         <p>CASAPROMOTORA Copyright</p>

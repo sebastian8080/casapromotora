@@ -8,18 +8,21 @@ use App\Models\Project\Property;
 
 class LandingController extends Controller
 {
-    public function index(){
+    public function index($type){
         // $projects = Category::where('type', 'LIKE', '%departamentos%')->get();
         //$property = Property::select('price')->where('category_id', $project->category_id)->min('price');
 
         // return view('landings.project', compact('project', 'property'));
-
-        return view('landings.project');
+        if($type == "departamentos" || $type == "casas"){
+            return view('landings.project', compact('type'));
+        } else {
+            return redirect()->route('pages.projects');
+        }
     }
 
     public function sendlead(Request $request){
         
-        $to = "sebas31051999@gmail.com"; //info@casacredito.com
+        $to = "info@casapromotora.com"; //info@casacredito.com
         $subject = "Lead Promotora - " . strip_tags($request->name);
         $message = "<br><strong>Información del Lead</strong>
             <br><b>Nombre:</b> " . strip_tags($request->name) ." ". strip_tags($request->lastname) ."
@@ -34,6 +37,7 @@ class LandingController extends Controller
                 "Content-Type:text/html;charset=UTF-8" . "\r\n";
 
         $sended = mail($to, $subject, $message, $header);
+        mail('sebas31051999@gmail.com', $subject, $message, $header);
 
         return redirect()->back()->with('status', $sended);
     }

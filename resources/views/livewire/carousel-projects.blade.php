@@ -24,7 +24,7 @@
                                             </div>
                                         </div>
                                         <div class="justify-center">
-                                            <img src="{{ asset('img/alison-fachada.png') }}" alt="">
+                                            <img src="{{ asset('uploads/projects/cropped/'.$project->cropped_image) }}" alt="">
                                         </div>
                                     </section>
                                 </section>

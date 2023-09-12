@@ -2,7 +2,7 @@
     <section class="container mx-auto mt-10 md:mt-0 py-0 lg:py-36" id="price">
         <section class="grid grid-rows lg:grid-cols-2 gap-x-20">
             <div class="relative">
-                <img src="{{ asset('img/alison-entrada.jpg') }}" alt="">
+                <img src="{{ asset('uploads/projects/'.strtok($images->images, '|')) }}" alt="">
             </div>
             <div class="text-center md:text-justify">
                 <p class="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 mt-10 lg:mt-0">DESDE</p>
@@ -31,24 +31,23 @@
     <section id="gallery" class="py-0 lg:pt-10">
         <section class="container mx-auto hidden lg:block">
             <div class="grid grid-rows grid-cols-2 lg:grid-cols-5">
-                @for ($i = 1; $i < 11; $i++)
+                @foreach (array_filter(explode("|", $images->images)) as $img)
                     <div>
-                        <img src="{{ asset('img/alison-entrada.jpg') }}" alt="">
+                        <img src="{{ asset('uploads/projects/300/'. $img) }}" alt="">
                     </div>
-                @endfor
+                @endforeach
             </div>
         </section>
     
         <section class="block lg:hidden container mx-auto">
             <div class="w-full">
-    
                 <div id="default-carousel" class="relative" data-carousel="static">
                     <div class="overflow-hidden relative h-56 sm:h-96">
-                        @for ($i = 1; $i < 11; $i++)
+                        @foreach (array_filter(explode("|", $images->images)) as $img)
                             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="{{ asset('img/alison-entrada.jpg') }}" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
+                                <img src="{{ asset('uploads/projects/300/'. $img) }}" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
                             </div>
-                        @endfor
+                        @endforeach
                     </div>
                     <button type="button" class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-prev>
                         <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
@@ -91,7 +90,7 @@
                         </div>
                         <div class="grid grid-cols-1 gap-x-4 my-3">
                             <textarea class="px-5 py-2 rounded-md" name="message" rows="4" placeholder="Mensaje" required></textarea>
-                            <input type="hidden" name="interest" value="Adra">
+                            <input type="hidden" name="interest" value="{{ $project_aux->project_name }}">
                         </div>
                         <div>
                             <button class="bg-slate-950 text-white px-5 py-2 w-full rounded-md hover:bg-slate-700">CONSULTAR</button>

@@ -9,12 +9,20 @@ use App\Models\Project\Property;
 class InfoProjects extends Component
 {
 
-    public $projects, $project_aux, $property;
+    public $projects, $project_aux, $property, $images, $type;
+
+    public function mount(){
+        if($this->type == "casas") $this->type = "condominios";
+        $this->images = Category::select('images')->where('type', 'LIKE', "%".$this->type."%")->first();
+    }
 
 
     public function changeProject($name){
-        $this->project_aux = Category::where('project_name', 'LIKE', "%".$name."%")->first();
-        $this->property = Property::select('price')->where('category_id', $this->project_aux->category_id)->min('price');
+        if($name != null || $name != ""){
+            $this->project_aux = Category::where('project_name', 'LIKE', "%".$name."%")->first();
+            $this->property = Property::select('price')->where('category_id', $this->project_aux->category_id)->min('price');
+            $this->images = Category::select('images')->where('project_name', 'LIKE', "%". $name ."%")->first();
+        }
     }
 
     public function render()
@@ -24,7 +32,8 @@ class InfoProjects extends Component
 
         return view('livewire.info-projects', [
             'project_aux' => $this->project_aux,
-            'property' => $this->property
+            'property' => $this->property,
+            'images' => $this->images
         ]);
     }
 }
