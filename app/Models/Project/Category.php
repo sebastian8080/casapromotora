@@ -18,6 +18,7 @@ class Category extends Model
         'img_header', 'img_top', 'txt_description', 'txt_inside_img_first', 'txt_inside_img_second', 'slogan_first', 'slogan_second', 'url_maps',
         'status',
         'entrance', 'dues', 'bank_credit',
-        'created_at', 'updated_at'
+        'created_at', 'updated_at',
+        'cropped_image'
     ];
 }
