@@ -93,7 +93,7 @@
 
                     <!-- Full-width images with number and caption text -->
                     @foreach (array_filter(explode("|", $images->images)) as $img)
-                        <div class="mySlides fade">
+                        <div class="mySlides fade" style="display: @if($loop->index == 0) block @else none @endif">
                             <div class="numbertext">{{ $loop->index + 1 }}/ {{count(array_filter(explode("|", $images->images)))}}</div>
                             <img src="{{ asset('uploads/projects/300/'. $img) }}" style="width:100%">
                             <div class="text">{{ $project_aux->project_name}}</div>
