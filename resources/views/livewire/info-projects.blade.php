@@ -69,7 +69,7 @@
     <section class="container mx-auto pb-10 mt-0 lg:mt-20 lg:mb-20" id="contact">
         <section class="grid grid-rows md:grid-cols-2">
             <div class="relative">
-                <img src="{{ asset('img/contact-photo.jpg') }}" alt="">
+                <img class="hidden lg:block" src="{{ asset('img/contact-photo.jpg') }}" alt="">
                 <div class="p-5 md:p-0 md:absolute right-0 top-[40%]">
                     <p class="text-3xl lg:text-4xl xl:text-5xl font-semibold">CONTÁCTANOS</p>
                     <p class="text-lg flex items-center my-5 pr-0 md:pr-10"><img width="30px" src="{{ asset('img/location-icon.png') }}" alt=""> Av. Fray Vicente Solano y Remigio Tamariz</p>
@@ -77,10 +77,10 @@
                 </div>
             </div>
             <div class="flex justify-center items-center bg-[#F7F7F7]">
-                <form action="{{ route('landing.send.lead') }}" method="POST">
+                <form class="w-full" action="{{ route('landing.send.lead') }}" method="POST">
                 @csrf
                     <div class="gap-y-4 w-full px-10 mt-5 md:mt-0">
-                        <div class="grid grid-rows md:grid-cols-2 gap-x-4 my-3">
+                        <div class="grid grid-rows md:grid-cols-2 gap-x-4 my-3 w-full">
                             <input type="text" name="name" class="px-5 py-2 rounded-md mb-3 md:mb-0" placeholder="Nombre" required>
                             <input type="text" name="lastname" class="px-5 py-2 rounded-md" placeholder="Apellido" required>
                         </div>
