@@ -65,7 +65,7 @@
                 <div id="animation-carousel" class="relative w-full" data-carousel="static">
                     <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
                         @foreach (array_filter(explode("|", $images->images)) as $img)
-                            <div class="hidden duration-200 ease-linear" data-carousel-item>
+                            <div class="@if($loop->index == 0) hidden @endif duration-200 ease-linear" data-carousel-item>
                                 <img src="{{ asset('uploads/projects/300/'. $img) }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                             </div>
                         @endforeach
