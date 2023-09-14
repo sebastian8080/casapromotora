@@ -1,6 +1,6 @@
 <div>
     <section class="container mx-auto">
-        <h1 id="title" class="text-center text-[2rem] sm:text-[4rem] md:text-[5rem] lg:text-[6rem] xl:text-[8rem] text-[#F7F7F7] font-semibold tracking-wider">{{ strtoupper($type) }}</h1>
+        <h1 id="title" class="text-center text-[2rem] sm:text-[4rem] md:text-[5rem] lg:text-[6rem] xl:text-[8rem] text-[#eaeaea] font-semibold tracking-wider">{{ strtoupper($type) }}</h1>
     </section>
 
     <section class="block mx-auto">
