@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ ucfirst($type) }} en Venta | Casa Promotora</title>
+    <meta name="title" content="{{ ucfirst($type) }} en Venta | Casa Promotora" />
+    <meta name="description" content="{{ ucfirst($type) }} de Venta para la comodidad de su familia. Encuentre los proyectos inmobiliarios más destacados e innovadores del país ✅" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ Request::url() }}" />
+    <meta property="og:title" content="{{ ucfirst($type) }} en Venta | Casa Promotora" />
+    <meta property="og:description" content="{{ ucfirst($type) }} de Venta para la comodidad de su familia. Encuentre los proyectos inmobiliarios más destacados e innovadores del país ✅" />
+    <meta property="og:image" content="{{ asset('img/casa-promotora-og.jpg') }}" />
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,900" rel="stylesheet">
     <style>
