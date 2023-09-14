@@ -29,7 +29,7 @@
         <div class="bg-white  absolute top-0 left-0 z-1">
             <ul></ul>
         </div> --}}
-        <nav class="bg-white border-gray-200 dark:bg-gray-900">
+        <nav class="bg-white border-gray-200">
             <div class="flex items-center justify-between">
               <div class="flex items-center">
                     <img class="w-[140px] md:w-[200px]" src="{{ asset('img/color_promotora.png') }}" alt="">
