@@ -13,8 +13,8 @@
                                 <section class="container mx-auto">
                                     <section class="grid grid-rows justify-center lg:grid-cols-2">
                                         <div class="">
-                                            <h2 class="text-[3rem] md:text-[3rem] lg:text-[4rem] xl:text-[5rem] leading-tight" style="color: #000000; font-weight: bold; padding-top: 50px; padding-bottom: 50px; padding-left: 50px"> ACABADOS <br> <span class="text-[#F7F7F7] font-semibold text-[3rem] md:text-[4rem] lg:text-[5rem] xl:text-[6rem]" style="text-shadow: 1px 0px 0px black, -1px 0px 0px black, 0px 1px 0px black,  0px -1px 0px black;">ELEGANTES</span></h2>
-                                            <div class="px-12 text-center md:text-justify">
+                                            <h2 class="text-[3rem] md:text-[3rem] lg:text-[4rem] xl:text-[5rem] leading-tight text-center md:text-justify" style="color: #000000; font-weight: bold; padding-top: 50px; padding-bottom: 50px;"> ACABADOS <br> <span class="text-[#F7F7F7] font-semibold text-[3rem] md:text-[4rem] lg:text-[5rem] xl:text-[6rem]" style="text-shadow: 1px 0px 0px black, -1px 0px 0px black, 0px 1px 0px black,  0px -1px 0px black;">ELEGANTES</span></h2>
+                                            <div class="text-center md:text-justify">
                                                 <p class="font-semibold text-3xl">SECTOR</p>
                                                 <p class="text-3xl">{{ $project->address }}</p>
                                                 {{-- <button class="bg-slate-950 text-white px-5 py-3 mt-4 hover:bg-slate-700" data-modal-target="defaultModal" data-modal-toggle="defaultModal">CONSULTAR</button> --}}
