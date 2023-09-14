@@ -49,7 +49,7 @@
               </div>
             </div>
             <div class="w-full hidden md:w-auto" id="navbar-default">
-              <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 shadow bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+              <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 bg-white border border-gray-100 shadow bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0">
                   <li class="text-xl font-semibold hover:bg-slate-950 hover:text-white cursor-pointer px-5 py-2"><a href="#price">PRECIO</a></li>
                   <li class="text-xl font-semibold hover:bg-slate-950 hover:text-white cursor-pointer px-5 py-2"><a href="#gallery">GALERIA</a></li>
                   <li class="text-xl font-semibold hover:bg-slate-950 hover:text-white cursor-pointer px-5 py-2"><a href="#contact">CONTÁCTENOS</a></li>
