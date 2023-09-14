@@ -151,6 +151,6 @@
             let carousel = document.querySelector('.z-20');
             console.log(carousel.dataset.carouselItem);
             @this.changeProject(carousel.dataset.carouselItem);
-        }, 1000);
+        }, 500);
     }
 </script>
