@@ -36,7 +36,7 @@
                             <section class="bg-[#F7F7F7] h-[700px] flex items-center">
                                 <section class="container mx-auto">
                                     <section class="flex items-center justify-center">
-                                        <button class="bg-slate-950 text-white px-5 py-2">VER MAS PROYECTOS</button>
+                                        <a class="bg-slate-950 text-white px-5 py-2" href="{{ route('pages.projects') }}">VER MAS PROYECTOS</a>
                                     </section>
                                 </section>
                             </section>
