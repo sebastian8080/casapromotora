@@ -13,7 +13,7 @@ class CarouselProjects extends Component
 
     public function mount(){
         if($this->type == "casas") $this->type = "condominios";
-        $this->projects = Category::where('type', 'LIKE', '%'.$this->type.'%')->where('project_name', '!=', 'Futura Narancay')->get();
+        $this->projects = Category::where('type', 'LIKE', '%'.$this->type.'%')->where('project_name', '!=', 'Futura Narancay')->where('status', 1)->get();
     }
 
     public function render()
