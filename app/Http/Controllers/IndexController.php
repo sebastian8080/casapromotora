@@ -54,7 +54,7 @@ class IndexController extends Controller
     //info@casacredito.com,hserrano@casacredito.com
 
     public function store(Request $request){
-        $to = "promotoracasacredito@gmail.com";
+        $to = "info@casapromotora.com";
         $subject = "Información en General - Casa Promotora";
         $message = "<br><strong>Información general</strong>
             <br>Nombre: " . strip_tags($request->nombre) ."
@@ -115,7 +115,7 @@ class IndexController extends Controller
     }
 
     public function sendMailContact(Request $request){
-        $to = "info@casacredito.com,promotoracasacredito@gmail.com";
+        $to = "info@casapromotora.com";
         $subject = "Información de contacto - Casa Promotora";
         $message = "<br><strong>Información de contacto</strong>
         <br>Nombre: " . strip_tags($request->nombre) ."
@@ -134,8 +134,8 @@ class IndexController extends Controller
                 "MIME-Version: 1.0" . "\r\n" .
                 "Content-Type:text/html;charset=UTF-8" . "\r\n";
 
-        mail($to, $subject, $message, $header);
         mail('sebas31051999@gmail.com', $subject, $message, $header);
+        mail($to, $subject, $message, $header);
 
         $request->session()->flash('validContact', 'Se ha enviado el correo');
 
@@ -170,7 +170,7 @@ class IndexController extends Controller
 
     public function sendlead(Request $request){
 
-        $to = "info@casacredito.com,promotoracasacredito@gmail.com";
+        $to = "info@casapromotora.com";
         $subject = "Lead - Casa Crédito Promotora | ". $request->name;
         $message = "<br><strong>Información de contacto</strong>
             <br><b>Nombre:</b> " . strip_tags($request->name) . " " .strip_tags($request->lastname)."
