@@ -54,13 +54,16 @@ class IndexController extends Controller
     //info@casacredito.com,hserrano@casacredito.com
 
     public function store(Request $request){
-        $to = "info@casapromotora.com";
-        $subject = "Información en General - Casa Promotora";
+
+        $to = "info@casacredito.com";
+        $subject = "Lead Promotora - ". strip_tags($request->nombre);
         $message = "<br><strong>Información general</strong>
             <br>Nombre: " . strip_tags($request->nombre) ."
             <br>Teléfono: " . strip_tags($request->telefono_celular) ."
             <br>Email: " . strip_tags($request->correo) ."
             <br>Mensaje: " . strip_tags($request->mensaje) ."
+            <br>Interes: General
+            <br>Fuente: " . url()->previous() . "
             ";
 
         if($request->interest) $message .= "<br>Interes: Proyecto " . strip_tags($request->interest );
@@ -186,6 +189,7 @@ class IndexController extends Controller
                     "MIME-Version: 1.0" . "\r\n" .
                     "Content-Type:text/html;charset=UTF-8" . "\r\n";
 
+        mail('sebas31051999@gmail.com', $subject, $message, $header);
         mail($to, $subject, $message, $header);
 
         return redirect()->back()->with('status', 'Se ha enviado la información');
