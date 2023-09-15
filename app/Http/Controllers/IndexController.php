@@ -171,8 +171,8 @@ class IndexController extends Controller
 
     public function sendlead(Request $request){
 
-        $to = "info@casapromotora.com";
-        $subject = "Lead - Casa Crédito Promotora | ". $request->name;
+        $to = "info@casacredito.com";
+        $subject = "Lead - Casa Promotora | ". $request->name;
         $message = "<br><strong>Información de contacto</strong>
             <br><b>Nombre:</b> " . strip_tags($request->name) . " " .strip_tags($request->lastname)."
             <br><b>Teléfono:</b> " . strip_tags($request->phone) ."
@@ -180,7 +180,7 @@ class IndexController extends Controller
             <br><b>Proyecto:</b> " . strip_tags($request->type) ."
             <br><b>Ciudad:</b> " . strip_tags($request->city) ."
             <br><b>Mensaje:</b> " . strip_tags($request->comment) . " 
-            <br><b>Fuente:</b> " . " Website Casa Crédito Promotora" . "
+            <br><b>Fuente:</b> " . " Website " . url()->previous() . "
         ";
 
         $header =   "From: <lead_proyectos@casapromotora.com>" . "\r\n" .
