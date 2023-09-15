@@ -59,7 +59,7 @@ class IndexController extends Controller
         $to = "info@casacredito.com";
         $subject = "Lead Promotora - ". strip_tags($request->nombre);
         $message = "<br><strong>Información general</strong>
-            <br>Nombre: " . strip_tags($request->nombre) ."
+            <br>Nombre: " . strip_tags($request->nombre) ." " . strip_tags($request->apellido) . "
             <br>Teléfono: " . strip_tags($request->telefono_celular) ."
             <br>Email: " . strip_tags($request->correo) ."
             <br>Mensaje: " . strip_tags($request->mensaje) ."
