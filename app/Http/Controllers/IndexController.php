@@ -26,7 +26,8 @@ class IndexController extends Controller
     }
 
     public function redirectToContact(){
-        return view('pages.contact');
+        $projects = Category::where('status', 1)->get();
+        return view('pages.contact', compact('projects'));
     }
 
     public function redirectToPartners(){
@@ -117,22 +118,20 @@ class IndexController extends Controller
     }
 
     public function sendMailContact(Request $request){
-        $to = "info@casapromotora.com";
+        $to = "info@casacredito.com";
         $subject = "Información de contacto - Casa Promotora";
         $message = "<br><strong>Información de contacto</strong>
         <br>Nombre: " . strip_tags($request->nombre) ."
         <br>Teléfono: " . strip_tags($request->telefono) ."
         <br>Email: " . strip_tags($request->email) . "
         <br>Interes: " . strip_tags($request->interes) . "
-        <br>Operación: " . strip_tags($request->operacion) ."
-        <br>Precio máximo: " . strip_tags($request->preciomaximo) ."
-        <br>Población: " . strip_tags($request->ciudad) ."
+        <br>Ciudad: " . strip_tags($request->ciudad) ."
         <br>Zona: " . strip_tags($request->zona) ."
         <br>Mensaje " . strip_tags($request->mensaje) ."
-        <div style='display:flex'><img width='60' height='35' src='http://casacreditopromotora.com/logo-recortado.png' /><h3>Casa Crédito Promotora</h3></div>
+        <br>Fuente: Website - Contáctenos
         ";
 
-        $header = "From: <info@casapromotora.com>" . "\r\n" .
+        $header = "From: <leads@casapromotora.com>" . "\r\n" .
                 "MIME-Version: 1.0" . "\r\n" .
                 "Content-Type:text/html;charset=UTF-8" . "\r\n";
 

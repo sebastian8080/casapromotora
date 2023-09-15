@@ -60,23 +60,12 @@
                     <div class="row">
                         <div class="col">
                             <select class="form-control mb-4" name="interes" required>
-                                <option value="">Elija</option>
-                                <option value="DEPARTAMENTOS ADRA">Departamentos Adra</option>
-                                <option value="DEPARTAMENTOS FUTURA NARANCAY">Departamentos Futura Narancay</option>
-                                <option value="CONDOMINIOS TOSCANA">Condominios Toscana</option>
+                                <option value="">Seleccionar proyecto</option>
+                                @foreach ($projects as $project)
+                                    <option value="{{ $project->type }} {{ $project->project_name}}">{{ $project->type}} {{ $project->project_name}}</option>
+                                @endforeach
                             </select>
                         </div>
-                        <div class="col">
-                            <select class="form-control mb-4" name="operacion" required>
-                                <option value="">Operación</option>
-                                <option value="Venta">Venta</option>
-                                <option value="Alquiler">Alquiler</option>
-                            </select>
-                        </div>
-                    </div>
-                
-                    <div class="form-outline mb-4">
-                        <input type="number" class="form-control" name="preciomaximo" placeholder="Precio máximo" autocomplete="off" required>
                     </div>
                     <div class="row">
                         <div class="col">
