@@ -119,7 +119,7 @@ class IndexController extends Controller
 
     public function sendMailContact(Request $request){
         $to = "info@casacredito.com";
-        $subject = "Información de contacto - Casa Promotora";
+        $subject = "Lead Promotora - " . strip_tags($request->nombre);
         $message = "<br><strong>Información de contacto</strong>
         <br>Nombre: " . strip_tags($request->nombre) ."
         <br>Teléfono: " . strip_tags($request->telefono) ."
