@@ -62,15 +62,14 @@ class IndexController extends Controller
             <br>Teléfono: " . strip_tags($request->telefono_celular) ."
             <br>Email: " . strip_tags($request->correo) ."
             <br>Mensaje: " . strip_tags($request->mensaje) ."
-            <br>Interes: General
-            <br>Fuente: " . url()->previous() . "
             ";
 
         if($request->interest) $message .= "<br>Interes: Proyecto " . strip_tags($request->interest );
-        
-        $message .= "<div style='display:flex'><img width='60' height='35' src='http://casacreditopromotora.com/logo-recortado.png' /><h3>Casa Crédito Promotora</h3></div>";
+        else $message .= "<br>Interes: General";
 
-        $header = "From: <info@casapromotora.com>" . "\r\n" .
+        $message .= "<br>Fuente: " . url()->previous();
+
+        $header = "From: <leads@casapromotora.com>" . "\r\n" .
                 "MIME-Version: 1.0" . "\r\n" .
                 "Content-Type:text/html;charset=UTF-8" . "\r\n";
 
