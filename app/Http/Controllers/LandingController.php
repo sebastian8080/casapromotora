@@ -22,7 +22,7 @@ class LandingController extends Controller
 
     public function sendlead(Request $request){
         
-        $to = "info@casapromotora.com"; //info@casacredito.com
+        $to = "info@casacredito.com"; //info@casacredito.com
         $subject = "Lead Promotora - " . strip_tags($request->name);
         $message = "<br><strong>Información del Lead</strong>
             <br><b>Nombre:</b> " . strip_tags($request->name) ." ". strip_tags($request->lastname) ."
