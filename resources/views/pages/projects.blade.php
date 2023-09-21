@@ -93,7 +93,7 @@
             <div class="col-sm-8">
                 <div class="mx-5 mt-3">
                     <p class="h4" style="color: rgb(83, 83, 83) !important"><b style="font-family: 'Raleway', sans-serif;">¿Por qué</b> comprar su casa en</p>
-                    <p style="color: transparent; -webkit-text-stroke: 1px rgb(162, 157, 157);font-family: 'Raleway', sans-serif" class="h1"> CUENCA?</p>
+                    <p style="color: transparent; -webkit-text-stroke: 1px rgb(162, 157, 157);font-family: 'Raleway', sans-serif" class="h1"> ECUADOR?</p>
                     <hr class="text-danger w-50">
                     <div>
                         <i class="text-muted" style="font-size: 14px">
