@@ -70,8 +70,18 @@
             @endif
         </div>
         <div class="row mt-3 rounded-0 shadow-sm border p-3 bg-white">
-            <div>
-                <p class="h5 font-weight-bold">Detalle de la Propiedad</p>
+            <div class="row w-100">
+                <div class="col-sm-8">
+                    <p class="h5 font-weight-bold">Detalle de la Propiedad</p>
+                </div>
+                @isset($property)
+                    <div class="col-sm-4 justify-content-end">
+                        <div>
+                            {!! Form::label('status', 'Estado', ['class' => 'font-weight-normal', 'style' => 'font-size: 15px']) !!}
+                            {!! Form::select('status', ['' => 'Seleccione', 1 => 'Activa', 0 => 'Desactivada'], null, ['class' => 'form-control rounded-0', 'style' => 'font-size: 15px']) !!}
+                        </div>
+                    </div>
+                @endisset
             </div>
             <div class="form-group w-100">
                 <i class="fas fa-quote-right"></i> {!! Form::label('title', 'Titulo de la Propiedad', ['class' => 'font-weight-normal']) !!}

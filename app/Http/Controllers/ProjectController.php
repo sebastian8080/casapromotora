@@ -292,6 +292,7 @@ class ProjectController extends Controller
         $property->bedrooms = $request->bedrooms;
         $property->bathrooms = $request->bathrooms;
         $property->garage = $request->garage;
+        $property->status = $request->status;
 
         $property->save();
 
