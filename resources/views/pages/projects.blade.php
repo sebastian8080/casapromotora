@@ -46,14 +46,14 @@
             </div>
             <div class="col-sm-6">
                 <div class="pt-5 pb-5 text-end" style="padding-left: 15%; padding-right: 15%;background-color: #ebebeb">
-                    <p class="text-muted"><i>Contamos con proyectos de arquitectos y diseñadores líderes de Cuenca y de todo el país, los cuáles se han convertido en nuevos puntos destacados del creciente horizonte de la ciudad</i></p>
+                    <p class="text-muted"><i>Contamos con proyectos de arquitectos y diseñadores líderes en todo el Ecuador, los cuáles se han convertido en nuevos puntos destacados del creciente horizonte del país</i></p>
                     <button class="btn btn-outline-secondary rounded-0 fw-bold shadow-sm d-none">Ver proyectos</button>
                 </div>
             </div>
         </div>
         <div class="row mt-5 mb-3 justify-content-center">
             @foreach ($projects as $project)
-                <div class="col-sm-4">
+                <div class="col-sm-4 mb-5">
                     <a href="{{route('projects.viewProject', [strtolower($project->type), $project->slug])}}">
                         <img class="img-fluid" src="{{asset('uploads/projects/900/'.strtok($project->images, "|"))}}" alt="">
                     </a>
@@ -88,7 +88,39 @@
 
         <div class="row mt-5 py-4" style="background-color: #f1f1f1">
             <div class="col-sm-4 d-flex align-items-center">
-                <img class="img-fluid" src="{{asset('img/projects/cuenca_iglesia_cupula.jpg')}}" alt="">
+                <div id="carouselCountryInfo" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img class="img-fluid" src="{{asset('img/projects/cuenca_iglesia_cupula.jpg')}}" alt="">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Cuenca</h5>
+                            <p>Ciudad de Historia y Belleza</p>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img class="img-fluid" src="{{asset('img/projects/quito.jpg')}}" alt="">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Quito</h5>
+                            <p>Cuna de cultura y paisajes</p>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img class="img-fluid" src="{{asset('img/projects/guayaquil.jpg')}}" alt="">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Guayaquil</h5>
+                            <p>Puerto dinámico y encanto costeño</p>
+                        </div>
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselCountryInfo" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselCountryInfo" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
             </div>
             <div class="col-sm-8">
                 <div class="mx-5 mt-3">
@@ -97,10 +129,10 @@
                     <hr class="text-danger w-50">
                     <div>
                         <i class="text-muted" style="font-size: 14px">
-                            <p>Es la tercera ciudad más grande de Ecuador, conocida como el principal centro cultural del país, ganándose el calificativo «Atenas del Ecuador». Dotada de paisajes a los alrededores realmente deslumbrantes.</p>
-                            <p>Cuenca es sinónimo de arquitectura e historia. El legado español es patente en el centro histórico, con edificaciones de baja y uniforme altura. Por suerte, se ha ido respetando este patrón que le da tanta riqueza e identidad a la ciudad.</p>
-                            <p>Muchas empresas e inversores empezaron a apostar su capital en la construcción de vivienda en esta ciudad y a desarrollar muchos otros proyectos de diversa índole como colegios, restaurantes, hospitales y mejores opciones de red, vías y alcantarillado.</p>
-                            <p>En caso de que Cuenca sea la ciudad ideal para usted y esté buscando vivienda, lo invitamos a que se ponga en contacto con Casa Crédito y descubra las opciones inmobiliarias.</p>
+                            <p>Ecuador es el destino perfecto para comprar una casa debido a sus lugares llenos de encanto y belleza natural</p>
+                            <p>Es un país conocido por su impresionante diversidad geográfica que va desde playas doradas hasta picos nevados. Posee una cultura vibrante y una historia rica, por lo cual es el lugar perfecto para vivir nuevas experiencias y oportunidades emocionantes.</p>
+                            <p>Comprar una casa nueva en Ecuador le brinda la oportunidad de vivir en una ubicación que se adapte a sus deseos, ya sea cerca de la playa, en la montaña o en la ciudad.</p>
+                            <p style="font-weight: 500">Una casa nueva es una inversión en su futuro y el de su familia</p>
                         </i>
                     </div>
                 </div>
