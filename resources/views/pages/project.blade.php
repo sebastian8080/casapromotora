@@ -617,21 +617,27 @@
               </div> --}}
             </article>
           </div>
-          <div class=" col-6 col-sm-4 mb-3">
-            <article>
-              <img style="cursor: pointer" onclick="addactive(2)" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" class="img-fluid" src="{{ asset('uploads/projects/900/'.$images[3]) }}" alt="">
-            </article>
-          </div>
-          <div class=" col-6 col-sm-4 mb-3">
-            <article>
-              <img style="cursor: pointer" onclick="addactive(3)" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" class="img-fluid" src="{{ asset('uploads/projects/900/'.$images[4]) }}" alt="">
-            </article>
-          </div>    
-          <div class="col-6 col-sm-4 mb-3">
-            <article>
-              <img style="cursor: pointer" onclick="addactive(4)" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" class="img-fluid" src="{{ asset('uploads/projects/900/'.$images[5]) }}" alt="">
-            </article>
-          </div>
+          @if(count($images)>2)
+            <div class=" col-6 col-sm-4 mb-3">
+              <article>
+                <img style="cursor: pointer" onclick="addactive(2)" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" class="img-fluid" src="{{ asset('uploads/projects/900/'.$images[3]) }}" alt="">
+              </article>
+            </div>
+          @endif
+          @if(count($images)>3)
+            <div class=" col-6 col-sm-4 mb-3">
+              <article>
+                <img style="cursor: pointer" onclick="addactive(3)" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" class="img-fluid" src="{{ asset('uploads/projects/900/'.$images[4]) }}" alt="">
+              </article>
+            </div>
+          @endif
+          @if(count($images)>4) 
+            <div class="col-6 col-sm-4 mb-3">
+              <article>
+                <img style="cursor: pointer" onclick="addactive(4)" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" class="img-fluid" src="{{ asset('uploads/projects/900/'.$images[5]) }}" alt="">
+              </article>
+            </div>
+          @endif
           @if(count($images)>5)
             <div class=" col-6 col-sm-4 mb-3">
               <article>
