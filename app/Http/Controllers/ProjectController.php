@@ -314,7 +314,7 @@ class ProjectController extends Controller
         $project = Category::where('slug', 'LIKE', "%$slug%")->first();
         $similarprojects = Category::all();
         if($project && $type != null && $slug != null && $property_slug == null) {
-            $list_properties = Property::where('category_id', $project->category_id)->get();
+            $list_properties = Property::where('category_id', $project->category_id)->where('status', 1)->get();
             return view('pages.project', compact('project', 'list_properties', 'similarprojects'));
         } else if($project && $type != null && $slug != null && $property_slug != null){
             $property = Property::where('slug', 'LIKE', $property_slug)->first();
