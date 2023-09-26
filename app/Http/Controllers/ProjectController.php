@@ -199,6 +199,9 @@ class ProjectController extends Controller
             }    
         }
 
+        $project->state = $request->state;
+        $project->city = $request->city;
+
         $project_category->address = $request->address;
         $project_category->status = $request->status;
         $project_category->url_maps = $request->url_maps;
