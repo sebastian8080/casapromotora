@@ -46,6 +46,31 @@
   <div class="position-absolute bottom-0 start-50 translate-middle-x down-arrow"></div>
 </section> --}}
 
+{{-- <section>
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active position-relative">
+        <video class="d-block w-100" src="{{ asset('video/olas-de-mar.mp4') }}" autoplay loop muted></video>
+        <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
+          <h2 class="fw-bold">DEPARTAMENTOS</h2>
+          <p><span class="fw-bold">DISFRUTA DEL</span> SOL, ARENA Y MAR JUSTO EN <span class="fw-bold">TU PUERTA</span></p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <video src="{{ asset('video/casas-nuevas.mp4') }}" class="d-block w-100" autoplay loop muted></video>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</section> --}}
+
 <section class="container my-5">
   <div class="row">
     <div class="col-sm-12 col-12 col-md-12 col-xl-6">
@@ -71,11 +96,11 @@
     @endforeach
   </div>
 </section>
-<section class="container">
+<section class="container mt-5">
   <h2 class="subtitles text-shadow" style="color: white; font-size: 5rem; font-weight: 700; text-align: right;">CONDOMINIOS</h2>
   <div class="row mt-4 justify-content-end">
     @foreach ($condominios as $condominio)
-      <div class="col-12 col-sm-12 col-md-6 col-xl-4" data-aos="fade-right">
+      <div class="col-12 col-sm-12 col-md-6 col-xl-4 mb-4" data-aos="fade-right">
         <a href="{{ route('projects.viewProject', [strtolower($condominio->type), $condominio->slug]) }}">
           <article class="position-relative">
             <img  width="100%" height="350px" src="{{ asset('uploads/projects/300/' . strtok($condominio->images, '|')) }}" alt="{{ $condominio->type }} en Venta en Cuenca">
