@@ -14,7 +14,7 @@
   <meta property="og:description" content="Proyectos Inmobiliarios modernos y elegantes para disfrutar de la comodidad con su familia. Consulte para más información ✅ " />
   <meta property="og:image" content="{{ asset('img/about/oficinasnuevas-min.jpg') }}" />
 
-  <meta name="keywords" content="proyectos inmobiliarios en cuenca, proyectos inmobiliarios cuenca, proyectos de vivienda en cuenca, inmobiliarias en cuenca ecuador, casas nuevas en venta, casas nuevas en venta cuenca">
+  <meta name="keywords" content="proyectos inmobiliarios en cuenca, proyectos inmobiliarios cuenca, proyectos de vivienda en cuenca, inmobiliarias en cuenca ecuador, casas nuevas en venta, casas nuevas en venta cuenca, casas de venta, casas de venta en cuenca, casas de venta nuevas cuenca, casas de venta nuevas en cuenca, casas en venta en cuenca, casas de venta en ecuador cuenca, venta de casas en ecuador cuenca, casas en venta en cuenca ecuador, casas en venta ecuador cuenca, cuenca ecuador casas en venta, venta de casa cuenca">
 
   <style>
       .text-shadow {
@@ -83,6 +83,7 @@
 
 <section class="container pt-5">
   <h2 class="subtitles text-shadow" style="color: white; font-size: 5rem; font-weight: bold; text-align: right">DEPARTAMENTOS</h2>
+  <p class="h5 mt-3 mb-4 txt-subtitles" style="text-align: right;">Departamentos de venta en lugares prestigiosos</p>
   <div class="row mt-4 justify-content-end">
     @foreach ($departments as $department)
       <div class="col-12 col-sm-12 col-md-6 col-xl-4 mb-4" data-aos="flip-left">
@@ -98,6 +99,7 @@
 </section>
 <section class="container mt-5">
   <h2 class="subtitles text-shadow" style="color: white; font-size: 5rem; font-weight: 700; text-align: right;">CONDOMINIOS</h2>
+  <p class="h5 mt-3 mb-4 txt-subtitles" style="text-align: right">Casas en venta en ubicaciones ideales</p>
   <div class="row mt-4 justify-content-end">
     @foreach ($condominios as $condominio)
       <div class="col-12 col-sm-12 col-md-6 col-xl-4 mb-4" data-aos="fade-right">
