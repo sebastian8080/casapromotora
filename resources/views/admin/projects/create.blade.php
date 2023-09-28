@@ -54,6 +54,10 @@
                                 {!! Form::label('project_name', 'Nombre del Proyecto', ['class' => 'h5 fw-normal']) !!}
                                 {!! Form::text('project_name', null, ['class' => 'form-control rounded-0', 'required']) !!}
                             </div>
+                            <div class="w-100 ml-1 mr-1">
+                                {!! Form::label('abbr', 'Abreviatura', ['class' => 'h5 fw-normal']) !!}
+                                {!! Form::text('abbr', null, ['class' => 'form-control rounded-0', 'required']) !!}
+                            </div>
                             <div class="w-100 ml-1">
                                 {!! Form::label('type', 'Tipo', ['class' => 'h5']) !!}
                                 {!! Form::select('type', [null => "Seleccione", "Condominios" => "Condominios", "Departamentos" => "Departamentos"], null, ['class' => 'form-control rounded-0']) !!}

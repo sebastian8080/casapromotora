@@ -19,6 +19,7 @@ class Category extends Model
         'status',
         'entrance', 'dues', 'bank_credit',
         'created_at', 'updated_at',
-        'cropped_image'
+        'cropped_image',
+        'abbr'
     ];
 }
