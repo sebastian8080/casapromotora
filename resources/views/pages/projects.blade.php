@@ -58,7 +58,7 @@
                         <img class="img-fluid" src="{{asset('uploads/projects/900/'.strtok($project->images, "|"))}}" alt="">
                     </a>
                     <div class="text-center mt-4 mb-4">
-                        <h2 style="color: #ffffff; -webkit-text-stroke: 1px rgb(162, 157, 157);font-family: 'Raleway', sans-serif" class="h1">{{strtoupper($project->project_name)}}</h2>
+                        <h2 style="color: #ffffff; -webkit-text-stroke: 1px rgb(162, 157, 157);font-family: 'Raleway', sans-serif" class="h1">{{strtoupper($project->abbr)}}</h2>
                         <hr style="height: 1px; color: rgb(255, 0, 0)">
                         <p class="h4 fw-bold" style="color: rgb(83, 83, 83) !important">{{strtoupper($project->type)}}</p>
                         <p class="text-danger fw-bold" style="margin-bottom: 5px">UBICACIÓN</p>
