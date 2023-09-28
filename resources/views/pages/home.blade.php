@@ -89,7 +89,7 @@
         <a href="{{ route('projects.viewProject', [strtolower($department->type), $department->slug]) }}">
           <article class="position-relative">
             <img  width="100%" height="350px" src="{{ asset('uploads/projects/300/' . strtok($department->images, '|')) }}" alt="{{ $department->type }} en Venta en Cuenca">
-            <p class="position-absolute @if($loop->index == 0)bottom-0 start-0 @elseif($loop->index == 1)bottom-0 start-50 translate-middle-x @elseif($loop->index == 2)bottom-0 end-0 @endif bg-white text-dark px-3 py-1 text-center" style="width: 70%; margin-bottom:0px; font-weight: 600">{{ strtoupper($department->project_name) }}</p>
+            <p class="position-absolute @if($loop->index == 0)bottom-0 start-0 @elseif($loop->index == 1)bottom-0 start-50 translate-middle-x @elseif($loop->index == 2)bottom-0 end-0 @endif bg-white text-dark px-3 py-1 text-center" style="width: 70%; margin-bottom:0px; font-weight: 600">{{ strtoupper($department->abbr) }}</p>
           </article>
         </a>
       </div>
@@ -104,7 +104,7 @@
         <a href="{{ route('projects.viewProject', [strtolower($condominio->type), $condominio->slug]) }}">
           <article class="position-relative">
             <img  width="100%" height="350px" src="{{ asset('uploads/projects/300/' . strtok($condominio->images, '|')) }}" alt="{{ $condominio->type }} en Venta en Cuenca">
-            <p class="position-absolute @if($loop->index == 0)bottom-0 start-0 @elseif($loop->index == 1)bottom-0 start-50 translate-middle-x @elseif($loop->index == 2) bottom-0 end-0 @endif bg-white text-dark px-3 py-1 text-center" style="width: 70%; margin-bottom:0px; font-weight: 600">{{ strtoupper($condominio->project_name) }}</p>
+            <p class="position-absolute @if($loop->index == 0)bottom-0 start-0 @elseif($loop->index == 1)bottom-0 start-50 translate-middle-x @elseif($loop->index == 2) bottom-0 end-0 @endif bg-white text-dark px-3 py-1 text-center" style="width: 70%; margin-bottom:0px; font-weight: 600">{{ strtoupper($condominio->abbr) }}</p>
           </article>
         </a>
       </div>

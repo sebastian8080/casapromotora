@@ -529,7 +529,7 @@
   <section style="height: 800px; margin-top: 50px; background-repeat: no-repeat; background-size: cover; background-position: center; background-image: url('{{ $project->img_header != null ? asset('uploads/projects/900/'.$project->img_header) : asset('uploads/projects/'.$images[1]) }}')">
     <div class="d-flex justify-content-center align-items-center" style="height: 900px">
       <div>
-        <h1 class="text-white display-1 fw-bold" style="margin-bottom: 0px">{{ strtoupper($project->project_name) }}</h1>
+        <h1 class="text-white display-1 fw-bold" style="margin-bottom: 0px">{{ strtoupper($project->abbr) }}</h1>
         <p class="w-100 text-white fw-bold txt-type" style="text-align: right; margin-top:-10px; font-size: 25px">{{ strtoupper($project->type) }}</p>
         <div class="mt-5 text-center">
           <a href="#contact_form" class="btn btn-light fw-bold px-5" style="scroll-behavior: smooth">CONSULTAR</a href="#contact_form">
