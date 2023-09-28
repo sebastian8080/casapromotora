@@ -360,5 +360,5 @@ h1{
 .links-footer{text-decoration: none;}
 
 /* new home page styles */
-@media (max-width: 991px){.subtitles{font-size: 2.4rem !important; text-align: left !important}.credit-div{margin: 0px !important; flex-direction: row !important}.contact-section{margin: 0px !important;}.footer-section{padding-left: 0px !important; padding-right: 0px !important;}.footer-section > section > div{border: none !important; justify-content: left !important;}}
+@media (max-width: 991px){.subtitles{font-size: 2.4rem !important; text-align: left !important}.credit-div{margin: 0px !important; flex-direction: row !important}.contact-section{margin: 0px !important;}.footer-section{padding-left: 0px !important; padding-right: 0px !important;}.footer-section > section > div{border: none !important; justify-content: left !important;}.txt-subtitles{text-align: justify !important ;}}
 
