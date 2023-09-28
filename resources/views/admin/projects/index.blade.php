@@ -27,6 +27,7 @@
                 <th scope="col">Imagen</th>
                 <th scope="col">Código</th>
                 <th scope="col">Nombre del Proyecto</th>
+                <th scope="col">Abreviatura</th>
                 <th scope="col">Tipo</th>
                 <th scope="col">Dirección</th>
                 <th>Acciones</th>
@@ -38,6 +39,7 @@
                     <th><img width="60px" src="{{asset('uploads/projects/300/'.strtok($project->images, '|'))}}" alt=""></th>
                     <th scope="row">{{$project->project_code}}</th>
                     <td>{{$project->project_name}}</td>
+                    <td>{{ $project->abbr}}</td>
                     <td>{{$project->type}}</td>
                     <td>{{$project->state . ", " . $project->city . ", " . $project->address}}</td>
                     <td>
