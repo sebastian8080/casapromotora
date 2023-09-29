@@ -8,7 +8,16 @@ use App\Models\Project\Category;
 class ApiController extends Controller
 {
     public function getprojects(){
-        $projects = Category::select('project_code', 'type', 'project_name', 'state', 'city', 'address', 'slug', 'images', 'status')->where('status', 1)->get();
+        
+        $projects = Category::select('category_id', 'project_code', 'type', 'project_name', 'state', 'city', 'address', 'slug', 'images', 'status')->where('status', 1)->get();
+        
         return $projects;
+    }
+
+    public function getprojectbyid($id){
+
+        $project = Category::where('category_id', $id)->first();
+
+        return $project;
     }
 }
