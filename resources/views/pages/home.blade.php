@@ -46,11 +46,11 @@
 
 <section>
   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-    {{-- <div class="carousel-indicators">
+    <div class="carousel-indicators">
       <button style="width: 10px; height: 10px;" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active rounded-circle" aria-current="true" aria-label="Slide 1"></button>
       <button style="width: 10px; height: 10px;" type="button" class="rounded-circle" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
       <button style="width: 10px; height: 10px;" type="button" class="rounded-circle" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div> --}}
+    </div>
     <div class="carousel-inner position-relative" style="height: 850px">
       <article class="carousel-item active">
         <section style="height: 850px; background-position: center center; background-size: cover; background-image: url('{{ asset('img/home/carousel1.jpg') }}');"></section>
