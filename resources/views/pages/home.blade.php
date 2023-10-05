@@ -107,7 +107,7 @@
     <div class="carousel-inner">
       <div class="carousel-item active">
         <div class="container">
-          <div class="row justify-content-between carousel-projects">
+          <div class="row justify-content-center carousel-projects">
             @for ($i = 0; $i < 3; $i++)
               <div class="col-sm-4 d-flex align-items-end justify-content-center" style="width: 20rem; height: 15rem">
                 <div>
@@ -121,10 +121,11 @@
           </div>
         </div>
       </div>
+      @if(count($projects)>3)
       <div class="carousel-item">
         <div class="container">
           <div class="row justify-content-center carousel-projects">
-            @for ($i = 3; $i < 5; $i++)
+            @for ($i = 3; $i < 6; $i++)
               <div class="col-sm-4 d-flex align-items-end justify-content-center" style="width: 20rem; height: 15rem">
                 <div>
                   <a href="{{ route('projects.viewProject', [strtolower($projects[$i]['type']), $projects[$i]['slug']]) }}">
@@ -137,6 +138,25 @@
           </div>
         </div>
       </div>
+      @endif
+      @if(count($projects)>6)
+      <div class="carousel-item">
+        <div class="container">
+          <div class="row justify-content-center carousel-projects">
+            @for ($i = 6; $i < 9; $i++)
+              <div class="col-sm-4 d-flex align-items-end justify-content-center" style="width: 20rem; height: 15rem">
+                <div>
+                  <a href="{{ route('projects.viewProject', [strtolower($projects[$i]['type']), $projects[$i]['slug']]) }}">
+                    <img src="{{ asset('uploads/projects/cropped/'. $projects[$i]['cropped_image']) }}" class="card-img-top ing-fluid" alt="...">
+                  </a>
+                  <p class="fs-6 fw-bold text-center mt-3">{{ $projects[$i]['type'] }}</p>
+                </div>
+              </div>
+            @endfor
+          </div>
+        </div>
+      </div>
+      @endif
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
