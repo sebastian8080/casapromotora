@@ -111,7 +111,7 @@
             @for ($i = 0; $i < 3; $i++)
               <div class="col-sm-4 d-flex align-items-end justify-content-center" style="width: 20rem; height: 15rem">
                 <div>
-                  <img src="{{ asset('uploads/projects/300/'. $projects[$i]['cropped_image']) }}" class="card-img-top ing-fluid" alt="...">
+                  <img src="{{ asset('uploads/projects/cropped/'. $projects[$i]['cropped_image']) }}" class="card-img-top ing-fluid" alt="...">
                   <p class="fs-6 fw-bold text-center mt-3">{{ $projects[$i]['type'] }}</p>
                 </div>
               </div>
