@@ -102,6 +102,10 @@
   </section>
 </section>
 
+<section>
+  {{ count($projects) }}
+</section>
+
 <section class="my-5">
   <div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
     <div class="carousel-inner">
