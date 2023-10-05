@@ -102,10 +102,6 @@
   </section>
 </section>
 
-<section>
-  {{ count($projects) }}
-</section>
-
 <section class="my-5">
   <div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
     <div class="carousel-inner">
@@ -124,24 +120,16 @@
         </div>
       </div>
       <div class="carousel-item">
-        <div class="card-wrapper container-sm d-flex justify-content-around">
-          <div class="d-flex align-items-end justify-content-center" style="width: 20rem; height: 20rem">
-            <div>
-              <img src="{{ asset('img/projects/adra_cropped.png') }}" class="card-img-top ing-fluid" alt="...">
-              <p class="fs-6 fw-bold text-center mt-3">OFICINAS</p>
-            </div>
-          </div>
-          <div class="d-flex align-items-end justify-content-center" style="width: 20rem; height: 20rem">
-            <div>
-              <img src="{{ asset('img/projects/monte_sol_cropped.png') }}" class="card-img-top ing-fluid" alt="...">
-              <p class="fs-6 fw-bold text-center mt-3">OFICINAS</p>
-            </div>
-          </div>
-          <div class="d-flex align-items-end jsutify-content-center" style="width: 20rem; height: 20rem">
-            <div>
-              <img src="{{ asset('img/projects/seascape_cropped.png') }}" class="card-img-top ing-fluid" alt="...">
-              <p class="fs-6 fw-bold text-center mt-3">OFICINAS</p>
-            </div>
+        <div class="container">
+          <div class="row justify-content-between carousel-projects">
+            @for ($i = 3; $i < 6; $i++)
+              <div class="col-sm-4 d-flex align-items-end justify-content-center" style="width: 20rem; height: 15rem">
+                <div>
+                  <img src="{{ asset('uploads/projects/cropped/'. $projects[$i]['cropped_image']) }}" class="card-img-top ing-fluid" alt="...">
+                  <p class="fs-6 fw-bold text-center mt-3">{{ $projects[$i]['type'] }}</p>
+                </div>
+              </div>
+            @endfor
           </div>
         </div>
       </div>
