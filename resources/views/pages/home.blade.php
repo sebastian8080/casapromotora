@@ -1,4 +1,4 @@
-@extends('layouts.plantilla')
+a@extends('layouts.plantilla')
 
 @section('title', 'Encuentre su Proyecto Ideal 🏙')
 
@@ -193,7 +193,9 @@
       @foreach ($latest_projects as $p)
         <article class="col-sm-4 text-center mb-3">
           <p class="bg-dark text-white fs-5 py-1 rounded">PROYECTO {{ $p->abbr}}</p>
-          <img src="{{ asset('uploads/projects/300/'. strtok($p->images, '|'))}}" alt="" class="img-fluid">
+          <a href="{{ route('projects.viewProject', [$p->type, $p->slug]) }}">
+            <img src="{{ asset('uploads/projects/300/'. strtok($p->images, '|'))}}" alt="" class="img-fluid">
+          </a>
         </article>
       @endforeach
     </section>
@@ -208,20 +210,20 @@
         @csrf
         <div class="mt-5 row">
           <div class="col-sm-6 mb-5">
-            <input type="text" name="nombre" placeholder="Nombre" class="border-bottom w-100 text-dark fw-bold">
+            <input type="text" name="nombre" placeholder="Nombre" class="border-bottom w-100 text-dark fw-bold" required>
           </div>
           <div class="col-sm-6 mb-5">
-            <input type="text" name="apellido" placeholder="Apellido" class="border-bottom w-100 text-dark fw-bold">
+            <input type="text" name="apellido" placeholder="Apellido" class="border-bottom w-100 text-dark fw-bold" required>
           </div>
         </div>
         <div class="mb-5">
-          <input type="email" name="correo" placeholder="Correo electrónico" class="border-bottom w-100 fw-bold">
+          <input type="email" name="correo" placeholder="Correo electrónico" class="border-bottom w-100 fw-bold" required>
         </div>
         <div class="my-5">
-          <input type="number" name="telefono_celular" placeholder="Número de teléfono" class="border-bottom w-100 fw-bold">
+          <input type="number" name="telefono_celular" placeholder="Número de teléfono" class="border-bottom w-100 fw-bold" required>
         </div>
         <div class="my-5">
-          <input type="text" name="mensaje" placeholder="Mensaje" class="border-bottom w-100 fw-bold">
+          <input type="text" name="mensaje" placeholder="Mensaje" class="border-bottom w-100 fw-bold" required>
         </div>
         <div class="d-flex justify-content-center">
           <button class="btn btn-light rounded-0 text-dark border fw-bold px-4">ENVIAR</button>
