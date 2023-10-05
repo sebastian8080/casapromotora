@@ -111,7 +111,9 @@
             @for ($i = 0; $i < 3; $i++)
               <div class="col-sm-4 d-flex align-items-end justify-content-center" style="width: 20rem; height: 15rem">
                 <div>
-                  <img src="{{ asset('uploads/projects/cropped/'. $projects[$i]['cropped_image']) }}" class="card-img-top ing-fluid" alt="...">
+                  <a href="{{ route('projects.viewProject', [strtolower($projects[$i]['type']), $projects[$i]['slug']]) }}">
+                    <img src="{{ asset('uploads/projects/cropped/'. $projects[$i]['cropped_image']) }}" class="card-img-top ing-fluid" alt="...">
+                  </a>
                   <p class="fs-6 fw-bold text-center mt-3">{{ $projects[$i]['type'] }}</p>
                 </div>
               </div>
@@ -122,10 +124,12 @@
       <div class="carousel-item">
         <div class="container">
           <div class="row justify-content-between carousel-projects">
-            @for ($i = 3; $i < 6; $i++)
+            @for ($i = 3; $i < 5; $i++)
               <div class="col-sm-4 d-flex align-items-end justify-content-center" style="width: 20rem; height: 15rem">
                 <div>
-                  <img src="{{ asset('uploads/projects/cropped/'. $projects[$i]['cropped_image']) }}" class="card-img-top ing-fluid" alt="...">
+                  <a href="{{ route('projects.viewProject', [strtolower($projects[$i]['type']), $projects[$i]['slug']]) }}">
+                    <img src="{{ asset('uploads/projects/cropped/'. $projects[$i]['cropped_image']) }}" class="card-img-top ing-fluid" alt="...">
+                  </a>
                   <p class="fs-6 fw-bold text-center mt-3">{{ $projects[$i]['type'] }}</p>
                 </div>
               </div>
