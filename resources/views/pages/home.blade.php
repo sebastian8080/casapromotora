@@ -123,7 +123,7 @@
       </div>
       <div class="carousel-item">
         <div class="container">
-          <div class="row justify-content-between carousel-projects">
+          <div class="row justify-content-center carousel-projects">
             @for ($i = 3; $i < 5; $i++)
               <div class="col-sm-4 d-flex align-items-end justify-content-center" style="width: 20rem; height: 15rem">
                 <div>
