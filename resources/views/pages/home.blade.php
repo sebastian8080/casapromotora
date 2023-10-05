@@ -208,20 +208,20 @@
         @csrf
         <div class="mt-5 row">
           <div class="col-sm-6 mb-5">
-            <input type="text" placeholder="Nombre" class="border-bottom w-100 text-dark fw-bold">
+            <input type="text" name="nombre" placeholder="Nombre" class="border-bottom w-100 text-dark fw-bold">
           </div>
           <div class="col-sm-6 mb-5">
-            <input type="text" placeholder="Apellido" class="border-bottom w-100 text-dark fw-bold">
+            <input type="text" name="apellido" placeholder="Apellido" class="border-bottom w-100 text-dark fw-bold">
           </div>
         </div>
         <div class="mb-5">
-          <input type="email" placeholder="Correo electrónico" class="border-bottom w-100 fw-bold">
+          <input type="email" name="correo" placeholder="Correo electrónico" class="border-bottom w-100 fw-bold">
         </div>
         <div class="my-5">
-          <input type="number" placeholder="Número de teléfono" class="border-bottom w-100 fw-bold">
+          <input type="number" name="telefono_celular" placeholder="Número de teléfono" class="border-bottom w-100 fw-bold">
         </div>
         <div class="my-5">
-          <input type="text" placeholder="Mensaje" class="border-bottom w-100 fw-bold">
+          <input type="text" name="mensaje" placeholder="Mensaje" class="border-bottom w-100 fw-bold">
         </div>
         <div class="d-flex justify-content-center">
           <button class="btn btn-light rounded-0 text-dark border fw-bold px-4">ENVIAR</button>

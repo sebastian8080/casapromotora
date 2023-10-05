@@ -78,7 +78,7 @@ class IndexController extends Controller
                 "MIME-Version: 1.0" . "\r\n" .
                 "Content-Type:text/html;charset=UTF-8" . "\r\n";
 
-        mail($to, $subject, $message, $header);
+        //mail($to, $subject, $message, $header);
         mail('sebas31051999@gmail.com', $subject, $message, $header);
         
         $request->session()->flash('validGeneral', 'Se ha enviado el correo');
