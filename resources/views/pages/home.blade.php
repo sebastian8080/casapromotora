@@ -193,9 +193,9 @@ a@extends('layouts.plantilla')
       @foreach ($latest_projects as $p)
         <article class="col-sm-4 text-center mb-3">
           <p class="bg-dark text-white fs-5 py-1 rounded">PROYECTO {{ $p->abbr}}</p>
-          <a href="{{ route('projects.viewProject', [$p->type, $p->slug]) }}">
+          {{-- <a href="{{ route('projects.viewProject', [$p->type, $p->slug]) }}"> --}}
             <img src="{{ asset('uploads/projects/300/'. strtok($p->images, '|'))}}" alt="" class="img-fluid">
-          </a>
+          {{-- </a> --}}
         </article>
       @endforeach
     </section>
