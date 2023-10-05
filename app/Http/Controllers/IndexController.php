@@ -18,7 +18,11 @@ class IndexController extends Controller
     public function redirectToHome(){
         $departments = Category::where('type', 'Departamentos')->where('status', 1)->take(3)->get();
         $condominios = Category::where('type', 'Condominios')->where('status', 1)->take(3)->get();
-        return view('pages.home', compact('departments', 'condominios'));
+
+        $projects = Category::where('status', 1)->take(6)->get();
+        $latest_projects = Category::where('status', 1)->take(3)->latest()->get();
+
+        return view('pages.home', compact('departments', 'condominios', 'projects', 'latest_projects'));
     }
 
     public function redirectToAbout(){

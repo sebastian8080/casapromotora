@@ -30,48 +30,192 @@
         #section-video, #background-video{
           height: 520px !important;
         }
+        .carousel-inner, .carousel-item > section { height: 730px !important}
+        .btncontact { top: 45% !important; right: 25% !important}
+        .carousel-projects{justify-content: center !important}
+      }
+      input{
+        outline: none;
+        border: none;
       }
   </style>
 @endsection
     
 @section('content')
-<section id="section-video" style="height: 730px">
+
+
+<section>
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+    {{-- <div class="carousel-indicators">
+      <button style="width: 10px; height: 10px;" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active rounded-circle" aria-current="true" aria-label="Slide 1"></button>
+      <button style="width: 10px; height: 10px;" type="button" class="rounded-circle" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button style="width: 10px; height: 10px;" type="button" class="rounded-circle" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div> --}}
+    <div class="carousel-inner position-relative" style="height: 850px">
+      <article class="carousel-item active">
+        <section style="height: 850px; background-position: center center; background-size: cover; background-image: url('{{ asset('img/home/carousel1.jpg') }}');"></section>
+      </article>
+      <article class="carousel-item">
+        <section style="height: 850px; background-position: center center; background-size: cover; background-image: url('{{ asset('img/home/carousel2.jpg') }}');"></section>
+      </article>
+      <article class="carousel-item">
+        <section style="height: 850px; background-position: center center; background-size: cover; background-image: url('{{ asset('img/home/carousel3.jpg') }}');"></section>
+      </article>
+      <div class="position-absolute top-50 start-50 translate-middle text-white display-1 text-center" style="font-family: Montserrat">
+        <span>UN NUEVO</span> <br>
+        <span class="fw-bold">ESTILO DE VIDA</span> <br>
+        <a href="{{ route('pages.projects') }}" class="btn btn-outline-light rounded-pill">VER PROYECTOS</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container mt-4" id="scroll">
+  <a href="#scroll" style="text-decoration: none; color:  #000000">
+    <div class="text-center">
+      <span style="font-weight: normal">Desplazar</span> <br>
+      <img width="50px" height="40px" src="{{ asset('img/desplazar.gif') }}" alt="">
+    </div>
+  </a>
+</section>
+
+{{-- <section id="section-video" style="height: 730px">
   <video id="background-video" autoplay loop muted>
     <source src="{{ asset('video/home-video.mp4')}}" type="video/mp4">
     </video>
-</section>
-
-{{-- <section class="position-relative">
-  <video style="height: 50rem; width: 100%" src="{{ asset('video/home-video.mp4')}}" autoplay loop muted></video>
-  <div class="position-absolute bottom-0 start-50 translate-middle-x down-arrow"></div>
 </section> --}}
 
-{{-- <section>
-  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+<section class="container mt-5">
+  <section class="row">
+    <div class="col-sm-6 bg-light" style="padding-left: 0px !important; padding-right: 0px !important">
+      <article class="p-5">
+        <p style="font-weight: 500" class="fs-5">Contamos con  proyectos de arquitectos y diseñadores líderes en todo el Ecuador, los cuáles se han convertido en nuevos puntos destacados del creciente horizonte del país</p>
+        <br> <br> <br>
+        <a href="#consultar" class="btn btn-dark">Consultar más información</a>
+      </article>
+    </div>
+    <div class="col-sm-6" style="padding-left: 0px !important; padding-right: 0px !important">
+      <article>
+        <video class="img-fluid" src="{{ asset('video/SEASCAPE-VIDEO.mp4') }}" autoplay loop muted></video>
+      </article>
+    </div>
+  </section>
+</section>
+
+<section class="my-5">
+  <div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-      <div class="carousel-item active position-relative">
-        <video class="d-block w-100" src="{{ asset('video/olas-de-mar.mp4') }}" autoplay loop muted></video>
-        <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
-          <h2 class="fw-bold">DEPARTAMENTOS</h2>
-          <p><span class="fw-bold">DISFRUTA DEL</span> SOL, ARENA Y MAR JUSTO EN <span class="fw-bold">TU PUERTA</span></p>
+      <div class="carousel-item active">
+        <div class="container">
+          <div class="row justify-content-between carousel-projects">
+            @for ($i = 0; $i < 3; $i++)
+              <div class="col-sm-4 d-flex align-items-end justify-content-center" style="width: 20rem; height: 15rem">
+                <div>
+                  <img src="{{ asset('uploads/projects/300/'. $projects[$i]['cropped_image']) }}" class="card-img-top ing-fluid" alt="...">
+                  <p class="fs-6 fw-bold text-center mt-3">{{ $projects[$i]['type'] }}</p>
+                </div>
+              </div>
+            @endfor
+          </div>
         </div>
       </div>
       <div class="carousel-item">
-        <video src="{{ asset('video/casas-nuevas.mp4') }}" class="d-block w-100" autoplay loop muted></video>
+        <div class="card-wrapper container-sm d-flex justify-content-around">
+          <div class="d-flex align-items-end justify-content-center" style="width: 20rem; height: 20rem">
+            <div>
+              <img src="{{ asset('img/projects/adra_cropped.png') }}" class="card-img-top ing-fluid" alt="...">
+              <p class="fs-6 fw-bold text-center mt-3">OFICINAS</p>
+            </div>
+          </div>
+          <div class="d-flex align-items-end justify-content-center" style="width: 20rem; height: 20rem">
+            <div>
+              <img src="{{ asset('img/projects/monte_sol_cropped.png') }}" class="card-img-top ing-fluid" alt="...">
+              <p class="fs-6 fw-bold text-center mt-3">OFICINAS</p>
+            </div>
+          </div>
+          <div class="d-flex align-items-end jsutify-content-center" style="width: 20rem; height: 20rem">
+            <div>
+              <img src="{{ asset('img/projects/seascape_cropped.png') }}" class="card-img-top ing-fluid" alt="...">
+              <p class="fs-6 fw-bold text-center mt-3">OFICINAS</p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+      {{-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button> --}}
   </div>
-</section> --}}
+  <div class="d-flex justify-content-center mt-5">
+    <a href="{{ route('pages.projects') }}" class="btn btn-dark">VER PROYECTOS</a>
+  </div>
+</section>
 
-<section class="container my-5">
+<section class="container pt-4">
+  <section class="position-relative">
+    <section style="height: 600px; background-position: center bottom; background-image: url('{{ asset('img/home/sala-de-estar.jpg') }}');"></section>
+    <div class="position-absolute" style="top:20px; left: 35px">
+      <p class="display-3 text-white">INVIERTA EN <br> SU CASA</p>
+    </div>
+    <div class="position-absolute btncontact" style="top:25px; right:40px">
+      <a href="{{ route('pages.contact') }}" class="btn btn-outline-light fs-4 rounded-0 fw-bold">CONTACTAR</a>
+    </div>
+    <div class="position-absolute" style="bottom:20px; right: 35px">
+      <p class="display-3 text-white">INVIERTA EN <br> SU FUTURO</p>
+    </div>
+  </section>
+</section>
+
+<section class="bg-light mt-5">
+  <section class="container py-5">
+    <p class="text-center fs-1">PROYECTOS <span class="fw-bold">NUEVOS</span></p>
+    <section class="row pt-4">
+      @foreach ($latest_projects as $p)
+        <article class="col-sm-4 text-center mb-3">
+          <p class="bg-dark text-white fs-5 py-1 rounded">PROYECTO {{ $p->abbr}}</p>
+          <img src="{{ asset('uploads/projects/300/'. strtok($p->images, '|'))}}" alt="" class="img-fluid">
+        </article>
+      @endforeach
+    </section>
+  </section>
+</section>
+
+<section class="container my-5" id="consultar">
+  <p class="text-center fs-1">REALIZAR <span class="fw-bold">CONSULTA</span></p>
+  <div class="row justify-content-center">
+    <div class="col-sm-8">
+      <form action="{{route('contactanos.store')}}" method="POST">
+        @csrf
+        <div class="mt-5 row">
+          <div class="col-sm-6 mb-5">
+            <input type="text" placeholder="Nombre" class="border-bottom w-100 text-dark fw-bold">
+          </div>
+          <div class="col-sm-6 mb-5">
+            <input type="text" placeholder="Apellido" class="border-bottom w-100 text-dark fw-bold">
+          </div>
+        </div>
+        <div class="mb-5">
+          <input type="email" placeholder="Correo electrónico" class="border-bottom w-100 fw-bold">
+        </div>
+        <div class="my-5">
+          <input type="number" placeholder="Número de teléfono" class="border-bottom w-100 fw-bold">
+        </div>
+        <div class="my-5">
+          <input type="text" placeholder="Mensaje" class="border-bottom w-100 fw-bold">
+        </div>
+        <div class="d-flex justify-content-center">
+          <button class="btn btn-light rounded-0 text-dark border fw-bold px-4">ENVIAR</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+{{-- <section class="container my-5">
   <div class="row">
     <div class="col-sm-12 col-12 col-md-12 col-xl-6">
       <h1 class="subtitles text-shadow" style="color: white; font-size: 5rem; font-weight: bold; font-family: Montserrat">PROYECTOS <br> <span class="subtitles" style="color: #000000; font-size: 4rem;">EN VENTA</span></h1>
@@ -79,9 +223,9 @@
       <a class="btn btn-outline-dark rounded-0 border border-danger" style="font-size: 15px; font-weight: bold" href="{{ route('pages.projects') }}">VER TODOS LOS PROYECTOS</a>
     </div>
   </div>
-</section>
+</section> --}}
 
-<section class="container pt-5">
+{{-- <section class="container pt-5">
   <h2 class="subtitles text-shadow" style="color: white; font-size: 5rem; font-weight: bold; text-align: right">DEPARTAMENTOS</h2>
   <p class="h5 mt-3 mb-4 txt-subtitles" style="text-align: right;">Departamentos de venta en lugares prestigiosos</p>
   <div class="row mt-4 justify-content-end">
@@ -112,16 +256,16 @@
       </div>
     @endforeach
   </div>
-</section>
+</section> --}}
 
 
-<section class="my-5 container">
+{{-- <section class="my-5 container">
   <div>
     <h2 class="display-5 fw-bolder pb-3" style="max-width: min-content; border-bottom: 1px solid #89062E">FINANCIAMIENTO</h2>
   </div>
-</section>
+</section> --}}
 
-<section class="bg-light my-5">
+{{-- <section class="bg-light my-5">
   <div class="container">
     <div class="row py-5 text-center">
       <div class="col-sm-3" data-aos="zoom-in">
@@ -142,9 +286,9 @@
       </div>
     </div>
   </div>
-</section>
+</section> --}}
 
-<section>
+{{-- <section>
   <section class="row mx-5 contact-section">
     <article class="col-12 col-sm-12 col-md-12 col-xl-5 text-center d-flex align-items-center justify-content-center">
       <div>
@@ -195,11 +339,11 @@
       </section>
     </article>
   </section>
-</section>
+</section> --}}
 
-<section class="mt-5">
+{{-- <section class="mt-5">
   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1992.3422529348652!2d-79.01088986117757!3d-2.9068842205078607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91cd1911fa24b8a3%3A0x253fdcb31d8b1517!2sCasa%20Cr%C3%A9dito%20Promotora!5e0!3m2!1ses-419!2sec!4v1690924563410!5m2!1ses-419!2sec" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</section>
+</section> --}}
   @if (session('report'))
     @php
      echo "
