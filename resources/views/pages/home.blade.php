@@ -107,7 +107,7 @@
     <div class="carousel-inner">
       <div class="carousel-item active">
         <div class="container">
-          <div class="row justify-content-between carousel-projects">
+          <div class="row justify-content-center carousel-projects">
             @for ($i = 0; $i < 3; $i++)
               <div class="col-sm-4 d-flex align-items-end justify-content-center" style="width: 20rem; height: 15rem">
                 <div>
@@ -124,14 +124,14 @@
       @if(count($projects)>3)
       <div class="carousel-item">
         <div class="container">
-          <div class="row justify-content-between carousel-projects">
+          <div class="row justify-content-center carousel-projects">
             @for ($i = 3; $i < 6; $i++)
               <div class="col-sm-4 d-flex align-items-end justify-content-center" style="width: 20rem; height: 15rem">
                 <div>
                   <a href="{{ route('projects.viewProject', [strtolower($projects[$i]['type']), $projects[$i]['slug']]) }}">
                     <img src="{{ asset('uploads/projects/cropped/'. $projects[$i]['cropped_image']) }}" class="card-img-top ing-fluid" alt="...">
                   </a>
-                  <p class="fs-6 text-center mt-3">{{ strtoupper($projects[$i]['type']) }}</p>
+                  <p class="fs-6 text-center mt-3">{{ strtoupper($projects[$i]['project_name']) }}</p>
                 </div>
               </div>
             @endfor
