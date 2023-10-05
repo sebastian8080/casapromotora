@@ -121,7 +121,7 @@
           </div>
         </div>
       </div>
-      {{-- <div class="carousel-item">
+      <div class="carousel-item">
         <div class="container">
           <div class="row justify-content-between carousel-projects">
             @for ($i = 3; $i < 5; $i++)
@@ -136,7 +136,7 @@
             @endfor
           </div>
         </div>
-      </div> --}}
+      </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
