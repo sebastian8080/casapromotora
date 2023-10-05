@@ -56,7 +56,7 @@
         <section style="height: 850px; background-position: center center; background-size: cover; background-image: url('{{ asset('img/home/carousel1.jpg') }}');"></section>
       </article>
       <article class="carousel-item">
-        <section style="height: 850px; background-position: center center; background-size: cover; background-image: url('{{ asset('img/home/carousel2.jpg') }}');"></section>
+        <section style="height: 850px; background-position: center center; background-size: cover; background-image: url('{{ asset('img/home/carousel4.jpg') }}');"></section>
       </article>
       <article class="carousel-item">
         <section style="height: 850px; background-position: center center; background-size: cover; background-image: url('{{ asset('img/home/carousel3.jpg') }}');"></section>
