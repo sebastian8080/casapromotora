@@ -143,7 +143,7 @@
       <div class="carousel-item">
         <div class="container">
           <div class="row justify-content-center carousel-projects">
-            @for ($i = 6; $i < 9; $i++)
+            @for ($i = 6; $i < 8; $i++)
               <div class="col-sm-4 d-flex align-items-end justify-content-center" style="width: 20rem; height: 15rem">
                 <div>
                   <a href="{{ route('projects.viewProject', [strtolower($projects[$i]['type']), $projects[$i]['slug']]) }}">
