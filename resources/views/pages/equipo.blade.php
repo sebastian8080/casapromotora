@@ -32,7 +32,7 @@
         <h2><span style="-webkit-text-stroke: 1px black; color: rgb(0, 0, 0); font-size: 2rem; font-weight: bold; width: 100%; border-bottom: 2px solid red; padding-bottom: 5px">ADMINISTRATIVO</span></h2>
     </div>
     <div class="row">
-        @for ($i = 1; $i < 3; $i++)
+        @for ($i = 1; $i < 2; $i++)
             <div class="col-sm-4 mb-4" data-aos="fade-up" data-aos-duration="2000">
                 <div class="position-relative">
                     <img class="img-fluid" src="{{ asset('img/team/administracion'.$i.'.jpg') }}" alt="">
