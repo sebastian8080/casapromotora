@@ -17,7 +17,14 @@
 <style>
     @media screen and (max-width: 780px){
         #title{ margin-top: 100px !important; padding-bottom: 20px !important}
+        .navs{text-align: center !important}
     }
+
+    @media screen and (max-width: 580px){
+        .mobile{display: block !important}
+        .desktop{display: none !important}
+    }
+
     .nav-active{
         font-weight: bold;
         border-bottom: 2px solid red;
@@ -33,90 +40,155 @@
 
 <section class="container py-4">
     <div class="mb-5 w-100">
-        <h2 style="text-align: right"><span style=" font-size: 2rem; width: 100%; padding-bottom: 5px; cursor: pointer" onclick="showasesores(this)" class="nav-active" id="navAsesor">ASESORES</span> | <span style="cursor: pointer" onclick="showmarketing(this)" id="navMarketing">MARKETING</span></h2>
+        <h2 class="navs" style="text-align: right"><span style="width: 100%; padding-bottom: 5px; cursor: pointer" onclick="showasesores(this)" class="nav-active" id="navAsesor">ASESORES</span> | <span style="cursor: pointer" onclick="showmarketing(this)" id="navMarketing">MARKETING</span></h2>
     </div>
 
     <!--ASESORES-->
     <section id="asesores">
 
-        <div class="row py-5">
-            {{-- <div class="mb-5">
-                <h2><span style="-webkit-text-stroke: 1px black; color: rgb(0, 0, 0); font-size: 2rem; font-weight: bold; width: 100%; border-bottom: 2px solid red; padding-bottom: 5px">ASESORES</span></h2>
-            </div> --}}
-            @for ($i = 1; $i < 7; $i++)
-                <div class="col-sm-4 py-5" data-aos="fade-up" data-aos-duration="2000">
-                    <div class="position-relative">
-                        <section style="height: 600px; background-position: top; background-repeat: no-repeat; background-size: cover; background-image: url({{asset('img/team/asesor'.$i.'.jpg')}})"></section>
-                        {{-- <img class="img-fluid" src="{{ asset('img/team/asesor'.$i.'.jpg') }}" alt=""> --}}
-                        <div class="position-absolute top-0 start-50 translate-middle-x w-75">
-                            <p class="bg-white px-3 py-1 text-center fw-bold">@if($i == 1) ALEXANDRA SAA @elseif($i == 2) ALEXANDRA AUCANCELA @elseif($i == 3) MARITZA OCHOA @elseif($i == 4) CRISTINA RAMOS @elseif($i == 5) JUAN MALDONADO @elseif($i == 6) ANABEL LOPEZ @endif</p>
+        <section class="mobile" style="display: none">
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                {{-- <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div> --}}
+                <div class="carousel-inner">
+                    @for ($i = 1; $i < 7; $i++)
+                        <div class="carousel-item @if($i == 1) active @endif position-relative">
+                            <section style="height: 90vh; background-position: top; background-repeat: no-repeat; background-size: cover; background-image: url({{asset('img/team/asesor'.$i.'.jpg')}})"></section>
+                            <div class="position-absolute top-0 start-50 translate-middle-x w-75">
+                                <p class="bg-white px-3 py-1 text-center fw-bold">@if($i == 1) ALEXANDRA SAA @elseif($i == 2) ALEXANDRA AUCANCELA @elseif($i == 3) MARITZA OCHOA @elseif($i == 4) CRISTINA RAMOS @elseif($i == 5) JUAN MALDONADO @elseif($i == 6) ANABEL LOPEZ @endif</p>
+                            </div>
                         </div>
-                    </div>
+                    @endfor
+                    @for ($i = 1; $i < 4; $i++)
+                        <div class="carousel-item position-relative">
+                            <section style="height: 90vh; background-position: top; background-repeat: no-repeat; background-size: cover; background-image: url({{asset('img/team/creditos'.$i.'.jpg')}})"></section>
+                            <div class="position-absolute top-0 start-50 translate-middle-x w-75">
+                                <p class="bg-white px-3 py-1 text-center fw-bold">@if($i == 1) FERNANDA PARRA @elseif($i == 2) MICHELLE CORDERO @elseif($i == 3) SANDRA VALLADARES @endif</p>
+                            </div>
+                        </div>
+                    @endfor
                 </div>
-            @endfor
-        </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </section>
 
-        {{-- <div class="row">
-            @for ($i = 1; $i < 2; $i++)
-                <div class="col-sm-4 mb-4" data-aos="fade-up" data-aos-duration="2000">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="{{ asset('img/team/administracion'.$i.'.jpg') }}" alt="">
-                        <div class="position-absolute top-0 start-50 translate-middle-x w-75">
-                            <p class="bg-white px-3 py-1 text-center fw-bold">@if($i == 1) ANABEL LOPEZ @elseif($i == 2) DANIELA MERCHAN @endif</p>
+        <section class="desktop">
+            <div class="row py-5">
+                {{-- <div class="mb-5">
+                    <h2><span style="-webkit-text-stroke: 1px black; color: rgb(0, 0, 0); font-size: 2rem; font-weight: bold; width: 100%; border-bottom: 2px solid red; padding-bottom: 5px">ASESORES</span></h2>
+                </div> --}}
+                @for ($i = 1; $i < 7; $i++)
+                    <div class="col-sm-12 col-md-4 py-5" data-aos="fade-up" data-aos-duration="2000">
+                        <div class="position-relative">
+                            <section style="height: 600px; background-position: top; background-repeat: no-repeat; background-size: cover; background-image: url({{asset('img/team/asesor'.$i.'.jpg')}})"></section>
+                            {{-- <img class="img-fluid" src="{{ asset('img/team/asesor'.$i.'.jpg') }}" alt=""> --}}
+                            <div class="position-absolute top-0 start-50 translate-middle-x w-75">
+                                <p class="bg-white px-3 py-1 text-center fw-bold">@if($i == 1) ALEXANDRA SAA @elseif($i == 2) ALEXANDRA AUCANCELA @elseif($i == 3) MARITZA OCHOA @elseif($i == 4) CRISTINA RAMOS @elseif($i == 5) JUAN MALDONADO @elseif($i == 6) ANABEL LOPEZ @endif</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            @endfor
-        </div> --}}
-        <div class="row">
-            {{-- <div class="mb-5">
-                <h2><span style="-webkit-text-stroke: 1px black; color: rgb(0, 0, 0); font-size: 2rem; font-weight: bold; width: 100%; border-bottom: 2px solid red; padding-bottom: 5px">ASESORES</span></h2>
-            </div> --}}
-            @for ($i = 1; $i < 4; $i++)
-                <div class="col-sm-4 mb-4" data-aos="fade-up" data-aos-duration="2000">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="{{ asset('img/team/creditos'.$i.'.jpg') }}" alt="">
-                        <div class="position-absolute top-0 start-50 translate-middle-x w-75">
-                            <p class="bg-white px-3 py-1 text-center fw-bold">@if($i == 1) FERNANDA PARRA @elseif($i == 2) MICHELLE CORDERO @elseif($i == 3) SANDRA VALLADARES @endif</p>
-                        </div>
-                    </div>
-                </div>
-            @endfor
-        </div>
-        {{-- <div class="row py-5">
-            <div class="mb-5">
-                <h2><span style="-webkit-text-stroke: 1px black; color: rgb(0, 0, 0); font-size: 2rem; font-weight: bold; width: 100%; border-bottom: 2px solid red; padding-bottom: 5px">SISTEMAS</span></h2>
+                @endfor
             </div>
-            @for ($i = 1; $i < 3; $i++)
-                <div class="col-sm-4 mb-4" data-aos="fade-up" data-aos-duration="2000">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="{{ asset('img/team/sistemas'.$i.'.jpg') }}" alt="">
-                        <div class="position-absolute top-0 start-50 translate-middle-x w-75">
-                            <p class="bg-white px-3 py-1 text-center fw-bold">@if($i == 1) MIGUEL VARGAS @elseif($i == 2) SEBASTIAN ARMIJOS @endif</p>
+    
+            {{-- <div class="row">
+                @for ($i = 1; $i < 2; $i++)
+                    <div class="col-sm-4 mb-4" data-aos="fade-up" data-aos-duration="2000">
+                        <div class="position-relative">
+                            <img class="img-fluid" src="{{ asset('img/team/administracion'.$i.'.jpg') }}" alt="">
+                            <div class="position-absolute top-0 start-50 translate-middle-x w-75">
+                                <p class="bg-white px-3 py-1 text-center fw-bold">@if($i == 1) ANABEL LOPEZ @elseif($i == 2) DANIELA MERCHAN @endif</p>
+                            </div>
                         </div>
                     </div>
+                @endfor
+            </div> --}}
+            <div class="row">
+                {{-- <div class="mb-5">
+                    <h2><span style="-webkit-text-stroke: 1px black; color: rgb(0, 0, 0); font-size: 2rem; font-weight: bold; width: 100%; border-bottom: 2px solid red; padding-bottom: 5px">ASESORES</span></h2>
+                </div> --}}
+                @for ($i = 1; $i < 4; $i++)
+                    <div class="col-sm-12 col-md-4 mb-4" data-aos="fade-up" data-aos-duration="2000">
+                        <div class="position-relative">
+                            <img class="img-fluid" src="{{ asset('img/team/creditos'.$i.'.jpg') }}" alt="">
+                            <div class="position-absolute top-0 start-50 translate-middle-x w-75">
+                                <p class="bg-white px-3 py-1 text-center fw-bold">@if($i == 1) FERNANDA PARRA @elseif($i == 2) MICHELLE CORDERO @elseif($i == 3) SANDRA VALLADARES @endif</p>
+                            </div>
+                        </div>
+                    </div>
+                @endfor
+            </div>
+            {{-- <div class="row py-5">
+                <div class="mb-5">
+                    <h2><span style="-webkit-text-stroke: 1px black; color: rgb(0, 0, 0); font-size: 2rem; font-weight: bold; width: 100%; border-bottom: 2px solid red; padding-bottom: 5px">SISTEMAS</span></h2>
                 </div>
-            @endfor
-        </div> --}}
+                @for ($i = 1; $i < 3; $i++)
+                    <div class="col-sm-4 mb-4" data-aos="fade-up" data-aos-duration="2000">
+                        <div class="position-relative">
+                            <img class="img-fluid" src="{{ asset('img/team/sistemas'.$i.'.jpg') }}" alt="">
+                            <div class="position-absolute top-0 start-50 translate-middle-x w-75">
+                                <p class="bg-white px-3 py-1 text-center fw-bold">@if($i == 1) MIGUEL VARGAS @elseif($i == 2) SEBASTIAN ARMIJOS @endif</p>
+                            </div>
+                        </div>
+                    </div>
+                @endfor
+            </div> --}}
+        </section>
+
     </section>
 
     <!--marketing-->
     <section id="marketing" class="d-none">
-        <div class="row py-5">
-            {{-- <div class="mb-5">
-                <h2><span style="-webkit-text-stroke: 1px black; color: rgb(0, 0, 0); font-size: 2rem; font-weight: bold; width: 100%; border-bottom: 2px solid red; padding-bottom: 5px">MARKETING</span></h2>
-            </div> --}}
-            @for ($i = 1; $i < 4; $i++)
-                <div class="col-sm-4 mb-4" data-aos="fade-up" data-aos-duration="2000">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="{{ asset('img/team/marketing'.$i.'.jpg') }}" alt="">
-                        <div class="position-absolute top-0 start-50 translate-middle-x w-75">
-                            <p class="bg-white px-3 py-1 text-center fw-bold">@if($i == 1) JIMMY RIERA @elseif($i == 2) FERNANDA GUALPA @endif</p>
+        <section class="mobile">
+            <div id="carouselMarketing" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    @for ($i = 1; $i < 3; $i++)
+                        <div class="carousel-item @if($i == 1) active @endif position-relative">
+                            <section style="height: 90vh; background-position: top; background-repeat: no-repeat; background-size: cover; background-image: url({{asset('img/team/marketing'.$i.'.jpg')}})"></section>
+                            <div class="position-absolute top-0 start-50 translate-middle-x w-75">
+                                <p class="bg-white px-3 py-1 text-center fw-bold">@if($i == 1) JIMMY RIERA @elseif($i == 2) FERNANDA GUALPA @endif</p>
+                            </div>
+                        </div>
+                    @endfor
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselMarketing" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselMarketing" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </section>
+
+        <section class="desktop">
+            <div class="row py-5">
+                {{-- <div class="mb-5">
+                    <h2><span style="-webkit-text-stroke: 1px black; color: rgb(0, 0, 0); font-size: 2rem; font-weight: bold; width: 100%; border-bottom: 2px solid red; padding-bottom: 5px">MARKETING</span></h2>
+                </div> --}}
+                @for ($i = 1; $i < 4; $i++)
+                    <div class="col-sm-4 mb-4" data-aos="fade-up" data-aos-duration="2000">
+                        <div class="position-relative">
+                            <img class="img-fluid" src="{{ asset('img/team/marketing'.$i.'.jpg') }}" alt="">
+                            <div class="position-absolute top-0 start-50 translate-middle-x w-75">
+                                <p class="bg-white px-3 py-1 text-center fw-bold">@if($i == 1) JIMMY RIERA @elseif($i == 2) FERNANDA GUALPA @endif</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            @endfor
-        </div>
+                @endfor
+            </div>
+        </section>
+
     </section>
 
 </section>
