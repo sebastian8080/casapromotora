@@ -31,19 +31,19 @@
               <div class="hidden w-full md:block md:w-auto" id="navbar-default">
                 <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white">
                   <li>
-                    <a href="{{ route('pages.home') }}" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" aria-current="page">Inicio</a>
+                    <a href="{{ route('pages.home') }}" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0" aria-current="page">Inicio</a>
                   </li>
                   <li>
-                    <a href="{{ route('pages.projects') }}" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Proyectos</a>
+                    <a href="{{ route('pages.projects') }}" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Proyectos</a>
                   </li>
                   <li>
-                    <a href="{{ route('pages.about') }}" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Sobre Nosotros</a>
+                    <a href="{{ route('pages.about') }}" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Sobre Nosotros</a>
                   </li>
                   <li>
-                    <a href="{{ route('pages.equipo') }}" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Equipo</a>
+                    <a href="{{ route('pages.equipo') }}" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Equipo</a>
                   </li>
                   <li>
-                    <a href="{{ route('pages.contact') }}" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contáctenos</a>
+                    <a href="{{ route('pages.contact') }}" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Contáctenos</a>
                   </li>
                 </ul>
               </div>
@@ -52,7 +52,7 @@
     </header>
 
     <section class="container mx-auto mt-24">
-        <section class="grid grid-rows-1 sm:grid-cols-2">
+        <section class="grid grid-rows-1 sm:grid-cols-2 py-0 sm:py-20">
             <div class="flex items-center justify-center py-10">
                 <h1 class="text-xl sm:text-4xl text-slate-500 text-center">FERIA DE LA <span class="font-bold text-slate-600"> CONSTRUCCIÓN</span> <br> <span class="font-bold text-slate-600 text-2xl sm:text-5xl">VIVIENDA Y DECORACIÓN</span></h1>
             </div>
