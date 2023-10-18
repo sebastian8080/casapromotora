@@ -17,7 +17,7 @@
 <body>
 
     <header>
-        <nav class="bg-white border-gray-200 dark:bg-gray-900 shadow-md fixed top-0 left-0 right-0">
+        <nav class="bg-white border-gray-200 shadow-md fixed top-0 left-0 right-0">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
               <a href="{{ route('pages.home') }}" class="flex items-center">
                   <img src="{{ asset('img/color_promotora.png') }}" class="h-12 mr-3" alt="Flowbite Logo" />
