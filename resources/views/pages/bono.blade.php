@@ -95,44 +95,44 @@
               
                     <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                       <div class="sm:col-span-3">
-                        <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Nombre</label>
+                        <label for="name" class="block text-sm font-medium leading-6 text-gray-900">Nombre</label>
                         <div class="mt-2">
-                          <input type="text" name="first-name" id="name" autocomplete="given-name" class="block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                          <input type="text" name="name" id="name" autocomplete="given-name" class="block w-full border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" required>
                         </div>
                       </div>
               
                       <div class="sm:col-span-3">
-                        <label for="last-name" class="block text-sm font-medium leading-6 text-gray-900">Apellido</label>
+                        <label for="lastname" class="block text-sm font-medium leading-6 text-gray-900">Apellido</label>
                         <div class="mt-2">
-                          <input type="text" name="last-name" id="lastname" autocomplete="family-name" class="block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                          <input type="text" name="lastname" id="lastname" autocomplete="family-name" class="block w-full border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" required>
                         </div>
                       </div>
               
                       <div class="sm:col-span-3">
                         <label for="phone" class="block text-sm font-medium leading-6 text-gray-900">Teléfono</label>
                         <div class="mt-2">
-                          <input id="phone" name="phone" type="number" autocomplete="phone" class="block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                          <input id="phone" name="phone" type="number" autocomplete="phone" class="block w-full border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" required>
                         </div>
                       </div>
 
                       <div class="sm:col-span-3">
                         <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Correo Electrónico</label>
                         <div class="mt-2">
-                          <input id="email" name="email" type="email" autocomplete="email" class="block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                          <input id="email" name="email" type="email" autocomplete="email" class="block w-full border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" required>
                         </div>
                       </div>
               
                       <div class="col-span-full">
                         <label for="street-address" class="block text-sm font-medium leading-6 text-gray-900">Dirección</label>
                         <div class="mt-2">
-                          <textarea name="address" rows="3" class="block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
+                          <textarea name="address" rows="3" class="block w-full border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" required></textarea>
                         </div>
                       </div>
 
                       <div class="col-span-full">
                         <label for="asesor" class="block text-sm font-medium leading-6 text-gray-900">Asesor</label>
                         <div class="mt-2">
-                          <select name="asesor" id="" class="block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                          <select name="asesor" id="" class="block w-full border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" required>
                             <option value="">Seleccione</option>
                             <option value="Alexandra Saá">Alexandra Saá</option>
                             <option value="Alexandra Aucancela">Alexandra Aucancela</option>
