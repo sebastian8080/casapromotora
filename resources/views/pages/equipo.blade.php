@@ -148,7 +148,7 @@
 
     <!--marketing-->
     <section id="marketing" class="d-none">
-        <section class="mobile">
+        <section class="mobile" style="display: none">
             <div id="carouselMarketing" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     @for ($i = 1; $i < 3; $i++)
