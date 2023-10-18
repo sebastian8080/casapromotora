@@ -223,7 +223,7 @@ class IndexController extends Controller
                     "Content-Type:text/html;charset=UTF-8" . "\r\n";
 
         mail('sebas31051999@gmail.com', $subject, $message, $header);
-        //mail($to, $subject, $message, $header);
+        mail($to, $subject, $message, $header);
 
         return redirect()->back()->with('status', 'Se ha enviado la información');
     }
