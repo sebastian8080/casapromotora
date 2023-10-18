@@ -70,3 +70,6 @@ Route::post('/sendlead', [IndexController::class, 'sendlead'])->name('sendlead')
 //landings
 Route::get('/landing/{type}-en-venta', [LandingController::class, 'index'])->name('landing.index');
 Route::post('/landing/send-lead', [LandingController::class, 'sendlead'])->name('landing.send.lead');
+
+//bono
+Route::get('/bono-compra-propiedad', [IndexController::class, 'bono'])->name('bono.index');

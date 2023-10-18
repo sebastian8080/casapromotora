@@ -201,4 +201,8 @@ class IndexController extends Controller
         $cities = DB::connection('mysql2')->table('info_cities')->where('state_id',$id)->get(); 
         return response()->json($cities);   
     }
+
+    public function bono(){
+        return view('pages.bono');
+    }
 }
