@@ -81,7 +81,7 @@
                 <h1 class="text-xl sm:text-4xl text-slate-500 text-center">FERIA DE LA <span class="font-bold text-slate-600"> CONSTRUCCIÓN</span> <br> <span class="font-bold text-slate-600 text-2xl sm:text-5xl">VIVIENDA Y DECORACIÓN</span></h1>
             </div>
             <div>
-                <img class="shadow-md" src="{{ asset('img/bono-compra-propiedad-casa-promotora.jpg') }}" alt="">
+                <img class="shadow-md" src="{{ asset('img/bono-compra-propiedad-casa-promotora.png') }}" alt="">
             </div>
         </section>
 
