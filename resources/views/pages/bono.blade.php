@@ -16,6 +16,30 @@
 </head>
 <body>
 
+    @if(session('status'))
+    <section class="container mx-auto">
+      <section class="absolute top-0 left-5 md:left-20 right-5 md:right-20">
+        <div id="alert-2" class="flex items-center p-4 mb-4 mt-24 text-green-800 rounded-lg bg-green-50 h-18 shadow-lg" role="alert">
+            <svg class="flex-shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+            </svg>
+            <span class="sr-only">Info</span>
+            <div class="ml-3 text-sm font-semibold">
+              <p class="text-md md:text-lg">
+                Su información ha sido enviada con éxito
+              </p>
+            </div>
+            <button type="button" class="ml-auto -mx-1.5 -my-1.5 bg-green-50 text-green-500 rounded-lg focus:ring-2 focus:ring-green-400 p-1.5 hover:bg-green-200 inline-flex items-center justify-center h-8 w-8" data-dismiss-target="#alert-2" aria-label="Close">
+              <span class="sr-only">Close</span>
+              <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+              </svg>
+            </button>
+        </div>
+      </section>
+    </section>
+    @endif
+
     <header>
         <nav class="bg-white border-gray-200 shadow-md fixed top-0 left-0 right-0">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -62,7 +86,8 @@
         </section>
 
         <section class="p-5">
-            <form>
+            <form action="{{ route('bono.send.lead') }}" method="POST">
+                @csrf
                 <div>
                   <div class="border-b border-gray-900/10 pb-12">
                     <h2 class="text-base font-bold leading-7 text-red-600 text-center">*Válido por la compra de una propiedad</h2>
@@ -109,12 +134,14 @@
                         <div class="mt-2">
                           <select name="asesor" id="" class="block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                             <option value="">Seleccione</option>
-                            <option value="Alexandra Saa">Alexandra Saa</option>
+                            <option value="Alexandra Saá">Alexandra Saá</option>
                             <option value="Alexandra Aucancela">Alexandra Aucancela</option>
-                            <option value="Bernarda">Bernarda</option>
+                            <option value="Bernarda Mollano">Bernarda Mollano</option>
                             <option value="Cristina Ramos">Cristina Ramos</option>
-                            <option value="Ana Cristina">Ana Cristina</option>
+                            <option value="Ana Cristina Espinoza">Ana Cristina Espinoza</option>
+                            <option value="Maritza Ochoa">Maritza Ochoa</option>
                             <option value="Juan Maldonado">Juan Maldonado</option>
+                            <option value="Jimmy Riera">Jimmy Riera</option>
                           </select>
                         </div>
                       </div>
@@ -131,7 +158,7 @@
     </section>
 
 
-    <footer class="shadow-md py-2 bg-white border text-center font-semibold">
+    <footer class="shadow-md py-2 bg-white border text-center font-semibold mt-5">
       <p>Copyright Casa Promtora 2023</p>
     </footer>
 

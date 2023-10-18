@@ -205,4 +205,26 @@ class IndexController extends Controller
     public function bono(){
         return view('pages.bono');
     }
+
+    public function sendleadbono(Request $request){
+
+        $to = "info@casacredito.com";
+        $subject = "Lead Bono - Casa Promotora | ". $request->name;
+        $message = "<br><strong>Información de contacto</strong>
+            <br><b>Nombre:</b> " . strip_tags($request->name) . " " .strip_tags($request->lastname)."
+            <br><b>Teléfono:</b> " . strip_tags($request->phone) ."
+            <br><b>Email:</b> " . strip_tags($request->email) . "
+            <br><b>Direccion:</b> " . strip_tags($request->address) . " 
+            <br><b>Asesor:</b> " . strip_tags($request->asesor) ."
+        ";
+
+        $header =   "From: <lead_bono@casapromotora.com>" . "\r\n" .
+                    "MIME-Version: 1.0" . "\r\n" .
+                    "Content-Type:text/html;charset=UTF-8" . "\r\n";
+
+        mail('sebas31051999@gmail.com', $subject, $message, $header);
+        //mail($to, $subject, $message, $header);
+
+        return redirect()->back()->with('status', 'Se ha enviado la información');
+    }
 }
