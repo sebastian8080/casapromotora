@@ -114,7 +114,7 @@
                   <a href="{{ route('projects.viewProject', [strtolower($projects[$i]['type']), $projects[$i]['slug']]) }}">
                     <img src="{{ asset('uploads/projects/cropped/'. $projects[$i]['cropped_image']) }}" class="card-img-top ing-fluid" alt="...">
                   </a>
-                  <p class="fs-6 text-center mt-3">{{ strtoupper($projects[$i]['type']) }}</p>
+                  <p class="fs-6 text-center mt-3">{{ strtoupper($projects[$i]['project_name']) }}</p>
                 </div>
               </div>
             @endfor
@@ -149,7 +149,7 @@
                   <a href="{{ route('projects.viewProject', [strtolower($projects[$i]['type']), $projects[$i]['slug']]) }}">
                     <img src="{{ asset('uploads/projects/cropped/'. $projects[$i]['cropped_image']) }}" class="card-img-top ing-fluid" alt="...">
                   </a>
-                  <p class="fs-6 text-center mt-3">{{ strtoupper($projects[$i]['type']) }}</p>
+                  <p class="fs-6 text-center mt-3">{{ strtoupper($projects[$i]['project_name']) }}</p>
                 </div>
               </div>
             @endfor
