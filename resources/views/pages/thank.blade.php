@@ -9,6 +9,25 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <?php
+        if($_SERVER["SERVER_NAME"] != "localhost"){
+    ?>
+        
+        <!-- Google tag (gtag.js) --> 
+        <script id="analytics-conversion-thank"></script> 
+        <script>
+            setTimeout(() => {
+                document.getElementById('analytics-conversion-thank').src="https://www.googletagmanager.com/gtag/js?id=AW-11250334200";
+            }, 2500);
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);} 
+            gtag('js', new Date()); gtag('config', 'AW-11250334200'); 
+        </script>
+    
+        <!-- Event snippet for Formulario de contacto PROMOTORA conversion page --> 
+        <script> gtag('event', 'conversion', {'send_to': 'AW-11250334200/s3uhCKKEi_AYEPjzyfQp'}); </script>
+    
+    <?php }; ?>
 </head>
 <body>
     
