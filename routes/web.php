@@ -74,3 +74,5 @@ Route::post('/landing/send-lead', [LandingController::class, 'sendlead'])->name(
 //bono
 Route::get('/bono-compra-propiedad', [IndexController::class, 'bono'])->name('bono.index');
 Route::post('/bono-guardando-lead', [IndexController::class, 'sendleadbono'])->name('bono.send.lead');
+
+Route::get('thank', function(){ return view('pages.thank');});
