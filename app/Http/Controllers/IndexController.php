@@ -122,7 +122,7 @@ class IndexController extends Controller
     }
 
     public function sendMailContact(Request $request){
-        $to = "info@casacredito.com";
+        $to = "info@casapromotora.com";
         $subject = "Lead Promotora - " . strip_tags($request->nombre);
         $message = "<br><strong>Información de contacto</strong>
         <br>Nombre: " . strip_tags($request->nombre) ."
@@ -142,7 +142,9 @@ class IndexController extends Controller
         mail('sebas31051999@gmail.com', $subject, $message, $header);
         mail($to, $subject, $message, $header);
 
-        $request->session()->flash('validContact', 'Se ha enviado el correo');
+        //$request->session()->flash('validContact', 'Se ha enviado el correo');
+
+        return redirect()->route('pages.thank');
 
         return back();
     }
