@@ -25,7 +25,7 @@
                     <a class="rounded-full hover:bg-red-800 hover:text-white text-red-500 border-solid border-1 px-3 py-2 shadow-lg" href="{{ route('pages.home') }}">Regresar a página de inicio</a>
                 </div>
                 <div>
-                    <a class="rounded-full hover:bg-red-800 hover:text-white text-red-500 border-solid border-1 px-3 py-2 shadow-lg" href="{{ route('') }}">Ver más proyectos</a>
+                    <a class="rounded-full hover:bg-red-800 hover:text-white text-red-500 border-solid border-1 px-3 py-2 shadow-lg" href="{{ route('pages.projects') }}">Ver más proyectos</a>
                 </div>
             </section>
 
