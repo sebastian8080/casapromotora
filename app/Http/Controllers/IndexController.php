@@ -175,7 +175,7 @@ class IndexController extends Controller
 
     public function sendlead(Request $request){
 
-        $to = "info@casacredito.com";
+        $to = "info@casapromotora.com";
         $subject = "Lead - Casa Promotora | ". $request->name;
         $message = "<br><strong>Información de contacto</strong>
             <br><b>Nombre:</b> " . strip_tags($request->name) . " " .strip_tags($request->lastname)."
@@ -194,7 +194,7 @@ class IndexController extends Controller
         mail('sebas31051999@gmail.com', $subject, $message, $header);
         mail($to, $subject, $message, $header);
 
-        return redirect()->back()->with('status', 'Se ha enviado la información');
+        return redirect()->route('pages.thank');
     }
 
     public function getCities($id){
