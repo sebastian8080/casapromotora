@@ -53,13 +53,13 @@
     </div>
     <div class="carousel-inner position-relative" style="height: 850px">
       <article class="carousel-item active">
-        <section style="height: 850px; background-position: center center; background-size: cover; background-image: url('{{ asset('img/home/carousel1.jpg') }}');"></section>
+        <section style="height: 850px; background-position: center center; background-size: cover; background-image: url('{{ asset('img/home/carousel1.webp') }}');"></section>
       </article>
       <article class="carousel-item">
-        <section style="height: 850px; background-position: center center; background-size: cover; background-image: url('{{ asset('img/home/carousel4.jpg') }}');"></section>
+        <section style="height: 850px; background-position: center center; background-size: cover; background-image: url('{{ asset('img/home/carousel4.webp') }}');"></section>
       </article>
       <article class="carousel-item">
-        <section style="height: 850px; background-position: center center; background-size: cover; background-image: url('{{ asset('img/home/carousel3.jpg') }}');"></section>
+        <section style="height: 850px; background-position: center center; background-size: cover; background-image: url('{{ asset('img/home/carousel3.webp') }}');"></section>
       </article>
       <div class="position-absolute top-50 start-50 translate-middle text-white display-1 text-center" style="font-family: Montserrat">
         <span>UN NUEVO</span> <br>
@@ -121,7 +121,7 @@
           </div>
         </div>
       </div>
-      @if(count($projects)>3)
+      {{-- @if(count($projects)>3)
       <div class="carousel-item">
         <div class="container">
           <div class="row justify-content-center carousel-projects">
@@ -156,7 +156,7 @@
           </div>
         </div>
       </div>
-      @endif
+      @endif --}}
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
