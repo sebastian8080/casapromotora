@@ -72,7 +72,7 @@ class IndexController extends Controller
         if($request->interest) $message .= "<br>Interes: Proyecto " . strip_tags($request->interest );
         else $message .= "<br>Interes: General";
 
-        $message .= "<br>Fuente: " . url()->previous();
+        //$message .= "<br>Fuente: " . url()->previous();
 
         $header = "From: <leads@casapromotora.com>" . "\r\n" .
                 "MIME-Version: 1.0" . "\r\n" .
