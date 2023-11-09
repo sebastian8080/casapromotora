@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models\Project;
+use App\Models\Project\Property;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -22,4 +23,8 @@ class Category extends Model
         'cropped_image',
         'abbr'
     ];
+
+    public function properties(){
+        return $this->hasMany(Property::class, 'category_id');
+    }
 }
