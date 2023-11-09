@@ -32,7 +32,7 @@ class ApiController extends Controller
 
     public function getpropertybyid($id){
 
-        $property = Property::where('property_code', $id)->first();
+        $property = Property::where('property_id', $id)->first();
 
         if($property){
             return $property;
