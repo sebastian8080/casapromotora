@@ -29,4 +29,19 @@ class ApiController extends Controller
         return $properties;
 
     }
+
+    public function getpropertybyid($id){
+
+        $property = Property::where('property_code', $id)->first();
+
+        if($property){
+            return $property;
+        } else {
+            return response()->json([
+                'status' => 404,
+                'message' => 'No hemos encontrado la propiedad con codigo '. $id
+            ]);
+        }
+
+    }
 }

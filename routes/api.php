@@ -22,3 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/projects', [ApiController::class, 'getprojects'])->middleware('api-validate');
 Route::get('/project/{id}', [ApiController::class, 'getprojectbyid'])->middleware('api-validate');
 Route::get('/properties', [ApiController::class, 'getproperties'])->middleware('api-validate');
+Route::get('/property/{id}', [ApiController::class, 'getpropertybyid'])->middleware('api-validate');
