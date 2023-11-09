@@ -252,9 +252,9 @@ class ProjectController extends Controller
         if($last_property) {
             $lastnumber = substr($last_property->property_code, -1);
             $lastnumber = $lastnumber + 1;
-            $property_code = $code_category."_".$lastnumber; 
+            $property_code = $code_category.$lastnumber; 
         } else {
-            $property_code = $code_category."_1";
+            $property_code = $code_category."1";
         }
 
         $property = new Property($request->all());

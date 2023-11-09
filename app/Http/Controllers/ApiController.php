@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Project\Category;
+use App\Models\Project\Property;
 
 class ApiController extends Controller
 {
@@ -19,5 +20,13 @@ class ApiController extends Controller
         $project = Category::where('category_id', $id)->first();
 
         return $project;
+    }
+
+    public function getproperties(){
+
+        $properties = Property::all();
+
+        return $properties;
+
     }
 }
