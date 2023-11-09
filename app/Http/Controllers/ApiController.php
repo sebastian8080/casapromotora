@@ -10,7 +10,7 @@ class ApiController extends Controller
 {
     public function getprojects(){
         
-        $projects = Category::select('category_id', 'project_code', 'type', 'project_name', 'state', 'city', 'address', 'slug', 'images', 'status')->where('status', 1)->get();
+        $projects = Category::select('category_id', 'project_code', 'type', 'project_name', 'state', 'city', 'address', 'slug', 'images', 'status')->with('properties')->where('status', 1)->get();
         
         return $projects;
     }
@@ -25,7 +25,6 @@ class ApiController extends Controller
     public function getproperties(){
 
         $properties = Property::all();
-
         return $properties;
 
     }
