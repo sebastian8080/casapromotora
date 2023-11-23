@@ -35,6 +35,8 @@ class ShowProjects extends Component
             $aux_state = DB::table('info_states')->where('name', 'LIKE', '%'.$this->state.'%')->first();
             $this->cities = DB::table('info_cities')->where('state_id', $aux_state->id)->get();
             $projects_filter->where('state', 'LIKE', "%".$this->state."%");
+        } else {
+            $this->cities = [];
         };
 
         if($this->city){
