@@ -10,6 +10,7 @@
         @media only screen and (max-width: 994px){#tagprojects{font-size: 40px !important; text-align: center;}#titleform{font-size: 40px !important; text-align: center}#title{font-size: 19px !important}}
         .form-control:focus {border-color: #FF0000;box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);}
     </style>
+    @livewireStyles
 @endsection
 
 @section('content')
@@ -35,7 +36,7 @@
     </div>
 
     <div class="container">
-        <div class="row text-center">
+        {{-- <div class="row text-center">
             <div class="mt-4">
                 <a id="btnmoreinformation" href="#rowforminformation" class="btn btn-outline-secondary rounded-0 fw-bold shadow-sm" style="font-size: 14px;">MÁS INFORMACIÓN</a>
             </div>
@@ -50,40 +51,10 @@
                     <button class="btn btn-outline-secondary rounded-0 fw-bold shadow-sm d-none">Ver proyectos</button>
                 </div>
             </div>
-        </div>
-        <div class="row mt-5 mb-3 justify-content-center">
-            @foreach ($projects as $project)
-                <div class="col-sm-4 mb-5">
-                    <a href="{{route('projects.viewProject', [strtolower($project->type), $project->slug])}}">
-                        <img class="img-fluid" src="{{asset('uploads/projects/900/'.strtok($project->images, "|"))}}" alt="">
-                    </a>
-                    <div class="text-center mt-4 mb-4">
-                        <h2 style="color: #ffffff; -webkit-text-stroke: 1px rgb(162, 157, 157);font-family: 'Raleway', sans-serif" class="h1">{{strtoupper($project->abbr)}}</h2>
-                        <hr style="height: 1px; color: rgb(255, 0, 0)">
-                        <p class="h4 fw-bold" style="color: rgb(83, 83, 83) !important">{{strtoupper($project->type)}}</p>
-                        <p class="text-danger fw-bold" style="margin-bottom: 5px">UBICACIÓN</p>
-                        <i class="fas fa-map-marker-alt text-muted"></i>
-                        <p class="text-muted"><i>{{$project->city . ", " . $project->address}}</i></p>
-                        <div class="row text-center" style="padding-left: 20%; padding-right: 20%">
-                            <div class="col-sm-4 col-4">
-                                <img width="40px" src="{{asset('img/projects/ascensor.svg')}}" alt="">
-                                <p style="font-size: 12px" class="text-muted">ASCENSOR</p>
-                            </div>
-                            <div class="col-sm-4 col-4">
-                                <img width="40px" src="{{asset('img/projects/planta.svg')}}" alt="">
-                                <p style="font-size: 12px" class="text-muted">JARDINES</p>
-                            </div>
-                            <div class="col-sm-4 col-4">
-                                <img width="40px" src="{{asset('img/projects/seguridad.svg')}}" alt="">
-                                <p style="font-size: 12px" class="text-muted">SEGURIDAD</p>
-                            </div>
-                        </div>
-                        <div>
-                            <a href="{{ route('projects.viewProject', [strtolower($project->type), $project->slug]) }}" class="btn btn-outline-danger rounded-0 fw-bold">VER PROYECTO</a>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
+        </div> --}}
+
+        <div class="d-flex align-items-center justify-content-center w-100">
+            <livewire:show-projects />
         </div>
 
         <div class="row mt-5 py-4" style="background-color: #f1f1f1">
@@ -461,19 +432,23 @@
 @endsection
 
 @section('section-scripts')
+    @livewireScripts
     <script src="{{ URL::asset('js/homepage.js') }}"></script>
     <script>
         let btnTramite = document.getElementById('btnmoreinformation');
-        btnTramite.addEventListener('click', clickHandler);
 
-        function clickHandler(e) {
-            e.preventDefault();
-            const href = this.getAttribute("href");
-            const offsetTop = document.querySelector(href).offsetTop;
-            scroll({
-                top: offsetTop - 60,
-                behavior: "smooth"
-            });
+        if(btnTramite){
+            btnTramite.addEventListener('click', clickHandler);
+    
+            function clickHandler(e) {
+                e.preventDefault();
+                const href = this.getAttribute("href");
+                const offsetTop = document.querySelector(href).offsetTop;
+                scroll({
+                    top: offsetTop - 60,
+                    behavior: "smooth"
+                });
+            }
         }
     </script>
 @endsection
