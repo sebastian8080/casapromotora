@@ -30,6 +30,7 @@ class ShowProjects extends Component
         $this->selStates = DB::table('info_states')->orderBy('name', 'asc')->get();
 
         if($this->state != null) {
+            $this->cities = [];
             $this->aux_state = $this->state;
             $aux_state = DB::table('info_states')->where('name', 'LIKE', '%'.$this->state.'%')->first();
             $this->cities = DB::table('info_cities')->where('state_id', $aux_state->id)->get();
