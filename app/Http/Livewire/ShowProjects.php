@@ -29,7 +29,7 @@ class ShowProjects extends Component
 
         $this->selStates = DB::table('info_states')->orderBy('name', 'asc')->get();
 
-        if($this->state != null) {
+        if($this->state) {
             $this->cities = [];
             $this->aux_state = $this->state;
             $aux_state = DB::table('info_states')->where('name', 'LIKE', '%'.$this->state.'%')->first();
@@ -37,11 +37,11 @@ class ShowProjects extends Component
             $projects_filter->where('state', 'LIKE', "%".$this->state."%");
         };
 
-        if($this->city != null){
+        if($this->city){
             $projects_filter->where('city', 'LIKE', "%".$this->city."%");
         }
 
-        if($this->type != null){
+        if($this->type){
             $projects_filter->where('type', 'LIKE', "%".$this->type."%");
         }
 
