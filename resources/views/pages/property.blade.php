@@ -42,27 +42,14 @@
         <section class="container">
             <div class="row">
                 <article class="col-6 col-sm-4 d-flex justify-content-center items">
-                    <p><i class="fa-regular fa-circle text-danger"></i> Sala</p>
+                    <p><i class="fa-regular fa-circle text-danger"></i> {{ $property->bedrooms }} habitaciones</p>
                 </article>
                 <article class="col-6 col-sm-4 d-flex justify-content-center items" >
-                    <p><i class="fa-regular fa-circle text-danger"></i> Comedor</p>
+                    <p><i class="fa-regular fa-circle text-danger"></i> {{ $property->bathrooms }} baños</p>
                 </article>
                 <article class="col-6 col-sm-4 d-flex justify-content-center items">
-                    <p><i class="fa-regular fa-circle text-danger"></i> Cocina</p>
+                    <p><i class="fa-regular fa-circle text-danger"></i> {{ $property->garage }} @if($property->garage > 1 ) parqueaderos @else parqueadero @endif</p>
                 </article>
-                <article class="col-6 col-sm-4 d-flex justify-content-center items">
-                    <p><i class="fa-regular fa-circle text-danger"></i> Baño</p>
-                </article>
-                @if($project->project_name == "Alison")
-                    <article class="col-6 col-sm-4 d-flex justify-content-center items">
-                        <p><i class="fa-regular fa-circle text-danger"></i> 3 habitaciones</p>
-                    </article>
-                @endif
-                @if($project->project_name == "Alison")
-                    <article class="col-6 col-sm-4 d-flex justify-content-center items">
-                        <p><i class="fa-regular fa-circle text-danger"></i> 2 estacionamientos</p>
-                    </article>
-                @endif
             </div>
         </section>
     </section>

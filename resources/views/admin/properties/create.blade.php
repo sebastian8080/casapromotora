@@ -115,6 +115,67 @@
                     {!! Form::number('garage', null, ['class' => 'form-control rounded-0']) !!}
                 </div>
             </div>
+
+
+            <div class="row d-inline">
+
+                <div id="rowsTitles">
+                    @if(isset($property) && is_array(json_decode($property->heading_details)))
+                    @php $ii=-1; @endphp
+                        @foreach(json_decode($property->heading_details) as $dets)
+                            @php $ii++; @endphp 
+                            <div class="gap-4 mt-4">
+                                <label>Titulo</label>
+                                <div class="d-flex mt-2 ml-2">
+                                    <input  class="w-100 bg-white border px-4 py-2" name="details{{$ii}}[]" type="text" value="{{$dets[0]}}"/>
+                                </div>            
+                            @php unset($dets[0]); $printControl=0; @endphp
+                            <div class="ml-4 mt-4">Detalles</div>
+                                @foreach($dets as $det)
+                                    @if($printControl==0)
+                                    @php $printControl=1; @endphp                
+                                        <div class="flex flex-row mt-2 ml-4">
+                                            {!! Form::select('details'.$ii.'[]',$details->pluck('charac_titile','id'), $det   ,    ['class' => 'w-44 h-10 px-4 py-2 text-gray-700 bg-white text-sm border border-gray-300 rounded-l']) !!}
+                                    @else                
+                                    @php $printControl=0; @endphp
+                                            <input  class="w-24 h-10 px-4 py-2 text-gray-700 bg-white text-sm border border-gray-300" type="number" name="details{{$ii}}[]" pattern="[0-9]+" onkeydown="return false" value="{{!is_numeric($det)?1:$det}}"/>
+                                            <button class="btn btn-danger" type="button" onclick="delrowDetail(this)">X</button>
+                                        </div>
+                                    @endif
+                                @endforeach
+                                <button type="button" class="btn btn-success ml-4 mt-1" onclick="addRowDetail(this,{{$ii}})">Agregar Detalle</button>
+                            </div>    
+                        @endforeach
+                        </div>
+                    @else
+                        <div class="gap-4 mt-4 ml-2">
+                            <label class="font-semibold">Titulo</label>
+                            <div class="d-flex">
+                                <input id="details"  class="w-100 px-4 py-2 bg-white border" name="details0[]" type="text"/>
+                                <button class="btn btn-danger" type="button" onclick="delrowTitle(this)">X</button>
+                            </div>
+                            <div class="ml-4 mt-4">Detalles</div>
+                            <div class="d-flex ml-4">
+                                <select class="w-100 px-4 py-2 bg-white border" name="details0[]">
+                                    @foreach ($details as $detail)
+                                        <option value="{{$detail->id}}">{{$detail->charac_titile}}</option>
+                                    @endforeach
+                                </select>
+                                <input id="subdetails"  class="w-100 px-4 py-2 bg-white border" type="number" name="details0[]" pattern="[0-9]+" onkeydown="return false" value="1"/>
+                                <button class="btn btn-danger" type="button" onclick="delrowDetail(this)">X</button>
+                            </div>
+                            <button type="button" class="btn btn-success ml-4 mt-2" onclick="addRowDetail(this,0)">Agregar Detalle</button>
+                        </div>
+                    </div>
+                    @endif
+                    <br>
+                    <div class="d-inline ml-2">
+                        <button type="button" class="btn btn-info" onclick="addRowTitles()">Agregar Titulo</button>
+                    </div>
+                </div>
+            </div>
+
+
             <div class="row mt-4 w-100 justify-content-center">
                 {!! Form::submit('Guardar Propiedad', ['class' => 'btn btn-danger rounded-0']) !!}
             </div>
@@ -132,5 +193,48 @@
 @endsection
 
 @section('js')
+<script>
+    const selOptionsDetails = @json($details);
 
+    const delrowTitle = (row) =>{
+        row.parentElement.parentElement.remove();
+    }
+
+    const delrowDetail = (row) =>{
+        row.parentElement.remove();
+    }
+
+    const addRowDetail = (row,id=0) =>{
+        let InsertOptions ='';
+        selOptionsDetails.forEach(opts =>{ InsertOptions +=`<option value="${opts.id}">${opts.charac_titile}</option>`;    });
+        let rowTemplate =   `<div class="d-flex mt-2 ml-4">
+                                <select class="w-100 px-4 py-2 bg-white border" name="details${id}[]">${InsertOptions}</select>
+                                <input id="subdetails" class="w-100 px-4 py-2 bg-white border" type="number" name="details${id}[]" pattern="[0-9]+" onkeydown="return false" value="1"/>
+                                <button class="btn btn-danger" type="button" onclick="delrowDetail(this)">X</button>
+                            </div>`;
+        row.insertAdjacentHTML('beforebegin',rowTemplate);
+    }
+
+    const addRowTitles = () => {
+        let idUniq  = new Date().valueOf();
+        let InsertOptions ='';
+        selOptionsDetails.forEach(opts =>{        InsertOptions +=`<option value="${opts.id}">${opts.charac_titile}</option>`;    });
+        let rowTemplate =`
+            <div class="gap-4 mt-4 ml-2">
+                <label class="font-semibold">Titulo</label>
+                <div class="d-flex mt-2">
+                    <input  class="w-100 px-4 py-2 bg-white border" type="text" name="details${idUniq}[]" required/>
+                    <button class="btn btn-danger" type="button" onclick="delrowTitle(this)">X</button>
+                </div>
+                <div class="ml-4 mt-4">Detalles</div>
+                <div class="d-flex mt-2 ml-4">
+                    <select class="w-100 px-4 py-2 bg-white border" name="details${idUniq}[]">${InsertOptions}</select>
+                    <input  class="w-100 px-4 py-2 bg-white border" type="number"  name="details${idUniq}[]" pattern="[0-9]+" onkeydown="return false" value="1"/>
+                    <button class="btn btn-danger" type="button" onclick="delrowDetail(this)">X</button>
+                </div>
+                <button type="button" class="btn btn-success mt-2 ml-4" onclick="addRowDetail(this,${idUniq})">Agregar Detalle</button>
+            </div>`
+        document.getElementById('rowsTitles').insertAdjacentHTML('beforeend',rowTemplate);
+    }
+</script>
 @endsection

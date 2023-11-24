@@ -259,6 +259,7 @@ class ProjectController extends Controller
 
         $property = new Property($request->all());
         $property->property_code = $property_code;
+        $property->heading_details = $request->heading_details; 
         $property->slug = Str::slug($property->title." ".str_replace('_', ' ', $property->property_code));
         $property->save();
 
@@ -282,12 +283,33 @@ class ProjectController extends Controller
         $categories = Category::select('category_id', 'project_name')->get();
         $states = DB::connection('mysql2')->table('info_states')->where('country_id', 63)->get();
         $project_category = Category::where('category_id', $property->category_id)->first();
-        return view('admin.properties.create', compact('categories', 'states', 'property', 'project_category'));
+
+        //nuevos datos para mostrar los detalles de las propiedades
+        $details = DB::table('listing_characteristics')->orderBy('charac_titile', 'asc')->get();
+
+        return view('admin.properties.create', compact('categories', 'states', 'property', 'project_category', 'details'));
     }
 
     public function updatepropertybyproject(Request $request, $property_id){
 
         $property = Property::where('property_id', $property_id)->first();
+
+        $result=[];        $ii=0;
+        foreach($request->all() as $key=>$value){ if("detail" == substr($key,0,6)) $result[] = $value; }
+        //$bathrooms=0;$bedrooms=0;$garage=0;
+        if(count($result)>0){
+            $request->merge(['heading_details' => json_encode($result)]);
+            //return count($result);
+            // foreach ($result as $r) {
+            //     for ($i=0; $i < count($r); $i++) { 
+            //         if($r[$i] == 49 || $r[$i] == 86 || $r[$i] == 41) $bedrooms = $bedrooms + $r[$i+1];
+            //         if($r[$i] == 48 || $r[$i] == 76 || $r[$i] == 81) $bathrooms = $bathrooms + $r[$i+1];
+            //         if($r[$i] == 43) $garage = $garage + $r[$i+1];
+            //     }
+            // }
+        } else {
+            $request->merge(['heading_details' => '']);
+        }
 
         $property->category_id = $request->category_id;
         $property->title = $request->title;
@@ -298,6 +320,9 @@ class ProjectController extends Controller
         $property->bathrooms = $request->bathrooms;
         $property->garage = $request->garage;
         $property->status = $request->status;
+
+        //guardando nuevas variables
+        $property->heading_details = $request->heading_details; 
 
         $property->save();
 
