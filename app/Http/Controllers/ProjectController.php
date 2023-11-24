@@ -285,7 +285,7 @@ class ProjectController extends Controller
         $project_category = Category::where('category_id', $property->category_id)->first();
 
         //nuevos datos para mostrar los detalles de las propiedades
-        $details = DB::table('listing_characteristics')->orderBy('charac_titile', 'asc')->get();
+        $details = DB::table('property_characteristics')->orderBy('charac_titile', 'asc')->get();
 
         return view('admin.properties.create', compact('categories', 'states', 'property', 'project_category', 'details'));
     }
