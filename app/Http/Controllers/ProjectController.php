@@ -258,9 +258,31 @@ class ProjectController extends Controller
             $property_code = $code_category."1";
         }
 
+        $result=[];        $ii=0;
+        foreach($request->all() as $key=>$value){ if("detail" == substr($key,0,6)) $result[] = $value; }
+        $bathrooms=0;$bedrooms=0;$garage=0;
+        if(count($result)>0){
+            $request->merge(['heading_details' => json_encode($result)]);
+            //return count($result);
+            foreach ($result as $r) {
+                for ($i=0; $i < count($r); $i++) { 
+                    if($r[$i] == 49 || $r[$i] == 86 || $r[$i] == 41) $bedrooms = $bedrooms + $r[$i+1];
+                    if($r[$i] == 48 || $r[$i] == 76 || $r[$i] == 81) $bathrooms = $bathrooms + $r[$i+1];
+                    if($r[$i] == 43) $garage = $garage + $r[$i+1];
+                }
+            }
+        } else {
+            $request->merge(['heading_details' => '']);
+        }
+
         $property = new Property($request->all());
         $property->property_code = $property_code;
-        $property->heading_details = $request->heading_details; 
+
+        $property->heading_details = $request->heading_details;
+        $property->bedrooms = $bedrooms;
+        $property->bathrooms = $bathrooms;
+        $property->garage = $garage;
+
         $property->slug = Str::slug($property->title." ".str_replace('_', ' ', $property->property_code));
         $property->save();
 
@@ -297,17 +319,17 @@ class ProjectController extends Controller
 
         $result=[];        $ii=0;
         foreach($request->all() as $key=>$value){ if("detail" == substr($key,0,6)) $result[] = $value; }
-        //$bathrooms=0;$bedrooms=0;$garage=0;
+        $bathrooms=0;$bedrooms=0;$garage=0;
         if(count($result)>0){
             $request->merge(['heading_details' => json_encode($result)]);
             //return count($result);
-            // foreach ($result as $r) {
-            //     for ($i=0; $i < count($r); $i++) { 
-            //         if($r[$i] == 49 || $r[$i] == 86 || $r[$i] == 41) $bedrooms = $bedrooms + $r[$i+1];
-            //         if($r[$i] == 48 || $r[$i] == 76 || $r[$i] == 81) $bathrooms = $bathrooms + $r[$i+1];
-            //         if($r[$i] == 43) $garage = $garage + $r[$i+1];
-            //     }
-            // }
+            foreach ($result as $r) {
+                for ($i=0; $i < count($r); $i++) { 
+                    if($r[$i] == 49 || $r[$i] == 86 || $r[$i] == 41) $bedrooms = $bedrooms + $r[$i+1];
+                    if($r[$i] == 48 || $r[$i] == 76 || $r[$i] == 81) $bathrooms = $bathrooms + $r[$i+1];
+                    if($r[$i] == 43) $garage = $garage + $r[$i+1];
+                }
+            }
         } else {
             $request->merge(['heading_details' => '']);
         }
@@ -317,9 +339,9 @@ class ProjectController extends Controller
         $property->total_area = $request->total_area;
         $property->indoor_area = $request->indoor_area;
         $property->price = $request->price;
-        $property->bedrooms = $request->bedrooms;
-        $property->bathrooms = $request->bathrooms;
-        $property->garage = $request->garage;
+        $property->bedrooms = $bedrooms;
+        $property->bathrooms = $bathrooms;
+        $property->garage = $garage;
         $property->status = $request->status;
 
         //guardando nuevas variables
