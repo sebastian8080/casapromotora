@@ -157,6 +157,9 @@ class ProjectController extends Controller
 
     public function update(Request $request, $category_id)
     {
+
+        //return $request;
+
         $project_category = Category::where('category_id', $category_id)->first();
 
         if(is_array($request->updatedImages)) $request->merge(['imagesn' => implode("|", $request->updatedImages)]); 
@@ -220,6 +223,8 @@ class ProjectController extends Controller
         $project_category->entrance = $request->entrance;
         $project_category->dues = $request->dues;
         $project_category->bank_credit = $request->bank_credit;
+
+        $project_category->description = $request->description;
 
         $project_category->benefits = implode(',', $request->benefits);
         $project_category->services = implode(',', $request->services);
