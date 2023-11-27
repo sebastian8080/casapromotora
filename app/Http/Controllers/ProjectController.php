@@ -240,7 +240,8 @@ class ProjectController extends Controller
     public function createproperty($category_id){
         $categories = Category::select('category_id', 'project_name')->get();
         $states = DB::connection('mysql2')->table('info_states')->where('country_id', 63)->get();
-        return view('admin.properties.create', compact('categories', 'states', 'category_id'));
+        $details = DB::table('property_characteristics')->orderBy('charac_titile', 'asc')->get();
+        return view('admin.properties.create', compact('categories', 'states', 'category_id', 'details'));
     }
 
     public function storeproperty(Request $request){
