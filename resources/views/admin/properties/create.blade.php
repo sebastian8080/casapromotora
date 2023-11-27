@@ -104,15 +104,15 @@
             <div class="row w-100 mt-3">
                 <div class="col-sm-4">
                     <i class="fas fa-bed"></i> {!! Form::label('bedrooms', 'Habitaciones', ['class' => 'font-weight-normal']) !!}
-                    {!! Form::number('bedrooms', null, ['class' => 'form-control rounded-0']) !!}
+                    {!! Form::number('bedrooms', null, ['class' => 'form-control rounded-0', 'readonly']) !!}
                 </div>
                 <div class="col-sm-4">
                     <i class="fas fa-bath"></i> {!! Form::label('bathrooms', 'Baños', ['class' => 'font-weight-normal']) !!}
-                    {!! Form::number('bathrooms', null, ['class' => 'form-control rounded-0']) !!}
+                    {!! Form::number('bathrooms', null, ['class' => 'form-control rounded-0', 'readonly']) !!}
                 </div>
                 <div class="col-sm-4">
                     <i class="fas fa-parking"></i> {!! Form::label('garage', 'Parqueaderos', ['class' => 'font-weight-normal']) !!}
-                    {!! Form::number('garage', null, ['class' => 'form-control rounded-0']) !!}
+                    {!! Form::number('garage', null, ['class' => 'form-control rounded-0', 'readonly']) !!}
                 </div>
             </div>
 
