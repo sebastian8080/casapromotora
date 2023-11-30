@@ -81,8 +81,16 @@
                                     </select>
                                 </div>
                                 <div class="col-sm-4">
-                                    {!! Form::label('address', 'Dirección', ['class' => 'h5']) !!}
+                                    {!! Form::label('address', 'Sector', ['class' => 'h5']) !!}
                                     {!! Form::text('address', null, ['class' => 'form-control rounded-0']) !!}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    {!! Form::label('street', 'Dirección', ['class' => 'h5']) !!}
+                                    {!! Form::text('street', null, ['class' => 'form-control rounded-0']) !!}
                                 </div>
                             </div>
                         </div>

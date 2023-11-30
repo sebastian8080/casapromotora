@@ -149,7 +149,7 @@ class ProjectController extends Controller
         $states = DB::connection('mysql2')->table('info_states')->where('country_id', 63)->get();
         $total_properties = Property::where('category_id', $category_id)->count();
         $benefits = DB::table('proj_benefits')->get();
-        $services = DB::table('proj_services')->get();
+        $services = DB::table('proj_services')->orderBy('name', 'asc')->get();
         $communal_areas = DB::table('proj_communal_areas')->get();
         return view('admin.projects.create', compact('project_category', 'categories', 'states', 'total_properties', 'benefits', 'services', 'communal_areas'));
     }
@@ -208,28 +208,29 @@ class ProjectController extends Controller
         $project_category->city = $request->city;
 
         $project_category->address = $request->address;
+        $project_category->street = $request->street;
         $project_category->status = $request->status;
         $project_category->url_maps = $request->url_maps;
-
+        
         $project_category->img_header = $request->img_header;
         $project_category->img_top = $request->img_top;
         $project_category->txt_description = $request->txt_description;
         $project_category->txt_inside_img_first = $request->txt_inside_img_first;
         $project_category->txt_inside_img_second = $request->txt_inside_img_second;
-
+        
         $project_category->slogan_first = $request->slogan_first;
         $project_category->slogan_second = $request->slogan_second;
         
         $project_category->entrance = $request->entrance;
         $project_category->dues = $request->dues;
         $project_category->bank_credit = $request->bank_credit;
-
+        
         $project_category->description = $request->description;
-
+        
         $project_category->benefits = implode(',', $request->benefits);
         $project_category->services = implode(',', $request->services);
         $project_category->communal_areas = implode(',', $request->communal_areas);
-
+        
         $project_category->save();
 
         return redirect()->route('admin.projects.edit', $project_category->category_id)->with('status', 'Se actualizo el proyecto ' . $project_category->project_name);
