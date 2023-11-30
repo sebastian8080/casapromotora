@@ -148,7 +148,7 @@ class ProjectController extends Controller
         $categories = Category::select('category_id', 'project_name')->get();
         $states = DB::connection('mysql2')->table('info_states')->where('country_id', 63)->get();
         $total_properties = Property::where('category_id', $category_id)->count();
-        $benefits = DB::table('proj_benefits')->get();
+        $benefits = DB::table('proj_benefits')->orderBy('name', 'asc')->get();
         $services = DB::table('proj_services')->orderBy('name', 'asc')->get();
         $communal_areas = DB::table('proj_communal_areas')->get();
         return view('admin.projects.create', compact('project_category', 'categories', 'states', 'total_properties', 'benefits', 'services', 'communal_areas'));
