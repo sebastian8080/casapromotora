@@ -14,6 +14,6 @@ class Property extends Model
     protected $primaryKey = "property_id";
 
     protected $fillable = [
-        'property_id', 'category_id', 'property_code', 'title', 'price', 'total_area', 'indoor_area', 'bedrooms', 'bathrooms', 'garage', 'heading_details', 'images', 'slug', 'status', 'created_at', 'updated_at'
+        'property_id', 'category_id', 'property_code', 'title', 'price', 'total_area', 'indoor_area', 'bedrooms', 'bathrooms', 'garage', 'num_piso', 'heading_details', 'images', 'slug', 'status', 'created_at', 'updated_at'
     ];
 }

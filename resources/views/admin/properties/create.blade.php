@@ -83,9 +83,17 @@
                     </div>
                 @endisset
             </div>
-            <div class="form-group w-100">
-                <i class="fas fa-quote-right"></i> {!! Form::label('title', 'Titulo de la Propiedad', ['class' => 'font-weight-normal']) !!}
-                {!! Form::text('title', null, ['class' => 'form-control rounded-0']) !!}
+            <div class="form-group w-100 mt-3">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <i class="fas fa-quote-right"></i> {!! Form::label('title', 'Titulo de la Propiedad', ['class' => 'font-weight-normal']) !!}
+                        {!! Form::text('title', null, ['class' => 'form-control rounded-0']) !!}
+                    </div>
+                    <div class="col-sm-4">
+                        {!! Form::label('num_piso', 'Número de piso', ['class' => 'font-weight-normal']) !!}
+                        {!! Form::text('num_piso', null, ['class' => 'form-control rounded-0']) !!}
+                    </div>
+                </div>
             </div>
             <div class="row w-100">
                 <div class="col-sm-4">

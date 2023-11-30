@@ -289,6 +289,8 @@ class ProjectController extends Controller
         $property->bathrooms = $bathrooms;
         $property->garage = $garage;
 
+        $property->num_piso = $request->num_piso;
+
         $property->slug = Str::slug($property->title." ".str_replace('_', ' ', $property->property_code));
         $property->save();
 
@@ -348,6 +350,9 @@ class ProjectController extends Controller
         $property->bedrooms = $bedrooms;
         $property->bathrooms = $bathrooms;
         $property->garage = $garage;
+
+        $property->num_piso = $request->num_piso;
+
         $property->status = $request->status;
 
         //guardando nuevas variables
