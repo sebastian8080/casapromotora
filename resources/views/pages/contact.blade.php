@@ -25,8 +25,8 @@
                 <a style="text-decoration: none; color: #000000" href="https://goo.gl/maps/mVF4bGGi6wbFkHqv6">
                     <p>Remigio Tamariz Crespo y Av. Fray Vicente Solano <br> Cuenca-Ecuador</p>
                 </a>
-                <a style="text-decoration: none; color: #000000" href="tel:+593989798238">
-                    <p>098 979 8238</p>
+                <a style="text-decoration: none; color: #000000" href="tel:+593983849073">
+                    <p>098-384-9073</p>
                 </a>
                 <a style="text-decoration: none; color: #000000" href="mailto:info@casapromotora.com">
                     <p>info@casapromotora.com</p>
