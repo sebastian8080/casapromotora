@@ -126,15 +126,23 @@
               <div>
                 <div class="d-flex align-items-center gap-2 mb-4">
                   <img width="40px" height="40px" src="{{ asset('img/location-icon.png') }}" alt="">
-                  <a class="text-dark" style="text-decoration: none" href="https://goo.gl/maps/qBm7cMPdDJLPTK1g9" target="_blank">
-                    <span style="font-size: 15px;">Av. Fray Vicente Solano y Remigio Tamariz Crespo</span>
+                  <a class="text-dark" style="text-decoration: none" href="https://g.page/r/CV7pH0E3AVo_EBA" target="_blank">
+                    <span style="font-size: 15px;">Av. Juan Iñiguez 3-87 y D. Gonzalo Cordero - Edificio Santa Lucia</span>
                   </a>
                 </div>
-                <div class="d-flex align-items-center gap-2 mb-4">
-                  <img width="38px" height="38px" src="{{ asset('img/telefono-icon.png') }}" alt="">
-                  <a href="tel:072889355" class="text-dark" style="text-decoration: none">
-                    <span>07-288-9355</span>
-                  </a>
+                <div>
+                  <div class="d-flex align-items-center gap-2 mb-4">
+                    <img width="38px" height="38px" src="{{ asset('img/telefono-inteligente-icon.png') }}" alt="">
+                    <a href="tel:+593999944247" class="text-dark" style="text-decoration: none">
+                      <span>099-994-4247</span>
+                    </a>
+                  </div>
+                  <div class="d-flex align-items-center gap-2 mb-4">
+                    <img width="38px" height="38px" src="{{ asset('img/telefono-inteligente-icon.png') }}" alt="">
+                    <a href="tel:+593999944590" class="text-dark" style="text-decoration: none">
+                      <span>099-994-4590</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -142,14 +150,14 @@
               <div>
                 <div class="d-flex align-items-center gap-2 mb-4">
                   <img width="40px" height="40px" src="{{ asset('img/email-icon.png') }}" alt="">
-                  <a href="mailto:info@casapromotora.com" class="text-dark" style="text-decoration: none">
-                    <span>info@casapromotora.com</span>
+                  <a href="mailto:ventas@habitarenecuador.com" class="text-dark" style="text-decoration: none">
+                    <span>ventas@habitarenecuador.com</span>
                   </a>
                 </div>
                 <div class="d-flex align-items-center gap-2 mb-4">
                   <img width="40px" height="40px" src="{{ asset('img/telefono-inteligente-icon.png') }}" alt="">
-                  <a href="tel:+593983849073" class="text-dark" style="text-decoration: none">
-                    <span>098-384-9073</span>
+                  <a href="tel:+593987746833" class="text-dark" style="text-decoration: none">
+                    <span>098-774-6833</span>
                   </a>
                 </div>
                 <div class="d-flex align-items-center gap-2 mb-4">
