@@ -133,14 +133,8 @@
                 <div>
                   <div class="d-flex align-items-center gap-2 mb-4">
                     <img width="38px" height="38px" src="{{ asset('img/telefono-inteligente-icon.png') }}" alt="">
-                    <a href="tel:+593999944247" class="text-dark" style="text-decoration: none">
-                      <span>099-994-4247</span>
-                    </a>
-                  </div>
-                  <div class="d-flex align-items-center gap-2 mb-4">
-                    <img width="38px" height="38px" src="{{ asset('img/telefono-inteligente-icon.png') }}" alt="">
-                    <a href="tel:+593999944590" class="text-dark" style="text-decoration: none">
-                      <span>099-994-4590</span>
+                    <a href="tel:+593983849073" class="text-dark" style="text-decoration: none">
+                      <span>098-384-9073</span>
                     </a>
                   </div>
                 </div>
@@ -150,14 +144,14 @@
               <div>
                 <div class="d-flex align-items-center gap-2 mb-4">
                   <img width="40px" height="40px" src="{{ asset('img/email-icon.png') }}" alt="">
-                  <a href="mailto:ventas@habitarenecuador.com" class="text-dark" style="text-decoration: none">
-                    <span>ventas@habitarenecuador.com</span>
+                  <a href="mailto:info@casacredito.com" class="text-dark" style="text-decoration: none">
+                    <span>info@casacredito.com</span>
                   </a>
                 </div>
                 <div class="d-flex align-items-center gap-2 mb-4">
-                  <img width="40px" height="40px" src="{{ asset('img/telefono-inteligente-icon.png') }}" alt="">
-                  <a href="tel:+593987746833" class="text-dark" style="text-decoration: none">
-                    <span>098-774-6833</span>
+                  <img width="30px" height="30px" src="{{ asset('img/telefono-icon.png') }}" alt="">
+                  <a href="tel:+072889355" class="text-dark" style="text-decoration: none">
+                    <span>(07) 288-9355</span>
                   </a>
                 </div>
                 <div class="d-flex align-items-center gap-2 mb-4">
