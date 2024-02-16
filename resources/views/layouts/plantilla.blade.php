@@ -126,8 +126,8 @@
               <div>
                 <div class="d-flex align-items-center gap-2 mb-4">
                   <img width="40px" height="40px" src="{{ asset('img/location-icon.png') }}" alt="">
-                  <a class="text-dark" style="text-decoration: none" href="https://g.page/r/CV7pH0E3AVo_EBA" target="_blank">
-                    <span style="font-size: 15px;">Av. Juan Iñiguez 3-87 y D. Gonzalo Cordero - Edificio Santa Lucia</span>
+                  <a class="text-dark" style="text-decoration: none" href="https://maps.app.goo.gl/fxWb66XY8BrzVhaf8" target="_blank">
+                    <span style="font-size: 15px;">Remigio Tamariz Crespo y Av. Fray Vicente Solano</span>
                   </a>
                 </div>
                 <div>
