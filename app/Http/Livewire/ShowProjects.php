@@ -4,7 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Project\Category;
-
+use App\Models\Project\Property;
 use Illuminate\Support\Facades\DB;
 
 class ShowProjects extends Component
@@ -14,6 +14,8 @@ class ShowProjects extends Component
     public $cities = [];
     public $projects = [];
     public $aux_state, $aux_city, $aux_type;
+
+    public $searchtxt, $checkType, $checkBedrooms, $inpPriceMin, $inpPriceMax;
 
     public function mount(){
         $this->selStates = DB::table('info_states')->orderBy('name', 'asc')->get();
@@ -25,7 +27,49 @@ class ShowProjects extends Component
 
     public function render()
     {
+
+        //if($this->searchtxt) dd($this->searchtxt);
+        //if($this->checkType) dd($this->checkType);
+        //if($this->checkBedrooms) dd($this->checkBedrooms);
+        
         $projects_filter = Category::where('status', 1);
+        $properties_filter = Property::select('category_id')->orderBy('property_id', 'asc');
+        
+        if($this->searchtxt){
+            $projects_filter->where('state', 'LIKE', '%'.$this->searchtxt.'%')->orWhere('city', 'LIKE', '%'.$this->searchtxt.'%')->orWhere('address', 'LIKE', '%'.$this->searchtxt.'%');
+        }
+
+        if($this->checkType){
+            $projects_filter->where('type', 'LIKE', '%'.$this->checkType.'%');
+        }
+
+        if($this->checkBedrooms){
+            $properties_filter->where('bedrooms', 'LIKE', '%'. $this->checkBedrooms .'%');
+            $properties = $properties_filter->get();
+            if(count($properties) > 0){
+                for ($i=0; $i < count($properties); $i++) { 
+                    if($i < 1){
+                        $projects_filter->where('category_id', $properties[$i]->category_id);
+                    } else {
+                        $projects_filter->orWhere('category_id', $properties[$i]->category_id);
+                    }
+                }
+            }
+        }
+
+        if($this->inpPriceMin || $this->inpPriceMax){
+            $properties_filter->whereBetween('price', [$this->inpPriceMin, $this->inpPriceMax]);
+            $properties = $properties_filter->get();
+            if(count($properties) > 0){
+                for ($i=0; $i < count($properties); $i++) { 
+                    if($i < 1){
+                        $projects_filter->where('category_id', $properties[$i]->category_id);
+                    } else {
+                        $projects_filter->orWhere('category_id', $properties[$i]->category_id);
+                    }
+                }
+            }
+        }
 
         $this->selStates = DB::table('info_states')->orderBy('name', 'asc')->get();
 
@@ -34,6 +78,7 @@ class ShowProjects extends Component
             $this->aux_state = $this->state;
             $aux_state = DB::table('info_states')->where('name', 'LIKE', '%'.$this->state.'%')->first();
             $this->cities = DB::table('info_cities')->where('state_id', $aux_state->id)->get();
+            //dd($this->cities);
             $projects_filter->where('state', 'LIKE', "%".$this->state."%");
         } else {
             $this->cities = [];
@@ -51,7 +96,8 @@ class ShowProjects extends Component
 
         return view('livewire.show-projects', [
             'projects' => $this->projects,
-            'states' => $this->selStates
+            'states' => $this->selStates,
+            'cities' =>$this->cities
         ]);
     }
 }

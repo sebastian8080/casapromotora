@@ -8,7 +8,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap');
         .inputs{background-color: #d5d5d5}.labels{font-size: 12px; font-weight: 900}
         @media only screen and (max-width: 994px){#tagprojects{font-size: 40px !important; text-align: center;}#titleform{font-size: 40px !important; text-align: center}#title{font-size: 19px !important}}
-        .form-control:focus {border-color: #FF0000;box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);}
+        .form-control:focus, .form-select:focus, .btnSearch:focus {border-color: #FF0000;box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);}
     </style>
     @livewireStyles
 @endsection
@@ -26,14 +26,21 @@
     </script>
     @endif
 
-    <div class="position-relative" style="width: 100%;">
+
+    <section class="container">
+        <div class="d-flex align-items-center justify-content-center w-100" style="margin-top: 130px !important">
+            <livewire:show-projects />
+        </div>
+    </section>
+
+    {{-- <div class="position-relative" style="width: 100%;">
         <video style="top: 0; left:0; width: 100%; opacity:1; filter: brightness(60%)" muted autoplay loop>
             <source src="{{asset('video/projectsnew.mp4')}}" type="video/mp4">
         </video>
         <div class="position-absolute top-50 start-50 translate-middle text-white">
             <h1 id="title" class="text-center" style="font-size: 40px;">Encuentre los mejores proyectos inmobiliarios por estrenar</h1>
         </div>
-    </div>
+    </div> --}}
 
     <div class="container">
         {{-- <div class="row text-center">
@@ -52,10 +59,6 @@
                 </div>
             </div>
         </div> --}}
-
-        <div class="d-flex align-items-center justify-content-center w-100">
-            <livewire:show-projects />
-        </div>
 
         <div class="row mt-5 py-4" style="background-color: #f1f1f1">
             <div class="col-sm-4 d-flex align-items-center">
@@ -433,7 +436,7 @@
 
 @section('section-scripts')
     @livewireScripts
-    <script src="{{ URL::asset('js/homepage.js') }}"></script>
+    <script src="{{ URL::asset('js/navbar-projects.js') }}"></script>
     <script>
         let btnTramite = document.getElementById('btnmoreinformation');
 

@@ -1,6 +1,83 @@
-<div class="w-100">
-    <h2 class="text-center mt-5">Buscar proyectos en Ecuador</h2>
-    <div class="row w-100 justify-content-center">
+<section class="w-100">
+    <section class="w-auto d-flex justify-content-center">
+        <section>
+            <h4 style="color: #862627; font-weight: 600">INICIE UNA BÚSQUEDA DETALLADA</h4>
+            <section class="d-flex gap-2">
+                <section class="d-flex align-items-center justify-content-center">
+                    <input id="searchtxt" type="text" style="background-color: #EFEFEF; height: 40px; border-radius: 15px 0px 0px 15px !important" class="form-control border-0 rounded-0" placeholder="Ingrese provincia, ciudad o sector">
+                    <i class="fa-solid fa-magnifying-glass d-flex align-items-center pe-3" style="background-color: #EFEFEF; color: #000000; height: 40px; border-radius: 0px 15px 15px 0px"></i>
+                </section>
+                <section>
+                    <section class="d-flex align-items-center px-4 gap-2" onclick="openHTML('searchType')" style="background-color: #EFEFEF; height: 40px; border-radius: 15px !important; cursor: pointer">
+                        <span>Tipo de Inmueble</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </section>
+                    <section id="searchType" class="position-absolute p-4 mt-1 d-none" style="background-color: #EFEFEF; border-radius: 15px">
+                        <div class="d-flex justify-content-center gap-4">
+                            <div>
+                                <input type="radio" class="btn-check checktype" name="type" value="Departamentos" id="checkDepartamentos">
+                                <label class="btn btn-outline-danger" for="checkDepartamentos">Departamentos</label>
+                            </div>
+                            <div>
+                                <input type="radio" class="btn-check checktype" name="type" value="Condominios" id="checkCondominios">
+                                <label class="btn btn-outline-danger" for="checkCondominios">Condominios</label>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+                <section>
+                    <section class="d-flex align-items-center px-4 gap-2" onclick="openHTML('searchBedrooms')" style="background-color: #EFEFEF; height: 40px; border-radius: 15px !important; cursor: pointer">
+                        <span>Habitaciones</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </section>
+                    <section id="searchBedrooms" class="position-absolute p-4 mt-1 d-none" style="background-color: #EFEFEF; border-radius: 15px">
+                        <div class="d-flex justify-content-center gap-4 mb-3">
+                            <div>
+                                <input type="radio" class="btn-check checkhabitaciones" name="bedrooms" id="checkBedrooms1" value="1">
+                                <label class="btn btn-outline-danger" for="checkBedrooms1">1</label>
+                            </div>
+                            <div>
+                                <input type="radio" class="btn-check checkhabitaciones" name="bedrooms" id="checkBedrooms2" value="2">
+                                <label class="btn btn-outline-danger" for="checkBedrooms2">2</label>
+                            </div>
+                            <div>
+                                <input type="radio" class="btn-check checkhabitaciones" name="bedrooms" id="checkBedrooms3" value="3">
+                                <label class="btn btn-outline-danger" for="checkBedrooms3">3</label>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center gap-4">
+                            <div>
+                                <input type="radio" class="btn-check checkhabitaciones" name="bedrooms" id="checkBedrooms4" value="4">
+                                <label class="btn btn-outline-danger" for="checkBedrooms4">4</label>
+                            </div>
+                            <div>
+                                <input type="radio" class="btn-check checkhabitaciones" name="bedrooms" id="checkBedrooms5" value="5">
+                                <label class="btn btn-outline-danger" for="checkBedrooms5">5</label>
+                            </div>
+                            <div>
+                                <input type="radio" class="btn-check checkhabitaciones" name="bedrooms" id="checkBedrooms6" value="6">
+                                <label class="btn btn-outline-danger" for="checkBedrooms6">6</label>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+                <section>
+                    <section class="d-flex align-items-center px-4 gap-2" onclick="openHTML('searchPrice')" style="background-color: #EFEFEF; height: 40px; border-radius: 15px !important; cursor: pointer">
+                        <span>Precio</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </section>
+                    <section id="searchPrice" class="position-absolute p-4 mt-1 d-none" style="background-color: #EFEFEF; border-radius: 15px">
+                        <input type="number" class="form-control mb-3 ps-3" style="border-radius: 15px" placeholder="Desde" id="priceMin">
+                        <input type="number" class="form-control ps-3" style="border-radius: 15px" placeholder="Hasta" id="priceMax">
+                    </section>
+                </section>
+                <section>
+                    <button onclick="search()" class="btn text-white btnSearch" style="background-color: #720000; border-radius: 15px">BUSCAR <i class="fa-solid fa-magnifying-glass ps-1" style="color: #ffffff !important"></i></button>
+                </section>
+            </section>
+        </section>
+    </section>
+    {{-- <div class="row w-100 justify-content-center">
         <details open>
             <summary class="w-100 h5">Filtros</summary>
             <div class="d-flex gap-2 align-items-center justify-content-center w-100">
@@ -34,7 +111,7 @@
                 </div>
             </div>
           </details>
-    </div>
+    </div> --}}
     <div class="row mt-5 mb-3 justify-content-center">
         @if(count($projects)>0)
             @foreach ($projects as $project)
@@ -77,4 +154,40 @@
         
         @endif
     </div>
-</div>
+</section>
+
+<script>
+    const openHTML = (id) => {
+        let divHTML = document.getElementById(id);
+        divHTML.classList.contains('d-none') ? divHTML.classList.remove('d-none') : divHTML.classList.add('d-none');
+    }
+
+    const search = () => {
+
+        let searchTxt = document.getElementById('searchtxt').value;
+
+        let checkTypes = document.querySelectorAll('.checktype');
+        checkTypes.forEach(check => {
+            if(check.checked){
+                @this.set('checkType', check.value);
+            } 
+        });
+
+        let checkBedrooms = document.querySelectorAll('.checkhabitaciones');
+        checkBedrooms.forEach(check => {
+            if(check.checked){
+                @this.set('checkBedrooms', check.value);
+            } 
+        });
+
+        let inpPriceMin = document.getElementById('priceMin').value;
+        let inpPriceMax = document.getElementById('priceMax').value;
+
+        @this.set('inpPriceMin', inpPriceMin);
+        @this.set('inpPriceMax', inpPriceMax);
+
+        @this.set('searchtxt', searchTxt);
+        // if(checkDepartamentos) @this.set('checkType', checkDepartamentos);
+        // if(checkCondominios) @this/set('checkType', checkCondominios);
+    }
+</script>
