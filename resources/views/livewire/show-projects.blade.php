@@ -12,7 +12,7 @@
                         <span>Tipo de Inmueble</span>
                         <i class="fa-solid fa-chevron-down"></i>
                     </section>
-                    <section id="searchType" class="position-absolute p-4 mt-1 d-none" style="background-color: #EFEFEF; border-radius: 15px">
+                    <section id="searchType" class="position-absolute p-4 mt-1 d-none absolute_filters" style="background-color: #EFEFEF; border-radius: 15px">
                         <div class="d-flex justify-content-center gap-4">
                             <div>
                                 <input type="radio" class="btn-check checktype" name="type" value="Departamentos" id="checkDepartamentos">
@@ -30,7 +30,7 @@
                         <span>Habitaciones</span>
                         <i class="fa-solid fa-chevron-down"></i>
                     </section>
-                    <section id="searchBedrooms" class="position-absolute p-4 mt-1 d-none" style="background-color: #EFEFEF; border-radius: 15px">
+                    <section id="searchBedrooms" class="position-absolute p-4 mt-1 d-none absolute_filters" style="background-color: #EFEFEF; border-radius: 15px">
                         <div class="d-flex justify-content-center gap-4 mb-3">
                             <div>
                                 <input type="radio" class="btn-check checkhabitaciones" name="bedrooms" id="checkBedrooms1" value="1">
@@ -66,7 +66,7 @@
                         <span>Precio</span>
                         <i class="fa-solid fa-chevron-down"></i>
                     </section>
-                    <section id="searchPrice" class="position-absolute p-4 mt-1 d-none" style="background-color: #EFEFEF; border-radius: 15px">
+                    <section id="searchPrice" class="position-absolute p-4 mt-1 d-none absolute_filters" style="background-color: #EFEFEF; border-radius: 15px">
                         <input type="number" class="form-control mb-3 ps-3" style="border-radius: 15px" placeholder="Desde" id="priceMin">
                         <input type="number" class="form-control ps-3" style="border-radius: 15px" placeholder="Hasta" id="priceMax">
                     </section>
@@ -158,6 +158,10 @@
 
 <script>
     const openHTML = (id) => {
+        let absolute_filters = document.querySelectorAll('.absolute_filters');
+        absolute_filters.forEach(element => {
+            if(!element.classList.contains('d-none')){element.classList.add('d-none')};
+        });
         let divHTML = document.getElementById(id);
         divHTML.classList.contains('d-none') ? divHTML.classList.remove('d-none') : divHTML.classList.add('d-none');
     }
