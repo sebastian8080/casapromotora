@@ -159,9 +159,7 @@
 <script>
     const openHTML = (id) => {
         let absolute_filters = document.querySelectorAll('.absolute_filters');
-        absolute_filters.forEach(element => {
-            if(!element.classList.contains('d-none')){element.classList.add('d-none')};
-        });
+        absolute_filters.forEach(element => { if(!element.classList.contains('d-none') && element.id != id){element.classList.add('d-none')}; });
         let divHTML = document.getElementById(id);
         divHTML.classList.contains('d-none') ? divHTML.classList.remove('d-none') : divHTML.classList.add('d-none');
     }
