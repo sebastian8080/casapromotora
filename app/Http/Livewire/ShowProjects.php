@@ -43,7 +43,7 @@ class ShowProjects extends Component
         }
 
         if($this->checkType){
-            $projects_filter->where('type', 'LIKE', '%'.$this->checkType.'%');
+            $projects_filter->where('type', $this->checkType);
         }
 
         if($this->checkBedrooms){
