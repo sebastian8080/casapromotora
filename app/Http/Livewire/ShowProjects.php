@@ -78,7 +78,7 @@ class ShowProjects extends Component
         if($this->checkType){
             $projects_filter->where('type', $this->checkType);
         }
-        
+
         $this->selStates = DB::table('info_states')->orderBy('name', 'asc')->get();
 
         // if($this->state) {
@@ -104,6 +104,7 @@ class ShowProjects extends Component
         //     dd($projects_filter);
         // }
         $projects_filter->where('status', 1);
+        dd($projects_filter);
 
         $this->projects = $projects_filter->get();
 
