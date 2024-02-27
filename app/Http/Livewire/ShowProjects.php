@@ -33,7 +33,7 @@ class ShowProjects extends Component
         //if($this->checkBedrooms) dd($this->checkBedrooms);
         
         $projects_filter = Category::where('status', 1);
-        $properties_filter = Property::select('category_id')->orderBy('property_id', 'asc');
+        $properties_filter = Property::select('category_id')->where('status', 1)->orderBy('property_id', 'asc');
         
         if($this->searchtxt){
             $projects_filter->where('state', 'LIKE', '%'.$this->searchtxt.'%')->orWhere('city', 'LIKE', '%'.$this->searchtxt.'%')->orWhere('address', 'LIKE', '%'.$this->searchtxt.'%');
