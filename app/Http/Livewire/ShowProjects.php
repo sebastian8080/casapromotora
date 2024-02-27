@@ -48,11 +48,12 @@ class ShowProjects extends Component
             $properties = $properties_filter->get();
             if(count($properties) > 0){
                 for ($i=0; $i < count($properties); $i++) { 
-                    if($i < 1){
-                        $projects_filter->where('category_id', $properties[$i]->category_id);
-                    } else {
-                        $projects_filter->orWhere('category_id', $properties[$i]->category_id);
-                    }
+                    $projects_filter->where('category_id', $properties[$i]->category_id);
+                    // if($i < 1){
+                    //     $projects_filter->where('category_id', $properties[$i]->category_id);
+                    // } else {
+                    //     $projects_filter->orWhere('category_id', $properties[$i]->category_id);
+                    // }
                 }
             }
         }
