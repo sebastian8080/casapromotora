@@ -101,9 +101,9 @@ class ShowProjects extends Component
         // }
 
         $projects_filter->where('status', 1);
-        if($this->searchtxt || $this->checkType || $this->checkBedrooms){
-            dd($projects_filter);
-        }
+        // if($this->searchtxt || $this->checkType || $this->checkBedrooms){
+        //     dd($projects_filter);
+        // }
         // dd($projects_filter);
 
         $this->projects = $projects_filter->get();
