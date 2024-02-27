@@ -38,14 +38,7 @@ class ShowProjects extends Component
         $projects_filter = Category::orderBy('category_id', 'asc');
         $properties_filter = Property::select('category_id')->where('status', 1);
         
-        if($this->searchtxt){
-            $projects_filter->where('state', 'LIKE', '%'.$this->searchtxt.'%')->orWhere('city', 'LIKE', '%'.$this->searchtxt.'%')->orWhere('address', 'LIKE', '%'.$this->searchtxt.'%');
-        }
-
-        if($this->checkType){
-            $projects_filter->where('type', $this->checkType);
-        }
-
+        
         if($this->checkBedrooms){
             $properties_filter->where('bedrooms', $this->checkBedrooms);
             $properties = $properties_filter->get();
@@ -61,7 +54,7 @@ class ShowProjects extends Component
                 $projects_filter->where('category_id', 100000);
             }
         }
-
+        
         if($this->inpPriceMin || $this->inpPriceMax){
             $properties_filter->whereBetween('price', [$this->inpPriceMin, $this->inpPriceMax]);
             $properties = $properties_filter->get();
@@ -77,7 +70,15 @@ class ShowProjects extends Component
                 $projects_filter->where('category_id', 100000);
             }
         }
+        
+        if($this->searchtxt){
+            $projects_filter->where('state', 'LIKE', '%'.$this->searchtxt.'%')->orWhere('city', 'LIKE', '%'.$this->searchtxt.'%')->orWhere('address', 'LIKE', '%'.$this->searchtxt.'%');
+        }
 
+        if($this->checkType){
+            $projects_filter->where('type', $this->checkType);
+        }
+        
         $this->selStates = DB::table('info_states')->orderBy('name', 'asc')->get();
 
         // if($this->state) {
