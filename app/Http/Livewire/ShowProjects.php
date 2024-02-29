@@ -114,7 +114,7 @@ class ShowProjects extends Component
 
         $this->projects = $projects_filter->get();
 
-        $properties = $properties_filter->paginate(1);
+        $properties = $properties_filter->paginate(10);
 
         return view('livewire.show-projects', [
             'projects' => $this->projects,
