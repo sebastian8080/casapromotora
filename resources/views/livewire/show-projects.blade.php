@@ -112,7 +112,151 @@
             </div>
           </details>
     </div> --}}
-    <div class="row mt-5 mb-3 justify-content-center">
+
+    @if(count($properties)>0)
+        @foreach ($properties as $propertie)
+            @php $project = App\Models\Project\Category::select('project_name', 'state', 'city', 'address', 'description', 'images')->where('category_id', $propertie->category_id)->first(); @endphp
+            @php $images = explode('|', $project->images); @endphp    
+            <section class="bg-light w-100 mt-5 pb-1">
+                    <section class="container">
+                        <section class="row mb-5">
+                            @if(($loop->index % 2) == 0)
+                            <article class="col-sm-6">
+                                <div class="px-5 py-4">
+                                    <p class="fw-bold" style="font-size: 30px">${{number_format($propertie->price)}} | {{ $loop->index }}</p>
+                                    <p>{{ strtoupper($project->address)}}, {{ strtoupper($project->city) }}, {{ strtoupper($project->state) }}</p>
+                                    <h2>{{ $propertie->title }}</h2>
+                                    <p style="font-size: 14px; text-align: justify">{{ $project->description }}</p>
+                                    <div class="d-flex" style="justify-content: space-between">
+                                        <div class="text-center">
+                                            <img width="50px" src="{{ asset('img/area-interior.png') }}" alt="area interior de {{ $propertie->title}}"> <br>
+                                            <span class="fw-bold" style="font-size: 13px">ÁREA INTERNA</span> <br>
+                                            <span>{{ $propertie->indoor_area }}</span>
+                                        </div>
+                                        <div class="text-center">
+                                            <img width="50px" src="{{ asset('img/area-total.png') }}" alt="area total de {{ $propertie->title}}"> <br>
+                                            <span class="fw-bold" style="font-size: 13px">ÁREA TOTAL</span> <br>
+                                            <span>{{ $propertie->total_area }}</span>
+                                        </div>
+                                        <div class="text-center">
+                                            <img width="50px" src="{{ asset('img/dormitorios.png') }}" alt="numero de habitaciones de {{ $propertie->title}}"> <br>
+                                            <span class="fw-bold" style="font-size: 13px">DORMITORIOS</span> <br>
+                                            <span>{{ $propertie->bedrooms }}</span>
+                                        </div>
+                                        <div class="text-center">
+                                            <img width="50px" src="{{ asset('img/banios.png') }}" alt="numero de baños de {{ $propertie->title}}"> <br>
+                                            <span class="fw-bold" style="font-size: 13px">BAÑOS</span> <br>
+                                            <span>{{ $propertie->bathrooms }}</span>
+                                        </div>
+                                        <div class="text-center">
+                                            <img width="50px" src="{{ asset('img/garages.png') }}" alt="numero de garages de {{ $propertie->title}}"> <br>
+                                            <span class="fw-bold" style="font-size: 13px">GARAGES</span> <br>
+                                            <span>{{ $propertie->garage }}</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex gap-2 mt-4">
+                                        <a target="_blank" href="https://wa.me/+593983849073?text=Quiero más información de *{{ $propertie->title}}* del proyecto *{{ $project->project_name }}* %0A {{ Request::url() }}" class="btn btn-outline-dark">WHATSAPP <i class="fa-brands fa-whatsapp text-success" style="font-size: 18px"></i></a>
+                                        <button class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#modalContactar" onclick="setInfoModal('{{$propertie->price}}', '{{ $propertie->title }}', '{{$project->state}}', '{{$project->city}}', '{{ $project->address}}', '{{ $images[0] }}', '{{ $project->project_name}}')">CONTACTAR <i class="fa-regular fa-envelope" style="font-size: 18px"></i></button>
+                                        <a href="tel:+593983849073" class="btn btn-outline-dark btn-call"><i class="fa-solid fa-phone"></i></a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="col-sm-6">
+                                <div class="pt-5">
+                                    <div id="carouselExampleControls{{$loop->index}}" class="carousel slide" data-bs-ride="carousel">
+                                        <div class="carousel-inner">
+                                            @foreach ($images as $image)
+                                                <div class="carousel-item @if($loop->index == 0) active @endif">
+                                                    <img src="{{ asset('uploads/projects/'. $image) }}" class="d-block w-100" alt="...">
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls{{$loop->index}}" data-bs-slide="prev">
+                                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                          <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls{{$loop->index}}" data-bs-slide="next">
+                                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                          <span class="visually-hidden">Next</span>
+                                        </button>
+                                      </div>
+                                </div>
+                            </article>
+                            @else
+                            <article class="col-sm-6">
+                                <div class="pt-5">
+                                    @php $images = explode('|', $project->images); @endphp
+                                    <div id="carouselExampleControls{{$loop->index}}" class="carousel slide" data-bs-ride="carousel">
+                                        <div class="carousel-inner">
+                                            @foreach ($images as $image)
+                                                <div class="carousel-item @if($loop->index == 0) active @endif">
+                                                    <img src="{{ asset('uploads/projects/'. $image) }}" class="d-block w-100" alt="...">
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls{{$loop->index}}" data-bs-slide="prev">
+                                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                          <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls{{$loop->index}}" data-bs-slide="next">
+                                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                          <span class="visually-hidden">Next</span>
+                                        </button>
+                                      </div>
+                                </div>
+                            </article>
+                            <article class="col-sm-6">
+                                <div class="px-5 py-4">
+                                    <p class="fw-bold" style="font-size: 30px">${{number_format($propertie->price)}} | {{ $loop->index }}</p>
+                                    <p>{{ strtoupper($project->address)}}, {{ strtoupper($project->city) }}, {{ strtoupper($project->state) }}</p>
+                                    <h2>{{ $propertie->title }}</h2>
+                                    <p style="font-size: 14px; text-align: justify">{{ $project->description }}</p>
+                                    <div class="d-flex" style="justify-content: space-between">
+                                        <div class="text-center">
+                                            <img width="50px" src="{{ asset('img/area-interior.png') }}" alt="area interior de {{ $propertie->title}}"> <br>
+                                            <span class="fw-bold" style="font-size: 13px">ÁREA INTERNA</span> <br>
+                                            <span>{{ $propertie->indoor_area }}</span>
+                                        </div>
+                                        <div class="text-center">
+                                            <img width="50px" src="{{ asset('img/area-total.png') }}" alt="area total de {{ $propertie->title}}"> <br>
+                                            <span class="fw-bold" style="font-size: 13px">ÁREA TOTAL</span> <br>
+                                            <span>{{ $propertie->total_area }}</span>
+                                        </div>
+                                        <div class="text-center">
+                                            <img width="50px" src="{{ asset('img/dormitorios.png') }}" alt="numero de habitaciones de {{ $propertie->title}}"> <br>
+                                            <span class="fw-bold" style="font-size: 13px">DORMITORIOS</span> <br>
+                                            <span>{{ $propertie->bedrooms }}</span>
+                                        </div>
+                                        <div class="text-center">
+                                            <img width="50px" src="{{ asset('img/banios.png') }}" alt="numero de baños de {{ $propertie->title}}"> <br>
+                                            <span class="fw-bold" style="font-size: 13px">BAÑOS</span> <br>
+                                            <span>{{ $propertie->bathrooms }}</span>
+                                        </div>
+                                        <div class="text-center">
+                                            <img width="50px" src="{{ asset('img/garages.png') }}" alt="numero de garages de {{ $propertie->title}}"> <br>
+                                            <span class="fw-bold" style="font-size: 13px">GARAGES</span> <br>
+                                            <span>{{ $propertie->garage }}</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex gap-2 mt-4">
+                                        <a target="_blank" href="https://wa.me/+593983849073?text=Quiero más información de *{{ $propertie->title}}* del proyecto *{{ $project->project_name }}*" class="btn btn-outline-dark">WHATSAPP <i class="fa-brands fa-whatsapp text-success" style="font-size: 18px"></i></a>
+                                        <button class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#modalContactar" onclick="setInfoModal('{{$propertie->price}}', '{{ $propertie->title }}', '{{$project->state}}', '{{$project->city}}', '{{ $project->address}}', '{{ $images[0] }}', '{{ $project}}')">CONTACTAR <i class="fa-regular fa-envelope" style="font-size: 18px"></i></button>
+                                        <a href="tel:+593983849073" class="btn btn-outline-dark btn-call"><i class="fa-solid fa-phone"></i></a>
+                                    </div>
+                                </div>
+                            </article>
+                            @endif
+                        </section>
+                    </section>
+                </section>
+        @endforeach
+
+    @else
+        <div class="text-center">
+            <p class="h5 border p-3 shadow-sm" style="font-weight: 500">No hemos encontrado proyectos con estas características</p>
+        </div>
+    @endif
+    {{-- <div class="row mt-5 mb-3 justify-content-center">
         @if(count($projects)>0)
             @foreach ($projects as $project)
                 <div class="col-sm-4 mb-5">
@@ -153,6 +297,11 @@
         </div>
         
         @endif
+    </div> --}}
+
+    
+    <div class="modal fade" id="modalContactar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <x-contact-component></x-contact-component>
     </div>
 </section>
 
@@ -191,5 +340,25 @@
         @this.set('searchtxt', searchTxt);
         // if(checkDepartamentos) @this.set('checkType', checkDepartamentos);
         // if(checkCondominios) @this/set('checkType', checkCondominios);
+    }
+
+    const setInfoModal = (price, title, state, city, address, image, project) => {
+        let txtPrice = document.getElementById('txtPriceModal');
+        let txtTitle = document.getElementById('txtTitleModal');
+        let txtAdress = document.getElementById('txtAddressModal');
+        let imgModalInfo = document.getElementById('imgModalInfo');
+
+        let hidProject = document.getElementById('hidProject');
+        let hidPropertie = document.getElementById('hidPropertie');
+        let hidPrice = document.getElementById('hidPrice');
+
+        hidProject.value = project;
+        hidPropertie.value = title;
+        hidPrice.value = price;
+
+        txtPrice.innerHTML = `$${price}`;
+        txtTitle.innerHTML = `${title}`;
+        txtAdress.innerHTML = `${state}, ${city}, ${address}`;
+        imgModalInfo.src = "{{ asset('uploads/projects/300') }}"+ "/" + image;
     }
 </script>

@@ -13,6 +13,7 @@ class ShowProjects extends Component
     public $state, $selStates, $city, $type;
     public $cities = [];
     public $projects = [];
+    public $properties = [];
     public $aux_state, $aux_city, $aux_type;
 
     public $searchtxt, $checkType, $checkBedrooms, $inpPriceMin, $inpPriceMax;
@@ -36,7 +37,7 @@ class ShowProjects extends Component
         //if($this->checkBedrooms) dd($this->checkBedrooms);
         
         $projects_filter = Category::orderBy('category_id', 'asc');
-        $properties_filter = Property::select('category_id')->where('status', 1);
+        $properties_filter = Property::where('status', 1);
         
         
         if($this->checkBedrooms){
@@ -107,6 +108,8 @@ class ShowProjects extends Component
         // dd($projects_filter);
 
         $this->projects = $projects_filter->get();
+
+        $this->properties = $properties_filter->get();
 
         return view('livewire.show-projects', [
             'projects' => $this->projects,

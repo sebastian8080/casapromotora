@@ -66,6 +66,7 @@ Route::get('/getcities/{idState}', [IndexController::class, 'getCities'])->name(
 
 //SEND LEADS
 Route::post('/sendlead', [IndexController::class, 'sendlead'])->name('sendlead');
+Route::post('/contact', [IndexController::class, 'contact'])->name('contact.lead');
 
 //landings
 Route::get('/landing/{type}-en-venta', [LandingController::class, 'index'])->name('landing.index');

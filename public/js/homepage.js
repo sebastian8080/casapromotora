@@ -17,7 +17,7 @@ window.addEventListener('scroll', function (e) {
           menuItem3.classList.remove('text-white');
           menuItem4.classList.remove('text-white');
           menuItem5.classList.remove('text-white');
-          menuItem6.classList.remove('text-white');
+          //menuItem6.classList.remove('text-white');
       } else { 
           nav.classList.add('navbar-dark');
           nav.classList.remove('navbar-light');
@@ -28,6 +28,6 @@ window.addEventListener('scroll', function (e) {
           menuItem3.classList.add('text-white');
           menuItem4.classList.add('text-white');
           menuItem5.classList.add('text-white');
-          menuItem6.classList.add('text-white');
+          //menuItem6.classList.add('text-white');
       }
 });

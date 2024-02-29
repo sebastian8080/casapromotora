@@ -43,7 +43,8 @@ class IndexController extends Controller
         // $listingsprojects = Http::withHeaders($this->header)->get($this->baseurl."/projects");
         // $listingsprojects = json_decode($listingsprojects);
         $projects = Category::where('status', 1)->get();
-        return view('pages.projects', compact('projects'));
+        $states = DB::table('info_states')->get();
+        return view('pages.projects', compact('projects', 'states'));
     }
 
     public function showproject($slug){
@@ -175,9 +176,35 @@ class IndexController extends Controller
         return back();
     }
 
+    public function contact(Request $request){
+
+        $to = "info@casacredito.com";
+        $subject = "Lead - Casa Promotora | ". $request->name;
+        $message = "<br><strong>Información de contacto</strong>
+            <br><b>Nombre:</b> " . strip_tags($request->name) . " " .strip_tags($request->lastname)."
+            <br><b>Teléfono:</b> " . strip_tags($request->phone) ."
+            <br><b>Email:</b> " . strip_tags($request->email) . "
+            <br><b>Proyecto:</b> " . strip_tags($request->project) ."
+            <br><b>Propiedad:</b> " . strip_tags($request->propertie) ."
+            <br><b>Precio:</b> " . strip_tags($request->price) . "
+            <br><b>Mensaje:</b> " . strip_tags($request->comment) . " 
+            <br><b>Fuente:</b> " . " Website " . url()->previous() . "
+        ";
+
+        $header =   "From: <lead_proyectos@casapromotora.com>" . "\r\n" .
+                    "MIME-Version: 1.0" . "\r\n" .
+                    "Content-Type:text/html;charset=UTF-8" . "\r\n";
+
+        mail('sebas31051999@gmail.com', $subject, $message, $header);
+        //mail($to, $subject, $message, $header);
+
+        return redirect()->route('pages.thank');
+
+    }
+
     public function sendlead(Request $request){
 
-        $to = "info@casapromotora.com";
+        $to = "info@casacredito.com";
         $subject = "Lead - Casa Promotora | ". $request->name;
         $message = "<br><strong>Información de contacto</strong>
             <br><b>Nombre:</b> " . strip_tags($request->name) . " " .strip_tags($request->lastname)."
@@ -200,7 +227,7 @@ class IndexController extends Controller
     }
 
     public function getCities($id){
-        $cities = DB::connection('mysql2')->table('info_cities')->where('state_id',$id)->get(); 
+        $cities = DB::table('info_cities')->where('state_id',$id)->get(); 
         return response()->json($cities);   
     }
 
