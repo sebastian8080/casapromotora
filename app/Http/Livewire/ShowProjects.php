@@ -6,14 +6,18 @@ use Livewire\Component;
 use App\Models\Project\Category;
 use App\Models\Project\Property;
 use Illuminate\Support\Facades\DB;
+use Livewire\WithPagination;
 
 class ShowProjects extends Component
 {
 
+    use WithPagination;
+
+    protected $paginationTheme = 'bootstrap';
+
     public $state, $selStates, $city, $type;
     public $cities = [];
     public $projects = [];
-    public $properties = [];
     public $aux_state, $aux_city, $aux_type;
 
     public $searchtxt, $checkType, $checkBedrooms, $inpPriceMin, $inpPriceMax;
@@ -102,6 +106,7 @@ class ShowProjects extends Component
         // }
 
         $projects_filter->where('status', 1);
+
         // if($this->searchtxt || $this->checkType || $this->checkBedrooms){
         //     dd($projects_filter);
         // }
@@ -109,12 +114,13 @@ class ShowProjects extends Component
 
         $this->projects = $projects_filter->get();
 
-        $this->properties = $properties_filter->get();
+        $properties = $properties_filter->paginate(10);
 
         return view('livewire.show-projects', [
             'projects' => $this->projects,
             'states' => $this->selStates,
-            'cities' =>$this->cities
+            'cities' =>$this->cities,
+            'properties' => $properties
         ]);
     }
 }

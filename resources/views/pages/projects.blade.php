@@ -43,24 +43,7 @@
     </div> --}}
 
     <div class="container">
-        {{-- <div class="row text-center">
-            <div class="mt-4">
-                <a id="btnmoreinformation" href="#rowforminformation" class="btn btn-outline-secondary rounded-0 fw-bold shadow-sm" style="font-size: 14px;">MÁS INFORMACIÓN</a>
-            </div>
-        </div>
-        <div class="row mt-5">
-            <div class="col-sm-6">
-                <p id="tagprojects" style="color: #ffffff; -webkit-text-stroke: 2px rgb(162, 157, 157); font-size: 70px; font-family: 'Raleway', sans-serif">PROYECTOS</p>
-            </div>
-            <div class="col-sm-6">
-                <div class="pt-5 pb-5 text-end" style="padding-left: 15%; padding-right: 15%;background-color: #ebebeb">
-                    <p class="text-muted"><i>Contamos con proyectos de arquitectos y diseñadores líderes en todo el Ecuador, los cuáles se han convertido en nuevos puntos destacados del creciente horizonte del país</i></p>
-                    <button class="btn btn-outline-secondary rounded-0 fw-bold shadow-sm d-none">Ver proyectos</button>
-                </div>
-            </div>
-        </div> --}}
-
-        <div class="row mt-5 py-4" style="background-color: #f1f1f1">
+        {{-- <div class="row mt-5 py-4" style="background-color: #f1f1f1">
             <div class="col-sm-4 d-flex align-items-center">
                 <div id="carouselCountryInfo" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
@@ -111,7 +94,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         <div class="row mt-5" id="rowforminformation">
             <div class="col-sm-6">

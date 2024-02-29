@@ -251,6 +251,10 @@
                 </section>
         @endforeach
 
+        <div class="container mt-5">
+           {{ $properties->links() }}
+        </div>
+
     @else
         <div class="text-center">
             <p class="h5 border p-3 shadow-sm" style="font-weight: 500">No hemos encontrado proyectos con estas características</p>
