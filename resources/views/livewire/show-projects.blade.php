@@ -251,7 +251,7 @@
                 </section>
         @endforeach
 
-        <div class="container mt-5">
+        <div class="container mt-5 d-flex justify-content-center">
            {{ $properties->links() }}
         </div>
 

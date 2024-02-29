@@ -9,6 +9,25 @@
         .inputs{background-color: #d5d5d5}.labels{font-size: 12px; font-weight: 900}
         @media only screen and (max-width: 994px){#tagprojects{font-size: 40px !important; text-align: center;}#titleform{font-size: 40px !important; text-align: center}#title{font-size: 19px !important}}
         .form-control:focus, .form-select:focus, .btnSearch:focus {border-color: #FF0000;box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);}
+        .pagination li {
+            margin-left: .25rem;
+            margin-right: .25rem;
+        }
+
+        .pagination li .page-link {
+            border-radius: .25rem;
+            border: none;
+            min-width: 2.25rem;
+            text-align: center;
+            color: #9B4646;
+        }
+
+        .pagination li.active .page-link,
+        .pagination li .page-link:hover {
+            background-color: #9B4646;
+            color: #fff;
+            font-weight: bold;
+        }
     </style>
     @livewireStyles
 @endsection
