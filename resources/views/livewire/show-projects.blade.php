@@ -123,7 +123,7 @@
                             @if(($loop->index % 2) == 0)
                             <article class="col-sm-6">
                                 <div class="px-5 py-4">
-                                    <p class="fw-bold" style="font-size: 30px">${{number_format($propertie->price)}} | {{ $loop->index }}</p>
+                                    <p class="fw-bold" style="font-size: 30px">${{number_format($propertie->price)}}</p>
                                     <p>{{ strtoupper($project->address)}}, {{ strtoupper($project->city) }}, {{ strtoupper($project->state) }}</p>
                                     <h2>{{ $propertie->title }}</h2>
                                     <p style="font-size: 14px; text-align: justify">{{ $project->description }}</p>
@@ -207,7 +207,7 @@
                             </article>
                             <article class="col-sm-6">
                                 <div class="px-5 py-4">
-                                    <p class="fw-bold" style="font-size: 30px">${{number_format($propertie->price)}} | {{ $loop->index }}</p>
+                                    <p class="fw-bold" style="font-size: 30px">${{number_format($propertie->price)}}</p>
                                     <p>{{ strtoupper($project->address)}}, {{ strtoupper($project->city) }}, {{ strtoupper($project->state) }}</p>
                                     <h2>{{ $propertie->title }}</h2>
                                     <p style="font-size: 14px; text-align: justify">{{ $project->description }}</p>
