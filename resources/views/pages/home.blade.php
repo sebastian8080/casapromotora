@@ -84,21 +84,21 @@
       <img class="img-fluid" src="{{ asset('img/home/card-casas.png') }}" alt="">
       <div class="position-absolute top-0 start-50 translate-middle-x mt-5 text-center">
         <h3 class="fw-bold">Casas</h3>
-        <a href="#" class="btn btn-cards rounded-pill">VER CATALOGO</a>
+        <a href="{{ route('projects.viewProject', 'casas') }}" class="btn btn-cards rounded-pill">VER CATALOGO</a>
       </div>
     </article>
     <article class="col-sm-4 position-relative">
       <img class="img-fluid" src="{{ asset('img/home/card-departamentos.png') }}" alt="">
       <div class="position-absolute top-0 start-50 translate-middle-x mt-5 text-center">
         <h3 class="text-center fw-bold">Departamentos</h3>
-        <a href="#" class="btn btn-cards rounded-pill">VER CATALOGO</a>
+        <a href="{{ route('projects.viewProject', 'departamentos') }}" class="btn btn-cards rounded-pill">VER CATALOGO</a>
       </div>
     </article>
     <article class="col-sm-4 position-relative">
       <img class="img-fluid" src="{{ asset('img/home/card-suites.png') }}" alt="">
       <div class="position-absolute top-0 start-50 translate-middle-x mt-5 text-center">
         <h3 class="text-center fw-bold">Suites</h3>
-        <a href="#" class="btn btn-cards rounded-pill">VER CATALOGO</a>
+        <a href="{{ route('projects.viewProject', 'suites') }}" class="btn btn-cards rounded-pill">VER CATALOGO</a>
       </div>
     </article>
     <article class="col-sm-12 text-center mt-5">
