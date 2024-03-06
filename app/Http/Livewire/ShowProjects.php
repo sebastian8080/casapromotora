@@ -20,10 +20,15 @@ class ShowProjects extends Component
     public $projects = [];
     public $aux_state, $aux_city, $aux_type;
 
+    public $location;
+
     public $searchtxt, $checkType, $checkBedrooms, $inpPriceMin, $inpPriceMax;
 
-    public function mount(){
+    public function mount($type, $location){
         $this->selStates = DB::table('info_states')->orderBy('name', 'asc')->get();
+
+        $this->type = $type;
+        $this->searchtxt = $location;
     }
 
     public function search(){
@@ -32,6 +37,8 @@ class ShowProjects extends Component
 
     public function render()
     {
+
+        //dd($this->properties);
 
         // if($this->searchtxt || $this->checkType || $this->checkBedrooms){
         //     dd($this->searchtxt . " | " . $this->checkType . " | " . $this->checkBedrooms);
@@ -77,7 +84,7 @@ class ShowProjects extends Component
         }
         
         if($this->searchtxt){
-            $projects_filter->where('state', 'LIKE', '%'.$this->searchtxt.'%')->orWhere('city', 'LIKE', '%'.$this->searchtxt.'%')->orWhere('address', 'LIKE', '%'.$this->searchtxt.'%');
+            $properties_filter->where('state', 'LIKE', '%'.$this->searchtxt.'%')->orWhere('city', 'LIKE', '%'.$this->searchtxt.'%')->orWhere('address', 'LIKE', '%'.$this->searchtxt.'%');
         }
 
         if($this->checkType){

@@ -289,6 +289,11 @@ class ProjectController extends Controller
         $property->bathrooms = $bathrooms;
         $property->garage = $garage;
 
+        $property->state = $project_category->state;
+        $property->city = $project_category->city;
+        $property->address = $project_category->address;
+        $property->street = $project_category->street;
+
         $property->num_piso = $request->num_piso;
 
         $property->slug = Str::slug($property->title." ".str_replace('_', ' ', $property->property_code));
@@ -342,6 +347,14 @@ class ProjectController extends Controller
             $request->merge(['heading_details' => '']);
         }
 
+        $project = Category::where('category_id', $request->category_id)->first();
+
+        $property->state == null ? $property->state = $project->state : null;
+        $property->city == null ? $property->city = $project->city : null;
+        $property->address == null ? $property->address = $project->address : null;
+        $property->street == null ? $property->street = $project->street : null;
+        $property->type == null ? $property->type = $project->type : null;
+
         $property->category_id = $request->category_id;
         $property->title = $request->title;
         $property->total_area = $request->total_area;
@@ -368,6 +381,34 @@ class ProjectController extends Controller
     }
 
     public function viewProject(String $type, String $slug = null, String $property_slug = null){
+        // $properties_filter = Property::where('status', 1);
+
+        // if($type != null) $properties_filter->where('type', 'LIKE', '%'.$type.'%');
+        // if($slug != null){
+        //     $location = str_replace('-', ' ', $slug);
+        //     $properties_filter->where('street', 'LIKE', '%'.$location.'%')->orWhere('address', 'LIKE', '%'.$location.'%')->orWhere('city', 'LIKE', '%'.$location.'%');
+        //     // if(count($properties_filter->get()) < 1) dd('entra aqui');//$properties_filter->where('address', 'LIKE', '%'.$location.'%');
+        //     // if(count($properties_filter->get()) < 1) $properties_filter->where('city', 'LIKE', '%'.$location.'%');
+        //     // if(count($properties_filter->get()) < 1) $properties_filter->where('state', 'LIKE', '%'.$location.'%');
+        // }
+
+        // //dd($properties_filter);
+        
+        // $properties = $properties_filter->paginate(1);
+
+        //dd($properties);
+
+        if($slug != null){
+            $location = str_replace('-', ' ', $slug);
+        } else {
+            $location = null;
+        }
+
+        $projects = Category::where('status', 1)->get();
+        $states = DB::table('info_states')->get();
+        return view('pages.projects', compact('projects', 'states', 'type', 'location'));
+
+        //dd($properties);
         if($type != null && $slug == null){
             $projects = Category::where('type', 'LIKE', "%$type%")->get();
             return view('pages.projects', compact('projects'));

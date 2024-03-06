@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use App\Models\Project\Category;
 use App\Models\Project;
+use App\Models\Project\Property;
+use Illuminate\Support\Str;
 
 class IndexController extends Controller
 {
@@ -22,7 +24,21 @@ class IndexController extends Controller
         $projects = Category::where('status', 1)->take(9)->get();
         $latest_projects = Category::where('status', 1)->take(3)->latest()->get();
 
-        return view('pages.home', compact('departments', 'condominios', 'projects', 'latest_projects'));
+        $outstanding_projects = Category::where('status', 1)->take(3)->get();
+
+        return view('pages.home', compact('departments', 'condominios', 'projects', 'latest_projects', 'outstanding_projects'));
+    }
+
+    public function searchProperties(Request $request){
+        
+        $type = strtolower($request->type);
+        $slug = $request->location;
+
+        $slug = Str::slug($slug);
+
+        if($type && !$slug) return redirect()->route('projects.viewProject', $type); 
+        else if($type && $slug) return redirect()->route('projects.viewProject', ['type' => $type, 'slug' => $slug]);
+        else return redirect()->route('pages.projects');
     }
 
     public function redirectToAbout(){
@@ -42,9 +58,10 @@ class IndexController extends Controller
         // $baseurl = "https://casacredito.com/api/projects";
         // $listingsprojects = Http::withHeaders($this->header)->get($this->baseurl."/projects");
         // $listingsprojects = json_decode($listingsprojects);
+        $properties = Property::get();
         $projects = Category::where('status', 1)->get();
         $states = DB::table('info_states')->get();
-        return view('pages.projects', compact('projects', 'states'));
+        return view('pages.projects', compact('projects', 'states', 'properties'));
     }
 
     public function showproject($slug){

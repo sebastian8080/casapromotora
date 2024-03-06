@@ -48,7 +48,7 @@
 
     <section>
         <div class="d-flex align-items-center justify-content-center w-100" style="margin-top: 130px !important">
-            <livewire:show-projects />
+            <livewire:show-projects :type="$type" :location="$location" />
         </div>
     </section>
 

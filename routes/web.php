@@ -38,6 +38,7 @@ Route::get('/nuestro-equipo', function () {return view('pages.equipo');})->name(
 
 // Route::get('/proyectos/{nombreProyecto}/{num_department?}', [ProjectController::class, 'viewProject'])->name('projects.viewProject');
 Route::get('/proyectos/{type}/{slug?}/{property?}', [ProjectController::class, 'viewProject'])->name('projects.viewProject');
+Route::get('/search', [IndexController::class, 'searchProperties'])->name('search');
 // Route::get('/proyectos/{type}/{name?}', [ProjectController::class, 'showprojectbytype'])->name('web.projects.shoje');
 Route::get('/proyectos-nuevos/{slug}', [IndexController::class, 'showproject'])->name('web.project.show');
 Route::post('/proyectos-interest/{nombreProyecto}', [ProjectController::class, 'sendEmail'])->name("sendEmail.projects");

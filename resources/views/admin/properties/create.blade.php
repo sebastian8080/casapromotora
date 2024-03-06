@@ -35,7 +35,7 @@
         @csrf
         <div class="row border shadow-sm p-3 rounded-0 bg-white">
             <div class="form-group w-100">
-                {!! Form::label('category', 'Categoría en donde se encuentra la propiedad') !!}
+                {!! Form::label('category', 'Proyecto en donde se encuentra la propiedad') !!}
                 <div class="d-flex">
                     <select name="category_id" id="category" class="form-control w-50 mr-1 rounded-0">
                         <option value="">Seleccione</option>
@@ -50,21 +50,25 @@
                 <div class="row w-100">
                     <div class="col-sm-4">
                         <label class="text-danger"><i class="fas fa-key"></i> Código de Proyecto</label>
-                        <p class="font-weight-bold">{{$project_category->project_code}}</p>
+                        <p>{{$project_category->project_code}}</p>
                     </div>
                     <div class="col-sm-4">
                         <label class="text-danger"><i class="fas fa-tag"></i> Tipo de Proyecto</label>
-                        <p class="font-weight-bold">{{$project_category->type}}</p>
+                        <p>{{$project_category->type}}</p>
                     </div>
-                    <div class="col-sm-4">
-                        <label class="text-danger"><i class="fas fa-thumbtack"></i> Dirección</label>
-                        <p class="font-weight-bold">{{$project_category->state.", ".$project_category->city.", ".$project_category->address }}</p>
-                    </div>
+                    @if(isset($property))
+                        @if($property->state != null && $property->city != null && $property->address != null)
+                            <div class="col-sm-4">
+                                <label class="text-danger"><i class="fas fa-thumbtack"></i> Dirección</label>
+                                <p>{{$property->state.", ".$property->city.", ".$property->address }}</p>
+                            </div>
+                        @endif
+                    @endisset
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
                         <label class="text-danger"><i class="fas fa-file-alt"></i> Descripción</label>
-                        <p class="font-weight-bold">{{$project_category->description}}</p>
+                        <p>{{$project_category->description}}</p>
                     </div>
                 </div>
             @endif
