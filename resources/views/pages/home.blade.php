@@ -6,7 +6,7 @@
 
   <meta name="title" content="Casa Promotora - Encuentre su Proyecto Ideal" />
   <meta name="description" content="Proyectos Inmobiliarios modernos y elegantes para disfrutar de la comodidad con su familia. Consulte para más información ✅ " />
-  <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/home.css?v=1') }}">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
@@ -48,13 +48,13 @@
 <section>
 
   <!-- BANNER -->
-  <section class="d-flex align-items-center justify-content-center" style="height: 100vh; background-position: center; background-repeat: no-repeat; background-size: cover; background-image: url('{{ asset('img/banner-home.webp') }}')">
+  <section class="d-flex align-items-center justify-content-center banner" style="height: 100vh; background-position: center; background-repeat: no-repeat; background-size: cover; background-image: url('{{ asset('img/banner-home.webp') }}')">
     <section>
       <h1 class="text-white title text-center">ENCUENTRA <br> <span class="fw-bold title-bold">TU HOGAR</span></h1>
       <section class="card py-4 d-flex justify-content-center">
         <form action="{{ route('search') }}" method="GET">
           @csrf
-          <section class="d-flex justify-content-center gap-4">
+          <section class="d-flex justify-content-center gap-4 filters">
             <div>
               <label for="type" class="mb-2">Seleccione el tipo de propiedad:</label>
               <select name="type" id="type" class="form-select rounded-inputs ps-4">
@@ -79,24 +79,24 @@
   <section class="py-5">
     <h2 class="text-center subtitle py-5"> <span class="fw-bold">Descubra</span> <span>lo que tenemos para usted</span></h2>
   </section>
-  <section class="row px-5">
-    <article class="col-sm-4 position-relative">
+  <section class="row px-5 padding-0">
+    <article class="col-sm-4 position-relative mb-2">
       <img class="img-fluid" src="{{ asset('img/home/card-casas.png') }}" alt="">
-      <div class="position-absolute top-0 start-50 translate-middle-x mt-5 text-center">
+      <div class="position-absolute top-0 start-50 translate-middle-x mt-5 text-center margin-top-mobile">
         <h3 class="fw-bold">Casas</h3>
         <a href="{{ route('projects.viewProject', 'casas') }}" class="btn btn-cards rounded-pill">VER CATALOGO</a>
       </div>
     </article>
-    <article class="col-sm-4 position-relative">
+    <article class="col-sm-4 position-relative mb-2">
       <img class="img-fluid" src="{{ asset('img/home/card-departamentos.png') }}" alt="">
-      <div class="position-absolute top-0 start-50 translate-middle-x mt-5 text-center">
+      <div class="position-absolute top-0 start-50 translate-middle-x mt-5 text-center margin-top-mobile">
         <h3 class="text-center fw-bold">Departamentos</h3>
         <a href="{{ route('projects.viewProject', 'departamentos') }}" class="btn btn-cards rounded-pill">VER CATALOGO</a>
       </div>
     </article>
-    <article class="col-sm-4 position-relative">
+    <article class="col-sm-4 position-relative mb-2">
       <img class="img-fluid" src="{{ asset('img/home/card-suites.png') }}" alt="">
-      <div class="position-absolute top-0 start-50 translate-middle-x mt-5 text-center">
+      <div class="position-absolute top-0 start-50 translate-middle-x mt-5 text-center margin-top-mobile">
         <h3 class="text-center fw-bold">Suites</h3>
         <a href="{{ route('projects.viewProject', 'suites') }}" class="btn btn-cards rounded-pill">VER CATALOGO</a>
       </div>
@@ -112,12 +112,11 @@
       @foreach ($outstanding_projects as $project)
         <section class="row bg-light mb-5">
           @if(($loop->index % 2) == 0)
-          <article class="col-sm-7 p-5">
+          <article class="col-sm-7 p-5 outstanding-image-card">
             <div class="section-image-project" style="height: 600px; background-position: center; background-repeat: no-repeat; background-size: cover; background-image: url('{{ asset('uploads/projects/900/'. explode('|', $project->images)[0]) }}')"></div>
           </article>
-          <article class="col-sm-5 d-flex align-items-center justify-content-center" style="height: 600px">
+          <article class="col-sm-5 d-flex align-items-center justify-content-center outstanding-text-card" style="height: 600px">
             <div>
-              <p class="m-0 w-100 @if(($loop->index % 2) == 0) text-end @else text-start @endif">EN CONSTRUCCIÓN</p>
               <p class="title_outstanding_projects w-100 @if(($loop->index % 2) == 0) text-end @else text-start @endif">{{ $project->project_name }}</p>
               <div class="d-flex w-full align-items-center @if(($loop->index % 2) == 0) justify-content-end @else justify-content-start @endif gap-4">
                 <div>
@@ -139,9 +138,8 @@
             </div>
           </article>
           @else
-          <article class="col-sm-5 d-flex align-items-center justify-content-center" style="height: 600px">
+          <article class="col-sm-5 d-flex align-items-center justify-content-center outstanding-text-card pt-5" style="height: 600px">
             <div>
-              <p class="m-0 w-100 @if(($loop->index % 2) == 0) text-end @else text-start @endif">EN CONSTRUCCIÓN</p>
               <p class="title_outstanding_projects w-100 @if(($loop->index % 2) == 0) text-end @else text-start @endif">{{ $project->project_name }}</p>
               <div class="d-flex w-full align-items-center @if(($loop->index % 2) == 0) justify-content-end @else justify-content-start @endif gap-4">
                 <div>
@@ -162,7 +160,7 @@
               </div>
             </div>
           </article>
-          <article class="col-sm-7 p-5">
+          <article class="col-sm-7 p-5 outstanding-image-card">
             <div class="section-image-project" style="height: 600px; background-position: center; background-repeat: no-repeat; background-size: cover; background-image: url('{{ asset('uploads/projects/900/'. explode('|', $project->images)[0]) }}')"></div>
           </article>
           @endif
