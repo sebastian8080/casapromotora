@@ -77,8 +77,8 @@
                 <a id="menu-item2" class="nav-link text-white rounded" href="{{ route('pages.projects') }}">PROYECTOS</a>
               </li>
               <li class="nav-item dropdown">
-                <a id="menu-item4" class="nav-link dropdown-toggle text-white rounded" id="navbarDropdown" role="button" data-bs-auto-close="outside" data-bs-toggle="dropdown" aria-expanded="false">PARTNERS <i class="fa-solid fa-plus"></i></a>
-                <ul id="dropdown-menu" class="dropdown-menu shadow" aria-labelledby="navbarDropdown">
+                <a id="menu-item4" class="nav-link text-white rounded" href="{{ route('pages.partners') }}">CONSTRUCTORAS</a>
+                {{-- <ul id="dropdown-menu" class="dropdown-menu shadow" aria-labelledby="navbarDropdown">
                   <li class="dropend">
                     <a class="dropdown-item dropdown-toggle text-dark" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Entidades financieras <i class="fa-solid fa-angle-right"></i></a>
                     <ul id="dropdown-submenu" class="dropdown-menu shadow" style="margin-left: 165px; margin-top: -37px">
@@ -94,7 +94,7 @@
                       <li><a class="dropdown-item" href="{{ route('socios.construye')}}"><b>Construcción</b></a></li>
                     </ul>
                   </li>
-                </ul>
+                </ul> --}}
               </li>
               <li class="nav-item dropdown">
                 <a id="menu-item1" class="nav-link dropdown-toggle text-white rounded" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page" href="">NOSOTROS <i class="fa-solid fa-plus"></i></a>
