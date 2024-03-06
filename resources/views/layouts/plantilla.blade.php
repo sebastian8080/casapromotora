@@ -118,7 +118,7 @@
 
 
       <!--FOOTER-->
-    <footer>
+    {{-- <footer>
       <section class="bg-light">
         <section class="container px-5 py-5 footer-section">
           <section class="row px-5">
@@ -174,6 +174,88 @@
               </div>
             </div>
             
+          </section>
+        </section>
+      </section>
+      <section class="text-center text-muted my-4">
+        <p>Copyright 2023 Casa Promotora. All rights reserved</p>
+      </section>
+    </footer> --}}
+
+    <footer>
+      <section class="bg-light">
+        <section class="container px-4 py-4 footer-section">
+          <section class="row px-1">
+            <div class="col-sm-6 d-flex justify-content-center">
+              <div>
+                <div class="d-flex align-items-center gap-2 mb-4">
+                  <img width="350px" height="120px" src="{{ asset('img/logo-rojo-promotora.png') }}" alt=""></br>
+                </div>
+                <div class="px-4 py-2">
+                    <p style="text-align: justify">Casa Promotora, con más de 15 años de experiencia en el mercado
+                        inmobiliario, se especializa en propiedades lujosas de alto prestigio y
+                        calidad excepcional. Satisface las demandas de clientes que buscan residencias
+                        exclusivas, ofreciendo un portafolio selecto que refleja 
+                        nuestro compromiso con la excelencia y el lujo en cada detalle. 
+
+                    </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-4 d-flex justify-content-center">
+              <div class="px-4 py-2">
+                <h3>Contáctanos</h3>
+                <div class="d-flex align-items-center gap-2 mb-4 mt-3">
+                  <img width="35px" height="35px" src="{{ asset('img/icono_llamada.png') }}" alt="">
+                  <a href="tel:+072889355" class="text-dark" style="text-decoration: none">
+                    <span>07 288 93 55</span>
+                  </a>
+                </div>
+                <div class="d-flex align-items-center gap-2 mb-4">
+                  <img width="35px" height="35px" src="{{ asset('img/icono_whatsapp.png') }}" alt="">
+                  <a href="mailto:info@casapromotora.com" class="text-dark" style="text-decoration: none">
+                    <span>098 979 8238</span>
+                  </a>
+                </div>
+                <div class="d-flex align-items-center gap-2 mb-4">
+                  <img width="35px" height="35px" src="{{ asset('img/icono_email.png') }}" alt="">
+                  <a href="mailto:info@casapromotora.com" class="text-dark" style="text-decoration: none">
+                    <span>info@casapromota.com</span>
+                  </a>
+                </div>
+                <div class="d-flex align-items-center gap-2 mb-4">
+                  <img width="35px" height="35px" src="{{ asset('img/icono_ubicacion.png') }}" alt="">
+                  <a href="tel:+072889355" class="text-dark" style="text-decoration: none">
+                    <span>Remigio Tamariz Crespo y Av. Fray Vicente Solano</span>
+                  </a>
+                </div>
+                <h3>Social</h3>
+                <div class="d-flex align-items-center gap-2 mb-4">
+                  <div class="mx-2">
+                    <a target="_blank" href="https://www.facebook.com/casapromotora">
+                    <img width="55px" height="55px" class="img-fluid" src="{{asset('img/icono_facebook.png')}}" alt="Casa Credito"> 
+                    </a>
+                  </div>
+                  <div class="mx-2">
+                    <a target="_blank" href="https://www.instagram.com/casapromotora/">
+                    <img width="55px" height="55px" class="img-fluid" src="{{asset('img/icono_instagram.png')}}" alt="Casa Credito"> 
+                    </a>
+                  </div>
+                  <div class="mx-2">
+                    <a target="_blank" href="https://api.whatsapp.com/send?phone=+593983849073&text=Deseo%20saber%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20proyectos%20de%20Casa%20Promotora">
+                    <img width="55px" height="55px" class="img-fluid" src="{{asset('img/icono_whatsapp.png')}}" alt="Casa Credito"> 
+                    </a>
+                  </div>
+                  <div class="mx-2">
+                    <a target="_blank" href="https://www.tiktok.com/@casapromotora">
+                    <img width="55px" height="55px" class="img-fluid" src="{{asset('img/icono_tiktok.png')}}" alt="Casa Credito"> 
+                  
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div> 
           </section>
         </section>
       </section>
