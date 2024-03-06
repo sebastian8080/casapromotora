@@ -67,7 +67,7 @@
   <!--NAVBAR-->
     <nav id="menu" class="navbar navbar-expand-lg fixed-top navbar-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="{{ route('pages.home') }}"><img id="img-logo" class="img-fluid" width="120px" height="85px" src="{{ URL::asset('img/color_promotora.png'); }}" alt="Logo Casa Credito Promotora"></a>
+          <a class="navbar-brand" href="{{ route('pages.home') }}"><img id="img-logo" class="img-fluid" width="120px" height="85px" src="{{ URL::asset('img/logo-rojo-promotora.png'); }}" alt="Logo Casa Credito Promotora"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon bg-secondary rounded" style="opacity: 0.5"></span>
           </button>
