@@ -13,7 +13,7 @@
 
     <div data-aos="flip-up" class="row p-5 m-5 rounded" style="background: #f4f4f4">
         <h1 class="text-center">
-            PRUEBA
+            PRUEBA2
         </h1>
     </div>
 
