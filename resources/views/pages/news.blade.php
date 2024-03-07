@@ -13,27 +13,23 @@
 @endsection
 
 @section('content')
-    <div style="text-align: center;">
-     <img style="width: 100%; filter: brightness(60%)" src="{{asset('img/encabezado BLOGS-14.png')}}" class="img-fluid" alt="...">
-    
-     <p style="position: absolute; top: 45%; left: 65%; transform: translate(-100%, -100%); color: white; font-size: 52px;; font-weight:">NOTICIAS EN EL</p>
-     <p style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 52px;; font-weight: bold">MUNDO INMOBILIARIO</p>
-     
-     
-    
-    </div></br></br>
-            <div class="container">           
-            <div class="container">
-            
-            <div class="row">
-                <div class="col-sm-3">
-                @include('layouts.sidebar-news')
-                </div>
-                <div class="col-sm-9">
-                <div class="card mb-3" style="">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                    <img src="https://images.adsttc.com/media/images/5d34/e507/284d/d109/5600/0240/newsletter/_FI.jpg?1563747560" class="img-fluid rounded-start" alt="...">
+    <div>
+        <img style="width: 100%; filter: brightness(60%)" src="https://www.elmueble.com/medio/2018/12/18/salon-en-blanco-con-techo-de-vigas-de-madera-y-dos-sofas-enfrentados_9862685e_1280x650.jpg" class="img-fluid" alt="...">
+    </div>
+
+    <div data-aos="flip-up" class="row p-5 m-5 rounded" style="background: #f4f4f4">
+        <h1 class="text-center">
+            PRUEBA2
+        </h1>
+    </div>
+
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-sm-8">
+                <div class="card mb-5" data-aos="fade-up">
+                    <div class="card-body">
+                    <h5 class="card-title fw-bold">10 CONSEJOS PARA VENDER SU HOGAR</h5>
+                    <p class="card-text"><small class="text-muted">NOV 11, 2021</small></p>
                     </div>
                     <div class="col-md-8">
                     <div class="card-body">
