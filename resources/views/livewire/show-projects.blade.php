@@ -125,7 +125,7 @@
                                 <div class="px-5 py-4">
                                     <p class="fw-bold" style="font-size: 30px">${{number_format($propertie->price)}}</p>
                                     <p>{{ strtoupper($project->address)}}, {{ strtoupper($project->city) }}, {{ strtoupper($project->state) }}</p>
-                                    <h2>{{ $propertie->title }}</h2>
+                                    <a style="text-decoration: none; color: #000000" href="{{ route('web.show.propertie', $propertie->slug) }}"><h2>{{ $propertie->title }}</h2></a>
                                     <p style="font-size: 14px; text-align: justify">{{ $project->description }}</p>
                                     <div class="d-flex" style="justify-content: space-between">
                                         <div class="text-center">
@@ -209,7 +209,7 @@
                                 <div class="px-5 py-4">
                                     <p class="fw-bold" style="font-size: 30px">${{number_format($propertie->price)}}</p>
                                     <p>{{ strtoupper($project->address)}}, {{ strtoupper($project->city) }}, {{ strtoupper($project->state) }}</p>
-                                    <h2>{{ $propertie->title }}</h2>
+                                    <a style="text-decoration: none; color: #000000" href="{{ route('web.show.propertie', $propertie->slug) }}"><h2>{{ $propertie->title }}</h2></a>
                                     <p style="font-size: 14px; text-align: justify">{{ $project->description }}</p>
                                     <div class="d-flex" style="justify-content: space-between">
                                         <div class="text-center">

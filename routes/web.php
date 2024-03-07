@@ -43,6 +43,7 @@ Route::get('/search', [IndexController::class, 'searchProperties'])->name('searc
 Route::get('/proyectos-nuevos/{slug}', [IndexController::class, 'showproject'])->name('web.project.show');
 Route::post('/proyectos-interest/{nombreProyecto}', [ProjectController::class, 'sendEmail'])->name("sendEmail.projects");
 // Route::get('/proyectos/{nombreProyecto}/{departamento}', [ProjectController::class, 'changeDepartment'])->name('changeDepartment');
+Route::get('propiedad/{slug}', [IndexController::class, 'showPropertie'])->name('web.show.propertie');
 
 //Ruta para mostrar un blog en especifico - PRUEBA
 Route::get('/noticias/blog', function(){return view('pages.blog');})->name('blogs.blog');

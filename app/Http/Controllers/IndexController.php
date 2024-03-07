@@ -30,7 +30,7 @@ class IndexController extends Controller
     }
 
     public function searchProperties(Request $request){
-        
+
         $type = strtolower($request->type);
         $slug = $request->location;
 
@@ -72,6 +72,13 @@ class IndexController extends Controller
 
     public function redirectToBlog(){
         return view('pages.news');
+    }
+
+    public function showPropertie($slug){
+        
+        $propertie = Property::where('slug', $slug)->first();
+
+        return view('pages.property', compact('propertie'));
     }
 
     //info@casacredito.com,hserrano@casacredito.com
