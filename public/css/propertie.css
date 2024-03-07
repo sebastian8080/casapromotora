@@ -1,0 +1,18 @@
+.text-price{
+    font-size: 4rem !important;
+}
+.text-location{
+    font-weight: 500;
+}
+.text-title{
+    font-weight: 600;
+}
+.text-description{
+    text-align: justify;
+}
+.characteristics-icons{
+    justify-content: space-around;
+}
+.title_characteristic{
+    font-size: 18px !important;
+}
