@@ -3,27 +3,105 @@
 @section('title', 'Proyectos')
 
 @section('content-head')
-    <style>
-        @media screen and (max-width: 780px){
-            .title{
-                justify-content: start !important;
-                margin-top: 0px !important; 
-            }
-            .items{
-                justify-content: start !important;
-            }
-        }
-        .header-section{ margin-top: 80px !important}
-        .text-shadow { text-shadow: 1px 0px 0px black, -1px 0px 0px black, 0px 1px 0px black,  0px -1px 0px black; }
-    </style>
+    <link rel="stylesheet" href="{{ asset('css/propertie.css') }}">
 @endsection
 
 @php
-    $images = explode("|", $project->images);
+    $images = explode("|", $propertie->images);
 @endphp
 
 @section('content')
-    <section class="container d-flex justify-content-center header-section">
+
+    <section class="container mt-5">
+        <div id="carouselBannerImages" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                @foreach ($images as  $image)
+                    <div class="carousel-item @if($loop->index == 0) active @endif">
+                        <img src="{{ asset('uploads/projects/'.$image) }}" class="d-block w-100" alt="Imagen de {{ $propertie->title}} {{ $loop->index }}">
+                    </div>
+                @endforeach
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselBannerImages" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselBannerImages" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <section class="container mt-5">
+        <section class="row">
+            <article class="col-sm-7">
+                <p class="text-price fw-bold">${{ number_format($propertie->price) }}</p>
+                <p class="text-location">{{ strtoupper($propertie->address) }}, {{ strtoupper($propertie->city) }}, {{ strtoupper($propertie->state) }}</p>
+                <h1 class="text-title">{{ $propertie->title }}</h1>
+                <p class="text-description py-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam sequi nobis consequuntur maiores recusandae ut, itaque fugit nostrum dolore, inventore, quam error. Similique cupiditate voluptatibus ex earum aliquam ipsum dignissimos.</p>
+                <div class="d-flex characteristics-icons text-center py-4">
+                    <div>
+                        <img width="50px" src="{{ asset('img/area-interior.png') }}" alt="">
+                        <p class="m-0 fw-bold">ÁREA INTERNA</p>
+                        <p class="m-0">128m2</p>
+                    </div>
+                    <div>
+                        <img width="50px" src="{{ asset('img/area-total.png') }}" alt="">
+                        <p class="m-0 fw-bold">ÁREA TOTAL</p>
+                        <p class="m-0">128m2</p>
+                    </div>
+                    <div>
+                        <img width="50px" src="{{ asset('img/dormitorios.png') }}" alt="">
+                        <p class="m-0 fw-bold">DORMITORIOS</p>
+                        <p class="m-0">128m2</p>
+                    </div>
+                    <div>
+                        <img width="50px" src="{{ asset('img/banios.png') }}" alt="">
+                        <p class="m-0 fw-bold">BAÑOS</p>
+                        <p class="m-0">128m2</p>
+                    </div>
+                    <div>
+                        <img width="50px" src="{{ asset('img/garages.png') }}" alt="">
+                        <p class="m-0 fw-bold">GARAGE</p>
+                        <p class="m-0">128m2</p>
+                    </div>
+                </div>
+                <p class="fw-bold">Ubicación</p>
+                <p>{{ $propertie->street}}</p>
+                <div>
+                    <p>MAPA</p>
+                </div>
+                <div>
+                    <h3 class="title_characteristic d-flex align-items-center border-bottom pb-2"><img width="35px" src="{{ asset('img/area-interior.png') }}" alt="">CARACTERÍSTICAS GENERALES</h3>
+                    <div class="row">
+                        @for ($i = 0; $i < 12; $i++)
+                            <div class="col-sm-6">
+                                <p class="m-0">Ascensor</p>
+                            </div>
+                        @endfor
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <h3 class="title_characteristic d-flex align-items-center border-bottom pb-2"><img width="35px" src="{{ asset('img/area-interior.png') }}" alt="">SERVICIOS</h3>
+                    <div class="row">
+                        @for ($i = 0; $i < 12; $i++)
+                            <div class="col-sm-6">
+                                <p class="m-0">Ascensor</p>
+                            </div>
+                        @endfor
+                    </div>
+                </div>
+                <div>
+                    <h3 style="color: #670C07ñ font-w">INFORMACIÓN DEL ANUNCIANTE</h3>
+                </div>
+            </article>
+            <article class="col-sm-5">
+                <p>Formulario</p>
+            </article>
+        </section>
+    </section>
+
+    {{-- <section class="container d-flex justify-content-center header-section">
         <div class="position-relative">
             <img class="img-fluid" src="{{ asset('uploads/projects/'. $images[0]) }}" alt="{{ $project->project_name }}">
             <section class="d-flex justify-content-end title" style="margin-top: -100px">
@@ -36,9 +114,9 @@
                 </div>
             </section>
         </div>
-    </section>
+    </section> --}}
 
-    <section class="bg-light py-5 mb-4 mt-4" data-aos="fade-up" data-aos-duration="2000">
+    {{-- <section class="bg-light py-5 mb-4 mt-4" data-aos="fade-up" data-aos-duration="2000">
         <section class="container">
             <div class="row">
                 <article class="col-6 col-sm-4 d-flex justify-content-center items">
@@ -52,9 +130,9 @@
                 </article>
             </div>
         </section>
-    </section>
+    </section> --}}
 
-    <section class="container py-5">
+    {{-- <section class="container py-5">
         <h2 class="mb-5" style="-webkit-text-stroke: 1px rgb(0, 0, 0); color: rgb(0, 0, 0); font-size: 3rem; font-weight: bold; margin-left: 8%">DETALLES</h2>
         <div class="row">
             <div class="col-12 col-sm-6 d-flex justify-content-center mb-3" data-aos="fade-up" data-aos-duration="2000">
@@ -76,9 +154,9 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
-    <section class="container py-5">
+    {{-- <section class="container py-5">
         <div class="row">
             <div class="col-12 col-sm-12 col-md-4 col-xl-4 mb-4">
                 <div>
@@ -96,9 +174,9 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
-    <section class="container">
+    {{-- <section class="container">
         <div class="d-flex justify-content-end items">
             @if($project->project_name == "SEASCAPE")
                 <h2 class="subtitles" style="-webkit-text-stroke: 1px black; color: white; font-size: 5rem; font-weight: bold; line-height: 5rem; border-bottom: 1px solid red">IT'S ALL <span class="subtitles" style="color: #000000; font-size: 4rem">YOURS</span></h2>
@@ -123,7 +201,7 @@
                 <div class="col-6 col-sm-3 d-flex justify-content-center my-2">Guarderías</div>
             </div>
         @endif
-    </section>
+    </section> --}}
 
     <section class="container my-5" id="contact_form">
         <section class="row">
@@ -138,7 +216,7 @@
                   @csrf
                   <div class="row">
                     <div class="col mb-4">
-                      <input type="hidden" name="interest" value="{{ $project->project_name }}">
+                      <input type="hidden" name="interest" value="{{ $propertie->title }}">
                       <input type="text" name="nombre" placeholder="Nombre" class="form-control border-0" required>
                     </div>
                     <div class="col mb-4">
@@ -160,7 +238,7 @@
                   </div>
                   <div class="d-grid gap-2">
                     <button type="submit" class="btn btn-dark fw-bolder">ENVIAR</button>
-                    <a class="btn btn-success" href="https://api.whatsapp.com/send?phone=+593983849073&text=Deseo%20saber%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20proyecto%20{{$project->project_name}}">Contactar por WhatsApp</a>
+                    <a class="btn btn-success" href="https://api.whatsapp.com/send?phone=+593983849073&text=Deseo%20saber%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20proyecto%20{{$propertie->title}}">Contactar por WhatsApp</a>
                   </div>
                 </form>
               </div>
