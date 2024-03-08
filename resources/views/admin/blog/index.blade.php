@@ -22,49 +22,46 @@
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Blog</th>
-            <th scope="col">Descripcion</th>
-            <th scope="col">Imagen</th>
-            <th colspan="2">Acciones</th>
+            <th scope="col">Título</th>
+            <th scope="col">Tiempo Lectura</th>
+            <th scope="col">Imagen 1</th>
+            <th scope="col">Imagen 2</th>
+            <th scope="col">Imagen 3</th>
+            <th scope="col">Contenido</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Palabras clave</th>
+            <th scope="col">Fecha creación</th>
+            <th colspan="2"></th>
+            
           </tr>
         </thead>
         <tbody>
+          @foreach($posts as $post)
           <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <th scope="row">{{$post->id}}</th>
+            <td>{{$post->titulo}}</td>
+            <td>{{$post->tiempo_lectura}}</td>
+            <td>{{$post->url_img_principal}}</td>
+            <td>{{$post->url_img_secundaria}}</td>
+            <td>{{$post->url_img_terciaria}}</td>
+            <td>{{$post->contenido}}</td>
+            <!-- <td>{{$post->slug}}</td> -->
+            <td>{{$post->metadescripcion}}</td>
+            <td>{{$post->keywords}}</td>
+            <td>{{$post->created_at}}</td>
             <td width="10px">
-                <button class="btn btn-primary">Editar</button>
+                <a class="btn btn-primary" href="{{route('admin.blog.create')}}">Editar blog</a>
+                
+            
+    
+  
+            
             </td>
             <td width="10px">
                 <button class="btn btn-danger">Eliminar</button>
             </td>
           </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td width="10px">
-                <button class="btn btn-primary">Editar</button>
-            </td>
-            <td width="10px">
-                <button class="btn btn-danger">Eliminar</button>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry the Bird</td>
-            <td>Thorton</td>
-            <td>@twitter</td>
-            <td width="10px">  
-                <button class="btn btn-primary">Editar</button>
-            </td>
-            <td>
-                <button class="btn btn-danger">Eliminar</button>
-            </td>
-          </tr>
+          @endforeach
         </tbody>
       </table>
    </div>

@@ -1,8 +1,8 @@
 <div class="form-group">
     <div class="row mt-2">
         <div class="col-sm-9">
-            {!! Form::label('name', 'Titulo del post *') !!}
-            {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el titulo del post']) !!}
+            {!! Form::label('titulo', 'Titulo del post *') !!}
+            {!! Form::text('titulo', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el titulo del post']) !!}
             @error('titulo')
                 <small class="text-danger">
                     {{ $message }}
@@ -17,8 +17,8 @@
 
     <div class="row mt-3">
         <div class="col-sm-4">
-            {!! Form::label('imgprincipal', 'Imagen principal *') !!}
-            {!! Form::file('imgprincipal', ['class' => 'form-control']) !!}
+            {!! Form::label('url_img_principal', 'Imagen principal *') !!}
+            {!! Form::file('url_img_principal', ['class' => 'form-control']) !!}
             @error('url_img_principal')
                 <small class="text-danger">
                     {{ $message }}
@@ -26,8 +26,8 @@
             @enderror
         </div>
         <div class="col-sm-4">
-            {!! Form::label('imgsecundaria', 'Imagen secundaria *') !!}
-            {!! Form::file('imgsecundaria', ['class' => 'form-control']) !!}
+            {!! Form::label('url_img_secundaria', 'Imagen secundaria *') !!}
+            {!! Form::file('url_img_secundaria', ['class' => 'form-control']) !!}
             @error('url_img_secundaria')
                 <small class="text-danger">
                     {{ $message }}
@@ -35,16 +35,16 @@
             @enderror
         </div>
         <div class="col-sm-4">
-            {!! Form::label('imgterciaria', 'Imagen terciaria') !!}
-            {!! Form::file('imgterciaria', ['class' => 'form-control']) !!}
+            {!! Form::label('url_img_terciaria', 'Imagen terciaria') !!}
+            {!! Form::file('url_img_terciaria', ['class' => 'form-control']) !!}
         </div>
     </div>
 
 
     <div class="row mt-3">
         <div class="col">
-            {!! Form::label('body', 'Contenido *') !!}
-            {!! Form::textarea('body', null, ['class' => 'form-control', 'rows' => '10']) !!}
+            {!! Form::label('contenido', 'Contenido *') !!}
+            {!! Form::textarea('contenido', null, ['class' => 'form-control', 'rows' => '10']) !!}
             @error('contenido')
                 <small class="text-danger">
                     {{ $message }}
