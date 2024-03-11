@@ -74,7 +74,7 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul id="itemMenu" class="navbar-nav rounded ms-auto">
               <li class="nav-item">
-                <a id="menu-item2" class="nav-link text-white rounded" href="{{ route('pages.projects') }}">PROYECTOS</a>
+                <a id="menu-item2" class="nav-link text-white rounded" href="{{ route('projects.viewProject', 'casas') }}">PROYECTOS</a>
               </li>
               <li class="nav-item dropdown">
                 <a id="menu-item4" class="nav-link text-white rounded" href="{{ route('pages.partners') }}">CONSTRUCTORAS</a>
