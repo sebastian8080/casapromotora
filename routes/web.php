@@ -34,6 +34,7 @@ Route::get('/contacto', [IndexController::class, 'redirectToContact'])->name('pa
 Route::get('/socios', [IndexController::class, 'redirectToPartners'])->name('pages.partners');
 Route::get('/proyectos', [IndexController::class, 'redirectToProjects'])->name('pages.projects');
 Route::get('/blog', [IndexController::class, 'redirectToBlog'])->name('pages.news');
+Route::get('/blog/{slug}',[IndexController::class,'showpost'])->name('web.show.post');
 Route::get('/nuestro-equipo', function () {return view('pages.equipo');})->name('pages.equipo');
 
 // Route::get('/proyectos/{nombreProyecto}/{num_department?}', [ProjectController::class, 'viewProject'])->name('projects.viewProject');

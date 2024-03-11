@@ -9,6 +9,7 @@ use App\Models\Project\Category;
 use App\Models\Project;
 use App\Models\Project\Property;
 use Illuminate\Support\Str;
+use App\Models\Post;
 
 class IndexController extends Controller
 {
@@ -71,7 +72,10 @@ class IndexController extends Controller
     }
 
     public function redirectToBlog(){
-        return view('pages.news');
+        $posts = Post::get();
+        return view('pages.news',compact('posts'));
+        
+
     }
 
     public function showPropertie($slug){
@@ -279,5 +283,11 @@ class IndexController extends Controller
         mail($to, $subject, $message, $header);
 
         return redirect()->back()->with('status', 'Se ha enviado la información');
+    }
+    public function showpost($slug)
+    {
+        $post= Post::where('slug', $slug)->first();
+        return view('pages.blog', compact('post'));
+
     }
 }

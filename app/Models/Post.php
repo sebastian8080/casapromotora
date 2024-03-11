@@ -19,8 +19,11 @@ class Post extends Model
         'url_img_secundaria',
         'url_img_terciaria',
         'contenido',
-        'slug',
+        // 'slug',
         'metadescripcion',
-        'keywords'
+        'keywords',
+        'created_at',
+        'updated_at'
     ];
+
 }
