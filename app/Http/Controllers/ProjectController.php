@@ -252,58 +252,78 @@ class ProjectController extends Controller
 
     public function storeproperty(Request $request){
 
-        $project_category = Category::select('project_code')->where('category_id', $request->category_id)->first();
-        $code_category = $project_category->project_code;
+        // $project_category = Category::select('project_code')->where('category_id', $request->category_id)->first();
+        // $code_category = $project_category->project_code;
         
-        $last_property = Property::select('property_code')->where('category_id', 'LIKE', '%'.$request->category_id.'%')->latest()->first();
-        if($last_property) {
-            $lastnumber = substr($last_property->property_code, -1);
-            $lastnumber = $lastnumber + 1;
-            $property_code = $code_category.$lastnumber; 
-        } else {
-            $property_code = $code_category."1";
-        }
+        // $last_property = Property::select('property_code')->where('category_id', 'LIKE', '%'.$request->category_id.'%')->latest()->first();
+        // if($last_property) {
+        //     $lastnumber = substr($last_property->property_code, -1);
+        //     $lastnumber = $lastnumber + 1;
+        //     $property_code = $code_category.$lastnumber; 
+        // } else {
+        //     $property_code = $code_category."1";
+        // }
 
-        $result=[];        $ii=0;
-        foreach($request->all() as $key=>$value){ if("detail" == substr($key,0,6)) $result[] = $value; }
-        $bathrooms=0;$bedrooms=0;$garage=0;
-        if(count($result)>0){
-            $request->merge(['heading_details' => json_encode($result)]);
-            //return count($result);
-            foreach ($result as $r) {
-                for ($i=0; $i < count($r); $i++) { 
-                    if($r[$i] == 49 || $r[$i] == 86 || $r[$i] == 41) $bedrooms = $bedrooms + $r[$i+1];
-                    if($r[$i] == 48 || $r[$i] == 76 || $r[$i] == 81) $bathrooms = $bathrooms + $r[$i+1];
-                    if($r[$i] == 43) $garage = $garage + $r[$i+1];
-                }
-            }
-        } else {
-            $request->merge(['heading_details' => '']);
-        }
+        // $result=[];        $ii=0;
+        // foreach($request->all() as $key=>$value){ if("detail" == substr($key,0,6)) $result[] = $value; }
+        // $bathrooms=0;$bedrooms=0;$garage=0;
+        // if(count($result)>0){
+        //     $request->merge(['heading_details' => json_encode($result)]);
+        //     //return count($result);
+        //     foreach ($result as $r) {
+        //         for ($i=0; $i < count($r); $i++) { 
+        //             if($r[$i] == 49 || $r[$i] == 86 || $r[$i] == 41) $bedrooms = $bedrooms + $r[$i+1];
+        //             if($r[$i] == 48 || $r[$i] == 76 || $r[$i] == 81) $bathrooms = $bathrooms + $r[$i+1];
+        //             if($r[$i] == 43) $garage = $garage + $r[$i+1];
+        //         }
+        //     }
+        // } else {
+        //     $request->merge(['heading_details' => '']);
+        // }
 
-        $property = new Property($request->all());
-        $property->property_code = $property_code;
+        $property = Property::create([
+            'category_id' => $request->category_id,
+            'property_code' => $request->property_code,
+            'title' => $request->title,
+            'details' => $request->details,
+            'price' => $request->price,
+            'price_rent' => $request->price_rent,
+            'price_aliquot' => $request->price_aliquot,
+            'type' => $request->type,
+            'total_area' => $request->total_area,
+            'indoor_area' => $request->indoor_area,
+            'bedrooms' => $request->bedrooms,
+            'bathrooms' => $request->bathrooms,
+            'half_bath' => $request->half_bath,
+            'garage' => $request->garage,
+            'units_available' => $request->units_available,
+        ]);
 
-        $property->heading_details = $request->heading_details;
-        $property->bedrooms = $bedrooms;
-        $property->bathrooms = $bathrooms;
-        $property->garage = $garage;
+        $request->advertise_to_sell == "on" ? $property->advertise_to_sell = 1 : $property->advertise_to_sell = 0;
+        $request->advertise_for_rent == "on" ? $property->advertise_for_rent = 1 : $property->advertise_for_rent = 0;
+        $request->aliquot == "on" ? $property->aliquot = 1 : $property->aliqout = 0; 
+        // $property->property_code = $property_code;
 
-        $property->state = $project_category->state;
-        $property->city = $project_category->city;
-        $property->address = $project_category->address;
-        $property->street = $project_category->street;
+        // $property->heading_details = $request->heading_details;
+        // $property->bedrooms = $bedrooms;
+        // $property->bathrooms = $bathrooms;
+        // $property->garage = $garage;
 
-        $property->num_piso = $request->num_piso;
+        // $property->state = $project_category->state;
+        // $property->city = $project_category->city;
+        // $property->address = $project_category->address;
+        // $property->street = $project_category->street;
+
+        // $property->num_piso = $request->num_piso;
 
         $property->slug = Str::slug($property->title." ".str_replace('_', ' ', $property->property_code));
         $property->save();
 
         //return $property;
-        if($property) $message = ['status' => 'Se creo la propiedad <b>'.$property->property_code.'</b> con éxito'];
+        if($property) $message = ['status' => 'Se creo la propiedad con éxito'];
         else $message = ['status' => 'Hubo un error al crear la propiedad. Intentelo nuevamente'];
 
-        $property = Property::where('property_code', $property->property_code)->first();
+        //$property = Property::where('property_code', $property->property_code)->first();
 
         return redirect()->route('admin.edit.property', $property->property_id)->with($message);
     }
@@ -318,66 +338,131 @@ class ProjectController extends Controller
         $property = Property::where('property_id', $property_id)->first();
         $categories = Category::select('category_id', 'project_name')->get();
         $states = DB::connection('mysql2')->table('info_states')->where('country_id', 63)->get();
+
         $project_category = Category::where('category_id', $property->category_id)->first();
+        $category_id = $project_category->category_id;
 
         //nuevos datos para mostrar los detalles de las propiedades
         $details = DB::table('property_characteristics')->orderBy('charac_titile', 'asc')->get();
 
-        return view('admin.properties.create', compact('categories', 'states', 'property', 'project_category', 'details'));
+        return view('admin.properties.create', compact('categories', 'states', 'property', 'project_category', 'details', 'category_id'));
     }
 
     public function updatepropertybyproject(Request $request, $property_id){
-
+        
         $property = Property::where('property_id', $property_id)->first();
 
-        $result=[];        $ii=0;
-        foreach($request->all() as $key=>$value){ if("detail" == substr($key,0,6)) $result[] = $value; }
-        $bathrooms=0;$bedrooms=0;$garage=0;
-        if(count($result)>0){
-            $request->merge(['heading_details' => json_encode($result)]);
-            //return count($result);
-            foreach ($result as $r) {
-                for ($i=0; $i < count($r); $i++) { 
-                    if($r[$i] == 49 || $r[$i] == 86 || $r[$i] == 41) $bedrooms = $bedrooms + $r[$i+1];
-                    if($r[$i] == 48 || $r[$i] == 76 || $r[$i] == 81) $bathrooms = $bathrooms + $r[$i+1];
-                    if($r[$i] == 43) $garage = $garage + $r[$i+1];
-                }
+        $uploads=[];
+
+        return $request->file('images');
+
+        if($request->hasFile('images')){
+
+            foreach ($request->file('images') as $image) {
+
+                $namefile = "img-" . Str::slug($property->title) . "-" . uniqid() . ".webp";
+                
+                $ruta = public_path() . "/uploads/properties/" . $namefile;
+                $ruta2 = public_path() . "/uploads/properties/1200/" . $namefile;
+                $ruta3 = public_path() . "/uploads/properties/900/" . $namefile;
+                $ruta4 = public_path() . "/uploads/properties/600/" . $namefile;
+                $ruta5 = public_path() . "/uploads/properties/300/" . $namefile;
+                
+                        // Image::make($request->file('images'))->save($ruta);
+                        // $img2 = Image::make($request->file('images'));
+                        // $img3 = Image::make($request->file('images'));
+                        // $img4 = Image::make($request->file('images'));
+        
+                        //Image::make($image)->save($ruta);
+                $img2 = Image::make($image);
+                $img3 = Image::make($image);
+                $img4 = Image::make($image);
+                $img5 = Image::make($image);
+                
+                $img2->resize(1200, null, function($constraint){$constraint->upsize();$constraint->aspectRatio();})->save($ruta2, 90);
+                $img3->resize(900, null, function($constraint){$constraint->upsize();$constraint->aspectRatio();})->save($ruta3, 90);
+                $img4->resize(600, null, function($constraint){$constraint->upsize();$constraint->aspectRatio();})->save($ruta4, 90);
+                $img5->resize(300, null, function($constraint){$constraint->upsize();$constraint->aspectRatio();})->save($ruta5, 90);
+        
+                $uploads[] = $namefile;
+
+                        
             }
-        } else {
-            $request->merge(['heading_details' => '']);
         }
+
+        if(count($uploads)>0 || strlen($request->imagesn)>2){
+            foreach ($uploads as $imageUpload) {
+                    
+            }
+            $save_uploads = implode("|", $uploads);
+                // if(strlen($request->imagesn)>2){
+                //     $property->update(['images'  =>  $request->imagesn.'|'.$save_uploads]);
+                // }else{
+            $property->update(['images'  => $save_uploads   ]);
+                //}    
+        }
+
+        // $result=[];        $ii=0;
+        // foreach($request->all() as $key=>$value){ if("detail" == substr($key,0,6)) $result[] = $value; }
+        // $bathrooms=0;$bedrooms=0;$garage=0;
+        // if(count($result)>0){
+        //     $request->merge(['heading_details' => json_encode($result)]);
+        //     //return count($result);
+        //     foreach ($result as $r) {
+        //         for ($i=0; $i < count($r); $i++) { 
+        //             if($r[$i] == 49 || $r[$i] == 86 || $r[$i] == 41) $bedrooms = $bedrooms + $r[$i+1];
+        //             if($r[$i] == 48 || $r[$i] == 76 || $r[$i] == 81) $bathrooms = $bathrooms + $r[$i+1];
+        //             if($r[$i] == 43) $garage = $garage + $r[$i+1];
+        //         }
+        //     }
+        // } else {
+        //     $request->merge(['heading_details' => '']);
+        // }
 
         $project = Category::where('category_id', $request->category_id)->first();
 
-        $property->state == null ? $property->state = $project->state : null;
-        $property->city == null ? $property->city = $project->city : null;
-        $property->address == null ? $property->address = $project->address : null;
-        $property->street == null ? $property->street = $project->street : null;
-        $property->type == null ? $property->type = $project->type : null;
+        // $property->state == null ? $property->state = $project->state : null;
+        // $property->city == null ? $property->city = $project->city : null;
+        // $property->address == null ? $property->address = $project->address : null;
+        // $property->street == null ? $property->street = $project->street : null;
+
+        $request->advertise_to_sell == "on" ? $property->advertise_to_sell = 1 : $property->advertise_to_sell = 0;
+        $request->advertise_for_rent == "on" ? $property->advertise_for_rent = 1 : $property->advertise_for_rent = 0;
+        $request->aliquot == "on" ? $property->aliquot = 1 : $property->aliquot = 0;
+
+        //actualizando codigo del producto si es que es diferente
+        $property->property_code != $request->property_code ? $property->property_code = $request->property_code : null;
 
         $property->category_id = $request->category_id;
         $property->title = $request->title;
+        $property->details = $request->details;
+        $property->type = $request->type;
+        $property->price = $request->price;
+        $property->price_rent = $request->price_rent;
+        $property->price_aliquot = $request->price_aliquot;
+        $property->bedrooms = $request->bedrooms;
+        $property->bathrooms = $request->bathrooms;
+        $property->half_bath = $request->half_bath;
+        $property->garage = $request->garage;
         $property->total_area = $request->total_area;
         $property->indoor_area = $request->indoor_area;
-        $property->price = $request->price;
-        $property->bedrooms = $bedrooms;
-        $property->bathrooms = $bathrooms;
-        $property->garage = $garage;
+        $property->units_available = $request->units_available;
 
-        $property->num_piso = $request->num_piso;
+        //$property->num_piso = $request->num_piso;
 
-        $property->status = $request->status;
-
-        //guardando nuevas variables
-        $property->heading_details = $request->heading_details; 
+        $request->status ? $property->status = $request->status : null; //si es que existe el status, lo actualiza. Es para la nueva forma de guardar propiedades
+        $request->heading_details ? $property->heading_details = $request->heading_details : null; //guardando si existe heading_details
 
         $property->save();
 
         return redirect()->route('admin.edit.property', $property->property_id)->with('status', 'Se actualizo la propiedad <b>'.$property->property_code.'</b> correctamente');
     }
 
-    public function showprojectbytype($type){
-
+    public function showprojectbyname($project_name){
+        $project_name = Str::replace('-', ' ', $project_name);
+        $project = Category::where('project_name', 'LIKE', '%'.$project_name.'%')->first();
+        $list_properties = Property::where('category_id', $project->category_id)->where('status', 1)->get();
+        return view('pages.project', compact('project', 'list_properties'));
     }
 
     public function viewProject(String $type, String $slug = null, String $property_slug = null){

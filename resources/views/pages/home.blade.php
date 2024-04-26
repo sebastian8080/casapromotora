@@ -133,7 +133,7 @@
                 </div>
               </div>
               <div class="d-flex justify-content-center mt-4">
-                <a href="" class="btn-show-properties rounded-pill px-4 py-2">VER PROYECTO</a>
+                <a href="{{ route('show.project.by.name', ['project_name' => Str::slug(strtolower($project->project_name))]) }}" class="btn-show-properties rounded-pill px-4 py-2">VER PROYECTO</a>
               </div>
             </div>
           </article>
@@ -156,7 +156,7 @@
                 </div>
               </div>
               <div class="d-flex justify-content-center mt-4">
-                <a href="" class="btn-show-properties rounded-pill px-4 py-2">VER PROYECTO</a>
+                <a href="{{ route('show.project.by.name', ['project_name' => Str::slug(strtolower($project->project_name))]) }}" class="btn-show-properties rounded-pill px-4 py-2">VER PROYECTO</a>
               </div>
             </div>
           </article>
