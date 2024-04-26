@@ -100,7 +100,7 @@
                 <a id="menu-item1" class="nav-link dropdown-toggle text-white rounded" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page" href="">NOSOTROS <i class="fa-solid fa-plus"></i></a>
                 <ul id="dropdown-menu" class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="{{ route('pages.about') }}">Nuestra Empresa</a></li>
-                  <li><a class="dropdown-item" href="{{ route('pages.equipo') }}">Equipo</a></li>
+                  {{-- <li><a class="dropdown-item" href="{{ route('pages.equipo') }}">Equipo</a></li> --}}
                 </ul>
               </li>
               <li class="nav-item">
